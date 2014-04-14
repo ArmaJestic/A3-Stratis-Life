@@ -136,11 +136,11 @@ time_update = {
 
 
 time_init = {
-	ARGV(0,_quiet);
+	ARGV(0,_quiet,false);
 	if (undefined(_quiet)) then {_quiet = false;};
 	init_date = null;
 	time_loop_exit = false;
-	call time_init_globals;
+	[] call time_init_globals;
 	_game_time_number = call time_game_time_number;
 	_new_date = numberToDate [YEAR, _game_time_number];
 
@@ -153,7 +153,7 @@ time_init = {
 
 time_loop = {
 	ARGV(0,_init);
-	ARGV(1,_quiet);
+	ARGVD(1,_quiet,false);
 	if (_init) then {[_quiet] call time_init;};
 	
 	private ["_i"];
@@ -205,7 +205,7 @@ time_reset = {
 
 if (!isServer || (isServer && !isDedicated)) then {
 	//[false] call time_init;
-	[true] spawn time_loop;
+//	[true] spawn time_loop;
 };
 
 time_functions_defined = true;

@@ -16,25 +16,37 @@ server_get_array = {
 
 server_set_array = {
 	//player groupChat format["server_set_array %1", _this];
+	diag_log format['server_set_array: %1', _this];
+	
 	ARGV(0,_variable_name);
 	ARGV(1,_variable_value);
 	
+	diag_log format['server_set_array: calling server_set_array_checked'];
+	
 	[_variable_name, _variable_value, true] call server_set_array_checked;
+	
+	diag_log format['server_set_array: complete'];
 };
 
 server_set_array_checked = {
 	//player groupChat format["server_set_array_checked %1", _this];
+	diag_log format['server_set_array_checked: %1', _this];
+	
 	ARGV(0,_variable_name);
 	ARGV(1,_variable_value);
 	ARGV(2,_check_change);
 	
-	if (undefined(_variable_name)) exitWith {null};
-    if (undefined(_variable_value)) exitWith {null};
-	if (undefined(_check_change)) exitWith {null};
+	diag_log format['server_set_array_checked: exit checks'];
 	
-	if (typeName _variable_name != "STRING") exitWith {null};
-	if (typeName _variable_value != "ARRAY") exitWith {null};
-	if (typeName _check_change != "BOOL") exitWith {null};
+	if (undefined(_variable_name)) exitWith {diag_log format['server_set_array_checked: exit1']; null};
+    if (undefined(_variable_value)) exitWith {diag_log format['server_set_array_checked: exit2']; null};
+	if (undefined(_check_change)) exitWith {diag_log format['server_set_array_checked: exit3']; null};
+	
+	if (typeName _variable_name != "STRING") exitWith {diag_log format['server_set_array_checked: exit4']; null};
+	if (typeName _variable_value != "ARRAY") exitWith {diag_log format['server_set_array_checked: exit5']; null};
+	if (typeName _check_change != "BOOL") exitWith {diag_log format['server_set_array_checked: exit6']; null};
+	
+	diag_log format['server_set_array_checked: exits passed'];
 	
 	private["_current_value"];
 	
@@ -44,7 +56,11 @@ server_set_array_checked = {
 	};
 	
 	server setVariable [_variable_name, _variable_value, true];
+	
+	diag_log format['server_set_array_checked: calling stats_server_save'];
 	[_variable_name, _variable_value] call stats_server_save;
+	
+	diag_log format['server_set_array_checked: complete'];
 };
 
 

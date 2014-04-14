@@ -1,13 +1,15 @@
 #include "macro.h"
 
 invoke_java_method = {
-	if (undefined(_this)) exitWith{""};
-	if (typeName _this != "ARRAY") exitWith {""};
-	if (count _this == 0) exitWith {""};
+	diag_log format['invoke_java_method: %1', _this];
+
+	if (undefined(_this)) exitWith{diag_log format['invoke_java_method: exit1']; ""};
+	if (typeName _this != "ARRAY") exitWith {diag_log format['invoke_java_method: exit2']; ""};
+	if (count _this == 0) exitWith {diag_log format['invoke_java_method: exit3']; ""};
 	
 	private["_i", "_count", "_arguments", "_method"];
 	_method = _this select 0;
-	if (typeName _method != "STRING") exitWith {null};
+	if (typeName _method != "STRING") exitWith {diag_log format['invoke_java_method: exit4']; null};
 	
 	_count = count _this;
 	_arguments = [];
@@ -36,42 +38,60 @@ invoke_java_method = {
 	_invoke_str = "<MI>" + _method_str + _argument_str + "</MI>";
 	
 	//diag_log _invoke_str;
+	diag_log format['invoke_java_method: callExtension'];
+	
 	private["_result"];
 	_result = "jni" callExtension _invoke_str;
 	
+	diag_log format['invoke_java_method: complete, returning result'];
 	_result
 };
 
 parseResult = {
+	diag_log format['parseResult: %1', _this];
+
 	private["_result"];
 	_result = _this select 0;
-	if (undefined(_result)) exitWith {-1};
-	if (typeName "_result" != "STRING") exitWith {-1};
+	if (undefined(_result)) exitWith {diag_log format['parseResult: exit1']; -1};
+	if (typeName "_result" != "STRING") exitWith {diag_log format['parseResult: exit2']; -1};
 	
 	_result = parseNumber(_result);
-	if (undefined(_result)) exitWith {-1};
-	if (typeName _result != "SCALAR") exitWith {-1};
+	if (undefined(_result)) exitWith {diag_log format['parseResult: exit3']; -1};
+	if (typeName _result != "SCALAR") exitWith {diag_log format['parseResult: exit4']; -1};
+	
+	diag_log format['parseResult: complete, returning result'];
 	_result
 };
 
 updatePlayerVariable = {
+	diag_log format['updatePlayerVariable: %1', _this];
+
 	private["_uid", "_variable_name", "_variable_value"];
 	
 	_uid = _this select 0;
 	_variable_name = _this select 1;
 	_variable_value = _this select 2;
 	
-	if (undefined(_uid)) exitWith {null};
-	if (undefined(_variable_name)) exitWith {null};
-	if (undefined(_variable_value)) exitWith {null};
+	diag_log format['updatePlayerVariable: exit checks'];
 	
-	if (typeName _uid != "STRING") exitWith {null};
-	if (typeName _variable_name != "STRING") exitWith {null};
+	if (undefined(_uid)) exitWith {diag_log format['updatePlayerVariable: exit1']; null};
+	if (undefined(_variable_name)) exitWith {diag_log format['updatePlayerVariable: exit2']; null};
+	if (undefined(_variable_value)) exitWith {diag_log format['updatePlayerVariable: exit3']; null};
+	
+	if (typeName _uid != "STRING") exitWith {diag_log format['updatePlayerVariable: exit4']; null};
+	if (typeName _variable_name != "STRING") exitWith {diag_log format['updatePlayerVariable: exit5']; null};
+	
+	diag_log format['updatePlayerVariable: exits passed'];
 	
 	_variable_value = if (typeName _variable_value != "STRING") then {format["%1", _variable_value]} else {_variable_value};
 	
 	private["_result"];
+	
+	diag_log format['updatePlayerVariable: calling invoke_java_method'];
 	_result = ["updatePlayerVariable", _uid, _variable_name, _variable_value] call invoke_java_method;
+	
+	diag_log format['updatePlayerVariable: returning call to parseresult'];
+	
 	([_result] call parseResult)
 };
 

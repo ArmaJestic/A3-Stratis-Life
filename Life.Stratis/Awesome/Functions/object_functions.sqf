@@ -577,6 +577,8 @@ object_editor_create = {
 		missionNamespace setVariable [_name, _object];
 		_object setVehicleVarName _name;
 		_object setVariable ["name", _name, true];
+		
+		missionNamespace setVariable[_name, _object];
 		publicVariable _name;
 	};
 	

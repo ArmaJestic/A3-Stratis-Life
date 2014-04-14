@@ -95,6 +95,8 @@ stats_save_request_key = 1;
 stats_save_request_value = 2;
 
 stats_save_request_receive = {
+	diag_log format['stats_save_request_receive: %1', _this];
+
 	private["_variable", "_request"];
 	
 	_variable = _this select 0;
@@ -108,15 +110,20 @@ stats_save_request_receive = {
 	_key = _request select stats_save_request_key;
 	_value = _request select stats_save_request_value;
 	
+	diag_log format['stats_save_request_receive: Exit checks'];
 	
-	if (undefined(_uid)) exitWith {null};
-	if (undefined(_key)) exitWith {null};
-	if (undefined(_value)) exitWith {null};
-	if (typeName _uid != "STRING") exitWith {null};
-	if (typeName _key != "STRING") exitWith {null};
+	if (undefined(_uid)) exitWith {diag_log format['stats_save_request_receive: Exit1']; null};
+	if (undefined(_key)) exitWith {diag_log format['stats_save_request_receive: Exit2']; null};
+	if (undefined(_value)) exitWith {diag_log format['stats_save_request_receive: Exit3']; null};
+	if (typeName _uid != "STRING") exitWith {diag_log format['stats_save_request_receive: Exit4']; null};
+	if (typeName _key != "STRING") exitWith {diag_log format['stats_save_request_receive: Exit5']; null};
 	
 	_value = [_value];
+	
+	diag_log format['stats_save_request_receive: calling updatePlayerVariable'];
 	[_uid, _key, _value] call updatePlayerVariable;
+	
+	diag_log format['stats_save_request_receive: complete'];
 };
 
 stats_build_save_request = {
@@ -144,19 +151,25 @@ stats_build_save_request = {
 };
 
 stats_save_request_send = {
+	diag_log format['stats_save_request_send: %1', _this];
+
 	_request = _this call stats_build_save_request;
-	if (undefined(_request)) exitWith {null};
+	if (undefined(_request)) exitWith {diag_log format['stats_save_request_send: Exit']; null};
 
 	
 	if (isServer) then {
 		// if we are on server, we can call the receive method directly
+		diag_log format['stats_save_request_send: server, call stats_save_request_receive'];
 		["", _request] call stats_save_request_receive;
 	}
 	else {
 		// if we are on client, then we need to send it across the network
+		diag_log format['stats_save_request_send: client, broadcasting'];
 		stats_save_request_buffer = _request;
 		publicVariableServer "stats_save_request_buffer";
 	};
+	
+	diag_log format['stats_save_request_send: complete'];
 };
 
 stats_human_side = {
@@ -248,23 +261,34 @@ stats_get_player_uid = {
 //generic method for saving variables, can be called either from server or client
 //Arguments are [uid,key,value]
 stats_save = {
+	diag_log format['stats_save: %1', _this];
 	_this call stats_save_request_send;
+	diag_log format['stats_save: complete'];
 };
 
 //Method intended to be run on server-side, it is used for saving SERVER specific variables (can be run on client side as well)
 //Arguments are [key,value]
 stats_server_save = {
+	diag_log format['stats_save: %1', _this];
+
 	private["_variable", "_value"];
 	
 	_variable = _this select 0;
 	_value = _this select 1;
 	
-	if (undefined(_variable)) exitWith {null};
-	if (undefined(_value)) exitWith {null};
-	if (typeName _variable != "STRING") exitWith {null};
+	diag_log format['stats_server_save: exit checks'];
 	
+	if (undefined(_variable)) exitWith {diag_log format['stats_server_save: exit1']; null};
+	if (undefined(_value)) exitWith {diag_log format['stats_server_save: exit2']; null};
+	if (typeName _variable != "STRING") exitWith {diag_log format['stats_server_save: exit3']; null};
+	
+	diag_log format['stats_server_save: exits passed'];
+	
+	diag_log format['stats_server_save: calling stats_save'];
 	private["_uid"];
 	[stats_server_uid, _variable, _value] call stats_save;
+	
+	diag_log format['stats_server_save: complete'];
 };
 
 //Method intended to be run on client-side, for saving CLIENT specific variables
@@ -460,6 +484,7 @@ stats_load_library_list = {
 		_file = _library select stats_library_file;
 		
 		[format["%1 ... %2/%3", _title, (_forEachIndex + 1), (count(_list))]] call stats_client_update_loading_title;
+		diag_log format["%1 ... %2/%3", _title, (_forEachIndex + 1), (count(_list))];
 		
 		if ((call _condition)) then {
 			private["_h"];
@@ -773,6 +798,8 @@ stats_client_stop_loading = {
 };
 
 stats_client_update_loading_title = {
+	if (isServer) exitwith {};
+	
 	private["_title"];
 	
 	_title = _this select 0;
@@ -886,21 +913,29 @@ stats_client_setup = {
 };
 
 stats_setup = {
+	diag_log format["Stats_setup starting, server: %1", isServer];
+
+	diag_log format["Stats_setup: Loading core"];
 	[stats_core_libraries, "Loading core libraries"] call stats_load_library_list;
 	
 	if (isClient) then {
+		diag_log format["Stats_setup: Loading client 1"];
 		[player] call limbo_base_enter;
 	};
 	
 	if (isServer) then {
-		call stats_server_setup;
+		diag_log format["Stats_setup: Loading server"];
+		[] call stats_server_setup;
 	};
 	
 	if (isClient) then {
-		call stats_client_setup;
+		diag_log format["Stats_setup: Loading client 2"];
+		[] call stats_client_setup;
 	};
+	
+	diag_log format["Stats_setup Complete"];
 };
 
-call stats_setup;
+[] call stats_setup;
 
 stats_functions_defined =  true;

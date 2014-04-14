@@ -33,22 +33,34 @@ list_data = {
 
 list_create = {
 	//player groupChat format["list_create %1", _this];
+	diag_log format['list_create: %1', _this];
+	
 	ARGV(0,_list_id);
 	ARGV(1,_list_name);
 	
-	if (undefined(_list_id)) exitWith {null};
-	if (typeName _list_id != "STRING") exitWith {null};
-	if (undefined(_list_name)) exitWith {null};
-	if (typeName _list_name != "STRING") exitWith {null};
+	diag_log format['list_create: Exit checks'];
 	
-	if ([_list_id] call list_exists) exitWith {null};
+	if (undefined(_list_id)) exitWith {diag_log format['list_create: Exit1']; null};
+	if (typeName _list_id != "STRING") exitWith {diag_log format['list_create: Exit2']; null};
+	if (undefined(_list_name)) exitWith {diag_log format['list_create: Exit3']; null};
+	if (typeName _list_name != "STRING") exitWith {diag_log format['list_create: Exit4']; null};
+	
+	if ([_list_id] call list_exists) exitWith {diag_log format['list_create: Exit5']; null};
+	
+	diag_log format['list_create: Exits passed'];
+	
 	private["_data"];
 	_data = [];
 	_data set [list_id, _list_id];
 	_data set [list_name, _list_name];
 	_data set [list_keys, []];
 	_data set [list_values, []];
+	
+	diag_log format['list_create: calling server_set_array'];
+	
 	[_list_id, _data] call server_set_array;
+	
+	diag_log format['list_create: complete'];
 };
 
 list_put_value = {

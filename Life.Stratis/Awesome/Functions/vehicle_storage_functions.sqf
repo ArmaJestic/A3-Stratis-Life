@@ -11,11 +11,18 @@ vehicle_storage_exists = {
 
 vehicle_storage_create = {
 	//player groupChat format["vehicle_storage_create %1", _this];
+	diag_log format['vehicle_storage_create: %1', _this];
+	
 	ARGV(0,_id);
 	ARGV(1,_name);
 	
-	if ([_id] call vehicle_storage_exists) exitWith {null};
+	diag_log format['vehicle_storage_create: exit check'];
+	if ([_id] call vehicle_storage_exists) exitWith {diag_log format['vehicle_storage_create: exit']; null};
+	
+	diag_log format['vehicle_storage_create: calling list_create'];
 	[_id, _name] call list_create;
+	
+	diag_log format['vehicle_storage_create: complete'];
 };
 
 vehicle_storage_contains = {
@@ -122,14 +129,20 @@ vehicle_storage_list = {
 
 
 vehicle_storage_init = {
-	if(not(isServer)) exitWith {null};
+	diag_log format['vehicle_storage_functions: running init'];
+
+	if(!(isServer)) exitWith {diag_log format['vehicle_storage_functions: running init exit']; null};
 	//player groupChat format["vehicle_storage_init %1", _this];
+	
+	diag_log format['vehicle_storage_functions: running init create impound'];
 	
 	["impound_lot", "Vehicle Impound Lot"] call vehicle_storage_create;
 };
 
+diag_log format['vehicle_storage_functions: functions defined'];
 
 [] call vehicle_storage_init;
 
+diag_log format['vehicle_storage_functions: all done'];
 
 vehicle_storage_functions_defined = true;
