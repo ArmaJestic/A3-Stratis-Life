@@ -1,0 +1,78 @@
+loadScreen = "loading.paa";
+onLoadIntro   = "Stratis Life";
+onLoadMission = "Freedom lies in being bold ~ Robert Frost";
+onLoadName    = "Stratis Life";
+author        = "stratislife.com";
+showCompass   = 1;
+showGPS       = 1;
+showMap       = 1;
+showNotePad   = 1;
+showWatch     = 1;
+debriefing    = 1;
+respawn       = 3;
+respawnDelay  = 30;
+disabledAI    = 1;
+respawnDialog = 0;
+joinUnassigned = 1;
+enableDebugConsole = 2;
+
+respawnTemplates[] = {"Instant"};
+
+
+// Define PMC Custom GPS Skin
+onMinimapScript[] = {"BIS_fnc_customGPS_Spawn"};
+class Header {gameType =  RPG; minPlayers = 1; maxPlayers = 100;};
+
+
+class CfgSounds  {
+	sounds[] = {Sound_Alarm2};
+	#include "sounds.hpp"
+};
+
+
+
+#include "Awesome\Dialogs\Essentials\RscDefines.hpp"
+#include "Awesome\Dialogs\Essentials\DialogColorConstants.hpp"
+#include "Awesome\Dialogs\Essentials\DialogColorScheme.hpp"
+#include "Awesome\Dialogs\Essentials\DialogControlClasses.hpp"
+//#include "Awesome\Dialogs\Essentials\Arma3.hpp"
+#include "RscTitles.hpp"
+
+#include "Awesome\Dialogs\Custom_Dialogs.hpp"
+
+#include "Awesome\Retributions\retributions.hpp"
+#include "Awesome\MyStats\loading.hpp"
+
+
+#include "Awesome\Functions\dikcodes.h"
+
+
+#include "gfx.hpp"
+#include "INVdialogs.hpp"
+#include "4782911.hpp"
+#include "4461230.hpp"
+#include "maindialogs.hpp"
+
+
+#include "Awesome\Functions\weapon_modifications.hpp"
+#include "Awesome\Functions\list_menu.hpp"
+#include "Awesome\Functions\main_menu.hpp"
+#include "Awesome\Functions\admin_menu.hpp"
+#include "Awesome\Functions\camera_menu.hpp"
+#include "Awesome\Functions\shop_menu.hpp"
+#include "Awesome\Functions\factory_menu.hpp"
+#include "Awesome\Functions\bank_menu.hpp"
+#include "Awesome\Functions\inventory_menu.hpp"
+#include "Awesome\Functions\storage_menu.hpp"
+#include "Awesome\Functions\free_camera.hpp"
+#include "Awesome\Functions\lotto_menu.hpp"
+#include "Awesome\Functions\animations_menu.hpp"
+#include "Awesome\Functions\prison_menu.hpp"
+#include "Awesome\Functions\legislation_menu.hpp"
+#include "Awesome\Functions\economy_menu.hpp"
+#include "Awesome\Functions\list_simple_menu.hpp"
+#include "Awesome\Functions\arrest_menu.hpp"
+#include "Awesome\Functions\ticket_menu.hpp"
+#include "Awesome\Functions\yes_no_menu.hpp"
+#include "Awesome\Functions\voting_menu.hpp"
+#include "Awesome\Functions\mobile_menu.hpp"
