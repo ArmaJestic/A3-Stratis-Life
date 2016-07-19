@@ -60,7 +60,7 @@ class factory_dialog {
 		idc = factory_enqueue_list_idc;
 		x = 0.32-10; y = 0.14-10;
 		w = 0.35; h = 0.30;
-		onLBSelChanged = "_this call factory_update_enqueue_item;";
+		onLBSelChanged = "_this call A_factory_fnc_update_enqueue_item;";
 	};
 
 	class item_produced_label : RscText {
@@ -111,7 +111,7 @@ class factory_dialog {
 		idc = factory_amount_field_idc;
 		x = 0.49-10; y = 0.57-10;
 		w = 0.18; h = 0.04;
-		onKeyDown = "call factory_update_enqueue_item;";
+		onKeyDown = "call A_factory_fnc_update_enqueue_item;";
 		text = "1";
 	};
 
@@ -153,7 +153,7 @@ class factory_dialog {
 		idc = factory_dequeue_list_idc;
 		x = 0.75-10; y = 0.14-10;
 		w = 0.35; h = 0.30;
-		onLBSelChanged = "_this call factory_update_dequeue_item;";
+		onLBSelChanged = "_this call A_factory_fnc_update_dequeue_item;";
 	};
 
 

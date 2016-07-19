@@ -7,7 +7,7 @@ class shops_menu {
 	objects[] = { };
 		
 	name = "SHOPS_MENU";
-	onUnload = "call trunk_close;";
+	onUnload = "call A_trunk_fnc_close;";
 	onLoad="uiNamespace setVariable ['SHOPS_MENU', _this select 0]";
 	
 	controls[] = {  
@@ -41,7 +41,7 @@ class shops_menu {
 		x = 0.93-10; y = -0.10-10;
 		w = 0.42; h = 0.4037;
 		rowHeight = 0.065;
-		onLBSelChanged = "_this call shop_update_buy_item;";
+		onLBSelChanged = "_this call A_shop_menu_fnc_update_buy_item;";
 	};
 	
 	class buy_items_to_buy_label : RscText {
@@ -57,7 +57,7 @@ class shops_menu {
 		x = 0.65-10; y = 0.40-10;
 		w = 0.2105; h = 0.04;
 		text = "1";
-		onKeyUp = "_this call shop_update_buy_item;";
+		onKeyUp = "_this call A_shop_menu_fnc_update_buy_item;";
 	};
 	
 	class buy_tiems_to_buy_field_background : RscText {
@@ -142,7 +142,7 @@ class shops_menu {
 		idc = buy_put_gear_cbox_idc;
 		x = 0.44-10; y = 0.65-10;
 		w = 0.30-10; h = 0.04-10;
-		onCheckBoxesSelChanged = "call shop_toggle_put_gear_cb; call shop_update_buy_item;";
+		onCheckBoxesSelChanged = "call A_shop_menu_fnc_toggle_put_gear_cb; call A_shop_menu_fnc_update_buy_item;";
 	};
 
 	class buy_frame : RscMenuTitle {
@@ -183,7 +183,7 @@ class shops_menu {
 		x = 0.93-10; y = -0.10-10;
 		w = 0.42; h = 0.4037;
 		rowHeight = 0.065;
-		onLBSelChanged = "_this call shop_update_sell_item;";
+		onLBSelChanged = "_this call A_shop_menu_fnc_update_sell_item;";
 	};
 	
 	class sell_items_to_sell_label : RscText {
@@ -199,7 +199,7 @@ class shops_menu {
 		x = 1.14-10; y = 0.40-10;
 		w = 0.2105; h = 0.04;
 		text = "1";
-		onKeyUp = "_this call shop_update_sell_item;";
+		onKeyUp = "_this call A_shop_menu_fnc_update_sell_item;";
 	};
 	
 	class sell_items_to_sell_background : RscText {
@@ -278,7 +278,7 @@ class shops_menu {
 		idc = sell_show_all_items_cbox_idc;
 		x = 0.93-10; y = 0.65-10;
 		w = 0.30; h = 0.04;
-		onCheckBoxesSelChanged = "call shop_toggle_sell_cb; [] spawn shop_update_sell_list;";
+		onCheckBoxesSelChanged = "call A_shop_menu_fnc_toggle_sell_cb; [] spawn A_shop_menu_fnc_update_sell_list;";
 	};
 	
 	class sell_total_return_field : RscText {

@@ -15,15 +15,15 @@ switch (gasmask) do {
 	case true: {
 		gasmask=false;
 		player groupchat "You took off your gasmask and it has been added to your inventory";
-		[player, _item, -1] call inventory_add_item;
-		[player, "gasmask", 1] call inventory_add_item;		
+		[player, _item, -1] call A_inventory_fnc_add_item;
+		[player, "gasmask", 1] call A_inventory_fnc_add_item;		
 	};
 		
 	case false:{
 		gasmask= true;
 		player groupchat "You put on a gask mask, you will now be protected from tear gas";
-		[player, _item, -1] call inventory_add_item;
-		[player, "gasmask_on", 1] call inventory_add_item;		
+		[player, _item, -1] call A_inventory_fnc_add_item;
+		[player, "gasmask_on", 1] call A_inventory_fnc_add_item;		
 	};
 };
 

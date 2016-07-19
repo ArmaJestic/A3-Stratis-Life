@@ -1,0 +1,6 @@
+if (not(undefined(A_salary_var_functions_defined))) exitWith {null};
+
+[] spawn A_salary_fnc_cop_salary_loop;
+
+[] spawn A_salary_fnc_civilian_salary_loop;
+

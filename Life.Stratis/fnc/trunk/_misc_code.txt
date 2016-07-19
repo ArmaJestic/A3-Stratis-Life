@@ -1,0 +1,2 @@
+if (!(undefined(A_trunk_var_functions))) exitWith {null};
+

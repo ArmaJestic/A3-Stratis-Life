@@ -1,9 +1,9 @@
-#include "Awesome\Functions\macro.h"
-#include "Awesome\Functions\constants.h"
-setPlayerRespawnTime 9999;
-0 fadeSound 0;
-showGPS false;
-showMap false;
+isClient = !isServer || (isServer && !isDedicated);
+if (isClient) then {
+	//player globalChat format["Waitin for player ..."];
+	waitUntil {(not(isNull player) && {isPlayer player})};
+	titleText ["", "BLACK OUT", 0.0001];
+};
 
 null = 0xe0ffffef;
 null__ = {
@@ -21,15 +21,32 @@ MISSION_ROOT = call {
 };
 
 
+// Everything before loading screen, setting up loading screen
+fnc_includes = compile preprocessFileLineNumbers "includes\includes.h";
+[] call fnc_includes;
+fnc_includes_macro = compSQF("includes\macro.h")
+fnc_includes_constants = compSQF("includes\constants.h")
+[] call fnc_includes_macro;
+[] call fnc_includes_constants;
 
+// Not used anymore
+//fnc_initRun = compSQF("fnc\initRun.sqf")
+
+[] call A_parameters_fnc_init1;
+[] call A_loading_fnc_init1;
+
+[]	call A_loading_fnc_start;
+["Pre-loading operations..."] call A_loading_fnc_update_title;
+[(1/loading_stages_total)] call A_loading_fnc_update_progress;
+uiSleep 1;
+
+0 fadeSound 0;
+showGPS false;
+showMap false;
 
 enableSaving [false, false];
-
-
-isClient = !isServer || (isServer && !isDedicated);
-
-sleep 0.5;
-
+enableEngineArtillery false;
+setPlayerRespawnTime 30;
 
 WEST setFriend [EAST, 0];
 WEST setFriend [RESISTANCE, 0];
@@ -41,13 +58,57 @@ CIVILIAN setFriend [WEST, 0];
 CIVILIAN setFriend [EAST, 0];
 CIVILIAN setFriend [RESISTANCE, 0];
 
+// 	Run init1
+["Running init1..."] call A_loading_fnc_update_title;
+[(2/loading_stages_total)] call A_loading_fnc_update_progress;
+uiSleep 1;
 
-if (isClient) then {
-	//player globalChat format["Waitin for player ..."];
-	waitUntil {(not(isNull player) && {isPlayer player})};
-	titleText ["", "BLACK OUT", 0.0001];
-};
-debug  = false;
+ExecSQFwait("fnc\init1.sqf")
+
+//	Run init2
+["Running init2..."] call A_loading_fnc_update_title;
+[(3/loading_stages_total)] call A_loading_fnc_update_progress;
+uiSleep 1;
+
+ExecSQFwait("fnc\init2.sqf")
+
+//	Wait for server to finish
+["Waiting for server to finish..."] call A_loading_fnc_update_title;
+[(4/loading_stages_total)] call A_loading_fnc_update_progress;
+uiSleep 1;
+
+// 	Load stats
+["Starting stat loading..."] call A_loading_fnc_update_title;
+[(5/loading_stages_total)] call A_loading_fnc_update_progress;
+uiSleep 1;
+
+[] call A_stats_fnc_init2;
+
+// 	Run startup functions for whatevers needed
+["Running final operations..."] call A_loading_fnc_update_title;
+[(6/loading_stages_total)] call A_loading_fnc_update_progress;
+uiSleep 1;
+
+
+
+// 	Loading finished, mission a go
+["Loading Complete"] call A_loading_fnc_update_title;
+[1] call A_loading_fnc_update_progress;
+uiSleep 1;
+[] call A_loading_fnc_stop;
+
+
+
+
+
+
+
+
+
+
+
+// Other shit to sort out
+
 
 _h = [] execVM "Awesome\MyStats\functions.sqf";
 waitUntil{scriptDone _h};
@@ -57,75 +118,47 @@ _h = [] execVM "Awesome\init.sqf";
 waitUntil{scriptDone _h};
 
 
-publicvariable "station1robbed";
-publicvariable "station2robbed";
-publicvariable "station3robbed";
-publicvariable "station4robbed";
-publicvariable "station5robbed";
-publicvariable "station6robbed";
-publicvariable "station7robbed";
-publicvariable "station8robbed";
-publicvariable "station9robbed";
 
+publicvariable "station1robbed";
+if (isServer) then {
+	[] execVM "druguse.sqf";
+	[] execVM "drugreplenish.sqf";
+	[] execVM "robpool.sqf";
+
+	//=======================rob gas station init and variables================
+	station1money = 5000;
+	[] execVM "stationrobloop.sqf";
+	
+	publicvariable "station1money";
+};
 if(isClient) then {
 	server globalChat "Loading - Please Wait";
 	[] execVM "Awesome\Functions\holster.sqf";
 	[] execVM "clientloop.sqf";
-	[] spawn gangs_loop;
+	[] spawn A_gang_fnc_loop;
 	[] execVM "respawn.sqf";
 	[] execVM "petrolactions.sqf";
 	[] execVM "nametags.sqf";
 	server globalChat "Loading - Complete";
 	[] execVM "Awesome\Functions\markers.sqf";
 	[] execVM "Awesome\Functions\salary.sqf";
-	//[] execVM "motd.sqf";
 	[] execVM "Awesome\Functions\mounted_functions.sqf";
-	
-	//["client"] execVM "bombs.sqf";
 	
 	server globalChat format["UID: %1", getPlayerUID player];
 
-	player addEventHandler ["fired", {_this call player_handle_fired}];
-	player addEventHandler ["HandleDamage", {_this call player_handle_damage}];
+	player addEventHandler ["fired", {_this call A_player_fnc_handle_fired}];
+	player addEventHandler ["HandleDamage", {_this call A_player_fnc_handle_damage}];
 	//player addEventHandler ["WeaponAssembled", {_this execVM "Awesome\EH\EH_weaponassembled.sqf"}];
 	[] execVM "onKeyPress.sqf";
 	[] execVM "onMouse.sqf";
 	[] ExecVM "Awesome\Functions\camera_functions.sqf";
 	[] ExecVM "Awesome\Functions\list_menu_functions.sqf";
 
-	if ((["cop_blacklist", (getPlayerUID player)] call list_contains_key) && ([player] call player_cop)) then {
+	if ((["cop_blacklist", (getPlayerUID player)] call A_list_fnc_contains_key) && ([player] call A_player_fnc_blufor)) then {
 		[] spawn {
 			player groupChat format["WARNING: You have been blacklisted from the bluefor side."];
 			sleep 5;
 			endMission "LOSER";
 		};
 	};
-};
-
-if (isServer) then {
-	[] execVM "druguse.sqf";
-	[] execVM "drugreplenish.sqf";
-	[] execVM "robpool.sqf";
-
-//=======================rob gas station init and variables================
-	station1money = 5000;
-	[] execVM "stationrobloop.sqf";
-	
-	publicvariable "station1money";
-//	station2money = 5000;
-//	publicvariable "station2money";
-//	station3money = 5000;
-//	publicvariable "station3money";
-//	station4money = 5000;
-//	publicvariable "station4money";
-//	station5money = 5000;
-//	publicvariable "station5money";
-//	station6money = 5000;
-//	publicvariable "station6money";
-//	station7money = 5000;
-//	publicvariable "station7money";
-//	station8money = 5000;
-//	publicvariable "station8money";
-//	station9money = 5000;
-//	publicvariable "station9money";
 };

@@ -7,7 +7,7 @@ _player = player;
 
 ARGV(3,_array);
 _art   = _array select 0;
-_moneh  = [player, 'money'] call inventory_get_item_amount;
+_moneh  = [player, 'money'] call A_inventory_fnc_get_item_amount;
 _zusatzString = "";
 
 if ((count _array)>1) then {
@@ -24,6 +24,6 @@ if (_art == "wahlen") then {
 	lbClear (_DFML displayCtrl 1);
 	
 	private["_index"];
-	_index = [1] call DialogNotCopsList;
+	_index = [1] call A_misc_fnc_DialogNotCopsList;
 	(_DFML displayCtrl 1) lbSetCurSel _index;
 };

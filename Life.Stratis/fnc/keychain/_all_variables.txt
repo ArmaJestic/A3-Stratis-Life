@@ -1,0 +1,2 @@
+A_keychain_var_functions_defined = true;
+

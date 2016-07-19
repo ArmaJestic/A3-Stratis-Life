@@ -4,8 +4,8 @@ _initFileNames = [];
 
 {
 
-_filename = _x call inventory_get_item_file;
-_item     = _x call inventory_get_item_script_name;
+_filename = _x call A_inventory_fnc_get_item_file;
+_item     = _x call A_inventory_fnc_get_item_script_name;
 
 if ((_filename != "") and (!(_filename in _initFileNames))) then
 

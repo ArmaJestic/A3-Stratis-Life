@@ -1,0 +1,12 @@
+#include "constants.h"
+
+#include "macro.h"
+
+#include "dikcodes.h"
+
+if (not(undefined(A_doors_var_defined))) exitWith {};
+
+if (undefined(house_actions)) then {
+	house_actions = [];
+};
+

@@ -6,7 +6,7 @@ private ["_fishingarray"];
 
 _art = _this select 0;
 
-if(iscop)exitWith {null};
+if(isblu)exitWith {null};
 
 if (_art == "use") then {
 	if(working) exitWith {null};
@@ -26,7 +26,7 @@ if (_art == "use") then {
 
 	_resource = _fishingarray select 1;
 	_max      = _fishingarray select 2;
-	_infos    = _resource call inventory_get_item_array;
+	_infos    = _resource call A_inventory_fnc_get_item_array;
 	_name     = (MASTER_ARRAY_ITEM_NAME(_infos));
 
 	if (!_isInArea) exitwith {
@@ -45,7 +45,7 @@ if (_art == "use") then {
 			sleep 1.5;
 			player switchmove "normal";
 
-			_avail = floor (INV_CarryingCapacity - (call inventory_get_own_weight));
+			_avail = floor (A_inventory_var_INV_CarryingCapacity - (call A_inventory_fnc_get_own_weight));
 
 			totalamount = totalamount + _amount;
 			if((totalamount*2) >= _avail)exitwith{totalamount = (_avail/2); player groupchat "maximum weight reached"; _i=6;};
@@ -53,7 +53,7 @@ if (_art == "use") then {
 		};
 		
 		totalamount = (floor (totalamount));
-		[player, _resource, totalamount] call inventory_add_item;
+		[player, _resource, totalamount] call A_inventory_fnc_add_item;
 	};
 
 	working=false;

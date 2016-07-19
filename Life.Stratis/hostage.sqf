@@ -35,7 +35,7 @@ if (_art == "serverloop") then {
 
 				workplacejob_hostage_serverarray set [_i,""];
 				workplacejob_hostage_serverarray = workplacejob_hostage_serverarray - [""];
-				//"if(iscop)then{player sidechat ""The threat to the hostage has been removed""}" call broadcast;
+				//"if(isblu)then{player sidechat ""The threat to the hostage has been removed""}" call broadcast;
 				sleep ((workplacejob_hostage_break)*60);
 				workplacejob_hostage_active = false;
 				publicvariable "workplacejob_hostage_active";
@@ -72,7 +72,7 @@ if (_art == "getajob_hostage") then {
 	_hostage_name = "hostage1";
 	
 	//[[_hostage_unit, _hostage_name], "hostage_init_handler_persistent", true, true] spawn BIS_fnc_MP;
-	[[_hostage_unit, _hostage_name], "hostage_init_handler_persistent", true, true, _hostage_unit] spawn jip_register;
+	[[_hostage_unit, _hostage_name], "hostage_init_handler_persistent", true, true, _hostage_unit] spawn A_jip_fnc_register;
 	waitUntil {not(isNil _hostage_name)};
 
 	format["workplacejob_hostage_serverarray = workplacejob_hostage_serverarray + [[%1, hostage1]];", player] call broadcast;
@@ -89,17 +89,17 @@ if (_art == "getajob_hostage") then {
 
 	player groupChat "The Hostage is marked on the map, don't let the police get you.";
 
-	"if (iscop) then {player sideChat ""Someone is trying to take a hostage. The hostage has been marked on the map. Arrest the hostage taker before its too late!""};" call broadcast;
+	"if (isblu) then {player sideChat ""Someone is trying to take a hostage. The hostage has been marked on the map. Arrest the hostage taker before its too late!""};" call broadcast;
 
 	player groupchat "The police are on to you, hurry up!";
-	[player, "Assassin", 200000] call player_update_warrants;
+	[player, "Assassin", 200000] call A_player_fnc_update_warrants;
 
 
 	while {true} do {
 		"htargetmarker" setmarkerpos getpos hostage1;
 
 		if (_minutecounter >= 750 and alive player) exitWith {
-			[player, 300000] call bank_transaction;
+			[player, 300000] call A_bank_fnc_transaction;
 			player groupchat "Well done, you kept the hostage for 15 minutes, $300000 has been transfered to your account.";
 			sleep 10;
 			"server globalchat ""Hostage Taker WINS, he kept the hostage for 15 minutes."";" call broadcast;
@@ -122,7 +122,7 @@ if (_art == "getajob_hostage") then {
 			server globalchat ""The Hostage taker has fled the area! Cops get $5000"";
 			_copplayernumber = playersNumber west;
 			_copbonus = 5000;
-			if (iscop) then {[player, _copbonus] call bank_transaction; player sidechat format[""you received $%1 for hostage taker fleeing the area"", _copbonus];};
+			if (isblu) then {[player, _copbonus] call A_bank_fnc_transaction; player sidechat format[""you received $%1 for hostage taker fleeing the area"", _copbonus];};
 			" call broadcast;
 			sleep 2;
 			player groupchat "You fled the area with the hostage, stay in the zone next time, mission failed!";
@@ -137,7 +137,7 @@ if (_art == "getajob_hostage") then {
 			server globalchat ""The Hostage taker has lost!"";
 			_copplayernumber = playersNumber west;
 			_copbonus = 5000;
-			if (iscop) then {[player, _copbonus] call bank_transaction; player sidechat format[""you received $%1 for the successful rescue of the hostage"", _copbonus];};
+			if (isblu) then {[player, _copbonus] call A_bank_fnc_transaction; player sidechat format[""you received $%1 for the successful rescue of the hostage"", _copbonus];};
 			" call broadcast;
 			sleep 2;
 			player groupchat "The Hostage was rescued, mission failed!";

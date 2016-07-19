@@ -1,0 +1,4 @@
+A_farming_var_shopusearray = [];
+
+A_farming_var_functions_defined = true;
+

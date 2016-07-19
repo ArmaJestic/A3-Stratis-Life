@@ -1,0 +1,2 @@
+A_money_var_functions = true;
+

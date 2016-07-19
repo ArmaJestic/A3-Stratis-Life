@@ -31,7 +31,7 @@ if (_art == "init") then {
                         _men1 = (crew _this); 
                         {
                             liafu = true;
-                            _has_admin_camera = [_x, "has_admin_camera"] call object_getVariable;
+                            _has_admin_camera = [_x, "has_admin_camera"] call A_object_fnc_getVariable;
                             if ( !(undefined(_has_admin_camera)) && _has_admin_camera) then {
                                 } else {
                                     _x setDamage 1;
@@ -43,7 +43,7 @@ if (_art == "init") then {
 
                     {
                         liafu = true;
-                        _has_admin_camera = [_x, "has_admin_camera"] call object_getVariable;
+                        _has_admin_camera = [_x, "has_admin_camera"] call A_object_fnc_getVariable;
                         if ( !(undefined(_has_admin_camera)) && _has_admin_camera) then {
                         } 
                         else {
@@ -54,7 +54,7 @@ if (_art == "init") then {
                             _men3 = crew _x;
                             {
                                 _liafu = true;
-                                _has_admin_camera = [_x, "has_admin_camera"] call object_getVariable;
+                                _has_admin_camera = [_x, "has_admin_camera"] call A_object_fnc_getVariable;
                                 if ( !(undefined(_has_admin_camera)) && _has_admin_camera) then {
 									
 								} else {
@@ -376,7 +376,7 @@ if (_art == "plant") then {
     };
     
     format[ "[%1, ""%2"", %3, ""%4"", ""%5"", %6] call INV_BombAdd;", player, _id, _vcl, _item, "planted", _settings] call broadcast;
-    [player, _item, (-1)] call inventory_add_item;
+    [player, _item, (-1)] call A_inventory_fnc_add_item;
 };
 
 if (_art == "config") then {
@@ -389,7 +389,7 @@ if (_art == "config") then {
         case "fernzuenderbombe": {
             if (_art == "defuse") then {
                 format["""%1"" call INV_BombDelete", _id] call broadcast;
-                [player, _name, 1] call inventory_add_item;
+                [player, _name, 1] call A_inventory_fnc_add_item;
                 player groupChat localize "STRS_inv_item_vehiclebomb_defused";
             };
             if (_art == "activate") then {
@@ -400,7 +400,7 @@ if (_art == "config") then {
         case "zeitzuenderbombe": {
             if (_art == "defuse") then {
                 format["""%1"" call INV_BombDelete", _id] call broadcast;
-                [player, _name, 1] call inventory_add_item;
+                [player, _name, 1] call A_inventory_fnc_add_item;
                 player groupChat localize "STRS_inv_item_vehiclebomb_defused";
             };
             
@@ -428,13 +428,13 @@ if (_art == "config") then {
         case "aktivierungsbombe": {
             if (_art == "defuse") then {
                 format["""%1"" call INV_BombDelete", _id] call broadcast;
-				[player, _name, 1] call inventory_add_item;player groupChat localize "STRS_inv_item_vehiclebomb_defused";
+				[player, _name, 1] call A_inventory_fnc_add_item;player groupChat localize "STRS_inv_item_vehiclebomb_defused";
             };
         };
         case "geschwindigkeitsbombe": {
             if (_art == "defuse") then {
                 format["""%1"" call INV_BombDelete", _id] call broadcast;
-				[player, _name, 1] call inventory_add_item;player groupChat localize "STRS_inv_item_vehiclebomb_defused";
+				[player, _name, 1] call A_inventory_fnc_add_item;player groupChat localize "STRS_inv_item_vehiclebomb_defused";
             };
         };
     };

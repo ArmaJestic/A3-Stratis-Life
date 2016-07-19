@@ -140,6 +140,6 @@ fuelshop1 RemoveAction gsshop1;
 _role RemoveAction action_h1;
 
 [] call clear_new_actions;
-[player] call holster_remove_actions;
+[player] call A_holster_fnc_remove_actions;
 
 A_running = false;

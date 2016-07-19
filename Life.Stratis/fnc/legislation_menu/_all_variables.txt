@@ -1,0 +1,2 @@
+A_legislation_menu_var_functions_defined = true;
+

@@ -394,12 +394,12 @@ P_Preview_Camera = {
 P_buy = {
 	private ["_x", "_c", "_moneh", "_cost"];
 
-	_moneh  = [player, 'money'] call inventory_get_item_amount;
+	_moneh  = [player, 'money'] call A_inventory_fnc_get_item_amount;
 	_cost	= P_cost;
 	
 	if (_moneh < _cost) exitwith {player groupchat format["Your require $%1 for this", _cost];};
 	
-	[player, 'money', -(_cost)] call inventory_add_item;
+	[player, 'money', -(_cost)] call A_inventory_fnc_add_item;
 	
 	player groupchat format["You Paid $%1 to apply the paint to your car", _cost];
 	
@@ -420,12 +420,12 @@ P_buy = {
 
 P_r_buy = {
 	private ["_x", "_n", "_moneh", "_cost", "_cfg1", "_cfg2"];
-	_moneh  = [player, 'money'] call inventory_get_item_amount;
+	_moneh  = [player, 'money'] call A_inventory_fnc_get_item_amount;
 	_cost	= P_cost;
 	
 	if (_moneh < _cost) exitwith {player groupchat format["Your require $%1 for this", _cost];};
 	
-	[player, 'money', -(_cost)] call inventory_add_item;
+	[player, 'money', -(_cost)] call A_inventory_fnc_add_item;
 	
 	player groupchat format["You Paid $%1 to apply the original paint to your car", _cost];
 	

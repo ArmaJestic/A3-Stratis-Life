@@ -24,14 +24,14 @@ check_armed_player = {
 	private["_armed_items"];
 	//Remote bomb, timed bomb, activated bomb (ied), speed bomb, suicide vest, lighter
 	_armed_items = ["fernzuenderbombe", "zeitzuenderbombe", "aktivierungsbombe", "geschwindigkeitsbombe", "selbstmordbombe", "lighter"];
-	if([_player, _armed_items] call inventory_has_item) exitWith { true };
+	if([_player, _armed_items] call A_inventory_fnc_has_item) exitWith { true };
 	
 	//check if player has pistol
 	private["_weapon"];
 	_weapon = (currentWeapon _player);
-	if ([_weapon, "GrenadeLauncher"] call shop_weapon_inherits_from) exitWith { true }; //Throw (Grenades), Put (IEDs)
-	if ([_weapon, "PistolCore"] call shop_weapon_inherits_from) exitWith { true };
-	if (call holster_pistol_in_inventory) exitWith { true };
+	if ([_weapon, "GrenadeLauncher"] call A_shop_menu_fnc_weapon_inherits_from) exitWith { true }; //Throw (Grenades), Put (IEDs)
+	if ([_weapon, "PistolCore"] call A_shop_menu_fnc_weapon_inherits_from) exitWith { true };
+	if (call A_holster_fnc_pistol_in_inventory) exitWith { true };
 	false;
 };
 
@@ -40,7 +40,7 @@ check_armed_mounted = {
 	
 	//check if the vehicle has a mounted player with a weapon
 	private["_occupants"];
-	_occupants = [_vehicle] call mounted_get_occupants;
+	_occupants = [_vehicle] call A_mounted_fnc_get_occupants;
 	//player groupChat format["_occupants = %1", _occupants];
 	private["_armed_occupant"];
 	_armed_occupant = null;
@@ -65,7 +65,7 @@ check_armed_vehicle = {
 	_in_vehicle = (_vehicle != _player);
 	
 	if (not(_in_vehicle)) then {
-		_vehicle = [_player] call mounted_player_get_vehicle;
+		_vehicle = [_player] call A_mounted_fnc_player_get_vehicle;
 	};
 	
 	if (undefined(_vehicle)) exitWith {false};
@@ -73,7 +73,7 @@ check_armed_vehicle = {
 	//check if the vehicle has a weapon
 	private["_weapon"];
 	_weapon = currentWeapon _vehicle;
-	if ([(currentWeapon _vehicle), "CarHorn"] call shop_weapon_inherits_from) exitWith { false };
+	if ([(currentWeapon _vehicle), "CarHorn"] call A_shop_menu_fnc_weapon_inherits_from) exitWith { false };
 	
 	([_vehicle] call check_armed_mounted)
 };
@@ -82,22 +82,22 @@ check_armed_stunning = {
 	ARGV(0,_player);
 	
 	if (undefined(was_stunning_count)) then { was_stunning_count = 0; };
-	if (undefined(stunning) ) then { stunning = false;};
+	if (undefined(A_stun_var_A_stun_var_stunning) ) then { A_stun_var_A_stun_var_stunning = false;};
 	if (undefined(was_stunning)) then { was_stunning = false;};
 	
 	private["_delay"];
 	_delay = 30;
-	//Delayed check for player stunning within the last X seconds
-	if (stunning) then 	{ 
+	//Delayed check for player A_stun_var_stunning within the last X seconds
+	if (A_stun_var_stunning) then 	{ 
 		was_stunning = true; 
 		was_stunning_count = 0;
 	}
-	else { if ( !stunning && was_stunning) then {
+	else { if ( !A_stun_var_stunning && was_A_stun_var_stunning) then {
 		if (was_stunning_count < _delay) then { was_stunning_count = was_stunning_count + 1;};
 		if (was_stunning_count >= _delay) then { was_stunning = false; was_stunning_count = 0;};
 	};};
 	
-	//player groupChat format["STUNNING: %1, WAS STUNNING: %2", stunning, was_stunning];
+	//player groupChat format["A_stun_var_A_stun_var_stunning: %1, WAS A_stun_var_A_stun_var_stunning: %2", A_stun_var_stunning, was_A_stun_var_stunning];
 	was_stunning
 };
 
@@ -116,8 +116,8 @@ check_armed = {
 	
 	private["_armed"];
 	_armed = _armed_vehicle || _armed_player || _was_stunning;
-	[_player, _armed] call player_update_armed;
-	[_player, "armed", _armed] call object_setVariable;
+	[_player, _armed] call A_player_fnc_update_armed;
+	[_player, "armed", _armed] call A_object_fnc_setVariable;
 	_armed
 };
 
@@ -146,8 +146,8 @@ compare_array = {
 check_keychain = {
 	private["_player"];
 	_player = player;
-	if (([_player, "keychain"] call inventory_get_item_amount) == 1) exitWith {null};	
-	[_player, "keychain", 1] call inventory_set_item_amount;
+	if (([_player, "keychain"] call A_inventory_fnc_get_item_amount) == 1) exitWith {null};	
+	[_player, "keychain", 1] call A_inventory_fnc_set_item_amount;
 };
 
 check_inventory = {
@@ -161,7 +161,7 @@ check_inventory = {
 
 
 cop_stun_gun_modify = {
-	if (!iscop) exitWith {null};
+	if (!isblu) exitWith {null};
 	if((player ammo (currentWeapon player)) <= 0) exitWith {null};
 	if (not(alive player)) exitWith {null};
 	
@@ -188,14 +188,14 @@ check_money = {
 	private ["_player", "_money"];
 	_player = player;
 	
-	_money = [player, 'money'] call inventory_get_item_amount;
+	_money = [player, 'money'] call A_inventory_fnc_get_item_amount;
 	if (_money < 0) then {
-		[_player, 'money', 0] call inventory_set_item_amount; 
+		[_player, 'money', 0] call A_inventory_fnc_set_item_amount; 
 		_money = 0;
 	};
 		
 	if (_money > money_limit) then {
-		[_player, 'money', money_limit] call inventory_set_item_amount; 
+		[_player, 'money', money_limit] call A_inventory_fnc_set_item_amount; 
 		player groupChat format["You can't carry more than $%1 in your inventory. Money was removed.", strM(money_limit)];
 	}; 
 };
@@ -203,10 +203,10 @@ check_money = {
 check_bank = {
 	private ["_bank_account", "_player"];
 	_player = player;
-	_bank_account = [_player] call bank_get_value;
+	_bank_account = [_player] call A_bank_fnc_get_value;
 	
 	if (_bank_account > bank_limit) exitWith {
-		[_player, bank_limit] call bank_set_value; 
+		[_player, bank_limit] call A_bank_fnc_set_value; 
 		player groupChat format["You can't have more than $%1 in your bank account. Money has been removed.", strM(bank_limit)];
 	};
 };
@@ -228,16 +228,16 @@ check_factory_actions = {
 	_in_vehicle = (_vehicle != _player);
 	
 	private["_factory"];
-	_factory = [_player, 5] call factory_player_near;
+	_factory = [_player, 5] call A_factory_fnc_player_near;
 	//player groupChat format["_factory = %1",_factory];
 	if (undefined(_factory) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
-		[_player] call factory_remove_actions;
+		[_player] call A_factory_fnc_remove_actions;
 	};
 	
 	private["_factory_id"];
 	_factory_id = _factory select factory_id;
 	
-	[_player, _factory_id] call factory_add_actions;
+	[_player, _factory_id] call A_factory_fnc_add_actions;
 };
 
 
@@ -250,15 +250,15 @@ check_lotto_actions = {
 	_in_vehicle = (_vehicle != _player);
 	
 	private["_lotto"];
-	_lotto = [_player, 2] call lotto_player_near;
+	_lotto = [_player, 2] call A_lotto_menu_fnc_player_near;
 	//player groupChat format["_lotto = %1",_lotto];
 	if (undefined(_lotto) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
-		[_player] call lotto_remove_actions;
+		[_player] call A_lotto_menu_fnc_remove_actions;
 	};
 	
 	private["_lotto_id"];
-	_lotto_id = _lotto select lotto_data_id;
-	[_player, _lotto_id] call lotto_add_actions;
+	_lotto_id = _lotto select A_lotto_menu_var_data_id;
+	[_player, _lotto_id] call A_lotto_menu_fnc_add_actions;
 };
 
 
@@ -272,15 +272,15 @@ check_prison_actions = {
 	_in_vehicle = (_vehicle != _player);
 	
 	private["_prison"];
-	_prison = [_player, 2] call prison_player_near;
+	_prison = [_player, 2] call A_prison_menu_fnc_player_near;
 	//player groupChat format["_prison = %1",_prison];
 	if (undefined(_prison) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
-		[_player] call prison_remove_actions;
+		[_player] call A_prison_menu_fnc_remove_actions;
 	};
 	
 	private["_prison_id"];
-	_prison_id = _prison select prison_data_id;
-	[_player, _prison_id] call prison_add_actions;
+	_prison_id = _prison select A_prison_menu_var_data_id;
+	[_player, _prison_id] call A_prison_menu_fnc_add_actions;
 };
 
 check_license_actions = {
@@ -292,13 +292,13 @@ check_license_actions = {
 	_in_vehicle = (_vehicle != _player);
 	
 	private["_license_vendor"];
-	_license_vendor = [_player, 2.5] call license_player_near;
+	_license_vendor = [_player, 2.5] call A_license_fnc_player_near;
 	//player groupChat format["_license_vendor = %1", _license_vendor];
 	if (undefined(_license_vendor) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
-		[_player] call license_remove_actions;
+		[_player] call A_license_fnc_remove_actions;
 	};
 	
-	[_player, _license_vendor] call license_add_actions;
+	[_player, _license_vendor] call A_license_fnc_add_actions;
 };
 
 check_gang_area_actions = {
@@ -309,12 +309,12 @@ check_gang_area_actions = {
 	_in_vehicle = (_vehicle != _player);
 	
 	private["_gang_area"];
-	_gang_area = [_player, 5] call gang_area_player_near;
+	_gang_area = [_player, 5] call A_gang_fnc_area_player_near;
 	if (undefined(_gang_area) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
-		[_player] call gang_area_remove_actions;
+		[_player] call A_gang_fnc_area_remove_actions;
 	};
 
-	[_player, _gang_area] call gang_area_add_actions;
+	[_player, _gang_area] call A_gang_fnc_area_add_actions;
 };
 
 check_workplaces = {
@@ -356,7 +356,7 @@ check_logics = {
 		
 		
 		if (_distance <= _teleport_distance) exitWith {
-			[player] call player_teleport_spawn;
+			[player] call A_player_fnc_teleport_spawn;
 			player groupChat format["You have been teleported out of a restricted zone"];
 		};
 		
@@ -383,7 +383,7 @@ bases_check_teleport_message = 4;
 bases_checks = [
 //	["isins", "ins_area_1", 20, "telehesnotins", "You were teleported out of the Insurgent base!"],
 //	["isopf", "opfor_area_1", 20, "telehesnottla", "You were teleported out of the TLA base!"],
-	["iscop", "blufor_area_1", 20, "telehesnotcop", "You were teleported out of the Police base!"]
+	["isblu", "blufor_area_1", 20, "telehesnotcop", "You were teleported out of the Police base!"]
 ];
 
 check_bases = {
@@ -424,7 +424,7 @@ check_static_weapons = {
 
 check_smoke_grenade = {
 	private["_flashed"];
-	_flashed = [player, "flashed"] call object_getVariable;
+	_flashed = [player, "flashed"] call A_object_fnc_getVariable;
 	
 	if (undefined(_flashed)) exitWith {null};
 	if (typeName _flashed != "BOOL") exitWith {null};
@@ -432,11 +432,11 @@ check_smoke_grenade = {
 	
 	private ["_mask", "_fadeInTime", "_fadeOutTime"];
 	
-	_mask = [player, "gasmask"] call object_getVariable;
+	_mask = [player, "gasmask"] call A_object_fnc_getVariable;
 	_mask = if (undefined(_mask)) then { false } else { _mask };
 	_mask = if (typeName "_mask" != "BOOL") then { false } else { _mask };
 	
-	[player, "gasmask", _mask, true] call object_setVariable;
+	[player, "gasmask", _mask, true] call A_object_fnc_setVariable;
 	if (_mask) exitWith {null};
 	
 	[] spawn {
@@ -448,7 +448,7 @@ check_smoke_grenade = {
 		sleep _fadeOutTime;
 		titleCut ["","WHITE IN",0];
 		sleep _fadeInTime;
-		[player, "flashed", false, true] call object_setVariable;
+		[player, "flashed", false, true] call A_object_fnc_setVariable;
 	};
 };
 
@@ -462,8 +462,8 @@ check_drag_actions = {
 	private["_visual_target", "_active_target", "_held_object"];
 	
 	_visual_target = nearCursorTarget;
-	_active_target = [_player, "active_target", objNull] call object_getVariable;
-	_held_object = [_player, "held_target", objNull] call object_getVariable;
+	_active_target = [_player, "active_target", objNull] call A_object_fnc_getVariable;
+	_held_object = [_player, "held_target", objNull] call A_object_fnc_getVariable;
 	
 	//player is already holding an object
 	if (not(isNull _held_object)) exitWith {};
@@ -472,8 +472,8 @@ check_drag_actions = {
 	if (not(isNull _visual_target) && {(_visual_target == _active_target) && {(_player distance _active_target) < 2}}) exitWith {};
 
 	
-	[_player] call drag_remove_action;	
-	[_player, _visual_target] call drag_add_action;
+	[_player] call A_drag_fnc_remove_action;	
+	[_player, _visual_target] call A_drag_fnc_add_action;
 };
 
 
@@ -481,7 +481,7 @@ check_drag_actions = {
 
 
 check_restrains = {
-	//if (iscop) exitWith {null};
+	//if (isblu) exitWith {null};
 	
 	private["_player"];
 	_player = player;
@@ -490,34 +490,34 @@ check_restrains = {
 
 	private["_physicallyRestrained", "_logicallyRestrained"];
 	//player groupChat format["%1", (animationState _player) ];
-	_physicallyRestrained = (restrained_animations find ((animationState _player)) >= 0);
-	_logicallyRestrained = [_player, "restrained"] call player_get_bool;
+	_physicallyRestrained = (A_player_var_restrained_animations find ((animationState _player)) >= 0);
+	_logicallyRestrained = [_player, "restrained"] call A_player_fnc_get_bool;
 	
 	//player groupChat format["_logicallyRestrained = %1", _logicallyRestrained];
 	//player groupChat format["_physicallyRestrained = %1", _physicallyRestrained];
 	
 	if (_logicallyRestrained && not(_physicallyRestrained)) then {
-		if ([_player, (vehicle _player)] call mounted_player_inside) exitWith {
-			if (not([_player, 50] call player_near_cops)) exitWith {
-				[_player, "restrained", false] call player_set_bool;
+		if ([_player, (vehicle _player)] call A_mounted_fnc_player_inside) exitWith {
+			if (not([_player, 50] call A_player_fnc_near_cops)) exitWith {
+				[_player, "restrained", false] call A_player_fnc_set_bool;
 				_player groupChat format["You have managed to unrestrain yourself!"];
 			};
 		};
-		//[[_player], "player_restrained_animation", true] call BIS_fnc_MP;
-		[[_player], "player_restrained_animation", true] call BIS_fnc_MP;
+		//[[_player], "A_player_fnc_restrained_animation", true] call BIS_fnc_MP;
+		[[_player], "A_player_fnc_restrained_animation", true] call BIS_fnc_MP;
 	}
 	else { if (not(_logicallyRestrained) && _physicallyRestrained) then {
-		[[_player], "player_unrestrained_animation", true] call BIS_fnc_MP;
+		[[_player], "A_player_fnc_unrestrained_animation", true] call BIS_fnc_MP;
 	}
 	else { if (_logicallyRestrained && _physicallyRestrained) then {
-		if ([_player, (vehicle _player)] call mounted_player_inside) then {
-			[[_player], "player_unrestrained_animation", true] call BIS_fnc_MP;
+		if ([_player, (vehicle _player)] call A_mounted_fnc_player_inside) then {
+			[[_player], "A_player_fnc_unrestrained_animation", true] call BIS_fnc_MP;
 		};
 	}
 	else { if (_logicallyRestrained || _physicallyRestrained) then {
 		player groupChat format["Checking!"];
-		if (not([_player, 50] call player_near_cops)) then {
-			[_player, "restrained", false] call player_set_bool;
+		if (not([_player, 50] call A_player_fnc_near_cops)) then {
+			[_player, "restrained", false] call A_player_fnc_set_bool;
 			_player groupChat format["You have managed to unrestrain yourself!"];
 		};
 	};};};};
@@ -529,7 +529,7 @@ check_respawn_time = {
 	private["_interval"];
 	_interval = 30;
 	if (not((time % _interval) == 0)) exitWith {null};
-	[player, "extradeadtime", -(_interval)] call player_update_scalar;
+	[player, "extradeadtime", -(_interval)] call A_player_fnc_update_scalar;
 	
 };
 
@@ -542,10 +542,10 @@ check_gear = {
 	if (not(alive _player)) exitWith {null};
 	
 	private["_gear"];
-	_gear = [_player] call player_get_gear;
+	_gear = [_player] call A_player_fnc_get_gear;
 	//keep the clone's gear in sync
 	if (str(_gear) != cached_gear) then {
-		[_player, "cached_gear", _gear, true] call object_setVariable;
+		[_player, "cached_gear", _gear, true] call A_object_fnc_setVariable;
 		cached_gear = str(_gear);
 	};
 };
@@ -582,13 +582,13 @@ check_house = {
 	_player = player;
 	
 	private["_house"];
-	_house = [_player] call house_player_near;
+	_house = [_player] call A_doors_fnc_house_player_near;
 	if (undefined(_house) || {not(INV_shortcuts) || {not(alive _player)}}) exitWith {
-		[_player] call house_remove_actions;
+		[_player] call A_doors_fnc_house_remove_actions;
 	};
 	
-	[_player,_house] call house_doors_disable;
-	[_player, _house] call house_add_actions;
+	[_player,_house] call A_doors_fnc_house_doors_disable;
+	[_player, _house] call A_doors_fnc_house_add_actions;
 };
 
 check_bunker = {
@@ -597,13 +597,13 @@ check_bunker = {
 	_player = player;
 	
 	private["_bunker"];
-	_bunker = [_player] call bunker_player_near;
+	_bunker = [_player] call A_bunker_fnc_player_near;
 	
 	if (undefined(_bunker) || {not(INV_shortcuts) || {not(alive _player)}}) exitWith {
-		[_player] call bunker_remove_actions;
+		[_player] call A_bunker_fnc_remove_actions;
 	};
 	
-	[_player, _bunker] call bunker_add_actions;
+	[_player, _bunker] call A_bunker_fnc_add_actions;
 };
 
 
@@ -613,13 +613,13 @@ check_towing = {
 	_player = player;
 	
 	private["_towing"];
-	_towing = [_player] call towing_player_near;
+	_towing = [_player] call A_towing_fnc_player_near;
 	
 	if (undefined(_towing) || {not(INV_shortcuts) || {not(alive _player)}}) exitWith {
-		[_player] call towing_remove_actions;
+		[_player] call A_towing_fnc_remove_actions;
 	};
 	
-	[_player, _towing] call towing_add_actions;
+	[_player, _towing] call A_towing_fnc_add_actions;
 };
 
 check_towed = {
@@ -627,13 +627,13 @@ check_towed = {
 	_player = player;
 	
 	private["_towed"];
-	_towed = [_player] call towed_player_near;
+	_towed = [_player] call A_towing_fnc_towed_player_near;
 	
 	if (undefined(_towed) || {not(INV_shortcuts) || {not(alive _player)}}) exitWith {
-		[_player] call towed_remove_actions;
+		[_player] call A_towing_fnc_towed_remove_actions;
 	};
 	
-	[_player, _towed] call towed_add_actions;
+	[_player, _towed] call A_towing_fnc_towed_add_actions;
 };
 
 check_near_objects = {
@@ -660,13 +660,13 @@ check_vehicle_outside_actions = {
 	_in_vehicle = (_vehicle != _player);
 	
 	private["_vehicle"];
-	_target_vehicle = [_player, 3.5] call vehicle_outside_player_near;
+	_target_vehicle = [_player, 3.5] call A_vehicle_fnc_outside_player_near;
 	//player groupChat format["_target_vehicle = %1",_target_vehicle];
 	if (undefined(_target_vehicle) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
-		[_player] call vehicle_outside_remove_actions;
+		[_player] call A_vehicle_fnc_outside_remove_actions;
 	};
 	
-	[_player, _target_vehicle] call vehicle_outside_add_actions;
+	[_player, _target_vehicle] call A_vehicle_fnc_outside_add_actions;
 };
 
 
@@ -684,11 +684,11 @@ check_plant_actions = {
 	_in_vehicle = (_vehicle != _player);
 	
 	private["_plant_netid"];
-	_plant_netid = [_player, 5] call plant_player_near;
+	_plant_netid = [_player, 5] call A_plant_fnc_player_near;
 	if (undefined(_plant_netid) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
-		[_player] call plant_remove_actions;
+		[_player] call A_plant_fnc_remove_actions;
 	};
-	[_player, _plant_netid] call plant_add_actions;
+	[_player, _plant_netid] call A_plant_fnc_add_actions;
 };
 
 client_loop = {

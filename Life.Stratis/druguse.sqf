@@ -3,7 +3,7 @@
 while {true} do {
 	for [{_i=0}, {_i < (count drugsellarray)}, {_i=_i+1}] do {
 		_obj 	= drugsellarray select _i;
-		_list 	= [_obj, "druglist"] call object_getVariable;
+		_list 	= [_obj, "druglist"] call A_object_fnc_getVariable;
 	
 		if(!undefined(_list)) then {
 			_count = count _list;
@@ -15,7 +15,7 @@ while {true} do {
 			};
 
 			if(_count > 0)then{
-				[_obj, "druglist", _list, true] call object_setVariable;
+				[_obj, "druglist", _list, true] call A_object_fnc_setVariable;
 			};
 		};
 	};

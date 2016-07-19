@@ -56,19 +56,19 @@ switch _item do {
 	case "Mammo_HE": {
 		[_veh, "HE"] call _Addrounds;
 		player groupchat "8 High Explosive rounds added";
-		[player, _item, -1] call inventory_add_item;
+		[player, _item, -1] call A_inventory_fnc_add_item;
 	};
 
 	case "Mammo_WP": {
 		[_veh, "WP"] call _Addrounds;
 		player groupchat "8 Willie Pete rounds added";
-		[player, _item, -1] call inventory_add_item;
+		[player, _item, -1] call A_inventory_fnc_add_item;
 	};
 
 	case "Mammo_IL": {
 		[_veh, "IL"] call _Addrounds;
 		player groupchat "8 Illumination rounds added";
-		[player, _item, -1] call inventory_add_item;
+		[player, _item, -1] call A_inventory_fnc_add_item;
 	};
 };
 

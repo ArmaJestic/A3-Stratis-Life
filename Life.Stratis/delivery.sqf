@@ -51,7 +51,7 @@ if (_art == "getajob_delivery") then {
 			vcl removeaction deliveryinfoaction;
 			player groupChat format[localize "STRS_workplacemission_delivery_finish", strM(workplacejob_deliverymoney)];
 			hint format["Destination: %1\nTime taken: %2 seconds.\nPay: $%3\nDistance remaining: %4m", workplacejob_deliveryname, timetaken, round workplacejob_deliverymoney, (round(workplacejob_deliveryflag Distance player))];
-			[player, 'money', round workplacejob_deliverymoney] call inventory_add_item;
+			[player, 'money', round workplacejob_deliverymoney] call A_inventory_fnc_add_item;
 			alreadygotaworkplacejob = 0;
 			workplacemissioninfos = ["", ""];
 		};

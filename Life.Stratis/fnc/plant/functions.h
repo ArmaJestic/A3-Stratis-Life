@@ -1,0 +1,15 @@
+#include "../../includes/base.h"
+
+FNC_CFG_ENTRY(init1)
+FNC_CFG_ENTRY(init2)
+FNC_CFG_ENTRY(interact_plant_seedling)
+FNC_CFG_ENTRY(add_actions)
+FNC_CFG_ENTRY(get_count)
+FNC_CFG_ENTRY(harvest_yield)
+FNC_CFG_ENTRY(life_loop)
+FNC_CFG_ENTRY(player_near)
+FNC_CFG_ENTRY(remove_actions)
+FNC_CFG_ENTRY(seed_handler_persistent)
+FNC_CFG_ENTRY(seed_lookup_id)
+FNC_CFG_ENTRY(update_count)
+FNC_CFG_ENTRY(update_yield)

@@ -197,6 +197,8 @@ class RscMenuButton {
 	
 	colorBackground[] = {1,1,1,0.8};
 	colorBackground2[] = {1,1,1,0.5};
+	colorBackgroundFocused[] = {1,1,1,1};
+	colorFocused[] = {0,0,0,1};
 	color[] = {1,1,1,1};
 	color2[] = {1,1,1,1};
 	colorText[] = {1,1,1,1};
@@ -350,6 +352,11 @@ class RscListBox {
 		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
+	
+	class ListScrollBar {
+		color[] = {1,1,1,1};
+		autoScrollEnabled = 1;
+	};
 };
 
 
@@ -412,6 +419,11 @@ class RscCombo {
 		arrowEmpty = "\a3\ui_f\data\gui\cfg\Scrollbar\arrowempty_ca.paa";
 		arrowFull = "\a3\ui_f\data\gui\cfg\Scrollbar\arrowfull_ca.paa";
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
+	};
+	
+	class ComboScrollBar
+	{
+		color[] = {1,1,1,1};
 	};
 };
 

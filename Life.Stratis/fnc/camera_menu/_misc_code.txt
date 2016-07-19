@@ -1,0 +1,26 @@
+#include "macro.h"
+
+#include "constants.h"
+
+if (not(undefined(A_camera_menu_var_functions_defined))) exitWith {};
+
+#define HEADING_OP_SET 0
+
+#define HEADING_OP_ADD 1
+
+#define HEADING_AXIS_DIRECTION 0
+
+#define HEADING_AXIS_ANGLE 1
+
+#define HEADING_AXIS_PITCH 2
+
+#define OFFSET_OP_SET 0
+
+#define OFFSET_OP_ADD 1
+
+#define OFFSET_AXIS_X 0
+
+#define OFFSET_AXIS_Y 1
+
+#define OFFSET_AXIS_Z 2
+

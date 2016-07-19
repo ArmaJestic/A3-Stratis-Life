@@ -19,7 +19,7 @@ INV_CreateFort_init_handler_persistent = {
 
 INV_CreateFort_init_handler = {
 	ARGV(0,_object);
-	if (not([_object] call object_exists)) exitWith {null};
+	if (not([_object] call A_object_fnc_exists)) exitWith {null};
 	_object lock false;
 };
 
@@ -37,7 +37,7 @@ INV_CreateFort = {
 			case "Static" do {
 				_vehicle_name = format["%1_%2_%3", _kind, player, round(time)];
 				//[[_vehicle, _vehicle_name], "INV_CreateFort_init_handler_persistent", true, true] spawn BIS_fnc_MP;
-				[[_vehicle, _vehicle_name], "INV_CreateFort_init_handler_persistent", true, true, _vehicle] spawn jip_register;
+				[[_vehicle, _vehicle_name], "INV_CreateFort_init_handler_persistent", true, true, _vehicle] spawn A_jip_fnc_register;
 				waitUntil {not(isNil _vehicle_name)};
 				[[_vehicle], "INV_CreateFort_init_handler", true, false] spawn BIS_fnc_MP;
 			};
@@ -188,7 +188,7 @@ INV_CreateAttachment = {
 	_in_hands = if (count _this > 3) then { _this select 3 } else { false };
 	
 	if (_in_hands) then {
-		[player, _class] call addWeaponItem;
+		[player, _class] call A_bis_expected_fnc_addWeaponItem;
 	}
 	else {
 		_crate addItemCargoGlobal [_class, _amount];
@@ -230,7 +230,7 @@ INV_CreateItem = {
 	_class = _this select 1;
 	_amount = _this select 2;
 	_storage = _this select 3;
-	[_object, _class, _amount, _storage] call inventory_storage_add_item;
+	[_object, _class, _amount, _storage] call A_inventory_fnc_storage_add_item;
 };
 
 
@@ -249,7 +249,7 @@ INV_LocateClosestVehicle = {
 		private["_current", "_found"];
 		_current = _list select _i;
 		//player groupChat format["_current = %1", _current];
-		if (alive(_current) && ([_current] call vehicle_player_owned)) then {
+		if (alive(_current) && ([_current] call A_vehicle_fnc_player_owned)) then {
 			_vehicle = _current;
 		};
 		_i = _i - 1;

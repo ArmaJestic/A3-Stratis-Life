@@ -1,0 +1,2 @@
+A_storage_menu_var_functions = true;
+

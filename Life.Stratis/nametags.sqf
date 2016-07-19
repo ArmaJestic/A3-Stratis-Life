@@ -3,7 +3,7 @@
 
 call disableserialization;
 
-object_atm = {
+A_object_fnc_atm = {
 	private["_object"];
 	_object = _this select 0;
 	if (undefined(_object)) exitWith {false};
@@ -14,17 +14,17 @@ object_atm = {
 };
 
 
-object_shop = {
+A_object_fnc_shop = {
 	private["_object"];
 	_object = _this select 0;
 	if (undefined(_object)) exitWith {false};
 	if (typeName _object != "OBJECT") exitWith {false};
 	if (isNull _object) exitWith {false};
 	
-	(_object in shopusearray)
+	(_object in A_farming_var_shopusearray)
 };
 
-object_vendor = {
+A_object_fnc_vendor = {
 	private["_object"];
 	_object = _this select 0;
 	if (undefined(_object)) exitWith {false};
@@ -34,7 +34,7 @@ object_vendor = {
 	(_object in vendors_list)
 };
 
-object_item = {
+A_object_fnc_item = {
 	private["_object"];
 	_object = _this select 0;
 	if (undefined(_object)) exitWith {false};
@@ -168,15 +168,15 @@ name_tags_draw = {
 	
 	private["_player", "_target", "_camera"];
 	_player = _this select 0;
-	_camera = [_player, "camera"] call object_getVariable;
-	_target = if (undefined(_camera)) then {nearCursorTarget} else {call camera_target};
+	_camera = [_player, "camera"] call A_object_fnc_getVariable;
+	_target = if (undefined(_camera)) then {nearCursorTarget} else {call A_camera_fnc_target};
 	
 	private["_font"];
 	_font = "PuristaMedium";
 	_font_size = 0.025;
 	
 	//player groupChat format["_target = %1", _target];
-	if (not([_player] call player_human)) exitWith {false};
+	if (not([_player] call A_player_fnc_human)) exitWith {false};
 	if (undefined(_target)) exitWith {false};
 	if (typeName _target != "OBJECT") exitWith {false};
 	if (isNull _target) exitWith {false};
@@ -204,19 +204,19 @@ name_tags_draw = {
 	};
 	
 	if (_target isKindOf "Animal") then {
-		[_target] call object_baptize;
+		[_target] call A_object_fnc_baptize;
 	};
 	
-	if ([_target] call object_item && {(_distance < 5)} ) exitWith {
-		if (_target == ([_player, "held_target", objNull] call object_getVariable)) exitWith {false};
+	if ([_target] call A_object_fnc_item && {(_distance < 5)} ) exitWith {
+		if (_target == ([_player, "held_target", objNull] call A_object_fnc_getVariable)) exitWith {false};
 		private["_label", "_icon"];
-		_label = [_target, "label"] call object_getVariable;
-		_icon = [_target, "icon"] call object_getVariable;
+		_label = [_target, "label"] call A_object_fnc_getVariable;
+		_icon = [_target, "icon"] call A_object_fnc_getVariable;
 		private["_head_pos"];
 		_head_pos = ([_target] call name_tags_position);
 		//drawIcon3D ["", [0,1,0,1], _head_pos, 0,0, 0, _label, 2, _font_size, _font];
 		_head_pos set [2, ((_head_pos select 2) + 0.15)];
-		[_head_pos, [0.3, 0.14],"<t size=""1.2"" align=""center"" color=""#ffffffff"" >"+ _label + "</t><br />" + "<img  align=""center"" size=""4"" image=""" + _icon + """/><br />"] call drawIcon3d__;
+		[_head_pos, [0.3, 0.14],"<t size=""1.2"" align=""center"" color=""#ffffffff"" >"+ _label + "</t><br />" + "<img  align=""center"" size=""4"" image=""" + _icon + """/><br />"] call A_hud_fnc_drawIcon3d__;
 
 		true
 	};
@@ -226,7 +226,7 @@ name_tags_draw = {
 	
 	
 
-	if (([_target] call object_atm) && _distance < 3) exitWith {
+	if (([_target] call A_object_fnc_atm) && _distance < 3) exitWith {
 		private["_head_pos"];
 		_head_pos = ([_target] call name_tags_position);
 		
@@ -234,15 +234,15 @@ name_tags_draw = {
 		true
 	};
 	
-	if ([_target] call object_shop && _distance < 3) exitWith {
+	if ([_target] call A_object_fnc_shop && _distance < 3) exitWith {
 		private["_text"];
-		if(([_player] call player_cop) and _target in drugsellarray) then { 
+		if(([_player] call A_player_fnc_blufor) and _target in drugsellarray) then { 
 			_text = "Drug Search (E)";
 		}
 		else {
 			private["_shop_name", "_action_key"];
 			_action_key = if (_target in gangareas) then {"Scroll"} else {"E"};
-			_shop_name = (_target call inventory_get_shop_array) select 1;
+			_shop_name = (_target call A_inventory_fnc_get_shop_array) select 1;
 			_text = format["%1 (%2)", _shop_name, _action_key];
 		};
 		private["_head_pos"];
@@ -254,7 +254,7 @@ name_tags_draw = {
 		true
 	};
 	
-	if ([_target] call object_vendor && _distance < 3) exitWith {
+	if ([_target] call A_object_fnc_vendor && _distance < 3) exitWith {
 		private["_vendor_name", "_vendor_data", "_text", "_head_pos"];
 		_vendor_data = ([_target] call vendor_data);
 		if (undefined(_vendor_data)) exitWith {true};
@@ -288,8 +288,8 @@ name_tags_draw = {
 
 	if ([_target] call name_tags_vehicle && _distance < 5) exitWith {
 		private["_owner", "_inside_vehicle", "_is_box", "_is_boat"];
-		_owner = ([player, _target] call vehicle_owner);
-		_inside_vehicle = ([player, _target] call mounted_player_inside);
+		_owner = ([player, _target] call A_vehicle_fnc_owner);
+		_inside_vehicle = ([player, _target] call A_mounted_fnc_player_inside);
 
 		if (_inside_vehicle) exitWith {false};
 		
@@ -325,15 +325,15 @@ name_tags_draw = {
 		true
 	};
 	
-	if ([_target] call player_human &&  _distance < 25) exitWith {
+	if ([_target] call A_player_fnc_human &&  _distance < 25) exitWith {
 		private["_text", "_color"];
-		if ([_target, "has_admin_camera"] call player_get_bool) exitWith {false};
+		if ([_target, "has_admin_camera"] call A_player_fnc_get_bool) exitWith {false};
 	
-		if ([_target] call player_cop) then{ 
+		if ([_target] call A_player_fnc_blufor) then{ 
 			_text = format["%1 (%2)", _target, (name _target)];
 			_color = [0.67,0.91,0.36,1];
 		}
-		else { if (([_target] call player_civilian) && ([_target] call player_get_bounty) > 0) then {
+		else { if (([_target] call A_player_fnc_civilian) && ([_target] call A_player_fnc_get_bounty) > 0) then {
 			_text = format["%1 (%2)", _target, (name _target)];
 			_color = [1,0,0,1];
 		}
@@ -369,21 +369,21 @@ name_3d_tags_draw = {
 	//put tags on players
 	{
 		
-		if (not(INV_shortcuts)  || [_player] call player_civilian ||
+		if (not(INV_shortcuts)  || [_player] call A_player_fnc_civilian ||
 			not(alive _player) || visibleMap) exitWith {};
 			
 		if (true) then {
 			private["_target", "_cside", "_vehicle"];
 			_target = _x;
-			_cside = ([_target] call player_side);
+			_cside = ([_target] call A_player_fnc_side);
 			_vehicle = (vehicle player);
 			
 			if (not(_side == _cside) ||  not(alive _vehicle) || not(isPlayer _target) ||
 				not(alive _target) || _target == _player ) exitWith {};
 			
 			private["_distance", "_has_admin_camera", "_under_base"];
-			_has_admin_camera = [_target, "has_admin_camera"] call player_get_bool;
-			_under_base = [_target] call under_base;
+			_has_admin_camera = [_target, "has_admin_camera"] call A_player_fnc_get_bool;
+			_A_underwater_base_fnc_under_base = [_target] call A_underwater_base_fnc_under_base;
 			_distance = _target distance _player;
 			if (_distance <  5 || _has_admin_camera || _under_base) exitWith {};
 
@@ -432,8 +432,8 @@ loading_check_stance = {
 	private["_player"];
 	_player = player;
 	
-	if (not(stats_loading_active)) exitWith {};
-	if ([_player] call object_in_water) exitWith {};
+	if (not(loading_active)) exitWith {};
+	if ([_player] call A_object_fnc_in_water) exitWith {};
 	_player switchMove "amovpercmstpsnonwnondnon";
 };
 
@@ -495,7 +495,7 @@ secondTarget__ = objNull;
 	if (not(isNull cTarget)) exitWith {cursorTarget__ = cTarget;}; \
 	cTargets = nearestObjects [(player modelToWorld (player selectionPosition "RightHand")), ["Man", "Car", "Air", "Ship", "Land_CargoBox_V1_F", "ReammoBox_F", "Items_base_F", "Cargo_base_F"], 25]; \
 	if (count(cTargets) > 0) exitWith { \
-		heldTarget__ = [player, "held_target", objNull] call object_getVariable; \
+		heldTarget__ = [player, "held_target", objNull] call A_object_fnc_getVariable; \
 		firstTarget__ = (cTargets select 1); \
 		secondTarget__ = if (count(cTargets) > 2) then {(cTargets select 2)} else {objNull}; \
 		if (not(isNull heldTarget__) && {firstTarget__ == heldTarget__}) then { \
@@ -508,26 +508,26 @@ secondTarget__ = objNull;
 	cursorTarget__ = objNull;
 	
 onEachFrame {
-	call camera_draw_helpers;
+	call A_camera_fnc_draw_helpers;
 	call water_edge_check_effects;
 	call loading_check_stance;
-	call underground_base_check_animation;
-	call underwater_base_check_transition;
-	call under_base_check_effects;
+	call A_bunker_fnc_underground_base_check_animation;
+	call A_underwater_base_fnc_underwater_base_check_transition;
+	call A_underwater_base_fnc_under_base_check_effects;
 	
 	if (not(INV_shortcuts)) exitWith {
 		drawicon3d_text_field ctrlShow false;
 	};
 	
 	
-	[player, ([player] call player_side)] call name_3d_tags_draw;
+	[player, ([player] call A_player_fnc_side)] call name_3d_tags_draw;
 	if (not([player] call name_tags_draw)) then {
 		drawicon3d_text_field ctrlShow false;
 	};
 	
-	[] call vehicle_tuning_handler;
+	[] call A_vehicle_fnc_tuning_handler;
 	
-	[] call camera_loop;
+	[] call A_camera_fnc_loop;
 	cursorTarget_calculate;
 };
 
@@ -540,7 +540,7 @@ name_tags_loop = {
 	_player = player;
 	if (alive _player) then {
 		private["_side"];
-		_side = [_player] call player_side;
+		_side = [_player] call A_player_fnc_side;
 		name_tags_side_units = name_tags_side_units - [objNull];
 		
 		private["_cplayer", "_cside"];

@@ -29,5 +29,5 @@ if (_art == "use") then {
 
 	if (!(alive player)) exitWith {null};
 	call compile format ["liafu = true; autobombe%2 = createVehicle [""Bo_GBU12_LGB"", (%1), [], 0, ""NONE""];",(getpos player), (round (random 2000))];
-	[player, _item, -1] call inventory_add_item;
+	[player, _item, -1] call A_inventory_fnc_add_item;
 };

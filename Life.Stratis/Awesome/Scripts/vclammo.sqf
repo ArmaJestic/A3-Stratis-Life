@@ -27,4 +27,4 @@ if ((count _weapons) <= 0) exitwith {player groupchat "This seat has no weapons!
 
 
 player groupChat localize "STRS_inv_item_vclammo_rearmed";
-[player, _item, -1] call inventory_add_item;
+[player, _item, -1] call A_inventory_fnc_add_item;

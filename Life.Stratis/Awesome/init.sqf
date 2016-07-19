@@ -19,13 +19,13 @@ waitUntil{scriptDone _h};
 _h = [] execVM "Awesome\Retributions\functions.sqf"; 
 waitUntil{scriptDone _h};
 
-//_h = [] execVM "Awesome\Functions\armoredsuv_functions.sqf"; 
+//_h = [] execVM "Awesome\Functions\A_armoredsuv_var_functions.sqf"; 
 //waitUntil{scriptDone _h};
 
 //_h = [] execVM "Awesome\Functions\halo_functions.sqf"; 
 //waitUntil{scriptDone _h};
 
-_h = [] execVM "Awesome\Functions\trunk_functions.sqf"; 
+_h = [] execVM "Awesome\Functions\A_trunk_var_functions.sqf"; 
 waitUntil{scriptDone _h};
 
 if(isClient) then {
@@ -33,9 +33,9 @@ if(isClient) then {
 	[] execVM "Awesome\Client\client_loop.sqf";
 };
 	
-enableEngineArtillery false;
 
-[player, "stunned", false] call player_set_bool;
+
+[player, "stunned", false] call A_player_fnc_set_bool;
 
 //ins_area_1 setTriggerActivation ["VEHICLE", "PRESENT", true];
 //opfor_area_1 setTriggerActivation ["VEHICLE", "PRESENT", true];

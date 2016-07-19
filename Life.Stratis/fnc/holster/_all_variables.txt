@@ -1,0 +1,4 @@
+A_holster_var_actions = [];
+
+A_holster_var_functions_defined = false;
+

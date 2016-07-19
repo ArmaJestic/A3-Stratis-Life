@@ -7,12 +7,12 @@ _home   = _arguments select 1;
 
 
 if (_action_name == "buy" ) then {
-    _moneh  = [player, 'money'] call inventory_get_item_amount;
+    _moneh  = [player, 'money'] call A_inventory_fnc_get_item_amount;
     _cost = (_home select home_buying_price);
     if (_moneh < _cost) 
         exitWith {player groupChat "Not enough money in your inventory to buy this house";};
 	
-    [player, 'money', -(_cost)] call inventory_add_item;
+    [player, 'money', -(_cost)] call A_inventory_fnc_add_item;
 
     [_home] call home_buy;  
 	
@@ -20,10 +20,10 @@ if (_action_name == "buy" ) then {
 };
 
 if (_action_name == "sell") then {
-    _moneh  = [player, 'money'] call inventory_get_item_amount;
+    _moneh  = [player, 'money'] call A_inventory_fnc_get_item_amount;
     _cost = (_home select home_selling_price);
 
-    [player, 'money', (_cost)] call inventory_add_item;
+    [player, 'money', (_cost)] call A_inventory_fnc_add_item;
     [_home] call home_sell;
 	
     if(true) exitWith {null};

@@ -27,7 +27,7 @@ if (_art == "use") then {
 				}
 				else {
 					player groupChat localize "STRS_inv_items_defuser_failed";
-					[(position player)] spawn Bomb_Vehicle;
+					[(position player)] spawn A_misc_fnc_Bomb_Vehicle;
 				};
 			}
 			else {
@@ -38,7 +38,7 @@ if (_art == "use") then {
 			for [{_i=0}, {_i < (count INV_ServerBombArray)}, {_i=_i+1}] do {
 				if (((INV_ServerBombArray select _i) select 1) == (vehicle player)) exitWith {
 					format["""%1"" call INV_BombDelete", ((INV_ServerBombArray select _i) select 0)] call broadcast;
-					[player, ((INV_ServerBombArray select _i) select 2), 1] call inventory_add_item;
+					[player, ((INV_ServerBombArray select _i) select 2), 1] call A_inventory_fnc_add_item;
 					player groupChat localize "STRS_inv_items_defuser_success";
 				};
 			};

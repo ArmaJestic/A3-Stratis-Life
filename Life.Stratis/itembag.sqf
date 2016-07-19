@@ -18,6 +18,6 @@ if (_art == "use") then {
 	};
 
 	if (_deleted > 0) then {
-		[player, _item, -(1)] call inventory_add_item;
+		[player, _item, -(1)] call A_inventory_fnc_add_item;
 	};
 };

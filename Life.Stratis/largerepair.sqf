@@ -13,7 +13,7 @@ if (_art == "use") then {
 	if ((damage _vcl) == 0) exitWith {player groupChat localize "STRS_inv_items_repair_notneeded";};
 
 	player groupchat "Repairing! Stay close outside of vehicle";
-	[player, _item, -1] call inventory_add_item;
+	[player, _item, -1] call A_inventory_fnc_add_item;
 	format ["%1 switchmove ""InBaseMoves_repairVehicleKnl"";", player] call broadcast;
 	sleep 10;
 	if ((player distance _vcl < 10) and (!isPlayer _vcl) and (speed _vcl < 1)) then {
@@ -21,7 +21,7 @@ if (_art == "use") then {
 		player groupChat localize "STRS_inv_items_repair_repaired";
 	}
 	else {
-		[player, _item, 1] call inventory_add_item;
+		[player, _item, 1] call A_inventory_fnc_add_item;
 		player groupChat "Repairs canceled by moving or having someone inside vehicle";
 	};
 };

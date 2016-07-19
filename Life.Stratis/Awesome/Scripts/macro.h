@@ -5,8 +5,8 @@
 #define ARGVD(o,v,d) private[#v]; if (isNil "_this" || {typeName _this != "ARRAY" || {o >= (count _this) || {v = _this select o; isNil #v}}}) then {v = d};
 #define ARGV(o,v) ARGVD(o,v,null)
 
-#define MASTER_ARRAY_ITEM_NAME(x) (((x call inventory_get_item_array) select 2) select 1)
-#define MASTER_ARRAY_ITEM_TYPE(x) (((x call inventory_get_item_array) select 1) select 0)
+#define MASTER_ARRAY_ITEM_NAME(x) (((x call A_inventory_fnc_get_item_array) select 2) select 1)
+#define MASTER_ARRAY_ITEM_TYPE(x) (((x call A_inventory_fnc_get_item_array) select 1) select 0)
 
 #define drawicon3d_control (uiNamespace getVariable "drawIcon3d_hud")
 #define drawicon3d_text_field (drawicon3d_control displayCtrl drawIcon3d_text_idc)

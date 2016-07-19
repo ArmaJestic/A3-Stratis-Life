@@ -1,0 +1,2 @@
+if (!undefined(A_encoding_var_encoding_functions)) exitWith {null};
+

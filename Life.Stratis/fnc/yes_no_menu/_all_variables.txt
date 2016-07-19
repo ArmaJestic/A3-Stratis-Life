@@ -1,0 +1,2 @@
+A_yes_no_menu_var_functions_defined = true;
+

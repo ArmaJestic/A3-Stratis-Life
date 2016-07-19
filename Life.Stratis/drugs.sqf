@@ -18,7 +18,7 @@ if (_art == "use") then {
 	if (INV_drogenusesperre == 1) exitWith {player groupChat localize "STRS_inv_item_druguse_toomany";};
 	if (INV_drogen_usesperre) then {INV_drogenusesperre = 1;};
 	INV_DrogenCounter =  INV_DrogenCounter + _anzahl;
-	[player, _item, -(_anzahl)] call inventory_add_item;
+	[player, _item, -(_anzahl)] call A_inventory_fnc_add_item;
 	_endeZeit = time + 60 + (_anzahl * 10);
 	
 	private["_player", "_duration"];
@@ -26,19 +26,19 @@ if (_art == "use") then {
 	_duration = 60 + (_anzahl * 10);
 
 	if (_item == "lsd") then {
-		[_player, _duration] call drug_lsd_effects;
+		[_player, _duration] call A_drug_fnc_lsd_effects;
 	};
 
 	if (_item == "Cocaine") then {
-		[_player, _duration] call drug_cocaine_effects;
+		[_player, _duration] call A_drug_fnc_cocaine_effects;
 	};
 
 	if (_item == "marijuana") then {
-		[_player, _duration] call drug_marijuana_effects;
+		[_player, _duration] call A_drug_fnc_marijuana_effects;
 	};
 	
 	if (_item == "heroin") then {
-		[_player, _duration] call drug_heroin_effects;
+		[_player, _duration] call A_drug_fnc_heroin_effects;
 	};
 
 	player groupChat localize "STRS_inv_item_druguse_ende";

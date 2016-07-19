@@ -8,7 +8,7 @@ player createDiarySubject ["blufor","Bluefor Faction"];
 player createDiarySubject ["opfor","Opfor Faction"];
 player createDiarySubject ["indfor","Indfor Faction"];
 player createDiarySubject ["controls","SL Controls"];
-player createDiarySubject ["stun","SL Stunning"];
+player createDiarySubject ["stun","SL A_stun_var_stunning"];
 player createDiarySubject ["hunting","SL Hunting"];
 player createDiarySubject ["clothes","SL Clothing"];
 player createDiarySubject ["paint","SL Painting"];

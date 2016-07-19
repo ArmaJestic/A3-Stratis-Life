@@ -81,7 +81,7 @@ while {true} do {
 
 		player groupChat format[localize "STRS_workplacemission_search_finish", strM(_money)];
 
-		[player, 'money', _money] call inventory_add_item;
+		[player, 'money', _money] call A_inventory_fnc_add_item;
 
 		alreadygotaworkplacejob = 0;
 	};

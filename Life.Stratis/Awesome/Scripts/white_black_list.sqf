@@ -289,7 +289,7 @@ A_WBL_F_DIALOG_INIT = {
 			lbClear _DFML_LIST3;
 			
 			{
-				if ([_x] call player_human) then {
+				if ([_x] call A_player_fnc_human) then {
 					private["_uid"];
 					_uid = (getPlayerUID _x);
 					

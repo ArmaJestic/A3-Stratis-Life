@@ -1,0 +1,15 @@
+// A_inventory_fnc_get_vehicle_type
+
+#include "../../includes/constants.h"
+#include "../../includes/macro.h"
+
+
+private ["_Fresult"];
+_Fresult = -1;
+{
+	if (((_x select 2) select 0) == _this) then {
+		_Fresult = ((_x select 4) select 0);
+	};
+}
+forEach AllLifeMissionObjects;
+_Fresult

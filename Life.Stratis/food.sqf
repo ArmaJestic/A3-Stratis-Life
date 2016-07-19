@@ -87,7 +87,7 @@ if (_art == "use") then {
     _item   = _this select 1;
     _anzahl = _this select 2;
     _hungerStillen = 0;
-    _amount = [player, _item] call inventory_get_item_amount;
+    _amount = [player, _item] call A_inventory_fnc_get_item_amount;
 
     switch _item do {
         case "trout":  { _hungerStillen = 20; };
@@ -101,7 +101,7 @@ if (_art == "use") then {
     };
 
     if (_amount >= _anzahl) then {
-        [player, _item, -(_anzahl)] call inventory_add_item;
+        [player, _item, -(_anzahl)] call A_inventory_fnc_add_item;
         if(_item == "Donut" and isciv)exitwith{player groupchat "the donut turns to ash in your mouth..."};
         INV_hunger = INV_hunger - (_hungerStillen*_anzahl);
         if (INV_hunger < 0) then {INV_hunger = 0};

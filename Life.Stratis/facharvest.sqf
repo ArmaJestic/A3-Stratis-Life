@@ -1,6 +1,6 @@
 #include "Awesome\Functions\macro.h"
 
-["INV_Fabrikowner", []] call stats_init_variable;
+["INV_Fabrikowner", []] call A_stats_fnc_init_variable;
 
 INV_FarmItemArray =
 [

@@ -1,0 +1,4 @@
+if (not(undefined(A_camera_var_functions_defined))) exitWith {null};
+
+[] call A_camera_fnc_create_setPos_reference;
+

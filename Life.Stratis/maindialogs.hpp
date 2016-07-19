@@ -72,7 +72,7 @@ class civcamdialog {
 		w = 0.17; h = 0.04;
 
 		text = $STRD_description_civcam_submit;
-		action = "[player, (missionNamespace getVariable(lbData [1, lbCurSel 1])), round([(sliderPosition 2)] call parse_number)] call interact_civilian_camera; closeDialog 0";
+		action = "[player, (missionNamespace getVariable(lbData [1, lbCurSel 1])), round([(sliderPosition 2)] call A_misc_fnc_parse_number)] call A_interaction_fnc_civilian_camera; closeDialog 0";
 	};
 
 	class dummybutton : RscDummy {
@@ -137,7 +137,7 @@ class wantedrelease {
 		w = 0.15; h = 0.04;
 
 		text = $STRD_description_submit;
-		action = "[player, (missionNamespace getVariable (lbData [1, lbCurSel 1])), (ctrlText 2)] call interact_want_player; closeDialog 0";
+		action = "[player, (missionNamespace getVariable (lbData [1, lbCurSel 1])), (ctrlText 2)] call A_interaction_fnc_want_player; closeDialog 0";
 	};
 
 	class header2 : RscText {
@@ -174,7 +174,7 @@ class wantedrelease {
 		w = 0.15; h = 0.04;
 
 		text = $STRD_description_wantedrelease_submit;
-		action = "[player, (missionNamespace getVariable (lbData [11, lbCurSel 11]))] call interact_release_player; closeDialog 0";
+		action = "[player, (missionNamespace getVariable (lbData [11, lbCurSel 11]))] call A_interaction_fnc_release_player; closeDialog 0";
 	};
 
 	class set_unwanted : RscButton {
@@ -182,7 +182,7 @@ class wantedrelease {
 		w = 0.16; h = 0.04;
 
 		text = $STRD_description_wantedrelease_submit_unwanted;
-		action = "[player, (missionNamespace getVariable (lbData [1, lbCurSel 1]))] call interact_unwant_player; closeDialog 0";
+		action = "[player, (missionNamespace getVariable (lbData [1, lbCurSel 1]))] call A_interaction_fnc_unwant_player; closeDialog 0";
 	};
 
 	class dummybutton : RscDummy {
@@ -220,7 +220,7 @@ class gang_menu {
 		w = 0.20; h = 0.04;
 
 		text = "Join gang";
-		action = "[player, (lbData [202, (lbCurSel 202)])] call interact_gang_join; closedialog 0;";
+		action = "[player, (lbData [202, (lbCurSel 202)])] call A_interaction_fnc_gang_join; closedialog 0;";
 	};
 
 	class button_leave : RscButton {
@@ -228,7 +228,7 @@ class gang_menu {
 		w = 0.20; h = 0.04;
 
 		text = "Leave gang";
-		action = "[player] call interact_gang_leave; closedialog 0;";
+		action = "[player] call A_interaction_fnc_gang_leave; closedialog 0;";
 	};
 
 	class button_manage : RscButton {
@@ -236,7 +236,7 @@ class gang_menu {
 		w = 0.20; h = 0.04;
 
 		text = "Manage gang";
-		action = "closedialog 0; [player, (lbData [202, (lbCurSel 202)])] call interact_gang_manage_menu;";
+		action = "closedialog 0; [player, (lbData [202, (lbCurSel 202)])] call A_interaction_fnc_gang_manage_menu;";
 	};
 
 	class button_create : RscButton {
@@ -244,7 +244,7 @@ class gang_menu {
 		w = 0.20; h = 0.04;
 
 		text = "Create gang";
-		action = "closedialog 0; [player] call interact_gang_create_menu;";
+		action = "closedialog 0; [player] call A_interaction_fnc_gang_create_menu;";
 	};
 
 	class listbox_gilden : RscListBox {
@@ -291,7 +291,7 @@ class gilde_gruenden {
 		w = 0.20; h = 0.04;
 
 		text = "Create";
-		action = "[player, (ctrlText 1)] call interact_gang_create; closedialog 0;";
+		action = "[player, (ctrlText 1)] call A_interaction_fnc_gang_create; closedialog 0;";
 	};
 
 	class cancel : RscButton {
@@ -389,7 +389,7 @@ class manage_gang_menu {
 	class open_checkbox: GCheckBox {
 		x = 0.26; y = 0.55;
 		w = 0.38; h = 0.04;
-		onCheckBoxesSelChanged = "[player] call interact_gang_toggle_open; call interact_gang_update_open_cbox;";
+		onCheckBoxesSelChanged = "[player] call A_interaction_fnc_gang_toggle_open; call A_interaction_fnc_gang_update_open_cbox;";
 	};
 
 	class kick_member_button : RscButton {
@@ -398,7 +398,7 @@ class manage_gang_menu {
 		w = 0.38; h = 0.04;
 
 		text = "Kick";
-		action = "[player, (lbData [102, (lbCurSel 102)])] call interact_gang_kick; closedialog 0;";
+		action = "[player, (lbData [102, (lbCurSel 102)])] call A_interaction_fnc_gang_kick; closedialog 0;";
 	};
 	
 	class make_leader_button : RscButton {
@@ -407,7 +407,7 @@ class manage_gang_menu {
 		w = 0.38; h = 0.04;
 
 		text = "Make Leader";
-		action = "[player, (lbData [102, (lbCurSel 102)])] call interact_gang_make_leader; closedialog 0;";
+		action = "[player, (lbData [102, (lbCurSel 102)])] call A_interaction_fnc_gang_make_leader; closedialog 0;";
 	};
 
 	class close_button : RscButton {

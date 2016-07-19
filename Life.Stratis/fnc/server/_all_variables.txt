@@ -1,0 +1,2 @@
+A_server_var_functions_defined = true;
+

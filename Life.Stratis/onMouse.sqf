@@ -23,27 +23,27 @@ mouseButtonDown_handler = {_this spawn {
 	
 	
 	if (_button == 0) then {
-		if ([_player] call drag_object_active) then {
+		if ([_player] call A_drag_fnc_object_active) then {
 			private["_object"];
-			_object = [_player, "held_target", objNull] call object_getVariable;
+			_object = [_player, "held_target", objNull] call A_object_fnc_getVariable;
 			
 			if (isNull _object) exitWith {};
 			private["_item"];
-			_item = [_object, "item", ""] call object_getVariable;
+			_item = [_object, "item", ""] call A_object_fnc_getVariable;
 			if (_item == "knife") exitWith {
-				[[_player, _object]] call interact_use_knife;
+				[[_player, _object]] call A_interaction_fnc_use_knife;
 			};
 			
 			if (_item == "woodaxe" || {_item == "pickaxe"}) exitWith {
-				[[_player, _object]] call interact_use_axe;
+				[[_player, _object]] call A_interaction_fnc_use_axe;
 			};
 			
 			if (_item == "shovel") exitWith {
-				[[_player, _object]] call interact_use_shovel;
+				[[_player, _object]] call A_quarry_fnc_interact_use_shovel;
 			};
 			
 			if (_item == "bucket") exitWith {
-				[[_player, _object]] call interact_use_bucket;
+				[[_player, _object]] call A_interaction_fnc_use_bucket;
 			};
 		};	
 	};

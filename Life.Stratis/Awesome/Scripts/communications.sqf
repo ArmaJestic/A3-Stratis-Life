@@ -17,10 +17,10 @@ BIS_MENU_GroupCommunication = [
 	//--- Item name, shortcut, -5 (do not change), expression, show, enable
 	["Settings", [], "", -5, [["expression", "[""Einstellungen""] call A_SCRIPT_SETTINGS;"]], "1", "1"],
 	["",[],"",-1,[],"0","0"],
-	["Say text #1", [2], "", -5, [["expression", "[RadioTextMsg_1, RadioTextArt_1] call SayDirectSpeach;"]], "1", "1"],
-	["Say text #2", [3], "", -5, [["expression", "[RadioTextMsg_2, RadioTextArt_2] call SayDirectSpeach;"]], "1", "1"],
-	["Say text #3", [4], "", -5, [["expression", "[RadioTextMsg_3, RadioTextArt_3] call SayDirectSpeach;"]], "1", "1"],
-	["Say text #4", [5], "", -5, [["expression", "[RadioTextMsg_4, RadioTextArt_4] call SayDirectSpeach;"]], "1", "1"],
+	["Say text #1", [2], "", -5, [["expression", "[RadioTextMsg_1, RadioTextArt_1] call A_misc_fnc_SayDirectSpeach;"]], "1", "1"],
+	["Say text #2", [3], "", -5, [["expression", "[RadioTextMsg_2, RadioTextArt_2] call A_misc_fnc_SayDirectSpeach;"]], "1", "1"],
+	["Say text #3", [4], "", -5, [["expression", "[RadioTextMsg_3, RadioTextArt_3] call A_misc_fnc_SayDirectSpeach;"]], "1", "1"],
+	["Say text #4", [5], "", -5, [["expression", "[RadioTextMsg_4, RadioTextArt_4] call A_misc_fnc_SayDirectSpeach;"]], "1", "1"],
 	["",[],"",-1,[],"0","0"]
 //	["Headbug", [0], "", -5, [["expression", "fixme = [] execVM ""headbug.sqf"""]], "1", "1"],
 //	["",[],"",-1,[],"0","0"]

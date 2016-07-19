@@ -4,7 +4,7 @@ _art = _this select 0;
 
 if (_art == "use") then {
 	_item    = _this select 1;
-	_class	 = _item call inventory_get_item_class;
+	_class	 = _item call A_inventory_fnc_get_item_class;
 	_exitvar = 0;
 
 	if (player != vehicle player) exitWith {
@@ -22,7 +22,7 @@ if (_art == "use") then {
 
 	if (_exitvar == 1) exitWith {null};
 
-	[player, _item, -1] call inventory_add_item;
+	[player, _item, -1] call A_inventory_fnc_add_item;
 
 	_pos = [(position player select 0) + (sin(getdir player)*2), (position player select 1) + (cos(getdir player)*2), 0];
 	_obj = createVehicle [_class, [0,0,0], [], 0, "NONE"];

@@ -7,7 +7,7 @@ class storage_menu {
 	
 	name = "STORAGE_MENU";
 	onLoad="uiNamespace setVariable ['STORAGE_MENU', _this select 0]";
-	onUnload = "call trunk_close;";
+	onUnload = "call A_trunk_fnc_close;";
 	
 	controlsBackground[] = {
 		storage_menu_left_header, 

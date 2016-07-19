@@ -1,0 +1,4 @@
+if (not(undefined(A_stats_var_functions_defined))) exitWith {null};
+
+[] call A_stats_fnc_setup;
+

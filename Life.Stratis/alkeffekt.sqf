@@ -14,7 +14,7 @@ if (_art == "init") then {
 		if (INV_alkoholusesperre == 1) exitWith {player groupChat localize "STRS_inv_item_druguse_toomany";};
 		if (INV_alkohol_usesperre) then {INV_alkoholusesperre = 1;};
 		INV_AlkoholCounter =  INV_AlkoholCounter + _anzahl;
-		[player, _item, -(_anzahl)] call inventory_add_item;
+		[player, _item, -(_anzahl)] call A_inventory_fnc_add_item;
 		_endeZeit = time + 45 + (_anzahl * 10);
 		_fadeInTime   = 0;
 		_fadeOutTime  = 0;

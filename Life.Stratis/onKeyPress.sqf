@@ -21,10 +21,10 @@ keyboard_animation_handler = {
 	if(arrested) exitWith{ false };
 	private["_player"];
 	_player = player;
-	if (([_player, (vehicle _player)] call mounted_player_inside)) exitWith { false };
+	if (([_player, (vehicle _player)] call A_mounted_fnc_player_inside)) exitWith { false };
 	
 	if(dialog) exitWith {closeDialog 0;};
-	[_player] call interact_animations_menu;
+	[_player] call A_interaction_fnc_animations_menu;
 	true
 };
 
@@ -71,13 +71,13 @@ keyboard_lock_unlock_handler = {
 	_inside_vehicle = ((vehicle _player) != _player);
 	_vehicle = if (_inside_vehicle) then {(vehicle player)} else {_vehicle};
 	
-	if (not([_player, _vehicle] call vehicle_owner)) exitWith {
+	if (not([_player, _vehicle] call A_vehicle_fnc_owner)) exitWith {
 		player groupchat "You do not have the keys to this vehicle";
 		true
 	};
 	
 	private["_state"];
-	_state = [_vehicle] call vehicle_toggle_lock;
+	_state = [_vehicle] call A_vehicle_fnc_toggle_lock;
 	private["_message"];
 	_message = if (_state) then {"Vehicle locked"} else {"Vehicle unlocked"};
 	player groupChat _message;
@@ -114,28 +114,28 @@ keyboard_trunk_handler = {
 	};
 	
 	
-	if(not([player, _vehicle] call vehicle_owner)) exitWith {
+	if(not([player, _vehicle] call A_vehicle_fnc_owner)) exitWith {
 		player groupchat "You do not have the keys to this vehicle.";
 		false
 	};
 	
-	if (([_vehicle] call trunk_in_use)) exitWith { 
-		player groupChat format["This vehicle's trunk is being used by %1", ([_vehicle] call trunk_user)];
+	if (([_vehicle] call A_trunk_fnc_in_use)) exitWith { 
+		player groupChat format["This vehicle's trunk is being used by %1", ([_vehicle] call A_trunk_fnc_user)];
 		false
 	};
 	
-	[_vehicle] call trunk_open;
-	[player, _vehicle] call storage_menu_vehicle_storage;
+	[_vehicle] call A_trunk_fnc_open;
+	[player, _vehicle] call A_storage_menu_fnc_menu_vehicle_storage;
 	true
 };
 
 keyboard_stunned_check = {
-	(([player, "stunned"] call player_get_bool))
+	(([player, "stunned"] call A_player_fnc_get_bool))
 };
 
 keyboard_restrained_check = {
-	if (iscop) exitWith {false};
-	([player, "restrained"] call player_get_bool)
+	if (isblu) exitWith {false};
+	([player, "restrained"] call A_player_fnc_get_bool)
 };
 
 
@@ -159,17 +159,17 @@ keyboard_interact_handler = {
 		_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
 		
 		_men = nearestobjects [_posFind,["Man", "B_supplyCrate_F", "Box_NATO_Wps_F", "BarrelBase", "Barrels", "Box_NATO_WpsSpecial_F", "Box_East_Wps_F", "Box_East_WpsSpecial_F", "Box_East_Support_F", "Box_NATO_Support_F"], 1] - [player];
-		_atms = nearestObjects [_posFind, object_atm_classes, 2];
+		_atms = nearestObjects [_posFind, A_object_var_atm_classes, 2];
 		_civ = _men select 0;
 		_atm = _atms select 0;
 
-		_handled = [player, _atm] call interact_atm;
+		_handled = [player, _atm] call A_interaction_fnc_atm;
 		if (_handled) exitWith {null};
 		
-		_handled = [player, _civ] call interact_human;
+		_handled = [player, _civ] call A_interaction_fnc_human;
 		if (_handled) exitWith {null};
 		
-		_handled = [player, _civ] call interact_ai;
+		_handled = [player, _civ] call A_interaction_fnc_ai;
 		if (_handled) exitWith {null};
 	};
 
@@ -177,7 +177,7 @@ keyboard_interact_handler = {
 
 	//INTERACTIONS WITH VEHICLES
 	private["_player_inside"];
-	_player_inside = [player, (vehicle player)] call mounted_player_inside;
+	_player_inside = [player, (vehicle player)] call A_mounted_fnc_player_inside;
 	//player groupChat format["_player_inside = %1", _player_inside];
 	if (not(_player_inside) && not(_ctrl)) exitWith {
 		private ["_vcl"];
@@ -194,7 +194,7 @@ keyboard_interact_handler = {
 		if((locked _vcl) == 2) exitWith { false };
 		
 		private["_entered"];
-		_entered = [player, _vcl, false] call player_enter_vehicle;
+		_entered = [player, _vcl, false] call A_player_fnc_enter_vehicle;
 		
 		if (_entered) exitWith {
 			 [] spawn {
@@ -218,7 +218,7 @@ keyboard_interact_handler = {
 			player groupchat "The vehicle is moving too fast"; 
 			false 
 		};
-		[player, _vcl, false] call player_exit_vehicle;
+		[player, _vcl, false] call A_player_fnc_exit_vehicle;
 		true
 	};
 	
@@ -228,7 +228,7 @@ keyboard_interact_handler = {
 keyboard_breakout_vehicle_handler = {
 	if(!INV_shortcuts) exitWith {false};
 	if (keyblock) exitWith {false};
-	[player, (vehicle player)] spawn interact_vehicle_breakout;
+	[player, (vehicle player)] spawn A_interaction_fnc_vehicle_breakout;
 	true
 };
 
@@ -243,7 +243,7 @@ keyboard_cop_siren_handler = {
 
 keyboard_stun_handler = {
 	if(!INV_shortcuts) exitWith {false};
-	[player] call stun_close_range;
+	[player] call A_stun_fnc_close_range;
 	true
 };
 
@@ -259,14 +259,14 @@ keyboard_cop_horn_handler = {
 keyboard_main_dialog_handler = {
 	if(!INV_shortcuts) exitWith {false};
 	if(dialog) exitWith {closeDialog 0; false };
-	[] call main_menu_create;
+	[] call A_main_menu_fnc_create;
 	true
 };
 
 keyboard_inventory_dialog_handler = {
 	if(!INV_shortcuts) exitWith {false};
 	if(dialog) exitWith {closeDialog 0; false};
-	[player] spawn interact_inventory_menu;
+	[player] spawn A_interaction_fnc_inventory_menu;
 	true
 };
 
@@ -294,10 +294,10 @@ keyboard_surrender_handler = {
 	private["_state"];
 	_state = (animationState player);
 	if (_state == "AmovPercMstpSnonWnonDnon_AmovPercMstpSsurWnonDnon") then {
-		[[player], "player_unsurrender_animation", true] call BIS_fnc_MP;
+		[[player], "A_player_fnc_unsurrender_animation", true] call BIS_fnc_MP;
 	}	
 	else {
-		[[player], "player_surrender_animation", true] call BIS_fnc_MP;
+		[[player], "A_player_fnc_surrender_animation", true] call BIS_fnc_MP;
 	};
 	true
 };
@@ -318,33 +318,33 @@ keyboard_gangs_handler = {
 	if(!INV_shortcuts) exitWith {false};
 	if(dialog) exitWith {closeDialog 0; false};
 	if (not(isciv)) exitWith {false};
-	[player] call interact_gang_menu;
+	[player] call A_interaction_fnc_gang_menu;
 	true
 };
 
 keyboard_admin_menu_handler = {
 	if(!INV_shortcuts) exitWith {false};
 	if(dialog) exitWith {closeDialog 0; false};
-	if (not([player] call player_admin)) exitWith {false};
+	if (not([player] call A_player_fnc_admin)) exitWith {false};
 	
-	[player] call interact_admin_menu;
+	[player] call A_interaction_fnc_admin_menu;
 	true
 };
 
 keyboard_cop_menu_handler = {
 	if(!INV_shortcuts) exitWith {false};
 	if(dialog) exitWith {closeDialog 0; false};
-	if (not(iscop)) exitWith {false};
-	if ([player] call player_get_dead) exitWith {null};
+	if (not(isblu)) exitWith {false};
+	if ([player] call A_player_fnc_get_dead) exitWith {null};
 	
 	private["_inVehicle"];
 	_inVehicle = (vehicle player != player);
 	
 	if (not(_inVehicle)) then {
-		[] call police_field_menu_create;
+		[] call A_police_menu_fnc_field_menu_create;
 	}
 	else {
-		[] call police_vehicle_menu_create;
+		[] call A_police_menu_fnc_vehicle_menu_create;
 	};
 	
 	true
@@ -353,9 +353,9 @@ keyboard_cop_menu_handler = {
 keyboard_weapon_modifications_handler = {
 	if(!INV_shortcuts) exitWith {false};
 	if(dialog) exitWith {closeDialog 0; false};
-	if ([player] call player_get_dead) exitWith {null};
+	if ([player] call A_player_fnc_get_dead) exitWith {null};
 	
-	[player] call interact_weapon_modifications_menu;
+	[player] call A_interaction_fnc_weapon_modifications_menu;
 	
 	true
 };
@@ -377,11 +377,11 @@ keyboard_an2_faster_handler = {
 
 keyboard_cop_speed_gun_handler = {
 	if (!INV_shortcuts) exitWith {false};
-	if (not(iscop)) exitWith {false};
+	if (not(isblu)) exitWith {false};
 	private["_vehicle"];
 	_vehicle = (vehicle player);
-	if (not([_vehicle, "speedgun", false] call object_getVariable)) exitWith {};
-	[] spawn speed_gun_toggle;
+	if (not([_vehicle, "speedgun", false] call A_object_fnc_getVariable)) exitWith {};
+	[] spawn A_speed_gun_fnc_toggle;
 	true
 };
 
@@ -417,7 +417,7 @@ KeyUp_handler = {
 	
 	//Fix for exploit using cross-arms animation, that allows players to glitch through walls
 	if ((animationState player) == "shaftoe_c0briefing_otazky_loop6") then {
-		player setPosATL ([player, "animation_position"] call object_getVariable);
+		player setPosATL ([player, "animation_position"] call A_object_fnc_getVariable);
 	};
 	
 	if (_key == DIK_W) then {
@@ -542,7 +542,7 @@ KeyDown_handler = {
 	
 	//Fix for exploit using cross-arms animation, that allows players to glitch through walls
 	if ((animationState player) == "shaftoe_c0briefing_otazky_loop6") then {
-		player setPosATL ([player, "animation_position"] call object_getVariable);
+		player setPosATL ([player, "animation_position"] call A_object_fnc_getVariable);
 	};
 	
 	private["_inVehicle", "_isDriver"];
@@ -616,7 +616,7 @@ KeyDown_handler = {
 		case DIK_F: {
 			if (not(_ctrl)) exitWith {_handled = false;};
 			
-			if (_inVehicle && iscop) then {
+			if (_inVehicle && isblu) then {
 				_handled = [] call keyboard_cop_siren_handler;
 			}
 			else { if (not(_inVehicle)) then{
@@ -626,13 +626,13 @@ KeyDown_handler = {
 		
 		case DIK_G: {
 			if (not(_ctrl)) exitWith {_handled = false;};
-			if (not(iscop && _inVehicle && _isDriver)) exitWith {_handled = false;};
+			if (not(isblu && _inVehicle && _isDriver)) exitWith {_handled = false;};
 			_handled = [] call keyboard_cop_speed_gun_handler;
 		};
 		
 		case DIK_H: {
 			if (not(_ctrl)) exitWith {_handled = false;};
-			if (not(iscop && _inVehicle && _isDriver)) exitWith {_handled = false;};
+			if (not(isblu && _inVehicle && _isDriver)) exitWith {_handled = false;};
 			_handled = [] call keyboard_cop_horn_handler;
 		};
 		
@@ -680,13 +680,13 @@ keyboard_admin_handler = {
 	
 	server globalChat format["Admin command!"];
 	//create the admin list if it does not exist
-	if (not(["admin_list"] call list_exists)) then {
-		["admin_list", "Admin List"] call list_create;		
+	if (not(["admin_list"] call A_list_fnc_exists)) then {
+		["admin_list", "Admin List"] call A_list_fnc_create;		
 	};
 	
 	//add player to admin list if he is not in it
-	if (not(["admin_list", (getPlayerUID _player)] call list_contains_key)) then {
-		["admin_list", (getPlayerUID _player), ""] call list_put_value;
+	if (not(["admin_list", (getPlayerUID _player)] call A_list_fnc_contains_key)) then {
+		["admin_list", (getPlayerUID _player), ""] call A_list_fnc_put_value;
 	};
 	
 	
@@ -712,9 +712,9 @@ keyboard_setup = {
 	_display displayAddEventHandler ["KeyUp", "_this call KeyUp_handler"];
 	_display displayAddEventHandler ["KeyDown", "_this call keyboard_admin_handler"];
 	
-	[] call doors_setup_MouseZChanged;
-	[] call doors_setup_KeyDown;
-	[] call doors_setup_KeyUp;
+	[] call A_doors_fnc_doors_setup_MouseZChanged;
+	[] call A_doors_fnc_doors_setup_KeyDown;
+	[] call A_doors_fnc_doors_setup_KeyUp;
 };
 
 call keyboard_setup;

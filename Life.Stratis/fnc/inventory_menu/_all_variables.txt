@@ -1,0 +1,2 @@
+A_inventory_menu_var_functions_defined = true;
+

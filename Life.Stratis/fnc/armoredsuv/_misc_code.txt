@@ -1,0 +1,2 @@
+if (!(undefined(A_armoredsuv_var_functions))) exitWith {null};
+

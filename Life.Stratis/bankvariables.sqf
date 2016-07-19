@@ -43,12 +43,12 @@ else { if (_uid in donators4) then {
     startmoneh = platinummoneh;
 };};};};
 
-if ([player] call player_admin) then {
+if ([player] call A_player_fnc_admin) then {
 	startmoneh = startmoneh + adminmoneh;
 };
 
 if (undefined(bankaccount)) then {
-	["bankaccount", ([startmoneh] call encode_number)] call stats_init_variable;
+	["bankaccount", ([startmoneh] call A_encoding_fnc_encode_number)] call A_stats_fnc_init_variable;
 };
 
 shopflagarray            = [shop1,shop2,shop3,shop4];

@@ -1,0 +1,6 @@
+#include "macro.h"
+
+#include "constants.h"
+
+if (not(undefined(A_inventory_menu_var_functions_defined))) exitWith {};
+

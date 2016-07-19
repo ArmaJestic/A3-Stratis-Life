@@ -1,0 +1,2 @@
+A_hud_var_hud_functions_defined = true;
+

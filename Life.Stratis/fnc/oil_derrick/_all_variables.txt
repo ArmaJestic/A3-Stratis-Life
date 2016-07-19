@@ -1,0 +1,4 @@
+A_oil_derrick_var_barrels = [];
+
+A_oil_derrick_var_functions_defined = true;
+

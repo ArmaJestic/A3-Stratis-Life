@@ -22,7 +22,7 @@ if (_art == "use") then {
 		player groupChat "There is not enough fuel in this car to syphon";
 	};
 
-	[player, _item, -1] call inventory_add_item;
+	[player, _item, -1] call A_inventory_fnc_add_item;
 
 	player playMove "AinvPknlMstpSlayWrflDnon_medic";
 	player groupchat "Draining fuel.";
@@ -30,5 +30,5 @@ if (_art == "use") then {
 	sleep 6;
 	WaitUntil {animationState player != "AinvPknlMstpSlayWrflDnon_medic"};
 	player groupChat localize "STRS_inv_items_empty_refueled";
-	[player, "kanister", 1] call inventory_add_item;
+	[player, "kanister", 1] call A_inventory_fnc_add_item;
 };

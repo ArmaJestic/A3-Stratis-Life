@@ -43,6 +43,6 @@ if (_hasRearmableWeapon == 0) exitWith {player groupChat localize "STRS_inv_item
 	} forEach _rearmWeaponarray;
 
 player groupChat localize "STRS_inv_item_vclammo_rearmed";
-[player, _item, -1] call inventory_add_item;
+[player, _item, -1] call A_inventory_fnc_add_item;
 
 };

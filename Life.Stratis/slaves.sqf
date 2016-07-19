@@ -1,7 +1,7 @@
 #include "Awesome\Functions\macro.h"
 
 _art  = ((_this select 3) select 0);
-_moneh = [player, 'money'] call inventory_get_item_amount;
+_moneh = [player, 'money'] call A_inventory_fnc_get_item_amount;
 
 liafu = true;
 
@@ -23,7 +23,7 @@ if (_art == "slave") exitWith {
 	role groupChat "Buying slave";
 	sleep 2;
 
-	[player, 'money', -(slave_cost)] call inventory_add_item;
+	[player, 'money', -(slave_cost)] call A_inventory_fnc_add_item;
 
 	player groupChat format[localize "STRS_slave_gekauft", rolestring, strM(slave_cost)];
 
@@ -79,7 +79,7 @@ if (_art == "slave") exitWith {
 				}
 				else {
 					player groupChat "A slave you owned has been set free! you are now wanted.";
-					[player, "(human-trafficking)", slave_cost] call player_update_warrants;
+					[player, "(human-trafficking)", slave_cost] call A_player_fnc_update_warrants;
 				}; 
 				localslave = localslave - 1; 
 				_slavename SETDAMAGE 1; 
@@ -95,7 +95,7 @@ if (_art == "slave") exitWith {
 				_a1 = 1;
 			};
 
-			if (not(iscop) and ((vehicle _slavename) DISTANCE copbase1 <= 250) and (alive _slavename)) then {
+			if (not(isblu) and ((vehicle _slavename) DISTANCE copbase1 <= 250) and (alive _slavename)) then {
 				player groupChat localize "STRS_arbeiter_in_copbase";
 				if (not((vehicle _slavename) == _slavename)) then {
 					_slavename action ["eject", (vehicle _slavename)];
@@ -116,7 +116,7 @@ if (_art == "money") exitWith {
 	_arbeitergeld   = call compile format ["arbeitergeld%1;", _arbeiternummer];
 
 	if (_arbeitergeld > 0) then {
-		[player, 'money', _arbeitergeld] call inventory_add_item;
+		[player, 'money', _arbeitergeld] call A_inventory_fnc_add_item;
 		call compile format ["arbeitergeld%1 = 0;", _arbeiternummer];
 		player groupChat format [localize "STRS_slave_geldabnahme_ja", strM(_arbeitergeld)];
 

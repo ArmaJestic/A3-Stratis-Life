@@ -157,7 +157,7 @@ while {true} do {
 
 			_moneh = ((500 max(round((((_spielerstart distance _start)+(_start distance _ziel))*workplacejob_taxi_multiplikator)-(time-_taxizeit))))min workplacejob_taxi_maxmoney);
 			if (_moneh < 0) then {_moneh = 0};
-			[player, 'money', _moneh] call inventory_add_item;
+			[player, 'money', _moneh] call A_inventory_fnc_add_item;
 			player groupChat format [localize "STRS_workplacemission_taxi_success",_moneh];
 			format["%1 action [""getOut"", (%2)]; unassignVehicle %1;",INV_LocalTaxiKunde,(vehicle player)] call broadcast;
 			sleep 5;

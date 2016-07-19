@@ -9,7 +9,7 @@ CopWaffenAvailable       = 0;
 CopInPrisonTime          = 180;
 shooting_self            = 0;
 srHinbewegen             = 0;
-["stunned", false] call stats_init_variable;
+["stunned", false] call A_stats_fnc_init_variable;
 hatGanggebietErobert     = false;
 CivTimeInPrison          = 0;
 CopLog                   = [];
@@ -213,7 +213,7 @@ fuel_max_reserve        = 10000; //(how many liters in reserve)
 fuel_per_barrel         = 100; //(how many liters in 1 barrel)
 fuel_pump_rate          = 3; //(how fast in liters/second fuel is dispensed)
 fuel_base_price         = 1; //(price of 1 liter of fuel)
-if (isServer) then { [0] call shop_set_fuel_consumed; };
+if (isServer) then { [0] call A_shop_menu_fnc_set_fuel_consumed; };
 
 
 //==============================MINING=============================================
@@ -252,7 +252,7 @@ coppatrolarray  =
     getmarkerpos "patrolpoint16"
 ];
 
-if (iscop) then {
+if (isblu) then {
     RadioTextMsg_1 = "Put your fucking hands up!";
     RadioTextMsg_2 = "Pull over and stay in your vehicle!";
     RadioTextMsg_3 = "Drop your weapon and put your hands on your head!";
@@ -277,11 +277,11 @@ robpoolsafe2           = 0;
 robpoolsafe3           = 0;
 deadtimebonus          = 0.001;
 
-["arrested", false] call stats_init_variable;
-["deadtimes", 0] call stats_init_variable;
-["copskilled", 0] call stats_init_variable;
-["civskilled", 0] call stats_init_variable;
-["arrestsmade", 0] call stats_init_variable;
+["arrested", false] call A_stats_fnc_init_variable;
+["deadtimes", 0] call A_stats_fnc_init_variable;
+["copskilled", 0] call A_stats_fnc_init_variable;
+["civskilled", 0] call A_stats_fnc_init_variable;
+["arrestsmade", 0] call A_stats_fnc_init_variable;
 
 selfkilled               = 0;
 killstrafe               = 20000;
@@ -332,7 +332,7 @@ timeinworkplace          = 0;
 wpcapacity               = 10;
 inventory_has_itemshop          = 0;
 INV_haswepshop           = 0;
-["BuildingsOwnerArray", []] call stats_init_variable;
+["BuildingsOwnerArray", []] call A_stats_fnc_init_variable;
 
 if(isciv) then {
 BuyAbleBuildingsArray    =

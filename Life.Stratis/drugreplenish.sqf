@@ -14,20 +14,20 @@ shop_drug_replenish = {
 	if (typeName _amount != "SCALAR") exitWith {null};
 	
 	private["_stock", "_max_stock"];
-	_stock = [_drug, _shop_id] call inventory_get_stock;
-	_max_stock = [_drug, _shop_id] call inventory_get_max_stock;
+	_stock = [_drug, _shop_id] call A_inventory_fnc_get_stock;
+	_max_stock = [_drug, _shop_id] call A_inventory_fnc_get_max_stock;
 	_amount = (_max_stock - _stock) min (_amount);
-	format['["%1", %2, %3] call inventory_item_stock_update;', _drug, (_stock + _amount), _shop_id] call broadcast;
+	format['["%1", %2, %3] call A_inventory_fnc_item_stock_update;', _drug, (_stock + _amount), _shop_id] call broadcast;
 };
 
 drug_replenish = {
 	{if (true) then {
 		private["_gang_area"];
 		_gang_area = _x;
-		if (not([_gang_area] call gang_area_neutral)) exitWith {null};
+		if (not([_gang_area] call A_gang_fnc_area_neutral)) exitWith {null};
 		
 		private["_shop_id"];
-		_shop_id = _gang_area call inventory_get_shop_number;
+		_shop_id = _gang_area call A_inventory_fnc_get_shop_number;
 		
 		if(_gang_area == gangarea1) then {
 			[_shop_id, "lsd", 1] call shop_drug_replenish;

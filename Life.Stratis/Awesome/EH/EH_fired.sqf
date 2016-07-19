@@ -22,7 +22,7 @@ _bullet = nearestObject  [getpos player, _ammo];
 if (_unit distance (getmarkerpos "respawn_west") < 100) exitwith {
 	deletevehicle _bullet;
 	if (firestrikes == 0) exitwith {
-		[player] call player_reset_gear;
+		[player] call A_player_fnc_reset_gear;
 		firestrikes = 3;
 	};
 	
@@ -33,7 +33,7 @@ if (_unit distance (getmarkerpos "respawn_west") < 100) exitwith {
 if (((_unit distance (getmarkerpos "respawn_civilian")) < 130) ) exitwith {
 	deleteVehicle _bullet;
 	if (firestrikes == 0) exitwith {
-		[player] call player_reset_gear;
+		[player] call A_player_fnc_reset_gear;
 		firestrikes = 3;
 	};
 	
@@ -54,11 +54,11 @@ if ( ((_unit distance (getmarkerpos "respawn_guerrila")) < 100) ) exitwith {
 ///////////////
 
 if ((_magazine == "15Rnd_9x19_M9SD") && ((_weapon == "M9") || (_weapon == "M9SD"))) then {
-	[_unit] call stun_gun_sound;		
+	[_unit] call A_stun_fnc_gun_sound;		
 };
 
 if ((_magazine == "8Rnd_B_Beneli_74Slug") && (_weapon == "M1014")) then {
-	[_unit] call stun_gun_sound;		
+	[_unit] call A_stun_fnc_gun_sound;		
 };
 
 ///////////////

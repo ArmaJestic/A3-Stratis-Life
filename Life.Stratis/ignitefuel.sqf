@@ -26,12 +26,12 @@ if (_mode == "use") then {
 	vehicle player setDamage 0.95;
 	liafu = true;
 	player groupchat localize "STRS_inv_items_ignite_ignite";
-	[player, _item, -1] call inventory_add_item;
+	[player, _item, -1] call A_inventory_fnc_add_item;
 	
 	// Set the player criminal IF someone else is around and may saw it
-	if (([player, 40] call player_near_cops) || ([player, 40] call player_near_civilians)) then {
+	if (([player, 40] call A_player_fnc_near_cops) || ([player, 40] call A_player_fnc_near_civilians)) then {
 		// Get the price of the burned vehicle
-		[player, "Setting a vehicle on fire", 20000] call player_update_warrants;
+		[player, "Setting a vehicle on fire", 20000] call A_player_fnc_update_warrants;
 	};
 	
 	

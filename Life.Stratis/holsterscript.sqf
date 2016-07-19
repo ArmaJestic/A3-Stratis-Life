@@ -11,6 +11,6 @@ if (_action == "use") then {
 	liafu = true;
 	
 	if (_item == "pistol") then {
-		[player] call holster_show_weapon;
+		[player] call A_holster_fnc_show_weapon;
 	};
 };

@@ -1,0 +1,4 @@
+A_bank_menu_var_recently_robbed_bank = false;
+
+A_bank_menu_var_functions_defined = true;
+

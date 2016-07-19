@@ -1,0 +1,6 @@
+if (not(undefined(A_hunting_var_functions_defined))) exitWith {null};
+
+[] call A_hunting_fnc_setup;
+
+[] spawn A_hunting_fnc_loop;
+

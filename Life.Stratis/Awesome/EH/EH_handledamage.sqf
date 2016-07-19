@@ -30,7 +30,7 @@ private["_reduce"];
 _reduce = false;
 
 private["_source_cop", "_weapon"];
-_source_cop = ([_source] call player_cop);
+_source_cop = ([_source] call A_player_fnc_blufor);
 _weapon = currentWeapon _source;
 
 if (_projectile == "B_9x19_SD") then {
@@ -42,7 +42,7 @@ if (_projectile == "B_9x19_SD") then {
 		_distance = _source distance _unit;
 		_veh = vehicle _unit;
 		_inveh = ( (_veh iskindof "ATV_Base_EP1") ||  (_veh iskindof "Motorcycle") );	
-		[_unit, _source, _distance, _select, _damage, _veh, _inveh] call stun_using_weapon;
+		[_unit, _source, _distance, _select, _damage, _veh, _inveh] call A_stun_fnc_using_weapon;
 	};
 };
 
@@ -55,7 +55,7 @@ if ((_projectile == "B_12Gauge_74Slug") ) then {
 		_distance = _source distance _unit;
 		_veh = vehicle _unit;
 		_inveh = ( (_veh iskindof "ATV_Base_EP1") ||  (_veh iskindof "Motorcycle") );	
-		[_unit, _source, _distance, _select, _damage, _veh, _inveh] call stun_using_weapon;
+		[_unit, _source, _distance, _select, _damage, _veh, _inveh] call A_stun_fnc_using_weapon;
 	};
 };
 	

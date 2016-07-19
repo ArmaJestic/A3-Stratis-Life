@@ -1,0 +1,2 @@
+if (not(undefined(A_weapon_var_functions_defined))) exitWith {null};
+

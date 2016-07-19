@@ -52,6 +52,11 @@ class LBox {
 		arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa";
 		border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa";
 	};
+	class ListScrollBar
+	{
+		color[] = {1,1,1,1};
+		autoScrollEnabled = 1;
+	};
 };
 
 class ListMenu {
@@ -65,7 +70,7 @@ class ListMenu {
 	};
 
 	name = "LIST_MENU";
-	onUnload = "[] call interact_weapon_modifications_menu_close;";
+	onUnload = "[] call A_interaction_fnc_weapon_modifications_menu_close;";
 	onLoad="uiNamespace setVariable ['LIST_MENU', _this select 0]";
 	
 	class mainFrame : LBgFrame {

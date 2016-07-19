@@ -1,0 +1,18 @@
+if (not(undefined(A_towing_var_functions_defined))) exitWith {};
+
+if (undefined(towing_actions)) then {
+	towing_actions = [];
+};
+
+if (undefined(towed_actions)) then {
+	towed_actions = [];
+};
+
+[] call A_towing_fnc_clear_towing_data;
+
+[] call A_towing_fnc_classes_setup;
+
+[] call A_towing_fnc_object_setup;
+
+[] call A_towing_fnc_line_create_setup;
+
