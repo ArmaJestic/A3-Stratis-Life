@@ -1,5 +1,5 @@
 // A_quicksort_fnc_qsort_partition
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 ARGV(0,_array);
 ARGV(1,_left);

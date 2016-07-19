@@ -1,4 +1,4 @@
-#include "macro.h"
+#include "..\..\includes\macro.h"
 
 private["_unit", "_select", "_damage", "_source", "_projectile"];
 _unit 			= _this select 0;

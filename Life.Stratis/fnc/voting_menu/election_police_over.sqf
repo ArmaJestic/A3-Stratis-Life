@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_election_police_over
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_election_data);

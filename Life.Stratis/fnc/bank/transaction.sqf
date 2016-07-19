@@ -1,6 +1,6 @@
 // A_bank_fnc_transaction
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

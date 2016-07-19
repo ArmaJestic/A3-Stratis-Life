@@ -1,7 +1,7 @@
 // A_mounted_fnc_remove_mouseMoving
 
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 disableSerialization;

@@ -1,6 +1,6 @@
 // A_player_fnc_rejoin_camera_text
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_deadTimeEnd);

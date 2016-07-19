@@ -1,8 +1,8 @@
 // A_doors_fnc_doors_setup_KeyUp
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 private["_data"];

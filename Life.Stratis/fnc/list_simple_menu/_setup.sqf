@@ -1,7 +1,7 @@
 // A_list_simple_menu_fnc__setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 disableSerialization;

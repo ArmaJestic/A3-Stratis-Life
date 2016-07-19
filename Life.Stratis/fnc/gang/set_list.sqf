@@ -1,6 +1,6 @@
 // A_gang_fnc_set_list
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_gangs_list);

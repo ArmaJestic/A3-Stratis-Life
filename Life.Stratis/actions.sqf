@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 if(A_running) exitWith {null};
 A_running = true;

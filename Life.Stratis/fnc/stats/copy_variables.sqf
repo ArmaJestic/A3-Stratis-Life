@@ -1,6 +1,6 @@
 // A_stats_fnc_copy_variables
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_old_player", "_new_player"];
 _old_player = _this select 0;

@@ -1,6 +1,6 @@
 // A_player_fnc_rejoin_suicide
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player_rejoin_suicide_active = true;

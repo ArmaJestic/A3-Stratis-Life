@@ -1,6 +1,6 @@
 // A_misc_fnc_bash
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_damage"];
 _damage = damage player;

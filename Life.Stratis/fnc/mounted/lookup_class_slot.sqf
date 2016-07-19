@@ -1,7 +1,7 @@
 // A_mounted_fnc_lookup_class_slot
 
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 ARGV(0,_class);

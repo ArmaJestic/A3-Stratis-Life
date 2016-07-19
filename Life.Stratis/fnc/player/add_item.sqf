@@ -1,6 +1,6 @@
 // A_player_fnc_add_item
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_player_fnc_add_item %1", _this];

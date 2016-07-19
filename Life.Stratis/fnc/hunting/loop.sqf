@@ -1,6 +1,6 @@
 // A_hunting_fnc_loop
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_hunting_fnc_loop %1", _this];

@@ -1,6 +1,6 @@
 // A_stats_fnc_get_variables_list
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_player"];
 _player = _this select 0;

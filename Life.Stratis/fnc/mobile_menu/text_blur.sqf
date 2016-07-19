@@ -1,7 +1,7 @@
 // A_mobile_menu_fnc_text_blur
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 player grouPChat format["A_mobile_menu_fnc_text_blur %1", _this];

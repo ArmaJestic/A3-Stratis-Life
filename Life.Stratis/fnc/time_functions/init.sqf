@@ -1,6 +1,6 @@
 // A_time_functions_fnc_init
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_quiet,false);

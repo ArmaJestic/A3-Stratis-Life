@@ -1,7 +1,7 @@
 // A_oil_derrick_fnc_setup_structure
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_oil_derrick_fnc_setup_structure %1", _this];

@@ -1,7 +1,7 @@
 // A_list_menu_fnc_add
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_list_menu_fnc_add %1", _this];

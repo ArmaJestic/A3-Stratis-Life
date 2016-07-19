@@ -1,7 +1,7 @@
 // A_shoothouse_fnc_base_setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_offset);

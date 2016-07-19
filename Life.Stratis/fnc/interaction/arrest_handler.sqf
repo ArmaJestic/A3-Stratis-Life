@@ -1,8 +1,8 @@
 // A_interaction_fnc_arrest_handler
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 ARGV(2,_this);

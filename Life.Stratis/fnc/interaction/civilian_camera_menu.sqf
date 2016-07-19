@@ -1,8 +1,8 @@
 // A_interaction_fnc_civilian_camera_menu
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 _this spawn {
 if (!(createDialog "civcamdialog")) exitWith {hint "Dialog Error!";};

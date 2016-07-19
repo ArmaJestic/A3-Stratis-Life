@@ -1,6 +1,6 @@
 // A_gang_fnc_create
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (not(isServer)) exitWith {null};

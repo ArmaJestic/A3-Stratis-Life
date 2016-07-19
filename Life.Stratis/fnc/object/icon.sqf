@@ -1,6 +1,6 @@
 // A_object_fnc_icon
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_object_fnc_icon %1", _this];

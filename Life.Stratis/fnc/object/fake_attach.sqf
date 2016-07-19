@@ -1,6 +1,6 @@
 // A_object_fnc_fake_attach
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_source);

@@ -1,6 +1,6 @@
 // A_object_fnc_editor_create
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player grouPChat format["A_object_fnc_editor_create %1", _this];

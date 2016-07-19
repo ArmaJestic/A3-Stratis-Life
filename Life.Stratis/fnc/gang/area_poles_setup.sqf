@@ -1,6 +1,6 @@
 // A_gang_fnc_area_poles_setup
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (not(isServer)) exitWith {null};

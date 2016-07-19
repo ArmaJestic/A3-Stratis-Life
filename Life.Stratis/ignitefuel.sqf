@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 _mode = _this select 0;
 if (_mode == "use") then {

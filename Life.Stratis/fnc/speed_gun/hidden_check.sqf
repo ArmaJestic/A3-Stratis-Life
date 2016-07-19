@@ -1,7 +1,7 @@
 // A_speed_gun_fnc_hidden_check
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 if (not(INV_shortcuts) && not(A_speed_gun_var_hidden)) then {

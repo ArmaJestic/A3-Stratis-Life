@@ -1,7 +1,7 @@
 // A_bunker_fnc_underground_base_check_animation
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 private["_player"];

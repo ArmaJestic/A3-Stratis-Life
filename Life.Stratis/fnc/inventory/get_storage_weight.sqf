@@ -1,7 +1,7 @@
 // A_inventory_fnc_get_storage_weight
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_inventory_fnc_get_storage_weight %1", _this];

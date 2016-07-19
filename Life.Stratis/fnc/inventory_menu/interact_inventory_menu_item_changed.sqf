@@ -1,7 +1,7 @@
 // A_inventory_menu_fnc_interact_inventory_menu_item_changed
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_control);

@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 KeyPressHandler = {
 	private ["_ctrl", "_zeichennummer", "_ctrlid"];

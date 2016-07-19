@@ -1,7 +1,7 @@
 // A_invokeJava_fnc_removePlayerVariable
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h" 
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h" 
 
 private["_uid", "_variable_name"];
 	

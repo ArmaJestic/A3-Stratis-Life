@@ -1,6 +1,6 @@
 // A_stats_fnc_get_player_uid
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_player", "_uid"];
 _player = _this select 0;

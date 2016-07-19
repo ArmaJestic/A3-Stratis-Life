@@ -1,6 +1,6 @@
 // A_gang_fnc_area_remove_actions
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (count A_gang_var_area_actions == 0) exitWith {null};

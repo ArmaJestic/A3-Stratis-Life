@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_vote_candidate_request_receive
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_voting_menu_fnc_vote_candidate_request_receive %1", _this];

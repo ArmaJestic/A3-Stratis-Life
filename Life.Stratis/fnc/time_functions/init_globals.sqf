@@ -1,6 +1,6 @@
 // A_time_functions_fnc_init_globals
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 time_year = 0;

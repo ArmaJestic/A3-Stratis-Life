@@ -1,7 +1,7 @@
 // A_ticket_menu_fnc_ticket_menu_setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 disableSerialization;

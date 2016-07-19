@@ -1,7 +1,7 @@
 // A_camera_fnc_update_position
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_camera_fnc_update_position %1", _this];

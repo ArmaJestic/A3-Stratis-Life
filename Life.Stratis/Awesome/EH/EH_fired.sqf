@@ -1,7 +1,7 @@
 // fired event handler script
 // EH_fired.sqf
 
-#include "macro.h"
+#include "..\..\includes\macro.h"
 
 _unit 			= _this select 0;
 _weapon			= _this select 1;

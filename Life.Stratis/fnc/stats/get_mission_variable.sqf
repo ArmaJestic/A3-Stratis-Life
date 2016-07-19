@@ -1,6 +1,6 @@
 // A_stats_fnc_get_mission_variable
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_variableName"]; 
 _variableName = _this select 0;

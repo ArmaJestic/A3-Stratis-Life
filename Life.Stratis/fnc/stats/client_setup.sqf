@@ -1,6 +1,6 @@
 // A_stats_fnc_client_setup
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 [] call A_stats_fnc_client_server_setup_wait;
 private["_uid"];

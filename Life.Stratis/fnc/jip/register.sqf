@@ -1,7 +1,7 @@
 // A_jip_fnc_register
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 if (undefined(_this)) exitWith {};
 

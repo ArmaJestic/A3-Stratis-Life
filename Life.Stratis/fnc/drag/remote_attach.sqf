@@ -1,7 +1,7 @@
 // A_drag_fnc_remote_attach
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 player grouPChat format["A_drag_fnc_remote_attach %1", _this];

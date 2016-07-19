@@ -21,19 +21,9 @@ MISSION_ROOT = call {
 };
 
 
-// Everything before loading screen, setting up loading screen
-fnc_includes = compile preprocessFileLineNumbers "includes\includes.h";
-[] call fnc_includes;
-fnc_includes_macro = compSQF("includes\macro.h")
-fnc_includes_constants = compSQF("includes\constants.h")
-[] call fnc_includes_macro;
-[] call fnc_includes_constants;
-
-// Not used anymore
-//fnc_initRun = compSQF("fnc\initRun.sqf")
-
 [] call A_parameters_fnc_init1;
 [] call A_loading_fnc_init1;
+
 
 []	call A_loading_fnc_start;
 ["Pre-loading operations..."] call A_loading_fnc_update_title;

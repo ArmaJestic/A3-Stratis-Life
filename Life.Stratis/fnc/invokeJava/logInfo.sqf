@@ -1,7 +1,7 @@
 // A_invokeJava_fnc_logInfo
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h" 
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h" 
 
 private["_text"];
 _text = _this select 0;

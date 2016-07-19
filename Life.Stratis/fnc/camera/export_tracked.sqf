@@ -1,7 +1,7 @@
 // A_camera_fnc_export_tracked
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
     //player groupChat format["A_camera_fnc_export_tracked %1", _this];

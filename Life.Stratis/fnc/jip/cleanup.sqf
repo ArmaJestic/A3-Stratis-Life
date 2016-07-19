@@ -1,7 +1,7 @@
 // A_jip_fnc_cleanup
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 {
 	private["_entry", "_entry_object"];

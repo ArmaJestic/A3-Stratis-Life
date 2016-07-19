@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 GFX_ArmaViewDistance         = 2000;
 GFX_ArmaTerrainGrids         = [25, 12.5, 6.25];

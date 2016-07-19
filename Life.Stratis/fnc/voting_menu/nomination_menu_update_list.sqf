@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_nomination_menu_update_list
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 //player groupChat format["A_voting_menu_fnc_nomination_menu_update_list = %1", _this];

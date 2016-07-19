@@ -1,6 +1,6 @@
 // A_stats_fnc_client_wait_uid
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_uid"];
 

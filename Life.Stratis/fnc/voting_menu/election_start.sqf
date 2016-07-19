@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_election_start
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_voting_menu_fnc_election_start %1", _this];

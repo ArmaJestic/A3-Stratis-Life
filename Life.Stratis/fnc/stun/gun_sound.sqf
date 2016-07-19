@@ -1,6 +1,6 @@
 // A_stun_fnc_gun_sound
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_unit);

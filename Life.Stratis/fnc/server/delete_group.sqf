@@ -1,6 +1,6 @@
 // A_server_fnc_delete_group
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (not(isServer)) exitWith {null};

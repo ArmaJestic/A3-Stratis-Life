@@ -1,6 +1,6 @@
 // A_stun_fnc_using_weapon
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_stun_fnc_using_weapon %1", _this];

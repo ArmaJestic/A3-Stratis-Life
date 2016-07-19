@@ -1,7 +1,7 @@
 // A_inventory_fnc_get_vehicle_type
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 private ["_Fresult"];

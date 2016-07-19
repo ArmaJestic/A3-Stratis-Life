@@ -1,7 +1,7 @@
 // A_oil_derrick_fnc_barrel_setup
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_barrel);

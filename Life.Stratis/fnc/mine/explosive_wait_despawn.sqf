@@ -1,7 +1,7 @@
 // A_mine_fnc_explosive_wait_despawn
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 _this spawn {
 //player groupChat format["A_mine_fnc_explosive_wait_despawn %1", _this];

@@ -1,7 +1,7 @@
 // A_underwater_base_fnc_underwater_base_check_transition
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 private["_player", "_is_passenger"];

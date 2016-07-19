@@ -1,7 +1,7 @@
 // A_jip_fnc_get_request_receive
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 [format["A_jip_fnc_get_request_receive %1", _this]] call A_jip_fnc_message;
 

@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_sell
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  [] spawn {
 if (A_shop_menu_var_sell_active) exitWith {

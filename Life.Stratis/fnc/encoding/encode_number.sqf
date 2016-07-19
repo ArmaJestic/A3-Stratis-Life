@@ -1,6 +1,6 @@
 // A_encoding_fnc_encode_number
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_value);

@@ -1,8 +1,8 @@
 // A_interaction_fnc_use_bucket
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
  _this spawn {
 if (dialog) exitWith {};

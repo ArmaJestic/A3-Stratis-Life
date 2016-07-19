@@ -1,7 +1,7 @@
 // A_economy_menu_fnc_modify_tax
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_economy_menu_fnc_modify_tax %1", _this];

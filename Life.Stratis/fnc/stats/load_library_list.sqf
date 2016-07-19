@@ -1,6 +1,6 @@
 // A_stats_fnc_load_library_list
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 ARGV(0,_list);
 ARGV(1,_title);

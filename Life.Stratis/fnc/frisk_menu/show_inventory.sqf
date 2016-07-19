@@ -1,7 +1,7 @@
 // A_frisk_menu_fnc_show_inventory
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_title);

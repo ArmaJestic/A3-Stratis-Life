@@ -1,7 +1,7 @@
 // A_bunker_fnc_match_doors
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_bunker_fnc_match_doors %1", _this];

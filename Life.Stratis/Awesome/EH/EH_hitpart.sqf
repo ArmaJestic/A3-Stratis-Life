@@ -1,4 +1,4 @@
-#include "macro.h"
+#include "..\..\includes\macro.h"
 
 // hitpart event handler scripts
 // EH_hitpart.sqf

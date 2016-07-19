@@ -1,7 +1,7 @@
 // A_tree_fnc_register_setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 if (not(isServer)) exitWith {};

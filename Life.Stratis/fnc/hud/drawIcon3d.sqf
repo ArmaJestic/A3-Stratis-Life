@@ -1,7 +1,7 @@
 // A_hud_fnc_drawIcon3d__
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_hud_fnc_drawIcon3d__ %1", _this];

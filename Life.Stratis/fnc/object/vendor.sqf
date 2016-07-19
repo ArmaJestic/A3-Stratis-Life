@@ -1,6 +1,6 @@
 // A_object_fnc_vendor
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 private["_object"];

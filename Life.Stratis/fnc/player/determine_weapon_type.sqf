@@ -1,6 +1,6 @@
 // A_player_fnc_determine_weapon_type
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_player_fnc_determine_weapon_type %1", _this];

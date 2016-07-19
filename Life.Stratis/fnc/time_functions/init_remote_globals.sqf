@@ -1,6 +1,6 @@
 // A_time_functions_fnc_init_remote_globals
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (!isServer) exitWith {null};

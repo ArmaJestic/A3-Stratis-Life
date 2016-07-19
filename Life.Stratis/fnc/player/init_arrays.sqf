@@ -1,6 +1,6 @@
 // A_player_fnc_init_arrays
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 while {true} do {

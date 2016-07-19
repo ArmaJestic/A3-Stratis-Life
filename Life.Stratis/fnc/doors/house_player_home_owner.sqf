@@ -1,8 +1,8 @@
 // A_doors_fnc_house_player_home_owner
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 ARGV(0,_player);

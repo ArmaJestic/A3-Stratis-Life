@@ -1,7 +1,7 @@
 // A_mounted_fnc_add_actions
 
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 //player groupChat format["A_mounted_fnc_add_actions %1", _this];

@@ -1,6 +1,6 @@
 // A_stats_fnc_update_variables_list
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_object", "_variable_name"];
 _object = _this select 0;

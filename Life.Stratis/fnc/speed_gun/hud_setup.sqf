@@ -1,7 +1,7 @@
 // A_speed_gun_fnc_hud_setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 disableSerialization;

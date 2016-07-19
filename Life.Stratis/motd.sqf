@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 hint "Please read the SL tabs on map before playing";
 server globalchat "[MoTD]Welcome to Stratis Life!";

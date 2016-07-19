@@ -1,6 +1,6 @@
 // A_stun_fnc_pistol
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 ARGV(0,_unit);

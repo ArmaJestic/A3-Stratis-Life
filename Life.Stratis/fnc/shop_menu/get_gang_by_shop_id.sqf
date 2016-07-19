@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_get_gang_by_shop_id
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_shop_id);

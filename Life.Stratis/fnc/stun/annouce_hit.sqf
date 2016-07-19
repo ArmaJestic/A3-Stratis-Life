@@ -1,6 +1,6 @@
 // A_stun_fnc_annouce_hit
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_unit);

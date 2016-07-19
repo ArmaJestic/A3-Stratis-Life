@@ -1,6 +1,6 @@
 // A_hunting_fnc_set_init
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player grouPChat format["A_hunting_fnc_set_init %1", _this];

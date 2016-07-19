@@ -1,8 +1,8 @@
 // A_interaction_fnc_satellite_camera_move
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 ARGV(0,_offset);

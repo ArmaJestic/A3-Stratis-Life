@@ -1,6 +1,6 @@
 // A_misc_fnc_Isse_AddCrimeLogEntry
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private ["_logtime", "_logdate", "_logtext", "_logart", "_logplayer", "_zusatzinfo"];
 

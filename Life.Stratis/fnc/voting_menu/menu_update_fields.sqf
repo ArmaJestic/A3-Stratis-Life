@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_menu_update_fields
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 disableSerialization;

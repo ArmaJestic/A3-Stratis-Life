@@ -1,6 +1,6 @@
 // A_holster_fnc_show_weapon
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

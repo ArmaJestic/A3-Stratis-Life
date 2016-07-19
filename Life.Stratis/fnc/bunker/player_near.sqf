@@ -1,7 +1,7 @@
 // A_bunker_fnc_player_near
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player grouPChat format["A_bunker_fnc_player_near %1", _this];

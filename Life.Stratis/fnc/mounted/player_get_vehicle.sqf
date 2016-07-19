@@ -1,7 +1,7 @@
 // A_mounted_fnc_player_get_vehicle
 
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 ARGV(0,_player);

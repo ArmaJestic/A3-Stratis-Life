@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_reset_sell_labels
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ctrlSetText [sell_demand_field_idc, "0"];

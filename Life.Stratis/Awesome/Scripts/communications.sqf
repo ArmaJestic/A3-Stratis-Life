@@ -1,4 +1,4 @@
-#include "macro.h"
+#include "..\..\includes\macro.h"
 
 DEBUG_SUBMENU = [
 	["Debug menu", false],

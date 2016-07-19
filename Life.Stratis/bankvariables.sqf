@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 startmoneh                   = 50000;
 donatormoneh                 = startmoneh * 5; //(250k)

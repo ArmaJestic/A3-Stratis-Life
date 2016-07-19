@@ -1,6 +1,6 @@
 // A_stats_fnc_save_request_receive
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 diag_log format['A_stats_fnc_save_request_receive: %1', _this];
 

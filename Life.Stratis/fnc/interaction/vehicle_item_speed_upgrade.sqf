@@ -1,8 +1,8 @@
 // A_interaction_fnc_vehicle_item_speed_upgrade
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
  _this spawn {
 player groupChat format["interact_vehicle_speed_upgrade %1", _this];

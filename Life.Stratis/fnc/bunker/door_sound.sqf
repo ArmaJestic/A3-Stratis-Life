@@ -1,7 +1,7 @@
 // A_bunker_fnc_door_sound
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 ARGV(0,_player);

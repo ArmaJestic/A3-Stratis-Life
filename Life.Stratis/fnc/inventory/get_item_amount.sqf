@@ -1,7 +1,7 @@
 // A_inventory_fnc_get_item_amount
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_object);

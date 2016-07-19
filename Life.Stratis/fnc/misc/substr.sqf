@@ -1,6 +1,6 @@
 // A_misc_fnc_substr
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_string", "_start", "_length"];
 _string = _this select 0;

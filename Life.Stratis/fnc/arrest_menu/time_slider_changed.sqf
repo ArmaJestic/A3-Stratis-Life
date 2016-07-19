@@ -1,7 +1,7 @@
 // A_arrest_menu_fnc_time_slider_changed
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_control);

@@ -1,6 +1,6 @@
 // A_time_functions_fnc_real2game_seconds
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 private ["_gsecs", "_base_seconds", "_seconds_since_sunrise", "_seconds_since_sunset" ];

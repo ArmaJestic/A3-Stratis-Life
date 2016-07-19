@@ -1,6 +1,6 @@
 // A_player_fnc_intro_text
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 _this spawn {
 private["_intro_messages"];

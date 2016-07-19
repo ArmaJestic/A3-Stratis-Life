@@ -2,16 +2,16 @@ onLoadMission 			= "On Load Mission";
 onLoadIntro   			= "On Load Intro";
 onLoadMissionTime 		= 1;
 onLoadIntroTime 		= 1;
-loadScreen 				= "loading.paa";
+loadScreen 				= "img\loading.paa";
 onLoadName    			= "On Load Name";
 author        			= "Author";
 
 // Picture in mission select
-//overviewPicture		= ".paa";
+overviewPicture		= "img\loading.paa";
 // Text in mission select
-//overviewText			= "";
+overviewText			= "select text";
 // Text in mission select when locked
-//overviewTextLocked 	= "";
+overviewTextLocked 	= "Locked select text";
 
 showCompass				= 1;
 showGPS					= 1;
@@ -121,7 +121,7 @@ onPauseScript[] = {myOnPauseFunction1,myOnPauseFunction2};//(Arma 3)
 onMinimapScript[] = {"BIS_fnc_customGPS_Spawn"};
 
 class Header {
-	gameType =  RPG; 
+	gameType = RPG; 
 	minPlayers = 1; 
 	maxPlayers = 100;
 };
@@ -129,11 +129,11 @@ class Header {
 // CfgCameraEffects
 class cfgSounds {
 	sounds[] = {};
-	#include "sounds.h"
+	#include "sounds\sounds.h"
 };
 class CfgFunctions {
 	class A_functions {
-		#include "fnc/functions.h"
+		#include "fnc\functions.h"
 	}
 };
 // cfgRadio
@@ -148,47 +148,45 @@ class CfgFunctions {
 // CfgVehicleTemplates
 // cfgRemoteExec
 
-#include "Awesome\Dialogs\Essentials\RscDefines.hpp"
-#include "Awesome\Dialogs\Essentials\DialogColorConstants.hpp"
-#include "Awesome\Dialogs\Essentials\DialogColorScheme.hpp"
-#include "Awesome\Dialogs\Essentials\DialogControlClasses.hpp"
-//#include "Awesome\Dialogs\Essentials\Arma3.hpp"
-#include "RscTitles.hpp"
-
-#include "Awesome\Dialogs\Custom_Dialogs.hpp"
-
-#include "Awesome\Retributions\retributions.hpp"
-#include "Awesome\MyStats\loading.hpp"
 
 
-#include "Awesome\Functions\dikcodes.h"
 
+#include "dlg\essentials\RscDefines.hpp"
+#include "dlg\essentials\DialogColorConstants.hpp"
+#include "dlg\essentials\DialogColorScheme.hpp"
+#include "dlg\essentials\DialogControlClasses.hpp"
+//#include "dlg\essentials\Arma3.hpp"
+#include "dlg\RscTitles.hpp"
+#include "dlg\Custom_Dialogs.hpp"
 
-#include "gfx.hpp"
-#include "INVdialogs.hpp"
-#include "4782911.hpp"
-#include "4461230.hpp"
-#include "maindialogs.hpp"
+#include "includes\dikcodes.h"
 
-#include "Awesome\Functions\weapon_modifications.hpp"
-#include "Awesome\Functions\list_menu.hpp"
-#include "Awesome\Functions\main_menu.hpp"
-#include "Awesome\Functions\admin_menu.hpp"
-#include "Awesome\Functions\camera_menu.hpp"
-#include "Awesome\Functions\shop_menu.hpp"
-#include "Awesome\Functions\factory_menu.hpp"
-#include "Awesome\Functions\bank_menu.hpp"
-#include "Awesome\Functions\inventory_menu.hpp"
-#include "Awesome\Functions\storage_menu.hpp"
-#include "Awesome\Functions\free_camera.hpp"
-#include "Awesome\Functions\lotto_menu.hpp"
-#include "Awesome\Functions\animations_menu.hpp"
-#include "Awesome\Functions\prison_menu.hpp"
-#include "Awesome\Functions\legislation_menu.hpp"
-#include "Awesome\Functions\economy_menu.hpp"
-#include "Awesome\Functions\list_simple_menu.hpp"
-#include "Awesome\Functions\arrest_menu.hpp"
-#include "Awesome\Functions\ticket_menu.hpp"
-#include "Awesome\Functions\yes_no_menu.hpp"
-#include "Awesome\Functions\voting_menu.hpp"
-#include "Awesome\Functions\mobile_menu.hpp"
+#include "dlg\retributions.hpp"
+#include "dlg\loading.hpp"
+#include "dlg\gfx.hpp"
+#include "dlg\INVdialogs.hpp"
+#include "dlg\4782911.hpp"
+#include "dlg\4461230.hpp"
+#include "dlg\maindialogs.hpp"
+#include "dlg\weapon_modifications.hpp"
+#include "dlg\list_menu.hpp"
+#include "dlg\main_menu.hpp"
+#include "dlg\admin_menu.hpp"
+#include "dlg\camera_menu.hpp"
+#include "dlg\shop_menu.hpp"
+#include "dlg\factory_menu.hpp"
+#include "dlg\bank_menu.hpp"
+#include "dlg\inventory_menu.hpp"
+#include "dlg\storage_menu.hpp"
+#include "dlg\free_camera.hpp"
+#include "dlg\lotto_menu.hpp"
+#include "dlg\animations_menu.hpp"
+#include "dlg\prison_menu.hpp"
+#include "dlg\legislation_menu.hpp"
+#include "dlg\economy_menu.hpp"
+#include "dlg\list_simple_menu.hpp"
+#include "dlg\arrest_menu.hpp"
+#include "dlg\ticket_menu.hpp"
+#include "dlg\yes_no_menu.hpp"
+#include "dlg\voting_menu.hpp"
+#include "dlg\mobile_menu.hpp"

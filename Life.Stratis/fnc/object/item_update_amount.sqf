@@ -1,6 +1,6 @@
 // A_object_fnc_item_update_amount
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_object_fnc_item_update_amount %1", _this];

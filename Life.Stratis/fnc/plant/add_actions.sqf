@@ -1,7 +1,7 @@
 // A_plant_fnc_add_actions
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_player);

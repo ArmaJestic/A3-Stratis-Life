@@ -1,6 +1,6 @@
 // A_stats_fnc_server_setup
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 onPlayerDisconnected { [_id, _name, _uid] call A_stats_fnc_server_player_disconnected };
 	

@@ -1,7 +1,7 @@
 // A_list_simple_menu_fnc__label_data
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 private["_index"];

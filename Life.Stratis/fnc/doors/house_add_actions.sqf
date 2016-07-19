@@ -1,8 +1,8 @@
 // A_doors_fnc_house_add_actions
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 if (count house_actions > 0) exitWith {};

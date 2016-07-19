@@ -1,8 +1,8 @@
 // A_interaction_fnc_side_ai_magazines
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 ARGV(0,_side);

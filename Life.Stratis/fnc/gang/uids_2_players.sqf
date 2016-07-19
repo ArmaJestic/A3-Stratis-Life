@@ -1,6 +1,6 @@
 // A_gang_fnc_uids_2_players
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_uids_list);

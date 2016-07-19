@@ -1,6 +1,6 @@
 // A_misc_fnc_buildings_list
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 if (not(undefined(all_buildings))) exitWith {all_buildings};
 

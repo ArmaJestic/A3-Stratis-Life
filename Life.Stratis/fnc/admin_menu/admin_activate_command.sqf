@@ -1,7 +1,7 @@
 // A_admin_menu_fnc_admin_activate_command
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
  _this spawn {
 //player groupChat format["A_admin_menu_fnc_admin_activate_command %1", _this];

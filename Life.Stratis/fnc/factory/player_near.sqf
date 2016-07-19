@@ -1,7 +1,7 @@
 // A_factory_fnc_player_near
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_factory_fnc_player_near %1", _this];

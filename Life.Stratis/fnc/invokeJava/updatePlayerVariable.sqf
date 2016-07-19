@@ -1,7 +1,7 @@
 // A_invokeJava_fnc_updatePlayerVariable
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h" 
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h" 
 
 diag_log format['A_invokeJava_fnc_updatePlayerVariable: %1', _this];
 

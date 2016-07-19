@@ -1,6 +1,6 @@
 // A_stats_fnc_setup
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 diag_log format["A_stats_fnc_setup starting, server: %1", isServer];
 

@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_weapon_inherits_from
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_weapon_class);

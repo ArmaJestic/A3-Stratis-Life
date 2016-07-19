@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_nomination_timeout_start
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 _this spawn {
 //player groupChat format["A_voting_menu_fnc_nomination_timeout_start %1", _this];

@@ -1,7 +1,7 @@
 // A_storage_menu_fnc_generic_storage_menu
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 ARGV(0,_left_title);

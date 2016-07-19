@@ -1,7 +1,7 @@
 // A_mine_fnc_ore_init_handler_persistent
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_object);

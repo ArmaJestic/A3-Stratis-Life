@@ -1,7 +1,7 @@
 // A_towing_fnc_remove_actions
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 if (count towing_actions == 0) exitWith {};

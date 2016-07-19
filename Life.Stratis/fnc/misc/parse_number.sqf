@@ -1,6 +1,6 @@
 // A_misc_fnc_parse_number
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private ["_number"];
 _number = _this select 0;

@@ -1,6 +1,6 @@
 // A_player_fnc_handle_mprespawn
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_player_fnc_handle_mprespawn %1", _this];

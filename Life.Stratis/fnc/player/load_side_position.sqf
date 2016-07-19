@@ -1,6 +1,6 @@
 // A_player_fnc_load_side_position
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_player_fnc_load_side_position %1", _this];

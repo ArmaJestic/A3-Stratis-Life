@@ -1,6 +1,6 @@
 // A_player_fnc_weapons_compatible_with_attachment
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

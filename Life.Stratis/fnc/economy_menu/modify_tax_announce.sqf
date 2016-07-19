@@ -1,7 +1,7 @@
 // A_economy_menu_fnc_modify_tax_announce
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

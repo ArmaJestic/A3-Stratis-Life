@@ -1,7 +1,7 @@
 // A_camera_menu_fnc_camera_clipboard_objectFromNetId
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 private["_netId"];

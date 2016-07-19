@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_nominate_player
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_voting_menu_fnc_nominate_player %1", _this];

@@ -1,8 +1,8 @@
 // A_interaction_fnc_gang_toggle_open
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 //player groupChat format["A_interaction_fnc_gang_toggle_open %1", _this];

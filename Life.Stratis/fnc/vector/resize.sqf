@@ -1,6 +1,6 @@
 // A_vector_fnc_resize
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 private["_v1", "_len"];
 _v1 = _this select 0;

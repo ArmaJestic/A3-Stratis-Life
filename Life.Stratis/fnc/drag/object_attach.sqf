@@ -1,7 +1,7 @@
 // A_drag_fnc_object_attach
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 player grouPChat format["A_drag_fnc_object_attach %1", _this];

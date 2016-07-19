@@ -1,7 +1,7 @@
 // A_bunker_fnc_remove_actions
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 if (count bunker_actions == 0) exitWith {};

@@ -1,6 +1,6 @@
 // A_player_fnc_despawn
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 //player groupChat format["A_player_fnc_despawn %1", _this];

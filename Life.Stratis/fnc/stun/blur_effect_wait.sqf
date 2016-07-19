@@ -1,6 +1,6 @@
 // A_stun_fnc_blur_effect_wait
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player grouPChat format["A_stun_fnc_blur_effect_wait %1", _this];

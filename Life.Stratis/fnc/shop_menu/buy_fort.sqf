@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_buy_fort
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 _this spawn {

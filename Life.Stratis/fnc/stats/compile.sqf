@@ -1,6 +1,6 @@
 // A_stats_fnc_compile
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_data", "_object", "_sequential", "_loading"];
 _data = _this select 0;

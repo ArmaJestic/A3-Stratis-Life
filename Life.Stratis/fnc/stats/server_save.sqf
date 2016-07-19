@@ -3,7 +3,7 @@
 //Method intended to be run on server-side, it is used for saving SERVER specific variables (can be run on client side as well)
 //Arguments are [key,value]
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 diag_log format['A_stats_fnc_save: %1', _this];
 

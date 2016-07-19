@@ -1,6 +1,6 @@
 // A_stun_fnc_close_range
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_stun_fnc_close_range %1", _this];

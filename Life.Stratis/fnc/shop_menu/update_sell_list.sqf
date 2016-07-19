@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_update_sell_list
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 disableSerialization;

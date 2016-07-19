@@ -1,6 +1,6 @@
 // A_vehicle_fnc_object_wait_stats
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_object);

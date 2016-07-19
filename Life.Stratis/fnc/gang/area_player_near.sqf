@@ -1,6 +1,6 @@
 // A_gang_fnc_area_player_near
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_gang_fnc_area_player_near %1", _this];

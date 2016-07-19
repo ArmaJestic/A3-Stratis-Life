@@ -1,7 +1,7 @@
 // A_camera_fnc_update_key_tracker
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_down);

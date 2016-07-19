@@ -1,7 +1,7 @@
 // A_admin_menu_fnc_admin_actions_list
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ([

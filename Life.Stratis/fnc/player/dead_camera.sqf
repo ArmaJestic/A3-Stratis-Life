@@ -1,6 +1,6 @@
 // A_player_fnc_dead_camera
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (defined(player_rejoin_suicide_active)) exitWith {

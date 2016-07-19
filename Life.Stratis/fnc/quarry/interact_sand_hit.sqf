@@ -1,7 +1,7 @@
 // A_quarry_fnc_interact_sand_hit
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_interaction_fnc_stone_hit %1", _this];

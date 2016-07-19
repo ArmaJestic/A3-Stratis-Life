@@ -1,6 +1,6 @@
 // A_gang_fnc_area_set_control
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_gang_area);

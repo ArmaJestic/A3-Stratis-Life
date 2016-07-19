@@ -1,6 +1,6 @@
 // A_misc_fnc_generic_config_text
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 ARGV(0,_id);
 ARGV(1,_field);

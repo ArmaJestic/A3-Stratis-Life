@@ -1,7 +1,7 @@
 // A_mounted_fnc_player_inside
 
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 //player groupChat format["Checking player inside"];

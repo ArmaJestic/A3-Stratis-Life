@@ -1,6 +1,6 @@
 // A_player_fnc_near_side_count
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 _art  = ((_this select 3) select 0);
 _moneh = [player, 'money'] call A_inventory_fnc_get_item_amount;

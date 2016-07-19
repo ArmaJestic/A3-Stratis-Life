@@ -1,7 +1,7 @@
 // A_lotto_menu_fnc_ticket_lookup_id
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_ticket_id);

@@ -1,6 +1,6 @@
 // A_pos_fnc_angle_sector
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 private["_dir1","_dir2","_dir3","_small","_large","_x","_y","_r"];

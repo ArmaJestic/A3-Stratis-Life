@@ -1,7 +1,7 @@
 // A_speed_gun_fnc_toggle
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 player groupChat format["A_speed_gun_fnc_toggle = %1", _this];

@@ -1,7 +1,7 @@
 // A_jip_fnc_wait
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 ARGV(0,_player);
 ARGV(1,_jip_variable);

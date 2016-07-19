@@ -1,6 +1,6 @@
 // A_config_fnc_class_item_mass
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_item_id);

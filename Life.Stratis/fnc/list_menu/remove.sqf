@@ -1,7 +1,7 @@
 // A_list_menu_fnc_remove
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_list_menu_fnc_remove %1", _this];

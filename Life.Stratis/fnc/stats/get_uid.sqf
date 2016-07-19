@@ -1,6 +1,6 @@
 // A_stats_fnc_get_uid
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_object"];
 _object = _this select 0;

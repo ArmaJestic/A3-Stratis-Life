@@ -1,6 +1,6 @@
 // A_stun_fnc_agony
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

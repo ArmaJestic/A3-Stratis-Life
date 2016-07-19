@@ -1,7 +1,7 @@
 // A_license_fnc_add_actions
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_license_fnc_add_actions %1", _this];

@@ -1,6 +1,6 @@
 // A_player_fnc_save_side_inventory
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //diag_log format["A_player_fnc_save_side_inventory %1", _this];

@@ -1,7 +1,7 @@
 // A_drag_fnc_remote_detach
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 player grouPChat format["A_drag_fnc_remote_detach %1", _this];

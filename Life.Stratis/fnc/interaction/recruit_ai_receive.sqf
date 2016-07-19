@@ -1,8 +1,8 @@
 // A_interaction_fnc_recruit_ai_receive
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 if (not(isServer)) exitWith {null};

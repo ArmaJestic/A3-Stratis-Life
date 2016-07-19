@@ -1,6 +1,6 @@
 // A_config_fnc_class_item_max_load
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_config_fnc_class_item_max_load = %1", _this];

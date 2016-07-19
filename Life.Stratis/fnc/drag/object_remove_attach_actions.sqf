@@ -1,7 +1,7 @@
 // A_drag_fnc_object_remove_attach_actions
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

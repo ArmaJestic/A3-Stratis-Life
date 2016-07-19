@@ -1,7 +1,7 @@
 // A_camera_fnc_draw_helpers
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 if (undefined(camera_unit)) exitWith {};

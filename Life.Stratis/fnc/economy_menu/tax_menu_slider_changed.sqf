@@ -1,7 +1,7 @@
 // A_economy_menu_fnc_tax_menu_slider_changed
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_control);

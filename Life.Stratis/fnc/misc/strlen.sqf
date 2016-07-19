@@ -1,6 +1,6 @@
 // A_misc_fnc_strlen
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_text"];
 _text = _this select 0;

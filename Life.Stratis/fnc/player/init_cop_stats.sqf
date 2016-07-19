@@ -1,6 +1,6 @@
 // A_player_fnc_init_cop_stats
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

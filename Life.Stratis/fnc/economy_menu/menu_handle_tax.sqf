@@ -1,7 +1,7 @@
 // A_economy_menu_fnc_menu_handle_tax
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_title);

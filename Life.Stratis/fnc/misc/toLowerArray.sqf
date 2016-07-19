@@ -1,6 +1,6 @@
 // A_misc_fnc_toLowerArray
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_array"];
 _array = _this select 0;

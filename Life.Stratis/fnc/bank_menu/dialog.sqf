@@ -1,7 +1,7 @@
 // A_bank_menu_fnc_dialog
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 disableSerialization;

@@ -1,7 +1,7 @@
 // fired event handler script
 // EH_fired.sqf
 
-#include "macro.h"
+#include "..\..\includes\macro.h"
 
 private["_unit", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile"];
 

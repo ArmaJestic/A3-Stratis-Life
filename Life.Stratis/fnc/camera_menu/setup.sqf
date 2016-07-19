@@ -1,7 +1,7 @@
 // A_camera_menu_fnc_setup
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 disableSerialization;

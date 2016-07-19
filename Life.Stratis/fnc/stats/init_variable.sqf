@@ -1,6 +1,6 @@
 // A_stats_fnc_init_variable
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_variable", "_value"];
 _variable = _this select 0;

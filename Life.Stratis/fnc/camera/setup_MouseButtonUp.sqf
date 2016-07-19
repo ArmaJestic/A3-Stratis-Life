@@ -1,7 +1,7 @@
 // A_camera_fnc_setup_MouseButtonUp
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 private["_data"];

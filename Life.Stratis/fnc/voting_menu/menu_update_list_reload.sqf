@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_menu_update_list_reload
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_election_id);

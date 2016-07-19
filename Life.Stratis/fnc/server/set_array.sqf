@@ -1,6 +1,6 @@
 // A_server_fnc_set_array
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_server_fnc_set_array %1", _this];

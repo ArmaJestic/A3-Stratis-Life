@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_spawn_cleanup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 _this spawn {
 ARGV(0,_vehicle);

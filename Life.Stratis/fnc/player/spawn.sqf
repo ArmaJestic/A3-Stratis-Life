@@ -1,6 +1,6 @@
 // A_player_fnc_spawn
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 ARGV(0,_player);

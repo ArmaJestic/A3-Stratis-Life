@@ -1,7 +1,7 @@
 // A_mounted_fnc_setup_keyUp
 
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 private["_data"];

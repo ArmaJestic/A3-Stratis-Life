@@ -1,8 +1,8 @@
 // A_interaction_fnc_gang_make_leader
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
  _this spawn {
 ARGV(0,_player);

@@ -1,7 +1,7 @@
 // A_factory_fnc_remove_actions
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 if (count A_factory_var_actions == 0) exitWith {null};

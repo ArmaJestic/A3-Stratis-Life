@@ -1,6 +1,6 @@
 // A_player_fnc_players_object_near
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_object);

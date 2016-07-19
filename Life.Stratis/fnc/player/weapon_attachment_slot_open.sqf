@@ -1,6 +1,6 @@
 // A_player_fnc_weapon_attachment_slot_open
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

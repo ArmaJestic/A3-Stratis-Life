@@ -1,7 +1,7 @@
 // A_storage_menu_fnc_menu_generate_selection_code
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_action);

@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 ISSE_MAX_NUMBER = 10000000;
 ISSE_str_const_numbers     = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];

@@ -1,7 +1,7 @@
 // A_economy_menu_fnc_lookup_tax_value_type
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_tax_type);

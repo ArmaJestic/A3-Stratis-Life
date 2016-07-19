@@ -1,8 +1,8 @@
 // A_interaction_fnc_president_change_taxes
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 itemtax = _this select 0;

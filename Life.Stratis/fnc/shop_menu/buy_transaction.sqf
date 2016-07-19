@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_buy_transaction
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_data);

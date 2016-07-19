@@ -1,7 +1,7 @@
 // A_mine_fnc_ore_spawn
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_mine_fnc_ore_spawn %1", _this];

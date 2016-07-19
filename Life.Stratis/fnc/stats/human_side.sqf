@@ -1,6 +1,6 @@
 // A_stats_fnc_human_side
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 #include "ASCII.h"
 
 private ["_player"];

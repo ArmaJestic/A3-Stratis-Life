@@ -1,6 +1,6 @@
 // A_bis_expected_fnc_addWeaponItem
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_bis_expected_fnc_addWeaponItem %1", _this];

@@ -1,7 +1,7 @@
 // A_camera_fnc_set_nightvision
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

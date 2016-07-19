@@ -1,6 +1,6 @@
 // A_stats_fnc_wait_entry
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_entry", "_object", "_timeout"];
 _entry = _this select 0;

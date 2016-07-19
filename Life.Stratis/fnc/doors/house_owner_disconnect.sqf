@@ -1,8 +1,8 @@
 // A_doors_fnc_house_owner_disconnect
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
  _this spawn {
 ARGV(0,_object);

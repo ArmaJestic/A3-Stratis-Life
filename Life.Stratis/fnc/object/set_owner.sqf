@@ -1,6 +1,6 @@
 // A_object_fnc_set_owner
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 private["_object", "_owner"];

@@ -1,7 +1,7 @@
 // A_storage_menu_fnc_menu_factory_storage
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_storage_menu_fnc_menu_factory_storage %1", _this];

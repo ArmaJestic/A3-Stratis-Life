@@ -1,7 +1,7 @@
 // A_rig_fnc_setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 player grouPChat format["A_rig_fnc_setup %1", _this];

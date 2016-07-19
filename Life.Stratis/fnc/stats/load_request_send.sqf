@@ -1,6 +1,6 @@
 // A_stats_fnc_load_request_send
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_uid", "_request", "_response_variable"];
 

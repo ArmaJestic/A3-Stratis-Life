@@ -1,6 +1,6 @@
 // A_player_fnc_set_scalar
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

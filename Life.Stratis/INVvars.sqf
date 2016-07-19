@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 INV_shortcuts  = true;
 //INV_SperrenVerbotArray  = [[copbase1, 250],[mosqueprop, 120], [banklogic, 35], [pmcprop, 70], [tairspawn, 150], [asairspawn, 30], [airfacspawn, 30], [insvehspawn, 80],[redhelispawn, 100],[CopPrisonAusgang, 20]];

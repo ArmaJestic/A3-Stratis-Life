@@ -1,8 +1,8 @@
 // A_interaction_fnc_pump_barrel_hit
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 //player groupChat format["interact_barrel_hit %1", _this];

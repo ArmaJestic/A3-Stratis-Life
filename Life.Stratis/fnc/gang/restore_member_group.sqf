@@ -1,6 +1,6 @@
 // A_gang_fnc_restore_member_group
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_member_uid);

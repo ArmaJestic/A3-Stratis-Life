@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 /*
 RadioTrigger_1 = createTrigger      ["EmptyDetector", [0,0,0]];

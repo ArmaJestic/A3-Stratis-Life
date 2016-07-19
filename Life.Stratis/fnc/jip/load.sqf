@@ -1,7 +1,7 @@
 // A_jip_fnc_load
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 if (isServer) exitWith {};
 

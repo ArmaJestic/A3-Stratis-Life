@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_election_timeout_start
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 ARGV(0,_election_data);

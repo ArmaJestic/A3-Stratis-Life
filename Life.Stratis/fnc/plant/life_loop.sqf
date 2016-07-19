@@ -1,7 +1,7 @@
 // A_plant_fnc_life_loop
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
  _this spawn {
 ARGV(0,_plant);

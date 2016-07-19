@@ -1,6 +1,6 @@
 // A_player_fnc_side_gear_request_receive
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_player_fnc_side_gear_request_receive %1", _this];

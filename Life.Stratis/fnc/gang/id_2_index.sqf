@@ -1,6 +1,6 @@
 // A_gang_fnc_id_2_index
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_gang_id);

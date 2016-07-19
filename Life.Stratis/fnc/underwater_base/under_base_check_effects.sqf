@@ -1,7 +1,7 @@
 // A_underwater_base_fnc_under_base_check_effects
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_underwater_base_fnc_under_base_check_effects %1", time];

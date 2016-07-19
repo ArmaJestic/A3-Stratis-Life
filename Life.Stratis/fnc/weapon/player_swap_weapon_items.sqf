@@ -1,7 +1,7 @@
 // A_weapon_fnc_player_swap_weapon_items
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_player);

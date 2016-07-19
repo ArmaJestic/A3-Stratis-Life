@@ -1,6 +1,6 @@
 // A_flag_pole_fnc_move_flag
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_pole);

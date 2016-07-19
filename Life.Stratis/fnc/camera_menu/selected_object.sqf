@@ -1,7 +1,7 @@
 // A_camera_menu_fnc_selected_object
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 private["_object", "_object_netid"];

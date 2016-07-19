@@ -1,6 +1,6 @@
 // A_gang_fnc_lookup_player_name
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player_name);

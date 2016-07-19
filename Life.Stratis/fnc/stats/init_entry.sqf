@@ -1,6 +1,6 @@
 // A_stats_fnc_init_entry
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_object", "_variable", "_value"];
 

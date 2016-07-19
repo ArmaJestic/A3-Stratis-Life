@@ -1,7 +1,7 @@
 // A_towing_fnc_line_detach
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_towing_fnc_line_detach %1", _this];

@@ -1,6 +1,6 @@
 // A_config_fnc_class_container
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_config_fnc_class_container %1", _this];

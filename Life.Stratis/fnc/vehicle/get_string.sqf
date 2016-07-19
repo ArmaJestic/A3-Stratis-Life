@@ -1,6 +1,6 @@
 // A_vehicle_fnc_get_string
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 _this set [2, "STRING"];

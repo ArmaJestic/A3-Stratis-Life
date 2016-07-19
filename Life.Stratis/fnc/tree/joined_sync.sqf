@@ -1,7 +1,7 @@
 // A_tree_fnc_joined_sync
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_tree_fnc_joined_sync: start"];

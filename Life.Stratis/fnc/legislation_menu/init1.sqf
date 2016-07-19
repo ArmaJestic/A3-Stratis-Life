@@ -1,5 +1,5 @@
 // A_legislation_menu_fnc_init1
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 

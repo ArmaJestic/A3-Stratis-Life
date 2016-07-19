@@ -1,7 +1,7 @@
 // A_towing_fnc_data_lookup_class
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_class);

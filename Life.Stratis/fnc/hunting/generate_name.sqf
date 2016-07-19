@@ -1,6 +1,6 @@
 // A_hunting_fnc_generate_name
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_base);

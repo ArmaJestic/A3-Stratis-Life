@@ -1,7 +1,7 @@
 // A_invokeJava_fnc_logThis_request_receive
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h" 
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h" 
 
 diag_log format["A_invokeJava_fnc_logThis_request_receive %1", _this];
 private["_variable", "_request"];

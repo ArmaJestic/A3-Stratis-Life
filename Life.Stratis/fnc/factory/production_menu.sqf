@@ -1,7 +1,7 @@
 // A_factory_fnc_production_menu
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
  _this spawn {
 ARGV(0,_player);

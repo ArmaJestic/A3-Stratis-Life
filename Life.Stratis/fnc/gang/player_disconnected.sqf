@@ -1,6 +1,6 @@
 // A_gang_fnc_player_disconnected
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_gang_fnc_player_disconnected %1", _this];

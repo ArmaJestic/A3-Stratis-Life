@@ -1,7 +1,7 @@
 // A_camera_fnc_create_setPos_reference
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 camera_setPos_reference = "Sign_Sphere10cm_F" createVehicleLocal [0,0,0];

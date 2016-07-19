@@ -1,7 +1,7 @@
 // A_weapon_fnc_slot_label_changed
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["weapon_muzzle_label_changed %1", _this];

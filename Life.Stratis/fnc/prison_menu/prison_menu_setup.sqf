@@ -1,7 +1,7 @@
 // A_prison_menu_fnc_prison_menu_setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_prison_menu_fnc_prison_menu_setup %1", _this];

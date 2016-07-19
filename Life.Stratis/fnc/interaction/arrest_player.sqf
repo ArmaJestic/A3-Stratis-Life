@@ -1,8 +1,8 @@
 // A_interaction_fnc_arrest_player
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
  _this spawn {
 player groupChat format["A_interaction_fnc_arrest_player %1", _this];

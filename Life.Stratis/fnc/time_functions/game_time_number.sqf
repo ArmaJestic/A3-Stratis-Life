@@ -1,6 +1,6 @@
 // A_time_functions_fnc_game_time_number
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 private ["_rsecs", "_gsecs"];

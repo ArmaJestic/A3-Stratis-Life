@@ -1,6 +1,6 @@
 // A_object_fnc_nonNetwork_convert
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_object_fnc_nonNetwork_convert %1", _this];

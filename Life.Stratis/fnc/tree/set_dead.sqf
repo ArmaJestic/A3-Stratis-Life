@@ -1,7 +1,7 @@
 // A_tree_fnc_set_dead
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_tree);

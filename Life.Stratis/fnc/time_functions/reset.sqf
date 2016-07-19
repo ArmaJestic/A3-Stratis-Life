@@ -1,6 +1,6 @@
 // A_time_functions_fnc_reset
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 _this spawn {

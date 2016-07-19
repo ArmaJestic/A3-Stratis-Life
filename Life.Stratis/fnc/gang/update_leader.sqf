@@ -1,6 +1,6 @@
 // A_gang_fnc_update_leader
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (not(isServer)) exitWith {null};

@@ -1,6 +1,6 @@
 // A_player_fnc_rejoin_camera_choice
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_player_fnc_rejoin_camera_choice %1", _this];

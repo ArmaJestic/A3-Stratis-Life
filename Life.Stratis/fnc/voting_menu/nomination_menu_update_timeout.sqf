@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_nomination_menu_update_timeout
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 disableSerialization;

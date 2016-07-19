@@ -1,7 +1,7 @@
 // A_limbo_base_fnc_create
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_offset);

@@ -1,6 +1,6 @@
 // A_object_fnc_set_heading
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_object);

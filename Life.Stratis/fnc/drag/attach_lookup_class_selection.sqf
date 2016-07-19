@@ -1,7 +1,7 @@
 // A_drag_fnc_attach_lookup_class_selection
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_class);

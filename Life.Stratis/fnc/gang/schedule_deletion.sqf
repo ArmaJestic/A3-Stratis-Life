@@ -1,6 +1,6 @@
 // A_gang_fnc_schedule_deletion
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 if (not(isServer)) exitWith {null};

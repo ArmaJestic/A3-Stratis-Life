@@ -1,7 +1,7 @@
 // A_camera_menu_fnc_camera_modify_offset
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_object);

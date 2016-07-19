@@ -1,6 +1,6 @@
 // A_stats_fnc_compile_entry
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 //player groupChat format["A_stats_fnc_compile_entry %1", _this];
 private["_entry", "_object"];

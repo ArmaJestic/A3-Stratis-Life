@@ -1,6 +1,6 @@
 // A_bis_expected_fnc_removeItemFromHandgun
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_bis_expected_fnc_removeItemFromHandgun %1", _this];

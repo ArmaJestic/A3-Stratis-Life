@@ -1,7 +1,7 @@
 // A_tree_fnc_register_request_receive
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 [format["A_tree_fnc_register_request_receive %1", _this]] call A_jip_fnc_message;

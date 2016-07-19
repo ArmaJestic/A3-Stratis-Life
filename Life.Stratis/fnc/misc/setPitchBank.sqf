@@ -1,6 +1,6 @@
 // A_misc_fnc_setPitchBank
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private ["_obj","_pitch","_bank","_yaw","_vdir","_vup","_s ign","_rotate"];
 

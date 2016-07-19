@@ -1,7 +1,7 @@
 // A_plant_fnc_interact_plant_seedling
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 _this spawn {
 ARGV(0,_player);

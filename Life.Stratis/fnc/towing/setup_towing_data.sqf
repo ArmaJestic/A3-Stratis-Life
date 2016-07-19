@@ -1,7 +1,7 @@
 // A_towing_fnc_setup_towing_data
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_towing_fnc_setup_towing_data %1", _this];

@@ -1,7 +1,7 @@
 // A_factory_fnc_globals
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 private["_weaponfactory"];

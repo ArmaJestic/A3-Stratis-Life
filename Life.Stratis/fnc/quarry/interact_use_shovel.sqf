@@ -1,7 +1,7 @@
 // A_quarry_fnc_interact_use_shovel
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 if (dialog) exitWith {};

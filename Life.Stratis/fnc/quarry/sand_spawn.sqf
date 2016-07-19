@@ -1,7 +1,7 @@
 // A_quarry_fnc_sand_spawn
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_quarry_fnc_sand_spawn %1", _this];

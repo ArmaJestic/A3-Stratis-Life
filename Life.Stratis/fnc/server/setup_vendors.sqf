@@ -1,6 +1,6 @@
 // A_server_fnc_setup_vendors
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (not(isServer)) exitWith {null};

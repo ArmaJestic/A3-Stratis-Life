@@ -1,6 +1,6 @@
 // A_stun_fnc_effects_light
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_stun_fnc_effects_light %1", _this];

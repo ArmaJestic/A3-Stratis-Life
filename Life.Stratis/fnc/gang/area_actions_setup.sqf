@@ -1,6 +1,6 @@
 // A_gang_fnc_area_actions_setup
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

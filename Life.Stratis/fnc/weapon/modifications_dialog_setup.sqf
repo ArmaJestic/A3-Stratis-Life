@@ -1,7 +1,7 @@
 // A_weapon_fnc_modifications_dialog_setup
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_weapon_fnc_modifications_dialog_setup %1", _this];

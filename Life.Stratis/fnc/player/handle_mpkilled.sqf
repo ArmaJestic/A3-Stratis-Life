@@ -1,6 +1,6 @@
 // A_player_fnc_handle_mpkilled
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 player groupChat format["player_handle_mpkilled2 %1", _this];

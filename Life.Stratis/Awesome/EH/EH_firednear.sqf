@@ -1,4 +1,4 @@
-#include "macro.h"
+#include "..\..\includes\macro.h"
 
 //  fired near event handler script
 // EH_firednear.sqf

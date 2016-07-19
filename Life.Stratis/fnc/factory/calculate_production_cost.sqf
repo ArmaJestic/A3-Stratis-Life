@@ -1,7 +1,7 @@
 // A_factory_fnc_calculate_production_cost
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_factory_fnc_calculate_production_cost %1", _this];

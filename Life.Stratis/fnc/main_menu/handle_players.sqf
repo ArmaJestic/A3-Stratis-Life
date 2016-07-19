@@ -1,7 +1,7 @@
 // A_main_menu_fnc_handle_players
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_title);

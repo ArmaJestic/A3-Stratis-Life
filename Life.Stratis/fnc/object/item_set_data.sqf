@@ -1,6 +1,6 @@
 // A_object_fnc_item_set_data
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_object_fnc_item_set_data %1", _this];

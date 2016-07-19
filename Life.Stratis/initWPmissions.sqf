@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 _handler = [] execVM "workplacesettings.sqf";
 waitUntil {scriptDone _handler};

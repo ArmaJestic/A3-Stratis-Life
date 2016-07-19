@@ -1,6 +1,6 @@
 // A_stats_fnc_server_wipe_player_data
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_player_variable"]; 
 _player_variable = _this select 0;

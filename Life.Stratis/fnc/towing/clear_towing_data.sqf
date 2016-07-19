@@ -1,7 +1,7 @@
 // A_towing_fnc_clear_towing_data
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 //player groupChat format["A_towing_fnc_clear_towing_data"];

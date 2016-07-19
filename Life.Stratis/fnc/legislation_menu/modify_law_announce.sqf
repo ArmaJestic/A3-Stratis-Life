@@ -1,7 +1,7 @@
 // A_legislation_menu_fnc_modify_law_announce
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_law_index);

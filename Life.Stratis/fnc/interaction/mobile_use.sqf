@@ -1,8 +1,8 @@
 // A_interaction_fnc_mobile_use
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\dikcodes.h"
 
 
 [] call A_mobile_menu_fnc_setup;

@@ -1,7 +1,7 @@
 // A_drug_fnc_lsd_effects
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
  _this spawn {
 ARGV(0,_player);

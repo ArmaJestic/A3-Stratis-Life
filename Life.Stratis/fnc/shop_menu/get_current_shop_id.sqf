@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_get_current_shop_id
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 private["_shop_id", "_shopDialog"];

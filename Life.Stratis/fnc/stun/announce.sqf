@@ -1,6 +1,6 @@
 // A_stun_fnc_announce
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (defined(stun_announcing) && {stun_announcing}) exitWith {};

@@ -1,6 +1,6 @@
 // A_salary_fnc_civilian_salary_loop
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 if (isblu) exitWith {null};

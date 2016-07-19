@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_get_oil_barrel_supply
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 private["_demand", "_supply", "_max_stock"];

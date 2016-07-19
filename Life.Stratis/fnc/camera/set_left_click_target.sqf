@@ -1,7 +1,7 @@
 // A_camera_fnc_set_left_click_target
 
-#include "../../includes/dikcodes.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\dikcodes.h"
+#include "..\..\includes\macro.h"
 
 
 camera_unit groupChat format["A_camera_fnc_set_left_click_target %1", _this];

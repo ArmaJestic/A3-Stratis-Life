@@ -1,6 +1,6 @@
 // A_object_fnc_nearest_strstr
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_position);

@@ -1,6 +1,6 @@
 // A_misc_fnc_DialogPlayerList
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private ["_control_id", "_show_civ", "_show_cop", "_show_ins", "_show_opf"];
 

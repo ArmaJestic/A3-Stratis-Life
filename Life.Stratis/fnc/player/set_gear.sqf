@@ -1,6 +1,6 @@
 // A_player_fnc_set_gear
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 diag_log format["A_player_fnc_set_gear %1", _this];

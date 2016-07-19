@@ -1,7 +1,7 @@
 // A_shop_menu_fnc_drug_search
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 waituntil{!A_shop_menu_var_busy};

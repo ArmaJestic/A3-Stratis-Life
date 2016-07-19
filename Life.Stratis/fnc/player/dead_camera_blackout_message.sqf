@@ -1,6 +1,6 @@
 // A_player_fnc_dead_camera_blackout_message
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 private["_message"];

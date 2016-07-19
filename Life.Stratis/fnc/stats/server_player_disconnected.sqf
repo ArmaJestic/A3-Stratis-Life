@@ -1,6 +1,6 @@
 // A_stats_fnc_server_player_disconnected
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_id", "_name", "_uid"];
 _id = _this select 0; 

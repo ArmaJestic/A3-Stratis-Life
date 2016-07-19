@@ -1,7 +1,7 @@
 // A_plant_fnc_seed_handler_persistent
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
  _this spawn {
 ARGV(0,_death_time);

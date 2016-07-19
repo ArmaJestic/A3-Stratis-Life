@@ -1,7 +1,7 @@
 // A_voting_menu_fnc_nominate_player_announce
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_election_data);

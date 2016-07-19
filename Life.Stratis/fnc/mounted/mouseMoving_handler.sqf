@@ -1,7 +1,7 @@
 // A_mounted_fnc_mouseMoving_handler
 
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 ARGV(1,_data);

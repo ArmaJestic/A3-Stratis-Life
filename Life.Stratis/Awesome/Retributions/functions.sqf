@@ -1,4 +1,4 @@
-#include "macro.h"
+#include "..\..\includes\macro.h"
 
 //if (isServer && !isDedicated) exitWith {null};
 #define kvlist 5003 

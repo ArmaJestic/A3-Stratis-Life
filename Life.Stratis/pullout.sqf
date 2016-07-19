@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 
 _target = (crew _this) select 0;
 _n 	= 10;

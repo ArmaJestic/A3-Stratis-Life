@@ -1,6 +1,6 @@
 // A_misc_fnc_DialogNotCopsList
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_control_id"];
 _control_id = _this select 0;

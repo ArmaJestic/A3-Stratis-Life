@@ -1,6 +1,6 @@
 // A_stats_fnc_client_server_setup_wait
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_complete"];
 	

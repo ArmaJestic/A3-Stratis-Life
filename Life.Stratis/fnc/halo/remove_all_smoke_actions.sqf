@@ -1,6 +1,6 @@
 // A_halo_fnc_remove_all_smoke_actions
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_unit);

@@ -1,8 +1,8 @@
 // A_doors_fnc_house_remove_spawn_data
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
-#include "../../includes/dikcodes.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\dikcodes.h"
 
 
 player groupChat format["A_doors_fnc_house_remove_spawn_data %1", _this];

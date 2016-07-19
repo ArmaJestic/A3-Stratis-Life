@@ -1,7 +1,7 @@
 // A_factory_fnc_item_dequeue
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_factory_fnc_item_dequeue %1", _this];

@@ -1,7 +1,7 @@
 // A_factory_fnc_loop
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_factory_fnc_loop %1", _this];

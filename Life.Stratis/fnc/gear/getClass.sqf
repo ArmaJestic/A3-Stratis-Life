@@ -1,6 +1,6 @@
 // A_gear_fnc_getClass
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_class);

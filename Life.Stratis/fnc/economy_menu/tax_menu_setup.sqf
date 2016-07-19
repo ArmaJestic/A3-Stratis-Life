@@ -1,7 +1,7 @@
 // A_economy_menu_fnc_tax_menu_setup
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 disableSerialization;

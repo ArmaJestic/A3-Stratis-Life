@@ -1,7 +1,7 @@
 // A_jip_fnc_execute
 
-#include "../../includes/macro.h"
-#include "../../includes/constants.h"
+#include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 _this spawn {
 	ARGV(0,_arguments);

@@ -1,7 +1,7 @@
 // A_invokeJava_fnc_getenv
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h" 
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h" 
 
 private["_key"];
 	

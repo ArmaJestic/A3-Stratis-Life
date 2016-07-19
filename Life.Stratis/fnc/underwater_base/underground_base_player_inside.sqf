@@ -1,7 +1,7 @@
 // A_underwater_base_fnc_underground_base_player_inside
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_player);

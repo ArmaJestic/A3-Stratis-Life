@@ -1,6 +1,6 @@
 // A_misc_fnc_SayDirectSpeach
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private ["_text", "_dis"];
 _text = _this select 0;

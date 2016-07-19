@@ -1,7 +1,7 @@
 // A_bunker_fnc_create_entrance
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_bunker_data);

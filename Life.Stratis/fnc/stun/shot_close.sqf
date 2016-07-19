@@ -1,6 +1,6 @@
 // A_stun_fnc_shot_close
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 player groupChat format["A_stun_fnc_shot_close %1", _this];

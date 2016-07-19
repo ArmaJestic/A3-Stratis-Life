@@ -1,6 +1,6 @@
 // A_misc_fnc_strstr
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 private["_needle", "_haystack"];
 _needle = _this select 0;

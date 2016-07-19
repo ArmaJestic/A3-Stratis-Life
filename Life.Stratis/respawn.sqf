@@ -1,4 +1,4 @@
-#include "Awesome\Functions\macro.h"
+#include "includes\macro.h"
 if (not(undefined(respawn_functions_defined))) exitWith {null};
 
 ["player_rejoin_camera_complete"] call A_player_fnc_wait;;

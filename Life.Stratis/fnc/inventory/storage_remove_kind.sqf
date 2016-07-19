@@ -1,7 +1,7 @@
 // A_inventory_fnc_storage_remove_kind
 
-#include "../../includes/constants.h"
-#include "../../includes/macro.h"
+#include "..\..\includes\constants.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_object);

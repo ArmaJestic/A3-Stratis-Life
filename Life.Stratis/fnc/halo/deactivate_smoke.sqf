@@ -1,6 +1,6 @@
 // A_halo_fnc_deactivate_smoke
 
-#include "../../includes/macro.h"
+#include "..\..\includes\macro.h"
 
 
 ARGV(0,_unit);
