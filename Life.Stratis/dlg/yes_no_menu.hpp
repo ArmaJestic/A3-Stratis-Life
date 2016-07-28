@@ -47,7 +47,7 @@ class yes_no_menu {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "No";																										
-		action = "closedialog 0;";		
+		A_actions_fnc_action = "closedialog 0;";		
 	};										
 
 	class yes_no_menu_label : RscText {

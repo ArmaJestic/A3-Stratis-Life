@@ -19,23 +19,23 @@ if (_projectile isKindOf "PipeBombBase") then {
 
 if (_unit distance (getmarkerpos "respawn_west") < 100) exitwith {
 	deletevehicle _projectile;
-	if (firestrikes == 0) exitwith {
+	if (A_main_var_firestrikes == 0) exitwith {
 		[player] call A_player_fnc_reset_gear;
-		firestrikes = 3;
+		A_main_var_firestrikes = 3;
 	};
-	firestrikes = firestrikes - 1;
-	format['hint "WARNING %1: DO NOT FIRE INSIDE THE COPBASE! %2/%3 chances left.";', name _unit, firestrikes, totalstrikes] call broadcast;
+	A_main_var_A_main_var_firestrikes = A_main_var_A_main_var_firestrikes - 1;
+	format['hint "WARNING %1: DO NOT FIRE INSIDE THE COPBASE! %2/%3 chances left.";', name _unit, A_main_var_firestrikes, A_main_var_totalstrikes] call A_broadcast_fnc_broadcast;
 };
 
 if (((_unit distance (getmarkerpos "respawn_civilian")) < 130) ) exitwith {
 	deleteVehicle _projectile;
-	if (firestrikes == 0) exitwith {
+	if (A_main_var_firestrikes == 0) exitwith {
 		[player] call A_player_fnc_reset_gear;
-		firestrikes = 3;
+		A_main_var_firestrikes = 3;
 	};
 	
-	firestrikes = firestrikes - 1;
-	format['hint "WARNING %1: DO NOT FIRE INSIDE THE CIVILIAN SPAWN! %2/%3 chances left.";', name _unit, firestrikes, totalstrikes] call broadcast;
+	A_main_var_A_main_var_firestrikes = A_main_var_A_main_var_firestrikes - 1;
+	format['hint "WARNING %1: DO NOT FIRE INSIDE THE CIVILIAN SPAWN! %2/%3 chances left.";', name _unit, A_main_var_firestrikes, A_main_var_totalstrikes] call A_broadcast_fnc_broadcast;
 };
 
 if ((_unit distance (getmarkerpos "respawn_east")) < 100) exitwith {
@@ -50,4 +50,4 @@ if (_weapon  == "hgun_P07_snds_F") then {
 	[_unit] call A_stun_fnc_gun_sound;		
 };
 
-//[_this, _projectile] execVM "Awesome\Scripts\Smoke.sqf";
+//[_this, _projectile] execVM "Awesome\Scripts\A_other_fnc_smoke.sqf";

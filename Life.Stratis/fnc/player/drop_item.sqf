@@ -12,7 +12,7 @@ if (undefined(_item)) exitWith {null};
 if (undefined(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
-if (_item == "handy") exitWith {null};
+if (_item == "A_item_fnc_handy") exitWith {null};
 
 private["_class", "_object"];
 _class = [_item] call A_inventory_fnc_item2class;

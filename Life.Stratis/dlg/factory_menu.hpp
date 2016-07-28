@@ -205,7 +205,7 @@ class factory_dialog {
 		colorBackgroundDisabled[] = DISABLED_BUTTON_BACKGROUND;
 		colorDisabled[] = DISABLED_BUTTON_TEXT;
 		text = "Close";
-		action = "closeDialog 0;";
+		A_actions_fnc_action = "closeDialog 0;";
 	};
 	
 	class status_frame1 : RscBackground {

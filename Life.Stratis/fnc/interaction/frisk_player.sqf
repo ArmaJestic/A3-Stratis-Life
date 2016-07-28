@@ -15,7 +15,7 @@ if (not([_target] call A_player_fnc_human)) exitWith {null};
 if (_player != player) exitWith {null};
 
 private["_interaction"];
-_interaction = "search";
+_interaction = "A_missions_fnc_search";
 if (not([_player, _target, _interaction] call A_interaction_fnc_check_distance)) exitWith {null};
 if (not([_player, _target, _interaction] call A_interaction_fnc_check_armed)) exitWith {null};
 

@@ -37,6 +37,6 @@ if (not(([_target] call A_player_fnc_get_bounty) > 0)) exitWith {
 
 private["_message"];
 _message = format["%1-%2 has paid $%3 to watch %4-%5 for %6 second/s in civilian camera!", _player, (name _player), strM(_cost), _target, (name _target), _watchtime];
-format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 
 [_target, _watchtime] call A_interaction_fnc_player_camera;

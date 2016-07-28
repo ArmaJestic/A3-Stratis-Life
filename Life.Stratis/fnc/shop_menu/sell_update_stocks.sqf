@@ -16,9 +16,9 @@ _shop_id = _data select A_shop_menu_var_sell_item_shop_id;
 _isOilBarrel = (_item == "OilBarrel");
 
 if (_isOilBarrel) exitWith {
-	[-(_amount * fuel_per_barrel)] call A_shop_menu_fnc_update_fuel_consumed;
+	[-(_amount * A_main_var_fuel_per_barrel)] call A_shop_menu_fnc_update_fuel_consumed;
 };
 
 if (_max_stock < 0) exitWith {null};
 _new_supply = _supply + _amount;
-format['["%1", %2, %3] call A_inventory_fnc_item_stock_update;', _item, _new_supply, _shop_id] call broadcast;
+format['["%1", %2, %3] call A_inventory_fnc_item_stock_update;', _item, _new_supply, _shop_id] call A_broadcast_fnc_broadcast;

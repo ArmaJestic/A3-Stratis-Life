@@ -6,7 +6,7 @@
 
 //player groupChat format["A_mounted_fnc_add_actions %1", _this];
 ARGV(0,_vehicle);
-//player groupChat format["Adding actions!"];
+//player groupChat format["Adding A_actions_fnc_actions!"];
 if (undefined(_vehicle)) exitWith {null};
 
 private["_class"];

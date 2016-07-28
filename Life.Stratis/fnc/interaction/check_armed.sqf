@@ -15,7 +15,7 @@ if (undefined(_interaction)) exitWith {null};
 if (typeName _interaction != "STRING") exitWith {null};
 
 
-if (not([player] call check_armed_player)) exitWith {
+if (not([player] call A_client_fnc_check_armed_player)) exitWith {
 	player groupChat format["You cannot %1 %2-%3, you are not armed", _interaction, _target, (name _target)];
 	false
 };

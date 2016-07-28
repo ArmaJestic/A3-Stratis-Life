@@ -9,7 +9,7 @@ ARGV(1,_man);
 if (A_stun_var_stunning) exitWith {null};
 A_stun_var_stunning = true;
 
-format['%1 switchmove "AwopPercMstpSgthWnonDnon_end";',_unit] call broadcast;
+format['%1 switchmove "AwopPercMstpSgthWnonDnon_end";',_unit] call A_broadcast_fnc_broadcast;
 sleep 0.3;
 if (undefined(_man) || 
 	{typeName _man != "OBJECT" || 

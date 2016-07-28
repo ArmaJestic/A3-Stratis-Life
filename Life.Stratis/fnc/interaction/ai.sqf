@@ -19,7 +19,7 @@ if (not(_target in A_farming_var_shopusearray)) exitWith {false};
 private["_id"];
 _id = _target call A_inventory_fnc_get_shop_number;
 
-if(([_player] call A_player_fnc_blufor) and (_target in drugsellarray)) exitWith {
+if(([_player] call A_player_fnc_blufor) and (_target in A_bank_var_drugsellarray)) exitWith {
 	[_id] spawn A_shop_menu_fnc_drug_search;
 	true;
 };

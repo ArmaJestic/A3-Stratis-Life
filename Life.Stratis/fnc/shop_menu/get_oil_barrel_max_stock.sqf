@@ -4,4 +4,4 @@
 #include "..\..\includes\macro.h"
 
 
-  round(fuel_max_reserve/fuel_per_barrel)
+  round(A_main_var_fuel_max_reserve/A_main_var_fuel_per_barrel)

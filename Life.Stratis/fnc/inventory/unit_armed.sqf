@@ -3,4 +3,4 @@
 #include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
 
-if (count (weapons _this - nonlethalweapons) > 0) then {true}else{false}
+if (count (weapons _this - A_main_var_nonlethalweapons) > 0) then {true}else{false}

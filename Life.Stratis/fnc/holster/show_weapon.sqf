@@ -22,4 +22,4 @@ _player addWeapon INV_InventarPistol;
 _player selectWeapon INV_InventarPistol;
 [_player, 'pistol', 0] call A_inventory_fnc_set_item_amount;
 INV_InventarPistol = null;
-_player action ["switchweapon", _player, _player, 0];
+_player A_actions_fnc_action ["switchweapon", _player, _player, 0];

@@ -1,0 +1,8 @@
+A_optimize_var_a_script_lists = [
+	"A_settings_fnc_settings",
+	"A_bombs_fnc_bombs",
+	"A_other_fnc_pullout"
+];
+
+A_optimize_var_optimize_1_functions_defined = true;
+

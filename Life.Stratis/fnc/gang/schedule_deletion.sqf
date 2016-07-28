@@ -11,7 +11,7 @@ if (undefined(_gang_id)) exitWith {null};
 if (typeName _gang_id != "STRING") exitWith {null};
 
 private["_wait_time"];
-_wait_time = gangdeltime;
+_wait_time = A_main_var_gangdeltime;
 //player groupChat format["Waiting for %1 seconds to delete %2", _wait_time, _gang_id];
 [_wait_time] call A_player_fnc_isleep;
 //player groupChat format["Waiting to delete %1 compelete", _gang_id];

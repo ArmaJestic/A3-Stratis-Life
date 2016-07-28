@@ -32,7 +32,7 @@ if (count (units group player) >= 8) exitWith {
 [_player, 'money', -(200000)] call A_inventory_fnc_add_item;
 player groupChat "Recruiting soldier";
 
-format['[%1] call A_interaction_fnc_recruit_ai_receive;', _player] call broadcast;
+format['[%1] call A_interaction_fnc_recruit_ai_receive;', _player] call A_broadcast_fnc_broadcast;
 sleep 1;
 interact_recruit_ai_busy = false;
 };

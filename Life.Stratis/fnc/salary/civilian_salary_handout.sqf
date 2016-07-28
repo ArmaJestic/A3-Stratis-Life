@@ -12,7 +12,7 @@ private["_player"];
 _player = player;
 
 private["_income", "_activecount"];
-_income = add_civmoney;
+_income = A_main_var_add_civmoney;
 
 _activecount = 0;
 
@@ -23,9 +23,9 @@ for [{_i=0}, {_i < (count BuildingsOwnerArray)}, {_i=_i+1}] do {
 	_income = _income + _check;
 };
 
-if (timeinworkplace > 0) then {
+if (A_main_var_timeinworkplace > 0) then {
 	private["_workplacepaycheck"];
-	_workplacepaycheck = (round(add_workplace/180*timeinworkplace));
+	_workplacepaycheck = (round(A_main_var_add_workplace/180*A_main_var_timeinworkplace));
 	_income = _income + _workplacepaycheck;
 };
 
@@ -36,9 +36,9 @@ if (_gang_income > 0) then {
 	_income = _income + _gang_income;
 };
 
-timeinworkplace = 0;
-_income = if (undefined(_income)) then { add_civmoney } else {_income};
-_income = if (typeName _income != "SCALAR") then { add_civmoney } else { _income };
+A_main_var_timeinworkplace = 0;
+_income = if (undefined(_income)) then { A_main_var_add_civmoney } else {_income};
+_income = if (typeName _income != "SCALAR") then { A_main_var_add_civmoney } else { _income };
 
 _income = round _income;
 [player, _income] call A_bank_fnc_transaction;
@@ -48,14 +48,14 @@ player groupChat format[localize "STRS_moneh_civmoneyadd", rolestring, strM(_inc
 _taxes = round((call A_shop_menu_fnc_get_paid_taxes));
 
 if ([_player] call A_player_fnc_president) then {
-	MayorTaxes = MayorTaxes + _taxes;
-	MayorTaxes = round(MayorTaxes*(MayorTaxPercent/100));
-	[player, (MayorTaxes + MayorExtraPay)] call A_bank_fnc_transaction;
-	player groupchat format["As president you get an extra paycheck of $%1. You also got $%2 taxes.", strM(MayorExtraPay), strM(MayorTaxes)];
-	MayorTaxes = 0;
+	A_main_var_mayortaxes = A_main_var_mayortaxes + _taxes;
+	A_main_var_mayortaxes = round(A_main_var_mayortaxes*(A_main_var_mayortaxpercent/100));
+	[player, (A_main_var_mayortaxes + A_main_var_mayorextrapay)] call A_bank_fnc_transaction;
+	player groupchat format["As president you get an extra paycheck of $%1. You also got $%2 taxes.", strM(A_main_var_mayorextrapay), strM(A_main_var_mayortaxes)];
+	A_main_var_mayortaxes = 0;
 }
 else {if (_taxes > 0) then {
-	(format["if ([player] call A_player_fnc_president) then {MayorTaxes = MayorTaxes + %1;};", _taxes]) call broadcast;
+	(format["if ([player] call A_player_fnc_president) then {A_main_var_mayortaxes = A_main_var_mayortaxes + %1;};", _taxes]) call A_broadcast_fnc_broadcast;
 };};
 
 call A_shop_menu_fnc_reset_paid_taxes;

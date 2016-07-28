@@ -166,7 +166,7 @@ _mpfh = _mplh;
 
 _mobile_text_price_field ctrlSetFontHeight _button_font_height - 0.003;;
 _mobile_text_price_field ctrlSetFont _font_family;
-_mobile_text_price_field ctrlSetText format["$%1", INV_smscost];
+_mobile_text_price_field ctrlSetText format["$%1", A_main_var_inv_smscost];
 _mobile_text_price_field ctrlSetPosition [_mpfx, _mpfy, _mpfw, _mpfh];
 _mobile_text_price_field ctrlSetBackgroundColor [1,1,1,0.08];
 _mobile_text_price_field ctrlCommit 0;

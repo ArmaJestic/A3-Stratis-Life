@@ -11,10 +11,10 @@ if (undefined(_shop_id)) exitWith {null};
 if (typeName _shop_id != "SCALAR") exitWith {null};
 
 private["_shop", "_logic", "_item_sell_list"];
-_shop =  (INV_ItemShops select _shop_id);
-_logic = (_shop select INV_ItemShops_Logic);
+_shop =  (A_inv_var_itemshops select _shop_id);
+_logic = (_shop select A_inv_var_itemshops_logic);
 _logic = if (undefined(_logic) ) then { "" } else { _logic };
-_item_sell_list  = (_shop select INV_ItemShops_SellList);
+_item_sell_list  = (_shop select A_inv_var_itemshops_selllist);
 
 private["_count", "_shop_sell_list", "_i"];
 _count = count _item_sell_list;

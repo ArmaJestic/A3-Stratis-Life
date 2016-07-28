@@ -11,5 +11,5 @@ _Fresult = -1;
 		_Fresult = ((_x select 4) select 0);
 	};
 }
-forEach AllLifeMissionObjects;
+forEach A_main_var_alllifemissionobjects;
 _Fresult

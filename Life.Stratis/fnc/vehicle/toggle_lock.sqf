@@ -22,5 +22,5 @@ else {
 _state = if (_state == 2) then {true} else {false};
 
 [_vehicle, "locked", _state, true] call A_object_fnc_setVariable;
-format["%1 lock %2", _vehicle, _state] call broadcast;
+format["%1 lock %2", _vehicle, _state] call A_broadcast_fnc_broadcast;
 _state

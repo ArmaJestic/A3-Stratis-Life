@@ -22,7 +22,7 @@ _gang set[A_gang_var_members, _members];
 
 if ((count _members) == 0) then {
 	_gang set [A_gang_var_open, true];
-	format['["%1"] call A_gang_fnc_schedule_deletion;', _gang_id] call broadcast;
+	format['["%1"] call A_gang_fnc_schedule_deletion;', _gang_id] call A_broadcast_fnc_broadcast;
 };
 
 [_gang] call A_gang_fnc_update_list;

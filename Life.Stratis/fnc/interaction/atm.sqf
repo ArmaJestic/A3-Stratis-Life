@@ -13,7 +13,7 @@ if (undefined(_target)) exitWith {false};
 
 if (not([_target] call A_object_fnc_atm)) exitWith {};
 
-if(!local_useBankPossible) exitWith {
+if(!A_bank_var_local_usebankpossible) exitWith {
 	hint "The ATM rejected your card";
 	false
 };

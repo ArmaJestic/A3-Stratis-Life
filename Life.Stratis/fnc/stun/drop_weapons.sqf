@@ -8,7 +8,7 @@
  
  private ["_weapons"];
  _weapons = weapons _unit;
- _weapons = _weapons - nonlethalweapons;
+ _weapons = _weapons - A_main_var_nonlethalweapons;
  
 if ((count _weapons) == 0) exitWith {};
 

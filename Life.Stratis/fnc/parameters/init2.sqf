@@ -1,6 +1,6 @@
 // A_parameters_fnc_init2
 
-#include "../../parameters.h"
+#include "..\..\parameters.h"
 
 debug = DEBUG;
 

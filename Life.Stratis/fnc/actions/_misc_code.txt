@@ -1,0 +1,4 @@
+if (not(undefined(A_actions_var_new_actions_functions))) exitWith {null};
+
+[] spawn A_actions_fnc_actions_loop;
+

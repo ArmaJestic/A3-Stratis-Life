@@ -14,7 +14,7 @@ if (undefined(_plant_netid)) exitWith {};
 if (typeName _plant_netid != "STRING") exitWith {};
 
 
-//remove previous actions
+//remove previous A_actions_fnc_actions
 [_player] call A_plant_fnc_remove_actions;
 
 private["_plant"];
@@ -37,6 +37,6 @@ _name = _seed_data select A_plant_var_seed_data_name;
 
 private["_action_id"];	
 
-_action_id = player addaction [format["Harvest %1 yield", _name, _plant_netid], "action.sqf", [[_player, _plant], "A_plant_fnc_harvest_yield"], 1,true,true,"", format['(nearCursorTarget == objectFromNetId "%1") && {(player distance nearCursorTarget) < 3} ',_plant_netid]];
+_A_actions_fnc_action_id = player addA_actions_fnc_action [format["Harvest %1 yield", _name, _plant_netid], "A_actions_fnc_action.sqf", [[_player, _plant], "A_plant_fnc_harvest_yield"], 1,true,true,"", format['(nearCursorTarget == objectFromNetId "%1") && {(player distance nearCursorTarget) < 3} ',_plant_netid]];
 A_plant_var_actions = A_plant_var_actions + [_action_id];
 A_plant_var_actions_netid = _plant_netid;

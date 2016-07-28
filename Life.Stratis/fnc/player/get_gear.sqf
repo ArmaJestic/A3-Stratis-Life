@@ -5,7 +5,7 @@
 
 ARGV(0,_player);
 if (not([_player] call A_player_fnc_exists)) exitWith {null};
-if ([_player] call A_player_fnc_ghost) exitWith {[_player, "cached_gear"] call A_object_fnc_getVariable};
+if ([_player] call A_player_fnc_ghost) exitWith {[_player, "A_client_var_cached_gear"] call A_object_fnc_getVariable};
 
 private["_backpack", "_backpack_weapons", "_backpack_magazines", "_backpack_type"];
 _backpack = unitBackpack _player;

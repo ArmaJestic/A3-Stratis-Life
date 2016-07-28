@@ -36,4 +36,4 @@ lbClear (ctrlIDC _list);
 			_list lbAdd format["%1 - (%2)", _gang_area_name, _gang_name];
 		};
 	};
-};} forEach gangareas;
+};} forEach A_main_var_gangareas;

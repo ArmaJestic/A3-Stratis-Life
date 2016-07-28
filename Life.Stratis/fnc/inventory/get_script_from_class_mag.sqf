@@ -6,9 +6,9 @@
 
 private ["_c", "_result"];
 _result = "";
-for "_c" from 0 to (count AllLifeMissionObjects - 1) do {
-	if ((((INV_AllMagazineObjects select _c) select 2) select 0) == _this) exitWith {
-		_result = ((INV_AllMagazineObjects select _c) select 0);
+for "_c" from 0 to (count A_main_var_alllifemissionobjects - 1) do {
+	if ((((A_main_var_inv_allmagazineobjects select _c) select 2) select 0) == _this) exitWith {
+		_result = ((A_main_var_inv_allmagazineobjects select _c) select 0);
 	};
 };
 _result

@@ -1,4 +1,4 @@
- class drawIcon3d_hud {
+class drawIcon3d_hud {
 	idd = drawIcon3d_idd;
 	movingEnable = 0;
 	enableSimulation = 0;

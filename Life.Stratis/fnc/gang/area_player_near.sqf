@@ -23,7 +23,7 @@ _min_gang_area = null;
 		_min_distance = _cdistance;
 		_min_gang_area = _cgang_area;
 	};
-} forEach gangareas;
+} forEach A_main_var_gangareas;
 
 if (undefined(_min_gang_area)) exitWith {null};
 _min_gang_area

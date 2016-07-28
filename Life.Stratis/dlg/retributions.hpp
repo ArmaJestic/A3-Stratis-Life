@@ -64,7 +64,7 @@ class Retribution
         w = 0.42;
         h = 0.06;
         text = "Punish";
-        action="[""punish""] call retributions_main;";
+        A_actions_fnc_action="[""punish""] call A_retributions_fnc_retributions_main;";
 	};
 	
 	class forgive : RscButton
@@ -75,7 +75,7 @@ class Retribution
         w = 0.42;
         h = 0.06;
         text = "Forgive";
-        action="[""forgive""] call retributions_main;";
+        A_actions_fnc_action="[""forgive""] call A_retributions_fnc_retributions_main;";
 	};
 	
 	class compensate : RscButton
@@ -86,7 +86,7 @@ class Retribution
         w = 0.42;
         h = 0.06;
         text = "Compensate";
-        action="[""compensate""] call retributions_main;";
+        A_actions_fnc_action="[""compensate""] call A_retributions_fnc_retributions_main;";
 	};
 
 
@@ -98,6 +98,6 @@ class Retribution
         w = 0.42;
         h = 0.06;
         text = "Close";
-        action = "closeDialog 0;";
+        A_actions_fnc_action = "closeDialog 0;";
 	};
 };

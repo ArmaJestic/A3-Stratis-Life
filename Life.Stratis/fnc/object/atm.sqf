@@ -9,4 +9,4 @@ if (undefined(_object)) exitWith {false};
 if (typeName _object != "OBJECT") exitWith {false};
 if (isNull _object) exitWith {false};
 
-(_object in bankflagarray)
+(_object in A_bank_var_bankflagarray)

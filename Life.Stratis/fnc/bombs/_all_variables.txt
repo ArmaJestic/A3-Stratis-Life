@@ -1,0 +1,4 @@
+A_bombs_var_inv_serverbombarray = [];
+
+A_bombs_var_inv_localbombarray = [];
+

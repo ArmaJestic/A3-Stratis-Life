@@ -1,0 +1,16 @@
+#include "..\..\includes\base.h\"
+
+FNC_CFG_ENTRY(init1)
+FNC_CFG_ENTRY(init2)
+FNC_CFG_ENTRY(bankrob)
+FNC_CFG_ENTRY(briefing)
+FNC_CFG_ENTRY(communications)
+FNC_CFG_ENTRY(halo)
+FNC_CFG_ENTRY(holster)
+FNC_CFG_ENTRY(loop)
+FNC_CFG_ENTRY(nouse)
+FNC_CFG_ENTRY(policehorn)
+FNC_CFG_ENTRY(pullout)
+FNC_CFG_ENTRY(siren)
+FNC_CFG_ENTRY(smoke)
+FNC_CFG_ENTRY(triggers)

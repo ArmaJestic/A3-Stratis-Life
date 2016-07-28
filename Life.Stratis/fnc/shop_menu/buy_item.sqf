@@ -23,5 +23,5 @@ if (_isDrug && _total_due > 0) then {
 };
 
 call A_shop_menu_fnc_play_animation;
-[player, _item, _amount, ([player] call A_player_fnc_inventory_name)] call INV_CreateItem;
+[player, _item, _amount, ([player] call A_player_fnc_inventory_name)] call A_inv_fnc_createitem;
 player groupChat format["You bought %1 %2 for $%3", _amount, _item_name, strM(_total_due)];

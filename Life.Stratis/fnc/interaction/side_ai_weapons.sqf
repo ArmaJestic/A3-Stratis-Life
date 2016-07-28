@@ -9,7 +9,7 @@ ARGV(0,_side);
 if (undefined(_side)) exitWith {[]};
 if (typeName _side != "SIDE") exitWith {[]};
 
-if (_side == west) exitWith { backup_cop_weapons };
-if (_side == east) exitWith { backup_opf_weapons };
-if (_side == resistance ) exitWith { backup_ins_weapons };
+if (_side == west) exitWith { A_main_var_backup_cop_weapons };
+if (_side == east) exitWith { A_main_var_backup_opf_weapons };
+if (_side == resistance ) exitWith { A_main_var_backup_ins_weapons };
 []

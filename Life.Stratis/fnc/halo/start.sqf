@@ -94,7 +94,7 @@ halo_keydown = {
 };
 halo_keydown_eh = (finddisplay 46) displayaddeventhandler ["keydown","_this call halo_keydown;"];
 
-//--- Loop
+//--- A_other_fnc_loop
 halo_vel = 0;
 halo_accel = 0;
 halo_accelLimit = 3;

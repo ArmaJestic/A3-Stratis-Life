@@ -45,7 +45,7 @@ if (_item == "keychain") then {
 	player groupChat format["You put the key for %1 in your inventory ", _vehicle_name];
 }
 else {
-	[_player, _item, _pickup_amount, ([player] call A_player_fnc_inventory_name)] call INV_CreateItem;
+	[_player, _item, _pickup_amount, ([player] call A_player_fnc_inventory_name)] call A_inv_fnc_createitem;
 	player groupchat format["You put %1 %2(s) in your inventory", strM(_pickup_amount), _item_name];
 };
 

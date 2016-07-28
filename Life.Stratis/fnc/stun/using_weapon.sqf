@@ -21,7 +21,7 @@ if (_unit distance getMarkerpos "respawn_guerrila" < _safe_distance) exitWith {}
 if (_unit distance getMarkerpos "respawn_civilian" < _safe_distance) exitWith {};
 
 private["_armor"];
-_armor = [_unit, "stun_armor"] call A_object_fnc_getVariable;
+_armor = [_unit, "A_item_fnc_stun_armor"] call A_object_fnc_getVariable;
 
 private["_pass"];
 _pass = [];

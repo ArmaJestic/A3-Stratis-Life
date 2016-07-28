@@ -19,10 +19,10 @@ if (undefined(_towing_vehicle)) exitWith {};
 
 
 private["_action_id"];
-_action_id = player addaction ["Attach towing line", "action.sqf", [[_player, _towing_vehicle, "towing"], "A_towing_fnc_line_attach"],10,false,true,"", format['not([%1] call A_towing_fnc_line_attached) && {([%2, "towing"] call A_towing_fnc_line_attached)}', _towing_vehicle, _player]];
+_A_actions_fnc_action_id = player addA_actions_fnc_action ["Attach towing line", "A_actions_fnc_action.sqf", [[_player, _towing_vehicle, "towing"], "A_towing_fnc_line_attach"],10,false,true,"", format['not([%1] call A_towing_fnc_line_attached) && {([%2, "towing"] call A_towing_fnc_line_attached)}', _towing_vehicle, _player]];
 towing_actions = towing_actions + [_action_id];
 
-_action_id = player addaction ["Detach towing line", "action.sqf", [[_player, _towing_vehicle, "towing"], "A_towing_fnc_line_detach"],10,false,true,"", format['([%1, "towing"] call A_towing_fnc_line_attached)', _towing_vehicle]];
+_A_actions_fnc_action_id = player addA_actions_fnc_action ["Detach towing line", "A_actions_fnc_action.sqf", [[_player, _towing_vehicle, "towing"], "A_towing_fnc_line_detach"],10,false,true,"", format['([%1, "towing"] call A_towing_fnc_line_attached)', _towing_vehicle]];
 towing_actions = towing_actions + [_action_id];
 
 

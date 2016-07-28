@@ -29,4 +29,4 @@ _A_gang_var_name = _gang select A_gang_var_name;
 
 private["_message"];
 _message = format["%1 has been neutralised by %2!", _gang_area, _gang_name];
-format['hint toString(%1);', toArray(_message)] call broadcast;
+format['hint toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;

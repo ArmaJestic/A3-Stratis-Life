@@ -23,7 +23,7 @@ _near_locked_inmobile_vehicle = [_player, _unmarked_distance, true, false] call 
 _near_unlocked_mobile_vehicle = [_player, _unmarked_distance, false, true] call A_player_fnc_count_vehicle;
 _near_unlocked_inmobile_vehicle = [_player, _unmarked_distance, false, false] call A_player_fnc_count_vehicle;
 _has_repair_kit = (([player, "reparaturkit"] call A_inventory_fnc_get_item_amount) > 0);
-_has_lockpicks = (([player, "lockpick"] call A_inventory_fnc_get_item_amount) > 5);
+_has_A_item_fnc_lockpicks = (([player, "A_item_fnc_lockpick"] call A_inventory_fnc_get_item_amount) > 5);
 _has_cash = (([player, "money"] call A_inventory_fnc_get_item_amount) > 1000);
 _near_own_spawn = [_player, ([_player] call A_player_fnc_side), _marked_distance] call A_player_fnc_near_side_spawn;
 private["_vehicle"];

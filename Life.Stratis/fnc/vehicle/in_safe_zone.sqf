@@ -15,6 +15,6 @@ _in_safe_zone = false;
 	if (_vehicle in (list _trigger)) exitWith {
 		_in_safe_zone = true;
 	};
-} forEach INV_VehicleGaragen;
+} forEach A_inv_var_vehiclegaragen;
 
 _in_safe_zone

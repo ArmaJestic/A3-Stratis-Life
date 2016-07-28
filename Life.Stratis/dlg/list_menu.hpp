@@ -94,7 +94,7 @@ class ListMenu {
 		x = 0.6605; y = 0.70;
 		w = 0.20; h = 0.04;
 		text = "Add to list";
-		action = "";
+		A_actions_fnc_action = "";
 	};
 
 	class removeFromListButton : RscButton {
@@ -102,7 +102,7 @@ class ListMenu {
 		x = 0.6605; y = 0.70;
 		w = 0.20; h = 0.04;
 		text = "Remove from list";
-		action = "";
+		A_actions_fnc_action = "";
 	};
 	
 	class closeButton : RscButton {
@@ -110,7 +110,7 @@ class ListMenu {
 		x = 0.6605; y = 0.70;
 		w = 0.20; h = 0.04;
 		text = "Close";
-		action = "";
+		A_actions_fnc_action = "";
 	};
 	
 	class mainBackground: RscBackground {

@@ -33,4 +33,4 @@ if (_bank_amount < _total_due) exitWith {
 [_tax_fee] call shop_update_taxes;
 
 player groupChat format["You have sent $%1 to %2-%3, your tax fee was $%4", strM(_amount), _target, (name _target), strM(_tax_fee)];
-format['[%1, %2, %3] call A_interaction_fnc_deposit_receive;', _target, _player, strN(_amount)] call broadcast;
+format['[%1, %2, %3] call A_interaction_fnc_deposit_receive;', _target, _player, strN(_amount)] call A_broadcast_fnc_broadcast;

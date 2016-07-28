@@ -21,4 +21,4 @@ _gang_members_count = (count _gang_members);
 if (_gang_members_count == 0) exitWith {null};
 
 _income = round(_total_due/_gang_members_count);
-format['if((getPlayerUID player) in %1) then {player groupchat "You received $%2 from a drug sale"; [player, %2] call A_bank_fnc_transaction;};', _gang_members, strM(_income)] call broadcast;
+format['if((getPlayerUID player) in %1) then {player groupchat "You received $%2 from a drug sale"; [player, %2] call A_bank_fnc_transaction;};', _gang_members, strM(_income)] call A_broadcast_fnc_broadcast;

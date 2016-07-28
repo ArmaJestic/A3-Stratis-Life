@@ -1,2 +1,3 @@
 if (not(undefined(A_server_var_functions_defined))) exitWith {null};
 
+[] spawn drug_replenish_loop;

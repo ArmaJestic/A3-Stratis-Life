@@ -14,4 +14,4 @@ ARGV(0,_vehicle);
 //player groupchat format["Opening trunk for %1", _vehicle];
 
 //for redundancy, close the on all other player vehicles
-format['[%1, %2] spawn A_trunk_fnc_close_other_trunk;', player, _vehicle] call broadcast;
+format['[%1, %2] spawn A_trunk_fnc_close_other_trunk;', player, _vehicle] call A_broadcast_fnc_broadcast;

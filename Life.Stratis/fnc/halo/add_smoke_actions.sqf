@@ -6,14 +6,14 @@
 ARGV(0,_unit);
 
 private ["_actions"];
-//player groupChat "Adding smoke actions";
-_smokes = [ ["Smoke White", "SmokeShell"],
-          ["Smoke Red", "SmokeShellRed"],
-		  ["Smoke Green", "SmokeShellGreen"],
-		  ["Smoke Yellow", "SmokeShellYellow"],
-		  ["Smoke Orange", "SmokeShellOrange"],
-		  ["Smoke Purple", "SmokeShellPurple"],
-		  ["Smoke Blue", "SmokeShellBlue"]
+//player groupChat "Adding A_other_fnc_smoke A_actions_fnc_actions";
+_smokes = [ ["A_other_fnc_smoke White", "A_other_fnc_smokeShell"],
+          ["A_other_fnc_smoke Red", "A_other_fnc_smokeShellRed"],
+		  ["A_other_fnc_smoke Green", "A_other_fnc_smokeShellGreen"],
+		  ["A_other_fnc_smoke Yellow", "A_other_fnc_smokeShellYellow"],
+		  ["A_other_fnc_smoke Orange", "A_other_fnc_smokeShellOrange"],
+		  ["A_other_fnc_smoke Purple", "A_other_fnc_smokeShellPurple"],
+		  ["A_other_fnc_smoke Blue", "A_other_fnc_smokeShellBlue"]
 		 ];
 		 
 _actions = [];
@@ -25,7 +25,7 @@ _actions = [];
 	_actions = _actions + [[_action_id,_smoke_class]];
 } foreach _smokes;
 
-_action_id = _unit addaction [format["Deactivate smoke"],"noscript.sqf",format['[_this select 1] call A_halo_fnc_deactivate_smoke;'],1,false,true,"","true"];
+_action_id = _unit addaction [format["Deactivate A_other_fnc_smoke"],"noscript.sqf",format['[_this select 1] call A_halo_fnc_deactivate_A_other_fnc_smoke;'],1,false,true,"","true"];
 _actions = _actions + [[_action_id, "SmokeDeactivate"]];
 [_unit, "halo_smoke_actions", _actions] call A_object_fnc_setVariable;
 _actions

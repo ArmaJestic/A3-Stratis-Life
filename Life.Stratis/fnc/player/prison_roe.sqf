@@ -16,7 +16,7 @@ if (_time_left <= 0) exitWith {
 
 private["_message"];
 _message = format["%1-%2 has been sent to prison for %3 minute/s, for ROE violations",  _player, (name _player), strN(round(_time_left/60))];
-format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 
 [_player, "roeprison", true] call A_player_fnc_set_bool;
 _player setPos (getPos CopPrison);
@@ -47,7 +47,7 @@ while {_time_left >= 0} do {
 	if ((_player distance CopPrison) >= 100) then {
 		private["_message"];
 		_message = format["%1-%2 attempted to escape from prison with %3 minute/s left on his sentence", _player, (name _player), strN(round(_time_left/60))];
-		format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+		format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 		_player setPos (getPos CopPrison);
 	};
 
@@ -56,7 +56,7 @@ while {_time_left >= 0} do {
 		[_player, "roeprisontime", 0] call A_player_fnc_set_scalar;
 		[_player, "roeprison", false] call A_player_fnc_set_bool;
 		_message = format["%1-%2 has been set free, after serving %3 minute/s", _player, (name _player), strN(round(_time_original/60))];
-		format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+		format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 		_player setPos (getPos CopPrisonAusgang);
 	};
 	

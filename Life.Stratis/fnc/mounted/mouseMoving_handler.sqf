@@ -17,7 +17,7 @@ _y_delta = abs(_mouse_y_delta);
 _player = _data select 0;
 
 if (dialog) exitWith {null};
-if (lookingAround) exitWith {null};
+if (A_input_var_lookingaround) exitWith {null};
 
 if ([_player] call A_camera_fnc_enabled) exitWith {null};
 

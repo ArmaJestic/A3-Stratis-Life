@@ -47,7 +47,7 @@ class legislation_menu {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "Close";																										
-		action = "closedialog 0;";		
+		A_actions_fnc_action = "closedialog 0;";		
 	};										
 
 	class legislation_menu_list : RscListBox {
@@ -105,7 +105,7 @@ class legislation_modify_law_menu {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "Close";																										
-		action = "closedialog 0;";		
+		A_actions_fnc_action = "closedialog 0;";		
 	};										
 
 	class legislation_modify_law_menu_field : RscEditMulti {

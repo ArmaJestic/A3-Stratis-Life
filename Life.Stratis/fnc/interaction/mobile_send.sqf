@@ -30,15 +30,15 @@ if (([_text] call A_misc_fnc_strlen) > _max_size) then {
 
 private["_money", "_cost"];
 _money  = [player, 'money'] call A_inventory_fnc_get_item_amount;
-_cost = INV_smscost;
+_cost = A_main_var_inv_smscost;
 
 if (_money < _cost) exitWith {
-	player groupChat format["Text messages cost %1, you do not have enough money on you.", strM(INV_smscost)];
+	player groupChat format["Text messages cost %1, you do not have enough money on you.", strM(A_main_var_inv_smscost)];
 };
 
 [_player, 'money', -(_cost)] call A_inventory_fnc_add_item;
 
-if (not(([_target, "handy"] call A_inventory_fnc_get_item_amount) > 0)) exitWith {
+if (not(([_target, "A_item_fnc_handy"] call A_inventory_fnc_get_item_amount) > 0)) exitWith {
 	player groupChat format["%1-%2 does not have a mobile phone, your text message bounced", _target, (name _target)];
 };
 
@@ -46,4 +46,4 @@ player groupChat format["You sent a text message to %1-%2 for $%3", _target, (na
 
 private["_message"];
 _message = format["%1", _text];
-format['[%1, %2, toString(%3)] spawn A_interaction_fnc_mobile_receive;', _target, _player, toArray(_message)] call broadcast;
+format['[%1, %2, toString(%3)] spawn A_interaction_fnc_mobile_receive;', _target, _player, toArray(_message)] call A_broadcast_fnc_broadcast;

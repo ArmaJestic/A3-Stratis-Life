@@ -42,10 +42,10 @@ if (not(_member_uid in _members)) exitWith {
 
 player groupChat format["%1-%2, you have kicked %3-%4 from your gang!", _player, (name _player), _member, (name _member)];
 
-format['["%1", "%2"] call A_gang_fnc_remove_member;', _gang_id, _member_uid] call broadcast;
+format['["%1", "%2"] call A_gang_fnc_remove_member;', _gang_id, _member_uid] call A_broadcast_fnc_broadcast;
 sleep 1;  //sleep a second to give enought time for the changes to take effect
 
 private["_message"];
 _message = format["%1-%2, you have been kicked out of your gang!", _member, (name _member)];
-format['if (player == %1) then {player groupChat toString(%2);};', _member, toArray(_message)] call broadcast;
+format['if (player == %1) then {player groupChat toString(%2);};', _member, toArray(_message)] call A_broadcast_fnc_broadcast;
 };

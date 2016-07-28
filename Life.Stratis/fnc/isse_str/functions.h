@@ -1,0 +1,18 @@
+#include "..\..\includes\base.h\"
+
+FNC_CFG_ENTRY(init1)
+FNC_CFG_ENTRY(init2)
+FNC_CFG_ENTRY(arrtostr)
+FNC_CFG_ENTRY(getinteger)
+FNC_CFG_ENTRY(inttostr)
+FNC_CFG_ENTRY(isfloat)
+FNC_CFG_ENTRY(isinstr)
+FNC_CFG_ENTRY(isinteger)
+FNC_CFG_ENTRY(pos)
+FNC_CFG_ENTRY(replace)
+FNC_CFG_ENTRY(strtoarr)
+FNC_CFG_ENTRY(strtofloat)
+FNC_CFG_ENTRY(strtoint)
+FNC_CFG_ENTRY(strtolongint)
+FNC_CFG_ENTRY(substring)
+FNC_CFG_ENTRY(tostring)

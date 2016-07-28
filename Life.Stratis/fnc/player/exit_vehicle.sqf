@@ -19,7 +19,7 @@ if (_immediate) then {
 else {
 	private["_engine_state"];
 	_engine_state =  isEngineOn _vehicle;
-	_player action ["Eject", _vehicle];
+	_player A_actions_fnc_action ["Eject", _vehicle];
 	_vehicle engineOn _engine_state;
 };
 

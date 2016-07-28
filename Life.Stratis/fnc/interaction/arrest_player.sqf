@@ -37,7 +37,7 @@ _minutes = if ([_victim] call A_player_fnc_civilian) then { _minutes } else { (1
 
 private["_message"];
 _message = format["%1-%2 was arrested by %3-%4", _victim, (name _victim), _player, (name _player)];
-format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 
 
 [_player, "arrestsmade", 1] call A_player_fnc_update_scalar;

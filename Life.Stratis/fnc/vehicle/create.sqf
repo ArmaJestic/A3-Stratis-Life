@@ -34,7 +34,7 @@ if (_vehicle isKindOf "UAV_01_base_F") then {
 	createVehicleCrew _vehicle;
 };
 
-_vehicle addEventHandler ["fired", {_this execVM "Awesome\EH\EH_fired_vehicle.sqf"}];
+_vehicle addEventHandler ["fired", {_this execVM "Awesome\EH\A_eh_fnc_fired_vehicle.sqf"}];
 _vehicle addMPEventhandler ["MPKilled", {_this call A_vehicle_fnc_handle_mpkilled}];
 
 _vehicle

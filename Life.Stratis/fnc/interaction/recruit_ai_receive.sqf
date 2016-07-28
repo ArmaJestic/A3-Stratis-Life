@@ -41,4 +41,4 @@ _side_ai_magazines = [([_player] call A_player_fnc_side)] call A_interaction_fnc
 
 reload _unit;
 _unit addMPEventHandler ["MPKilled", { _this call A_player_fnc_handle_mpkilled }];
-format['[%1, %2] call A_interaction_fnc_recruit_ai_complete;', _player, _unit] call broadcast;
+format['[%1, %2] call A_interaction_fnc_recruit_ai_complete;', _player, _unit] call A_broadcast_fnc_broadcast;

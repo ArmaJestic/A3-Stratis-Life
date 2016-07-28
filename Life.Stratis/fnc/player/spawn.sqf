@@ -32,7 +32,7 @@ if (_first_time) then {
 
 
 [_player] call A_player_fnc_reset_prison;
-//call respawn_retribution;
+//call A_retributions_fnc_respawn_retribution;
 [_player] call A_player_fnc_init_stats;
 
 //mark the player alive when we are done with the dead camera

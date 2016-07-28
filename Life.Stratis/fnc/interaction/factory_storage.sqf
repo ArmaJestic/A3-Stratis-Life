@@ -25,7 +25,7 @@ private["_item_kind"];
 _item_kind = _item call A_inventory_fnc_get_item_kind;
 
 if (not(_item_kind in ["ressource", "ore", "drug", "money"]) && _amount > 0) exitWith {
-	player groupChat format ["You can only store money, drugs, and ressources in factories"];
+	player groupChat format ["You can only store money, A_item_fnc_drugs, and ressources in factories"];
 };
 
 private["_info", "_f_storage", "_p_storage"];

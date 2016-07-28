@@ -22,9 +22,9 @@ class tazer {
 	titles[] = {};
 };
 
-class policehorn {
+class A_other_fnc_policehorn {
 	name     = "";
-	sound[]  = {"sounds\policehorn.ogg", 1, 1};
+	sound[]  = {"sounds\A_other_fnc_policehorn.ogg", 1, 1};
 	titles[] = {};
 };
 

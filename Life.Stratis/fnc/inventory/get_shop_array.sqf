@@ -7,9 +7,9 @@
 private ["_c", "_Fshoparray"];
 _Fshoparray = [];
 if ((typeName _this) == "OBJECT") then {
-	for "_c" from 0 to (count INV_ItemShops - 1) do {
-		if (((INV_ItemShops select _c) select 0) == _this) then {
-			_Fshoparray = INV_ItemShops select _c;
+	for "_c" from 0 to (count A_inv_var_itemshops - 1) do {
+		if (((A_inv_var_itemshops select _c) select 0) == _this) then {
+			_Fshoparray = A_inv_var_itemshops select _c;
 		};
 	};
 };

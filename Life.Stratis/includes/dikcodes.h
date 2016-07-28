@@ -143,7 +143,7 @@
 #define DIK_POWER           0xDE    /* System Power */
 #define DIK_SLEEP           0xDF    /* System Sleep */
 #define DIK_WAKE            0xE3    /* System Wake */
-#define DIK_WEBSEARCH       0xE5    /* Web Search */
+#define DIK_WEBSEARCH       0xE5    /* Web A_missions_fnc_search */
 #define DIK_WEBFAVORITES    0xE6    /* Web Favorites */
 #define DIK_WEBREFRESH      0xE7    /* Web Refresh */
 #define DIK_WEBSTOP         0xE8    /* Web Stop */
@@ -310,7 +310,7 @@
 #define DIK_POWER           0xDE    /* System Power */
 #define DIK_SLEEP           0xDF    /* System Sleep */
 #define DIK_WAKE            0xE3    /* System Wake */
-#define DIK_WEBSEARCH       0xE5    /* Web Search */
+#define DIK_WEBSEARCH       0xE5    /* Web A_missions_fnc_search */
 #define DIK_WEBFAVORITES    0xE6    /* Web Favorites */
 #define DIK_WEBREFRESH      0xE7    /* Web Refresh */
 #define DIK_WEBSTOP         0xE8    /* Web Stop */

@@ -24,7 +24,7 @@ _item_cost = (_item call A_inventory_fnc_get_item_buy_cost);
 // the more expensive the item is the higher the production time
 private["_eta"];
 _eta = (_item_cost * 0.01125);
-_eta = (_eta) min( maxmanitime);
+_eta = (_eta) min( A_main_var_maxmanitime);
 _eta = (_eta * 5) / _workers;
 _eta = round(_eta);
 _eta	

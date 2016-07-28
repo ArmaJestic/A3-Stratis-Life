@@ -3,11 +3,11 @@
 #include "..\..\includes\macro.h"
 
 
-//player groupchat "halo jump with delay!";
+//player groupchat "A_other_fnc_halo jump with delay!";
 ARGV(0,_vehicle);
 ARGV(1,_unit);
 
-//_unit action ["getOut", _vehicle];
+//_unit A_actions_fnc_action ["getOut", _vehicle];
 moveOut _unit;
 _pos = getPosATL _unit;
 _unit setvelocity [0,0,0];
@@ -19,7 +19,7 @@ _height = _pos select 2;
     private[ "_anim", "_canim"];
 	_time_end = time + 10;
 	_anim = "HaloFreeFall_non";
-	format[' if (%1 != player) then { %1 switchMove "%2";};', player, _anim] call broadcast;
+	format[' if (%1 != player) then { %1 switchMove "%2";};', player, _anim] call A_broadcast_fnc_broadcast;
 	while { _time_end > time } do {
 		_canim = animationState player;
 		if ( _canim != _anim ) then {
@@ -29,7 +29,7 @@ _height = _pos select 2;
 			[] spawn A_halo_fnc_start;
 		};
 	};
-	format[' if (%1 != player) then { %1 switchMove "%2";};', player, _anim] call broadcast;
+	format[' if (%1 != player) then { %1 switchMove "%2";};', player, _anim] call A_broadcast_fnc_broadcast;
 };
 
 

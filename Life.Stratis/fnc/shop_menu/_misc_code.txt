@@ -1,4 +1,4 @@
 if (not(undefined(A_shop_menu_var_functions_defined))) exitWith {};
 
-[INV_ItemShops] spawn A_shop_menu_fnc_setup;
+[A_inv_var_itemshops] spawn A_shop_menu_fnc_setup;
 

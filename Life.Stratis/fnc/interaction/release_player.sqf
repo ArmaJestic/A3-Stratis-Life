@@ -21,5 +21,5 @@ if (not([_victim] call A_player_fnc_get_arrest)) exitWith {
 
 private["_message"];
 _message = format["%1-%2 has been set free by %3-%4", _victim, (name _victim), _player, (name _player)];
-format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 [_victim, false] call A_player_fnc_set_arrest;

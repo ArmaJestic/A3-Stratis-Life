@@ -42,6 +42,6 @@ private["_input_amount_used"];
 _input_amount_used = round(_input_amount_required * _output_amount);
 
 [_player, _input_item, -(_input_amount_used)] call A_inventory_fnc_add_item;
-[_player, _output_item, _output_amount, ([_player] call A_player_fnc_inventory_name)] call INV_CreateItem;
+[_player, _output_item, _output_amount, ([_player] call A_player_fnc_inventory_name)] call A_inv_fnc_createitem;
 
 player groupChat format["%1-%2, you porcessed %3 %4 into %5 %6", _player, (name _player), _input_amount_used, _input_item_name, _output_amount, _output_item_name];

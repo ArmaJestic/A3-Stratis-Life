@@ -57,13 +57,13 @@ while { _amount > 0 && _avail > 0} do {
 	
 	switch _item_type do {
 		case "Item": {
-			[_player, _item, 1, _factory_storage] spawn INV_CreateItem;
+			[_player, _item, 1, _factory_storage] spawn A_inv_fnc_createitem;
 		};
 		case "Weapon": {
-			[(_info call A_inventory_fnc_get_item_class), 1, _factory_crate] spawn INV_CreateWeapon;
+			[(_info call A_inventory_fnc_get_item_class), 1, _factory_crate] spawn A_inv_fnc_createweapon;
 		};
 		case "Magazine": {
-			[(_info call A_inventory_fnc_get_item_class), 1, _factory_crate] spawn INV_CreateMag;
+			[(_info call A_inventory_fnc_get_item_class), 1, _factory_crate] spawn A_inv_fnc_createmag;
 		};
 		case "Vehicle": {
 			private["_vehicle_class"];

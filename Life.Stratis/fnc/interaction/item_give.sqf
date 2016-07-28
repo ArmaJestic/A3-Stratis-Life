@@ -76,12 +76,12 @@ if (_item == "keychain") then {
 	};
 	
 	player groupChat format["You gave %1-%2 a copy of the key for %3", _target, (name _target), _vehicle];
-	format["[%1, %2, %3] call A_interaction_fnc_keychain_give_receive;", _player, _target, _vehicle] call broadcast;
+	format["[%1, %2, %3] call A_interaction_fnc_keychain_give_receive;", _player, _target, _vehicle] call A_broadcast_fnc_broadcast;
 }
 else {
 	//generic processing for all other items
 	[_player, _item, -(_amount)] call A_inventory_fnc_add_item;
 	player groupChat format["You gave %1-%2 %3 units of %4", _target, (name _target), strN(_amount), _item_name];
-	format["[%1, %2, ""%3"", %4] call A_interaction_fnc_item_give_receive;", _player, _target, _item, strN(_amount)] call broadcast;
+	format["[%1, %2, ""%3"", %4] call A_interaction_fnc_item_give_receive;", _player, _target, _item, strN(_amount)] call A_broadcast_fnc_broadcast;
 };
 };

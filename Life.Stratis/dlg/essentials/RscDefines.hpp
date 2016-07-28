@@ -161,7 +161,7 @@ class RscButton {
 	soundEscape[]             = {"", 0.2, 1};
 	default                   = false;
 	text                      = "";
-	action                    = "";
+	A_actions_fnc_action                    = "";
 	colorActive[]             = {0, 0, 0, 0};
 	colorDisabled[]           = {0, 0, 0, 0.1};
 	colorBackground[]         = {0.8,0.8,0.8,0.3};

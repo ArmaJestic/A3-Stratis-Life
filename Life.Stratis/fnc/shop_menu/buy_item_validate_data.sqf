@@ -34,10 +34,10 @@ _needsLicense = _data select A_shop_menu_var_buy_item_needs_license;
 _license_1 = _data select A_shop_menu_var_buy_item_license_1;
 _license_2 = _data select A_shop_menu_var_buy_item_license_2;
 _logic = objectFromNetId(_data select A_shop_menu_var_buy_item_logic_netid);
-_shop = (INV_ItemShops select _shop_id);
-_shop_object = _shop select INV_ItemShops_Object;
+_shop = (A_inv_var_itemshops select _shop_id);
+_shop_object = _shop select A_inv_var_itemshops_object;
 
-_needsLicense = if (_shop_object in gangareas) then {false} else {true};
+_needsLicense = if (_shop_object in A_main_var_gangareas) then {false} else {true};
 
 _near_vehicles = if (undefined(_logic)) then { [] } else { nearestobjects [getpos _logic, ["Ship_F","car","motorcycle","truck"], 3] };
 _near_vehicles_count = if (undefined(_near_vehicles)) then { 0 } else { count _near_vehicles };

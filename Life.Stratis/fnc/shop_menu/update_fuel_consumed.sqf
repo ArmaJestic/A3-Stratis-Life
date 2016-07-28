@@ -16,8 +16,8 @@ if (_total_consumed < 0) then {
 	_total_consumed = 0;
 };
 
-if (_total_consumed > fuel_max_reserve) then {
-	_total_consumed = fuel_max_reserve;
+if (_total_consumed > A_main_var_fuel_max_reserve) then {
+	_total_consumed = A_main_var_fuel_max_reserve;
 };
 
 [_total_consumed] call A_shop_menu_fnc_set_fuel_consumed;

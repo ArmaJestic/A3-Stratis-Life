@@ -27,13 +27,13 @@ switch(_code) do {
 		_msg1 = "Attention officers, the governemnt truck is heavily damaged. Protect the truck at all costs!";
 	};
 	case Cop_escort: {
-		_msg1 = format["%1-%2, you received $%3 for escorting the governemnt truck", player, (name player), govconvoybonus];
+		_msg1 = format["%1-%2, you received $%3 for escorting the governemnt truck", player, (name player), A_main_var_govconvoybonus];
 	};
 };
 
 if ([player] call A_player_fnc_blufor) then {
 	if (_code == Cop_escort) then {
-		[player, govconvoybonus] call A_bank_fnc_transaction;
+		[player, A_main_var_govconvoybonus] call A_bank_fnc_transaction;
 	};
 	player sidechat format [ "%1",_msg1];
 }

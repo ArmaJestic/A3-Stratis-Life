@@ -34,7 +34,7 @@ if (_script == "") exitWith {
 	player groupChat "You cannot use this item";
 };
 
-//legacy, check if the the use action is tied to a script
+//legacy, check if the the use A_actions_fnc_action is tied to a script
 if ([".sqf", _script] call BIS_fnc_inString) exitWith {
 	["use", _item, _amount, []] execVM _script;
 };

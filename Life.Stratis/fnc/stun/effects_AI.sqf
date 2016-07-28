@@ -10,4 +10,4 @@ ARGV(1,_time);
 
 sleep _time;
 
-format['%1 switchmove "amovppnemstpsnonwnondnon";',_unit] call broadcast;
+format['%1 switchmove "amovppnemstpsnonwnondnon";',_unit] call A_broadcast_fnc_broadcast;

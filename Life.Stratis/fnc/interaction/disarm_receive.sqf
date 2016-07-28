@@ -14,7 +14,7 @@ if (not([_target] call A_player_fnc_human)) exitWith {null};
 if (_target != player) exitWith {null};
 
 private["_weapons"];
-_weapons = (weapons _target) - nonlethalweapons;
+_weapons = (weapons _target) - A_main_var_nonlethalweapons;
 if (count _weapons > 0) then {
 	{_target removeWeapon _x} forEach _weapons;
 };

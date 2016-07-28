@@ -38,14 +38,14 @@ class GFX_GrafikEinstellungenDialog {
 		x = 0.41; y = 0.27;
 		w = 0.07; h = 0.04;
 		text = "-100";
-		action = "if (GFX_ArmaViewDistance >= 100) then {GFX_ArmaViewDistance = GFX_ArmaViewDistance - 100; setViewDistance GFX_ArmaViewDistance; player groupChat format['Viewdistance: %1', GFX_ArmaViewDistance];};";
+		A_actions_fnc_action = "if (A_settings_var_gfx_armaviewdistance >= 100) then {A_settings_var_gfx_armaviewdistance = A_settings_var_gfx_armaviewdistance - 100; setViewDistance A_settings_var_gfx_armaviewdistance; player groupChat format['Viewdistance: %1', A_settings_var_gfx_armaviewdistance];};";
 	};
 
 	class Sichtweite_button2 : RscButton {
 		x = 0.51; y = 0.27;
 		w = 0.07; h = 0.04;
 		text = "+100";
-		action = "if (GFX_ArmaViewDistance <= 5000) then {GFX_ArmaViewDistance = GFX_ArmaViewDistance + 100; setViewDistance GFX_ArmaViewDistance; player groupChat format['Viewdistance: %1', GFX_ArmaViewDistance];};";
+		A_actions_fnc_action = "if (A_settings_var_gfx_armaviewdistance <= 5000) then {A_settings_var_gfx_armaviewdistance = A_settings_var_gfx_armaviewdistance + 100; setViewDistance A_settings_var_gfx_armaviewdistance; player groupChat format['Viewdistance: %1', A_settings_var_gfx_armaviewdistance];};";
 	};
 
 	class terrain_text : RscText {
@@ -60,14 +60,14 @@ class GFX_GrafikEinstellungenDialog {
 		x = 0.45; y = 0.38;
 		w = 0.03; h = 0.04;
 		text = "-";
-		action = "if (GFX_ArmaTerrainGridsSel > 0) then {GFX_ArmaTerrainGridsSel = GFX_ArmaTerrainGridsSel - 1; setTerrainGrid(GFX_ArmaTerrainGrids select GFX_ArmaTerrainGridsSel); player groupChat format['Terrain Detail: %1/%2.', (GFX_ArmaTerrainGridsSel+1), (count GFX_ArmaTerrainGrids)];};";
+		A_actions_fnc_action = "if (A_settings_var_gfx_armaterraingridssel > 0) then {A_settings_var_gfx_armaterraingridssel = A_settings_var_gfx_armaterraingridssel - 1; setTerrainGrid(A_settings_var_gfx_armaterraingrids select A_settings_var_gfx_armaterraingridssel); player groupChat format['Terrain Detail: %1/%2.', (A_settings_var_gfx_armaterraingridssel+1), (count A_settings_var_gfx_armaterraingrids)];};";
 	};
 
 	class terrain_button2 : RscButton {
 		x = 0.51; y = 0.38;
 		w = 0.03; h = 0.04;
 		text = "+";
-		action = "if (GFX_ArmaTerrainGridsSel < ((count GFX_ArmaTerrainGrids)-1)) then {GFX_ArmaTerrainGridsSel = GFX_ArmaTerrainGridsSel + 1; setTerrainGrid(GFX_ArmaTerrainGrids select GFX_ArmaTerrainGridsSel); player groupChat format['Terrain Detail: %1/%2.', (GFX_ArmaTerrainGridsSel+1), (count GFX_ArmaTerrainGrids)];};";
+		A_actions_fnc_action = "if (A_settings_var_gfx_armaterraingridssel < ((count A_settings_var_gfx_armaterraingrids)-1)) then {A_settings_var_gfx_armaterraingridssel = A_settings_var_gfx_armaterraingridssel + 1; setTerrainGrid(A_settings_var_gfx_armaterraingrids select A_settings_var_gfx_armaterraingridssel); player groupChat format['Terrain Detail: %1/%2.', (A_settings_var_gfx_armaterraingridssel+1), (count A_settings_var_gfx_armaterraingrids)];};";
 	};
 
 	class button_close : RscButton {
@@ -75,7 +75,7 @@ class GFX_GrafikEinstellungenDialog {
 		w = 0.20; h = 0.04;
 		idc = 10;
 		text = $STRD_grafikeinstellungen_close;
-		action = "closedialog 0;";
+		A_actions_fnc_action = "closedialog 0;";
 	};
 	class dummybutton : RscDummy {idc = 1004;};
 };

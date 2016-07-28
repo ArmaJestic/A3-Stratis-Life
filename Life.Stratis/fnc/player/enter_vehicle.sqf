@@ -25,7 +25,7 @@ if (_empty_driver > 0) exitWith {
 		_player moveInDriver _vehicle;
 	}
 	else {
-		_player action ["getInDriver", _vehicle];
+		_player A_actions_fnc_action ["getInDriver", _vehicle];
 	};
 	true
 };
@@ -35,7 +35,7 @@ if (_empty_gunner > 0) exitWith {
 		_player moveInGunner _vehicle;
 	}
 	else {
-		_player action ["getInGunner", _vehicle];
+		_player A_actions_fnc_action ["getInGunner", _vehicle];
 	};
 	true
 };
@@ -45,7 +45,7 @@ if (_empty_commander > 0) exitWith {
 		_player moveInCommander _vehicle;
 	}
 	else {
-		_player action ["getInCommmander", _vehicle];
+		_player A_actions_fnc_action ["getInCommmander", _vehicle];
 	};
 	true
 };
@@ -55,7 +55,7 @@ if (_empty_cargo > 0) exitWith {
 		_player moveInCargo _vehicle;
 	}
 	else {
-		_player action ["getInCargo", _vehicle];
+		_player A_actions_fnc_action ["getInCargo", _vehicle];
 	};
 	true
 };

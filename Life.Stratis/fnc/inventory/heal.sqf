@@ -13,7 +13,7 @@ _sleep = 5;
 
 if(_player == player) exitWith {
 	//self healing
-	format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", player] call broadcast;
+	format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", player] call A_broadcast_fnc_broadcast;
 	player groupChat format["%1-%2, wait %3 seconds until you are healed", _player, (name _player), _sleep];
 	sleep _sleep;
 	player setdamage 0;
@@ -21,7 +21,7 @@ if(_player == player) exitWith {
 	true
 };
 
-format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", _this] call broadcast;
+format ["%1 switchmove ""AinvPknlMstpSlayWrflDnon_medic"";", _this] call A_broadcast_fnc_broadcast;
 player groupChat "Healing civ...";
 sleep _sleep;
 _player setdamage 0;

@@ -15,6 +15,6 @@ _list lbAdd format ["%1: %2/%3", "Weight", (call A_inventory_fnc_get_own_weight)
 _list lbAdd format ["%1: %2",    "Cops killed", ([player, "copskilled"] call A_player_fnc_get_scalar)];
 _list lbAdd format ["%1: %2",    "Civilians killed", ([player, "civskilled"] call A_player_fnc_get_scalar)];
 _list lbAdd format ["%1: %2",    "Arrests Made", ([player, "arrestsmade"] call A_player_fnc_get_scalar)];
-_list lbAdd format ["%1: %2",    "Suicides", ([player, "selfkilled"] call A_player_fnc_get_scalar)];
+_list lbAdd format ["%1: %2",    "Suicides", ([player, "A_main_var_selfkilled"] call A_player_fnc_get_scalar)];
 _list lbAdd format ["%1: %2",    "Deaths", ([player, "deadtime"] call A_player_fnc_get_scalar)];
 _list lbAdd format ["%1: %2 seconds", "Respawn time", round(_dead_wait_time)];

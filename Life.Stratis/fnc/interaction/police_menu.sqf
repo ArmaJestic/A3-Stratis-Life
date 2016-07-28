@@ -11,7 +11,7 @@ ARGV(1,_target);
 private["_buttons"];
 _buttons = [
 	["Disarm", A_interaction_fnc_disarm_handler, [_player,_target]],
-	["Drug Search", A_interaction_fnc_search_handler, [_player,_target]],
+	["Drug A_missions_fnc_search", A_interaction_fnc_search_handler, [_player,_target]],
 	["Arrest", A_interaction_fnc_arrest_handler, [_player,_target]],
 	["Restrain/Release", A_interaction_fnc_restrain_handler, [_player,_target]],
 	["Ticket", A_interaction_fnc_ticket_handler, [_player,_target]],

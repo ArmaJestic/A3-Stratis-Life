@@ -5,12 +5,12 @@
 
 if (not(isServer)) exitWith {null};
 //make a list of all the AI vendors, and attach them to an anchor on the map
-ai_vendors = [university, storage, rathaus, bailflag, assassin, hostage, impoundbuy, civ_logicunit];
+ai_vendors = [university, storage, rathaus, bailflag, assassin, A_missions_fnc_hostage, impoundbuy, civ_logicunit];
 
 {
 	private["_shop", "_crate"];
-	_shop = _x select INV_ItemShops_Object;
-	_crate = _x select INV_ItemShops_Crate;
+	_shop = _x select A_inv_var_itemshops_object;
+	_crate = _x select A_inv_var_itemshops_crate;
 	if (not(undefined(_shop))) then {
 		ai_vendors set [count ai_vendors, _shop];
 	};
@@ -18,7 +18,7 @@ ai_vendors = [university, storage, rathaus, bailflag, assassin, hostage, impound
 	if (not(undefined(_crate))) then {
 		ai_vendors set [count ai_vendors, _crate];
 	};
-} forEach INV_ItemShops;
+} forEach A_inv_var_itemshops;
 
 
 {
@@ -35,7 +35,7 @@ ai_vendors = [university, storage, rathaus, bailflag, assassin, hostage, impound
 	private["_ai"];
 	_ai = _x;
 	ai_vendors set [count ai_vendors, _ai];
-} forEach workplacejob_deliveryflagarray;
+} forEach A_missions_var_workplacejob_deliveryflagarray;
 
 
 
@@ -43,7 +43,7 @@ ai_vendors = [university, storage, rathaus, bailflag, assassin, hostage, impound
 	private["_ai"];
 	_ai = _x;
 	ai_vendors set [count ai_vendors, _ai];
-} forEach bankflagarray;
+} forEach A_bank_var_bankflagarray;
 
 
 	
@@ -51,13 +51,13 @@ ai_vendors = [university, storage, rathaus, bailflag, assassin, hostage, impound
 	private["_ai"];
 	_ai = _x;
 	ai_vendors set [count ai_vendors, _ai];
-} forEach drugsellarray;
+} forEach A_bank_var_drugsellarray;
 	
 {
 	private["_ai"];
 	_ai = _x;
 	ai_vendors set [count ai_vendors, _ai];
-} forEach shopflagarray;
+} forEach A_bank_var_shopflagarray;
 	
 {
 	private["_array"];

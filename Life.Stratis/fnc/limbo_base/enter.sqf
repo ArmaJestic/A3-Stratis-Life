@@ -33,7 +33,7 @@ detach _player;
 private["_animation"];
 _animation = "amovpercmstpsnonwnondnon";
 
-_player playMoveNow _animation; //(don't do this one inside the loop, because it's sent across the network)
+_player playMoveNow _animation; //(don't do this one inside the A_other_fnc_loop, because it's sent across the network)
 waitUntil {
 	_player switchMove _animation;
 	((animationState _player) == _animation)

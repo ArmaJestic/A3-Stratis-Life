@@ -31,4 +31,4 @@ private["_animation_script_name", "_animation_type"];
 _A_interaction_var_animation_script_name = _animation select A_interaction_var_animation_script_name;
 _A_interaction_var_animation_type = _animation select A_interaction_var_animation_type;
 
-format["%1 %2 ""%3"";", player, _animation_type, _animation_script_name] call broadcast;
+format["%1 %2 ""%3"";", player, _animation_type, _animation_script_name] call A_broadcast_fnc_broadcast;

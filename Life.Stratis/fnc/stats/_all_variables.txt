@@ -59,11 +59,11 @@ A_stats_var_main_libraries = [
 	[{true}, [], "Awesome\Functions\drug_functions.sqf"],
 	[{true}, [], "Awesome\Functions\tree_functions.sqf"],
 	[{true}, [], "Awesome\Scripts\optimize_1.sqf"],
-	[{true}, ["init"], "bombs.sqf"],
-	[{isServer}, ["server"], "bombs.sqf"],
+	[{true}, ["init"], "A_bombs_fnc_bombs.sqf"],
+	[{isServer}, ["server"], "A_bombs_fnc_bombs.sqf"],
 	[{true}, [], "Awesome\Functions\interaction.sqf"],
-	[{true}, [], "triggers.sqf"],
-	[{true}, [], "broadcast.sqf"],
+	[{true}, [], "A_other_fnc_triggers.sqf"],
+	[{true}, [], "A_broadcast_fnc_broadcast.sqf"],
 	[{true}, [], "customfunctions.sqf"],
 	[{true}, [], "strfuncs.sqf"],
 	[{true}, [], "1007210.sqf"],
@@ -72,7 +72,7 @@ A_stats_var_main_libraries = [
 	[{true}, [], "Awesome\Functions\shop_menu_functions.sqf"],
 	[{true}, [], "Awesome\Functions\bankfunctions.sqf"],
 	[{true}, [], "bankexec.sqf"],
-	[{true}, [], "initWPmissions.sqf"],
+	[{true}, [], "A_missions_fnc_initwpmissions.sqf"],
 	[{true}, [], "gfx.sqf"],
 	[{true}, [], "variables.sqf"],
 	[{true}, [], "Awesome\Functions\A_money_var_functions.sqf"],
@@ -103,7 +103,7 @@ A_stats_var_main_libraries = [
 	[{true}, [], "Awesome\Functions\voting_menu_functions.sqf"],
 	[{true}, [], "Awesome\Functions\mobile_menu_functions.sqf"],
 	[{true}, [], "Awesome\Functions\speed_gun_functions.sqf"],
-	[{isClient}, [], "briefing.sqf"]
+	[{isClient}, [], "A_other_fnc_briefing.sqf"]
 ];
 
 A_stats_var_loading_progress = 0;

@@ -19,8 +19,8 @@ _player = player;
 [_player] spawn A_player_fnc_save_side_inventory;
 
 
-if (defined(victim)) then {
-	[_killer, _player] call victim;
+if (defined(A_retributions_fnc_victim)) then {
+	[_killer, _player] call A_retributions_fnc_victim;
 };
 
 if (A_player_var_rejoin_choice_active) exitWith {};

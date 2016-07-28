@@ -39,7 +39,7 @@ waitUntil {
 	"dynamicBlur" ppEffectCommit 0;
 
 	A_stun_var_A_stun_var_blur_time_remaining = A_stun_var_A_stun_var_blur_time_remaining - 1;
-	A_stun_var_A_stun_var_blur_time_remaining = A_stun_var_A_stun_var_blur_time_remaining min MaxStunTime;
+	A_stun_var_A_stun_var_blur_time_remaining = A_stun_var_A_stun_var_blur_time_remaining min A_main_var_maxstuntime;
 	
 	
 	waitUntil {ppEffectCommitted "dynamicBlur"};

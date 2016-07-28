@@ -9,7 +9,7 @@ ARGV(1,_stock);
 ARGV(2,_shopnum);
 
 private["_shoparr", "_shopinv", "_itemnum"];
-_shoparr  = INV_ItemShops select _shopnum;
+_shoparr  = A_inv_var_itemshops select _shopnum;
 _shopinv  = (_shoparr select 4);
 _itemnum  = [_item, _shopinv] call A_inventory_fnc_get_shop_item_number;
 

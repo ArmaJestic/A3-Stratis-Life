@@ -17,4 +17,4 @@ publicVariable   "weapontax";
 publicVariable   "bank_tax";
 // Redefinition of array uses fewer chars than using array set 
 "economy_tax_data = [ [""Item"", ""Item"", itemtax], [""Vehicle"", ""Vehicle"",vehicletax], [""Magazine"",""Magazine"",vehicletax], [""Weapon"",""Weapon"",weapontax]];
-hint ""The President has changed the tax rates!"";" call broadcast;
+hint ""The President has changed the tax rates!"";" call A_broadcast_fnc_broadcast;

@@ -48,7 +48,7 @@ class prison_menu {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "Close";																										
-		action = "closedialog 0;";		
+		A_actions_fnc_action = "closedialog 0;";		
 	};										
 
 	//bail amount

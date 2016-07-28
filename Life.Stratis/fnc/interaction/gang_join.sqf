@@ -46,4 +46,4 @@ if (not(_recruiting)) exitWith {
 };
 
 player groupChat format["%1-%2, you have joined gang %3", _player, (name _player), _gang_name];
-format['["%1", %2] call A_gang_fnc_add_member;', _gang_id, _player] call broadcast;
+format['["%1", %2] call A_gang_fnc_add_member;', _gang_id, _player] call A_broadcast_fnc_broadcast;

@@ -23,7 +23,7 @@ _shop_id = _data select A_shop_menu_var_sell_item_shop_id;
 
 call A_shop_menu_fnc_play_animation;
 
-//keep track of wh has sold drugs
+//keep track of wh has sold A_item_fnc_drugs
 if (_isDrug) then {
 	private["_list"];
 	_list  = [];

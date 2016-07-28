@@ -118,7 +118,7 @@ if (_primary_weapon != "") then {
 	} forEach (_primary_items);
 	
 	_player selectWeapon _primary_weapon;	
-	_player action ["switchWeapon", _player, _player, 0];
+	_player A_actions_fnc_action ["switchWeapon", _player, _player, 0];
 	reload _player;
 };
 

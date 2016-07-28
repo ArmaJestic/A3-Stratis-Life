@@ -69,4 +69,4 @@ switch (_logart) do {
 		_logtext = format["Illegal PMC"];
 	};
 };
-CopLog = CopLog + [ [_logplayer, _logtext, _logdate, _logtime] ];
+A_main_var_coplog = A_main_var_coplog + [ [_logplayer, _logtext, _logdate, _logtime] ];

@@ -99,7 +99,7 @@ class RscButton1 {
 
 	default = false;
 	text = "";
-	action = "";
+	A_actions_fnc_action = "";
 
 	// events
 	onButtonClicked = "";

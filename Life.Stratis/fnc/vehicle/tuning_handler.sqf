@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(W_KEY_DOWN || S_KEY_DOWN)) exitWith {};
+if (not(A_input_var_w_key_down || A_input_var_s_key_down)) exitWith {};
 
 private["_vehicle", "_player"];
 _player = player;
@@ -21,7 +21,7 @@ if (_altitude > 0.2) exitWith {};
 
 private["_tuning", "_nitro"];
 _tuning = _vehicle getVariable ["tuning", 0];
-_nitro = _vehicle getVariable ["nitro", 0];
+_A_item_fnc_nitro = _vehicle getVariable ["A_item_fnc_nitro", 0];
 
 
 
@@ -32,7 +32,7 @@ _speed = (speed _vehicle);
 
 if (_speed < 1) exitWith {};
 
-if (_nitro > 0 && LSHIFT_DOWN) then {
+if (_nitro > 0 && A_input_var_lshift_down) then {
 	_vehicle setFuel ((fuel _vehicle) - 0.0001);
 	_nitro = if (_speed < 250) then {0.08} else {0.01};
 	_tuning = _tuning +_nitro;
@@ -44,7 +44,7 @@ if (_nitro > 0 && LSHIFT_DOWN) then {
 if (_tuning == 0) exitWith {};
 
 
-if (not(S_KEY_DOWN)) then {
+if (not(A_input_var_s_key_down)) then {
 	private["_added"];
 	_added = [_velocity, _tuning] call A_vector_fnc_resize;
 	_added set [2,0];

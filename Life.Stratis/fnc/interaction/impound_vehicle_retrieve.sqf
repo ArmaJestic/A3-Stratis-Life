@@ -22,7 +22,7 @@ if(count (nearestobjects [getpos _logic, ["Ship","car","motorcycle","truck"], 3]
 
 //make sure player has needed money
 private["_money", "_cost"];
-_cost = impoundpay;
+_cost = A_main_var_impoundpay;
 _money = [_player, "money"] call A_inventory_fnc_get_item_amount;
 
 if(_money < _cost) exitWith {

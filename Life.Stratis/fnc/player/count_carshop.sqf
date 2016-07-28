@@ -24,5 +24,5 @@ _filter_function = {
 };
 
 private["_filtered"];
-_filtered = [[_player, _distance], carshoparray, _filter_function] call A_player_fnc_objects_filter;
+_filtered = [[_player, _distance], A_bank_var_carshoparray, _filter_function] call A_player_fnc_objects_filter;
 ((count _filtered) > 0)

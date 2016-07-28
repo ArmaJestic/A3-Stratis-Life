@@ -29,10 +29,10 @@ if (_factory_id  in INV_FabrikOwner) then {
 	_action_id = player addaction ["Manufacture", "noscript.sqf", format['[%1, "%2"] call A_factory_fnc_production_menu;', _player, _factory_id]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 	
-	_action_id = player addaction [format["Hire one worker ($%1)", strM(facworkercost)], "noscript.sqf", format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 1, facworkercost]];
+	_action_id = player addaction [format["Hire one worker ($%1)", strM(A_main_var_A_main_var_facworkercost)], "noscript.sqf", format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 1, A_main_var_A_main_var_facworkercost]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 	
-	_action_id = player addaction [format["Hire ten workers ($%1)", strM(10*facworkercost)], "noscript.sqf", format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 10, facworkercost]];
+	_action_id = player addaction [format["Hire ten workers ($%1)", strM(10*A_main_var_A_main_var_facworkercost)], "noscript.sqf", format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 10, A_main_var_A_main_var_facworkercost]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 }
 else {

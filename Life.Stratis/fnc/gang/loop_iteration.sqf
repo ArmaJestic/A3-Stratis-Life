@@ -27,4 +27,4 @@ _player = player;
 	[_gang_area, 0.1] call A_gang_fnc_flag_set_offset;
 	
 	
-};} forEach gangareas;
+};} forEach A_main_var_gangareas;

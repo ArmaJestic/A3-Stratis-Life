@@ -12,7 +12,7 @@ if (typeName _gang_area != "OBJECT") exitWith {null};
 
 
 private["_actions"];
-_actions = [_gang_area, "actions"] call A_object_fnc_getVariable;
+_A_actions_fnc_actions = [_gang_area, "A_actions_fnc_actions"] call A_object_fnc_getVariable;
 if (not(undefined(_actions))) then {
 	if (typeName _actions != "ARRAY") exitWith {null};
 	{

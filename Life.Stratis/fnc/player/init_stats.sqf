@@ -8,12 +8,12 @@ if (not([_player] call A_player_fnc_human)) exitWith {null};
 
 role = _player;
 INV_hunger = 25;
-shoveldur = 20;
-pickaxedur = 50;
-hammerdur = 100;
+A_main_var_shoveldur = 20;
+A_main_var_pickaxedur = 50;
+A_main_var_hammerdur = 100;
 alreadygotaworkplacejob = 0;
 respawnButtonPressed = false;
-demerits = if ("car" call A_inventory_fnc_has_license) then {10} else {demerits};
+A_main_var_A_main_var_demerits = if ("car" call A_inventory_fnc_has_license) then {10} else {A_main_var_A_main_var_demerits};
 [_player, "stunned", false] call A_player_fnc_set_bool;
 [_player, "restrained", false] call A_player_fnc_set_bool;
 [_player, "extradeadtime", 0] call A_player_fnc_set_scalar;

@@ -28,4 +28,4 @@ publicVariable "legislation_laws";
 
 private["_message"];
 _message = format["Law #%1 has changed.\n%2", _number, _text];
-format['hint toString(%1);', toArray(_message)] call broadcast;
+format['hint toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;

@@ -30,7 +30,7 @@ _cop_bail = round(_bail/_cop_count);
 player groupChat format ["You paid $%1 in bail", strM(_bail)];
 private["_message"];
 _message = format["Prisoner %1-%2 paid $%3 in bail", _player, (name _player), strM(_bail)];
-format['if(not(isblu)) then {server globalChat toString(%1);};', toArray(_message)] call broadcast;
+format['if(not(isblu)) then {server globalChat toString(%1);};', toArray(_message)] call A_broadcast_fnc_broadcast;
 	
 _message = format["You got $%1 because prisoner %2-%3 paid %4 in bail", _cop_bail, _player, (name _player), strM(_bail)];
-format['if (isblu) then {server globalChat toString(%1);};', toArray(_message)] call broadcast;
+format['if (isblu) then {server globalChat toString(%1);};', toArray(_message)] call A_broadcast_fnc_broadcast;

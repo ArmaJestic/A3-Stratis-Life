@@ -13,7 +13,7 @@ private["_empty_inventory"];
 _empty_inventory =
 [
 	["keychain", ([1] call A_encoding_fnc_encode_number)], 
-	["handy", ([1] call A_encoding_fnc_encode_number)]
+	["A_item_fnc_handy", ([1] call A_encoding_fnc_encode_number)]
 ];
 
 [_player, _inventory_name, _empty_inventory, true] call A_object_fnc_setVariable;

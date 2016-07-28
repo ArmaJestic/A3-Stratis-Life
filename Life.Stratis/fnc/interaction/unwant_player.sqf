@@ -21,5 +21,5 @@ if (not(([_victim] call A_player_fnc_get_wanted))) exitWith {
 
 private["_message"];
 _message = format["%1-%2 has cleared %3-%4's warrants", _player, (name _player), _victim, (name _victim)];
-format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 [_victim] call A_player_fnc_reset_warrants;

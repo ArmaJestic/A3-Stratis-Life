@@ -2,3 +2,5 @@ A_farming_var_shopusearray = [];
 
 A_farming_var_functions_defined = true;
 
+A_farming_var_arr1 = [];
+A_farming_var_arr2 = [];

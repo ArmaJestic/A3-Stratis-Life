@@ -21,5 +21,5 @@ _this spawn {
 	player groupChat format ["You bought a %1 for $%2. Please wait %3 seconds until the vehicle spawns.", _item_name, strM(_total_due), _sleep_time];
 	[_sleep_time] call A_shop_menu_fnc_set_busy;
 	sleep _sleep_time;
-	[_logic, _class, _kind] spawn INV_CreateFort;
+	[_logic, _class, _kind] spawn A_inv_fnc_createfort;
 };

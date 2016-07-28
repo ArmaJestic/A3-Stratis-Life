@@ -23,7 +23,7 @@
 					deleteVehicle _x;
 				};
 			} foreach((getpos player) nearObjects [_x, _distance]);
-		} forEach (INV_DroppableItems + ["LandVehicle", "Air", "Car", "Motorcycle", "Bicycle", "UAV", "Wreck", "Wreck_Base", 
+		} forEach (A_main_var_inv_droppableitems + ["LandVehicle", "Air", "Car", "Motorcycle", "Bicycle", "UAV", "Wreck", "Wreck_Base", 
 					"HelicopterWreck", "UH1Wreck", "UH1_Base", "UH1H_base", "AH6_Base_EP1","CraterLong", "Ka60_Base_PMC", 
 					"Ka137_Base_PMC", "A10"]);
 	}],
@@ -40,7 +40,7 @@
 				if (player != %1) exitWith {null};
 				[player] call A_player_fnc_reset_gear;
 			};
-		', _target] call broadcast;
+		', _target] call A_broadcast_fnc_broadcast;
 	}],
 	["Kill player", {
 		ARGV(0,_player);
@@ -55,7 +55,7 @@
 				if (player != %1) exitWith {null};
 				(player) setDamage 1; 
 			};
-		', _target] call broadcast;
+		', _target] call A_broadcast_fnc_broadcast;
 	}],
 	["Destroy player vehicle", {
 		ARGV(0,_player);
@@ -71,7 +71,7 @@
 				if (player != %1) exitWith {null};
 				(vehicle player) setDamage 1; 
 			};
-		', _target] call broadcast;
+		', _target] call A_broadcast_fnc_broadcast;
 	}],
 	["Wipe player stats", {
 		ARGV(0,_player);
@@ -80,7 +80,7 @@
 
 		[format["wiped %1-%2 (%3)'s stats", _target, (name _target), (getPlayerUID _target)]] call A_admin_menu_fnc_logAdmin;
 		
-		format['if (isServer) then {["%1"] call A_stats_fnc_server_wipe_player_data;};', _target] call broadcast;
+		format['if (isServer) then {["%1"] call A_stats_fnc_server_wipe_player_data;};', _target] call A_broadcast_fnc_broadcast;
 		player groupChat format["Request to wipe %1's stats sent", (name _target)];
 	}],
 	["Reset time(40m dy, 20m nt)", {
@@ -118,7 +118,7 @@
 		if (not([_target] call A_player_fnc_human)) exitWith {null};
 
 		[format["kicked %1-%2 (%3) to lobby", _target, (name _target), (getPlayerUID _target)]] call A_admin_menu_fnc_logAdmin;
-		format['[%1] call A_interaction_fnc_kick_to_lobby;', _target] call broadcast;
+		format['[%1] call A_interaction_fnc_kick_to_lobby;', _target] call A_broadcast_fnc_broadcast;
 		player groupChat format["%1-%2 was kicked to lobby", _target, (name _target)];
 	}],
 	["------ White / Black Lists ------", {}],

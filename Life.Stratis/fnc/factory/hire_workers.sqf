@@ -30,7 +30,7 @@ _workers_name = format["%1workers", _queue_name];
 _workers = missionNamespace getVariable _workers_name;
 
 private["_max"];
-_max = maxfacworkers;
+_max = A_main_var_maxfacworkers;
 if (_workers >= _max) exitWith {
 	player groupChat format["%1-%2, your %3 has already reached maximum of %4 workers", _player, (name _player), _factory_name, _max];
 };
@@ -58,7 +58,7 @@ if (count _queue > 0) then {
 	private["_eta", "_eta_name"];
 	_eta_name = format["%1eta", _queue_name];
 	_eta = missionNamespace getVariable _eta_name;
-	_eta =  _eta - ((_eta / maxfacworkers) * _workers_count);
+	_eta =  _eta - ((_eta / A_main_var_maxfacworkers) * _workers_count);
 	_eta = _eta max 0;
 	missionNamespace setVariable [_eta_name, _eta];
 };

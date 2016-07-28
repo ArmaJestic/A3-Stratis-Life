@@ -48,7 +48,7 @@ if (_reduce) then {
 };
 	
 if (not(alive _unit)) then {
-	[_shooter, _unit] spawn victim;
+	[_shooter, _unit] spawn A_retributions_fnc_victim;
 };
 
 _damage

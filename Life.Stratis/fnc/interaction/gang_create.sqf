@@ -50,10 +50,10 @@ if (_text_length > _max_length) exitWith {
 //check that player has enough money to create the gang
 private["_money"];
 _money = [_player, 'money'] call A_inventory_fnc_get_item_amount;
-if (_money < gangcreatecost) exitWith {
+if (_money < A_main_var_gangcreatecost) exitWith {
 	player groupChat format["%1-%2, you do not have enough money to create a gang", _player, (name _player)];
 };
 
-[player, 'money', -(gangcreatecost)] call A_inventory_fnc_add_item;
-format['[%1, toString(%2)] call A_gang_fnc_create;', _player, toArray(_text)] call broadcast;
+[player, 'money', -(A_main_var_gangcreatecost)] call A_inventory_fnc_add_item;
+format['[%1, toString(%2)] call A_gang_fnc_create;', _player, toArray(_text)] call A_broadcast_fnc_broadcast;
 player groupChat format["%1-%2, you have created a new gang called %3", _player, (name _player), _text];

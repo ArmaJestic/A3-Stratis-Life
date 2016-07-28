@@ -21,7 +21,7 @@ while {_i < _count} do {
 	private["_shop_object", "_shop_id", "_distance", "_shop"];
 	_shop_id = _i;
 	_shop = _unsorted_shop_list select _i;
-	_shop_object = _shop select INV_ItemShops_Object;
+	_shop_object = _shop select A_inv_var_itemshops_object;
 	_distance = _location distance _shop_object;
 	_element = [];
 	_element set [A_quicksort_v_sort_key, _distance];

@@ -32,6 +32,6 @@ if (_reason == "Description of crime") exitWith {
 
 private["_message"];
 _message = format["%1-%2 has been set wanted by %3-%4 for %5", _victim, (name _victim), _player, (name _player), _reason];
-format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 _reason = _reason + format[" by %1-%2", _player, (name _player)];
 [_victim, _reason, 0] call A_player_fnc_update_warrants;

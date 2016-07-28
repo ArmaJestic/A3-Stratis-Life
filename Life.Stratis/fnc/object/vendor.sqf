@@ -9,4 +9,4 @@ if (undefined(_object)) exitWith {false};
 if (typeName _object != "OBJECT") exitWith {false};
 if (isNull _object) exitWith {false};
 	
-(_object in vendors_list)
+(_object in A_inv_var_vendors_list)

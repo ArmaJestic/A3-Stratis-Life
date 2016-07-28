@@ -10,7 +10,7 @@
 
 #define drawicon3d_control (uiNamespace getVariable "drawIcon3d_hud")
 #define drawicon3d_text_field (drawicon3d_control displayCtrl drawIcon3d_text_idc)
-#define nearCursorTarget (if (isNil "cursorTarget__") then {objNull} else {cursorTarget__})
+#define nearCursorTarget (if (isNil "A_nametags_var_cursortarget__") then {objNull} else {A_nametags_var_cursortarget__})
 #define ITEM_DATA(key) (missionNamespace getVariable [format["A_MS_%1", key], []])
 #define ITEM_DATA_KEY(data) (data select 0)
 #define ITEM_DATA_TYPE(data) ((data select 1) select 0)

@@ -1,7 +1,7 @@
 // A_stats_fnc_human_side
 
 #include "..\..\includes\macro.h"
-#include "ASCII.h"
+#include "..\..\includes\ASCII.h"
 
 private ["_player"];
 _player = _this select 0;

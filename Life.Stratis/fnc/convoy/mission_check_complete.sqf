@@ -22,7 +22,7 @@ if (not(convoy_cash)) exitwith {
 if (not(alive _truck)) exitWith {
 	private["_message"];
 	_message = format["The goverment convoy truck was destroyed. The money has burned"];
-	format['server globalChat toString(%1);', toArray(_message)] call broadcast;
+	format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
 	convoy_complete_side = sideUnknown;
 	true
 };
@@ -43,7 +43,7 @@ if (_time >= 900) exitWith {
 
 //convoy has arrived at its destination
 if (((driver _truck) distance _destination) < 25) exitWith {  		
-	format['[Cop_escort] call A_convoy_fnc_side_msg;'] call broadcast;
+	format['[Cop_escort] call A_convoy_fnc_side_msg;'] call A_broadcast_fnc_broadcast;
 	convoy_complete_side = west;
 	true
 };

@@ -31,5 +31,5 @@ while { _i < (count _Array) } do {
 };
 
 [_object, _arrayname, "drug"] call A_inventory_fnc_storage_remove_kind;
-(format ["if (player == %2) then {player groupChat ""%1 had drugs in its trunk, you removed them. You should jail the owner of %1 for %4 minutes or give him a ticket of $%5.""}; titletext [format[localize ""STRS_civmenucheck_haddrugs"", %1, %3], ""plain""];", _vcl, player, _drugs_value, ceil(_drugs_value/20000), ceil(_drugs_value/2)]) call broadcast;
+(format ["if (player == %2) then {player groupChat ""%1 had A_item_fnc_drugs in its trunk, you removed them. You should jail the owner of %1 for %4 minutes or give him a ticket of $%5.""}; titletext [format[localize ""STRS_civmenucheck_hadA_item_fnc_drugs"", %1, %3], ""plain""];", _vcl, player, _A_item_fnc_drugs_value, ceil(_A_item_fnc_drugs_value/20000), ceil(_A_item_fnc_drugs_value/2)]) call A_broadcast_fnc_broadcast;
 true

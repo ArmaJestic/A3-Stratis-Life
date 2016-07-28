@@ -25,5 +25,5 @@ if (count _this > 2) then {
 		hint format[localize ""STRS_vehiclebomb_public_explode"", %1];
 		[""Bomb"", %1] spawn A_misc_fnc_Isse_AddCrimeLogEntry;
 	};
-	", player] call broadcast;
+	", player] call A_broadcast_fnc_broadcast;
 };

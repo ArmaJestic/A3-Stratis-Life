@@ -20,7 +20,7 @@ _active_members_count = count(_active_members);
 if (_active_members_count == 0) exitWith {0};
 
 private["_base_extra", "_gang_id"];
-_base_extra = (gangincome / _active_members_count);
+_base_extra = (A_main_var_gangincome / _active_members_count);
 _A_gang_var_id = _gang select A_gang_var_id;
 
 {if (true) then {
@@ -32,7 +32,7 @@ _A_gang_var_id = _gang select A_gang_var_id;
 	if (not(_cgang_id == _gang_id)) exitWith {null};
 	
 	_extra = _extra + _base_extra;
-}} forEach gangareas;
+}} forEach A_main_var_gangareas;
 
 _extra = round(_extra);
 _extra

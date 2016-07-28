@@ -18,8 +18,8 @@ private["_money_variable_name", "_money_variable"];
 _money_variable_name = format["station%1money", _station];
 _money_variable = missionNamespace getVariable _money_variable_name;
 
-[_player, "Robbed a gas station", wantedamountforrobbing] call A_player_fnc_update_warrants;
-format ['server globalChat "Someone robbed gas station %1!";', _station] call broadcast;
+[_player, "Robbed a gas station", A_main_var_wantedamountforrobbing] call A_player_fnc_update_warrants;
+format ['server globalChat "Someone robbed gas station %1!";', _station] call A_broadcast_fnc_broadcast;
 
 [_player, 'money', _money_variable] call A_inventory_fnc_add_item;
 player sidechat format ["You stole $%1 from the gas station!", _money_variable];

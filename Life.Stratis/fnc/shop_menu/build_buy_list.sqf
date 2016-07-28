@@ -9,12 +9,12 @@ if (undefined(_shop_id)) exitWith {null};
 if (typeName _shop_id != "SCALAR") exitWith {null};
 
 private ["_item_buy_list", "_shop", "_crate", "_logic"];
-_shop = (INV_ItemShops select _shop_id);
-_item_buy_list   = ( _shop select INV_ItemShops_BuyList);
-_shop_needs_license =  (_shop select INV_ItemShops_License);
-_crate = (_shop select INV_ItemShops_Crate);
+_shop = (A_inv_var_itemshops select _shop_id);
+_item_buy_list   = ( _shop select A_inv_var_itemshops_buylist);
+_shop_needs_license =  (_shop select A_inv_var_itemshops_license);
+_crate = (_shop select A_inv_var_itemshops_crate);
 _crate = if (undefined(_crate) ) then { "" } else { _crate };
-_logic = (_shop select INV_ItemShops_Logic);
+_logic = (_shop select A_inv_var_itemshops_logic);
 _logic = if (undefined(_logic) ) then { "" } else { _logic };
 
 
