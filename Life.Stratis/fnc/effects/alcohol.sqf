@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-// A_effects_fnc_alcohol Effects
+// alcohol Effects
 
 _art = _this select 0;
 if (_art == "init") then {

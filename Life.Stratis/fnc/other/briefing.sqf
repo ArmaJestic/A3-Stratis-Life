@@ -40,7 +40,7 @@ Locations:<br/>
 How to use:<br/>
 		MAKE SURE YOU ARE IN A VEHICLE<br/>
 		Drive up to the flag(s)<br/>
-		You will get an option to Access Painting on the A_actions_fnc_action menu<br/>
+		You will get an option to Access Painting on the actions menu<br/>
 <br/>
 "
 ]
@@ -146,8 +146,8 @@ Ctrl + H (in a vehicle): Activate Police Horn (cops only)<br/>
 Police can turn on a A_other_fnc_siren while driving vehicles to signal to civilians to pull over.<br>
 <br>
 <br/>
-E: A_actions_fnc_action<br/>
-The basic A_actions_fnc_action button.  Used to interact with shops, ATM's, and other players (while they are stunned and/or restrained).
+E: action<br/>
+The basic action button.  Used to interact with shops, ATM's, and other players (while they are stunned and/or restrained).
 <br/>
 T: Access Vehicle Trunk<br/>
 when you own a car or other vehicle, you can access that car's inventory by standing next to the car and pressing T.  You will then be shown two box's.  The left box is what is in the car, and the right box is what is in your inventory.  Highlight the object you want to transfer, then select the amount and press the button on the side that has the item.  Car's hold a certain amount of weight just like your charactor so be aware of what you stash in there.  Also, if your vehicle is destroyed then you will loose whatever you place in here.  Coppers can A_missions_fnc_search for A_item_fnc_A_item_fnc_drugs or other ileagal items.  If they find them in your car it will disappear and the coppers gain money equal to the value of the A_item_fnc_A_item_fnc_drugs.
@@ -213,7 +213,7 @@ You will only be ejected from a vehicle if shot with a stun round if you are on 
 Melee<br/>
 Different kinds of weapons have different animations and effects now<br/>
 There is pistol whacking, rifle butting and punching<br/>
-All have different stun times as well as A_actions_fnc_action/reA_actions_fnc_action animations as well as taking front or back hits into account, you must be facing them within a 45 degree angel of your view<br/>
+All have different stun times as well as action/reaction animations as well as taking front or back hits into account, you must be facing them within a 45 degree angel of your view<br/>
 Punching can kill someone after the person is hit enough<br/>
 There is differnet/random punch combinations<br/>
 "
@@ -298,7 +298,7 @@ Private Military Company is a place where Civilians can become Private Military 
 By breaking a PMC rule one of several things can happen:<br/>
 	-Removed from the PMC Whitelist.<br/>
 	-Licenses, Clothing and all Equipment revoked.<br/>
-	-Blufor lawful A_actions_fnc_action.<br/>
+	-Blufor lawful action.<br/>
 <br/>
 <br/>
 Contracts Examples:<br/>

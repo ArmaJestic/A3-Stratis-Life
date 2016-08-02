@@ -15,7 +15,7 @@ ARGV(7,_distance);
 
 
 if (_inveh) then {
-	_unit A_actions_fnc_action ["eject", _veh];
+	_unit action ["eject", _veh];
 	sleep 0.01;
 };
 

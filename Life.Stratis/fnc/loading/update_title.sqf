@@ -9,4 +9,4 @@ if (undefined(_title)) exitWith {null};
 if (typeName _title != "STRING") exitWith {null};
 	
 startLoadingScreen[_title , "customLoadingScreen"];
-[loading_progress] call A_loading_fnc_update_progress;
+[A_loading_var_progress] call A_loading_fnc_update_progress;

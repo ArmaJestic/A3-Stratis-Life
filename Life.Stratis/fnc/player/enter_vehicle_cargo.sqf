@@ -23,7 +23,7 @@ if (_empty_commander > 0) exitWith {
 		_player moveInCommander _vehicle;
 	}
 	else {
-		_player A_actions_fnc_action ["getInCommmander", _vehicle];
+		_player action ["getInCommmander", _vehicle];
 	};
 	true
 };
@@ -33,7 +33,7 @@ if (_empty_cargo > 0) exitWith {
 		_player moveInCargo _vehicle;
 	}
 	else {
-		_player A_actions_fnc_action ["getInCargo", _vehicle];
+		_player action ["getInCargo", _vehicle];
 	};
 	true
 };

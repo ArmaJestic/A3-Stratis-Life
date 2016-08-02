@@ -6,9 +6,9 @@
 if(A_actions_var_a_running) exitWith {null};
 A_actions_var_a_running = true;
 
-_role = Player;
-_role RemoveAction action1;
-_role RemoveAction action2;
+_role = player;
+//_role RemoveAction action1;
+//_role RemoveAction action2;
 //_role RemoveAction action3;
 _role RemoveAction action4;
 _role RemoveAction action5;

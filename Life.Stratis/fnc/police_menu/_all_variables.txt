@@ -1,2 +1,0 @@
-A_police_menu_var_functions_defined = true;
-

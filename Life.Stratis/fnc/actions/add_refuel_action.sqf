@@ -14,6 +14,6 @@ if (_refuel_cost <= 0) exitWith {null};
 if (([_vehicle] call A_actions_fnc_get_refueling)) exitWith {null};
 
 
-_refuel_action = _vehicle addAction [format["Fill gas tank for $%1", _refuel_cost], "noscript.sqf", format["[%1] call A_actions_fnc_refuel_tank", _liter_price], 1];
+_refuel_action = _vehicle addAction [format["Fill gas tank for $%1", _refuel_cost], A_other_fnc_noscript, format["[%1] call A_actions_fnc_refuel_tank", _liter_price], 1];
 
 [_vehicle, _refuel_action] call A_actions_fnc_set_refuel_action;

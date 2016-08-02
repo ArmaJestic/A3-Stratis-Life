@@ -32,7 +32,7 @@ class INV_list
 		x = 0.39; y = 0.83;										
 		w = 0.20; h = 0.04;																										
 		text = $STRD_inv_description_buyitem_close;																														
-		A_actions_fnc_action = "closedialog 0;";															
+		action = "closedialog 0;";															
 	};			
 
 	class dummybutton : RscDummy {idc = 2017;};
@@ -89,7 +89,7 @@ class INV_ItemListDialog
 		x = 0.40; y = 0.90;								
 		w = 0.20; h = 0.04;														
 		idc = 5;																						
-		A_actions_fnc_action = "closedialog 0;";			
+		action = "closedialog 0;";			
 	};						
 	
 	class dummybutton : RscDummy {idc = 1038;};

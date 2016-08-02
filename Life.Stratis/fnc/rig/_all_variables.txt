@@ -1,2 +1,0 @@
-A_rig_var_functions_defined = true;
-

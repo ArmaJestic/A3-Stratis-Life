@@ -32,7 +32,7 @@ class MainMenu{
         w = 0.20;
         h = 0.04;
         text = "Graphics";
-        A_actions_fnc_action = "closedialog 0;[""GrafikEinstellungen""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""GrafikEinstellungen""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class button_texts : RscButton {
@@ -41,7 +41,7 @@ class MainMenu{
         w = 0.20;
         h = 0.04;
         text = "Say Texts";
-        A_actions_fnc_action = "closedialog 0;[""TextEinstellungen"", ""oeffnen""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""TextEinstellungen"", ""oeffnen""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class button_tutorial : RscButton {
@@ -50,7 +50,7 @@ class MainMenu{
         w = 0.20;
         h = 0.04;
         text = "Tutorial";
-        A_actions_fnc_action = "closedialog 0;[""Tutorial""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""Tutorial""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class button_faq : RscButton {
@@ -59,7 +59,7 @@ class MainMenu{
         w = 0.20;
         h = 0.04;
         text = "FAQ";
-        A_actions_fnc_action = "closedialog 0;[""FAQ""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""FAQ""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class button_about : RscButton {
@@ -68,7 +68,7 @@ class MainMenu{
         w = 0.20;
         h = 0.04;
         text = "About";
-        A_actions_fnc_action = "closedialog 0;[""About""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""About""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class button_iteminfo : RscButton {
@@ -77,7 +77,7 @@ class MainMenu{
         w = 0.20;
         h = 0.04;
         text = "Item info";
-        A_actions_fnc_action = "closedialog 0;[""ItemList""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""ItemList""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class button_cancel : RscButton {
@@ -86,7 +86,7 @@ class MainMenu{
         w = 0.20;
         h = 0.04;
         text = "Close";
-        A_actions_fnc_action = "closedialog 0;";
+        action = "closedialog 0;";
     };
 
     class dummybutton : RscDummy {
@@ -197,7 +197,7 @@ class SettingsDialog{
         w = 0.21;
         h = 0.04;
         text = "Back";
-        A_actions_fnc_action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class button_save : RscButton {
@@ -206,7 +206,7 @@ class SettingsDialog{
         w = 0.21;
         h = 0.04;
         text = "Save";
-        A_actions_fnc_action = "[""TextEinstellungen"", ""speichern""] spawn A_SCRIPT_SETTINGS;";
+        action = "[""TextEinstellungen"", ""speichern""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class dummybutton : RscDummy {
@@ -259,7 +259,7 @@ class TutorialDialog{
         w = 0.20;
         h = 0.04;
         text = "Back";
-        A_actions_fnc_action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class dummybutton : RscDummy {
@@ -312,7 +312,7 @@ class FAQDialog{
         w = 0.20;
         h = 0.04;
         text = "Back";
-        A_actions_fnc_action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class dummybutton : RscDummy {
@@ -365,7 +365,7 @@ class AboutDialog{
         w = 0.20;
         h = 0.04;
         text = "Back";
-        A_actions_fnc_action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
+        action = "closedialog 0;[""Einstellungen""] spawn A_SCRIPT_SETTINGS;";
     };
 
     class dummybutton : RscDummy {

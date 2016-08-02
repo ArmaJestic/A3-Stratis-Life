@@ -1,2 +1,0 @@
-A_bis_expected_var_functions_defined = true;
-

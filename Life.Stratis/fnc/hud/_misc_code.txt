@@ -1,4 +1,0 @@
-if (not(undefined(A_hud_var_hud_functions_defined))) exitWith {};
-
-[] call A_hud_fnc_setup_drawicon3d;
-

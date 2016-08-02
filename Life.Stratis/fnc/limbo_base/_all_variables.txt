@@ -1,2 +1,0 @@
-A_limbo_base_var_functions_defined = true;
-

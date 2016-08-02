@@ -1,2 +1,0 @@
-A_animations_menu_var_functions = true;
-

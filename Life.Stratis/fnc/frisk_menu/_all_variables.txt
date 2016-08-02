@@ -1,2 +1,0 @@
-A_frisk_menu_var_functions_defined = true;
-

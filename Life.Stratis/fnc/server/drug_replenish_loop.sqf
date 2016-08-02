@@ -10,4 +10,5 @@ while {_replenish_loop_i < 5000} do {
 	_replenish_loop_i = _replenish_loop_i + 1;
 	sleep A_main_var_drugstockinc;
 };
-[] spawn drug_replenish_loop;
+
+[] spawn A_server_fnc_drug_replenish_loop;

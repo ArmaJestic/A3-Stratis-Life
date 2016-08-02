@@ -7,7 +7,7 @@
 //player groupChat format["A_input_fnc_surrender_handler %1", _this];
 if(!INV_shortcuts) exitWith {false};
 if (A_main_var_keyblock) exitWith {
-	player groupChat format["WARNING: This A_actions_fnc_action is temporarily blocked"];
+	player groupChat format["WARNING: This action is temporarily blocked"];
 };
 
 if(vehicle player != player) exitWith {false};

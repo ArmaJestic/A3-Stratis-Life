@@ -1,2 +1,0 @@
-A_armoredsuv_var_functions = true;
-

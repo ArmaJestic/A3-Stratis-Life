@@ -7,7 +7,7 @@
 ARGV(0,_vehicle);
 ARGV(1,_unit);
 
-//_unit A_actions_fnc_action ["getOut", _vehicle];
+//_unit action ["getOut", _vehicle];
 moveOut _unit;
 _pos = getPosATL _unit;
 _unit setvelocity [0,0,0];

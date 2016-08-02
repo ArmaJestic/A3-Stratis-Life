@@ -1,2 +1,0 @@
-if (not(undefined(A_bank_menu_var_functions_defined))) exitWith {};
-

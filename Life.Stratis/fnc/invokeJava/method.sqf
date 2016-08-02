@@ -8,7 +8,7 @@ diag_log format['A_invokeJava_fnc_method: %1', _this];
 if (undefined(_this)) exitWith{diag_log format['A_invokeJava_fnc_method: exit1']; ""};
 if (typeName _this != "ARRAY") exitWith {diag_log format['A_invokeJava_fnc_method: exit2']; ""};
 if (count _this == 0) exitWith {diag_log format['A_invokeJava_fnc_method: exit3']; ""};
-if (useDefaultSave) exitwith {_this call A_defaultSave_fnc_invoke};
+if (A_param_var_useDefaultSave) exitwith {_this call A_defaultSave_fnc_invoke};
 
 private["_i", "_count", "_arguments", "_method"];
 _method = _this select 0;

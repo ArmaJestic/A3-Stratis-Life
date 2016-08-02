@@ -1,2 +1,0 @@
-A_blue4_bunker_var_functions_defined = true;
-

@@ -1,2 +1,0 @@
-if (not(undefined(A_bis_expected_var_functions_defined))) exitWith {null};
-

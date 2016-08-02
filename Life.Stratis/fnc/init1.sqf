@@ -7,7 +7,7 @@
 [] call A_jip_fnc_init1;
 // [] call A_loading_fnc_init1;
 [] call A_misc_fnc_init1;
-//[] call A_parameters_fnc_init1;
+//[] call A_param_fnc_init1;
 [] call A_quicksort_fnc_init1;
 [] call A_stats_fnc_init1;
 [] call A_vector_fnc_init1;

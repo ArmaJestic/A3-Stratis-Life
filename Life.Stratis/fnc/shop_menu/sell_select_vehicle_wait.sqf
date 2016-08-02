@@ -17,7 +17,7 @@ _name = getText(configFile >> "CfgVehicles" >> _class >> "displayName");
 _picture = [_class] call A_misc_fnc_generic_picture_path;
 
 private["_controls", "_list", "_submit"];
-_controls = [toUpper(format["%1 LIST", _name]), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc__setup;
+_controls = [toUpper(format["%1 LIST", _name]), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc_setup;
 _list = _controls select A_list_simple_menu_var_list;
 _submit = _controls select A_list_simple_menu_var_submit;
 
@@ -27,7 +27,7 @@ _submit ctrlCommit 0;
 private["_list_idc"];
 _list_idc = (ctrlIDC _list);
 
-buttonSetAction [(ctrlIDC _submit), '[([] call A_list_simple_menu_fnc__label_data)] call A_shop_menu_fnc_sell_select_vehicle;'];
+buttonSetAction [(ctrlIDC _submit), '[([] call A_list_simple_menu_fnc_label_data)] call A_shop_menu_fnc_sell_select_vehicle;'];
 private["_i", "_count"];
 _count = count _vehicles;
 _i = 0;

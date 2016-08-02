@@ -1,8 +1,9 @@
+#define QUOTE(X) #X
 #define strM(x) ([x, ","] call format_integer)
 #define strN(x) ([x, ""] call format_integer)
-#define defined(x) (not(isNil #x) && {not(x call null__)})
+#define defined(x) (!(isNil #x) && {!(x call null__)})
 #define undefined(x) (isNil #x || {x call null__})
-#define ARGVD(o,v,d) private[#v]; if (isNil "_this" || {typeName _this != "ARRAY" || {o >= (count _this) || {v = _this select o; isNil #v}}}) then {v = d};
+#define ARGVD(o,v,d) private[#v]; if (isNil "_this" || {(typeName _this != "ARRAY") || {(o >= (count _this)) || {v = _this select o; isNil #v}}}) then {v = d};
 #define ARGV(o,v) ARGVD(o,v,null)
 
 #define MASTER_ARRAY_ITEM_NAME(x) (((x call A_inventory_fnc_get_item_array) select 2) select 1)
@@ -26,3 +27,12 @@
 #define ITEM_DATA_ORE(data) (((data select 1) select 1) == "ore")
 #define ITEM_DATA_ORE_TEXTURE(data) ((data select 5) select 7)
 #define OBJECT_CHEMLIGHT(x) (configName(inheritsFrom(configFile >> "CfgMagazines" >> (typeOf x))) == "Chemlight_green")
+
+#define NORMALIZE_ANGLE(a) ((360 + a % 360)) % 360
+
+// For logging
+#define LOGE(F, S) QUOTE(F: S) call A_err_fnc_log;
+// Used for detecting/exiting/logging from a params error
+#define EXT_ERR(E, F) if (!E) exitwith {LOGE(F, "error, params")};
+#define PARAMA_EXIT(F, P, A) EXT_ERR(A params P, F)
+#define PARAM_EXIT(F, P) PARAMA_EXIT(F, P, _this)

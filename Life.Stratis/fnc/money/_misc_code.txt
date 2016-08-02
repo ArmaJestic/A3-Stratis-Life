@@ -1,2 +1,0 @@
-if (not(undefined(A_money_var_functions))) exitWith {null};
-

@@ -1,2 +1,0 @@
-A_camera_menu_var_functions_defined = true;
-

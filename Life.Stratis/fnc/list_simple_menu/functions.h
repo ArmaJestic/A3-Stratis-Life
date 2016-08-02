@@ -2,5 +2,5 @@
 
 FNC_CFG_ENTRY(init1)
 FNC_CFG_ENTRY(init2)
-FNC_CFG_ENTRY(_label_data)
-FNC_CFG_ENTRY(_setup)
+FNC_CFG_ENTRY(label_data)
+FNC_CFG_ENTRY(setup)

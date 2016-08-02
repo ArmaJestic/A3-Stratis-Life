@@ -44,6 +44,8 @@ _ref = ["FlagSmall_F",_offset,_heading,true,true,true,"flag_",false,_id,true,_re
 ["Land_LampShabby_F",[-4.68762,5.55371,3.2109],[122.822,0,0],false,true,true,"",false,_id,false,_ref] call _cv;
 //["Land_dp_smallTank_F",[-3.49194,10.4995,3.99183],[186.01,0,0],true,true,true,"",false,_id,false,_ref] call _cv;
 
+#define OIL_DERRICK_BARREL(id,index) (missionNamespace getVariable [format["barrel%1_%2", index, id], objNull])
+
 
 [OIL_DERRICK_BARREL(_id,1)] call A_oil_derrick_fnc_barrel_setup;
 [OIL_DERRICK_BARREL(_id,2)] call A_oil_derrick_fnc_barrel_setup;

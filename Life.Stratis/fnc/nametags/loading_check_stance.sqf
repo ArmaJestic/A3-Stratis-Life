@@ -7,6 +7,6 @@
 private["_player"];
 _player = player;
 
-if (not(loading_active)) exitWith {};
+if (not(A_loading_var_active)) exitWith {};
 if ([_player] call A_object_fnc_in_water) exitWith {};
 _player switchMove "amovpercmstpsnonwnondnon";

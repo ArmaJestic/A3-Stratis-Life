@@ -149,6 +149,6 @@ class bank_menu {
 		colorBackgroundDisabled[] = DISABLED_BUTTON_BACKGROUND;
 		colorDisabled[] = DISABLED_BUTTON_TEXT;
 		text = "Close";
-		A_actions_fnc_action = "closeDialog 0;";
+		action = "closeDialog 0;";
 	};
 };

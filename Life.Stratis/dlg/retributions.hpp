@@ -1,5 +1,4 @@
-class RBgFrame
-{
+class RBgFrame {
 	type=0;
 	idc=-1;
 	style=64;
@@ -9,18 +8,14 @@ class RBgFrame
 	SizeEX=0.025;
 	text="";
 };
-
-
-class Retribution
-{
+class Retribution {
 	idd = 5001;
 	movingEnable = true;
 	controlsBackground[] = {background};
 	objects[] = { };
 	controls[] = {frame, title, kvlist, punish, forgive, compensate, close};
 	
-	class frame:RBgFrame
-	{
+	class frame:RBgFrame {
 		idc=-1;
 		x=0.28;
 		y=0.18;
@@ -28,8 +23,7 @@ class Retribution
 		h=0.76;
 	};
 
-	class background:RscBackground
-	{
+	class background:RscBackground {
 		idc=-1;
 		x=0.28;
 		y=0.18;
@@ -37,8 +31,7 @@ class Retribution
 		h=0.76;
 	};
 
-	class title : RscText
-	{
+	class title : RscText {
         idc = 5002;																				
         x = 0.25; y = 0.22;						
         w = 0.55; h = 0.04;												
@@ -47,8 +40,7 @@ class Retribution
         text = "Retributions";				
 	};	
 
-	class kvlist : RscListBox
-	{
+	class kvlist : RscListBox {
         idc = 5003;
         x = 0.32;
         y = 0.30;
@@ -56,48 +48,43 @@ class Retribution
         h = 0.30;
 	};
 	
-	class punish : RscButton
-	{
+	class punish : RscButton {
         idc = 5004;
         x = 0.32;
         y = 0.63;
         w = 0.42;
         h = 0.06;
         text = "Punish";
-        A_actions_fnc_action="[""punish""] call A_retributions_fnc_retributions_main;";
+        action="[""punish""] call A_retributions_fnc_retributions_main;";
 	};
 	
-	class forgive : RscButton
-	{
+	class forgive : RscButton {
         idc = 5005;
         x = 0.32;
         y = 0.70;
         w = 0.42;
         h = 0.06;
         text = "Forgive";
-        A_actions_fnc_action="[""forgive""] call A_retributions_fnc_retributions_main;";
+        action="[""forgive""] call A_retributions_fnc_retributions_main;";
 	};
 	
-	class compensate : RscButton
-	{
+	class compensate : RscButton {
         idc = 5006;
         x = 0.32;
         y = 0.77;
         w = 0.42;
         h = 0.06;
         text = "Compensate";
-        A_actions_fnc_action="[""compensate""] call A_retributions_fnc_retributions_main;";
+        action="[""compensate""] call A_retributions_fnc_retributions_main;";
 	};
-
-
-	class close : RscButton
-	{
+	
+	class close : RscButton {
 		idc = 5007;
         x = 0.32;
         y = 0.84;
         w = 0.42;
         h = 0.06;
         text = "Close";
-        A_actions_fnc_action = "closeDialog 0;";
+        action = "closeDialog 0;";
 	};
 };

@@ -25,7 +25,7 @@ private["_actions"];
 _actions = [];
 
 if (_item == "knife") then {
-	//_A_actions_fnc_action_id = _player addAction [format["Use knife", _label], "A_actions_fnc_action.sqf", 
+	//_action_id = _player addAction [format["Use knife", _label], A_actions_fnc_action, 
 	//	[[_player, _object], "A_interaction_fnc_use_knife"],10,false,true,"", 
 	//	"([" + str(_player) + "] call A_drag_fnc_object_active) && {([" + str(_player) + ", "+  str(_object) + "] call interact_use_knife_available)}"];
 	//_actions set [count(_actions), _action_id];

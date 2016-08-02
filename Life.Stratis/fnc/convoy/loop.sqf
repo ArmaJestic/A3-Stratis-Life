@@ -1,11 +1,12 @@
 // A_convoy_fnc_loop
 
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
-#define Spawn_convoy 1
-#define Driver_dead 2
-#define Damaged_convoy 3
-#define Cop_escort 4
+#define CONVOY_MSG_SPAWN 1
+#define CONVOY_MSG_DRIVER_DEAD 2
+#define CONVOY_MSG_DAMAGED 3
+#define CONVOY_MSG_COMPLETE 4
 
 
 format["A_convoy_fnc_loop %1", _this] call A_convoy_fnc_debug;
@@ -26,7 +27,7 @@ _convoy_truck = [_location] call A_convoy_fnc_create_truck;
 _convoy_marker = [_location] call A_convoy_fnc_create_marker;
 _convoy_group = [_convoy_truck, _location] call A_convoy_fnc_create_units;
 
-format['[Spawn_convoy] call A_convoy_fnc_side_msg;'] call A_broadcast_fnc_broadcast;
+format['[CONVOY_MSG_SPAWN] call A_convoy_fnc_side_msg;'] call A_broadcast_fnc_broadcast;
 
 //init convoy globals
 convoy_complete = false;

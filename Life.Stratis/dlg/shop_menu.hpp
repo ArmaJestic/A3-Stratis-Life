@@ -174,7 +174,7 @@ class shops_menu {
 		x = 0.6605-10; y = 0.70-10;
 		w = 0.20; h = 0.04;
 		text = "Cancel";
-		A_actions_fnc_action = "closedialog 0";
+		action = "closedialog 0";
 	};
 	
 	class sell_items_list : RscListBox 	{
@@ -319,7 +319,7 @@ class shops_menu {
 		x = 1.1505-10; y = 0.70-10;
 		w = 0.20; h = 0.04;
 		text = "Cancel";
-		A_actions_fnc_action = "closedialog 0;";
+		action = "closedialog 0;";
 	};
 	
 	class buy_sell_status_label : RscText {

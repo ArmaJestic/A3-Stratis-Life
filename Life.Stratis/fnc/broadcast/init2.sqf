@@ -2,3 +2,4 @@
 
 #include "..\..\includes\macro.h"
 
+[rolenumber, (count playerstringarray)] call A_broadcast_fnc_setup;

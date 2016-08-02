@@ -23,7 +23,7 @@ if (typeName _vendor != "OBJECT") exitWith {null};
 	
 	if (_vendor in _clicense_vendors) then {
 		private["_action_id"];
-		_action_id = player addAction [format["Buy %1 ($%2)", _clicense_name, strM(_clicense_price)], "noscript.sqf", 
+		_action_id = player addAction [format["Buy %1 ($%2)", _clicense_name, strM(_clicense_price)], A_other_fnc_noscript, 
 										format['[%1, "%2"] call A_license_fnc_add;', _player, _clicense_id], 0, false, false, "",
 										format['not([%1, "%2"] call A_player_fnc_has_license)', _player, _clicense_id]
 										];

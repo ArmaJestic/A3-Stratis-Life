@@ -1,2 +1,0 @@
-if (not(undefined(A_optimize_var_optimize_1_functions_defined))) exitWith {};
-

@@ -15,7 +15,7 @@ _held_object = [_player, "held_target", objNull] call A_object_fnc_getVariable;
 //player is already holding an object
 if (not(isNull _held_object)) exitWith {};
 
-//the object the player is looking at, is already active as an A_actions_fnc_action
+//the object the player is looking at, is already active as an action
 if (not(isNull _visual_target) && {(_visual_target == _active_target) && {(_player distance _active_target) < 2}}) exitWith {};
 
 

@@ -45,5 +45,5 @@ buttonSetAction [camera_menu_execute_button_idc,
 	('[' + str(_player) + ', ' +
 	'(call A_camera_menu_fnc_action), ' +
 	'(call A_camera_menu_fnc_input_text), ' +
-	'(call A_camera_menu_fnc_selected_object)] call A_camera_menu_fnc_camera_activate_command;')];
+	'(call A_camera_menu_fnc_selected_object)] call A_camera_menu_fnc_activate_command;')];
 [] call A_camera_menu_fnc_setup;

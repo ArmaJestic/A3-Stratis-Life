@@ -1,11 +1,12 @@
 // A_convoy_fnc_mission_check_position
 
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
-#define Spawn_convoy 1
-#define Driver_dead 2
-#define Damaged_convoy 3
-#define Cop_escort 4
+#define CONVOY_MSG_SPAWN 1
+#define CONVOY_MSG_DRIVER_DEAD 2
+#define CONVOY_MSG_DAMAGED 3
+#define CONVOY_MSG_COMPLETE 4
 
 
 //format["A_convoy_fnc_mission_check_position %1", _this] call A_convoy_fnc_debug;
@@ -23,15 +24,15 @@ private["_prev_state", "_cur_state"];
 _prev_state = [_truck] call A_convoy_fnc_get_state;
 _cur_state = [_truck, _time] call A_convoy_fnc_get_current_state;
 
-if (_prev_state == UNKNOWN && _cur_state == INITIAL) then {
+if (_prev_state == CONVOY_ST_UNKNOWN && _cur_state == CONVOY_ST_INITIAL) then {
 	//send initial move command
 	format["sending initial move command %1", _dst_pos] call A_convoy_fnc_debug;
 	(driver _truck) commandMove _dst_pos;
 	[_truck, "next_pos", _dst_pos] call A_object_fnc_setVariable;
 }
-else { if ( (_prev_state == INITIAL && _cur_state == STUCK) ||
-			(_prev_state == MOVING && _cur_state == STUCK) ||
-			(_prev_state == STUCK && _cur_state == STUCK && (_time % 20) == 0)) then {
+else { if ( (_prev_state == CONVOY_ST_INITIAL && _cur_state == CONVOY_ST_STUCK) ||
+			(_prev_state == CONVOY_ST_MOVING && _cur_state == CONVOY_ST_STUCK) ||
+			(_prev_state == CONVOY_ST_STUCK && _cur_state == CONVOY_ST_STUCK && (_time % 20) == 0)) then {
 	//calculate the halfway point between the current, and the next position
 	private["_next_pos", "_half_pos"];
 	_next_pos = [_truck, "next_pos"] call A_object_fnc_getVariable;
@@ -40,7 +41,7 @@ else { if ( (_prev_state == INITIAL && _cur_state == STUCK) ||
 	[_truck, "next_pos", _half_pos, true] call A_object_fnc_setVariable;
 	(driver _truck) commandMove _half_pos;
 }
-else { if ((_prev_state == STUCK && _cur_state == MOVING)) then {
+else { if ((_prev_state == CONVOY_ST_STUCK && _cur_state == CONVOY_ST_MOVING)) then {
 	//reset the waypoint for the final destination
 	format["sending reset move command %1", _dst_pos] call A_convoy_fnc_debug;
 	[_truck, "next_pos", _dst_pos] call A_object_fnc_setVariable;

@@ -1,2 +1,0 @@
-A_markers_var_functions_defined = true;
-

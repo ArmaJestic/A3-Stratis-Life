@@ -23,20 +23,20 @@ _factory_storage = _factory select factory_storage;
 
 if (_factory_id  in INV_FabrikOwner) then {
 	private["_action_id"];
-	_action_id = player addaction ["Storage", "noscript.sqf", format['[%1, "%2"] call A_storage_menu_fnc_menu_factory_storage;', _player, _factory_storage]];
+	_action_id = player addaction ["Storage", A_other_fnc_noscript, format['[%1, "%2"] call A_storage_menu_fnc_menu_factory_storage;', _player, _factory_storage]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 	
-	_action_id = player addaction ["Manufacture", "noscript.sqf", format['[%1, "%2"] call A_factory_fnc_production_menu;', _player, _factory_id]];
+	_action_id = player addaction ["Manufacture", A_other_fnc_noscript, format['[%1, "%2"] call A_factory_fnc_production_menu;', _player, _factory_id]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 	
-	_action_id = player addaction [format["Hire one worker ($%1)", strM(A_main_var_A_main_var_facworkercost)], "noscript.sqf", format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 1, A_main_var_A_main_var_facworkercost]];
+	_action_id = player addaction [format["Hire one worker ($%1)", strM(A_main_var_A_main_var_facworkercost)], A_other_fnc_noscript, format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 1, A_main_var_A_main_var_facworkercost]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 	
-	_action_id = player addaction [format["Hire ten workers ($%1)", strM(10*A_main_var_A_main_var_facworkercost)], "noscript.sqf", format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 10, A_main_var_A_main_var_facworkercost]];
+	_action_id = player addaction [format["Hire ten workers ($%1)", strM(10*A_main_var_A_main_var_facworkercost)], A_other_fnc_noscript, format['[%1, "%2", %3, %4] call A_factory_fnc_hire_workers;', _player, _factory_id, 10, A_main_var_A_main_var_facworkercost]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 }
 else {
 	private["_action_id"];
-	_action_id = player addaction [format["Buy %1 ($%2)", _factory_name, strM(_factory_cost)], "noscript.sqf", format['[%1, "%2"] call A_factory_fnc_buy;', _player, _factory_id]];
+	_action_id = player addaction [format["Buy %1 ($%2)", _factory_name, strM(_factory_cost)], A_other_fnc_noscript, format['[%1, "%2"] call A_factory_fnc_buy;', _player, _factory_id]];
 	A_factory_var_actions = A_factory_var_actions + [_action_id];
 };

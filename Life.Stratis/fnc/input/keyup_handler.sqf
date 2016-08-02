@@ -49,7 +49,7 @@ switch _key do {
 		_handled = [] call A_input_fnc_animation_handler;
 	};
 	case DIK_TAB: {
-		_handled = [] call A_input_fnc_sl_keys_handler;
+		_handled = [] call A_input_fnc_keys_handler;
 	};
 	case DIK_T: {
 		_handled = [] call A_input_fnc_trunk_handler;

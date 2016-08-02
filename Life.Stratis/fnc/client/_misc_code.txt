@@ -1,4 +1,0 @@
-if (not(undefined(A_client_var_client_loop_functions_defined))) exitWith {null};
-
-[] spawn A_client_fnc_loop;
-

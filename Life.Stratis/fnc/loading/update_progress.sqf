@@ -8,5 +8,5 @@ if (undefined(_progress)) exitWith {null};
 if (typeName _progress != "SCALAR") exitWith {null};
 if (_progress < 0 || _progress > 1) exitWith {null};
 	
-loading_progress = _progress;
+A_loading_var_progress = _progress;
 progressLoadingScreen _progress;

@@ -1,4 +1,0 @@
-if (not(undefined(A_markers_var_functions_defined))) exitWith {null};
-
-[] spawn A_markers_fnc_side_loop;
-

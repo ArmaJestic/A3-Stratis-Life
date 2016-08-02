@@ -69,7 +69,7 @@ class timebombconfig {
         x = 0.78; y = 0.32;
         w = 0.15; h = 0.04;
         text = $STRD_description_cancel;
-        A_actions_fnc_action = "closedialog 0";
+        action = "closedialog 0";
     };
 
     class dummybutton : RscDummy {
@@ -155,7 +155,7 @@ class speedbombconfig {
         x = 0.80; y = 0.32;
         w = 0.15; h = 0.04;
         text = $STRD_description_cancel;
-        A_actions_fnc_action = "closedialog 0";
+        action = "closedialog 0";
     };
 
     class dummybutton : RscDummy {
@@ -209,7 +209,7 @@ class remotebomb_remote {
         x = 0.39; y = 0.50;
         w = 0.10; h = 0.04;
         text = "Execute";
-        A_actions_fnc_action = "[""config"", ""activate"", ""fernzuenderbombe"", (ctrlText 1)] spawn A_SCRIPT_BOMBS;";
+        action = "[""config"", ""activate"", ""fernzuenderbombe"", (ctrlText 1)] spawn A_SCRIPT_BOMBS;";
     };
     
     class cancel : RscButton {
@@ -217,7 +217,7 @@ class remotebomb_remote {
         x = 0.51; y = 0.50;
         w = 0.10; h = 0.04;
         text = $STRD_description_cancel;
-        A_actions_fnc_action = "closedialog 0";
+        action = "closedialog 0";
     };
     
     class dummybutton : RscDummy {

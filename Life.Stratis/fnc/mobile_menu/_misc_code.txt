@@ -1,2 +1,0 @@
-if (not(undefined(A_mobile_menu_var_menu_functions_defined))) exitWith {};
-

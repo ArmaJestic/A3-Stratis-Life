@@ -41,7 +41,7 @@ _DFML = findDisplay 3004;
 (_DFML displayCtrl 1712) ctrlSetText format ['Reset Slot'];
 (_DFML displayCtrl 1705) ctrlSetText format ['Reset All'];
 
-// Button A_actions_fnc_actions
+// Button actions
 (_DFML displayCtrl 1700) buttonsetaction format ['[] call A_paint_fnc_buy'];
 (_DFML displayCtrl 1702) buttonsetaction format ['[] call A_paint_fnc_r_buy'];
 (_DFML displayCtrl 1701) buttonsetaction format ['closeDialog 0'];

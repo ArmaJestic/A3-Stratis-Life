@@ -1,6 +1,0 @@
-if (not(undefined(A_object_var_functions_defined))) exitWith {null};
-
-[] call A_object_fnc_create_attach_reference;
-
-[player] call A_object_fnc_createStorage;
-

@@ -1,2 +1,0 @@
-if (not(undefined(A_list_simple_menu_var_functions_defined))) exitWith {};
-

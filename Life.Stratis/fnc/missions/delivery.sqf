@@ -62,14 +62,14 @@ if (_art == "getajob_delivery") then {
 		if (vehicle player != player and _a1 == 1) then {
 			vcl = vehicle player;
 			player removeaction deliveryinfoaction;
-			deliveryinfoaction = vcl addAction ["A_missions_fnc_delivery mission info", "noscript.sqf", 'hint format["Destination: %1\nTime remaining: %2 seconds.\nPay: $%3\nDistance remaining: %4m", workplacejob_deliveryname, round(maxtime - timetaken), round workplacejob_deliverymoney, (round(workplacejob_deliveryflag Distance player))]',1,false,true,"",""];
+			deliveryinfoaction = vcl addAction ["A_missions_fnc_delivery mission info", A_other_fnc_noscript, 'hint format["Destination: %1\nTime remaining: %2 seconds.\nPay: $%3\nDistance remaining: %4m", workplacejob_deliveryname, round(maxtime - timetaken), round workplacejob_deliverymoney, (round(workplacejob_deliveryflag Distance player))]',1,false,true,"",""];
 
 			_a1 = 0;
 		};
 
 		if (vehicle player == player and _a1 == 0) then {
 			vcl removeaction deliveryinfoaction;
-			deliveryinfoaction = player addAction ["A_missions_fnc_delivery mission info", "noscript.sqf", 'hint format["Destination: %1\nTime remaining: %2 seconds.\nPay: $%3\nDistance remaining: %4m", workplacejob_deliveryname, round(maxtime - timetaken), round workplacejob_deliverymoney, (round(workplacejob_deliveryflag Distance player))]',1,false,true,"",""];
+			deliveryinfoaction = player addAction ["A_missions_fnc_delivery mission info", A_other_fnc_noscript, 'hint format["Destination: %1\nTime remaining: %2 seconds.\nPay: $%3\nDistance remaining: %4m", workplacejob_deliveryname, round(maxtime - timetaken), round workplacejob_deliverymoney, (round(workplacejob_deliveryflag Distance player))]',1,false,true,"",""];
 
 			_a1 = 1;
 		};

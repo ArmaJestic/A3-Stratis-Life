@@ -1,17 +1,18 @@
 // A_convoy_fnc_state2str
 
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
-#define Spawn_convoy 1
-#define Driver_dead 2
-#define Damaged_convoy 3
-#define Cop_escort 4
+#define CONVOY_MSG_SPAWN 1
+#define CONVOY_MSG_DRIVER_DEAD 2
+#define CONVOY_MSG_DAMAGED 3
+#define CONVOY_MSG_COMPLETE 4
 
 
 ARGV(0,_state);
 
-if (_state == UNKNOWN) exitWith {"UNKNOWN"};
-if (_state == INITIAL) exitWith {"INITIAL"};
-if (_state == STUCK) exitWith {"STUCK"};
-if (_state == MOVING) exitWith {"MOVING"};
+if (_state == CONVOY_ST_UNKNOWN) exitWith {"CONVOY_ST_UNKNOWN"};
+if (_state == CONVOY_ST_INITIAL) exitWith {"CONVOY_ST_INITIAL"};
+if (_state == CONVOY_ST_STUCK) exitWith {"CONVOY_ST_STUCK"};
+if (_state == CONVOY_ST_MOVING) exitWith {"CONVOY_ST_MOVING"};
 "INVALID"

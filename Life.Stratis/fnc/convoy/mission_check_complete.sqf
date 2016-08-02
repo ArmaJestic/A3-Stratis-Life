@@ -1,11 +1,12 @@
 // A_convoy_fnc_mission_check_complete
 
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
-#define Spawn_convoy 1
-#define Driver_dead 2
-#define Damaged_convoy 3
-#define Cop_escort 4
+#define CONVOY_MSG_SPAWN 1
+#define CONVOY_MSG_DRIVER_DEAD 2
+#define CONVOY_MSG_DAMAGED 3
+#define CONVOY_MSG_COMPLETE 4
 
 
 ARGV(0,_truck);
@@ -43,7 +44,7 @@ if (_time >= 900) exitWith {
 
 //convoy has arrived at its destination
 if (((driver _truck) distance _destination) < 25) exitWith {  		
-	format['[Cop_escort] call A_convoy_fnc_side_msg;'] call A_broadcast_fnc_broadcast;
+	format['[CONVOY_MSG_COMPLETE] call A_convoy_fnc_side_msg;'] call A_broadcast_fnc_broadcast;
 	convoy_complete_side = west;
 	true
 };

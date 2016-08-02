@@ -76,4 +76,4 @@ if (_primary_weapon != "") then {
 	_player selectWeapon _primary_weapon;
 };
 
-_player A_actions_fnc_action ["switchweapon", _player, _player, 0];
+_player action ["switchweapon", _player, _player, 0];

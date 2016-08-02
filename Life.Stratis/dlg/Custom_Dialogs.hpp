@@ -23,7 +23,7 @@
 		x = 0.32; y = 0.20;
 		w = 0.30; h = 0.04;
 		text = "";
-		A_actions_fnc_action = "";
+		action = "";
 	};
 
 	class OPTION2 : RscShortcutButton {
@@ -31,7 +31,7 @@
 		x = 0.32; y = 0.25;
 		w = 0.30; h = 0.04;
 		text = "";
-		A_actions_fnc_action = "";
+		action = "";
 	};
 
 	class close : RscShortcutButton {
@@ -39,7 +39,7 @@
 		x = 0.32; y = 0.32;
 		w = 0.30; h = 0.04;
 		text = "Close";
-		A_actions_fnc_action = "closeDialog 0;";
+		action = "closeDialog 0;";
 	};
 
 	class dummybutton : RscDummy {idc = 1030;};

@@ -54,6 +54,6 @@ class animations_menu_dialog {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "Close";																										
-		A_actions_fnc_action = "closedialog 0;";		
+		action = "closedialog 0;";		
 	};
 };

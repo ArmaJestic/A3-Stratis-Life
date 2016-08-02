@@ -13,10 +13,10 @@ class loading {
 	file = "fnc\loading";
 	#include "loading\functions.h"
 };
-class parameters {
-	tag = "A_parameters";
-	file = "fnc\parameters";
-	#include "parameters\functions.h"
+class param {
+	tag = "A_param";
+	file = "fnc\param";
+	#include "param\functions.h"
 };
 class stats {
 	tag = "A_stats";
@@ -138,6 +138,11 @@ class encoding {
 	file = "fnc\encoding";
 	#include "encoding\functions.h"
 };
+class err {
+	tag = "A_err";
+	file = "fnc\err";
+	#include "err\functions.h"
+};
 class factory {
 	tag = "A_factory";
 	file = "fnc\factory";
@@ -202,11 +207,6 @@ class inventory_menu {
 	tag = "A_inventory_menu";
 	file = "fnc\inventory_menu";
 	#include "inventory_menu\functions.h"
-};
-class keychain {
-	tag = "A_keychain";
-	file = "fnc\keychain";
-	#include "keychain\functions.h"
 };
 class legislation_menu {
 	tag = "A_legislation_menu";

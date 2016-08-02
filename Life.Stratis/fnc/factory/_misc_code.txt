@@ -1,8 +1,0 @@
-if (not(undefined(A_factory_var_functions_defined))) exitWith {null};
-
-[] call A_factory_fnc_globals;
-
-if (isClient) then {
-	call A_factory_fnc_setup;
-};
-

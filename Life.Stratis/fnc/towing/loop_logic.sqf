@@ -4,7 +4,6 @@
 #include "..\..\includes\macro.h"
 
 
-if (isNil "A_towing_var_functions_defined") exitWith {};
 private["_player"];
 _player = player;
 

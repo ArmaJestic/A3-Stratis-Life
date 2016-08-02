@@ -1,11 +1,12 @@
 // A_convoy_fnc_get_current_state
 
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
-#define Spawn_convoy 1
-#define Driver_dead 2
-#define Damaged_convoy 3
-#define Cop_escort 4
+#define CONVOY_MSG_SPAWN 1
+#define CONVOY_MSG_DRIVER_DEAD 2
+#define CONVOY_MSG_DAMAGED 3
+#define CONVOY_MSG_COMPLETE 4
 
 
 ARGV(0,_truck);
@@ -18,11 +19,11 @@ _last_pos = if (undefined(_last_pos)) then {_cur_pos} else {_last_pos};
 
 private["_prev_state", "_cur_state"];
 _prev_state = [_truck] call A_convoy_fnc_get_state;
-_cur_state = if ((_cur_pos distance _last_pos) > 3 ) then {MOVING} else {STUCK};
+_cur_state = if ((_cur_pos distance _last_pos) > 3 ) then {CONVOY_ST_MOVING} else {CONVOY_ST_STUCK};
 
-if (_prev_state == UNKNOWN) then {
+if (_prev_state == CONVOY_ST_UNKNOWN) then {
 	[_truck, "last_pos", _cur_pos] call A_object_fnc_setVariable;
-	_cur_state = INITIAL;
+	_cur_state = CONVOY_ST_INITIAL;
 };
 
 if ((_time % 20) == 0) then {

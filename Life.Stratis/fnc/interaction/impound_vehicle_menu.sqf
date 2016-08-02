@@ -27,7 +27,7 @@ _impounded_vehicles_name_list = _impound_lot_data select A_vehicle_storage_var_d
 _impounded_vehicles_entry_list = _impound_lot_data select A_vehicle_storage_var_data_entries;
 
 private["_controls", "_list"];
-_controls = [toUpper("Impount Lot"), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc__setup;
+_controls = [toUpper("Impount Lot"), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc_setup;
 _list = _controls select A_list_simple_menu_var_list;
 _select = _controls select A_list_simple_menu_var_submit;
 
@@ -35,7 +35,7 @@ _select = _controls select A_list_simple_menu_var_submit;
 _select ctrlSetText "Retrieve";
 _select ctrlCommit 0;
 
-buttonSetAction[(ctrlIDC _select), '[' + str(_player) + ',' + str(_logic) + ', ([] call A_list_simple_menu_fnc__label_data)] spawn A_interaction_fnc_impound_vehicle_retrieve;'];
+buttonSetAction[(ctrlIDC _select), '[' + str(_player) + ',' + str(_logic) + ', ([] call A_list_simple_menu_fnc_label_data)] spawn A_interaction_fnc_impound_vehicle_retrieve;'];
 
 lbClear (ctrlIDC _list);
 

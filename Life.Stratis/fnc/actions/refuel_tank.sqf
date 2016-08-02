@@ -35,7 +35,7 @@ while {((fuel _vehicle) < 0.99)} do {
 	};
 
 	if (_vehicle distance _fuelstartposition > 3) exitWith {
-		player groupChat "You cancelled the refuel-A_actions_fnc_action by moving your vehicle";
+		player groupChat "You cancelled the refuel-action by moving your vehicle";
 	};
 	
 	private["_i"];

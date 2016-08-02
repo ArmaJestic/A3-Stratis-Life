@@ -23,7 +23,7 @@ _label = [_target] call A_drag_fnc_object_label;
 	
 private["_action_id"];
 _action_id = _player addAction [
-	format["Take %1", _label], "noscript.sqf", 
+	format["Take %1", _label], A_other_fnc_noscript, 
 	format['[%1, objectFromNetId("%2")] call A_drag_fnc_take_object', _player, netId(_target)], 1, false, true, "", 
 	format['([%1, objectFromNetId("%2")] call A_drag_fnc_take_object_available)',  _player, netId(_target)]
 ];

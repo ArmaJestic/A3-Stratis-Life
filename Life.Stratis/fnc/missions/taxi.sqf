@@ -112,7 +112,7 @@ if (_art == "getajob_taxi") then {
 			};
 
 			if (player == vehicle player and workplacejob_taxi_kundeactive) then {
-				format["%1 A_actions_fnc_action [""getOut"", (%2)]; unassignVehicle %1;",INV_LocalTaxiKunde,(vehicle player)] call A_broadcast_fnc_broadcast;
+				format["%1 action [""getOut"", (%2)]; unassignVehicle %1;",INV_LocalTaxiKunde,(vehicle player)] call A_broadcast_fnc_broadcast;
 				workplacejob_taxi_kundeactive = false;
 			};
 
@@ -121,7 +121,7 @@ if (_art == "getajob_taxi") then {
 				if (_moneh < 0) then {_moneh = 0};
 				[player, 'money', _moneh] call A_inventory_fnc_add_item;
 				player groupChat format [localize "STRS_workplacemission_taxi_success",_moneh];
-				format["%1 A_actions_fnc_action [""getOut"", (%2)]; unassignVehicle %1;",INV_LocalTaxiKunde,(vehicle player)] call A_broadcast_fnc_broadcast;
+				format["%1 action [""getOut"", (%2)]; unassignVehicle %1;",INV_LocalTaxiKunde,(vehicle player)] call A_broadcast_fnc_broadcast;
 				sleep 5;
 				format["%1 doMove [(%2 select 0),(%2 select 1),0];", INV_LocalTaxiKunde, _ziel] call A_broadcast_fnc_broadcast;
 				sleep ((random 10)+5);

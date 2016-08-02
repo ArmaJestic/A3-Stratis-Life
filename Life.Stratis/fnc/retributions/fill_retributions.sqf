@@ -2,6 +2,7 @@
 
 #include "..\..\includes\macro.h"
 
+#define kvlist 5003 
 
 lbClear kvlist;
 private ["_damages", "_fees"];

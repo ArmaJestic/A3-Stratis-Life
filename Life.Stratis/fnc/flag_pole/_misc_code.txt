@@ -1,2 +1,0 @@
-if (not(undefined(A_flag_pole_var_functions_defined))) exitWith {null};
-

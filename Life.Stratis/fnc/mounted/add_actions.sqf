@@ -6,7 +6,7 @@
 
 //player groupChat format["A_mounted_fnc_add_actions %1", _this];
 ARGV(0,_vehicle);
-//player groupChat format["Adding A_actions_fnc_actions!"];
+//player groupChat format["Adding actions!"];
 if (undefined(_vehicle)) exitWith {null};
 
 private["_class"];
@@ -40,7 +40,7 @@ _slots = _entry select A_mounted_var_slots;
 	_slot_name = _slot select A_mounted_var_slot_text;
 	_requires_weapon = _slot select A_mounted_var_slot_requires_weapon;
 	//player groupChat format["_slot_id = %1, _slot_name = %2", _slot_id, _slot_name];
-	_vehicle addAction [format['<t color="#dddd00">Get in %1%2</t>', _display_name, _slot_name], "noscript.sqf", format['[_this select 1, _this select 0, "%1"] call A_mounted_fnc_board_slot;', _slot_id], 1, false, true,"", format['private["_show"]; _show = [_this, _target, "%1", %2] call A_mounted_fnc_show_action; _show', _slot_id, _requires_weapon]];
+	_vehicle addAction [format['<t color="#dddd00">Get in %1%2</t>', _display_name, _slot_name], A_other_fnc_noscript, format['[_this select 1, _this select 0, "%1"] call A_mounted_fnc_board_slot;', _slot_id], 1, false, true,"", format['private["_show"]; _show = [_this, _target, "%1", %2] call A_mounted_fnc_show_action; _show', _slot_id, _requires_weapon]];
 } foreach _slots;
 
 

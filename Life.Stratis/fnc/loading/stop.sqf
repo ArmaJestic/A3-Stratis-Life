@@ -1,4 +1,4 @@
 // A_loading_fnc_stop
 
 endLoadingScreen;
-loading_active = false;
+A_loading_var_active = false;

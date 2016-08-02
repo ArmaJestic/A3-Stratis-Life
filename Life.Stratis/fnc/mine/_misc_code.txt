@@ -1,2 +1,0 @@
-if (not(undefined(A_mine_var_functions_defined))) exitWith {};
-

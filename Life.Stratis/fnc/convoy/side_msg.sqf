@@ -1,11 +1,12 @@
 // A_convoy_fnc_side_msg
 
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
-#define Spawn_convoy 1
-#define Driver_dead 2
-#define Damaged_convoy 3
-#define Cop_escort 4
+#define CONVOY_MSG_SPAWN 1
+#define CONVOY_MSG_DRIVER_DEAD 2
+#define CONVOY_MSG_DAMAGED 3
+#define CONVOY_MSG_COMPLETE 4
 
 
 ARGV(0,_code);
@@ -15,24 +16,24 @@ _msg1 = "";
 _msg2 = "";
 
 switch(_code) do {
-	case Spawn_convoy: {
+	case CONVOY_MSG_SPAWN: {
 		_msg1 = "Attention officers, the supply truck has started its journey. Defend it against bandits and terrorists, and escort it to base.";
 		_msg2 = "Rumors indicate that a valuable government truck has is passing through.";
 	};
-	case Driver_dead: {
+	case CONVOY_MSG_DRIVER_DEAD: {
 		_msg1 = "The governemnt truck driver is dead. Save it from the bandits, and escort it to base.";
 		_msg2 = "Rumors indicate that a valuable government truck is under attack.";
 	};
-	case Damaged_convoy: {
+	case CONVOY_MSG_DAMAGED: {
 		_msg1 = "Attention officers, the governemnt truck is heavily damaged. Protect the truck at all costs!";
 	};
-	case Cop_escort: {
+	case CONVOY_MSG_COMPLETE: {
 		_msg1 = format["%1-%2, you received $%3 for escorting the governemnt truck", player, (name player), A_main_var_govconvoybonus];
 	};
 };
 
 if ([player] call A_player_fnc_blufor) then {
-	if (_code == Cop_escort) then {
+	if (_code == CONVOY_MSG_COMPLETE) then {
 		[player, A_main_var_govconvoybonus] call A_bank_fnc_transaction;
 	};
 	player sidechat format [ "%1",_msg1];

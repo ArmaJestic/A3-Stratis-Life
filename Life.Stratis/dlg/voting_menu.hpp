@@ -60,7 +60,7 @@ class voting_menu {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "Close";																										
-		A_actions_fnc_action = "closedialog 0;";		
+		action = "closedialog 0;";		
 	};										
 
 	class voting_menu_list : RscListNBox {
@@ -174,7 +174,7 @@ class voting_nomination_menu {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "Close";																										
-		A_actions_fnc_action = "closedialog 0;";		
+		action = "closedialog 0;";		
 	};										
 
 	class voting_nomination_menu_list : RscListBox {

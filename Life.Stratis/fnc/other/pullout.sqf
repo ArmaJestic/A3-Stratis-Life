@@ -30,7 +30,7 @@ _this lock false;
 player switchMove "AmovPercMstpSnonWnonDnon_AcrgPknlMstpSnonWnonDnon_getInLow";
 sleep 0.4;
 if (!(isPlayer _target)) then {
-	_target A_actions_fnc_action["eject", vehicle _target]
+	_target action["eject", vehicle _target]
 } else {
-	format['if(player == %2)then{player A_actions_fnc_action["eject", vehicle player]}; server globalChat "%1 pulled %2 out of a car!";', player, _target] call A_broadcast_fnc_broadcast;
+	format['if(player == %2)then{player action["eject", vehicle player]}; server globalChat "%1 pulled %2 out of a car!";', player, _target] call A_broadcast_fnc_broadcast;
 };

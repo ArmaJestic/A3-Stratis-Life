@@ -15,13 +15,13 @@ if (undefined(_vehicle_names_list)) exitWith {null};
 if (typeName _vehicle_names_list != "ARRAY") exitWith {null};
 
 private["_controls", "_list", "_submit"];
-_controls = [toUpper("Owned Vehicles"), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc__setup;
+_controls = [toUpper("Owned Vehicles"), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc_setup;
 _list = _controls select A_list_simple_menu_var_list;
 _submit = _controls select A_list_simple_menu_var_submit;
 
 _submit ctrlSetText "Select";
 
-buttonSetAction [(ctrlIDC _submit), '[([] call A_list_simple_menu_fnc__label_data)] call A_interaction_fnc_select_vehicle;'];
+buttonSetAction [(ctrlIDC _submit), '[([] call A_list_simple_menu_fnc_label_data)] call A_interaction_fnc_select_vehicle;'];
 
 _submit ctrlCommit 0;
 

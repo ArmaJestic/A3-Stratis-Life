@@ -16,16 +16,16 @@ private["_header", "_background",
 		"_execute_button", 
 		"_close_button"];
 		
- _player_label = _display displayCtrl admin_menu_player_label_idc;
- _player_field = _display displayCtrl admin_menu_player_field_idc;
- _command_label = _display displayCtrl admin_menu_command_label_idc;
- _command_field = _display displayCtrl admin_menu_command_field_idc;
- _input_label = _display displayCtrl admin_menu_input_label_idc;
- _input_field = _display displayCtrl admin_menu_input_field_idc;
- _execute_button = _display displayCtrl admin_menu_execute_button_idc;
- _background = _display displayCtrl admin_menu_background_idc;
- _header = _display displayCtrl admin_menu_header_idc;
- _close_button = _display displayCtrl admin_menu_close_button_idc;
+_player_label = _display displayCtrl admin_menu_player_label_idc;
+_player_field = _display displayCtrl admin_menu_player_field_idc;
+_command_label = _display displayCtrl admin_menu_command_label_idc;
+_command_field = _display displayCtrl admin_menu_command_field_idc;
+_input_label = _display displayCtrl admin_menu_input_label_idc;
+_input_field = _display displayCtrl admin_menu_input_field_idc;
+_execute_button = _display displayCtrl admin_menu_execute_button_idc;
+_background = _display displayCtrl admin_menu_background_idc;
+_header = _display displayCtrl admin_menu_header_idc;
+_close_button = _display displayCtrl admin_menu_close_button_idc;
  
 private["_ysep", "_sep", "_x", "_y", "_w", "_h"];
 _title = "ADMIN MENU";

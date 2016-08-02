@@ -1,2 +1,0 @@
-if (!undefined(A_halo_var_functions_defined)) exitWith {null};
-

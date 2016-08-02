@@ -1,3 +1,5 @@
+// Constants for various function sets
+
 
 #define factory_dialog_idd 801
 #define factory_left_background_idc 802
@@ -384,7 +386,7 @@
 
 #define HUD_DIGIT_IMAGE(digit) ( "\a3\soft_f\data\num" + str(digit) + "_ca.paa")
 
-
+// camera_menu
 #define camera_menu_idd 8000
 #define camera_menu_header_idc 8001
 #define camera_menu_object_label_idc 8002
@@ -396,3 +398,26 @@
 #define camera_menu_execute_button_idc 8008
 #define camera_menu_close_button_idc 8009
 #define camera_menu_background_idc 8010
+
+// camera
+#define CAMERA_HEADING_OP_SET 0
+#define CAMERA_HEADING_OP_ADD 1
+#define CAMERA_HEADING_AXIS_DIRECTION 0
+#define CAMERA_HEADING_AXIS_ANGLE 1
+#define CAMERA_HEADING_AXIS_PITCH 2
+
+#define CAMERA_OFFSET_OP_SET 0
+#define CAMERA_OFFSET_OP_ADD 1
+#define CAMERA_OFFSET_AXIS_X 0
+#define CAMERA_OFFSET_AXIS_Y 1
+#define CAMERA_OFFSET_AXIS_Z 2
+
+// convoy
+#define CONVOY_MSG_SPAWN 1
+#define CONVOY_MSG_DRIVER_DEAD 2
+#define CONVOY_MSG_DAMAGED 3
+#define CONVOY_MSG_COMPLETE 4
+#define CONVOY_ST_UNKNOWN 0
+#define CONVOY_ST_INITIAL 1
+#define CONVOY_ST_STUCK 2
+#define CONVOY_ST_MOVING 3

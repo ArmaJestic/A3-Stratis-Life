@@ -13,7 +13,7 @@ if (_art == "ausrauben") then {
 	if(local_cash < 50000)exitwith{player groupchat "this safe has recently been stolen from and is empty"};
 
 	if(!A_bank_var_robenable)exitwith{player groupchat "you are already robbing the bank"};
-	if(!(call A_inventory_fnc_iventory_is_armed) and !debug)exitWith{player groupChat localize "STRS_bank_rob_noweapon";};
+	if(!(call A_inventory_fnc_iventory_is_armed) and !A_param_var_debug)exitWith{player groupChat localize "STRS_bank_rob_noweapon";};
 	A_bank_var_robenable = false;
 	call compile format["robpool%1 = 0;publicvariable ""robpool%1"";", _safe];
 	player groupChat format[localize "STRS_bank_rob_info", strM(robb_money)];

@@ -2,3 +2,5 @@
 
 #include "..\..\includes\macro.h"
 
+
+A_holster_var_actions = [];

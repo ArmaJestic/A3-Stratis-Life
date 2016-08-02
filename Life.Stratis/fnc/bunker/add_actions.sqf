@@ -4,7 +4,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (count bunker_actions > 0) exitWith {};
+if (count A_bunker_var_actions > 0) exitWith {};
 ARGV(0,_player);
 ARGV(1,_bunker_net_id);
 //player groupChat format["A_bunker_fnc_add_actions %1", _this];
@@ -27,7 +27,7 @@ private["_bunker_action_label", "_bunker_door_action_callback"];
 _bunker_action_label = _bunker_door_data select A_bunker_var_door_data_action_label;
 _bunker_door_action_callback = _bunker_door_data select A_bunker_var_door_data_action_callback;
 private["_action_id"];
-_A_actions_fnc_action_id = player addA_actions_fnc_action [_bunker_A_actions_fnc_action_label, "A_actions_fnc_action.sqf", [[_player, _bunker_door_data], "A_bunker_fnc_enter"],10,false,false,"", "true"];
-bunker_actions = bunker_actions + [_action_id];
+_action_id = player addAction [_bunker_action_label, A_actions_fnc_action, [[_player, _bunker_door_data], "A_bunker_fnc_enter"],10,false,false,"", "true"];
+A_bunker_var_actions = A_bunker_var_actions + [_action_id];
 
-bunker_actions
+A_bunker_var_actions

@@ -1,2 +1,0 @@
-if (not(undefined(A_storage_menu_var_functions))) exitWith {};
-

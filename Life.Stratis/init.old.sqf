@@ -21,13 +21,13 @@ MISSION_ROOT = call {
 };
 
 
-[] call A_parameters_fnc_init1;
+[] call A_param_fnc_init1;
 [] call A_loading_fnc_init1;
 
 
 []	call A_loading_fnc_start;
 ["Pre-loading operations..."] call A_loading_fnc_update_title;
-[(1/loading_stages_total)] call A_loading_fnc_update_progress;
+[(1/A_loading_var_stages_total)] call A_loading_fnc_update_progress;
 uiSleep 1;
 
 0 fadeSound 0;
@@ -50,33 +50,33 @@ CIVILIAN setFriend [RESISTANCE, 0];
 
 // 	Run init1
 ["Running init1..."] call A_loading_fnc_update_title;
-[(2/loading_stages_total)] call A_loading_fnc_update_progress;
+[(2/A_loading_var_stages_total)] call A_loading_fnc_update_progress;
 uiSleep 1;
 
 ExecSQFwait("fnc\init1.sqf")
 
 //	Run init2
 ["Running init2..."] call A_loading_fnc_update_title;
-[(3/loading_stages_total)] call A_loading_fnc_update_progress;
+[(3/A_loading_var_stages_total)] call A_loading_fnc_update_progress;
 uiSleep 1;
 
 ExecSQFwait("fnc\init2.sqf")
 
 //	Wait for server to finish
 ["Waiting for server to finish..."] call A_loading_fnc_update_title;
-[(4/loading_stages_total)] call A_loading_fnc_update_progress;
+[(4/A_loading_var_stages_total)] call A_loading_fnc_update_progress;
 uiSleep 1;
 
 // 	Load stats
 ["Starting stat loading..."] call A_loading_fnc_update_title;
-[(5/loading_stages_total)] call A_loading_fnc_update_progress;
+[(5/A_loading_var_stages_total)] call A_loading_fnc_update_progress;
 uiSleep 1;
 
 [] call A_stats_fnc_init2;
 
 // 	Run startup functions for whatevers needed
 ["Running final operations..."] call A_loading_fnc_update_title;
-[(6/loading_stages_total)] call A_loading_fnc_update_progress;
+[(6/A_loading_var_stages_total)] call A_loading_fnc_update_progress;
 uiSleep 1;
 
 

@@ -38,10 +38,10 @@ if (_art == "use") then {
 			};
 		}
 		else {
-			for [{_i=0}, {_i < (count A_bombs_var_inv_serverbombarray)}, {_i=_i+1}] do {
-				if (((A_bombs_var_inv_serverbombarray select _i) select 1) == (vehicle player)) exitWith {
-					format["""%1"" call A_bombs_fnc_delete", ((A_bombs_var_inv_serverbombarray select _i) select 0)] call A_broadcast_fnc_broadcast;
-					[player, ((A_bombs_var_inv_serverbombarray select _i) select 2), 1] call A_inventory_fnc_add_item;
+			for [{_i=0}, {_i < (count A_bombs_var_serverbombarray)}, {_i=_i+1}] do {
+				if (((A_bombs_var_serverbombarray select _i) select 1) == (vehicle player)) exitWith {
+					format["""%1"" call A_bombs_fnc_delete", ((A_bombs_var_serverbombarray select _i) select 0)] call A_broadcast_fnc_broadcast;
+					[player, ((A_bombs_var_serverbombarray select _i) select 2), 1] call A_inventory_fnc_add_item;
 					player groupChat localize "STRS_inv_items_defuser_success";
 				};
 			};

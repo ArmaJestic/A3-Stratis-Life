@@ -12,7 +12,7 @@ if (typeName _gang_area != "OBJECT") exitWith {null};
 
 
 private["_actions"];
-_A_actions_fnc_actions = [_gang_area, "A_actions_fnc_actions"] call A_object_fnc_getVariable;
+_actions = [_gang_area, "actions"] call A_object_fnc_getVariable;
 if (not(undefined(_actions))) then {
 	if (typeName _actions != "ARRAY") exitWith {null};
 	{
@@ -23,7 +23,7 @@ if (not(undefined(_actions))) then {
 		_action_condition = _action select A_gang_var_area_action_condition;
 		
 		private["_action_id"];
-		_action_id = _player addAction [_action_text, "noscript.sqf", _action_code,1, false,true,"", _action_condition];
+		_action_id = _player addAction [_action_text, A_other_fnc_noscript, _action_code,1, false,true,"", _action_condition];
 		A_gang_var_area_actions = A_gang_var_area_actions + [_action_id];
 	} forEach _actions;
 };

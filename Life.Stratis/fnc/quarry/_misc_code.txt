@@ -1,4 +1,0 @@
-if (not(undefined(A_quarry_var_functions_defined))) exitWith {};
-
-[player, "shovel", 1] call A_inventory_fnc_set_item_amount;
-

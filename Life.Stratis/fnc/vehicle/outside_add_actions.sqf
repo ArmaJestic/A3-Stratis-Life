@@ -11,45 +11,45 @@ ARGV(1,_vehicle);
 if (not([_player] call A_player_fnc_human)) exitWith {};
 if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {};
 
-//Add crew A_actions_fnc_actions
+//Add crew actions
 private["_crew"];
 _crew = crew _vehicle;
 {if (true) then {
 	private["_member"];
 	_member = _x;
 	if (not([_member, "restrained", false] call A_object_fnc_getVariable)) exitWith {};
-	player grouPChat format["Adding A_actions_fnc_action for %1",  _member];
+	player grouPChat format["Adding action for %1",  _member];
 	private["_action_id"];
-	_A_actions_fnc_action_id = player addA_actions_fnc_action [format["Pull %1 from vehicle", _member], "A_actions_fnc_action.sqf", [[_player, _vehicle, _member], "A_vehicle_fnc_pull_player"],10,false,false,"",
+	_action_id = player addAction [format["Pull %1 from vehicle", _member], A_actions_fnc_action, [[_player, _vehicle, _member], "A_vehicle_fnc_pull_player"],10,false,false,"",
 		format["([%1, %2, %3] call A_vehicle_fnc_pull_player_available)", _player, _vehicle, _member]];
 	A_vehicle_var_outside_actions = A_vehicle_var_outside_actions + [_action_id];
 	
 };} forEach _crew;
 
 
-//Add unfliping A_actions_fnc_action
-_A_actions_fnc_action_id = player addA_actions_fnc_action ["Unflip this vehicle", "A_actions_fnc_action.sqf", [[_player, _vehicle], "A_interA_actions_fnc_action_fnc_vehicle_unflip"],10,false,false,"",
+//Add unfliping action
+_action_id = player addAction ["Unflip this vehicle", A_actions_fnc_action, [[_player, _vehicle], "A_interaction_fnc_vehicle_unflip"],10,false,false,"",
 	format["([%1] call A_vehicle_fnc_flipped)",_vehicle]];
 A_vehicle_var_outside_actions = A_vehicle_var_outside_actions + [_action_id];
 
-//Add impound A_actions_fnc_action
+//Add impound action
 if ([_player] call A_player_fnc_blufor) then {
-	_A_actions_fnc_action_id = player addA_actions_fnc_action ["Vehicle impound", "A_actions_fnc_action.sqf", [[_player, _vehicle], "A_interA_actions_fnc_action_fnc_impound_vehicle_seize"],10,false,false,"",
+	_action_id = player addAction ["Vehicle impound", A_actions_fnc_action, [[_player, _vehicle], "A_interaction_fnc_impound_vehicle_seize"],10,false,false,"",
 		format["([%1, %2] call A_vehicle_fnc_seize_available)", _player, _vehicle]];
 	A_vehicle_var_outside_actions = A_vehicle_var_outside_actions + [_action_id];
 };
 
-//Add view vehicle information A_actions_fnc_action
-_A_actions_fnc_action_id = player addA_actions_fnc_action ["Vehicle information", "A_actions_fnc_action.sqf", [[_player, _vehicle], "A_vehicle_fnc_interact_vehicle_information"],10,false,false,"",
+//Add view vehicle information action
+_action_id = player addAction ["Vehicle information", A_actions_fnc_action, [[_player, _vehicle], "A_vehicle_fnc_interact_vehicle_information"],10,false,false,"",
 	format["([%1, %2] call A_vehicle_fnc_seize_available)", _player, _vehicle]];
 A_vehicle_var_outside_actions = A_vehicle_var_outside_actions + [_action_id];
 
-//Add view vehicle trunk contents A_actions_fnc_action
-_A_actions_fnc_action_id = player addA_actions_fnc_action ["Vehicle trunk (view)", "A_actions_fnc_action.sqf", [[_player, _vehicle], "A_vehicle_fnc_interact_view_trunk"],10,false,false,"",
+//Add view vehicle trunk contents action
+_action_id = player addAction ["Vehicle trunk (view)", A_actions_fnc_action, [[_player, _vehicle], "A_vehicle_fnc_interact_view_trunk"],10,false,false,"",
 	format["([%1, %2] call A_vehicle_fnc_view_trunk_available)", _player, _vehicle]];
 A_vehicle_var_outside_actions = A_vehicle_var_outside_actions + [_action_id];
 
-//Add remove illegal items from vehicle A_actions_fnc_action
-_A_actions_fnc_action_id = player addA_actions_fnc_action ["Vehicle trunk (seize)", "A_actions_fnc_action.sqf", [[_player, _vehicle], "A_vehicle_fnc_seize_trunk"],10,false,false,"",
+//Add remove illegal items from vehicle action
+_action_id = player addAction ["Vehicle trunk (seize)", A_actions_fnc_action, [[_player, _vehicle], "A_vehicle_fnc_seize_trunk"],10,false,false,"",
 	format["([%1, %2] call A_vehicle_fnc_view_trunk_available)", _player, _vehicle]];
 A_vehicle_var_outside_actions = A_vehicle_var_outside_actions + [_action_id];
