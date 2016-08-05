@@ -31,8 +31,18 @@
 #define NORMALIZE_ANGLE(a) ((360 + a % 360)) % 360
 
 // For logging
+// Always log
 #define LOGE(F, S) QUOTE(F: S) call A_err_fnc_log;
+// Log if logging enabled
+#define LOGED(F,S) QUOTE(F: S) call A_err_fnc_logd;
 // Used for detecting/exiting/logging from a params error
 #define EXT_ERR(E, F) if (!E) exitwith {LOGE(F, "error, params")};
 #define PARAMA_EXIT(F, P, A) EXT_ERR(A params P, F)
 #define PARAM_EXIT(F, P) PARAMA_EXIT(F, P, _this)
+// for exiting if value is null
+// with log
+#define UNDEF_EXIT(F, X) if (undefined(X)) exitwith {LOGE(F, error: undefined received (QUOTE(X))};
+// with logd
+#define UNDEF_EXITD(F, X) if (undefined(X)) exitwith {LOGED(F, error: undefined received (QUOTE(X))};
+// todo: make a variant that calls a function to check all params for undefined
+

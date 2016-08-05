@@ -1,3 +1,11 @@
+#include "..\includes\base.h\"
+
+class fnc {
+	tag = "A_fnc";
+	file = "fnc"
+	FNC_CFG_ENTRY(init1)
+	FNC_CFG_ENTRY(init2)
+};
 class defaultSave {
 	tag = "A_defaultSave";
 	file = "fnc\defaultSave";

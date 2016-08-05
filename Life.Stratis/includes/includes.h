@@ -1,11 +1,5 @@
 /*
-	Includes file to use for others/all
-	Call with
-	[] call compile preprocessFileLineNumbers "includes\includes.h";
-	or use
-	fnc_includes = compile preprocessFileLineNumbers "includes\includes.h";
-	[] call fnc_includes;
-	No need for 20 copies of the same .h file
+	old attempt, useless
 */
 #define compSQF(FILE) compile preprocessFileLineNumbers FILE;
 
@@ -15,7 +9,7 @@
 #define ExecSQFspawnpass(PASS, FILE) PASS spawn compSQF(FILE)
 #define ExecSQFspawn(FILE) ExecSQFspawnpass([], FILE)
 
-#define ExecSQFwaitpass(PASS, FILE) private["_handler"]; _handler = ExecSQFspawnpass(PASS, FILE) waitUntil{scriptDone _handler};
+#define ExecSQFwaitpass(PASS, FILE) private _handler = ExecSQFspawnpass(PASS, FILE) waitUntil{scriptDone _handler};
 #define ExecSQFwait(FILE) ExecSQFwaitpass([], FILE)
 
-#define SleepWait(timeA) private["_waittt"]; _waittt = time + timeA; waitUntil {time >= _waittt};
+#define SleepWait(X) private _waittt = time + X; waitUntil {time >= _waittt};

@@ -4,13 +4,14 @@
 
 #include "..\..\includes\macro.h"
 
+
 // private _err = params[["_str", null, [""], 1]];
 // EXT_ERR(_err, A_err_fnc_logd)
 
 PARAM_EXIT(A_err_fnc_logd, [["_str", null, [""], 1]])
+UNDEF_EXIT(A_err_fnc_logd, _str)
 
-if (undefined(_str)) exitwith {"A_err_fnc_logd, error: undefined received" call A_err_fnc_log};
 
 if (A_err_var_logd) {
-	[_str] call A_err_fnc_log
+	[_str] call A_err_fnc_log;
 };

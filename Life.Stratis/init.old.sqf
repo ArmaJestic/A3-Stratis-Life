@@ -84,7 +84,6 @@ uiSleep 1;
 // 	Loading finished, mission a go
 ["Loading Complete"] call A_loading_fnc_update_title;
 [1] call A_loading_fnc_update_progress;
-uiSleep 1;
 [] call A_loading_fnc_stop;
 
 

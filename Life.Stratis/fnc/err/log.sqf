@@ -5,11 +5,13 @@
 
 #include "..\..\includes\macro.h"
 
-private _err = params[["_str", null, [""], 1]];
 
-if (!_err) exitwith {diag_log "A_err_fnc_log, error: params";};
+// wont use "PARAM_EXIT" macro because it comes back to here
+if (!(params[["_str", null, [""], 1]])) exitwith {diag_log "A_err_fnc_log, error: params";};
 if (undefined(_str)) exitwith {diag_log "A_err_fnc_log, error: undefined received";};
+
+
 
 // TODO: check string length, A3 has a limit w/ diag_log
 
-diag_log format["A log: %1", _str];
+diag_log format["A_err_fnc_log: %1", _str];
