@@ -6,5 +6,5 @@
 
 private["_vehicle"];
 _vehicle = nearCursorTarget;
-if ((isNull _vehicle) || {not(_vehicle isKindOf "LandVehicle")}) exitWith {null};
+if ((isNull _vehicle) || {!(_vehicle isKindOf "LandVehicle")}) exitWith {null};
 _vehicle

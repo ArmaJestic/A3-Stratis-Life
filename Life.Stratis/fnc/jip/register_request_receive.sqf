@@ -16,7 +16,7 @@ ARGV(4,_object);
 
 if (undefined(_arguments)) exitWith {};
 if (undefined(_callback)) exitWith {};
-if (undefined(_object) || {not(typeName _object == "OBJECT" || {typeName _object == "SCALAR"})}) then {
+if (undefined(_object) || {!(typeName _object == "OBJECT" || {typeName _object == "SCALAR"})}) then {
 	_object = true;
 };
 
@@ -24,9 +24,9 @@ if (undefined(_object) || {not(typeName _object == "OBJECT" || {typeName _object
 
 private["_jip_entry"];
 _jip_entry = [];
-_jip_entry set [jip_entry_arguments, _arguments];
-_jip_entry set [jip_entry_callback, _callback];
-_jip_entry set [jip_entry_object, _object];
+_jip_entry set [A_jip_var_arguments, _arguments];
+_jip_entry set [A_jip_var_callback, _callback];
+_jip_entry set [A_jip_var_object, _object];
 
-jip_registry set [count(jip_registry), _jip_entry];
+A_jip_var_registry set [count(A_jip_var_registry), _jip_entry];
 [] call A_jip_fnc_cleanup;

@@ -10,7 +10,7 @@ ARGV(0,_player);
 ARGV(1,_item);
 ARGV(2,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_item)) exitWith {null};
 if (undefined(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
@@ -21,7 +21,7 @@ if (_amount > ([_player, _item] call A_inventory_fnc_get_item_amount)) exitWith 
 	player groupChat format["You do not have that many items to use"];
 };
 
-if (not([_player] call A_interaction_fnc_inventory_actions_allowed)) then {
+if (!([_player] call A_interaction_fnc_inventory_actions_allowed)) then {
 	player groupChat "You cannot use your inventory now";
 };
 

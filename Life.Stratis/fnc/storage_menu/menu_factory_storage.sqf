@@ -7,7 +7,7 @@
 //player groupChat format["A_storage_menu_fnc_menu_factory_storage %1", _this];
 ARGV(0,_player);
 ARGV(1,_factory_storage_name);
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 if (undefined(_factory_storage_name)) exitWith {null};
 if (typeName _factory_storage_name != "STRING") exitWith {null};
 

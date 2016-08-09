@@ -20,7 +20,7 @@ if (_key in(actionKeys "LookAround")) then {
 };
 
 if ((call A_input_fnc_stunned_check) || (call A_input_fnc_restrained_check)) exitWith {
-	not(_key in (call A_input_fnc_get_stunned_allowed_keys))
+	!(_key in (call A_input_fnc_get_stunned_allowed_keys))
 };
 
 //Fix for exploit using cross-arms animation, that allows players to glitch through walls
@@ -32,14 +32,14 @@ private["_inVehicle", "_isDriver"];
 _inVehicle = ((vehicle player) != player);
 _isDriver = ((driver (vehicle player)) == player);
 	
-if (_key == DIK_W && not(A_input_var_w_key_down)) then {
+if (_key == DIK_W && !(A_input_var_w_key_down)) then {
 	A_input_var_w_key_down_count = A_input_var_w_key_down_count + 1;
 	if (A_input_var_w_key_down_count > 10) then {
 		A_input_var_w_key_down = true;
 	};
 };
 
-if (_key == DIK_S && not(A_input_var_s_key_down)) then {
+if (_key == DIK_S && !(A_input_var_s_key_down)) then {
 	A_input_var_s_key_down_count = A_input_var_s_key_down_count + 1;
 	if (A_input_var_s_key_down_count > 10) then {
 		A_input_var_s_key_down = true;
@@ -97,25 +97,24 @@ switch _key do {
 	};
 	
 	case DIK_F: {
-		if (not(_ctrl)) exitWith {_handled = false;};
+		if (!(_ctrl)) exitWith {_handled = false;};
 		
 		if (_inVehicle && isblu) then {
 			_handled = [] call A_input_fnc_cop_siren_handler;
-		}
-		else { if (not(_inVehicle)) then{
+		}else{ if (!(_inVehicle)) then{
 			_handled = [] call A_input_fnc_stun_handler;
 		};};
 	};
 	
 	case DIK_G: {
-		if (not(_ctrl)) exitWith {_handled = false;};
-		if (not(isblu && _inVehicle && _isDriver)) exitWith {_handled = false;};
+		if (!(_ctrl)) exitWith {_handled = false;};
+		if (!(isblu && _inVehicle && _isDriver)) exitWith {_handled = false;};
 		_handled = [] call A_input_fnc_cop_speed_gun_handler;
 	};
 	
 	case DIK_H: {
-		if (not(_ctrl)) exitWith {_handled = false;};
-		if (not(isblu && _inVehicle && _isDriver)) exitWith {_handled = false;};
+		if (!(_ctrl)) exitWith {_handled = false;};
+		if (!(isblu && _inVehicle && _isDriver)) exitWith {_handled = false;};
 		_handled = [] call A_input_fnc_cop_horn_handler;
 	};
 	

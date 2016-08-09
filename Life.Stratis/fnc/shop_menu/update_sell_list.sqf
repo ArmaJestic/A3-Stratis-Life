@@ -25,12 +25,12 @@ _count = (count _items);
 [_shop_id] call A_shop_menu_fnc_refresh_sell_cb;
 
 _i = 0;
-while { _i < _count && not(isNull(findDisplay shop_dialog_idd))} do {
+while { _i < _count && !(isNull(findDisplay shop_dialog_idd))} do {
 	private["_index", "_data", "_valid"];
 	//exit early if the state of the checkbox changes
 	if ([([_shop_id] call A_shop_menu_fnc_get_sell_cb), _hide_items] call A_shop_menu_fnc_BNE ) exitWith {null};
 	_data = _items select _i;
-	_valid = if (_hide_items) then { private["_out"]; _out = [_data, true] call A_shop_menu_fnc_sell_item_validate_data; not(undefined(_out)) } else { true };
+	_valid = if (_hide_items) then { private["_out"]; _out = [_data, true] call A_shop_menu_fnc_sell_item_validate_data; !(undefined(_out)) } else { true };
 
 	if (_valid) then {
 		_index = lbAdd [sell_items_list_idc, (_data select A_shop_menu_var_sell_item_label)];

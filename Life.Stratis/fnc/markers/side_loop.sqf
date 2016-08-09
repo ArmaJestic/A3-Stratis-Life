@@ -16,8 +16,7 @@ while {true} do {
 	{ 
 		if ([_player] call A_camera_fnc_enabled) then {
 			[_x] call A_markers_fnc_loop_draw;
-		}
-		else {
+		}else{
 			[_x] call A_markers_fnc_side_loop_draw; 
 		};
 	} forEach marker_side_array;

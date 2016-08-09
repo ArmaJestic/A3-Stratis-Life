@@ -22,6 +22,6 @@ waitUntil {
 
 	
 	
-	(not(ctrlShown _control))
+	(!(ctrlShown _control))
 };
 };

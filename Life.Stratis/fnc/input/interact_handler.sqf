@@ -43,7 +43,7 @@ if(_handled) exitWith { true };
 private["_player_inside"];
 _player_inside = [player, (vehicle player)] call A_mounted_fnc_player_inside;
 //player groupChat format["_player_inside = %1", _player_inside];
-if (not(_player_inside) && not(_ctrl)) exitWith {
+if (!(_player_inside) && !(_ctrl)) exitWith {
 	private ["_vcl"];
 	for [{_i=1}, {_i < 3}, {_i=_i+1}] do {
 		_range = _i;
@@ -52,7 +52,7 @@ if (not(_player_inside) && not(_ctrl)) exitWith {
 		_posFind = [(_pos select 0)+(_dirV select 0)*_range,(_pos select 1)+(_dirV select 1)*_range,(_pos select 2)+(_dirV select 2)*_range];
 		_vcls    = nearestobjects [_posFind,["LandVehicle", "Air", "ship"], 5];
 		_vcl     = _vcls select 0;
-		if(not(isnull _vcl)) exitWith {_i = 4};
+		if(!(isnull _vcl)) exitWith {_i = 4};
 	};
 
 	if((locked _vcl) == 2) exitWith { false };

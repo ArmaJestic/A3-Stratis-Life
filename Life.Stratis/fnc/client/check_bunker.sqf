@@ -10,7 +10,7 @@ _player = player;
 private["_bunker"];
 _bunker = [_player] call A_bunker_fnc_player_near;
 
-if (undefined(_bunker) || {not(INV_shortcuts) || {not(alive _player)}}) exitWith {
+if (undefined(_bunker) || {!(INV_shortcuts) || {!(alive _player)}}) exitWith {
 	[_player] call A_bunker_fnc_remove_actions;
 };
 

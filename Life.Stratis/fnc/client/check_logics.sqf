@@ -6,7 +6,7 @@
 private["_alive"];
 _alive = alive player;
 
-if (not(_alive)) exitWith {null};
+if (!(_alive)) exitWith {null};
 
 {
 	private["_entry", "_cdistance", "_logic", "_warn_distance", "_teleport_distance"];

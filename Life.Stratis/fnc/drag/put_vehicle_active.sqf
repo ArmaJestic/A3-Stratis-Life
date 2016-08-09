@@ -9,7 +9,7 @@ ARGV(1,_object);
 
 private["_vehicle"];
 _vehicle = cursorTarget;
-if ((isNull _vehicle) || {not(_vehicle isKindOf "LandVehicle")}) exitWith {false};
+if ((isNull _vehicle) || {!(_vehicle isKindOf "LandVehicle")}) exitWith {false};
 
 if ((isPlayer _object) && {(locked _vehicle < 2) && {([_vehicle] call A_vehicle_fnc_empty_cargo_slots) > 0}}) exitWith {true};
 

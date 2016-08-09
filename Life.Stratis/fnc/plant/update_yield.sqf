@@ -8,7 +8,7 @@ ARGV(0,_plant);
 ARGV(1,_amount);
 if (undefined(_plant)) exitWith {};
 if (typeName _plant != "OBJECT") exitWith {};
-if (not([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {};
+if (!([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {};
 if (undefined(_amount)) exitWith {};
 
 private["_label_template"];

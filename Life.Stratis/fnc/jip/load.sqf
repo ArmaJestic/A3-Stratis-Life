@@ -9,7 +9,7 @@ if (isServer) exitWith {};
 
 private["_object", "_jip_variable"];
 _object = player;
-_jip_variable = "jip_registry";
+_jip_variable = "A_jip_var_registry";
 
 private["_jip_data"];
 _jip_data = [_object, _jip_variable] call A_jip_fnc_wait;
@@ -23,15 +23,14 @@ if (undefined(_jip_data)) exitWith {
 	_jip_entry = _x;
 	
 	private["_arguments", "_callback"];
-	_arguments = _jip_entry select jip_entry_arguments;
-	_callback = _jip_entry select jip_entry_callback;
+	_arguments = _jip_entry select A_jip_var_arguments;
+	_callback = _jip_entry select A_jip_var_callback;
 	
 	private["_callback_method"];
 	_callback_method = missionNamespace getVariable [_callback, null];
 	if (undefined(_callback_method)) then {
 		[format["WARNING: JIP entry skipped, method '%1' not found", _callback]] call A_jip_fnc_message;
-	}
-	else {
+	}else{
 		[_arguments, _callback_method] call A_jip_fnc_execute;
 	};
 } forEach _jip_data;

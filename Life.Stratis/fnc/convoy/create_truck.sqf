@@ -15,7 +15,7 @@ _truck_name = "convoy_truck";
 
 //[[_truck, _truck_name], "A_convoy_fnc_init_handler_persistent", true, true] spawn BIS_fnc_MP;
 [[_truck, _truck_name], "A_convoy_fnc_init_handler_persistent", true, true, _truck] spawn A_jip_fnc_register;
-waitUntil {not(isNil _truck_name)};
+waitUntil {!(isNil _truck_name)};
 
 [_truck, "tuning", 5, true] call A_object_fnc_setVariable;
 processinitcommands;

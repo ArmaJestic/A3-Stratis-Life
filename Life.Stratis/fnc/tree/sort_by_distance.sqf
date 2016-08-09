@@ -23,8 +23,8 @@ while {_i < _count} do {
 	_object = objectFromNetId _tree_id;
 	_distance = _location distance _object;
 	_element = [];
-	_element set [A_quicksort_v_sort_key, _distance];
-	_element set [A_quicksort_v_sort_data, _object];
+	_element set [A_quicksort_var_sort_key, _distance];
+	_element set [A_quicksort_var_sort_data, _object];
 	_list_to_sort set[_i, _element];
 	_i = _i + 1;
 };

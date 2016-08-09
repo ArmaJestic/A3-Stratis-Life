@@ -54,8 +54,7 @@ _convoy_group = createGroup west;
 		_unit moveInDriver _truck; 
 		_unit assignAsDriver _truck;
 		_unit setSkill ["commanding", 1];
-	}
-	else {
+	}else{
 		_unit doFollow _truck;
 		_unit moveInCargo _truck; 
 		_unit assignAsCargo _truck;

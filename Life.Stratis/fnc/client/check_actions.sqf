@@ -6,5 +6,5 @@
 private["_vehicle"];
 _vehicle = (vehicle player);
 _in_vehicle = (_vehicle != player);
-if (not(_in_vehicle)) exitWith {null};
+if (!(_in_vehicle)) exitWith {null};
 	

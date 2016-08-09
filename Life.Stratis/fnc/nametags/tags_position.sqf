@@ -1,7 +1,7 @@
 // A_nametags_fnc_tags_position
 
 #include "..\..\includes\macro.h"
-#include "..\..\constants.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_nametags_fnc_tags_position %1", _this];
@@ -21,7 +21,7 @@ _pos = [0,0,0];
 	private["_cpart", "_cpos"];
 	_cpart = _x;
 	_cpos = _target selectionPosition _cpart;
-	if (not(((_cpos select 0) == 0) && { ((_cpos select 1) == 0) && {((_cpos select 2) == 0)}})) exitWith {
+	if (!(((_cpos select 0) == 0) && { ((_cpos select 1) == 0) && {((_cpos select 2) == 0)}})) exitWith {
 		_pos = _cpos;
 		_part = _cpart;
 	};

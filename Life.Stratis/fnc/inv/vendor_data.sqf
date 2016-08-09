@@ -8,7 +8,7 @@ _vendor_object = _this select 0;
 if (undefined(_vendor_object)) exitWith {null};
 if (typeName _vendor_object != "OBJECT") exitWith {null};
 
-if (not(_vendor_object in A_inv_var_vendors_list)) exitWith {null};
+if (!(_vendor_object in A_inv_var_vendors_list)) exitWith {null};
 
 private["_index"];
 _index = A_inv_var_vendors_list find _vendor_object;

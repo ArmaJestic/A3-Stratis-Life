@@ -10,7 +10,7 @@ ARGV(0,_election_id);
 ARGV(1,_nominee);
 
 if (undefined(_election_id)) exitWith {};
-if (not([_nominee] call A_player_fnc_exists)) exitWith {};
+if (!([_nominee] call A_player_fnc_exists)) exitWith {};
 if (typeName _election_id != "STRING") exitWith {};
 
 private["_uid", "_name"];

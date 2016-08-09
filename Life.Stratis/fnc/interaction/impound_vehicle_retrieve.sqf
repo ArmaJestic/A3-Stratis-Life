@@ -9,7 +9,7 @@
 ARGV(0,_player);
 ARGV(1,_logic);
 ARGV(2,_vehicle_name);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_logic)) exitWith {null};
 if (undefined(_vehicle_name)) exitWith {null};
 if (typeName _vehicle_name != "STRING") exitWith {null};
@@ -38,7 +38,7 @@ player groupChat format["Please wait while your vehicle is retrieved ..."];
 private["_storage"];
 _storage = "impound_lot";
 
-if (not([_storage, _vehicle_name] call A_vehicle_storage_fnc_contains)) exitWith {
+if (!([_storage, _vehicle_name] call A_vehicle_storage_fnc_contains)) exitWith {
 	player groupChat format["ERROR: The vehicle '%1' was not found in the impound lot", _vehicle_name];
 };
 

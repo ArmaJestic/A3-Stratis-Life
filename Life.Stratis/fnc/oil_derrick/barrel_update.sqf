@@ -9,7 +9,7 @@ ARGV(0,_barrel);
 ARGV(1,_amount);
 if (undefined(_barrel)) exitWith {};
 if (typeName _barrel != "OBJECT") exitWith {};
-if (not([_barrel, "isPumpBarrel", false] call A_object_fnc_getVariable)) exitWith {};
+if (!([_barrel, "isPumpBarrel", false] call A_object_fnc_getVariable)) exitWith {};
 if (undefined(_amount)) exitWith {};
 
 private["_label_template"];

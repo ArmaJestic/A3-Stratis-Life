@@ -26,8 +26,7 @@ _object allowDamage _damage;
 
 if (_zref) then {
 	[_object, _ref,  (_ref worldToModel _offset), _heading, _attached] call A_object_fnc_fake_attach;
-}
-else {
+}else{
 	[_object, _ref, _offset, _heading, _attached] call A_object_fnc_fake_attach;
 };
 

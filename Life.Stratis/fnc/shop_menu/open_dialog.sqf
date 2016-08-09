@@ -10,11 +10,11 @@ ARGV(0,_shop_id);
 if (undefined(_shop_id)) exitWith {null};
 if (typeName _shop_id != "SCALAR") exitWith {null};
 
-if (not([_shop_id] call A_shop_menu_fnc_is_open)) exitWith {
+if (!([_shop_id] call A_shop_menu_fnc_is_open)) exitWith {
 	player groupChat format["This shop is not open yet. All shops are now %1%2 open", A_shop_menu_var_setup_progress, "%"];
 };
 
-if (not(createDialog "shops_menu")) exitWith {
+if (!(createDialog "shops_menu")) exitWith {
 	player groupChat format["ERROR: Could not create shops menu dialog"];
 };
 

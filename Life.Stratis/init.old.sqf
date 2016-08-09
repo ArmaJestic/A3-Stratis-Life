@@ -1,7 +1,7 @@
 isClient = !isServer || (isServer && !isDedicated);
 if (isClient) then {
 	//player globalChat format["Waitin for player ..."];
-	waitUntil {(not(isNull player) && {isPlayer player})};
+	waitUntil {(!(isNull player) && {isPlayer player})};
 	titleText ["", "BLACK OUT", 0.0001];
 };
 

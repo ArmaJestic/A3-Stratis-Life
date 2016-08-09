@@ -16,7 +16,7 @@ if (undefined(_heading)) then {
 _source attachTo [_target, _offset];
 [_source, _heading] call A_object_fnc_set_heading;
 
-if (undefined(_attached) || {not(_attached)}) then {
+if (undefined(_attached) || {!(_attached)}) then {
 	//hack to have the objects not being attached
 	_source attachTo [_source, [0,0,0]];
 	detach _source;

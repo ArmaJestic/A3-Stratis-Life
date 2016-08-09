@@ -12,8 +12,8 @@ if (isServer) then {
 	publicVariable "underwater_base_setup_complete";
 };
 
-if (isClient) then {
-	waitUntil {(not(isNil "underwater_base_setup_complete") && {underwater_base_setup_complete})};
+if (!isServer) then {
+	waitUntil {(!(isNil "underwater_base_setup_complete") && {underwater_base_setup_complete})};
 	
 	respawn_east_proxy = respawn_east_proxy_floating;
 	respawn_east_proxy setVariable ["respawn", true];

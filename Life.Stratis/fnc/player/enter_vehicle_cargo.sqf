@@ -7,7 +7,7 @@ player groupChat format["A_player_fnc_enter_vehicle_cargo %1", _this];
 ARGV(0,_player);
 ARGV(1,_vehicle);
 ARGV(2,_immediate);
-if (not([_player] call A_player_fnc_exists)) exitWith {false};
+if (!([_player] call A_player_fnc_exists)) exitWith {false};
 if (undefined(_vehicle)) exitWith {false};
 if (undefined(_immediate)) exitWith {false};
 if (typeName _immediate != "BOOL") exitWith {false};
@@ -21,8 +21,7 @@ _empty_cargo = _vehicle emptyPositions "Cargo";
 if (_empty_commander > 0) exitWith {
 	if (_immediate) then {
 		_player moveInCommander _vehicle;
-	}
-	else {
+	}else{
 		_player action ["getInCommmander", _vehicle];
 	};
 	true
@@ -31,8 +30,7 @@ if (_empty_commander > 0) exitWith {
 if (_empty_cargo > 0) exitWith { 
 	if (_immediate) then {
 		_player moveInCargo _vehicle;
-	}
-	else {
+	}else{
 		_player action ["getInCargo", _vehicle];
 	};
 	true

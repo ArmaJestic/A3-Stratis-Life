@@ -11,6 +11,6 @@ if (isServer) then {
 	publicVariable "limbo_base_setup_complete";
 };
 
-if (isClient) then {
-	waitUntil {(not(isNil "limbo_base_setup_complete") && {limbo_base_setup_complete})};
+if (!isServer) then {
+	waitUntil {(!(isNil "limbo_base_setup_complete") && {limbo_base_setup_complete})};
 };

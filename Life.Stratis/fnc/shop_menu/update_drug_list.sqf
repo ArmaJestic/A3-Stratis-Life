@@ -32,7 +32,7 @@ _inList = false;
 	};
 } foreach _list;
 
-if (not(_inList)) then {
+if (!(_inList)) then {
 	_list = _list + [_data];
 };
 

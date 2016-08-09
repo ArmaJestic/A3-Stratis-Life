@@ -40,7 +40,7 @@ if (_key == DIK_SPACE) then {
 	A_camera_var_space_held = true;
 	
 
-	if (not(isNull _left_click_target) && not(A_camera_var_space_hold_reset)) then {
+	if (!(isNull _left_click_target) && !(A_camera_var_space_hold_reset)) then {
 		[_left_click_target] call A_camera_fnc_reset_target_offsets;
 		A_camera_var_space_hold_reset = true;
 	};

@@ -5,41 +5,27 @@
 // todo: comments lost
 
 A_wbl_var_active_pmc_1 = 1;
-
 A_wbl_var_active_cop_1 = 2;
 
 A_wbl_var_w_pmc_1 = [];
-
 A_wbl_var_w_cop_1 = [];
-
 A_wbl_var_b_pmc_1 = [];
-
 A_wbl_var_b_cop_1 = [];
 
 A_wbl_var_folder = "LISTS\";
 
 A_wbl_var_wl_pmc_1 = format["%1WBL_white_list_pmc_1.log", A_wbl_var_folder];
-
 A_wbl_var_wl_cop_1 = format["%1WBL_white_list_cop_1.log", A_wbl_var_folder];
-
 A_wbl_var_bl_pmc_1 = format["%1WBL_black_list_pmc_1.log", A_wbl_var_folder];
-
 A_wbl_var_bl_cop_1 = format["%1WBL_black_list_cop_1.log", A_wbl_var_folder];
 
 A_wbl_var_pv_s_w_pmc_1 = [];
-
 A_wbl_var_pv_s_b_pmc_1 = [];
-
 A_wbl_var_pv_s_w_cop_1 = [];
-
 A_wbl_var_pv_s_b_cop_1 = [];
-
 A_wbl_var_pv_c_w_pmc_1 = [];
-
 A_wbl_var_pv_c_b_pmc_1 = [];
-
 A_wbl_var_pv_c_w_cop_1 = [];
-
 A_wbl_var_pv_c_b_cop_1 = [];
 
 A_wbl_var_lists = [

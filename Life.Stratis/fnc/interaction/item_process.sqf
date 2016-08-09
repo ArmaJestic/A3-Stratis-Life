@@ -11,7 +11,7 @@ ARGV(1,_input_item);
 ARGV(2,_output_item);
 ARGV(3,_input_amount_required);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_input_item)) exitWith {null};
 if (undefined(_output_item)) exitWith {null};
 if (undefined(_input_amount_required)) exitWith {null};

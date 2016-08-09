@@ -13,7 +13,7 @@ parameters passed to files
 
 
 // Includes
-// nothing
+#include "includes\macro.h"
 
 // todo: rename to follow prefixs like all other variables/functions?
 // required for function params
@@ -35,12 +35,11 @@ MISSION_ROOT = call {
 
 
 // loadup parameters
-[] call A_param_fnc_init1;
-[] call A_param_fnc_init2;
-
+RIB(param)
+// loading err stuff
+RIB(err)
 // setup loading stuff
-[] call A_loading_fnc_init1;
-[] call A_loading_fnc_init2;
+RIB(loading)
 
 
 // todo: create/setup loading queue
@@ -68,7 +67,7 @@ if (isMultiplayer) then {
 				
 				// wait until player object is all setup?
 				// look into if this is necessary, remnant of old mission file
-				waitUntil {(not(isNull player) && {isPlayer player})};
+				waitUntil {(!(isNull player) && {isPlayer player})};
 				titleText ["", "BLACK OUT", 0.0001];
 				
 			}else{
@@ -110,17 +109,34 @@ CIVILIAN setFriend [EAST, 1];
 CIVILIAN setFriend [RESISTANCE, 1];
 
 
-["running init1 set", 0] call A_loading_fnc_update;
 // call fnc/init1
+["running init1 set", 0] call A_loading_fnc_update;
+RI1(fnc)
 
 ["waiting for server setup complete", 0] call A_loading_fnc_update;
 waitUntil A_loading_fnc_check_server_complete;
 
-["running init2 set", 0] call A_loading_fnc_update;
 // call fnc/init2
-// todo: setup in cfgfnc, compiling in init file is a risk
+["running init2 set", 0] call A_loading_fnc_update;
+RI2(fnc)
 
-["ending", 0] call A_loading_fnc_update;
+if (!isServer) then {
+	player addEventHandler ["fired", {_this call A_player_fnc_handle_fired}];
+	player addEventHandler ["HandleDamage", {_this call A_player_fnc_handle_damage}];
+//	[] execVM "onKeyPress.sqf";
+//	[] execVM "onMouse.sqf";
+
+	if ((["cop_blacklist", (getPlayerUID player)] call list_contains_key) && ([player] call player_cop)) then {
+		[] spawn {
+			player groupChat format["WARNING: You have been blacklisted from the bluefor side."];
+			sleep 5;
+			endMission "LOSER";
+		};
+	};
+};
+
+
+["ending", 1] call A_loading_fnc_update;
 
 [] call A_loading_fnc_stop;
 

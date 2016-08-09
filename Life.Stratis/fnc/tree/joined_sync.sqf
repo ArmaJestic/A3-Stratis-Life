@@ -10,7 +10,7 @@ _player = player;
 
 private["_object", "_jip_variable"];
 _object = player;
-_jip_variable = "tree_registry";
+_jip_variable = "A_tree_var_registry";
 
 private["_tree_registry"];
 _tree_registry = [_object, _jip_variable, {sleep (_this select 0);}] call A_jip_fnc_wait;
@@ -25,7 +25,7 @@ diag_log str(_sorted_list);
 
 {
 	private["_tree"];
-	_tree = _x select A_quicksort_v_sort_data;
+	_tree = _x select A_quicksort_var_sort_data;
 	private["_pvup", "_tvup"];
 	_pvup = vectorUp _player;
 	_tvup = vectorUp _tree;

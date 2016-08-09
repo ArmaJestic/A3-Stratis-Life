@@ -18,9 +18,11 @@ if (!A_loading_var_active) exitwith {
 };
 
 
-PARAM_EXIT(A_loading_fnc_update, [["_title", null, [""]], ["_progress", null, [0]]])
-UNDEF_EXIT(A_loading_fnc_update, _title)
-UNDEF_EXIT(A_loading_fnc_update, _progress)
+//PARAM_EXIT(A_loading_fnc_update, [["_title", null, [""]], ["_progress", null, [0]]])
+//UNDEF_EXIT(A_loading_fnc_update, _title)
+//UNDEF_EXIT(A_loading_fnc_update, _progress)
+
+if !(params [["_title", null, [""]], ["_progress", null, [0]]]) exitwith {LOGE_EP(A_loading_fnc_update)};
 
 if !(_title isEqualTo "") then {
 	[_title] call A_loading_fnc_update_title;

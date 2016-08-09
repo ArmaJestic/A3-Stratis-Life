@@ -13,7 +13,7 @@ ARGV(0,_truck);
 ARGV(1,_group);
 
 if ((damage _truck) < 0.2) exitWith {null};
-if (not([(driver _truck)] call A_player_fnc_exists)) exitWith {null};
+if (!([(driver _truck)] call A_player_fnc_exists)) exitWith {null};
 
 private["_velocity", "_direction"];
 

@@ -6,7 +6,7 @@
 
 disableSerialization;
     _display = findDisplay 46;
-if (not(undefined(mounted_keyDownHandler_id))) then {
+if (!(undefined(mounted_keyDownHandler_id))) then {
 	_display displayRemoveEventHandler  ["keyDown", mounted_keyDownHandler_id];
 	mounted_keyDownHandler_id = null;
 };

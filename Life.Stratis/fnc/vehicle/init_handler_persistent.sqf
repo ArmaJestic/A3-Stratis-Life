@@ -19,8 +19,7 @@ missionNamespace setVariable [_vehicle_name, _vehicle];
 if (undefined(A_mounted_fnc_add_actions)) then {
 	A_mounted_var_actions_init = if (undefined(A_mounted_var_actions_init)) then { [] } else {A_mounted_var_actions_init};
 	A_mounted_var_actions_init = A_mounted_var_actions_init + [_vehicle_name];
-}
-else {
+}else{
 	[_vehicle] call A_mounted_fnc_add_actions;
 };
 

@@ -37,7 +37,6 @@ if ([player] call A_player_fnc_blufor) then {
 		[player, A_main_var_govconvoybonus] call A_bank_fnc_transaction;
 	};
 	player sidechat format [ "%1",_msg1];
-}
-else { if(_msg2 != "") then{ 
+}else{ if(_msg2 != "") then{ 
 	player sidechat format [ "%1",_msg2];}; 
 };

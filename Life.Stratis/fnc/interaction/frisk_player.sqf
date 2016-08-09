@@ -9,15 +9,15 @@ player groupChat format["A_interaction_fnc_frisk_player %1", _this];
 ARGV(0,_player);
 ARGV(1,_target);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_target] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_target] call A_player_fnc_human)) exitWith {null};
 
 if (_player != player) exitWith {null};
 
 private["_interaction"];
 _interaction = "A_missions_fnc_search";
-if (not([_player, _target, _interaction] call A_interaction_fnc_check_distance)) exitWith {null};
-if (not([_player, _target, _interaction] call A_interaction_fnc_check_armed)) exitWith {null};
+if (!([_player, _target, _interaction] call A_interaction_fnc_check_distance)) exitWith {null};
+if (!([_player, _target, _interaction] call A_interaction_fnc_check_armed)) exitWith {null};
 
 
 if(!([_target] call A_player_fnc_vulnerable))exitwith{

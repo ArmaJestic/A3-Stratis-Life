@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_civilian)) exitWith {null};
+if (!([_player] call A_player_fnc_civilian)) exitWith {null};
 
 [_player, "gasmask", false, true] call A_object_fnc_setVariable;
 [_player, "A_item_fnc_stun_armor", "none", true] call A_object_fnc_setVariable;

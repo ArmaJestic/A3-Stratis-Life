@@ -5,7 +5,7 @@
 private ["_text", "_dis"];
 _text = _this select 0;
 _art = _this select 1;
-if (not ((_text == "") or (_text == " ")) ) then {
+if (!((_text == "")||(_text == " "))) then {
 	_text = format["%1-%2 shouts: %3", player, name player, _text];
 	if (_art == "direct") then {
 		_dis = 50;

@@ -33,11 +33,13 @@ A_license_var_INV_Licenses = [
 	//["automatic",[pmclicenses,licenseflag2,licenseflag2,licenseflag2],"Assault Weapon License",205000],
 	["engineer",[pmclicenses,university],localize "STRS_license_engineer",65000],
 	["bomb",[terrorshop],"Combat Training",3000000],
-	["probator",[cp2atm,cp2atm,cp2atm,cp2atm],localize "STRS_license_probator",10000],
-	["patrol",[cp2atm,cp2atm,cp2atm,cp2atm],localize "STRS_license_coppatrol",15000],
-	["response",[cp2atm,cp2atm,cp2atm,cp2atm],localize "STRS_license_copresponse",350000],
-	["sobr",[cp2atm,cp2atm,cp2atm,cp2atm],localize "STRS_license_copswat",3000000],
-	["air_support_training",[cp2atm,cp2atm,cp2atm,cp2atm],localize "STRS_license_copairsupport",1250000],
+	
+	["probator",["cp2atm","cp2atm","cp2atm","cp2atm"],localize "STRS_license_probator",10000],
+	["patrol",["cp2atm","cp2atm","cp2atm","cp2atm"],localize "STRS_license_coppatrol",15000],
+	["response",["cp2atm","cp2atm","cp2atm","cp2atm"],localize "STRS_license_copresponse",350000],
+	["sobr",["cp2atm","cp2atm","cp2atm","cp2atm"],localize "STRS_license_copswat",3000000],
+	["air_support_training",["cp2atm","cp2atm","cp2atm","cp2atm"],localize "STRS_license_copairsupport",1250000],
+	
 	//["passport_civilian",[university,university,university,university],"Passport",85000],
 	["pmc_license_journeyman",[pmclicenses,pmclicenses,pmclicenses,pmclicenses],"PMC Journeyman License",3000000],
 	["pmc_defense",[pmclicenses,pmclicenses,pmclicenses,pmclicenses],"PMC Defense License",5000000],
@@ -47,4 +49,3 @@ A_license_var_INV_Licenses = [
 	//["paramedic_license",[tdoc,tdoc,tdoc,tdoc],"Paramedic Training",750000]
 	//["assassin",[agunshop,agunshop,objnull],"Assassin Training",30000]
 ];
-

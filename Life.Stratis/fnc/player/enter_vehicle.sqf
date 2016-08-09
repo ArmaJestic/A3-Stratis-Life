@@ -7,7 +7,7 @@
 ARGV(0,_player);
 ARGV(1,_vehicle);
 ARGV(2,_immediate);
-if (not([_player] call A_player_fnc_exists)) exitWith {false};
+if (!([_player] call A_player_fnc_exists)) exitWith {false};
 if (undefined(_vehicle)) exitWith {false};
 if (undefined(_immediate)) exitWith {false};
 if (typeName _immediate != "BOOL") exitWith {false};

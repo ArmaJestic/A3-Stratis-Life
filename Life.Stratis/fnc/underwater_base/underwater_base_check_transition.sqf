@@ -15,7 +15,7 @@ _bz = ((bottommark_floating modelToWorld [0,0,0]) select 2) + 2;
 _bz = -2;
 
 //check if player is swimming toward base
-if (_pz > _bz && {not(time_loop_exit) && {((_player distance topmark_floating) < 20) && {not(A_underwater_base_var_transition1_active)}}}) then {
+if (_pz > _bz && {!(time_loop_exit) && {((_player distance topmark_floating) < 20) && {!(A_underwater_base_var_transition1_active)}}}) then {
 	[_player] spawn {
 		if (A_underwater_base_var_transition1_active) exitWith {};
 		A_underwater_base_var_transition1_active = true;
@@ -30,7 +30,7 @@ if (_pz > _bz && {not(time_loop_exit) && {((_player distance topmark_floating) <
 };
 
 //check if player is swimming away from base
-if (_pz < _bz && {(time_loop_exit) && {((_player distance topmark_floating) < 20) &&  {not(A_underwater_base_var_transition1_active)}}}) then {
+if (_pz < _bz && {(time_loop_exit) && {((_player distance topmark_floating) < 20) &&  {!(A_underwater_base_var_transition1_active)}}}) then {
 	[_player] spawn {
 		if (A_underwater_base_var_transition1_active) exitWith {};
 		A_underwater_base_var_transition1_active = true;
@@ -66,7 +66,7 @@ if (_df > 25 && {_df < 30 && {_pz < _bz}}) then {
 		_pos = (bottommark_floating worldToModel (_player modelToWorld [0,0,0]));
 		_dir = getDir _player;
 		player groupChat format["_is_passenger = %1", _is_passenger];
-		if (not(_is_passenger)) then {
+		if (!(_is_passenger)) then {
 			_player attachTo [bottommark_submerged, _pos];
 			detach _player;
 		};
@@ -92,7 +92,7 @@ if (_ds < 20 && {_pz < _bz}) then {
 		_pos = (topmark_submerged worldToModel (_player modelToWorld [0,0,0]));
 		_dir = getDir _player;
 		player groupChat format["_is_passenger = %1", _is_passenger];
-		if (not(_is_passenger)) then {
+		if (!(_is_passenger)) then {
 			_player attachTo [topmark_floating, _pos];
 			detach _player;
 		};

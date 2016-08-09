@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isblu)) exitWith {null};
+if (!(isblu)) exitWith {null};
 private["_player"];
 _player = player;
 

@@ -3,10 +3,10 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 ARGV(0,_player);
 ARGV(1,_name);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_name)) exitWith {null};
 if (typeName _name != "STRING") exitWith {null};
 

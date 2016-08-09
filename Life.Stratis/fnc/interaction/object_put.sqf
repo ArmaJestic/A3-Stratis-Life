@@ -13,7 +13,7 @@ ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_object);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_object)) exitWith {null};
 if (typeName _object != "OBJECT") exitWith {null};
 

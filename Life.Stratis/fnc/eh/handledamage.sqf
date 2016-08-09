@@ -1,4 +1,5 @@
 // A_eh_fnc_handledamage
+// outdated
 
 #include "..\..\includes\macro.h"
 

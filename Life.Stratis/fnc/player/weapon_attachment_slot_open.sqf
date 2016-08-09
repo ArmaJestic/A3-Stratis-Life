@@ -6,7 +6,7 @@
 ARGV(0,_player);
 ARGV(1,_item_id);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {_empty_result};
+if (!([_player] call A_player_fnc_exists)) exitWith {_empty_result};
 if (undefined(_item_id)) exitWith {_empty_result};
 if (typeName _item_id != "STRING") exitWith {_empty_result};
 

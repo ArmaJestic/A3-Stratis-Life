@@ -20,7 +20,7 @@ _target_marker setPos _target_marker_pos;
 
 if (isNil "camera_rabbit" || {typeName camera_rabbit != "OBJECT" || {isNull camera_rabbit}}) exitWith {objNull};
 _current_target = cursorTarget;
-if (not(isNull(_current_target))) then {
+if (!(isNull(_current_target))) then {
 	private["_tracked", "_offset", "_heading", "_damage", "_simulation", "_hidden", "_attached"];
 	_tracked = _current_target getVariable ["tracked", false];
 	_offset = [_current_target, "offset", []] call A_object_fnc_getVariable;
@@ -41,8 +41,7 @@ if (not(isNull(_current_target))) then {
 		_simulation,
 		_hidden,
 		_attached];
-}
-else {
+}else{
 	hintSilent str(_current_target);
 };
 _current_target

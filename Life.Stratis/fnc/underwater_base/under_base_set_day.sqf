@@ -5,5 +5,5 @@
 
 
 time_loop_exit = false;
-//[true] call A_time_functions_fnc_init;
-[true, true] spawn A_time_functions_fnc_loop;
+//[true] call A_time_fnc_init;
+[true, true] spawn A_time_fnc_loop;

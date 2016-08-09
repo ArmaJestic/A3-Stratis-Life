@@ -23,6 +23,6 @@ if (undefined(_armor)) then {
 };
 
 //stun armor only protects at long range
-if (not(_armor == "none")) exitWith {};
+if (!(_armor == "none")) exitWith {};
 
 [_unit, A_main_var_stuntimeperhit] spawn A_stun_fnc_effects_light;

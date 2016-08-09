@@ -5,7 +5,7 @@
 
 //player groupChat format["A_player_fnc_load_side_vehicle %1", _this];
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {false};
+if (!([_player] call A_player_fnc_exists)) exitWith {false};
 
 private["_side"];
 _side = ([_player] call A_player_fnc_side);
@@ -34,7 +34,7 @@ _active_driver_uid = [_vehicle, "active_driver_uid"] call A_vehicle_fnc_get_stri
 //player groupChat format["_saved_driver_uid = %1", _saved_driver_uid];
 //player groupChat format["_active_driver_uid = %1", _active_driver_uid];
 
-if (not((_active_driver_uid in ["", _saved_driver_uid]) && (_saved_driver_uid == _player_uid))) exitWith {
+if (!((_active_driver_uid in ["", _saved_driver_uid]) && (_saved_driver_uid == _player_uid))) exitWith {
 	player groupChat "Your vehicle has been stolen, destroyed, or moved while you were away!";
 	false
 };

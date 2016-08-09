@@ -9,7 +9,7 @@ disableSerialization;
 ARGV(0,_player);
 ARGV(1,_list_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_list_id)) exitWith {null};
 if (typeName _list_id != "STRING") exitWith {null};
 if (_list_id == "") exitWith {null};

@@ -9,7 +9,7 @@ if (dialog) exitWith {};
 ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_object);
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 if (undefined(_object)) exitWith {};
 
 if (A_interaction_var_interact_use_axe_active) exitWith {};
@@ -42,12 +42,11 @@ _intersects_stone = false;
 
 if ([": t_", str(_tree_or_stone)] call BIS_fnc_inString) then {
 	_intersects_tree = true;
-}
-else { if (["stone", str(_tree_or_stone)] call BIS_fnc_inString) then {
+}else{ if (["stone", str(_tree_or_stone)] call BIS_fnc_inString) then {
 	_intersects_stone = true;
 }};
 
-if (not(_intersects_tree || _intersects_stone)) exitWith {call _exit_clean;};
+if (!(_intersects_tree || _intersects_stone)) exitWith {call _exit_clean;};
 
 
 if (_intersects_tree) exitWith {
@@ -56,7 +55,7 @@ if (_intersects_tree) exitWith {
 };
 
 //cannot use regular axe to hit stone
-if (_intersects_stone && not(_class == "Land_Axe_F")) exitWith {
+if (_intersects_stone && !(_class == "Land_Axe_F")) exitWith {
 	[_player,_object, _tree_or_stone] call A_interaction_fnc_stone_hit;
 	call _exit_clean;
 };

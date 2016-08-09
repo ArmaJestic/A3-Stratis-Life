@@ -11,7 +11,7 @@ _killer_name = (name _killer);
 _victim_name = (name player);
 
 _roadkill = false;
-_is_driver_near = not(undefined(_near_driver));
+_is_driver_near = !(undefined(_near_driver));
 _suicide = (_killer_name == _victim_name);
 
 	
@@ -30,7 +30,7 @@ _victim_bounty = [player] call A_player_fnc_get_bounty;
 _victim_criminal =  (_victim_bounty > 0);
 _teamkill = (_victim_side == _killer_side) && (_victim_side != "Civilian");
 _justified = (_victim_armed || _victim_criminal);
-_enemies = ((_killer_side != _victim_side) && not((_victim_side == "Civilian") || (_killer_side == "Civilian")));
+_enemies = ((_killer_side != _victim_side) && !((_victim_side == "Civilian") || (_killer_side == "Civilian")));
 _killer_uid = getPlayerUID _killer;
 _victim_uid = getPlayerUID player;
 

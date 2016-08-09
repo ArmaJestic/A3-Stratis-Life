@@ -22,7 +22,7 @@ _slash_sounds = [
 _sound = _slash_sounds select (floor random (count(_slash_sounds)));
 playSound3d [_sound, _player, true];
 
-if (not(alive _tree)) exitWith {
+if (!(alive _tree)) exitWith {
 	player groupChat format["This tree is already down"];
 };
 
@@ -42,8 +42,7 @@ if (_damage >= 1) then {
 	[getPos _player] call A_tree_fnc_create_item;
 	[getPos _player] call A_tree_fnc_create_item;
 	[getPos _player] call A_tree_fnc_create_item;
-}
-else {
+}else{
 	_tree setDamage _damage;
 };
 

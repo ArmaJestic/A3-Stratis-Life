@@ -5,7 +5,7 @@
 
 if (dialog) exitWith { closeDialog 0; };
 _ok = createDialog "Retribution";
-if (not(_ok)) then { 
+if (!(_ok)) then { 
 	player groupChat "Unable to open the retributions dialog";
 };
 

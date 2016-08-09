@@ -4,8 +4,10 @@
 #include "..\..\includes\macro.h"
 
 
-PARAM_EXIT(A_loading_fnc_update_progress, [["_progress", null, [0], 1]])
-UNDEF_EXIT(A_loading_fnc_update_progress, _progress)
+//PARAM_EXIT(A_loading_fnc_update_progress, [["_progress", null, [0], 1]])
+//UNDEF_EXIT(A_loading_fnc_update_progress, _progress)
+
+if !(params [["_progress", null, [0], 1]]) exitwith {LOGE_EP(A_loading_fnc_update_progress)};
 
 if ((_progress) < 0 || (_progress > 1)) exitWith {
 	LOGE(A_loading_fnc_update_progress, invalid value)

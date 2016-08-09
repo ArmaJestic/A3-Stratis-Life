@@ -13,11 +13,11 @@ _replace = _this select 2;
 _replaceArr = (_this select 2) call A_isse_str_fnc_strtoarr;
 _found = [_str, _search] call A_isse_str_fnc_pos;
 
-if (_found > -1) then
-
-{
+if (_found > -1) then {
 	_SubStr1 = [_str, 0, _found] call A_isse_str_fnc_substring;
 	_SubStr2 = [_str, (_found + (count _searchArr)), (count _strArr)] call A_isse_str_fnc_substring;
 	_str = format["%1%2%3", _SubStr1, _replace, _SubStr2];
 	_str
-} else {_str}
+}else{
+	_str
+}

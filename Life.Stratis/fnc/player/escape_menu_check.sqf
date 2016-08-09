@@ -3,12 +3,12 @@
 #include "..\..\includes\macro.h"
 
  _this spawn {
-if (not(isClient)) exitWith {null};
+if (!(isClient)) exitWith {null};
 disableSerialization;
 sleep 10;
 
 while {true} do {
-	waitUntil {not(isnull (findDisplay 49))};
+	waitUntil {!(isnull (findDisplay 49))};
 
 	_ctrl = (findDisplay 49) displayCtrl 1010;
 	_ctrl ctrlEnable false;

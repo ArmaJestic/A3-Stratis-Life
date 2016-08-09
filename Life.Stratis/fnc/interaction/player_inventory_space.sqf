@@ -10,7 +10,7 @@ ARGV(0,_player);
 ARGV(1,_item);
 ARGV(2,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {0};
+if (!([_player] call A_player_fnc_human)) exitWith {0};
 if (undefined(_item)) exitWith {0};
 if (undefined(_amount)) exitWith {0};
 if (typeName _item != "STRING") exitWith {0};

@@ -7,7 +7,7 @@ ARGV(0,_player);
 ARGV(1,_item);
 ARGV(2,_amount);
 ARGV(3,_data);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_item)) exitWith {null};
 if (undefined(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
@@ -29,15 +29,14 @@ if (ITEM_DATA_ANIMAL(_data)) then {
 	_object setDamage 1;
 	sleep 0.5; //give some time for the dead animation to play
 	_object setPos (position _player);
-}
-else {
+}else{
 	_object = _class createVehicle (position _player);
 };
 
 private["_in_water"];
 _in_water = [_player] call A_object_fnc_in_water;
 
-if (alive _player && not(_in_water)) then {
+if (alive _player && !(_in_water)) then {
 	_object setPosASL (ATLtoASL(_player modeltoWorld [0,0.5,0]));
 	//_object setposASL getposASL _player;
 };
@@ -53,7 +52,7 @@ private["_object_name"];
 _object_name = format["%1_%2_%3_%4", _class, (getPlayerUID _player), round(time), round(random(time))];
 //[[_object, _object_name], "A_player_fnc_drop_item_init_handler_persistent", true, true] spawn BIS_fnc_MP;
 [[_object, _item, _object_name], "A_player_fnc_drop_item_init_handler_persistent", true, true, _object] spawn A_jip_fnc_register;
-waitUntil {not(isNil _object_name)};
+waitUntil {!(isNil _object_name)};
 
 
 //set the droppable item meta-data

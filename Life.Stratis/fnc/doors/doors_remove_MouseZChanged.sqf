@@ -7,7 +7,7 @@
 
 disableSerialization;
     _display = findDisplay 46;
-if (not(undefined(A_doors_var_doors_MouseZChangedHandler_id))) then {
+if (!(undefined(A_doors_var_doors_MouseZChangedHandler_id))) then {
 	_display displayRemoveEventHandler  ["MouseZChanged", A_doors_var_doors_MouseZChangedHandler_id];
 	A_doors_var_doors_MouseZChangedHandler_id = null;
 };

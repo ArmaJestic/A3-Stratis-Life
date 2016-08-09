@@ -21,7 +21,7 @@ if (typeName _distance != "SCALAR") exitWith {_default};
  {
 	private["_cobject"];
 	_cobject = _x;
-	if (not(_cobject getVariable ["tracked", false])) then {
+	if (!(_cobject getVariable ["tracked", false])) then {
 		_objects set [_forEachIndex, objNull];
 	};
  } forEach _objects;

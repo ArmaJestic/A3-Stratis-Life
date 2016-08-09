@@ -11,7 +11,7 @@ ARGV(1,_class);
 ARGV(2,_item);
 ARGV(3,_distance);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {[]};
+if (!([_player] call A_player_fnc_exists)) exitWith {[]};
 if (undefined(_class)) exitWith { [] };
 if (typeName _class != "STRING") exitWith { [] };
 if (undefined(_item)) exitWith {[]};
@@ -32,7 +32,7 @@ private["_vehicle", "_vehicle_name"];
 	_vehicle = missionNamespace getVariable [_vehicle_name, null];
 	if (true) then {
 		if (undefined(_vehicle)) exitWith {null};
-		if (not(alive(_vehicle))) exitWith {null};
+		if (!(alive(_vehicle))) exitWith {null};
 		private["_cdistance"];
 		_cdistance = _player distance _vehicle;
 		//player groupChat format["_actual_distance = %1, _check_distance = %2", _cdistance , _distance];

@@ -11,7 +11,7 @@ if (typeName _plant != "OBJECT") exitWith {};
 if (undefined(_death_time)) exitWith {};
 if (typeName _death_time != "SCALAR") exitWith {};
 
-if (not([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {};
+if (!([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {};
 
 private["_item"];
 _item = [_plant, "item", ""] call A_object_fnc_getVariable;

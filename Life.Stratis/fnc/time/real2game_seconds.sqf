@@ -1,4 +1,4 @@
-// A_time_functions_fnc_real2game_seconds
+// A_time_fnc_real2game_seconds
 
 #include "..\..\includes\macro.h"
 
@@ -14,8 +14,7 @@ _sunrise_secs = _rsecs  % time_full_day;
 
 if (_sunrise_secs <= time_sunrise_to_sunset) then {
 	_cycle_seconds = ((_sunrise_secs * (SECSDAY / 2))  / time_sunrise_to_sunset);
-}
-else {
+}else{
 	_sunset_secs = _sunrise_secs - time_sunrise_to_sunset;
 	_sunrise_secs = time_sunrise_to_sunset;
 	_cycle_seconds = ((_sunrise_secs * (SECSDAY / 2))  / time_sunrise_to_sunset);

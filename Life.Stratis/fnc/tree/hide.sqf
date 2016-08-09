@@ -17,15 +17,14 @@ if (_grade > 15) exitWith {
 };
 
 
-if (not((damage _tree) >= 1)) then {
+if (!((damage _tree) >= 1)) then {
 	_tree setDamage 1;
 	sleep 2;
 };
 
 if (typeName _target == "OBJECT" && {local(_target)}) then {
 	[_tree] call A_tree_fnc_local_hide;
-}
-else {
+}else{
 	[[_tree], "A_tree_fnc_local_hide", _target, false] call BIS_fnc_MP;
 };
 

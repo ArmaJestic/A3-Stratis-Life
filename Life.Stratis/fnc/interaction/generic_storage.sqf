@@ -10,7 +10,7 @@ ARGV(1,_storage);
 ARGV(2,_item);
 ARGV(3,_amount);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 if (undefined(_storage)) exitWith {null};
 if (undefined(_item)) exitWith {null};
@@ -54,8 +54,7 @@ if (_amount > 0) then {
 	};
 	
 	_valid = true;	
-}
-else {
+}else{
 	//removing items from the storage
 	if (abs(_amount) > _g_items_amount) exitWith {
 		player groupChat format["The storage does not have that many item(s)"];
@@ -67,7 +66,7 @@ else {
 	_valid = true;
 };
 
-if (not(_valid)) exitWith {null};
+if (!(_valid)) exitWith {null};
 [_player, _item, (_amount), _g_storage] call A_inventory_fnc_storage_add_item;
 [_player, _item, -(_amount), _p_storage] call A_inventory_fnc_storage_add_item;
 [_g_storage, ([_player, _g_storage] call A_object_fnc_getVariable)] call A_stats_fnc_client_save;

@@ -47,7 +47,7 @@ if (_reduce) then {
 	_damage = _damage * 0.25;
 };
 	
-if (not(alive _unit)) then {
+if (!(alive _unit)) then {
 	[_shooter, _unit] spawn A_retributions_fnc_victim;
 };
 

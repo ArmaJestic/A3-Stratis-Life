@@ -10,7 +10,7 @@ ARGV(0,_this);
 private["_player"];
 _player = camera_unit;
 
-if (not([_player] call A_camera_fnc_get_map_open)) exitWith {false};
+if (!([_player] call A_camera_fnc_get_map_open)) exitWith {false};
 
 ARGV(0,_display);
 ARGV(1,_button);
@@ -18,11 +18,11 @@ ARGV(2,_x);
 ARGV(3,_y);
 ARGV(5,_control);
 
-if (not(_button == 0)) exitWith {null};
+if (!(_button == 0)) exitWith {null};
 
 private["_target"];
 _target = [_player, "A_camera_fnc_target"] call A_object_fnc_getVariable;
-if (not(undefined(_target))) exitWith {
+if (!(undefined(_target))) exitWith {
 	player groupChat format["Cannot teleport while camera is attached to a target"];
 	false
 };

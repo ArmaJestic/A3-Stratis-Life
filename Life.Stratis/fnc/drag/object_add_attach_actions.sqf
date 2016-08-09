@@ -20,7 +20,7 @@ _actions set [count(_actions), _action_id];
 
 private["_type"];
 _type = [_object, "type", ""] call A_object_fnc_getVariable;
-if (not((_type == "Fort")  || (isPlayer _object))) then {
+if (!((_type == "Fort")  || (isPlayer _object))) then {
 	_action_id = _player addAction [format["Put %1 in inventory", _label], A_actions_fnc_action,
 	[[_player, _object], "A_interaction_fnc_object_put"],10,false,true,"",  "([(objectFromNetId(" + str(netId(_object)) + ")), " + str(_player) + "] call A_drag_fnc_put_inventory_avalable)"];
 	_actions set [count(_actions), _action_id];

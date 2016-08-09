@@ -7,7 +7,7 @@
 ARGV(0,_player);
 ARGV(1,_prison_id);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
 if (undefined(_prison_id)) exitWith {};
 if (typeName _prison_id != "SCALAR") exitWith {};
 

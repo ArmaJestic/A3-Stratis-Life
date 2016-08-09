@@ -7,7 +7,7 @@ ARGV(0,_player);
 ARGV(1,_side);
 ARGV(2,_distance);
 
-if (not([_player] call A_player_fnc_human)) exitWith {0};
+if (!([_player] call A_player_fnc_human)) exitWith {0};
 
 if (undefined(_side)) exitWith {0};
 if (typeName _side != "SIDE") exitWith {0};
@@ -39,7 +39,7 @@ _near_side_players = [];
 	_cplayer = _x;
 	_cside = ([_cplayer] call A_player_fnc_side); 
 	if (([_cplayer] call A_player_fnc_human) && _cside == _side) then {
-		if (not(_cplayer == _player)) then {
+		if (!(_cplayer == _player)) then {
 			_near_side_players = _near_side_players + [_cplayer];
 		};
 	};

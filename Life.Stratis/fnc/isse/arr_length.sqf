@@ -2,5 +2,4 @@
 
 #include "..\..\includes\macro.h"
 
-
-    (count _this)
+(count _this)

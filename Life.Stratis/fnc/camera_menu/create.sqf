@@ -7,9 +7,9 @@
 ARGV(0,_player);
 ARGV(1,_objects);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
-if (not(createDialog "camera_menu")) exitWith {
+if (!(createDialog "camera_menu")) exitWith {
 	player groupChat format["ERROR: cannot create camera menu dialog"];
 };
 

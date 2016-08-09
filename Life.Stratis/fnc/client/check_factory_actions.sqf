@@ -13,7 +13,7 @@ _in_vehicle = (_vehicle != _player);
 private["_factory"];
 _factory = [_player, 5] call A_factory_fnc_player_near;
 //player groupChat format["_factory = %1",_factory];
-if (undefined(_factory) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
+if (undefined(_factory) || !(INV_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
 	[_player] call A_factory_fnc_remove_actions;
 };
 

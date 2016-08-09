@@ -4,10 +4,10 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isClient)) exitWith {};
+if (!(isClient)) exitWith {};
 ARGV(0,_player);
 
-if (not([_player] call A_object_fnc_exists)) exitWith {};
+if (!([_player] call A_object_fnc_exists)) exitWith {};
 
 private["_respawn"];
 _respawn = respawn_limbo_proxy;

@@ -7,7 +7,7 @@
 ARGV(0,_id);
 ARGV(1,_player);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {[]};
+if (!([_player] call A_player_fnc_exists)) exitWith {[]};
 
 private["_uid"];
 _uid = getPlayerUID _player;

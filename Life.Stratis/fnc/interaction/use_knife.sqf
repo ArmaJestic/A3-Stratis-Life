@@ -9,7 +9,7 @@ if (dialog) exitWith {};
 ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_object);
-if (not([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
 if (undefined(_object)) exitWith {false};
 
 if (A_interaction_var_interact_use_knife_active) exitWith {};
@@ -29,7 +29,7 @@ private["_target"];
 _target = nearCursorTarget;
 
 if (isNull _target) exitWith { call _exit_clean;};
-if (not(_target isKindOf "Animal" || _target isKindOf "Man")) exitWith { call _exit_clean;};
+if (!(_target isKindOf "Animal" || _target isKindOf "Man")) exitWith { call _exit_clean;};
 if (_target == _player) exitWith { call _exit_clean;};
 private["_distance"];
 player grouPChat format["_target = %1", _target];
@@ -46,7 +46,7 @@ player groupChat format["_distance = %1", _distance];
 if (_distance > 1)  exitWith { call _exit_clean;};
 
 
-if (not(alive _target)) exitWith {
+if (!(alive _target)) exitWith {
 	player groupChat format["The knife target is not alive."];
 	 call _exit_clean;
 };
@@ -61,7 +61,7 @@ _damage = damage _target;
 _damage = _damage + 0.5;
 _target setDamage _damage;
 
-if (_target isKindOf "Man" && not(_target isKindOf "Animal")) then {
+if (_target isKindOf "Man" && !(_target isKindOf "Animal")) then {
 	playSound3D [format["a3\sounds_f\characters\human-sfx\Person0\P0_hit_0%1.wss", (floor(random 8) + 1)], _target];
 };
 

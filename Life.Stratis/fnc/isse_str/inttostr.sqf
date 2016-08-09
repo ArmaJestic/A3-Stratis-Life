@@ -21,8 +21,7 @@ else { if (_num >= 10000000) then {
 		_str  = format["%2%1", _str, (_rest/(10^(_i-1)))];
 		if (_num <= 0) exitWith {null};
 	};
-}
-else {
+}else{
 	_str = format["%1", _num];
 };};
 

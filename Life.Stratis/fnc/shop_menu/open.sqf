@@ -13,7 +13,7 @@ _shop_cache = [_shop_id] call A_shop_menu_fnc_lookup;
 if (undefined(_shop_cache)) exitWith {null};
 
 _indicator = [_shop_cache, "indicator"] call A_object_fnc_getVariable;
-if (not(undefined(_indicator))) then {
+if (!(undefined(_indicator))) then {
 	//_indicator hideObject true;
 	//detach _indicator;
 	deleteVehicle _indicator;

@@ -26,8 +26,7 @@ if ((typeName _this) == "STRING") then {
 
 	if (_reString == "") exitWith {_isNumber = false;};
 	if (_isNumber) exitWith {_result = parseNumber(_reString);};
-}
-else {
+}else{
 	if ((typeName _this) == "SCALAR") then {_isNumber = true;_result   = _this;} else {_isNumber = false;};
 };
 

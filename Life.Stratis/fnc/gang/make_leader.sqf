@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
  _this spawn {
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 ARGV(0,_gang_id);
 ARGV(1,_member_uid);
 if (undefined(_member_uid)) exitWith {null};

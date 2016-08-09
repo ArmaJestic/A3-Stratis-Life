@@ -16,7 +16,7 @@ private["_hasLinkedItem", "_hasAttachment", "_hasUniform", "_hasVest", "_hasHead
 
 
 _quiet = if (count _this > 1) then { _this select 1 } else {  false };
-if (not(_quiet)) then {
+if (!(_quiet)) then {
 	call A_shop_menu_fnc_reset_buy_labels;
 };
 
@@ -125,7 +125,7 @@ _marketAdjust_str = format["$%1", strM(_market_adjust)];
 _totalDue_str = format["$%1", strM(_total_price)];
 _buy_label = format["Buy%1", _weight_str];
 
-if (not(_quiet)) then {
+if (!(_quiet)) then {
 	ctrlSetText [buy_supply_field_idc, _supply_str];
 	ctrlSetText [buy_salex_tax_field_idc, _salesTax_str];
 	ctrlSetText [buy_marked_adjust_field_idc, _marketAdjust_str];
@@ -136,12 +136,12 @@ if (not(_quiet)) then {
 _player_money =  ([player, 'money'] call A_inventory_fnc_get_item_amount);
 
 //player groupChat format["_license_1 = %1", _license_1];
-if (_needsLicense && isciv && not(_license_1 call A_inventory_fnc_has_license) && not(_license_1 == "")) exitWith {
+if (_needsLicense && isciv && !(_license_1 call A_inventory_fnc_has_license) && !(_license_1 == "")) exitWith {
 	[format["This item requires %1", (_license_1 call A_inventory_fnc_get_license_name)], _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
 //player groupChat format["_license_2 = %1", _license_2];
-if (_needsLicense && isblu && not(_license_2 call A_inventory_fnc_has_license) && not(_license_2 == "")) exitWith {
+if (_needsLicense && isblu && !(_license_2 call A_inventory_fnc_has_license) && !(_license_2 == "")) exitWith {
 	[format["This item requires %1", (_license_2 call A_inventory_fnc_get_license_name)], _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
@@ -197,7 +197,7 @@ if (_putInHands && _hasGoggles && _isGoggles) exitWith {
 	["You already have goggles equipped", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
-if (not(_putInHands) && _isGoggles) exitWith {
+if (!(_putInHands) && _isGoggles) exitWith {
 	["This item can only be bought using the ""Put weapon in hands"" option", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
@@ -225,7 +225,7 @@ if (_putInHands && _hasPistol && _isWeapon && _isPistol) exitWith {
 	["Your pistol slot is already filled", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
-if (_putInHands && not(_isPistol || _isBackpack || _isLauncher || _isRifle || 
+if (_putInHands && !(_isPistol || _isBackpack || _isLauncher || _isRifle || 
 						_isUniform || _isVest || _isGoggles || _isHeadgear ||
 						_isAttachment || _isGoggles || _isLinkedItem)) exitWith {
 	["The item you have selected to buy cannot be put in hands automatically", _quiet] call A_shop_menu_fnc_set_status_message; null
@@ -236,7 +236,7 @@ _data set [A_shop_menu_var_buy_item_sales_tax, _sales_tax];
 _data set [A_shop_menu_var_buy_item_market_adjust, _market_adjust];
 _data set [A_shop_menu_var_buy_item_max_stock, _max_stock];
 _data set [A_shop_menu_var_buy_item_supply, _supply];
-_data set [A_shop_menu_var_buy_item_legal, not(_isIllegal)];
+_data set [A_shop_menu_var_buy_item_legal, !(_isIllegal)];
 _data set [A_shop_menu_var_buy_item_amount, _amount];
 _data set [A_shop_menu_var_buy_item_in_hands, _putInHands];
 

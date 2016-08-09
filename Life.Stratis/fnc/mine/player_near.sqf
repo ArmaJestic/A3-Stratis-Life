@@ -6,7 +6,7 @@
 
 //player groupChat format["A_mine_fnc_player_near %1", _this];
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 private["_min_distance", "_mine"];
 _mine = null;

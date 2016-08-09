@@ -24,14 +24,11 @@ _i = _amount;
 while { _i > 0 } do {
 	if (_type == "Weapon") then {
 		player removeWeapon _class;
-	}
-	else { if (_type == "Magazine") then {
+	}else{ if (_type == "Magazine") then {
 		player removeMagazine _class;
-	}
-	else { if (_type == "backpack") then {
+	}else{ if (_type == "backpack") then {
 		removeBackpack player;
-	}
-	else { if (_type == "Vest" || 
+	}else{ if (_type == "Vest" || 
 				_type == "Uniform" || _type == "LinkedItem" ||
 				_type == "BISItem" || _type == "Headgear" ||
 				_type == "Goggles" || _type == "Attachment") then {

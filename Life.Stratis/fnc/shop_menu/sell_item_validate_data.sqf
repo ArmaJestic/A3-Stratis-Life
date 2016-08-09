@@ -16,7 +16,7 @@ private["_hasLinkedItem", "_hasAttachment", "_hasUniform", "_hasVest", "_hasHead
 
 
 _quiet = if (count _this > 1) then { _this select 1; } else { false };
-if (not(_quiet)) then {
+if (!(_quiet)) then {
 	call A_shop_menu_fnc_reset_sell_labels;
 };
 
@@ -126,7 +126,7 @@ _marketAdjust_str = format["$%1", strM(_market_adjust)];
 _totalReturn_str = format["$%1", strM(_total_price)];
 _sell_label = format["Sell%1",_weight_str];
 
-if (not(_quiet)) then {
+if (!(_quiet)) then {
 	ctrlSetText [sell_demand_field_idc, _demand_str];
 	ctrlSetText [sell_sales_tax_field_idc, _salesTax_str];
 	ctrlSetText [sell_market_ajust_field_idc, _marketAdjust_str];
@@ -134,11 +134,11 @@ if (not(_quiet)) then {
 	ctrlSetText [sell_button_idc, _sell_label];
 };
 
-if(not(_type in _sellableItems)) exitWith {
+if(!(_type in _sellableItems)) exitWith {
 	["The item you have selected to sell, is not an item that can be sold", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
-if(_limitedStock && _demand == 0 && not(_isOilBarrel)) exitWith {
+if(_limitedStock && _demand == 0 && !(_isOilBarrel)) exitWith {
 	["The item you have selected to sell has currently no demand", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
@@ -202,7 +202,7 @@ if (_isVehicle && _vehicle_near_count == 0) exitWith {
 	["You do not own any vehicles of the selected type that are near this shop", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
-if (_isBackpack && not(_hasBackpack)) exitWith {
+if (_isBackpack && !(_hasBackpack)) exitWith {
 	["You do not have the selected backpack to sell", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
@@ -214,7 +214,7 @@ if (_isMagazine && _amount > _magazine_count) then {
 	["You are trying to sell more magazines/ammution than the amount you have", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
-if (_limitedStock && _amount > _demand && not(_isOilBarrel)) exitWith {
+if (_limitedStock && _amount > _demand && !(_isOilBarrel)) exitWith {
 	["You are trying to sell more than the current demand for this item", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
@@ -228,7 +228,7 @@ _data set [A_shop_menu_var_sell_item_market_adjust, _market_adjust];
 _data set [A_shop_menu_var_sell_item_max_stock, _max_stock];
 _data set [A_shop_menu_var_sell_item_demand, _demand];
 _data set [A_shop_menu_var_sell_item_supply, _supply];
-_data set [A_shop_menu_var_sell_item_legal, not(_isIllegal)];
+_data set [A_shop_menu_var_sell_item_legal, !(_isIllegal)];
 _data set [A_shop_menu_var_sell_item_amount, _amount];
 
 _data

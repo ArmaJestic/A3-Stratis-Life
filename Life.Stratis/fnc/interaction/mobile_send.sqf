@@ -10,8 +10,8 @@ ARGV(0,_player);
 ARGV(1,_target);
 ARGV(2,_text);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
-if (not([_target] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
+if (!([_target] call A_player_fnc_human)) exitWith {};
 if (_player != player) exitWith {};
 
 if (undefined(_text)) exitWith {};
@@ -38,7 +38,7 @@ if (_money < _cost) exitWith {
 
 [_player, 'money', -(_cost)] call A_inventory_fnc_add_item;
 
-if (not(([_target, "A_item_fnc_handy"] call A_inventory_fnc_get_item_amount) > 0)) exitWith {
+if (!(([_target, "A_item_fnc_handy"] call A_inventory_fnc_get_item_amount) > 0)) exitWith {
 	player groupChat format["%1-%2 does not have a mobile phone, your text message bounced", _target, (name _target)];
 };
 

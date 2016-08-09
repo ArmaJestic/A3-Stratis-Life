@@ -74,8 +74,7 @@ _animals_data = _area select A_hunting_var_area_animals;
 			A_hunting_var_spawned_animals set [count(A_hunting_var_spawned_animals), _unit];
 			_i = _i + 1;
 		};
-	}
-	else { if (_interval_reached && _animal_count <= _animal_max_count) then {
+	}else{ if (_interval_reached && _animal_count <= _animal_max_count) then {
 		//spawn animals at slow rate to catch up to the maximum
 		private["_unit"];
 		//player groupChat format["SLOW-RATE: Spawn(%1)", _animal_class];

@@ -30,6 +30,6 @@ _icon = [_item, _class, _type] call A_object_fnc_icon;
 [_object, "type", _type, true] call A_object_fnc_setVariable;
 [_object, _amount] call A_object_fnc_item_update_amount;
 
-if (not(undefined(_data))) then {
+if (!(undefined(_data))) then {
 	[_object, "data", _data, true] call A_object_fnc_setVariable;
 };

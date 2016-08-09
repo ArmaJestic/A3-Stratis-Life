@@ -44,8 +44,7 @@ _height = _pos select 2;
 		_obj = _unit;
 		if (format["%1", _near] == "<NULL-object>") then {
 			_near = nearestObject [_unit, "ParachuteBase"];
-		}
-		else {
+		}else{
 			_obj = _near;
 		};	
 		

@@ -23,7 +23,7 @@ _variable_name = _entry select 0;
 waitUntil {
 	private["_variable_value"];
 	_variable_value = [_object, _variable_name] call A_object_fnc_getVariable;
-	if (not(undefined(_variable_value))) exitWith {true};
+	if (!(undefined(_variable_value))) exitWith {true};
 	if (_end_time < serverTime) exitWith {
 		private["_message"];
 		_message = format["WARNING: Time-out occurred while initializing %1", _variable_name];

@@ -29,7 +29,7 @@ while { ctrlVisible 1038} do {
 	_infos = (_item call A_inventory_fnc_get_item_array);
 	ctrlSetText [2,  format ["%1", (_infos call A_inventory_fnc_get_item_description_2)]];
 	ctrlSetText [3,  format ["Weights: %1", (_infos call A_inventory_fnc_get_item_type_kg)]];
-	if (not((lbCurSel 1) == _selected)) then {
+	if (!((lbCurSel 1) == _selected)) then {
 		_selected = (lbCurSel 1);
 		lbClear 4;
 		if (_item != "") then {

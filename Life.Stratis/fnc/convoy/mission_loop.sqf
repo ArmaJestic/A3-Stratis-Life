@@ -10,7 +10,7 @@
 
 
 format["A_convoy_fnc_mission_loop %1", _this] call A_convoy_fnc_debug;
-while {not(convoy_complete)} do {
+while {!(convoy_complete)} do {
 	 _this call A_convoy_fnc_mission_iteration;
 	convoy_running_time = convoy_running_time + 1;
 	sleep 1;

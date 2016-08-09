@@ -24,6 +24,6 @@ waitUntil {
 	_current_candidate_name = if (undefined(_current_candidate_data)) then {"(none)"} else {_current_candidate_data select A_voting_menu_var_election_candidates_data_entry_name};
 	_current_control ctrlSetText _current_candidate_name;
 	
-	(not(ctrlShown _timeout_control))
+	(!(ctrlShown _timeout_control))
 };
 };

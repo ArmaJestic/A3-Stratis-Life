@@ -15,7 +15,7 @@ _i = 0;
 while { _i < _count } do {
 	private["_element", "_shop", "_shop_object"];
 	_element = _sorted_item_shops select _i;
-	_shop_id = _element select A_quicksort_v_sort_data;
+	_shop_id = _element select A_quicksort_var_sort_data;
 	_shop_object = (_unsorted_shops select _shop_id) select A_inv_var_itemshops_object;
 	
 	[_shop_id, _shop_object] call A_shop_menu_fnc_init;
@@ -30,7 +30,7 @@ _count = count _sorted_item_shops;
 while { _i < _count } do {
 	private["_element", "_shop", "_shop_object"];
 	_element = _sorted_item_shops select _i;
-	_shop_id = _element select A_quicksort_v_sort_data;
+	_shop_id = _element select A_quicksort_var_sort_data;
 	_shop_object = (_unsorted_shops select _shop_id) select A_inv_var_itemshops_object;
 	
 	[_shop_id] call A_shop_menu_fnc_build_buy_list;

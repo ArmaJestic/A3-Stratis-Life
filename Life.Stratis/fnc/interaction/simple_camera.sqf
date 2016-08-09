@@ -8,7 +8,7 @@
 ARGV(0,_player);
 ARGV(1,_target);
 
-if (not(createDialog "free_camera")) exitWith {
+if (!(createDialog "free_camera")) exitWith {
 	player groupChat format["ERROR: could not create camera dialog"];
 };
 
@@ -49,7 +49,7 @@ waitUntil {
 			setAperture -1;
 		};
 	};
-	not(ctrlVisible free_camera_button_close_idc)
+	!(ctrlVisible free_camera_button_close_idc)
 };
 
 _camera cameraEffect ["terminate","back"];

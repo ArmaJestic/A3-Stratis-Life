@@ -20,7 +20,7 @@ _occupants = [];
 	_slot = _x;
 	_slod_id = _slot select A_mounted_var_slot_id;
 	_occupant = [_vehicle, _slod_id] call A_mounted_fnc_get_slot_occupant;
-	if (not(undefined(_occupant))) then {
+	if (!(undefined(_occupant))) then {
 		_occupants = _occupants + [_occupant];
 	};
 } forEach (_entry select A_mounted_var_slots);

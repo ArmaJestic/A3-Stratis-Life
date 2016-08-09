@@ -13,7 +13,7 @@ ARGV(1,_zc);
 
 private["_left_click_target"];
 _left_click_target = [_player] call A_camera_fnc_get_left_click_target;
-if (not(isNull _left_click_target)) exitWith {
+if (!(isNull _left_click_target)) exitWith {
 	_zc = _zc / (abs(_zc));
 	[_player, 0,0,_zc] call A_camera_fnc_update_left_click_target;
 };

@@ -9,7 +9,7 @@ ARGV(0,_vehicle);
 ARGV(1,_item);
 ARGV(2,_amount);
 
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
 
 if (undefined(_item)) exitWith {null};
 if (undefined(_amount)) exitWith {null};
@@ -50,8 +50,7 @@ if (_amount > 0) then {
 	};
 	player groupChat format["You put %1 item(s) into the vehicle", strM(_amount)];
 	_valid = true;
-}
-else {
+}else{
 	//removing items from the vehicle
 	if (abs(_amount) > _v_items_amount) exitWith {
 		player groupChat format["The vehicle does not have that many items"];
@@ -65,7 +64,7 @@ else {
 	_valid = true;		
 };
 
-if (not(_valid)) exitWith {null};
+if (!(_valid)) exitWith {null};
 
 [_vehicle, _item, (_amount), _v_storage] call A_inventory_fnc_storage_add_item;
 [_player, _item, -(_amount), _p_storage] call A_inventory_fnc_storage_add_item;

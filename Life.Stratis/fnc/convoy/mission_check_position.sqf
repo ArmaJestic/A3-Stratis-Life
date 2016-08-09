@@ -29,8 +29,7 @@ if (_prev_state == CONVOY_ST_UNKNOWN && _cur_state == CONVOY_ST_INITIAL) then {
 	format["sending initial move command %1", _dst_pos] call A_convoy_fnc_debug;
 	(driver _truck) commandMove _dst_pos;
 	[_truck, "next_pos", _dst_pos] call A_object_fnc_setVariable;
-}
-else { if ( (_prev_state == CONVOY_ST_INITIAL && _cur_state == CONVOY_ST_STUCK) ||
+}else{ if ( (_prev_state == CONVOY_ST_INITIAL && _cur_state == CONVOY_ST_STUCK) ||
 			(_prev_state == CONVOY_ST_MOVING && _cur_state == CONVOY_ST_STUCK) ||
 			(_prev_state == CONVOY_ST_STUCK && _cur_state == CONVOY_ST_STUCK && (_time % 20) == 0)) then {
 	//calculate the halfway point between the current, and the next position
@@ -40,8 +39,7 @@ else { if ( (_prev_state == CONVOY_ST_INITIAL && _cur_state == CONVOY_ST_STUCK) 
 	format["sending half-way move command %1", _half_pos] call A_convoy_fnc_debug;
 	[_truck, "next_pos", _half_pos, true] call A_object_fnc_setVariable;
 	(driver _truck) commandMove _half_pos;
-}
-else { if ((_prev_state == CONVOY_ST_STUCK && _cur_state == CONVOY_ST_MOVING)) then {
+}else{ if ((_prev_state == CONVOY_ST_STUCK && _cur_state == CONVOY_ST_MOVING)) then {
 	//reset the waypoint for the final destination
 	format["sending reset move command %1", _dst_pos] call A_convoy_fnc_debug;
 	[_truck, "next_pos", _dst_pos] call A_object_fnc_setVariable;

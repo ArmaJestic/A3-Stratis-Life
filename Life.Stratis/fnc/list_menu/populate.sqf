@@ -21,7 +21,7 @@ _i = 0;
 	_name = (name _player);
 	_uid = (getPlayerUID _player);
 	
-	if (not([_player] call A_player_fnc_human)) exitWith {null};
+	if (!([_player] call A_player_fnc_human)) exitWith {null};
 	
 	_i = _i + 1;
 	

@@ -13,7 +13,7 @@ _in_vehicle = (_vehicle != _player);
 private["_prison"];
 _prison = [_player, 2] call A_prison_menu_fnc_player_near;
 //player groupChat format["_prison = %1",_prison];
-if (undefined(_prison) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
+if (undefined(_prison) || !(INV_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
 	[_player] call A_prison_menu_fnc_remove_actions;
 };
 

@@ -3,17 +3,17 @@
 #include "..\..\includes\macro.h"
 
 
-if (isblu) exitWith {null};
+if (isblu) exitWith {};
 
 private["_i", "_salary_delay"];
 _salary_delay = 5;
 _i = _salary_delay;
-while { _i > 0 && not(isblu) } do {
+while { _i > 0 && !(isblu) } do {
 	player groupChat format[localize "STRS_moneh_countdown", _i];
 	[60] call A_player_fnc_isleep;
 	_i = _i - 1;
 };
-if (isblu) exitWith {null};
+if (isblu) exitWith {};
 
 [] spawn A_salary_fnc_civilian_salary_handout;
 [1] call A_player_fnc_isleep;

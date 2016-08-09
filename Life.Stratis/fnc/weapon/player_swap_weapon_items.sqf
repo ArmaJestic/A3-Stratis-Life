@@ -9,7 +9,7 @@ ARGV(1,_weapon_id);
 ARGV(2,_attached_item_id);
 ARGV(3,_inventory_item_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_weapon_id)) exitWith {null};
 if (typeName _weapon_id != "STRING") exitWith {null};
 if (undefined(_attached_item_id)) exitWith {null};
@@ -33,7 +33,7 @@ if (_attached_item_id == "" && _inventory_item_id != "") exitWith {
 
 //removing attachment from weapon
 if (_attached_item_id != "" && _inventory_item_id == "") exitWith {
-	if (not([_player, _attached_item_id] call A_player_fnc_add_item)) then {
+	if (!([_player, _attached_item_id] call A_player_fnc_add_item)) then {
 		[_attached_item_id] call _floorDropNotification;
 	};
 	[_player, _weapon_id, _attached_item_id] call A_player_fnc_remove_weapon_item;
@@ -48,7 +48,7 @@ if (_attached_item_id != "" && _inventory_item_id != "") exitWith {
 	_player removeItem _inventory_item_id;
 	
 	[_player, _weapon_id, _inventory_item_id] call A_player_fnc_add_weapon_item;
-	if (not([_player, _attached_item_id] call A_player_fnc_add_item)) then {
+	if (!([_player, _attached_item_id] call A_player_fnc_add_item)) then {
 		[_attached_item_id] call _floorDropNotification;
 	};
 };	

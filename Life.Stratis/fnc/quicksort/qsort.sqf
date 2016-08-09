@@ -5,7 +5,7 @@ ARGV(0,_array);
 ARGV(1,_left);
 ARGV(2,_right);
 
-if (not(_left < _right)) exitWith { _array };
+if (!(_left < _right)) exitWith { _array };
 		
 private["_pivot"];			
 _pivot = floor((_left + _right)/2);

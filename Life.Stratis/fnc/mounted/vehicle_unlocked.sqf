@@ -6,4 +6,4 @@
 
 ARGV(0,_vehicle);
 if (undefined(_vehicle)) exitWith {false};
-not((locked _vehicle) == 2)
+!((locked _vehicle) == 2)

@@ -18,7 +18,7 @@ waitUntil {
 	
 	if (undefined(_towed) && {undefined(_towing)}) exitWith {true};
 	if (isNull _towed && {isNull _towing}) exitWith {true};
-	if (not(alive _towed) && {not(alive _towing)}) exitWith {true};
+	if (!(alive _towed) && {!(alive _towing)}) exitWith {true};
 	if ((_towed distance _towing) > 10) then {
 		[_towing_line] call A_towing_fnc_line_clear_endpoints;
 	};

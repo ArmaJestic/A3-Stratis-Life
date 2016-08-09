@@ -4,7 +4,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isServer)) exitWith {};
+if (!(isServer)) exitWith {};
 waitUntil {
 	private["_time"];
 	_time = floor(serverTime);

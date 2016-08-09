@@ -27,8 +27,7 @@ _vehicle = null;
 if  (_vehicles_count == 0) exitWith { false };
 if (_vehicles_count > 1) then {
 	_vehicle = [_vehicles] call A_shop_menu_fnc_sell_select_vehicle_wait;
-}
-else {
+}else{
 	_vehicle = _vehicles select 0;
 };
 

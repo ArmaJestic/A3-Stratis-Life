@@ -14,7 +14,7 @@ ARGV(1,_group);
 
 {
 	_target = _x;
-	if (([_target] call A_player_fnc_human) && not([_target] call A_player_fnc_blufor) && (alive _target)) then {
+	if (([_target] call A_player_fnc_human) && !([_target] call A_player_fnc_blufor) && (alive _target)) then {
 		private["_message"];
 		_message = "The Government is operating in this area! Turn back or you will be shot!";
 		format['if (player == %1) then { titleText [toString(%2), "PLAIN"];};', _target, toArray(_message)] call A_broadcast_fnc_broadcast;

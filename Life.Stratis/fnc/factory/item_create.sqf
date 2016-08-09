@@ -10,7 +10,7 @@ ARGV(1,_factory_id);
 ARGV(2,_item);
 ARGV(3,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if(undefined(_factory_id)) exitWith {null};
 if (typeName _factory_id != "STRING") exitWith {null};
 if (undefined(_item)) exitWith {null};
@@ -33,7 +33,7 @@ _info = (_item call A_inventory_fnc_get_item_array);
 _item_type = _item call A_inventory_fnc_get_item_type;
 _item_name = (MASTER_ARRAY_ITEM_NAME(_item));
 
-if (not(_item_type in ["Item", "Weapon", "Magazine", "Vehicle"])) exitWith {null};
+if (!(_item_type in ["Item", "Weapon", "Magazine", "Vehicle"])) exitWith {null};
 
 if (_item_type == "Vehicle" && _amount > 1) exitWith {
 	player groupChat format["%1-%2, you can only create one %3 at a time", _player, (name _player), _item_name];

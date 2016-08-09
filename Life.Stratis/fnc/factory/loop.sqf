@@ -10,7 +10,7 @@ ARGV(0,_factory_id);
 private["_player"];
 _player = player;
 
-if (not([_player] call A_player_fnc_human)) exitWith {
+if (!([_player] call A_player_fnc_human)) exitWith {
 	player groupChat "Error (A_factory_fnc_loop): Not a player";
 };
 

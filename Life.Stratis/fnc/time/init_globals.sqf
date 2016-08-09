@@ -1,4 +1,4 @@
-// A_time_functions_fnc_init_globals
+// A_time_fnc_init_globals
 
 #include "..\..\includes\macro.h"
 
@@ -23,7 +23,7 @@ waitUntil {
 	if (undefined(time_sunrise_to_sunset_minutes)) exitWith { false };
 	if (undefined(time_sunset_to_sunrise_minutes)) exitWith { false };
 	if (undefined(time_offset)) exitWith { false };
-	if (not(typeName time_sunrise_to_sunset_minutes == "SCALAR" &&
+	if (!(typeName time_sunrise_to_sunset_minutes == "SCALAR" &&
 	    typeName time_sunset_to_sunrise_minutes == "SCALAR" &&
 		typeName time_offset == "SCALAR")) exitWith { false };
 	true

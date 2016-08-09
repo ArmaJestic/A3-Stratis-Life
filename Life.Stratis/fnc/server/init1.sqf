@@ -2,3 +2,4 @@
 
 #include "..\..\includes\macro.h"
 
+station1money = 5000;

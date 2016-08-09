@@ -50,7 +50,7 @@ detach (vehicle _player);
 
 waitUntil {
 	if ([_player] call A_underwater_base_fnc_underground_base_player_inside) exitWith {
-		not(sunOrMoon > 0)
+		!(sunOrMoon > 0)
 	};
 	true
 };

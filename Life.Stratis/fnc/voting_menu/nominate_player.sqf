@@ -11,8 +11,8 @@ ARGV(2,_nominee);
 
 
 if (undefined(_election_data)) exitWith {};	
-if (not([_voter] call A_player_fnc_exists)) exitWith {};
-if (not([_nominee] call A_player_fnc_exists)) exitWith {};
+if (!([_voter] call A_player_fnc_exists)) exitWith {};
+if (!([_nominee] call A_player_fnc_exists)) exitWith {};
 
 private["_election_id", "_election_title", "_election_role"];
 _election_id = _election_data select A_voting_menu_var_election_data_id;
@@ -29,8 +29,7 @@ if (_election_timeout > 0) exitWith {
 if ([_election_id, _nominee] call A_voting_menu_fnc_player_nominated) exitWith {
 	if (_nominee == _voter) then {
 		player groupChat format["%1-%2, you are already nominated for %3", _voter, (name _voter), _election_role];
-	}
-	else {
+	}else{
 		player groupChat format["%1-%2, player %3-%4 has already been nominated for %5", _voter, (name _voter), _nominee, (name _nominee), _election_role];
 	};
 };

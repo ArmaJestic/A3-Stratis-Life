@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
 
 private["_near_atm", "_has_cash", "_has_lockpicks",
 		"_near_carhop", "_near_locked_mobile_vehicle", "_has_repair_kit",
@@ -47,7 +47,7 @@ player groupChat format["_has_cash = %1", _has_cash];
 */
 
 (
-not(
+!(
 	(_driving_movable_vehicle) ||
 	(_near_own_spawn) ||
 	(_near_atm && _near_carhop) ||

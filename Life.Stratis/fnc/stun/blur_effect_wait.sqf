@@ -49,13 +49,13 @@ waitUntil {
 	playSound3d ["a3\sounds_f\characters\human-sfx\05_heart_1.wss", _unit, true];
 	sleep 1;
 	if ([_unit, "restrained", false] call A_player_fnc_get_bool) exitWith {true};
-	if (not(alive _unit)) exitWith {true};
+	if (!(alive _unit)) exitWith {true};
 	(A_stun_var_blur_time_remaining <= 0)
 };
 
 A_stun_var_blur_time_remaining = 0;
 [_unit] call A_player_fnc_camera_destroy;
 [_unit, "stunned", false] call A_player_fnc_set_bool;
-if (not([_unit, "restrained", false] call A_player_fnc_get_bool)) then {
+if (!([_unit, "restrained", false] call A_player_fnc_get_bool)) then {
 	_unit playMoveNow "AmovPpneMstpSnonWnonDnon";
 };

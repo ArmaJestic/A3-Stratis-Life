@@ -21,8 +21,7 @@ if (_position == "driver") then {
 	if (_saved_driver_uid == _entred_driver_uid) then {
 		[_vehicle, "saved_driver_uid", ""] call A_vehicle_fnc_set_string;
 		[_vehicle] call A_vehicle_fnc_stop_track;
-	}
-	else {
+	}else{
 		[_vehicle] call A_vehicle_fnc_track;
 	};
 	

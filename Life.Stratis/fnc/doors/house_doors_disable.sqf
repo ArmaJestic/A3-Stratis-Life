@@ -17,7 +17,7 @@ _i = 1;
 while {_i < 10} do {
 	_bis_door_variable_name = format["bis_disabled_door_%1", _i];
 	_disabled = _object getVariable [_bis_door_variable_name,0];
-	if (not(_disabled == 1)) then {
+	if (!(_disabled == 1)) then {
 		_object setVariable [_bis_door_variable_name, 1];
 	};
 	_i = _i + 1;

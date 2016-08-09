@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(alive player)) exitWith {null};
+if (!(alive player)) exitWith {null};
 
 private["_player"];
 _player = player;

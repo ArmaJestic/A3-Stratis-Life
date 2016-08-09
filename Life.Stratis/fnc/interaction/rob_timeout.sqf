@@ -8,7 +8,7 @@
 ARGV(0,_target);
 ARGV(1,_timeout);
 
-if (not([_target] call A_player_fnc_exists)) exitWith {};
+if (!([_target] call A_player_fnc_exists)) exitWith {};
 if (_target != player) exitWith {};
 if (undefined(_timeout)) exitWith {};
 if (typeName _timeout != "SCALAR") exitWith {};

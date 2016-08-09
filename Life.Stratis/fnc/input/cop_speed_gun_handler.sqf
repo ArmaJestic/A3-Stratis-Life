@@ -5,9 +5,9 @@
 
 
 if (!INV_shortcuts) exitWith {false};
-if (not(isblu)) exitWith {false};
+if (!(isblu)) exitWith {false};
 private["_vehicle"];
 _vehicle = (vehicle player);
-if (not([_vehicle, "speedgun", false] call A_object_fnc_getVariable)) exitWith {};
+if (!([_vehicle, "speedgun", false] call A_object_fnc_getVariable)) exitWith {};
 [] spawn A_speed_gun_fnc_toggle;
 true

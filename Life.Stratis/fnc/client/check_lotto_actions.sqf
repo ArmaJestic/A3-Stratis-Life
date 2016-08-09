@@ -13,7 +13,7 @@ _in_vehicle = (_vehicle != _player);
 private["_lotto"];
 _lotto = [_player, 2] call A_lotto_menu_fnc_player_near;
 //player groupChat format["_lotto = %1",_lotto];
-if (undefined(_lotto) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
+if (undefined(_lotto) || !(INV_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
 	[_player] call A_lotto_menu_fnc_remove_actions;
 };
 

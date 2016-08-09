@@ -8,7 +8,7 @@ _player = player;
 
 private["_house"];
 _house = [_player] call A_doors_fnc_house_player_near;
-if (undefined(_house) || {not(INV_shortcuts) || {not(alive _player)}}) exitWith {
+if (undefined(_house) || {!(INV_shortcuts) || {!(alive _player)}}) exitWith {
 	[_player] call A_doors_fnc_house_remove_actions;
 };
 

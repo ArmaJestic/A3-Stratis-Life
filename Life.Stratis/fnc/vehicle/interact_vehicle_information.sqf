@@ -7,7 +7,7 @@ ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_vehicle);
 
-if (not([_player, _vehicle] call A_vehicle_fnc_information_available)) exitWith {};
+if (!([_player, _vehicle] call A_vehicle_fnc_information_available)) exitWith {};
 
 private["_class", "_driver", "_picture", "_name", "_tag"];
 _class = typeOf _vehicle;
@@ -28,8 +28,7 @@ _text = "";
 	_label = _entry select 0;
 	_value = _entry  select 1;
 	_text = _text + "<t align='left' font='PuristaMedium' size='1'>" + _label + "</t><t align='left' font='PuristaMedium'>" + _value + "</t><br />";
-}
-forEach(
+}forEach(
 	[["    Name:      ", _tag],
 	 ["    Direction:   ", str(round(getdir _vehicle)) + " degrees"],
 	 ["    Altitude:    ", str(round(getposASL _vehicle select 2)) + " meter(s) ASL"],

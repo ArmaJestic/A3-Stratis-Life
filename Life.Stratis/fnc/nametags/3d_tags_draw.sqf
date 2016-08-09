@@ -1,7 +1,7 @@
 // A_nametags_fnc_3d_tags_draw
 
 #include "..\..\includes\macro.h"
-#include "..\..\constants.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_nametags_fnc_3d_tags_draw %1", _this];
@@ -16,8 +16,8 @@ _side = _this select 1;
 //put tags on players
 {
 	
-	if (not(INV_shortcuts)  || [_player] call A_player_fnc_civilian ||
-		not(alive _player) || visibleMap) exitWith {};
+	if (!(INV_shortcuts)  || [_player] call A_player_fnc_civilian ||
+		!(alive _player) || visibleMap) exitWith {};
 		
 	if (true) then {
 		private["_target", "_cside", "_vehicle"];
@@ -25,8 +25,8 @@ _side = _this select 1;
 		_cside = ([_target] call A_player_fnc_side);
 		_vehicle = (vehicle player);
 		
-		if (not(_side == _cside) ||  not(alive _vehicle) || not(isPlayer _target) ||
-			not(alive _target) || _target == _player ) exitWith {};
+		if (!(_side == _cside) ||  !(alive _vehicle) || !(isPlayer _target) ||
+			!(alive _target) || _target == _player ) exitWith {};
 		
 		private["_distance", "_has_admin_camera", "_under_base"];
 		_has_admin_camera = [_target, "has_admin_camera"] call A_player_fnc_get_bool;
@@ -40,7 +40,7 @@ _side = _this select 1;
 		//player groupChat format["_pos = %1", _pos];
 		_pos = [(_pos select 0), (_pos select 1), (_pos select 2) + 0.3];
 		_pos3d = ((vehicle _target) modelToWorld (_pos));
-		if (not(count _pos3d == 3)) exitWith {};
+		if (!(count _pos3d == 3)) exitWith {};
 	
 		private["_size", "_font"];
 		_size = 0.025;
@@ -50,7 +50,7 @@ _side = _this select 1;
 		_icon = "\A3\ui_f\data\map\markers\military\triangle_CA.paa";
 		
 		_pos2d = worldToScreen((vehicle _target) modelToWorld (_pos));
-		if (not(count (_pos2d) == 2)) exitWith {};
+		if (!(count (_pos2d) == 2)) exitWith {};
 		
 		private["_x", "_y"];
 		_x = abs((_pos2d select 0) - 0.5);

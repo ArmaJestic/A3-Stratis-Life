@@ -9,8 +9,8 @@ ARGV(0,_player);
 ARGV(1,_sender);
 ARGV(2,_text);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_sender] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_sender] call A_player_fnc_human)) exitWith {null};
 if (_player != player) exitWith {null};
 
 private["_header"];

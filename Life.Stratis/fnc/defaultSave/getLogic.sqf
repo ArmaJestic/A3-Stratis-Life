@@ -8,6 +8,6 @@ if ([_logicName] call A_defaultSave_fnc_logicExists) then {
 	_logic = missionNamespace getVariable [_logicName, objNull];
 }else{
 	_logic = [_logicName] call A_defaultSave_fnc_createLogic;
-}
+};
 	
 _logic

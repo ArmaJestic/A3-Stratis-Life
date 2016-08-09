@@ -15,7 +15,6 @@ if (_killer_side == "Cop") exitWith {null};
 
 if (_roadkill) then {
 	format["[%1] call A_retributions_fnc_remove_vehicle_licenses;", _killer] call A_broadcast_fnc_broadcast;
-}
-else {
+}else{
 	format["[%1] call A_retributions_fnc_remove_weapon_licenses;", _killer] call A_broadcast_fnc_broadcast;
 };

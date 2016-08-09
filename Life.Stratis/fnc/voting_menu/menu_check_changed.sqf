@@ -14,7 +14,7 @@ ARGV(4,_player);
 if (undefined(_state)) exitWith {};
 if (undefined(_election_data)) exitWith {};
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
 
 private["_box", "_text"];
 _text = " - Auto open window";

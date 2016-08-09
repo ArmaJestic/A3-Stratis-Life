@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 
 private["_pos"];
 _pos = (getPosATL _player);
@@ -17,7 +17,7 @@ showCinemaBorder false;
 
 //hook for disabling camera when player dies
 [] spawn { 
-	waitUntil {not(alive player)};
+	waitUntil {!(alive player)};
 	[player] call A_player_fnc_camera_destroy;
 };
 _camera

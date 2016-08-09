@@ -22,6 +22,6 @@ _player = null;
 			_player = _player_variable;
 		};
 	};
-	if (not(undefined(_player))) exitWith {null};
+	if (!(undefined(_player))) exitWith {null};
 } forEach playerstringarray;
 _player

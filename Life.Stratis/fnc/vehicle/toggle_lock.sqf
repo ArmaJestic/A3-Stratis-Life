@@ -4,18 +4,16 @@
 
 
 ARGV(0,_vehicle);
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
 
 private["_state"];
 _state = locked _vehicle;
 
 if (_state == 2) then {
 	_state = 0;
-}
-else { if (_state == 0 || _state == 1) then {
+}else{ if (_state == 0 || _state == 1) then {
 	_state = 2;
-}
-else {
+}else{
 	_state = 0;
 };};
 

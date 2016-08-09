@@ -6,7 +6,7 @@
 //player groupChat format["A_client_fnc_check_gear %1", _this];
 private["_player"];
 _player = player;
-if (not(alive _player)) exitWith {null};
+if (!(alive _player)) exitWith {null};
 
 private["_gear"];
 _gear = [_player] call A_player_fnc_get_gear;

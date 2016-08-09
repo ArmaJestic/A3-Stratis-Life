@@ -5,7 +5,7 @@
 
 player groupChat format["A_player_fnc_load_side_position %1", _this];
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {false};
+if (!([_player] call A_player_fnc_exists)) exitWith {false};
 
 private["_side"];
 _side = ([_player] call A_player_fnc_side);
@@ -16,7 +16,7 @@ _position_atl = [_player, format["position_atl_%1", _side]] call A_player_fnc_ge
 _direction = [_player, format["direction_%1", _side]] call A_player_fnc_get_scalar;
 
 
-if (not((count _position_atl) == 3)) exitWith {false};
+if (!((count _position_atl) == 3)) exitWith {false};
 detach _player;
 _player setPosATL _position_atl;
 _player setDir _direction;

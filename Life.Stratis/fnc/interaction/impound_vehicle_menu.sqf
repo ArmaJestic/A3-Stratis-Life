@@ -9,7 +9,7 @@ disableSerialization;
 //player groupChat format["A_interaction_fnc_impound_vehicle_menu %1", _this];
 ARGV(0,_player);
 ARGV(1,_logic);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_logic)) exitWith {null};
 
 

@@ -18,11 +18,10 @@ if (typeName _variable != "STRING") exitWith {null};
 if ((_object == player) || (_object == server)) then {
 	private["_current_value"];
 	_current_value = missionNameSpace getVariable _variable;
-	if (not(undefined(_current_value))) exitWith {null};
+	if (!(undefined(_current_value))) exitWith {null};
 	missionNamespace setVariable [_variable, _value];
 	[_object, _variable, _value, true] call A_object_fnc_setVariable;
-}
-else {
+}else{
 	[_object, _variable, _value, true] call A_object_fnc_setVariable;
 };
 

@@ -16,7 +16,7 @@ while { _i < (count playerstringarray) } do {
 	_player_variable_name = playerstringarray select _i;
 	_player_variable = missionNamespace getVariable [_player_variable_name, null];
 
-	if (not([_player_variable] call A_player_fnc_blufor) && ([_player_variable] call A_player_fnc_get_wanted)) then {
+	if (!([_player_variable] call A_player_fnc_blufor) && ([_player_variable] call A_player_fnc_get_wanted)) then {
 		private["_bounty", "_reasons"];
 		_reasons = [_player_variable] call A_player_fnc_get_reason; 
 		_bounty = [_player_variable] call A_player_fnc_get_bounty;

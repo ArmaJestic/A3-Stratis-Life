@@ -4,7 +4,7 @@
 
 
 if ((typeName _this) == "OBJECT") then {
-	if (not(isNull _this)) then {
+	if (!(isNull _this)) then {
 		if (((getPosATL _this) select 2) < 5) then {
 			createVehicle ["Bo_GBU12_LGB", (getPosATL _this), [], 0, "NONE"];
 

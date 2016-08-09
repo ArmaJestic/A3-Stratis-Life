@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
 
 private["_vest_id"];
 _vest_id = [_player] call A_player_fnc_vest;

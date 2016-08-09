@@ -6,14 +6,14 @@
 if (count A_gang_var_area_actions > 0) exitWith {null};
 ARGV(0,_player);
 ARGV(1,_gang_area);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_gang_area)) exitWith {null};
 if (typeName _gang_area != "OBJECT") exitWith {null};
 
 
 private["_actions"];
 _actions = [_gang_area, "actions"] call A_object_fnc_getVariable;
-if (not(undefined(_actions))) then {
+if (!(undefined(_actions))) then {
 	if (typeName _actions != "ARRAY") exitWith {null};
 	{
 		private["_action", "_action_text", "_action_code", "_action_condition"];

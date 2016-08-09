@@ -9,7 +9,7 @@ ARGV(0,_player);
 private["_object"];
 _object = cursorTarget;
 
-if (not(_object isKindOf "House")) exitWith {null};
+if (!(_object isKindOf "House")) exitWith {null};
 
 private["_neck_pos", "_pos1", "_pos2"];
 _neck_pos = _player selectionPosition "neck";

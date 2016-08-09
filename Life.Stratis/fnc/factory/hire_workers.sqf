@@ -9,7 +9,7 @@ ARGV(1,_factory_id);
 ARGV(2,_workers_count);
 ARGV(3,_workers_cost);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_factory_id)) exitWith {null};
 if (undefined(_workers_count)) exitWith {null};
 if (undefined(_workers_cost)) exitWith {null};

@@ -7,6 +7,6 @@ ARGV(0,_item_id);
 if (undefined(_item_id)) exitWith {false};
 if (typeName _item_id != "STRING") exitWith {false};
 if (_item_id == "") exitWith {false};
-if (not(isClass(configFile >> "CfgWeapons" >> _item_id))) exitWith {false};
-if (not(isClass(configFile >> "CfgWeapons" >> _item_id >> "ItemInfo"))) exitWith {false};
+if (!(isClass(configFile >> "CfgWeapons" >> _item_id))) exitWith {false};
+if (!(isClass(configFile >> "CfgWeapons" >> _item_id >> "ItemInfo"))) exitWith {false};
 true

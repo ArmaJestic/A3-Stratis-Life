@@ -31,26 +31,26 @@ _ballots_data = [];
 	
 	private["_ballot"];
 	_ballot = [];
-	_ballot set [A_quicksort_v_sort_key,_candidate_votes];
-	_ballot set [A_quicksort_v_sort_data,_candidate_data];
+	_ballot set [A_quicksort_var_sort_key,_candidate_votes];
+	_ballot set [A_quicksort_var_sort_data,_candidate_data];
 	_ballots_data set [count(_ballots_data), _ballot];
 } forEach _candidates_data;
 
 _ballots_data call A_quicksort_fnc_quicksort;
 
 private["_first_place_data", "_first_place_votes"];
-_first_place_data = (_ballots_data select ((count _ballots_data) - 1)) select A_quicksort_v_sort_data;
-_first_place_votes = (_ballots_data select ((count _ballots_data) - 1)) select A_quicksort_v_sort_key;
+_first_place_data = (_ballots_data select ((count _ballots_data) - 1)) select A_quicksort_var_sort_data;
+_first_place_votes = (_ballots_data select ((count _ballots_data) - 1)) select A_quicksort_var_sort_key;
 
 private["_tie"];
 _tie = false;
 if (count(_ballots_data) > 1) then {
 	private["_second_place_votes"];
-	_second_place_votes = (_ballots_data select ((count _ballots_data) - 2)) select A_quicksort_v_sort_key;
+	_second_place_votes = (_ballots_data select ((count _ballots_data) - 2)) select A_quicksort_var_sort_key;
 	_tie = (_first_place_votes == _second_place_votes);
 };
 
-if (_first_place_votes > 0 && not(_tie)) then {
+if (_first_place_votes > 0 && !(_tie)) then {
 	[_election_id, _first_place_data] call A_voting_menu_fnc_set_incumbent_candidate;
 };
 

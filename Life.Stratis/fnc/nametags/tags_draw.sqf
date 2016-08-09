@@ -1,7 +1,7 @@
 // A_nametags_fnc_tags_draw
 
 #include "..\..\includes\macro.h"
-#include "..\..\constants.h"
+#include "..\..\includes\constants.h"
 
 
 
@@ -17,19 +17,19 @@ _font = "PuristaMedium";
 _font_size = 0.025;
 
 //player groupChat format["_target = %1", _target];
-if (not([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
 if (undefined(_target)) exitWith {false};
 if (typeName _target != "OBJECT") exitWith {false};
 if (isNull _target) exitWith {false};
 
-if (not(INV_shortcuts)) exitWith {false};
+if (!(INV_shortcuts)) exitWith {false};
 
 if (visibleMap) exitWith {false};
 
 
 //don't draw tags while being inside a vehicle 
 private["_inside_vehicle"];
-_inside_vehicle = not((vehicle _player) == _player);
+_inside_vehicle = !((vehicle _player) == _player);
 if (_inside_vehicle) exitWith {false};
 
 
@@ -40,7 +40,7 @@ _control = call A_nametags_fnc_tags_control;
 private["_distance", "_is_near", "_is_far"];;
 _distance = if (undefined(_camera)) then {_player distance _target} else {_camera distance _target};
 
-if (not(isNull _target) && {(_distance < 20)}) then {
+if (!(isNull _target) && {(_distance < 20)}) then {
 	_player reveal _target;
 };
 
@@ -79,8 +79,7 @@ if ([_target] call A_object_fnc_shop && _distance < 3) exitWith {
 	private["_text"];
 	if(([_player] call A_player_fnc_blufor) and _target in A_bank_var_drugsellarray) then { 
 		_text = "Drug A_missions_fnc_search (E)";
-	}
-	else {
+	}else{
 		private["_shop_name", "_action_key"];
 		_action_key = if (_target in A_main_var_gangareas) then {"Scroll"} else {"E"};
 		_shop_name = (_target call A_inventory_fnc_get_shop_array) select 1;
@@ -137,19 +136,16 @@ if ([_target] call A_nametags_fnc_tags_vehicle && _distance < 5) exitWith {
 	_is_box = _target isKindOf "LocalBasicWeaponsBox";
 		
 	private["_text1", "_text2"];
-	if (_owner && not((locked _target) == 2)) then {
+	if (_owner && !((locked _target) == 2)) then {
 		_text1 = "Trunk (T)";
 		_text2 = "Enter (E)";
-	}
-	else { if (_owner && ((locked _target) == 2)) then {
+	}else{ if (_owner && ((locked _target) == 2)) then {
 		_text1 = "Trunk (T)";
 		_text2 = "Unlock (Control+Space)";
-	}
-	else { if ( not(_owner) && not((locked _target) == 2)) then {
+	}else{ if ( !(_owner) && !((locked _target) == 2)) then {
 		_text1 = "(" + ([_target] call A_nametags_fnc_tags_driver_string) + ")";
 		_text2 = "Enter (E)";
-	}
-	else { if (not(_owner) && (locked _target) == 2) then {
+	}else{ if (!(_owner) && (locked _target) == 2) then {
 		_text1 = "(" + ([_target] call A_nametags_fnc_tags_driver_string) + ")";
 		_text2 = "(" + str(_target) + ")";
 	};};};};
@@ -173,12 +169,10 @@ if ([_target] call A_player_fnc_human &&  _distance < 25) exitWith {
 	if ([_target] call A_player_fnc_blufor) then{ 
 		_text = format["%1 (%2)", _target, (name _target)];
 		_color = [0.67,0.91,0.36,1];
-	}
-	else { if (([_target] call A_player_fnc_civilian) && ([_target] call A_player_fnc_get_bounty) > 0) then {
+	}else{ if (([_target] call A_player_fnc_civilian) && ([_target] call A_player_fnc_get_bounty) > 0) then {
 		_text = format["%1 (%2)", _target, (name _target)];
 		_color = [1,0,0,1];
-	}
-	else {
+	}else{
 		_text = format["%1 (%2)", _target, (name _target)];
 		_color = [0.67,0.91,0.36,1];
 	};};

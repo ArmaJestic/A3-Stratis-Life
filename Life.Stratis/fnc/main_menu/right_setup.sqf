@@ -11,7 +11,7 @@ ARGV(2,_y);
 ARGV(3,_w);
 ARGV(4,_h);
 
-if (not(createDialog "main_menu_right")) exitWith {
+if (!(createDialog "main_menu_right")) exitWith {
 	player groupChat format["ERROR: cannot create main menu right dialog"];
 };
 	

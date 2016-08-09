@@ -15,11 +15,12 @@ _delay = 30;
 if (A_stun_var_stunning) then 	{ 
 	was_stunning = true; 
 	was_stunning_count = 0;
-}
-else { if ( !A_stun_var_stunning && was_A_stun_var_stunning) then {
-	if (was_stunning_count < _delay) then { was_stunning_count = was_stunning_count + 1;};
-	if (was_stunning_count >= _delay) then { was_stunning = false; was_stunning_count = 0;};
-};};
+}else{ 
+	if ( !A_stun_var_stunning && was_A_stun_var_stunning) then {
+		if (was_stunning_count < _delay) then { was_stunning_count = was_stunning_count + 1;};
+		if (was_stunning_count >= _delay) then { was_stunning = false; was_stunning_count = 0;};
+	};
+};
 
 //player groupChat format["A_stun_var_A_stun_var_stunning: %1, WAS A_stun_var_A_stun_var_stunning: %2", A_stun_var_stunning, was_A_stun_var_stunning];
 was_stunning

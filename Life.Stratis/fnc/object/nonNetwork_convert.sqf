@@ -20,7 +20,7 @@ private["_new_object"];
 
 //player groupChat format["damage = %1", (damage _object)];
 _new_object = createAgent [_class, [0,0,0], [], 0, "CAN_COLLIDE"];
-if (not(alive _object)) then {
+if (!(alive _object)) then {
 	//player groupChat format["Object was dead!"];
 	_new_object setDamage 1;
 };

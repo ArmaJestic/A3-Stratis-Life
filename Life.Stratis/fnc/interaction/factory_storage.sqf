@@ -10,7 +10,7 @@ ARGV(1,_factory);
 ARGV(2,_item);
 ARGV(3,_amount);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 if (undefined(_factory)) exitWith {null};
 if (undefined(_item)) exitWith {null};
@@ -24,7 +24,7 @@ if (_amount == 0) exitWith {null};
 private["_item_kind"];
 _item_kind = _item call A_inventory_fnc_get_item_kind;
 
-if (not(_item_kind in ["ressource", "ore", "drug", "money"]) && _amount > 0) exitWith {
+if (!(_item_kind in ["ressource", "ore", "drug", "money"]) && _amount > 0) exitWith {
 	player groupChat format ["You can only store money, A_item_fnc_drugs, and ressources in factories"];
 };
 
@@ -56,8 +56,7 @@ if (_amount > 0) then {
 		player groupChat format["The total weight of the items exceed the factory's capacity"];
 	};
 	_valid =  true;
-}
-else {
+}else{
 	//removing items from the factory
 	if (abs(_amount) > _f_items_amount) exitWith {
 		player groupChat format["The factory does not have that many item"];
@@ -69,7 +68,7 @@ else {
 	_valid =  true;		
 };
 
-if (not(_valid)) exitWith {null};
+if (!(_valid)) exitWith {null};
 
 [_player, _item, _amount, _f_storage] call A_inventory_fnc_storage_add_item;
 [_player, _item, -(_amount), _p_storage] call A_inventory_fnc_storage_add_item;

@@ -11,5 +11,5 @@ private["_track"];
 _track = [_vehicle, "track"] call A_object_fnc_getVariable;
 if (undefined(_track)) exitWith {null};
 if (typeName _track != "BOOL") exitWith {null};
-if (not(_track)) exitWith {null};
+if (!(_track)) exitWith {null};
 [_vehicle] call A_vehicle_fnc_save_stats;

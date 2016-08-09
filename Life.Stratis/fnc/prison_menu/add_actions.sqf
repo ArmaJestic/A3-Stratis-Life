@@ -8,7 +8,7 @@ if (count A_prison_menu_var_actions > 0) exitWith {};
 ARGV(0,_player);
 ARGV(1,_prison_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 if (undefined(_prison_id)) exitWith {};
 
 private["_action_id"];

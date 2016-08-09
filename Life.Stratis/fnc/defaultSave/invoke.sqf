@@ -15,11 +15,11 @@ switch (_command) do {
 		
 		_logic = [_uid] call A_defaultSave_fnc_getLogic;
 		_list = _logic getVariable["save_variable_array", []];
-		if !(_variable_name in _list) {
+		if !(_variable_name in _list) then {
 			_list set[count _list, _variable_name];
 			_logic setVariable["save_variable_array", _list];
-		}
-		_logic setVariable[_variable_name, _variable_value]];
+		};
+		_logic setVariable[_variable_name, _variable_value];
 	};
 	case "getPlayerVariable": {
 		// ["getPlayerVariable", _uid, _variable_name]
@@ -30,7 +30,7 @@ switch (_command) do {
 		_logic = [_uid] call A_defaultSave_fnc_getLogic;
 		_variable_value = _logic getVariable[_variable_name, null];
 		_return = _variable_value;
-	}
+	};
 	case "removePlayerVariable": {
 		// ["removePlayerVariable", _uid, _variable_name]
 		private["_uid", "_variable_name", "_logic", "_list"];
@@ -39,12 +39,12 @@ switch (_command) do {
 		
 		_logic = [_uid] call A_defaultSave_fnc_getLogic;
 		_list = _logic getVariable["save_variable_array", []];
-		if (_variable_name in _list) {
+		if (_variable_name in _list) then {
 			_list = _list - [_variable_name];
 			_logic setVariable["save_variable_array", _list];
 			_logic setVariable[_variable_name, null];
-		}
-	}
+		};
+	};
 	case "getPlayerVariablesCount": {
 		// ["getPlayerVariablesCount", _uid]
 		private["_uid", "_logic", "_list", "_count"];
@@ -54,7 +54,7 @@ switch (_command) do {
 		_list = _logic getVariable["save_variable_array", []];
 		_count = count _list;
 		_result = format["%1", _count];
-	}
+	};
 	case "getPlayerVariableNameByIndex": {
 		// ["getPlayerVariableNameByIndex", _uid, _index]
 		private["_uid", "_index", "_logic", "_list", "_variable_name"];
@@ -65,7 +65,7 @@ switch (_command) do {
 		_list = _logic getVariable["save_variable_array", []];
 		_variable_name = _list select _index;
 		_result = _variable_name;
-	}
+	};
 	case "wipePlayerVariables": {
 		// ["wipePlayerVariables", _uid]
 		private["_uid", "_logic_server", "_logic_list", "_logic_name", "_logic"];
@@ -77,12 +77,12 @@ switch (_command) do {
 		
 		if !(isNull _logic) then {
 			deleteVehicle _logic;
-		}
-		if (_logic_name in _logic_list) {
+		};
+		if (_logic_name in _logic_list) then {
 			_logic_list = _logic_list - [_logic_name];
 			_logic_server setVariable["save_logics_array", _logic_list];
-		}
-	}
+		};
+	};
 	case "wipeAllPlayerVariables": {
 		// ["wipeAllPlayerVariables"]
 		private["_logic_server", "_logic_list"];
@@ -92,32 +92,32 @@ switch (_command) do {
 		{
 			if !(isNull (missionNamespace getVariable[_x, objNull])) then {
 				deleteVehicle _x;
-			}
+			};
 		} forEach _logic_list;
 		_logic_server setVariable["save_logics_array", []];
-	}
+	};
 	case "unloadPlayerVariables": {
 		// ["unloadPlayerVariables", _uid]
 		// Nothing this has to worry about?
-	}
+	};
 	case "reloadPlayerVariables": {
 		// ["reloadPlayerVariables", _uid]
 		// Not used?
-	}
+	};
 	case "getenv": {
 		// ["getenv", _key]
 		// Not used?
-	}
+	};
 	case "setLocation": {
 		// ["setLocation", _location]
 		// Not used?
-	}
+	};
 	case "logThis": {
 		// ["logThis", _text]
 		private["_text"];
 		_text = _this select 1;
 		diag_log format['A_defaultSave_fnc_invoke: logThis-%1', _text];
-	}
+	};
 	default {
 		diag_log format['A_defaultSave_fnc_invoke: default case'];
 	};

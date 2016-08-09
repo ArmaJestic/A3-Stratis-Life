@@ -16,10 +16,9 @@ if (_victim != player) exitWith {null};
 if([_victim] call A_player_fnc_get_dead) exitWith {null};
 [_victim, true] call A_player_fnc_set_dead;
 
-if (not([_killer] call A_player_fnc_exists)) then {
+if (!([_killer] call A_player_fnc_exists)) then {
 	//hmm, do nothing ...
-}
-else { if (not([_killer] call A_player_fnc_human)) then {
+}else{ if (!([_killer] call A_player_fnc_human)) then {
 	[_victim] call A_player_fnc_reset_warrants;
 	
 	private["_message", "_victim_name"];
@@ -38,7 +37,7 @@ else { if (not([_killer] call A_player_fnc_human)) then {
 		_message = format["%1 was killed by the Insurgents!", _victim_name];
 	};
 	
-	if (not(undefined(_message))) then {
+	if (!(undefined(_message))) then {
 		format['server globalChat (toString %1);', (toArray _message)] call A_broadcast_fnc_broadcast;
 	};
 } 

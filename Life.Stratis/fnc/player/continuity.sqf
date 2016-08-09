@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
  
-if (not(isClient)) exitWith {null};
+if (!(isClient)) exitWith {null};
 
 while {true} do {
 	private["_complete"];
@@ -21,14 +21,13 @@ server setVariable [(getPlayerUID _player), _player, true];
 
 if ([_player] call A_player_fnc_get_dead) then {
 	[] call A_player_fnc_rejoin_suicide;
-}
-else {
+}else{
 	_player allowDamage false;
 	[_player] call A_player_fnc_load_side_gear;
 	[_player] call A_player_fnc_load_side_damage;
 	
-	if (not([_player] call A_player_fnc_load_side_vehicle)) then {
-		if (not([_player] call A_player_fnc_load_side_position)) then {
+	if (!([_player] call A_player_fnc_load_side_vehicle)) then {
+		if (!([_player] call A_player_fnc_load_side_position)) then {
 			[10] spawn A_player_fnc_rejoin_choice;
 		};
 	};

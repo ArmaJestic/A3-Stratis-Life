@@ -135,10 +135,9 @@ class cfgSounds {
 	#include "sounds\sounds.h"
 };
 class CfgFunctions {
-	class A_functions {
-		#include "fnc\functions.h"
-	}
+	#include "fnc\functions.h"
 };
+// todo: remote fnc cfg
 // cfgRadio
 // cfgMusic
 // cfgIdentities
@@ -169,11 +168,10 @@ class CfgFunctions {
 #include "dlg\gfx.hpp"
 #include "dlg\INVdialogs.hpp"
 #include "dlg\bombdialogs.hpp"
-#include "dlg\main_menus.hpp"
+#include "dlg\main_menu.hpp"
 #include "dlg\maindialogs.hpp"
 #include "dlg\weapon_modifications.hpp"
 #include "dlg\list_menu.hpp"
-#include "dlg\main_menu.hpp"
 #include "dlg\admin_menu.hpp"
 #include "dlg\camera_menu.hpp"
 #include "dlg\shop_menu.hpp"

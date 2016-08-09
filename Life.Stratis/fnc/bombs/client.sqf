@@ -17,7 +17,7 @@ while {true} do {
 			format["""%1"" call A_bombs_fnc_delete", _id] call A_broadcast_fnc_broadcast; _skipWait = true; 
 		};
 		
-		if (not(alive(_vehicle)))  exitWith { 
+		if (!(alive(_vehicle)))  exitWith { 
 			format["""%1"" call A_bombs_fnc_delete", _id] call A_broadcast_fnc_broadcast; _skipWait = true; 
 		};
 		

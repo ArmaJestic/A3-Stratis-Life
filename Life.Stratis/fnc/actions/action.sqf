@@ -21,9 +21,10 @@
 //private _err = params[["_target", null], ["_caller", null], ["_id", null, [0]], ["_data", null, [[]], 2]];
 //EXT_ERR(_err, A_actions_fnc_action)
 
-PARAM_EXIT(A_actions_fnc_action, [["_target", null], ["_caller", null], ["_id", null, [0]], ["_data", null, [[]], 2]])
+//PARAM_EXIT(A_actions_fnc_action, [[QUOTE(_target), null], [QUOTE(_caller), null], [QUOTE(_id), null, [0]], [QUOTE(_data), null, [[]], 2]])
+if !(params [["_target", null], ["_caller", null], ["_id", null, [0]], ["_data", null, [[]], 2]]) exitwith {LOGE_EP(A_actions_fnc_action)};
 
-if (undefined(_data)) exitWith {"A_actions_fnc_action error: undefined data" call A_err_fnc_log;};
+//if (undefined(_data)) exitWith {"A_actions_fnc_action error: undefined data" call A_err_fnc_log;};
 
 private _function_arguments = _data select 0;
 private _function_name = _data select 1;

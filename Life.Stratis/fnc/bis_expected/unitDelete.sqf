@@ -4,7 +4,7 @@
 
  _this spawn {
 ARGV(0,_unit);
-if (not([_unit] call A_player_fnc_exists)) exitWith {null};
+if (!([_unit] call A_player_fnc_exists)) exitWith {null};
 _unit setPosATL [-1, -1, 0];
 _unit setDamage 1;
 

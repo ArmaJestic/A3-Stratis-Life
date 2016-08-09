@@ -8,7 +8,7 @@ ARGV(0,_player);
 ARGV(1,_item);
 ARGV(2,_amount);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
 if (undefined(_item)) exitWith {};
 if (undefined(_amount)) exitWith {};
 if (typeName _item != "STRING") exitWith {};
@@ -25,7 +25,7 @@ if (_amount >  1) exitWith {
 //cleanup the previous towing line 
 private["_towing_line"];
 _towing_line = _player getVariable ["towing_line", null];
-if (not(undefined(_towing_line))) then {
+if (!(undefined(_towing_line))) then {
 	[_towing_line] call A_towing_fnc_line_clear_endpoints;
 };
 

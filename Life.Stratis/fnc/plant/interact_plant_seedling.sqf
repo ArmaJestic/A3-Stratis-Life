@@ -8,7 +8,7 @@ ARGV(0,_player);
 ARGV(1,_item);
 ARGV(2,_amount);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
 if (undefined(_item)) exitWith {};
 if (undefined(_amount)) exitWith {};
 

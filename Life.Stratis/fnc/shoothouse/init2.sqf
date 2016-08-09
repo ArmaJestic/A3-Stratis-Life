@@ -12,5 +12,5 @@ if (isServer) then {
 };
 
 if (isClient) then {
-	waitUntil {(not(isNil "shoothouse_base_setup_complete") && {shoothouse_base_setup_complete})};
+	waitUntil {(!(isNil "shoothouse_base_setup_complete") && {shoothouse_base_setup_complete})};
 };

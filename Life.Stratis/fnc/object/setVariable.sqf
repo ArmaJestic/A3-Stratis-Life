@@ -23,7 +23,6 @@ if (defined(_storage_object)) then {
 //player groupChat format["%1 setVariable [""%2"", %3, %4];", _object, _variable_name, _variable_value, _remote];
 if (undefined(_variable_value)) then {
 	_object setVariable [_variable_name, nil, _remote];
-}
-else {
+}else{
 	_object setVariable [_variable_name, _variable_value, _remote];
 };

@@ -13,9 +13,9 @@ if (typeName _target != "OBJECT" || {isNull _target}) exitWith {};
 
 
 if ((_player distance _target) > 2) exitWith {};
-if (not(isPlayer _target) && {([_target, "item", ""] call A_object_fnc_getVariable) == ""}) exitwith {};
-if ((isPlayer _target) && {not([_target, "restrained", false] call A_object_fnc_getVariable)}) exitWith {};
-if (not([_target, "draggable", true] call A_object_fnc_getVariable)) exitwith {};
+if (!(isPlayer _target) && {([_target, "item", ""] call A_object_fnc_getVariable) == ""}) exitwith {};
+if ((isPlayer _target) && {!([_target, "restrained", false] call A_object_fnc_getVariable)}) exitWith {};
+if (!([_target, "draggable", true] call A_object_fnc_getVariable)) exitwith {};
 
 
 private["_label"];

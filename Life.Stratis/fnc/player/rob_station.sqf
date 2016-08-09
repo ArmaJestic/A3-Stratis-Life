@@ -10,7 +10,7 @@ if (undefined(_player)) exitWith {null};
 if (undefined(_station)) exitWith {null};
 if (typeName _station != "SCALAR") exitWith {null};
 
-if (not([_player] call A_player_fnc_armed)) exitwith {
+if (!([_player] call A_player_fnc_armed)) exitwith {
 	player groupchat "You need a gun to rob the station!";
 };
 

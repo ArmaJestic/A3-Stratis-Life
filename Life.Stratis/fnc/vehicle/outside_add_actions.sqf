@@ -8,8 +8,8 @@ if (count A_vehicle_var_outside_actions > 0) exitWith {};
 ARGV(0,_player);
 ARGV(1,_vehicle);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {};
 
 //Add crew actions
 private["_crew"];
@@ -17,7 +17,7 @@ _crew = crew _vehicle;
 {if (true) then {
 	private["_member"];
 	_member = _x;
-	if (not([_member, "restrained", false] call A_object_fnc_getVariable)) exitWith {};
+	if (!([_member, "restrained", false] call A_object_fnc_getVariable)) exitWith {};
 	player grouPChat format["Adding action for %1",  _member];
 	private["_action_id"];
 	_action_id = player addAction [format["Pull %1 from vehicle", _member], A_actions_fnc_action, [[_player, _vehicle, _member], "A_vehicle_fnc_pull_player"],10,false,false,"",

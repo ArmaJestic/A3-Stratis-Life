@@ -8,7 +8,7 @@ _flashed = [player, "flashed"] call A_object_fnc_getVariable;
 
 if (undefined(_flashed)) exitWith {null};
 if (typeName _flashed != "BOOL") exitWith {null};
-if (not(_flashed)) exitWith {null};
+if (!(_flashed)) exitWith {null};
 
 private ["_mask", "_fadeInTime", "_fadeOutTime"];
 
@@ -23,7 +23,7 @@ if (_mask) exitWith {null};
 	private ["_fadeInTime", "_fadeOutTime"];
 	_fadeInTime   = 1;
 	_fadeOutTime  = 5;
-	if (not(alive player)) exitWith {null};
+	if (!(alive player)) exitWith {null};
 	titleCut ["","WHITE OUT",0];
 	sleep _fadeOutTime;
 	titleCut ["","WHITE IN",0];

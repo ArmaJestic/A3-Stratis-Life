@@ -43,7 +43,7 @@ _nominations_data = _nominations select A_voting_menu_var_election_nominations_d
 private["_incumbent_candidate_data"];
 _incumbent_candidate_data = [_election_id] call A_voting_menu_fnc_get_incumbent_candidate;
 
-if (not(undefined(_incumbent_candidate_data))) then {
+if (!(undefined(_incumbent_candidate_data))) then {
 	[_election_id, _incumbent_candidate_data] call A_voting_menu_fnc_add_candidate;
 };
 

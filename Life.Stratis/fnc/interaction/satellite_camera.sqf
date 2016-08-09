@@ -61,7 +61,7 @@ waitUntil {
 		};
 	};
 	
-	not(ctrlVisible free_camera_button_close_idc)
+	!(ctrlVisible free_camera_button_close_idc)
 };
 
 _camera cameraEffect ["terminate", "back"];

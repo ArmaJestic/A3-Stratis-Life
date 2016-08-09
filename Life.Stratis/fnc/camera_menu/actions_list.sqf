@@ -143,7 +143,7 @@
 		private["_attached"];
 		_attached = _object getVariable ["attached", false];
 		player groupChat format["_attached = %1", _attached];
-		_attached = not(_attached);
+		_attached = !(_attached);
 		_object setVariable ["attached", _attached, true];
 		player groupChat format["_object = %1, _attached = %2",_object, (_object getVariable "offset")];
 	}],

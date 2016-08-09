@@ -2,8 +2,6 @@
 
 #include "..\..\includes\macro.h"
 
-
-//player groupChat format["A_gang_fnc_loop_iteration"];
 private["_player"];
 _player = player;
 
@@ -19,12 +17,10 @@ _player = player;
 	if (undefined(_gang)) exitWith {null};
 	private["_gang_id"];
 	_A_gang_var_id = _gang select A_gang_var_id;
-	if (not (_gang_id == _cgang_id)) exitWith {null};
+	if (!(_gang_id == _cgang_id)) exitWith {null};
 	
-
-	if (not((_player distance _gang_area) < 10 && not([_gang_area] call A_gang_fnc_flag_at_max))) exitWith {null};
+	if (!((_player distance _gang_area) < 10 && !([_gang_area] call A_gang_fnc_flag_at_max))) exitWith {null};
 
 	[_gang_area, 0.1] call A_gang_fnc_flag_set_offset;
-	
 	
 };} forEach A_main_var_gangareas;

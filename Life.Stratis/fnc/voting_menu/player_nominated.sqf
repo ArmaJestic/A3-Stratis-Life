@@ -9,7 +9,7 @@ ARGV(1,_nominee);
 
 if (undefined(_election_id)) exitWith {false};
 if (typeName _election_id != "STRING") exitWith {false};
-if (not([_nominee] call A_player_fnc_exists)) exitWith {false};
+if (!([_nominee] call A_player_fnc_exists)) exitWith {false};
 
 private["_nominations"];
 _nominations = [_election_id] call A_voting_menu_fnc_get_nominations;

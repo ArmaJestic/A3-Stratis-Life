@@ -9,13 +9,11 @@ if (_art == "use") then {
 	_deleted = 0;
 	if (vehicle player == player) then {
 		{
-		deleteVehicle _x;
-		_deleted = _deleted + 1;
-
+			deleteVehicle _x;
+			_deleted = _deleted + 1;
 		} forEach (player nearObjects ["Land_CanisterPlastic_F", 10]);
 		player groupChat format[localize "STRS_inv_items_itemdeleted", _deleted];
-	}
-	else {
+	}else{
 		player groupchat "you must be on foot";
 	};
 

@@ -6,7 +6,7 @@ private["_player", "_uid"];
 _player = _this select 0;
 	
 _uid = [_player, "stats_uid"] call A_object_fnc_getVariable;
-if (not(undefined(_uid))) exitWith {_uid};
+if (!(undefined(_uid))) exitWith {_uid};
 
 _uid = getPlayerUID _player;
 if (undefined(_uid)) exitWith {""};

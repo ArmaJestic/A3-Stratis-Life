@@ -1,6 +1,6 @@
 // A_server_fnc_robpool
 
-#include "includes\macro.h"
+#include "..\..\includes\macro.h"
 
 while {true} do {
 	if(A_main_var_A_main_var_A_main_var_A_main_var_robpoolsafe1 < A_bank_var_maxinsafe)then{A_main_var_A_main_var_A_main_var_A_main_var_robpoolsafe1 = A_main_var_A_main_var_A_main_var_A_main_var_robpoolsafe1 + round random 2000; publicvariable "A_main_var_A_main_var_A_main_var_A_main_var_robpoolsafe1"};

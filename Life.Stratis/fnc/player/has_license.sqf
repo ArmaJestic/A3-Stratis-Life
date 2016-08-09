@@ -5,7 +5,7 @@
 
 ARGV(0,_player);
 ARGV(1,_license);
-if (not([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
 if (undefined(_license)) exitWith {false};
 if (typeName _license != "STRING") exitWith {false};
 if (_license == "") exitWith {true};

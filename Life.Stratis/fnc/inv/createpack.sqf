@@ -13,8 +13,7 @@ _in_hands = if (count _this > 3) then { _this select 3 } else { false };
 
 if (_in_hands) then {
 	player addBackpack _class;
-}
-else {
+}else{
 	_crate addBackpackCargoGlobal [_class, _amount];
 };
 

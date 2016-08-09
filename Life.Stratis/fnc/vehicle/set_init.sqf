@@ -19,7 +19,7 @@ _flag = "vehicle_init_flag";
 missionNamespace setVariable [_flag, false];
 //[[_vehicle, _vehicle_name], "A_vehicle_fnc_init_handler_persistent", true, true] spawn BIS_fnc_MP;
 [[_vehicle, _vehicle_name], "A_vehicle_fnc_init_handler_persistent", true, true] spawn A_jip_fnc_register;
-waitUntil { not(isNil _vehicle_name) };
+waitUntil { !(isNil _vehicle_name) };
 
 missionNamespace setVariable [_flag, false];
 [[_vehicle], "A_vehicle_fnc_init_handler", true, false] spawn BIS_fnc_MP;

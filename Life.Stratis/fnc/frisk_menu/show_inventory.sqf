@@ -29,8 +29,7 @@ while {_i < (count _inventory)} do {
 	if (_amount > 0) then {
 		if (_object == "money") then {
 			_list lbAdd format ["%1: $%2", _object_name, strM(_amount)];
-		 }
-		 else {
+		 }else{
 			_list lbAdd format ["%1: %2", _object_name, _amount];
 		 };
 	};

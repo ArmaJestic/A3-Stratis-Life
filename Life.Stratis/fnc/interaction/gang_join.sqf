@@ -9,7 +9,7 @@
 ARGV(0,_player);
 ARGV(1,_gang_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_gang_id)) exitWith {null};
 if (typeName _gang_id != "STRING") exitWith {null};
 
@@ -29,7 +29,7 @@ _player_uid = [_player] call A_gang_fnc_player_uid;
 _cgang = [_player_uid] call A_gang_fnc_lookup_player_uid;
 //player groupChat format["_cgang = %1", _cgang];
 
-if (not(undefined(_cgang))) exitWith {
+if (!(undefined(_cgang))) exitWith {
 	private["_cgang_name"];
 	_cA_gang_var_name = _cgang select A_gang_var_name;
 	player groupChat format["%1-%2, you are already in gang %3", _player, (name _player), _cgang_name];
@@ -41,7 +41,7 @@ _A_gang_var_name = _gang select A_gang_var_name;
 private["_recruiting"];
 _recruiting = _gang select A_gang_var_open;
 
-if (not(_recruiting)) exitWith {
+if (!(_recruiting)) exitWith {
 	player groupChat format["%1-%2, gang %3 is not recruiting at the moment", _player, (name _player), _gang_name];
 };
 

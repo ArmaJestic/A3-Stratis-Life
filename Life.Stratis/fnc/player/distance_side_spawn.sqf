@@ -5,7 +5,7 @@
 
 ARGV(0,_player);
 ARGV(1,_side);
-if (not([_player] call A_player_fnc_exists)) exitWith {-1};
+if (!([_player] call A_player_fnc_exists)) exitWith {-1};
 if (undefined(_side)) exitWith {-1};
 if (typeName _side != "SIDE") exitWith {-1};
 

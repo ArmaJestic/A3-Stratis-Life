@@ -43,6 +43,6 @@ A_interaction_var_interact_stone_hits = 0;
  
  _data = ITEM_DATA(_item);
  if (count(_data) == 0) exitWith {};
- if (not(ITEM_DATA_ORE(_data))) exitWith {};
+ if (!(ITEM_DATA_ORE(_data))) exitWith {};
  
 [_item, ceil(random _item_max), (getPos _stone), 0.1] call A_mine_fnc_ore_spawn;

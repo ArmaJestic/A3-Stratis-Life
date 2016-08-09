@@ -5,23 +5,23 @@
 
 private["_player"];
 _player = player;
-if (not(alive _player)) exitWith {};
+if (!(alive _player)) exitWith {};
 
 private["_assigned_items", "_item"];
 _assigned_items = assignedItems _player;
 if (undefined(_assigned_items)) exitWith {};
 
 _item = "ItemRadio";
-if (not(_item in _assigned_items)) then {
+if (!(_item in _assigned_items)) then {
 	_player linkItem _item;
 };
 
 _item = "ItemMap";
-if (not(_item in _assigned_items)) then {
+if (!(_item in _assigned_items)) then {
 	_player linkItem _item;
 };
 
 _item = "ItemCompass";
-if (not(_item in _assigned_items)) then {
+if (!(_item in _assigned_items)) then {
 	_player linkItem _item;
 };

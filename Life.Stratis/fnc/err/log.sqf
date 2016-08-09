@@ -7,10 +7,10 @@
 
 
 // wont use "PARAM_EXIT" macro because it comes back to here
-if (!(params[["_str", null, [""], 1]])) exitwith {diag_log "A_err_fnc_log, error: params";};
-if (undefined(_str)) exitwith {diag_log "A_err_fnc_log, error: undefined received";};
+//if (!(params[["_str", null, [""], 1]])) exitwith {diag_log "A_err_fnc_log, error: params";};
+//if (undefined(_str)) exitwith {diag_log "A_err_fnc_log, error: undefined received";};
 
-
+if !(params [["_str", null, [""], 1]]) exitwith {LOGE_EP(A_err_fnc_log)};
 
 // TODO: check string length, A3 has a limit w/ diag_log
 

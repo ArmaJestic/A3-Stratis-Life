@@ -6,7 +6,7 @@
 ARGV(0,_player);
 ARGV(1,_vehicle_name);
 
-if (not([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
 if(undefined(_vehicle_name)) exitWith {false};
 if (typeName _vehicle_name != "STRING") exitWith {false};
 

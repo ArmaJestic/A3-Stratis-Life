@@ -24,8 +24,8 @@ while {_i < _count} do {
 	_shop_object = _shop select A_inv_var_itemshops_object;
 	_distance = _location distance _shop_object;
 	_element = [];
-	_element set [A_quicksort_v_sort_key, _distance];
-	_element set [A_quicksort_v_sort_data, _shop_id];
+	_element set [A_quicksort_var_sort_key, _distance];
+	_element set [A_quicksort_var_sort_data, _shop_id];
 	_list_to_sort set[_i, _element];
 	_i = _i + 1;
 };

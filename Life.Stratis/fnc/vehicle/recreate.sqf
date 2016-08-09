@@ -17,9 +17,9 @@ private["_vehicle"];
 _vehicle = missionNamespace getVariable _name;
 private["_vehicle_exists"];
 _vehicle_exists = false;
-if (not(undefined(_vehicle))) then {
+if (!(undefined(_vehicle))) then {
 	if (typeName _vehicle == "OBJECT") then {
-		if (not(isNull _vehicle)) then {
+		if (!(isNull _vehicle)) then {
 			_vehicle_exists = true;
 		};
 	};

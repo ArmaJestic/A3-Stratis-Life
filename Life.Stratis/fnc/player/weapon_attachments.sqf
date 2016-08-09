@@ -10,7 +10,7 @@ private["_empty_result"];
 
 _empty_result = ["","",""];
 
-if (not([_player] call A_player_fnc_exists)) exitWith {_empty_result};
+if (!([_player] call A_player_fnc_exists)) exitWith {_empty_result};
 if (undefined(_weapon_id)) exitWith {_empty_result};
 if (typeName _weapon_id != "STRING") exitWith {_empty_result};
 
@@ -21,11 +21,9 @@ private["_items"];
 _items = _empty_result;
 if (_weapon_type == A_player_var_primary_weapon) then {
 	_items = (primaryWeaponItems _player);
-}
-else { if (_weapon_type == A_player_var_secondary_weapon) then {
+}else{ if (_weapon_type == A_player_var_secondary_weapon) then {
 	_items = (secondaryWeaponItems _player);
-}
-else { if (_weapon_type == A_player_var_handgun_weapon) then {
+}else{ if (_weapon_type == A_player_var_handgun_weapon) then {
 	_items = (handgunItems _player);
 };};};
 

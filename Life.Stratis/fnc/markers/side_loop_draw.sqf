@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(visibleMap)) exitWith {null};
+if (!(visibleMap)) exitWith {null};
 //player groupChat format["marking %1", _this];
 ARGV(0,_local_marker);
 if (undefined(_local_marker)) exitWith {null};
@@ -13,10 +13,10 @@ _player_variable_name = _local_marker;
 _player_variable = missionNamespace getVariable [_player_variable_name, null];
 
 
-if (not([player, "sidemarkers"] call A_player_fnc_get_bool) || 
-	not([player] call A_player_fnc_human) || 
+if (!([player, "sidemarkers"] call A_player_fnc_get_bool) || 
+	!([player] call A_player_fnc_human) || 
 	([player] call A_player_fnc_civilian) ||
-	not([_player_variable] call A_player_fnc_human) ||
+	!([_player_variable] call A_player_fnc_human) ||
 	([_player_variable] call A_player_fnc_civilian)) exitWith {
 	_local_marker setMarkerAlphaLocal 0;
 };

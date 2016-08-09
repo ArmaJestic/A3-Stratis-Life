@@ -9,7 +9,7 @@
 ARGV(0,_player);
 ARGV(1,_gang_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_gang_id)) exitWith {null};
 if (typeName _gang_id != "STRING") exitWith {null};
 
@@ -22,11 +22,11 @@ _A_gang_var_name = _gang select A_gang_var_name;
 _A_gang_var_open = _gang select A_gang_var_open;
 _player_uid = [_player] call A_gang_fnc_player_uid;
 
-if (not(([_gang_id] call A_gang_fnc_leader_uid) == _player_uid)) exitWith {
+if (!(([_gang_id] call A_gang_fnc_leader_uid) == _player_uid)) exitWith {
 	player groupChat format["%1-%2, you are not allowed to manage gang %3, you are not the leader", _player, (name _player), _gang_name];
 };
 
-if (not(createDialog "manage_gang_menu")) exitWith {
+if (!(createDialog "manage_gang_menu")) exitWith {
 	player groupChat format["ERROR: clould not create gang management dialog"];
 };
 

@@ -8,7 +8,7 @@ _driver = null;
 _near_vehicles = nearestObjects [getpos player, ["LandVehicle"], 20];
 //player groupChat format["Near VEHS: %1", _near_vehicles];
 {
-	if ((speed _x > 10) and (not(isNull(driver _x)))) exitWith {
+	if ((speed _x > 10) and (!(isNull(driver _x)))) exitWith {
 		_driver	= driver _x;
 	};
 } forEach _near_vehicles;

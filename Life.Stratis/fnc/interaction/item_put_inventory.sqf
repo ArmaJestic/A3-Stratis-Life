@@ -11,7 +11,7 @@ ARGV(1,_item);
 ARGV(2,_amount);
 ARGV(3,_data);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_item))exitWith {null};
 if (undefined(_amount)) exitWith {null};
 
@@ -43,8 +43,7 @@ if (_item == "keychain") then {
 	_vehicle_name = _data select 0;
 	[_player, _vehicle_name] call A_vehicle_fnc_add_name;
 	player groupChat format["You put the key for %1 in your inventory ", _vehicle_name];
-}
-else {
+}else{
 	[_player, _item, _pickup_amount, ([player] call A_player_fnc_inventory_name)] call A_inv_fnc_createitem;
 	player groupchat format["You put %1 %2(s) in your inventory", strM(_pickup_amount), _item_name];
 };

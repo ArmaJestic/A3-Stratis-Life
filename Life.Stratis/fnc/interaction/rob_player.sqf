@@ -8,23 +8,23 @@
 ARGV(0,_player);
 ARGV(1,_target);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_target] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_target] call A_player_fnc_human)) exitWith {null};
 
 if (_player != player) exitWith {null};
 
 private["_interaction"];
 _interaction = "rob";
-if (not([_player, _target, _interaction] call A_interaction_fnc_check_distance)) exitWith {null};
-if (not([_player, _target, _interaction] call A_interaction_fnc_check_armed)) exitWith {null};
+if (!([_player, _target, _interaction] call A_interaction_fnc_check_distance)) exitWith {null};
+if (!([_player, _target, _interaction] call A_interaction_fnc_check_armed)) exitWith {null};
 
 
 private["_near_cops"];
-if (([player, 40] call A_player_fnc_near_cops) && not([_target] call A_player_fnc_blufor)) then {
+if (([player, 40] call A_player_fnc_near_cops) && !([_target] call A_player_fnc_blufor)) then {
 	player groupChat format["You cannot rob %1-%2, there is a cop near", _target, (name _target)];
 };
 
-if (not([_target] call A_player_fnc_vulnerable)) exitWith {
+if (!([_target] call A_player_fnc_vulnerable)) exitWith {
 	player groupChat format["%1-%2 does not have his hands up, or is not subdued", _target, (name _target)];
 };
 

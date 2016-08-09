@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(A_input_var_w_key_down || A_input_var_s_key_down)) exitWith {};
+if (!(A_input_var_w_key_down || A_input_var_s_key_down)) exitWith {};
 
 private["_vehicle", "_player"];
 _player = player;
@@ -44,13 +44,12 @@ if (_nitro > 0 && A_input_var_lshift_down) then {
 if (_tuning == 0) exitWith {};
 
 
-if (not(A_input_var_s_key_down)) then {
+if (!(A_input_var_s_key_down)) then {
 	private["_added"];
 	_added = [_velocity, _tuning] call A_vector_fnc_resize;
 	_added set [2,0];
 	_velocity = [_velocity,_added] call BIS_fnc_vectorAdd;
-}
-else {
+}else{
 	//player groupChat format["Braking!"];
 	private["_added"];
 	_added = [_velocity, 0.4] call A_vector_fnc_resize;

@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {0};
+if (!([_player] call A_player_fnc_human)) exitWith {0};
 
 private ["_value"];
 _value = [_player, "bankaccount"] call A_player_fnc_get_array;

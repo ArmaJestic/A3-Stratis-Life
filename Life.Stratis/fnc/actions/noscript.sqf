@@ -13,7 +13,8 @@
 //private _err = params[["_target", null], ["_caller", null], ["_id", null, [0]], ["_com", null]];
 //EXT_ERR(_err, A_other_fnc_noscript)
 
-PARAM_EXIT(A_other_fnc_noscript, [["_target", null], ["_caller", null], ["_id", null, [0]], ["_com", null]])
+//PARAM_EXIT(A_other_fnc_noscript, [["_target", null], ["_caller", null], ["_id", null, [0]], ["_com", null]])
+if !(params [["_target", null], ["_caller", null], ["_id", null, [0]], ["_com", null]]) exitwith {LOGE_EP(A_other_fnc_noscript)};
 
 // call compile with strings from majority of the actions is a security risk
 if ((typeName _com) == "ARRAY") then {

@@ -21,7 +21,7 @@ if (_button == 0) then {
 	private["_left_click_target"];
 	_left_click_target = [_player] call A_camera_fnc_get_left_click_target;
 	
-	if (not(isNull _left_click_target)) then {
+	if (!(isNull _left_click_target)) then {
 		offset_x = 0;
 		offset_y = 0;
 		offset_z = 0;

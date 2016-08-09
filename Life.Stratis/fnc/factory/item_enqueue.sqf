@@ -13,7 +13,7 @@ ARGV(3,_amount);
 factory_enqueue_active = if(undefined(factory_enqueue_active)) then {false} else {factory_enqueue_active};
 if (factory_enqueue_active) exitWith {null};
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if(undefined(_factory_id)) exitWith {null};
 if (typeName _factory_id != "STRING") exitWith {null};
 if (undefined(_item)) exitWith {null};

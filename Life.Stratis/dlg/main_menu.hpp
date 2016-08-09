@@ -7,7 +7,7 @@
 		w = 0.05; h = 0.05;                    \
 		text = "";                             \
 		moving = 1;                            \
-	}
+	};
 
 class main_menu {
 	idd = mainDialog_idd;
@@ -52,27 +52,27 @@ class main_menu {
 	};
 	
 	
-	MAIN_MENU_BUTTON(main_menu_right_button_close,main_menu_right_button_close_idc);
-	MAIN_MENU_BUTTON(main_menu_button_1,main_menu_button_1_idc);
-	MAIN_MENU_BUTTON(main_menu_button_2,main_menu_button_2_idc);
-	MAIN_MENU_BUTTON(main_menu_button_3,main_menu_button_3_idc);
-	MAIN_MENU_BUTTON(main_menu_button_4,main_menu_button_4_idc);
-	MAIN_MENU_BUTTON(main_menu_button_5,main_menu_button_5_idc);
-	MAIN_MENU_BUTTON(main_menu_button_6,main_menu_button_6_idc);
-	MAIN_MENU_BUTTON(main_menu_button_7,main_menu_button_7_idc);
-	MAIN_MENU_BUTTON(main_menu_button_8,main_menu_button_8_idc);
-	MAIN_MENU_BUTTON(main_menu_button_9,main_menu_button_9_idc);
-	MAIN_MENU_BUTTON(main_menu_button_10,main_menu_button_10_idc);
-	MAIN_MENU_BUTTON(main_menu_button_11,main_menu_button_11_idc);
-	MAIN_MENU_BUTTON(main_menu_button_12,main_menu_button_12_idc);
-	MAIN_MENU_BUTTON(main_menu_button_13,main_menu_button_13_idc);
-	MAIN_MENU_BUTTON(main_menu_button_14,main_menu_button_14_idc);
-	MAIN_MENU_BUTTON(main_menu_button_15,main_menu_button_15_idc);
-	MAIN_MENU_BUTTON(main_menu_button_16,main_menu_button_16_idc);
-	MAIN_MENU_BUTTON(main_menu_button_17,main_menu_button_17_idc);
-	MAIN_MENU_BUTTON(main_menu_button_18,main_menu_button_18_idc);
-	MAIN_MENU_BUTTON(main_menu_button_19,main_menu_button_19_idc);
-	MAIN_MENU_BUTTON(main_menu_button_20,main_menu_button_20_idc);	
+	MAIN_MENU_BUTTON(main_menu_right_button_close,main_menu_right_button_close_idc)
+	MAIN_MENU_BUTTON(main_menu_button_1,main_menu_button_1_idc)
+	MAIN_MENU_BUTTON(main_menu_button_2,main_menu_button_2_idc)
+	MAIN_MENU_BUTTON(main_menu_button_3,main_menu_button_3_idc)
+	MAIN_MENU_BUTTON(main_menu_button_4,main_menu_button_4_idc)
+	MAIN_MENU_BUTTON(main_menu_button_5,main_menu_button_5_idc)
+	MAIN_MENU_BUTTON(main_menu_button_6,main_menu_button_6_idc)
+	MAIN_MENU_BUTTON(main_menu_button_7,main_menu_button_7_idc)
+	MAIN_MENU_BUTTON(main_menu_button_8,main_menu_button_8_idc)
+	MAIN_MENU_BUTTON(main_menu_button_9,main_menu_button_9_idc)
+	MAIN_MENU_BUTTON(main_menu_button_10,main_menu_button_10_idc)
+	MAIN_MENU_BUTTON(main_menu_button_11,main_menu_button_11_idc)
+	MAIN_MENU_BUTTON(main_menu_button_12,main_menu_button_12_idc)
+	MAIN_MENU_BUTTON(main_menu_button_13,main_menu_button_13_idc)
+	MAIN_MENU_BUTTON(main_menu_button_14,main_menu_button_14_idc)
+	MAIN_MENU_BUTTON(main_menu_button_15,main_menu_button_15_idc)
+	MAIN_MENU_BUTTON(main_menu_button_16,main_menu_button_16_idc)
+	MAIN_MENU_BUTTON(main_menu_button_17,main_menu_button_17_idc)
+	MAIN_MENU_BUTTON(main_menu_button_18,main_menu_button_18_idc)
+	MAIN_MENU_BUTTON(main_menu_button_19,main_menu_button_19_idc)
+	MAIN_MENU_BUTTON(main_menu_button_20,main_menu_button_20_idc)
 };
 
 
@@ -115,5 +115,5 @@ class main_menu_right {
 		w = 0.42; h = 0.60;
 	};
 	
-	MAIN_MENU_BUTTON(main_menu_right_button_close,main_menu_right_button_close_idc);	
+	MAIN_MENU_BUTTON(main_menu_right_button_close,main_menu_right_button_close_idc)	
 };

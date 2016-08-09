@@ -19,6 +19,6 @@ waitUntil {
 		_timeout = "(unknown)";
 	};
 	_control ctrlSetText format["%1", _timeout];
-	(not(ctrlShown _control))
+	(!(ctrlShown _control))
 };
 };

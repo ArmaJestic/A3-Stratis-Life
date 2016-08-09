@@ -7,7 +7,7 @@
 ARGV(0,_player);
 ARGV(1,_ticket_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 if (undefined(_ticket_id)) exitWith {};
 if (typeName _ticket_id != "STRING") exitWith {};
 
@@ -46,8 +46,7 @@ A_lotto_menu_var_playing_lotto = 0;
 
 if (_draw > _chance) then {
 	player groupChat format["%1-%2, sorry, your lottery ticket didn't get drawn this time.", _player, (name _player)];
-}
-else {
+}else{
 	[_player, 'money', _payout] call A_inventory_fnc_add_item;
 	player groupChat format["%1-%2, Congratulations, your have won the lottery, you payout is $%3", _player, (name _player), strM(_payout)];
 };

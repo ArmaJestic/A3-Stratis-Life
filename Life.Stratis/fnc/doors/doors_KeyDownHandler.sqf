@@ -11,6 +11,6 @@ ARGV(1,_data);
 
 private["_key"];
 _key = _event select 1;
-if (_key == DIK_LSHIFT && not(A_doors_var_doors_lcontrol_state)) then {
+if (_key == DIK_LSHIFT && !(A_doors_var_doors_lcontrol_state)) then {
 	A_doors_var_doors_lcontrol_state = true;
 };

@@ -30,7 +30,7 @@ while { _i < _count } do {
 
 	_isItem = (_infos call A_inventory_fnc_get_item_type == "Item");
 	_isDroppable = if (_isItem) then {(_item call A_inventory_fnc_get_item_droppable)} else { false };
-	_class = if(not(_isItem)) then { _infos call A_inventory_fnc_get_item_class } else { "" };
+	_class = if(!(_isItem)) then { _infos call A_inventory_fnc_get_item_class } else { "" };
 	_type = _infos call A_inventory_fnc_get_item_type;
 	_kind = _infos call A_inventory_fnc_get_item_kind;
 	_kind = if (undefined(_kind)) then { "" } else { _kind };

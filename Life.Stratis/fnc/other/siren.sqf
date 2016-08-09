@@ -23,18 +23,16 @@ if (_art == "activate") then {
 
 	private["_siren_on"];
 	_siren_on = missionNamespace getVariable (format["%1_Sirene_on", _vcl]);
-	if (undefined(_siren_on) || {not(_siren_on)}) then {
+	if (undefined(_siren_on) || {!(_siren_on)}) then {
 		_turnOn = true;
-	}
-	else {
+	}else{
 		_turnOn = false;
 	};
 
 	if (_turnOn) then {
 		format ["[0,0,0,[""client"", %1]] execVM ""A_other_fnc_siren.sqf"";", player] call A_broadcast_fnc_broadcast;
 		titletext["A_other_fnc_siren on", "PLAIN DOWN"];
-	}
-	else {
+	}else{
 		call compile format["%1_Sirene_on = false; publicVariable ""%1_Sirene_on"";", _vcl];
 		titletext["A_other_fnc_siren off", "PLAIN DOWN"];
 	};
@@ -74,9 +72,7 @@ if (_art == "client") then {
 					_vcl say ["Siren_Short", 1];
 					sleep _shortDur;
 			};};
-		}
-		else
-		{
+		}else{
 			sleep 5;
 		};
 
@@ -98,8 +94,7 @@ if (_art == "licht") then {
 		if (player in _vcl) then {
 			_light1 setLightBrightness (_lichtstaerke / 2);
 			_light2 setLightBrightness (_lichtstaerke / 2);
-		}
-		else {
+		}else{
 			_light1 setLightBrightness _lichtstaerke;
 			_light2 setLightBrightness _lichtstaerke;
 		};

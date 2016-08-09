@@ -7,7 +7,7 @@
 private["_vcl", "_lvl", "_vel", "_spd"];
 _vcl = vehicle player;
 
-if (not(_vcl iskindof "An2_Base_EP1")) exitWith { false }; 
+if (!(_vcl iskindof "An2_Base_EP1")) exitWith { false }; 
 
 _vel = velocity _vcl;
 _spd = speed _vcl;

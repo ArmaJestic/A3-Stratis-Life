@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 
 private["_group"];
 if (undefined(_group)) exitWith {null};

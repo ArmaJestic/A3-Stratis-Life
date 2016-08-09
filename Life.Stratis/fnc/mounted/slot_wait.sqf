@@ -10,7 +10,7 @@ _this spawn {
 	ARGV(2,_slot_id);
 	
 	//player groupChat format["Waiting for death"];
-	waitUntil { not(alive _player) || not([_player, "inMountedSlot"] call A_object_fnc_getVariable)};
+	waitUntil { !(alive _player) || !([_player, "inMountedSlot"] call A_object_fnc_getVariable)};
 
 	[_player, "inMountedSlot", false, true] call A_object_fnc_setVariable;
 	[_player, "mountedVehicle", nil, true] call A_object_fnc_setVariable;
@@ -29,7 +29,7 @@ _this spawn {
 		private["_class", "_slot_entry"];
 		_class = typeOf _vehicle;
 		_slot_entry = [_class, _slot_id] call A_mounted_fnc_lookup_class_slot;
-		if (not(undefined(_slot_entry))) then {
+		if (!(undefined(_slot_entry))) then {
 			private["_exit"];
 			_exit = (_slot_entry select A_mounted_var_slot_exit) select A_mounted_var_slot_exit_data;
 			[_player, _vehicle, _exit] call A_mounted_fnc_attach;

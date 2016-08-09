@@ -33,17 +33,16 @@ if ((random 100) < A_main_var_lockpickchance) then {
 	[player, _vehicle] call A_vehicle_fnc_add;
 	player groupChat localize "STRS_inventar_lockpick_success";		
 	
-	if ((_near_cops || _near_civilians || _incarpark) && not(isblu)) then {
+	if ((_near_cops || _near_civilians || _incarpark) && !(isblu)) then {
 		private["_message"];
 		_message =  format["%1 was seen stealing a vehicle (registration plate: %2)!", player, _vehicle];
 		format['hint (toString(%1));', toArray(_message)] call A_broadcast_fnc_broadcast;
 		[player, "vehicle theft", 10000] call A_player_fnc_update_warrants;
 	};
-}
-else {																																						
+}else{																																						
 	player groupChat localize "STRS_inventar_lockpick_noluck";
 	
-	if ((_near_cops || _near_civilians || _incarpark) && not(isblu)) then { 
+	if ((_near_cops || _near_civilians || _incarpark) && !(isblu)) then { 
 		[player, "attempted vehicle theft", 2000] call A_player_fnc_update_warrants;
 		private["_message"];
 		_message = format["%1 was seen attempting to A_item_fnc_lockpick a vehicle (Registration plate: %2)", player, _vehicle];

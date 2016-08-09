@@ -9,11 +9,11 @@ ARGV(0,_player);
 ARGV(1,_target);
 ARGV(2,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
-if (not([_target] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
+if (!([_target] call A_player_fnc_human)) exitWith {};
 if (_amount <= 0) exitWith {};
 
-if (not([_player] call A_player_fnc_blufor)) exitWith {
+if (!([_player] call A_player_fnc_blufor)) exitWith {
 	_message = format["%1-%2 paid %3-%4's ticket of $%5", _target, (name _target), _player, (name _player), strM(_amount)];
 	server globalChat _message;
 };

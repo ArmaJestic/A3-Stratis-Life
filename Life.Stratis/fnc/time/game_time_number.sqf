@@ -1,4 +1,4 @@
-// A_time_functions_fnc_game_time_number
+// A_time_fnc_game_time_number
 
 #include "..\..\includes\macro.h"
 
@@ -11,7 +11,7 @@ if (undefined(init_date)) then {
 _rsecs = floor(serverTime);
 
 _isecs = (dateToNumber init_date);
-_gsecs = ([_rsecs] call A_time_functions_fnc_real2game_seconds) / (DAYSYEAR * SECSDAY);
+_gsecs = ([_rsecs] call A_time_fnc_real2game_seconds) / (DAYSYEAR * SECSDAY);
 
 _result = (_isecs + _gsecs);
 _date =  numberToDate [YEAR, _result];

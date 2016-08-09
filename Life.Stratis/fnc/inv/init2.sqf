@@ -6,15 +6,11 @@
 ["INV_Fabrikowner", []] call A_stats_fnc_init_variable;
 
 carpark1 setTriggerActivation ["VEHICLE", "PRESENT", true];
-
 carpark2 setTriggerActivation ["VEHICLE", "PRESENT", true];
-
 carpark3 setTriggerActivation ["VEHICLE", "PRESENT", true];
-
 carpark4 setTriggerActivation ["VEHICLE", "PRESENT", true];
 
 _i = 0;
-
 while {_i < count(A_inv_var_vendors_array) } do {
 	private["_vendor_data", "_vendor"];
 	_vendor_data = A_inv_var_vendors_array select _i;		
@@ -120,8 +116,7 @@ if (isServer) then {
 			_object playMoveNow "amovpercmstpsnonwnondnon";
 			_object disableAI "move"; 
 			_object disableAI "anim";
-		}
-		else {
+		}else{
 			//shop is a box
 			clearMagazineCargoGlobal _object; 
 			clearWeaponCargoGlobal _object;
@@ -137,6 +132,6 @@ if (isServer) then {
 };
 
 if (isClient) then {
-	waitUntil { not(undefined(INV_ItemStocks)) };
-	waitUntil { not(undefined(INV_ItemMaxStocks)) };
+	waitUntil {!(undefined(INV_ItemStocks))};
+	waitUntil {!(undefined(INV_ItemMaxStocks))};
 };

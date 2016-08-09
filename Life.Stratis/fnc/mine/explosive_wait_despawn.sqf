@@ -39,7 +39,7 @@ _crater =  [_position, ": krater", 3] call A_object_fnc_nearest_strstr;
  
  _data = ITEM_DATA(_item);
  if (count(_data) == 0) exitWith {};
- if (not(ITEM_DATA_ORE(_data))) exitWith {};
+ if (!(ITEM_DATA_ORE(_data))) exitWith {};
  
 private["_ore_count", "_i"];
 _ore_count = ceil(3);

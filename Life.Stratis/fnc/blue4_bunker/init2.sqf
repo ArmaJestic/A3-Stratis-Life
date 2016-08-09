@@ -10,7 +10,7 @@ if (isServer) then {
 	publicVariable "blue4_bunker_setup_complete";
 };
 
-if (isClient) then {
+if (!isServer) then {
 	waitUntil {(!(isNil "blue4_bunker_setup_complete") && {blue4_bunker_setup_complete})};
 	respawn_blue4_proxy setVariable ["respawn", true];
 	respawn_blue4_proxy setVariable ["radius", 5];

@@ -7,7 +7,7 @@ ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_vehicle);
 
-if (not([_player, _vehicle] call A_vehicle_fnc_view_trunk_available)) exitWith {};
+if (!([_player, _vehicle] call A_vehicle_fnc_view_trunk_available)) exitWith {};
 
 private["_storage_name"];
 _storage_name = ([_vehicle] call A_vehicle_fnc_storage_name);
@@ -31,8 +31,7 @@ while {_i < (count _inventory)} do {
 	if (_amount > 0) then {
 		if (_object == "money") then {
 			_list lbAdd format ["%1: $%2", _object_name, strM(_amount)];
-		 }
-		 else {
+		 }else{
 			_list lbAdd format ["%1: %2", _object_name, _amount];
 		 };
 	};

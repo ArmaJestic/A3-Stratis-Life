@@ -13,7 +13,7 @@ private["_vehicle", "_in_vehicle", "_is_commander", "_is_driver", "_is_gunner"];
 _vehicle = (vehicle _player);
 _is_driver = (driver(_vehicle) == _player);
 _in_vehicle = (_vehicle != _player);
-_is_commander = (commander(_vehicle) == _player) && not(_is_driver);
+_is_commander = (commander(_vehicle) == _player) && !(_is_driver);
 _is_gunner = (gunner(_vehicle) == _player);
 if (_in_vehicle && (_is_gunner || _is_commander))  exitWith { true };
 

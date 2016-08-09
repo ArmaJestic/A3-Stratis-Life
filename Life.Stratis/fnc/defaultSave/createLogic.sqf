@@ -25,11 +25,11 @@ if ([_logicName] call A_defaultSave_fnc_logicExists) then {
 			_server_logic = [_serverName] call A_defaultSave_fnc_createLogic
 		}else{
 			_server_logic = [] call A_defaultSave_fnc_getServerLogic;
-		}
+		};
 		_server_list = _server_logic getVariable["save_logics_array", []];
 		_server_list set[count _server_list, _logicName];
 		_server_logic setVariable["save_logics_array", _server_list];
-	}
-}
+	};
+};
 	
 _logic

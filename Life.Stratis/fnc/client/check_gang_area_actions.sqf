@@ -11,7 +11,7 @@ _in_vehicle = (_vehicle != _player);
 
 private["_gang_area"];
 _gang_area = [_player, 5] call A_gang_fnc_area_player_near;
-if (undefined(_gang_area) || not(INV_shortcuts) || _in_vehicle || not(alive _player)) exitWith {
+if (undefined(_gang_area) || !(INV_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
 	[_player] call A_gang_fnc_area_remove_actions;
 };
 

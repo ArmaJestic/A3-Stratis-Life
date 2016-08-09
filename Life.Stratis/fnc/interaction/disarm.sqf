@@ -8,18 +8,18 @@
 ARGV(0,_player);
 ARGV(1,_target);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_target] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_target] call A_player_fnc_human)) exitWith {null};
 
 if (_player != player) exitWith {null};
 
 private["_interaction"];
 _interaction = "disarm";
-if (not([_player, _target, _interaction] call A_interaction_fnc_check_distance)) exitWith {null};
-if (not([_player, _target, _interaction] call A_interaction_fnc_check_armed)) exitWith {null};
+if (!([_player, _target, _interaction] call A_interaction_fnc_check_distance)) exitWith {null};
+if (!([_player, _target, _interaction] call A_interaction_fnc_check_armed)) exitWith {null};
 
 
-if(not([_target] call A_player_fnc_vulnerable)) exitWith {
+if(!([_target] call A_player_fnc_vulnerable)) exitWith {
 	player groupChat format["You cannot disarm %1-%2, he is not subdued", _target, (name _target)];
 };
 

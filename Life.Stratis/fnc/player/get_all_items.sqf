@@ -5,7 +5,7 @@
 
 //player groupChat format["A_player_fnc_get_all_items %1", _this];
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {[]};
+if (!([_player] call A_player_fnc_exists)) exitWith {[]};
 
 private["_uniformItems", "_vestItems", "_pWItems", "_sWItems", "_hgWItems", "_backPackItems", "_allItems"];
 _uniformItems = uniformItems _player;

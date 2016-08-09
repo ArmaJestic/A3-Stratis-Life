@@ -1,4 +1,4 @@
-// A_time_functions_fnc_move
+// A_time_fnc_move
 
 #include "..\..\includes\macro.h"
 
@@ -10,5 +10,5 @@ _this spawn {
 	_offset = _offset * 60 * 60;
 	server setVariable ["time_offset", ((server getVariable "time_offset") + _offset), true];
 
-	"if (!isServer || (isServer && !isDedicated)) then { call A_time_functions_fnc_init_globals; };" call A_broadcast_fnc_broadcast;
+	"if (!isServer || (isServer && !isDedicated)) then { call A_time_fnc_init_globals; };" call A_broadcast_fnc_broadcast;
 };

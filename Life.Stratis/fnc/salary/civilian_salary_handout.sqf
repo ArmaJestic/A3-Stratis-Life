@@ -53,8 +53,7 @@ if ([_player] call A_player_fnc_president) then {
 	[player, (A_main_var_mayortaxes + A_main_var_mayorextrapay)] call A_bank_fnc_transaction;
 	player groupchat format["As president you get an extra paycheck of $%1. You also got $%2 taxes.", strM(A_main_var_mayorextrapay), strM(A_main_var_mayortaxes)];
 	A_main_var_mayortaxes = 0;
-}
-else {if (_taxes > 0) then {
+}else{if (_taxes > 0) then {
 	(format["if ([player] call A_player_fnc_president) then {A_main_var_mayortaxes = A_main_var_mayortaxes + %1;};", _taxes]) call A_broadcast_fnc_broadcast;
 };};
 

@@ -9,7 +9,7 @@ ARGV(0,_player);
 ARGV(1,_bunker_net_id);
 //player groupChat format["A_bunker_fnc_add_actions %1", _this];
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 if (undefined(_bunker_net_id)) exitWith {};
 if (typeName _bunker_net_id != "STRING") exitWith {};
 

@@ -8,8 +8,7 @@ private["_key_spam"];
 _key_spam = false;
 if (undefined(handling_sl_toggle)) then {
 	handling_sl_toggle = true;
-}
-else { if ( handling_sl_toggle) then {
+}else{ if ( handling_sl_toggle) then {
 	_key_spam = true;
 };};
 if (_key_spam) exitWith {null};
@@ -18,8 +17,7 @@ if (INV_shortcuts) then {
 	titletext["SL keys off", "PLAIN DOWN"];
 	[] call A_actions_fnc_actions_remove;
 	INV_shortcuts = false;
-}
-else {
+}else{
 	titletext["SL keys on", "PLAIN DOWN"];
 	[] call A_actions_fnc_actions;
 	INV_shortcuts = true; 

@@ -10,7 +10,7 @@ ARGV(0,_player);
 ARGV(1,_item);
 ARGV(2,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 if (undefined(_item)) exitWith {};
 if (typeName _item != "STRING") exitWith {};
 if (undefined(_amount)) exitWith {};
@@ -23,7 +23,7 @@ if (_player == _vehicle) exitWith {
 	player groupChat format["You must the inside a vehicle"];
 };
 
-if(not(_vehicle isKindOf "LandVehicle"))exitWith {
+if(!(_vehicle isKindOf "LandVehicle"))exitWith {
 	player groupChat "You cannot install a speed gun on this vehicle."
 };
 

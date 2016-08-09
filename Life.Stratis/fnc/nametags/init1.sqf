@@ -1,7 +1,7 @@
 // A_nametags_fnc_init1
 
 #include "..\..\includes\macro.h"
-#include "..\..\constants.h"
+#include "..\..\includes\constants.h"
 
 
 A_nametags_var_watter_edge_effect = objNull;

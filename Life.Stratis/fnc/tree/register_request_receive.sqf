@@ -15,4 +15,4 @@ if (undefined(_tree_id)) exitWith {};
 if (typeName _tree_id != "STRING") exitWith {};
 if (_tree_id == "") exitWith {};
 
-tree_registry set [count(tree_registry), _tree_id];
+A_tree_var_registry set [count(A_tree_var_registry), _tree_id];

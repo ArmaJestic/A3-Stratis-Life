@@ -11,7 +11,7 @@ ARGV(2,_sleep_time);
 if (undefined(_vehicle)) exitWith {};
 if (undefined(_logic)) exitWith {};
 if (undefined(_sleep_time)) exitWith {};
-if (not([_vehicle] call A_object_fnc_exists)) exitWith {};
+if (!([_vehicle] call A_object_fnc_exists)) exitWith {};
 if (typeName _sleep_time != "SCALAR") exitWith {};
 if (_vehicle in A_shop_menu_var_spawn_cleanup_queue) exitWith {};
 

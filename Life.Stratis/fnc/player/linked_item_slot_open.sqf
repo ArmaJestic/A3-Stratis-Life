@@ -7,10 +7,10 @@
 ARGV(0,_player);
 ARGV(1,_item_id);
 
-if (not([_player] call A_player_fnc_exists)) exitWith{false};
-if (not([_item_id] call A_config_fnc_class_item)) exitWith {false};
+if (!([_player] call A_player_fnc_exists)) exitWith{false};
+if (!([_item_id] call A_config_fnc_class_item)) exitWith {false};
 
 private["_assigned_items"];
 _assigned_items = [(assignedItems _player)] call A_misc_fnc_toLowerArray;
 
-not(toLower(_item_id) in _assigned_items)
+!(toLower(_item_id) in _assigned_items)

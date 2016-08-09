@@ -10,7 +10,7 @@ ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_vehicle);
 
-if (not([_player, _vehicle] call A_vehicle_fnc_seize_available)) exitWith {};
+if (!([_player, _vehicle] call A_vehicle_fnc_seize_available)) exitWith {};
 
 
 private["_storage"];

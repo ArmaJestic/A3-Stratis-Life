@@ -5,7 +5,7 @@
 
 ARGV(0,_player);
 ARGV(1,_group);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_group)) exitWith {null};
 if (typeName _group != "GROUP") exitWith {null};
 

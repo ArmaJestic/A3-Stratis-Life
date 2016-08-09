@@ -7,8 +7,8 @@ player groupChat format["A_player_fnc_add_item %1", _this];
 ARGV(0,_player);
 ARGV(1,_item_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {false};
-if (not([_item_id] call A_config_fnc_class_item)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_item_id] call A_config_fnc_class_item)) exitWith {false};
 
 private["_load_before", "_load_after"];
 _load_before = load _player;

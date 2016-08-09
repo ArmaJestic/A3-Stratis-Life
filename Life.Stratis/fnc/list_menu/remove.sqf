@@ -21,7 +21,7 @@ private["_item", "_text"];
 _item = lbData [listMenu_itemsList_idc, _index];
 _text = lbText [listMenu_itemsList_idc, _index];
 
-if (not([_list_id, _item] call A_list_fnc_contains_key)) exitWith {
+if (!([_list_id, _item] call A_list_fnc_contains_key)) exitWith {
 	player groupChat format["List does not contain ""%1""", _text];
 };
 

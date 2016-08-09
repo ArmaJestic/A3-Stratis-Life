@@ -12,8 +12,8 @@ if (isServer) then {
 	
 };
 
-if (isClient) then {
-	waitUntil {(not(isNil "pythos_base_setup_complete") && {pythos_base_setup_complete})};
+if (!isServer) then {
+	waitUntil {(!(isNil "pythos_base_setup_complete") && {pythos_base_setup_complete})};
 	respawn_cp1_proxy setVariable ["respawn", true];
 	respawn_cp1_proxy setVariable ["radius", 5];
 };

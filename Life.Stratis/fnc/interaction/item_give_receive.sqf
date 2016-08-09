@@ -11,8 +11,8 @@ ARGV(1,_target);
 ARGV(2,_item);
 ARGV(3,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_target] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_target] call A_player_fnc_human)) exitWith {null};
 if (_target != player) exitWith {null};
 if (undefined(_item)) exitWith {null};
 if (undefined(_amount)) exitWith {null};

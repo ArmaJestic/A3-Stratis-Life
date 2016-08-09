@@ -7,7 +7,7 @@
 
 ARGV(0,_player);
 ARGV(1,_gang_area);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_gang_area)) exitWith {null};
 if (typeName _gang_area != "OBJECT") exitWith {null};
 
@@ -15,7 +15,7 @@ if (typeName _gang_area != "OBJECT") exitWith {null};
 
 if ([_gang_area] call A_gang_fnc_flag_at_min) exitWith {null};
 [_gang_area, -0.5] call A_gang_fnc_flag_set_offset;
-if (not([_gang_area] call A_gang_fnc_flag_at_min)) exitWith {null};
+if (!([_gang_area] call A_gang_fnc_flag_at_min)) exitWith {null};
 
 
 private["_gang", "_player_uid"];

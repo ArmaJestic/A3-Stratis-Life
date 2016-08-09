@@ -9,7 +9,7 @@ player groupChat format["A_main_menu_fnc_setup "];
 ARGV(0,_menu_title);
 ARGV(1,_buttons_data);
 
-if (not(createDialog "main_menu")) exitWith {
+if (!(createDialog "main_menu")) exitWith {
 	player groupChat format["ERROR: cannot create main menu dialog"];	
 };
 

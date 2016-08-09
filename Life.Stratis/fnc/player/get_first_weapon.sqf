@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 
 private["_weapons", "_weapon_id", "_i"];
@@ -15,7 +15,7 @@ _i = 0;
 while {_i < count(_weapons) } do {
 	private["_cweapon_id"];
 	_cweapon_id = _weapons select _i;
-	if not(_cweapon_id == "") exitWith {
+	if !(_cweapon_id == "") exitWith {
 		_weapon_id = _cweapon_id;
 	};
 	_i = _i + 1;

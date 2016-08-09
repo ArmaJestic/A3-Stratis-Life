@@ -6,7 +6,7 @@
 diag_log format["A_player_fnc_set_gear %1", _this];
 ARGV(0,_player);
 ARGV(1,_gear);
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 if (undefined(_gear)) exitWith {null};
 if (typeName _gear != "ARRAY") exitWith {null};
 
@@ -162,7 +162,7 @@ removeBackpack _player;
 	
 
 //restore the backpack
-if (not(_backpack == "" || _backpack == "none")) then {
+if (!(_backpack == "" || _backpack == "none")) then {
 	removeBackpack _player;
 	_player addBackpack _backpack;
 	

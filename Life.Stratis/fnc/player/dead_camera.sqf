@@ -9,7 +9,7 @@ if (defined(player_rejoin_suicide_active)) exitWith {
 
 ARGV(0,_player);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 private["_pos"];
 
@@ -19,12 +19,12 @@ _camera = "camera" camCreate [(_pos select 0), (_pos select 1), ((_pos select 2)
 _camera camPrepareTarget player;
 _camera cameraEffect ["Internal", "LEFT"];
 
-if (not((_pos select 2) > 5000 || ((_pos select 1) < -1000))) then {
+if (!((_pos select 2) > 5000 || ((_pos select 1) < -1000))) then {
 	_camera camPreparePos [(_pos select 0), (_pos select 1), ((_pos select 2) + 40)];
 };
 _camera camPrepareFOV 1;
 
-if (not(sunOrMoon > 0)) then {
+if (!(sunOrMoon > 0)) then {
 	camUseNVG true;
 };
  

@@ -7,7 +7,7 @@
 
 //player groupChat format["A_interaction_fnc_gang_create_menu"];
 
-if (not(createDialog "gilde_gruenden")) exitWith {
+if (!(createDialog "gilde_gruenden")) exitWith {
 	player groupChat format["ERROR: could not create gang creation dialog"];
 };
 

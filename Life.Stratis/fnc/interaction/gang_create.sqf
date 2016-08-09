@@ -8,7 +8,7 @@
 //player groupChat format["A_interaction_fnc_gang_create %1", _this];
 ARGV(0,_player);
 ARGV(1,_text);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_text)) exitWith {null};
 if (typeName _text != "STRING") exitWith {null};
 
@@ -16,7 +16,7 @@ if (typeName _text != "STRING") exitWith {null};
 private["_gang", "_player_uid"];
 _player_uid = [_player] call A_gang_fnc_player_uid;
 _gang = [_player_uid] call A_gang_fnc_lookup_player_uid;
-if (not(undefined(_gang))) exitWith {
+if (!(undefined(_gang))) exitWith {
 	private["_gang_name"];
 	_A_gang_var_name = _gang select A_gang_var_name;
 	player groupChat format["%1-%2, you are already a member of gang %3", _player, (name _player), _gang_name];
@@ -25,7 +25,7 @@ if (not(undefined(_gang))) exitWith {
 //check that there is no other gang with the same name
 private["_cgang"];
 _cgang = [_text] call A_gang_fnc_lookup_name;
-if (not(undefined(_cgang))) exitWith {
+if (!(undefined(_cgang))) exitWith {
 	private["_cgang_name"];
 	_cA_gang_var_name = _cgang select A_gang_var_name;
 	player groupChat format["%1-%2, there is already a gang named %3", _player, (name _player), _cgang_name];

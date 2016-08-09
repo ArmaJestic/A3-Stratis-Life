@@ -9,7 +9,7 @@ ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_object);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 if (undefined(_object)) exitWith {};
 
 if (A_quarry_var_interact_use_shovel_active) exitWith {};

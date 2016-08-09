@@ -6,5 +6,3 @@
 
 A_speed_gun_var_active = false;
 A_speed_gun_var_hidden = false;
-
-

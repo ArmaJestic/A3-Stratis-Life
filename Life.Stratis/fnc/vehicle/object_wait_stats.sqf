@@ -20,7 +20,7 @@ _end_time = serverTime + _time_out;
 while {true} do {
 	private["_variable_value"];
 	_variable_value = [_object, _variable_name] call A_object_fnc_getVariable;
-	if (not(undefined(_variable_value))) exitWith {null};
+	if (!(undefined(_variable_value))) exitWith {null};
 	if (_end_time < serverTime) exitWith {
 		private["_message"];
 		_message = format["WARNING: Time-out occurred while waiting for ""%1"" on ""%2""", _variable_name, _object];

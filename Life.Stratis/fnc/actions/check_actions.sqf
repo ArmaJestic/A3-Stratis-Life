@@ -15,6 +15,6 @@ _refuel_action = call A_actions_fnc_get_refuel_action;
 if (_isNearStation && _refuel_action < 0 ) then {
 	call A_actions_fnc_add_refuel_action;
 } 
-else { if (not(_isNearStation) && _refuel_action >= 0) then {
+else { if (!(_isNearStation) && _refuel_action >= 0) then {
 	call A_actions_fnc_remove_refuel_action;
 };};

@@ -6,7 +6,7 @@
 //player groupChat format["A_vehicle_fnc_set_gear %1", _this];
 ARGV(0,_vehicle);
 ARGV(1,_gear);
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
 if (undefined(_gear)) exitWith {null};
 if (typeName _gear != "ARRAY") exitWith {null};
 

@@ -12,8 +12,8 @@ _pos = -1;
 
 for [{_i=0}, {_i < (((count _str)-(count _search))+1)}, {_i=_i+1}] do {
 	_found = true;
-	for [{_j=0}, {_j < (count _search)}, {_j=_j+1}] do {if (not ((_str select (_i+_j)) == (_search select _j)) ) exitWith {
-		_found = false;};
+	for [{_j=0}, {_j < (count _search)}, {_j=_j+1}] do {
+		if (!((_str select (_i+_j)) == (_search select _j))) exitWith {_found = false;};
 	};
 	if (_found) exitWith {
 		_pos = _i;

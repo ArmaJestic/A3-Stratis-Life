@@ -10,11 +10,11 @@ ARGV(0,_this);
 ARGV(0,_player);
 ARGV(1,_vehicle);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {};
 
 player grouPChat format["adadas!"];
-if (not([player, _vehicle] call A_vehicle_fnc_owner)) exitWith {
+if (!([player, _vehicle] call A_vehicle_fnc_owner)) exitWith {
 	player groupchat "You need the keys to unflip a vehicle.";
 };
 

@@ -7,7 +7,7 @@
 ARGV(0,_player);
 ARGV(1,_law_index);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
 if (undefined(_law_index)) exitWith {};
 if (typeName _law_index != "SCALAR") exitWith {};
 if (_law_index >= (count legislation_laws)) exitWith {};

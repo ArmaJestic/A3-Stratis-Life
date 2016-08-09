@@ -20,7 +20,7 @@ if (admin_camera_on) exitWith {null};
 	private["_altitude"];
 	_altitude = (getPosATL _vehicle) select 2;
 	
-	if (_vehicle in (list _trigger_area) && (_altitude < _teleport_height) && not(_faction_bool)) exitWith {
+	if (_vehicle in (list _trigger_area) && (_altitude < _teleport_height) && !(_faction_bool)) exitWith {
 		_vehicle setVelocity [0,0,0];
 		_vehicle setPos (getMarkerPos _teleport_marker);
 		player groupChat _teleport_message;

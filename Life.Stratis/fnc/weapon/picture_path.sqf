@@ -9,5 +9,5 @@ if (undefined(_weapon_id)) exitWith {""};
 if (typeName "_weapon_id" != "STRING") exitWith {""};
 if (_weapon_id == "") exitWith {""};
 
-if (not(isClass(configFile >> "CfgWeapons" >> _weapon_id))) exitWith {""};
+if (!(isClass(configFile >> "CfgWeapons" >> _weapon_id))) exitWith {""};
 (getText(configFile >> "CfgWeapons" >> _weapon_id >> "picture"))

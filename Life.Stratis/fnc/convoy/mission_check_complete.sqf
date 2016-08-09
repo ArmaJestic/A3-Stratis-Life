@@ -14,13 +14,13 @@ ARGV(1,_group);
 ARGV(2,_time);
 
 //the convoy cash has been stolen
-if (not(convoy_cash)) exitwith { 
+if (!(convoy_cash)) exitwith { 
 	convoy_complete_side = Civilian;
 	true
 };
 
 //exit early if the truck is dead
-if (not(alive _truck)) exitWith {
+if (!(alive _truck)) exitWith {
 	private["_message"];
 	_message = format["The goverment convoy truck was destroyed. The money has burned"];
 	format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;

@@ -82,7 +82,7 @@ if (_art == "getajob_taxi") then {
 			INV_LocalTaxiKunde = player;
 			call compile format["INV_LocalTaxiKunde = %1taxikunde", player];
 
-			if ((player != (vehicle player)) and (((vehicle player)) distance INV_LocalTaxiKunde < 30) and ((speed ((vehicle player))) < 2) and (not(workplacejob_taxi_kundeactive))) then {
+			if ((player != (vehicle player)) and (((vehicle player)) distance INV_LocalTaxiKunde < 30) and ((speed ((vehicle player))) < 2) and (!(workplacejob_taxi_kundeactive))) then {
 
 				player groupChat localize "STRS_workplacemission_taxi_wannagetin";
 
@@ -94,11 +94,11 @@ if (_art == "getajob_taxi") then {
 					_warte = time;
 					waitUntil {(INV_LocalTaxiKunde in vehicle player) or ((_warte+10)<time) or (INV_LocalTaxiKunde distance (vehicle player) <3)};
 
-					if ((not(INV_LocalTaxiKunde in vehicle player)) and (player != (vehicle player))) then {
+					if ((!(INV_LocalTaxiKunde in vehicle player)) and (player != (vehicle player))) then {
 						format["%1 moveInCargo %2",INV_LocalTaxiKunde, (vehicle player)] call A_broadcast_fnc_broadcast;
 					};
 
-					if (not(workplacejob_taxi_kundebeginn)) then {
+					if (!(workplacejob_taxi_kundebeginn)) then {
 						player groupChat localize "STRS_workplacemission_taxi_target";
 						workplacejob_taxi_kundebeginn = true;
 						_markername setMarkerPosLocal _ziel;

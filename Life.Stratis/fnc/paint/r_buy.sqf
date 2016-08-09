@@ -3,8 +3,8 @@
 
 
 private ["_x", "_n", "_moneh", "_cost", "_cfg1", "_cfg2"];
-_moneh  = [player, 'money'] call A_inventory_fnc_get_item_amount;
-_cost	= A_paint_var_cost;
+_moneh = [player, 'money'] call A_inventory_fnc_get_item_amount;
+_cost = A_paint_var_cost;
 
 if (_moneh < _cost) exitwith {player groupchat format["Your require $%1 for this", _cost];};
 
@@ -13,10 +13,11 @@ if (_moneh < _cost) exitwith {player groupchat format["Your require $%1 for this
 player groupchat format["You Paid $%1 to apply the original paint to your car", _cost];
 
 
-_cfg1		= getArray (configFile >> "CfgVehicles" >> P_Preview_Class >> "hiddenselections");
-_cfg2		= getArray (configFile >> "CfgVehicles" >> P_Preview_Class >> "hiddenselectionstextures");
+_cfg1 = getArray (configFile >> "CfgVehicles" >> P_Preview_Class >> "hiddenselections");
+_cfg2 = getArray (configFile >> "CfgVehicles" >> P_Preview_Class >> "hiddenselectionstextures");
 
-clearVehicleInit (vehicle player);
+// disabled in A3
+// clearVehicleInit (vehicle player);
 
 _n = 0;
 {

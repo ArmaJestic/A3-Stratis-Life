@@ -6,9 +6,9 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 
-if (not(createDialog "WeaponModifications")) exitWith {
+if (!(createDialog "WeaponModifications")) exitWith {
 	player groupChat format["ERROR: cannot create weapon modifications menu"];	
 };
 

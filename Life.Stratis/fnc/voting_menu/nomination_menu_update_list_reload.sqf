@@ -26,7 +26,7 @@ lbClear _voting_nomination_menu_list;
 private["_incumbent_candidate_data"];
 _incumbent_candidate_data = [_election_id] call A_voting_menu_fnc_get_incumbent_candidate;
 
-if (not(undefined(_incumbent_candidate_data))) then {
+if (!(undefined(_incumbent_candidate_data))) then {
 	private["_incumbent_candidate_name", "_incumbent_candidate_uid"];
 	_inclumbent_candidate_name = _incumbent_candidate_data select A_voting_menu_var_election_candidates_data_entry_name;
 	_inclumbent_candidate_uid = _incumbent_candidate_data select A_voting_menu_var_election_candidates_data_entry_uid;

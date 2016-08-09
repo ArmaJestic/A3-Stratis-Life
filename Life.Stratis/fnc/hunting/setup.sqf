@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 //Create turtle hunting Area
 private["_turtle_area"];
 _turtle_area = [];

@@ -12,8 +12,8 @@ if (isServer) then {
 	publicVariable "oil_derrick_setup_complete";
 };
 
-if (isClient) then {
-	waitUntil {(not(isNil "oil_derrick_setup_complete") && {oil_derrick_setup_complete})};
+if (!isServer) then {
+	waitUntil {(!(isNil "oil_derrick_setup_complete") && {oil_derrick_setup_complete})};
 	
 	["oil1"] call A_oil_derrick_fnc_setup_effects;
 	["oil2"] call A_oil_derrick_fnc_setup_effects;

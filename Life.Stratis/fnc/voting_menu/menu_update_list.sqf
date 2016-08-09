@@ -27,6 +27,6 @@ waitUntil {
 		_version = _new_version;
 		[_election_id] call A_voting_menu_fnc_menu_update_list_reload;
 	};
-	not(ctrlShown _list)
+	!(ctrlShown _list)
 };
 };

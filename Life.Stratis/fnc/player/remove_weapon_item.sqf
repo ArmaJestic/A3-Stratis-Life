@@ -8,7 +8,7 @@ ARGV(0,_player);
 ARGV(1,_weapon_id);
 ARGV(2,_item_id);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {false};
+if (!([_player] call A_player_fnc_exists)) exitWith {false};
 if (undefined(_weapon_id)) exitWith {false};
 if (typeName _weapon_id != "STRING") exitWith {false};
 if (undefined(_item_id)) exitWith {false};

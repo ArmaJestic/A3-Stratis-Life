@@ -26,17 +26,17 @@ while { _c <  (count playerstringarray) } do {
 	_player_variable = missionNamespace getVariable [_player_variable_name, null];
 	
 	if (true) then {
-		if (not([_player_variable] call A_player_fnc_exists)) exitWith {null};
+		if (!([_player_variable] call A_player_fnc_exists)) exitWith {null};
 		private["_is_civ", "_is_cop", "_is_ins", "_is_opf"];
 		_is_civ = [_player_variable] call A_player_fnc_civilian;
 		_is_cop = [_player_variable] call A_player_fnc_blufor;
 		_is_ins = [_player_variable] call A_player_fnc_independent;
 		_is_opf = [_player_variable] call A_player_fnc_opfor;
 		
-		if (_is_civ && not(_show_civ)) exitWith {null};
-		if (_is_cop && not(_show_cop)) exitWith {null};
-		if (_is_ins && not(_show_ins)) exitWith {null};
-		if (_is_opf && not(_show_opf)) exitWith {null};
+		if (_is_civ && !(_show_civ)) exitWith {null};
+		if (_is_cop && !(_show_cop)) exitWith {null};
+		if (_is_ins && !(_show_ins)) exitWith {null};
+		if (_is_opf && !(_show_opf)) exitWith {null};
 		
 		private["_player_name"];
 		_player_name = (name _player_variable);

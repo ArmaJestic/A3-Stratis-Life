@@ -13,7 +13,6 @@ _in_hands = if (count _this > 3) then { _this select 3 } else { false };
 
 if (_in_hands) then {
 	[player, _class] call A_bis_expected_fnc_addWeaponItem;
-}
-else {
+}else{
 	_crate addItemCargoGlobal [_class, _amount];
 };

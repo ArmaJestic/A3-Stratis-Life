@@ -4,4 +4,4 @@
 #include "..\..\includes\macro.h"
 
 
-tree_registry = [];
+A_tree_var_registry = [];

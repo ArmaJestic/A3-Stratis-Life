@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 
 role = _player;
 INV_hunger = 25;
@@ -18,7 +18,7 @@ A_main_var_A_main_var_demerits = if ("car" call A_inventory_fnc_has_license) the
 [_player, "restrained", false] call A_player_fnc_set_bool;
 [_player, "extradeadtime", 0] call A_player_fnc_set_scalar;
 
-if (not(isblu)) then {
+if (!(isblu)) then {
 	[_player, "sidemarkers", true] call A_player_fnc_set_bool;	
 };
 

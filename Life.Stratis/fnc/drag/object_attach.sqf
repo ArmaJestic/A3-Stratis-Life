@@ -8,8 +8,8 @@ player grouPChat format["A_drag_fnc_object_attach %1", _this];
 ARGV(0,_player);
 ARGV(1,_object);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
-if (not([_object] call A_object_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_object] call A_object_fnc_exists)) exitWith {};
 
 _object = [_object] call A_object_fnc_nonNetwork_convert;
 
@@ -17,16 +17,14 @@ private["_last_holder"];
 _last_holder = [_object, "last_holder", objNull] call A_object_fnc_getVariable;
 if (isNull _last_holder) then {
 	[] call A_interaction_fnc_play_pickup_animation;
-}
-else {
+}else{
 	_player playActionNow "PutDown";
 };
 
-if (not(local _object)) then {
+if (!(local _object)) then {
 	player groupChat format["object is NOT lcoal"];
 	[[_object, _player], "A_drag_fnc_remote_attach", _object, false] call BIS_fnc_MP;
-}
-else {
+}else{
 	player groupChat format["object is local"];
 	[_object, _player] call A_drag_fnc_remote_attach;
 };
@@ -50,15 +48,15 @@ player groupChat format["Last holder wait complete"];
 _player forceWalk true;
 waitUntil {
 	//player groupChat format["_object = %1", _object];
-	if (isNil "_player" || {isNull _player || {not(alive _player) || {not((vehicle _player) == _player)}}}) exitWith {true};
-	if (isNil "_object" || {isNull _object || {isPlayer _object && {not(alive _object)}}}) exitWith {true};
-	if (not([_player] call A_drag_fnc_object_active)) exitWith {true};
+	if (isNil "_player" || {isNull _player || {!(alive _player) || {!((vehicle _player) == _player)}}}) exitWith {true};
+	if (isNil "_object" || {isNull _object || {isPlayer _object && {!(alive _object)}}}) exitWith {true};
+	if (!([_player] call A_drag_fnc_object_active)) exitWith {true};
 	
 	//player groupChat format["owner(object) = %1, owner(player) = %2", (owner _object), (owner player)];
 	private["_last_holder"];
 	_last_holder = [_object, "last_holder", objNull] call A_object_fnc_getVariable;
 	//player groupChat format["_last_holder = %1", _last_holder];
-	if (not(_last_holder == _player)) exitWith {true};
+	if (!(_last_holder == _player)) exitWith {true};
 	
 	false
 };
@@ -67,10 +65,9 @@ waitUntil {
 _player forceWalk false;
 //[[_object, _player], "A_drag_fnc_remote_detach", _object, false] call BIS_fnc_MP;
 
-if (not(local _object)) then {
+if (!(local _object)) then {
 	[[_object, _player], "A_drag_fnc_remote_detach", _object, false] call BIS_fnc_MP;
-}
-else {
+}else{
 	[_object, _player] call A_drag_fnc_remote_detach;
 };
 

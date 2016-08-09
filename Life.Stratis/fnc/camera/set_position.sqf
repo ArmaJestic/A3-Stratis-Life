@@ -21,8 +21,7 @@ if (undefined(_target)) then {
 	_camera setPos _position;
 	//_camera camSetPos _position;
 	//_camera camCommit 0.3;
-}
-else {
+}else{
 	_camera attachTo [(vehicle _target), _position];
 };
 

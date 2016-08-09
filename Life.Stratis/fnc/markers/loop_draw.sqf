@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not([player] call A_camera_fnc_get_map_open)) exitWith {null};
+if (!([player] call A_camera_fnc_get_map_open)) exitWith {null};
 //player groupChat format["marking %1", _this];
 ARGV(0,_local_marker);
 if (undefined(_local_marker)) exitWith {null};
@@ -12,7 +12,7 @@ private["_player_variable_name", "_player_variable"];
 _player_variable_name = _local_marker;
 _player_variable = missionNamespace getVariable _player_variable_name;
 
-if (not([_player_variable] call A_player_fnc_exists)) exitWith {
+if (!([_player_variable] call A_player_fnc_exists)) exitWith {
 	_local_marker setMarkerAlphaLocal 0;
 };
 

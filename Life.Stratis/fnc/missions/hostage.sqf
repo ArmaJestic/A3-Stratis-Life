@@ -60,7 +60,7 @@ if (_art == "getajob_hostage") then {
 	
 	//[[_hostage_unit, _hostage_name], "A_missions_fnc_hostage_init_handler_persistent", true, true] spawn BIS_fnc_MP;
 	[[_hostage_unit, _hostage_name], "A_missions_fnc_hostage_init_handler_persistent", true, true, _hostage_unit] spawn A_jip_fnc_register;
-	waitUntil {not(isNil _hostage_name)};
+	waitUntil {!(isNil _hostage_name)};
 
 	format["workplacejob_hostage_serverarray = workplacejob_hostage_serverarray + [[%1, hostage1]];", player] call A_broadcast_fnc_broadcast;
 

@@ -5,8 +5,10 @@
 #include "..\..\includes\macro.h"
 
 
-PARAM_EXIT(A_loading_fnc_update_title, [["_title", null, [""], 1]])
-UNDEF_EXIT(A_loading_fnc_update_title, _title)
+//PARAM_EXIT(A_loading_fnc_update_title, [["_title", null, [""], 1]])
+//UNDEF_EXIT(A_loading_fnc_update_title, _title)
+
+if !(params [["_title", null, [""], 1]]) exitwith {LOGE_EP(A_loading_fnc_update_title)};
 
 format["A_loading_fnc_update_title: %1", _title] call A_err_fnc_logd;
 

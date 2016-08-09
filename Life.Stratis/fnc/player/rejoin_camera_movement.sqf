@@ -129,7 +129,7 @@ _camera camPreparePos [0,0,0];
 _camera camSetPos _position;
 _camera camSetTarget (_deadcam_target_array select _deadcam_kameraposition);
 _camera camSetFOV 0.700;
-if (not(sunOrMoon > 0)) then {
+if (!(sunOrMoon > 0)) then {
 	camUseNVG true;
 };
 _camera camCommit 1;

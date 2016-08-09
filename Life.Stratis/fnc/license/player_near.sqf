@@ -8,7 +8,7 @@
 ARGV(0,_player);
 ARGV(1,_distance);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 if (undefined(_distance)) exitWith {null};
 if (typeName _distance != "SCALAR") exitWith {null};
 
@@ -23,6 +23,9 @@ _min_vendor = null;
 	{
 		private["_cvendor", "_cdistance"];
 		_cvendor = _x;
+		if ((typeName _x) == "STRING") then {
+			_cvendor = missionNamespace getVariable[_x, objNull];
+		}
 		_cdistance = _player distance _cvendor;
 		if (_cdistance < _min_distance) then {
 			_min_distance = _cdistance;

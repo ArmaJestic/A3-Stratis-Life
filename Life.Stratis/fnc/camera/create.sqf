@@ -5,7 +5,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 
 private["_pos"];
 _pos = (getPosATL _player);
@@ -43,7 +43,7 @@ _camera camCommand "INERTIA OFF";
 	selectPlayer camera_rabbit;
 	camera_unit globalChat format["waiting!"];
 	waitUntil {
-		(not(alive _player) || (isNull ([_player, "camera", objNull] call A_object_fnc_getVariable)))
+		(!(alive _player) || (isNull ([_player, "camera", objNull] call A_object_fnc_getVariable)))
 	};
 	selectPlayer _player;
 	[[_player, true], "A_camera_fnc_camere_allowDamage", true, false] call BIS_fnc_MP;

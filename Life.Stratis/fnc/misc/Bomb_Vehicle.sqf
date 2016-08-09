@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 if (count _this > 1) then {
-	if (not(isNull (_this select 1))) then {
+	if (!(isNull (_this select 1))) then {
 		_obj = _this select 1;
 		if (((getPosATL _obj) select 2) > 5) then {
 			liafu = true;
@@ -14,8 +14,7 @@ if (count _this > 1) then {
 			_obj setDamage 1;
 		};
 	};
-}
-else {
+}else{
 	createVehicle ["Bo_GBU12_LGB", (_this select 0), [], 0, "NONE"];
 };
 

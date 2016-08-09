@@ -9,9 +9,9 @@ A_player_var_rejoin_choice_active = true;
 titleText ["", "BLACK OUT", 0.0001];
 private["_pos"];
 player setDamage 1;
-//waitUntil {not(isNil "player_rejoin_camera_complete") && {player_rejoin_camera_complete}};
+//waitUntil {!(isNil "player_rejoin_camera_complete") && {player_rejoin_camera_complete}};
 
-waitUntil { not(alive player)};
+waitUntil { !(alive player)};
 setPlayerRespawnTime _countdown;
 [player, 0] call BIS_fnc_respawnMenuPosition;
 waitUntil {(alive player)};

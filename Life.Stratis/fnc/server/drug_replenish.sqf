@@ -6,7 +6,7 @@
 	if (true) then {
 		private["_gang_area"];
 		_gang_area = _x;
-		if (not([_gang_area] call A_gang_fnc_area_neutral)) exitWith {null};
+		if (!([_gang_area] call A_gang_fnc_area_neutral)) exitWith {null};
 		
 		private["_shop_id"];
 		_shop_id = _gang_area call A_inventory_fnc_get_shop_number;

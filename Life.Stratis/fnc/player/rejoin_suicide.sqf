@@ -8,4 +8,4 @@ private["_pos"];
 _pos = getPos player;
 player setPos [(_pos select 0),(_pos select 1) ,10000];
 player setDamage 1;
-//waitUntil {not(isNil "player_rejoin_camera_complete") && {player_rejoin_camera_complete}};
+//waitUntil {!(isNil "player_rejoin_camera_complete") && {player_rejoin_camera_complete}};

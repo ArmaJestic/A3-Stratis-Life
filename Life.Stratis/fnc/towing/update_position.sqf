@@ -29,8 +29,7 @@ if ((_towed distance _bridge) < 15) then {
 	_towed setPosASL _towed_pos;
 	_towed setVectorUp [0,0,1];
 	_towed setVectorDir _dir_vector;
-}
-else {
+}else{
 	_towed_pos set [2, 0];
 	_towed setPos _towed_pos;
 	_towed setVectorUp _up_vector;

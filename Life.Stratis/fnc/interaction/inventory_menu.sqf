@@ -6,7 +6,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (!(createDialog "inventory_menu")) exitWith {hint "Dialog Error!";};
 
 [] call A_inventory_menu_fnc_setup;

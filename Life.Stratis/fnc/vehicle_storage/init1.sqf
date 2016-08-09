@@ -11,5 +11,3 @@ A_vehicle_storage_var_id = 0;
 A_vehicle_storage_var_title = 1;
 A_vehicle_storage_var_data_keys = 2;
 A_vehicle_storage_var_data_entries = 3;
-
-

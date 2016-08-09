@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {0};
+if (!([_player] call A_player_fnc_human)) exitWith {0};
 
 private["_fac_money", "_priv_money", "_bank_money", "_inv_money"];
 _fac_money = [_player] call A_money_fnc_get_factory_money;

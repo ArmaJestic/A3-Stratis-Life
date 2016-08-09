@@ -15,8 +15,7 @@ if (_speed < 0) then {
 	if (_angle < 90) then {
 		_percent = 1.001;
 	};
-}
-else {
+}else{
 	//going forward
 	_percent = 1;
 	if (_angle != 0) then {

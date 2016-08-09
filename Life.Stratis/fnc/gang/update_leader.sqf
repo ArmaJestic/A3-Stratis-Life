@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 
 player groupChat format["A_gang_fnc_update_leader %1", _this];
 ARGV(0,_gang_id);

@@ -30,7 +30,7 @@
 	["Remove player weapons", {
 		ARGV(0,_player);
 		ARGV(1,_target);
-		if (not([_target] call A_player_fnc_human)) exitWith {null};
+		if (!([_target] call A_player_fnc_human)) exitWith {null};
 		
 		[format["removed %1-%2 (%3)'s weapons", _target, (name _target), (getPlayerUID _target)]] call A_admin_menu_fnc_logAdmin;
 		
@@ -45,7 +45,7 @@
 	["Kill player", {
 		ARGV(0,_player);
 		ARGV(1,_target);
-		if (not([_target] call A_player_fnc_human)) exitWith {null};
+		if (!([_target] call A_player_fnc_human)) exitWith {null};
 		
 		[format["killed %1-%2 (%3)", _target, (name _target), (getPlayerUID _target)]] call A_admin_menu_fnc_logAdmin;
 		
@@ -60,7 +60,7 @@
 	["Destroy player vehicle", {
 		ARGV(0,_player);
 		ARGV(1,_target);
-		if (not([_target] call A_player_fnc_human)) exitWith {null};
+		if (!([_target] call A_player_fnc_human)) exitWith {null};
 		
 
 		[format["destroyed %1-%2 (%3)'s vehicle", _target, (name _target), (getPlayerUID _target)]] call A_admin_menu_fnc_logAdmin;
@@ -76,7 +76,7 @@
 	["Wipe player stats", {
 		ARGV(0,_player);
 		ARGV(1,_target);
-		if (not([_target] call A_player_fnc_human)) exitWith {null};
+		if (!([_target] call A_player_fnc_human)) exitWith {null};
 
 		[format["wiped %1-%2 (%3)'s stats", _target, (name _target), (getPlayerUID _target)]] call A_admin_menu_fnc_logAdmin;
 		
@@ -85,7 +85,7 @@
 	}],
 	["Reset time(40m dy, 20m nt)", {
 		player groupChat "Time reset (40-min day, 20-min night), please wait for synchronization to complete";
-		[40,20] call A_time_functions_fnc_reset;
+		[40,20] call A_time_fnc_reset;
 	}],
 	["MOTD (use input field)", {
 		custom_motd = _inputText;
@@ -94,9 +94,9 @@
 	["Delete Target (Man)", {
 		private["_target"];
 		_target = cursorTarget;
-		if (not(undefined(_target))) then {
+		if (!(undefined(_target))) then {
 			if (typeName _target == "OBJECT") then {
-				if (_target isKindOf "Man" && not([_target] call A_object_fnc_shop)) then {
+				if (_target isKindOf "Man" && !([_target] call A_object_fnc_shop)) then {
 					[_target] call A_bis_expected_fnc_unitDelete;
 				};
 			};
@@ -105,17 +105,16 @@
 	["Teleport", {
 		ARGV(0,_player);
 		ARGV(1,_target);
-		if (not(undefined(_target))) then {
+		if (!(undefined(_target))) then {
 			[_target] call A_interaction_fnc_teleport_player;
-		}
-		else {
+		}else{
 			[_player] call A_interaction_fnc_teleport_player;
 		};
 	}],
 	["Kick to lobby", {
 		ARGV(0,_player);
 		ARGV(1,_target);
-		if (not([_target] call A_player_fnc_human)) exitWith {null};
+		if (!([_target] call A_player_fnc_human)) exitWith {null};
 
 		[format["kicked %1-%2 (%3) to lobby", _target, (name _target), (getPlayerUID _target)]] call A_admin_menu_fnc_logAdmin;
 		format['[%1] call A_interaction_fnc_kick_to_lobby;', _target] call A_broadcast_fnc_broadcast;

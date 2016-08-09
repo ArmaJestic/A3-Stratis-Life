@@ -5,5 +5,5 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_object_fnc_exists)) exitWith {false};
+if (!([_player] call A_object_fnc_exists)) exitWith {false};
 ([_player] call A_underwater_base_fnc_underwater_base_player_inside || {[_player] call A_underwater_base_fnc_underground_base_player_inside})

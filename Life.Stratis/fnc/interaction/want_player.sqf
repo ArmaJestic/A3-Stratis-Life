@@ -9,8 +9,8 @@ ARGV(0,_player);
 ARGV(1,_victim);
 ARGV(2,_reason);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_victim] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_victim] call A_player_fnc_human)) exitWith {null};
 if (undefined(_reason)) exitWith {null};
 if (typeName _reason != "STRING") exitWith {null};
 
@@ -22,7 +22,7 @@ if ([_victim] call A_player_fnc_get_arrest) exitWith {
 	player groupChat format["%1-%2 is in prison, cannot be set wanted", _victim,  (name _victim)];
 };
 
-if (not(alive _victim)) exitWith {
+if (!(alive _victim)) exitWith {
 	player groupChat format["%1-%2 is not alive, cannot be set wanted", _victim,  (name _victim)];
 };
 

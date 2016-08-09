@@ -11,8 +11,8 @@ ARGV(1,_victim);
 ARGV(2,_minutes);
 ARGV(3,_bail_percent);
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
-if (not([_victim] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
+if (!([_victim] call A_player_fnc_human)) exitWith {};
 if (undefined(_minutes)) exitWith {};
 if (undefined(_bail_percent)) exitWith {};
 
@@ -24,7 +24,7 @@ if (typeName _bail_percent != "SCALAR") exitWith {};
 if (_bail_percent <= 0) exitWith {};
 
 
-if (not([_victim, "restrained"] call A_player_fnc_get_bool)) exitWith {
+if (!([_victim, "restrained"] call A_player_fnc_get_bool)) exitWith {
 	player groupChat format["%1-%2 is not restrained!", _victim, (name _victim)];
 };
 

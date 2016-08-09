@@ -4,7 +4,7 @@
 
 
 ARGV(0,_vehicle);
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {};
 
 private["_pos"];
 _pos = getPos _vehicle;

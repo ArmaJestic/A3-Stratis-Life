@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isblu)) exitWith {null};
+if (!(isblu)) exitWith {};
 
 private["_i", "_salary_delay"];
 _salary_delay =  5;
@@ -13,7 +13,7 @@ while { _i > 0 && isblu } do {
 	[60] call A_player_fnc_isleep;
 	_i = _i - 1;
 };
-if (not(isblu)) exitWith {null};
+if (!(isblu)) exitWith {};
 [] spawn A_salary_fnc_cop_salary_handout;
 [1] call A_player_fnc_isleep;
 [] spawn A_salary_fnc_cop_salary_loop;

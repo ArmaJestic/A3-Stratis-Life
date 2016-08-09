@@ -14,7 +14,7 @@ if (isNull _towing_line) exitWith {};
 
 private["_endpoint_object"];
 _endpoint_object = _towing_line getVariable [format["%1", _endpoint_type], null];
-if (not(undefined(_endpoint_object))) then {
+if (!(undefined(_endpoint_object))) then {
 	_endpoint_object setVariable ["towing_line", nil, true];
 };
 

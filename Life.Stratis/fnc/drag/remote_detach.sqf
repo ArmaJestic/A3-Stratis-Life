@@ -14,7 +14,7 @@ detach _object;
 
 //player grouPChat format["ishelper %1", (_object isKindOf "Helper_Base_F")];
 
-if (([_object] call A_drag_fnc_object_weightless) && {not(surfaceIsWater position _object)}) then {
+if (([_object] call A_drag_fnc_object_weightless) && {!(surfaceIsWater position _object)}) then {
 	private["_pos"];
 	_pos =  getPos _object;
 	_pos set [2,0];
@@ -22,16 +22,14 @@ if (([_object] call A_drag_fnc_object_weightless) && {not(surfaceIsWater positio
 	if (_object isKindOf "Animal") then {
 		_object setPos _pos;
 		_object setVectorUp [0,0,1];
-	}
-	else {
+	}else{
 		private["_vup", "_vdir"];
 		_vup = vectorUp _object;
 		_vdir = vectorDir _object;
 		_object setPos _pos;
 		_object setVectorDirAndUp [_vdir, [0,0,1]];
 	};
-}
-else { if (_object isKindOf "Skeet_Clay_F") then {
+}else{ if (_object isKindOf "Skeet_Clay_F") then {
 	_object setVectorUp [0,0,1];
 };};
 
@@ -42,7 +40,7 @@ if (_last_holder == _player) then {
 	[_object, "last_holder", nil, true] call A_object_fnc_setVariable;
 };
 
-if (not(isPlayer _object)) exitWith {};
+if (!(isPlayer _object)) exitWith {};
 if (undefined(_player)) exitWith {};
 
 private["_pos", "_off"];

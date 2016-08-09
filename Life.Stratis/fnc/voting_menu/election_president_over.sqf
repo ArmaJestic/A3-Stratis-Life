@@ -34,7 +34,6 @@ _player_uid = getPlayerUID player;
 if (_player_uid == _first_place_uid) then {
 	[_first_place_uid] call A_player_fnc_set_president_uid;
 	hint format["%1-%2, Congratutations!\n You have won the %3 election with %4 votes.", _player, (name _player), toLower(_election_title), _first_place_votes];
-}
-else {
+}else{
 	hint format["%1 has won the %2 election with %3 votes.", _first_place_name, toLower(_election_title), _first_place_votes];
 };

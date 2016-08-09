@@ -6,14 +6,14 @@
  _this spawn {
 disableSerialization;
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (_player != player) exitWith {null};
 
 if (A_bank_menu_var_recently_robbed_bank)  exitWith {
 	player groupChat format ["You robbed the bank a few minutes ago. You can not use it for %1 minutes after you robbed it.", strM(recently_robbed_bank_amount)];
 };
 
-if (not(createDialog "bank_menu")) exitWith {
+if (!(createDialog "bank_menu")) exitWith {
 	player groupChat format["ERROR: Could not create bank menu dialog"];
 };
 
@@ -28,7 +28,7 @@ _my_index = 0;
 	private["_variable_name", "_variable_value"];
 	_variable_name = _x;
 	_variable_value = missionNamespace getVariable [_variable_name, null];
-	if(not([_variable_value] call A_player_fnc_exists)) exitWith {};
+	if(!([_variable_value] call A_player_fnc_exists)) exitWith {};
 	
 	private["_index"];
 	_index = _list lbAdd (format["%1 - (%2)", (_variable_name), (name _variable_value)]);

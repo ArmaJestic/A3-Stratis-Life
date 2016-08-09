@@ -1,6 +1,6 @@
 // A_farming_fnc_gathergen
 
-#include "includes\macro.h"
+#include "..\..\includes\macro.h"
 
 _type    = ((_this select 3)select 0);
 _item    = _this select 0;

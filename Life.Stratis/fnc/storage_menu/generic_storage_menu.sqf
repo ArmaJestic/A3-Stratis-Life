@@ -98,8 +98,7 @@ buttonSetAction [storage_menu_put_button_idc, '[(lbData [storage_menu_right_list
 			_left_amount =  [(ctrlText storage_menu_left_amount_field_idc)] call A_misc_fnc_parse_number;
 			_left_selection_value  = lbData [storage_menu_left_list_idc, (lbCurSel storage_menu_left_list_idc)];
 			ctrlSetText [storage_menu_left_weight_field_idc,  [_left_selection_value, _left_amount] call _left_selection_code];
-		}
-		else {
+		}else{
 			ctrlSetText [storage_menu_left_weight_field_idc,  "0"];
 		};
 		
@@ -111,12 +110,11 @@ buttonSetAction [storage_menu_put_button_idc, '[(lbData [storage_menu_right_list
 			_right_selection_value = lbData [storage_menu_right_list_idc, (lbCurSel storage_menu_right_list_idc)];
 			_right_amount = [(ctrlText storage_menu_right_amount_field_idc)] call A_misc_fnc_parse_number;
 			ctrlSetText [storage_menu_right_weight_field_idc,  [_right_selection_value, _right_amount] call _right_selection_code];
-		}
-		else {
+		}else{
 			ctrlSetText [storage_menu_right_weight_field_idc,  "0"];
 		};
 		
-		not(ctrlVisible storage_menu_left_header_idc)
+		!(ctrlVisible storage_menu_left_header_idc)
 	};
 };
 

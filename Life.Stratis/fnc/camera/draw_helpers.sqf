@@ -5,7 +5,7 @@
 
 
 if (undefined(camera_unit)) exitWith {};
-if (not([camera_unit] call A_camera_fnc_enabled)) exitWith {};
+if (!([camera_unit] call A_camera_fnc_enabled)) exitWith {};
 private["_target", "_ltarget"];
 _ltarget = [camera_unit] call A_camera_fnc_get_left_click_target;
 _target = cursorTarget;

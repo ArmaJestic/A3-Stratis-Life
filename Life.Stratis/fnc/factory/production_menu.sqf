@@ -7,7 +7,7 @@
 ARGV(0,_player);
 ARGV(1,_factory_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_factory_id)) exitWith {null};
 if (typeName _factory_id != "STRING") exitWith {null};
 
@@ -21,7 +21,7 @@ disableSerialization;
 //set the factory being used, for other UI functions
 A_factory_var_selected = _factory;
 [] spawn {
-	waitUntil { not(ctrlVisible factory_enqueue_list_idc) };
+	waitUntil { !(ctrlVisible factory_enqueue_list_idc) };
 	A_factory_var_selected = null;
 };
 

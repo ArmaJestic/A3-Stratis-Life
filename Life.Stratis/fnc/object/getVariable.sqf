@@ -15,7 +15,7 @@ if (undefined(_default)) then {
 
 private["_storage_object"];
 _storage_object = _object getVariable ["storage", _object];
-if (not(isNull _storage_object)) then {
+if (!(isNull _storage_object)) then {
 	_object = _storage_object;
 };
 

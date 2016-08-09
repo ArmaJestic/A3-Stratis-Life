@@ -4,7 +4,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isServer)) exitWith {};
+if (!(isServer)) exitWith {};
 
 [format["A_tree_fnc_register_setup %1", _this]] call A_jip_fnc_message;
 tree_register_request_buffer =  "";

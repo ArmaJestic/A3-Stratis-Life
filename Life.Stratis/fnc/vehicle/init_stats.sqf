@@ -42,40 +42,35 @@ _vehicle enableSimulation false; //disable simulation so that the vehicle does n
 //set the position
 if (typeName _position_atl == "ARRAY" && {count(_position_atl) == 3}) then {
 	_vehicle setPosATL _position_atl;
-}
-else {
+}else{
 	player globalChat format["WARNING: Could not load vehicle stat: _position_atl"];
 };
 
 //set the velocity
 if (typeName _velocity == "SCALAR") then {
 	_vehicle setVelocity _velocity;
-}
-else {
+}else{
 	player globalChat format["WARNING: Could not load vehicle stat: _velocity"];
 };
 
 //set the direction
 if (typeName _vector_direction == "ARRAY" && {typename _vector_up == "ARRAY"}) then {
 	_vehicle setVectorDirAndUp [_vector_direction, _vector_up];
-}
-else {
+}else{
 	player globalChat format["WARNING: Could not load vehicle stat: _vector_direction, _vector_up"];
 };
 
 //set the engine state
 if (typeName _engine_state == "BOOL") then {
 	_vehicle engineOn _engine_state;
-}
-else {
+}else{
 	player globalChat format["WARNING: Could not load vehicle stat: _damage"];
 };
 
 //set the fuel
 if (typeName _fuel == "SCALAR") then {
 	_vehicle setFuel _fuel;
-}
-else {
+}else{
 	player globalChat format["WARNING: Could not load vehicle stat: _fuel"];
 };
 

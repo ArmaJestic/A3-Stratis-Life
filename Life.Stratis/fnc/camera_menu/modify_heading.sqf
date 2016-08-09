@@ -15,8 +15,7 @@ _offset = [_object, "offset", (_object modelToWorld [0,0,0])] call A_object_fnc_
 
 if (_operation == CAMERA_HEADING_OP_ADD) then {
 	_heading set [_axis, ((_heading select _axis) + _value)];
-}
-else {
+}else{
 	_heading set [_axis, _value];
 };
 

@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not(call A_holster_fnc_pistol_in_inventory)) exitWith {
+if (!(call A_holster_fnc_pistol_in_inventory)) exitWith {
 	_player groupChat format["You have no pistol in your inventory"];
 	INV_InventarPistol = null;
 };

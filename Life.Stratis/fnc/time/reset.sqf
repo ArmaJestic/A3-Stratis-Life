@@ -1,4 +1,4 @@
-// A_time_functions_fnc_reset
+// A_time_fnc_reset
 
 #include "..\..\includes\macro.h"
 
@@ -19,5 +19,5 @@ _this spawn {
 	server setVariable ["time_sunrise_to_sunset_minutes", _sunrise, true];
 	server setVariable ["time_sunset_to_sunrise_minutes", _sunset, true];
 	sleep 3;
-	"if (!isServer || (isServer && !isDedicated)) then { [true] spawn A_time_functions_fnc_loop;};" call A_broadcast_fnc_broadcast;
+	"if (!isServer || (isServer && !isDedicated)) then { [true] spawn A_time_fnc_loop;};" call A_broadcast_fnc_broadcast;
 };

@@ -6,6 +6,6 @@
 
 if(!INV_shortcuts) exitWith {false};
 if(dialog) exitWith {closeDialog 0; false};
-if (not(isciv)) exitWith {false};
+if (!(isciv)) exitWith {false};
 [player] call A_interaction_fnc_gang_menu;
 true

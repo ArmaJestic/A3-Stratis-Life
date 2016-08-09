@@ -7,7 +7,7 @@
 ARGV(0,_object);
 ARGV(1,_Arrayname);
 
-if (not([_object, _arrayname, "drug"] call A_inventory_fnc_storage_has_kind)) exitWith {
+if (!([_object, _arrayname, "drug"] call A_inventory_fnc_storage_has_kind)) exitWith {
 	player groupchat "No illegal things found.";
 	false
 };

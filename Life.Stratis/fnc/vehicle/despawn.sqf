@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
  _this spawn {
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 private["_vehicle", "_delay"];
 
 //diag_log format["A_vehicle_fnc_despawn %1", _this];

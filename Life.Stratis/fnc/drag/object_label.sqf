@@ -7,5 +7,5 @@
 ARGV(0,_object);
 if (undefined(_object)) exitWith {""};
 
-if (not(isNull _object) && {isPlayer _object}) exitWith {name _object};
+if (!(isNull _object) && {isPlayer _object}) exitWith {name _object};
 (_object getVariable ["label", "item"])

@@ -25,13 +25,11 @@ _eta = 0;
 if (_index < 0) then {
 	_eta = 0;
 	_item_name = "(none)";
-}
-else { if (_index == 0) then {
+}else{ if (_index == 0) then {
 	private["_eta_name"];
 	_eta_name = format["%1eta", _item];
 	_eta = missionNamespace getVariable _eta_name;
-}
-else {
+}else{
 	private["_queue_name", "_workers_name", "_workers"];
 	_queue_name = _factory select factory_queue;
 	_workers_name = format["%1workers", _queue_name];

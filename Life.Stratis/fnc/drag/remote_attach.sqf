@@ -20,7 +20,7 @@ _weapon = currentWeapon _player;
 
 
 
-if (_weapon == "" && not(undefined(_point))) exitWith {
+if (_weapon == "" && !(undefined(_point))) exitWith {
 	private["_heading", "_offset"];
 	_heading = _point select A_drag_var_attach_point_heading;
 	_offset = _point select A_drag_var_attach_point_offset;

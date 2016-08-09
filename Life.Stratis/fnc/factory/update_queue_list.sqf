@@ -37,8 +37,7 @@ while { _i < (count _queue) } do {
 		_previous_item_count = _previous_item_count + 1;
 		_previous_item = _citem;
 		_list set [((count _list) - 1), [format["%1. %2 (%3 item)",_logical_index, _citem_name, _previous_item_count], _citem]];
-	}
-	else {
+	}else{
 		_logical_index = _logical_index + 1;
 		_previous_item_count = 1;
 		_previous_item = _citem;

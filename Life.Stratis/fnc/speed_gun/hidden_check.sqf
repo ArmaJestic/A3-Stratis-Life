@@ -4,7 +4,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(INV_shortcuts) && not(A_speed_gun_var_hidden)) then {
+if (!(INV_shortcuts) && !(A_speed_gun_var_hidden)) then {
 	[] call A_speed_gun_fnc_hud_remove;
 	A_speed_gun_var_hidden = true;
 };

@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 if ([_player] call A_player_fnc_blufor) then {
 	private["_amount"];	
@@ -13,8 +13,7 @@ if ([_player] call A_player_fnc_blufor) then {
 	
 	[_player, "money", _amount] call A_player_fnc_drop_item;
 	[_player, "money", -(_amount)] call A_inventory_fnc_add_item;
-}
-else {
+}else{
 	private["_i"];
 	_i = 0;
 	

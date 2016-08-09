@@ -4,7 +4,7 @@
 
 
 ARGV(0,_vehicle);
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {false};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {false};
 
 private["_in_safe_zone"];
 _in_safe_zone = false;

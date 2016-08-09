@@ -41,8 +41,7 @@ if (typeName _respawn == "OBJECT" && {_respawn isKindOf "Air" || _respawn isKind
 	if (_player in _vehicle) exitwith {};
 	
 	_player setPos getPos _vehicle;
-}
-else { if (typeName _respawn == "STRING") then {
+}else{ if (typeName _respawn == "STRING") then {
 	_respawn = missionNamespace getVariable [_respawn + "_proxy", _respawn];
 	if (typeName _respawn == "STRING") exitWith {
 		_player setPos (getMarkerPos _respawn);
@@ -64,8 +63,7 @@ else { if (typeName _respawn == "STRING") then {
 	
 	_player attachTo [_respawn, [_xr,_yr,0]];
 	detach _player;
-}
-else { if (typeName _respawn == "ARRAY") then {	
+}else{ if (typeName _respawn == "ARRAY") then {	
 	_player attachTo [attachRef, _respawn];
 	detach _player;
 };};};

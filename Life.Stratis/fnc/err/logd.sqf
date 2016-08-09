@@ -8,10 +8,11 @@
 // private _err = params[["_str", null, [""], 1]];
 // EXT_ERR(_err, A_err_fnc_logd)
 
-PARAM_EXIT(A_err_fnc_logd, [["_str", null, [""], 1]])
-UNDEF_EXIT(A_err_fnc_logd, _str)
+//PARAM_EXIT(A_err_fnc_logd, [["_str", null, [""], 1]])
+//UNDEF_EXIT(A_err_fnc_logd, _str)
 
+if !(params [["_str", null, [""], 1]]) exitwith {LOGE_EP(A_err_fnc_logd)};
 
-if (A_err_var_logd) {
+if (A_err_var_logd) then {
 	[_str] call A_err_fnc_log;
 };

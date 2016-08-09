@@ -9,7 +9,7 @@ ARGV(1,_plant_netid);
 
 if ((_plant_netid == A_plant_var_actions_netid)) exitWith {};
 
-if (not([_player] call A_player_fnc_human)) exitWith {};
+if (!([_player] call A_player_fnc_human)) exitWith {};
 if (undefined(_plant_netid)) exitWith {};
 if (typeName _plant_netid != "STRING") exitWith {};
 
@@ -21,7 +21,7 @@ private["_plant"];
 _plant = objectFromNetId _plant_netid;
 if (isNull _plant) exitWith {};
 
-if (not([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {};
+if (!([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {};
 
 private["_item"];
 _item = [_plant, "item", ""] call A_object_fnc_getVariable;

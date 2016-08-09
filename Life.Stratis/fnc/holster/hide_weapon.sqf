@@ -5,7 +5,7 @@
 
 ARGV(0,_player);
 
-if (not(call A_holster_fnc_pistol_in_hands)) exitWith {
+if (!(call A_holster_fnc_pistol_in_hands)) exitWith {
 	player groupChat format["You have no pistol in your hands to A_other_fnc_holster"];
 };
 

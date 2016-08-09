@@ -8,7 +8,7 @@ ARGV(0,_player);
 ARGV(1,_weapon_id);
 ARGV(2,_slot_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {""};
+if (!([_player] call A_player_fnc_human)) exitWith {""};
 if (undefined(_weapon_id)) exitWith {""};
 if (typeName _weapon_id != "STRING") exitWith {""};
 if (undefined(_slot_id)) exitWith {""};

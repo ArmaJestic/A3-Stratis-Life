@@ -11,7 +11,7 @@ A_hunting_var_spawned_animals = A_hunting_var_spawned_animals - [objNull];
 {if (true) then {
 	private["_animal"];
 	_animal = _x;
-	if (not(_animal isKindOf _animal_class)) exitWith {};
+	if (!(_animal isKindOf _animal_class)) exitWith {};
 	if ((_animal distance _spawn_logic) > _spawn_radius) then { 
 		//player groupChat format["CLEANING ANIMAL: %1 ", _animal];
 		//_animal setDamage 1;

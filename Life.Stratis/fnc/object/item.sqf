@@ -11,4 +11,4 @@ if (isNull _object) exitWith {false};
 
 private["_item"];
 _item = _object getVariable ["item", ""];
-not(_item == "")
+!(_item == "")

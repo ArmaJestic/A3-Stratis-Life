@@ -7,7 +7,7 @@
 ARGV(0,_this);
 ARGV(0,_player);
 
-if (not([_player] call A_player_fnc_exists)) exitWith {};
+if (!([_player] call A_player_fnc_exists)) exitWith {};
 
 
 [true] call A_legislation_menu_fnc_menu_setup;

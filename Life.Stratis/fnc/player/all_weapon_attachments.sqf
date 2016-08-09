@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {[]};
+if (!([_player] call A_player_fnc_exists)) exitWith {[]};
 
 private["_items"];
 _items = (primaryWeaponItems _player) + (secondaryWeaponItems _player) + (handgunItems _player) ;

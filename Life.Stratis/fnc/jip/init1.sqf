@@ -1,9 +1,9 @@
 // A_jip_fnc_init1
 
 if (isServer) then {
-	jip_registry = [];
+	A_jip_var_registry = [];
 };
 
-jip_entry_arguments = 0;
-jip_entry_callback = 1;
-jip_entry_object = 2;
+A_jip_var_arguments = 0;
+A_jip_var_callback = 1;
+A_jip_var_object = 2;

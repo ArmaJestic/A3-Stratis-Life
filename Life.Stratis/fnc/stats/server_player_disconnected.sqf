@@ -27,7 +27,7 @@ diag_log format["%1,%2,%3 - disconnected saving end", _player, _name, _uid];
 
 private["_vehicle"];
 _vehicle = (vehicle _player);
-if (not(_vehicle == _player)) then {
+if (!(_vehicle == _player)) then {
 	[_vehicle] call A_vehicle_fnc_save_stats;
 	[_vehicle] call A_vehicle_fnc_start_track;
 };

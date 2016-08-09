@@ -9,7 +9,7 @@ _player = player;
 private["_towing"];
 _towing = [_player] call A_towing_fnc_player_near;
 
-if (undefined(_towing) || {not(INV_shortcuts) || {not(alive _player)}}) exitWith {
+if (undefined(_towing) || {!(INV_shortcuts) || {!(alive _player)}}) exitWith {
 	[_player] call A_towing_fnc_remove_actions;
 };
 

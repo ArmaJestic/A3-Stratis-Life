@@ -6,4 +6,4 @@
 
 
 ARGV(0,_player);
-(not([_player] call A_player_fnc_vulnerable))
+(!([_player] call A_player_fnc_vulnerable))

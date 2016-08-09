@@ -5,7 +5,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 private["_private_storage_name", "_player_storage_name"];
 _private_storage_name = "private_storage";

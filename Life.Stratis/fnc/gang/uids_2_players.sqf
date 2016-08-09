@@ -17,7 +17,7 @@ while {_i < (count _uids_list)} do {
 	_uid = _uids_list select _i;
 	private["_player"];
 	_player = [_uid] call A_player_fnc_lookup_gang_uid;
-	if (not(undefined(_player))) then {
+	if (!(undefined(_player))) then {
 		_players = _players + [_player];
 	};
 	_i = _i + 1;

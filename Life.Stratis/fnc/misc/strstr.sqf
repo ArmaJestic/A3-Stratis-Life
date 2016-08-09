@@ -18,7 +18,7 @@ private["_i", "_j", "_k", "_matches", "_chr1", "_chr2"];
 _i = 0;
 _matches = false;
 
-while { not(_matches) && _i < (count _haystack_array) } do {
+while { !(_matches) && _i < (count _haystack_array) } do {
 	private["_haystack_char"];
 	_k = _i;
 	_j = 0;

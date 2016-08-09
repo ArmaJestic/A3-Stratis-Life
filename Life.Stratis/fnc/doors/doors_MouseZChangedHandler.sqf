@@ -5,7 +5,7 @@
 #include "..\..\includes\dikcodes.h"
 
 
-if (not(A_doors_var_doors_lcontrol_state)) exitWith {};
+if (!(A_doors_var_doors_lcontrol_state)) exitWith {};
 ARGV(0,_event);
 ARGV(1,_data);
 

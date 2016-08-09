@@ -8,6 +8,6 @@
 private["_display"];
 waitUntil {
 	_display = findDisplay 46;
-	not(isNil "_display" || {isNull _display})
+	!(isNil "_display" || {isNull _display})
 };
 _display

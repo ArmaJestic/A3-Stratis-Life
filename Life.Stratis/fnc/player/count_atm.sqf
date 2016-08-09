@@ -6,7 +6,7 @@
 ARGV(0,_player);
 ARGV(1,_distance);
 
-if (not([_player] call A_player_fnc_human)) exitWith { 0};
+if (!([_player] call A_player_fnc_human)) exitWith { 0};
 if (undefined(_distance)) exitWith {0};
 if (typeName _distance != "SCALAR") exitWith {0};
 

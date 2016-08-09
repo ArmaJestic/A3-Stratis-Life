@@ -1,7 +1,7 @@
 // A_nametags_fnc_tags_driver_string
 
 #include "..\..\includes\macro.h"
-#include "..\..\constants.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_vehicle);
@@ -17,8 +17,7 @@ _crew_str = "";
 {
 	if (_forEachIndex == 0) then { 
 		_crew_str = (name _x);
-	}
-	else {
+	}else{
 		_crew_str = _crew_str + "," + (name _x);
 	};
 } forEach _crew;

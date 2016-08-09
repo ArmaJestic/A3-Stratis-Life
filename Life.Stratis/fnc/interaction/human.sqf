@@ -8,10 +8,10 @@
 ARGV(0,_player);
 ARGV(1,_target);
 
-if (not([_player] call A_player_fnc_human)) exitWith {false};
-if (not([_target] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_target] call A_player_fnc_human)) exitWith {false};
 
-if (([_player] call A_player_fnc_blufor) && (not([_target] call A_player_fnc_blufor) || ([_player] call A_player_fnc_chief))) exitWith {
+if (([_player] call A_player_fnc_blufor) && (!([_target] call A_player_fnc_blufor) || ([_player] call A_player_fnc_chief))) exitWith {
 	[_player, _target] call A_interaction_fnc_police_menu;
 	true;
 };

@@ -23,8 +23,7 @@ _victims = [player, "victims"] call A_object_fnc_getVariable;
 		_index = lbAdd [kvlist, format ["A_retributions_fnc_victim(TK): %1 (+$%2, +$%3)", _victim_name, _damages, _fees]];
 		lbSetData [kvlist, _index, format["%1", ["vtk", _victim_data]]];
 		lbSetColor [kvlist, _index, [0, 1, 0, 1]];
-	}
-	else { if ( _type == "DM") then {
+	}else{ if ( _type == "DM") then {
 		_index = lbAdd [kvlist, format ["A_retributions_fnc_victim(DM): %1 (+$%2, +$%3)", _victim_name, _damages, _fees]];
 		lbSetData [kvlist, _index, format["%1", ["vdm", _victim_data]]];
 		lbSetColor [kvlist, _index, [0, 1, 0, 1]];
@@ -43,8 +42,7 @@ _killers = [player, "killers"] call A_object_fnc_getVariable;
 		_index = lbAdd [kvlist, format ["Killer(TK): %1 (Set ablaze, -$%2)", _killer_name, _lost_money]];
 		lbSetData [kvlist, _index, format["%1", ["ktk", _killer_data]]];
 		lbSetColor [kvlist, _index, [1, 0, 0, 1]];
-	}
-	else { if ( _type == "DM") then {
+	}else{ if ( _type == "DM") then {
 		_index = lbAdd [kvlist, format ["Killer(DM): %1 (-$%2)", _killer_name, _lost_money]];
 		lbSetData [kvlist, _index, format["%1", ["kdm", _killer_data]]];
 		lbSetColor [kvlist, _index, [1, 0, 0, 1]];

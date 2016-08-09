@@ -19,8 +19,7 @@ lbClear (ctrlIDC _list);
 	
 	if ([_gang_area] call A_gang_fnc_area_neutral) then {
 		_list lbAdd format["%1 - (Neutral)", _gang_area_name];
-	}
-	else {
+	}else{
 		private["_gang_id"];
 		_gang_id = [_gang_area] call A_gang_fnc_area_get_control;
 		
@@ -29,8 +28,7 @@ lbClear (ctrlIDC _list);
 		
 		if (undefined(_gang)) then {
 			_list lbAdd format["%1 - (Abandoned)", _gang_area_name];
-		}
-		else {
+		}else{
 			private["_gang_name"];
 			_A_gang_var_name = _gang select A_gang_var_name;
 			_list lbAdd format["%1 - (%2)", _gang_area_name, _gang_name];

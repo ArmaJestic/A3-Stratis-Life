@@ -5,12 +5,13 @@
 #include "..\..\includes\dikcodes.h"
 
  _this spawn {
+ 
 //player groupChat format["A_interaction_fnc_item_take_inventory %1", _this];
 ARGV(0,_player);
 ARGV(1,_item);
 ARGV(2,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_item)) exitWith {null};
 if (undefined(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
@@ -36,11 +37,11 @@ if (_amount > ([_player, _item] call A_inventory_fnc_get_item_amount)) exitWith 
 	player groupChat format["You do not have that many items to take"];
 };
 
-if (not([_player] call A_interaction_fnc_inventory_actions_allowed)) then {
+if (!([_player] call A_interaction_fnc_inventory_actions_allowed)) then {
 	player groupChat "You cannot take from your inventory now.";
 };
 
-if (not(_item call A_inventory_fnc_get_item_droppable)) exitWith {
+if (!(_item call A_inventory_fnc_get_item_droppable)) exitWith {
 	player groupChat format["You are not allowed to take this item."];
 };
 
@@ -59,9 +60,7 @@ if (_item == "keychain") then {
 	if (undefined(_object)) exitWith {};
 	[_player, _object] spawn A_drag_fnc_take_object;
 	player groupChat format["You took the key for %1", _vehicle_name];
-	
-}
-else {
+}else{
 	//regular processing for other items
 	[_player, _item, -(_amount)] call A_inventory_fnc_add_item;
 	
@@ -71,4 +70,5 @@ else {
 	[_player, _object] spawn A_drag_fnc_take_object;
 	player groupChat format["You took %1 %2(s)", strM(_amount), (MASTER_ARRAY_ITEM_NAME(_item))];
 };
+
 };

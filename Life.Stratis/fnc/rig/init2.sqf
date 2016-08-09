@@ -7,8 +7,8 @@ if (isServer) then {
 	[[7726.48,2745.52,-0.6]] call A_rig_fnc_setup;
 };
 
-if (isClient) then {
-/*	waitUntil {(not(isNil "rig_setup_complete") && {rig_setup_complete})};
+if (!isServer) then {
+/*	waitUntil {(!(isNil "rig_setup_complete") && {rig_setup_complete})};
 	player groupChat format["insatm = %1", insatm];
 	player grouPChat format["insclothes = %1", insclothesbox];
 */

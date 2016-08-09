@@ -6,7 +6,7 @@
 ARGV(0,_player);
 ARGV(1,_amount);
 
-if (not([_player] call A_player_fnc_human)) exitWith {0};
+if (!([_player] call A_player_fnc_human)) exitWith {0};
 if (undefined(_amount)) exitWith {0};
 if (typeName _amount != "SCALAR") exitWith {0};
 

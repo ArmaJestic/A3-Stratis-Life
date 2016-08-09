@@ -5,7 +5,7 @@
  _this spawn {
 //player groupChat format["roe prison _this = %1", _this];
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (_player != player) exitWith {null};
 
 private["_time_left"];
@@ -39,7 +39,7 @@ while {_time_left >= 0} do {
 	};
 	
 	//PLAYER DIED
-	if (not(alive _player)) exitWith {
+	if (!(alive _player)) exitWith {
 		[_player, "roeprisontime", _time_left] call A_player_fnc_set_scalar;
 	};
 	

@@ -16,7 +16,7 @@ _position = getPosATL _logic;
 private["_vehicle"];
 _vehicle = [_class, _position, _exact] call A_vehicle_fnc_create;
 
-if (not(undefined(_vehicle))) then {
+if (!(undefined(_vehicle))) then {
 	_vehicle setDir (getDir _logic);
 };
 

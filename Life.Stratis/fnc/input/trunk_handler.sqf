@@ -13,7 +13,7 @@ _vcl = _vcls select 0;
 
 
 private["_inside_vehicle"];
-_inside_vehicle = not((vehicle player) == player);
+_inside_vehicle = !((vehicle player) == player);
 if (_inside_vehicle) exitWith {
 	player groupChat format["You must be outside the vehicle to use the trunk"];
 };
@@ -22,7 +22,7 @@ private["_vehicle"];
 _vehicle = cursorTarget;
 if (undefined(_vehicle)) exitWith {false};
 if (typeName _vehicle != "OBJECT") exitWith {false};
-if (not(_vehicle isKindOf "LandVehicle" || _vehicle isKindOf "Air" || _vehicle iskindOf "Ship" || _vehicle isKindOf "TKOrdnanceBox_EP1")) exitWith {false};
+if (!(_vehicle isKindOf "LandVehicle" || _vehicle isKindOf "Air" || _vehicle iskindOf "Ship" || _vehicle isKindOf "TKOrdnanceBox_EP1")) exitWith {false};
 
 private["_distance"];
 _distance = _vehicle distance player;;
@@ -32,7 +32,7 @@ if (_distance > 5 ) exitWith {
 };
 
 
-if(not([player, _vehicle] call A_vehicle_fnc_owner)) exitWith {
+if(!([player, _vehicle] call A_vehicle_fnc_owner)) exitWith {
 	player groupchat "You do not have the keys to this vehicle.";
 	false
 };

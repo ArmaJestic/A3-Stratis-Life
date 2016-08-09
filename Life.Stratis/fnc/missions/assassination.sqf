@@ -96,7 +96,7 @@ if (_art == "getajob_assassin") then {
 	processInitCommands;
 	
 	// put vip inside the car
-	if (not(VIPtarget in assveh) and (alive VIPtarget)) then{
+	if (!(VIPtarget in assveh) and (alive VIPtarget)) then{
 		VIPtarget moveInDriver assveh;
 		VIPbodyguard1 doFollow VIPtarget;
 

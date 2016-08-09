@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 #include "..\..\includes\constants.h"
 
-if (not(isServer)) exitWith {};
+if (!(isServer)) exitWith {};
 
 [format["A_jip_fnc_register_setup %1", _this]] call A_jip_fnc_message;
 jip_register_request_buffer =  " ";

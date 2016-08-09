@@ -5,7 +5,7 @@
 
 if (!isblu) exitWith {null};
 if((player ammo (currentWeapon player)) <= 0) exitWith {null};
-if (not(alive player)) exitWith {null};
+if (!(alive player)) exitWith {null};
 
 if ((((currentWeapon player) == "M9" || (currentWeapon player) == "M9SD")) && ((currentMagazine player) == ("15Rnd_9x19_M9SD"))) then {	
 	_magazines = magazines player;

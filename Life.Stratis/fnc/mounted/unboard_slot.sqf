@@ -11,7 +11,7 @@ ARGV(2,_slot_id);
 private["_unlocked"];
 _unlocked = [_vehicle] call A_mounted_fnc_vehicle_unlocked;
 
-if (not(_unlocked)) exitWith {
+if (!(_unlocked)) exitWith {
 	player groupChat format["This vehicle is locked"];
 };
 

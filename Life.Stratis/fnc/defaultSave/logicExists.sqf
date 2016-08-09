@@ -1,4 +1,3 @@
 // A_defaultSave_fnc_logicExists
-private["_logicName"];
-_logicName = _this select 0;
+private _logicName = _this select 0;
 isNil {missionNamespace getVariable _logicName}

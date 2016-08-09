@@ -12,7 +12,6 @@ _in_hands = if (count _this > 3) then { _this select 3 } else { false };
 if (_in_hands) then {
 	player addWeapon _class;
 	player action ["switchweapon", player, player, 0];
-}
-else {
+}else{
 	_crate addweaponCargoGlobal [_class,_amount];
 };

@@ -14,7 +14,7 @@ if (typeName _request != "ARRAY") exitWith {null};
 private["_player", "_gear"]; 
 _player = _request select 0;
 _gear = _request select 1;
-if (not([_player] call A_player_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 diag_log format["A_player_fnc_side_gear_request_receive: _player = %1", _player];
 

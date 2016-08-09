@@ -6,8 +6,6 @@
 _art = _this select 0;
 
 if (_art == "use") then {
-	liafu = true;
-
 	_item = _this select 1;
 	_vcl = (nearestobjects [getpos player, ["LandVehicle", "Air"], 15] select 0);
 
@@ -22,8 +20,7 @@ if (_art == "use") then {
 	if ((player distance _vcl < 10) and (!isPlayer _vcl) and (speed _vcl < 1)) then {
 		_vcl setDamage 0;
 		player groupChat localize "STRS_inv_items_repair_repaired";
-	}
-	else {
+	}else{
 		[player, _item, 1] call A_inventory_fnc_add_item;
 		player groupChat "Repairs canceled by moving or having someone inside vehicle";
 	};

@@ -13,7 +13,7 @@ ARGV(2,_amount);
 	player groupChat format["%1-%2, you cannot use the refuel can now. You are not in a vehicle.", _player, (name _player)];
 };
 
-if (not(_player == (driver vehicle _player))) exitWith {
+if (!(_player == (driver vehicle _player))) exitWith {
 	player groupChat format["%1-%2, you cannot use the refuel can now. You are not the vehicle driver.", _player, (name _player)];
 };
 

@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 //make a list of all the AI vendors, and attach them to an anchor on the map
 ai_vendors = [university, storage, rathaus, bailflag, assassin, A_missions_fnc_hostage, impoundbuy, civ_logicunit];
 
@@ -11,11 +11,11 @@ ai_vendors = [university, storage, rathaus, bailflag, assassin, A_missions_fnc_h
 	private["_shop", "_crate"];
 	_shop = _x select A_inv_var_itemshops_object;
 	_crate = _x select A_inv_var_itemshops_crate;
-	if (not(undefined(_shop))) then {
+	if (!(undefined(_shop))) then {
 		ai_vendors set [count ai_vendors, _shop];
 	};
 	
-	if (not(undefined(_crate))) then {
+	if (!(undefined(_crate))) then {
 		ai_vendors set [count ai_vendors, _crate];
 	};
 } forEach A_inv_var_itemshops;
@@ -63,7 +63,8 @@ ai_vendors = [university, storage, rathaus, bailflag, assassin, A_missions_fnc_h
 	private["_array"];
 	_array = _x select 1;
 	{
-		ai_vendors set [count ai_vendors, _x];
+	//	ai_vendors set[count ai_vendors, _x];
+		ai_vendors pushBack _x;
 	} forEach _array;
 } forEach A_license_var_INV_Licenses;
 	

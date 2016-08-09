@@ -6,7 +6,7 @@
 
 private["_player"];
 _player = _this;
-if(not([_player] call A_player_fnc_exists)) exitWith {false};
+if(!([_player] call A_player_fnc_exists)) exitWith {false};
 
 private["_sleep"];
 _sleep = 5;

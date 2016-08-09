@@ -23,9 +23,8 @@ waitUntil {
 	
 	if ((lbData[bank_menu_destination_field_idc, (lbCurSel bank_menu_destination_field_idc)]) == str(_player)) then {
 		ctrlSetText [bank_menu_transaction_fee_field_idc,"$0"];
-	}
-	else {
+	}else{
 		ctrlSetText [bank_menu_transaction_fee_field_idc, format ["$%1", strM(_amount + round(_amount * (_bank_tax/100)))]];
 	};
-	not(ctrlVisible bank_menu_header_idc);
+	!(ctrlVisible bank_menu_header_idc);
 };

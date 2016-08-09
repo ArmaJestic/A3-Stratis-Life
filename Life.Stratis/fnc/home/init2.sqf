@@ -57,7 +57,7 @@ if (isServer) then {
 	];
 };
 
-A_home_var_msg" addPublicVariableEventHandler {
+"A_home_var_msg" addPublicVariableEventHandler {
 	//this is the main server/client model implementation for the home system
 	//throughout the whole mission, the server keeps the state of all homes, with the metadata
 	//like who is the owner, and if it's locked or not.
@@ -65,7 +65,8 @@ A_home_var_msg" addPublicVariableEventHandler {
 	//when a player connects to the server, it sends a message ("request_homes") to server asking for list of homes
 	//and server then replies back sending "update_home" messages to that client.
 	//
-
+	
+	private["_homes_msg", "_msg_to, "_msg_from", "_msg_type", "_msg_data", "_myself", "_home", "_home_name", "_c_home"];
 	_homes_msg = _this select 1;
 	_msg_to = _homes_msg select A_home_var_msg_to;
 	_msg_from = _homes_msg select A_home_var_msg_from;
@@ -81,7 +82,7 @@ A_home_var_msg" addPublicVariableEventHandler {
 			if (_msg_type == "request_homes") then {
 				{
 					_home = _x;
-					_A_home_var_name = _home select A_home_var_name;
+					_home_name = _home select A_home_var_name;
 					_c_home = server getVariable _home_name;
 
 					A_home_var_msg = [_myself, _msg_from, "update_home", _c_home];
@@ -91,7 +92,7 @@ A_home_var_msg" addPublicVariableEventHandler {
 			}else{ 
 				if (_msg_type == "update_home") then {
 					_home = _msg_data;
-					_A_home_var_name = _home select A_home_var_name;
+					_home_name = _home select A_home_var_name;
 					_c_home = server getVariable _home_name;
 					_c_home set [A_home_var_owner_uid, _home select A_home_var_owner_uid];
 					_c_home set [A_home_var_owner_name, _home select A_home_var_owner_name];
@@ -112,7 +113,7 @@ A_home_var_msg" addPublicVariableEventHandler {
 			//hint format["%1", _homes_msg];
 			if (_msg_type == "update_home") then {
 				_home = _msg_data;
-				_A_home_var_name = _home select A_home_var_name;
+				_home_name = _home select A_home_var_name;
 
 				_c_home = server getVariable [_home_name, []];
 

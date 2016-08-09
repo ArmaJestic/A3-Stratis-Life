@@ -20,11 +20,11 @@ _exit_method = {
 	A_plant_var_harvest_yield_active = false;
 };
 
-if (not([_player] call A_player_fnc_exists)) exitWith {call _exit_method};
+if (!([_player] call A_player_fnc_exists)) exitWith {call _exit_method};
 if (undefined(_plant)) exitWith {call _exit_method};
 
 if (typeName _plant != "OBJECT") exitWith {call _exit_method};
-if (not([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {call _exit_method};
+if (!([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {call _exit_method};
 
 
 

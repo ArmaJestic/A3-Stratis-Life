@@ -7,7 +7,7 @@
 ARGV(0,_player);
 ARGV(1,_key);
 
-if (not(_key in actionKeys "NightVision")) exitWith {null};
+if (!(_key in actionKeys "NightVision")) exitWith {null};
 
 private["_nightvision"];
 _nightvision = [_player] call A_camera_fnc_get_nightvision;

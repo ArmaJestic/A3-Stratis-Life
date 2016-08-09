@@ -5,7 +5,7 @@
 
 ARGV(0,_player);
 ARGV(1,_gang_area);
-if (not([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
 
 private["_gang", "_player_uid"];
 _player_uid = [_player] call A_gang_fnc_player_uid;

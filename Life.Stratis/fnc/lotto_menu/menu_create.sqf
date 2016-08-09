@@ -7,7 +7,7 @@
 ARGV(0,_player);
 ARGV(1,_lotto_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith{};
+if (!([_player] call A_player_fnc_human)) exitWith{};
 if (undefined(_lotto_id)) exitWith {};
 if (typeName _lotto_id != "SCALAR") exitWith {};
 

@@ -17,7 +17,7 @@ _tz = _tpos select 2;
 private["_camera"];
 _camera = "camera" camcreate [_tx, _ty, 15];
 
-if (not(createDialog "free_camera")) exitWith {
+if (!(createDialog "free_camera")) exitWith {
 	player groupChat format["ERROR: could not create civilian camera dialog"];
 };
 
@@ -74,13 +74,12 @@ waitUntil {
 		_slider2 = (sliderPosition free_camera_slider_light_idc);
 		if (_slider2 < 600) then {
 			setAperture _slider2;
-		}
-		else{
+		}else{
 			setAperture -1;
 		};
 	};
 
-	(not(ctrlVisible free_camera_button_close_idc) || time > _endTime)
+	(!(ctrlVisible free_camera_button_close_idc) || time > _endTime)
 };
 
 setAperture -1;

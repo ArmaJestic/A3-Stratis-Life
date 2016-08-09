@@ -38,7 +38,7 @@ if (_index == -1) exitWith {null};
 private["_respawn_id", "_result"];
 _respawn_id = _spawn_data select A_doors_var_house_spawn_data_respawn_id;
 _result = [_player,_respawn_id]  call BIS_fnc_removeRespawnPosition;
-if (not(_result)) exitWith {
+if (!(_result)) exitWith {
 	diag_log format["WARNING: could not remove respawn position for %1", [_player, _respawn_id]];
 	null
 };

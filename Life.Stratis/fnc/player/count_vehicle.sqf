@@ -8,7 +8,7 @@ ARGV(1,_distance);
 ARGV(2,_locked);
 ARGV(3,_mobile);
 
-if (not([_player] call A_player_fnc_human)) exitWith {0};
+if (!([_player] call A_player_fnc_human)) exitWith {0};
 if (undefined(_distance)) exitWith {0};
 if (undefined(_locked)) exitWith {0};
 if (undefined(_mobile)) exitWith {0};
@@ -36,8 +36,8 @@ _filter_function = {
 	_canMove = canMove _object;
 	_isLocked = (locked _object) == 2;
 	
-	_mobile = if (_mobile) then {_canMove} else {not(_canMove)};
-	_locked = if (_locked) then {_isLocked} else { not(_isLocked)};
+	_mobile = if (_mobile) then {_canMove} else {!(_canMove)};
+	_locked = if (_locked) then {_isLocked} else { !(_isLocked)};
 	(_mobile && _locked)
 };
 

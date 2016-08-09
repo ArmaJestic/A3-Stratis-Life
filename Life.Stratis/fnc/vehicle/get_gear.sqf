@@ -4,7 +4,7 @@
 
 
 ARGV(0,_vehicle);
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
 
 private["_weapons_cargo", "_magazines_cargo"];
 _weapons_cargo = getWeaponCargo _vehicle;

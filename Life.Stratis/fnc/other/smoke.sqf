@@ -31,8 +31,7 @@ _Tear_gas = {
 						[_x, "flashed", true, true] call A_object_fnc_setVariable;
 						_array set [count _array,_x];
 					} foreach nearestObjects [_pos, ["Man"], 10];	
-				}
-				else {
+				}else{
 					{
 						_unit = _x;
 						[_unit, "flashed", false, true] call A_object_fnc_setVariable;

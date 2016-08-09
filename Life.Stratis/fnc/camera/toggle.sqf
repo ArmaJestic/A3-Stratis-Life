@@ -31,8 +31,7 @@ if (isNull _camera) then {
 	
 	[] call A_camera_fnc_start_loop;
 
-}
-else {
+}else{
 	camera_unit groupChat format["Disabling camera!"];
 	[] call A_camera_fnc_remove_targetMarker;
 	[] call A_camera_fnc_remove_mouseMoving;

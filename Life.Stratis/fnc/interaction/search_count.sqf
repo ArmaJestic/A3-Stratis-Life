@@ -6,7 +6,7 @@
 
 
 ARGV(0,_target);
-if (not([_target] call A_player_fnc_human)) exitWith {0};
+if (!([_target] call A_player_fnc_human)) exitWith {0};
 
 private["_i", "_drugs_value"];
 _drugs_value = 0;

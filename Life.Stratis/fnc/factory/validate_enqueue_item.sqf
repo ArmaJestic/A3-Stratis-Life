@@ -71,7 +71,7 @@ if (_production_cost > _factory_money) then {
 	_enqueue_allowed = false;
 };
 
-if (not(_workers > 0)) then {
+if (!(_workers > 0)) then {
 	_message2 = "Production cannot start because you have not hired any workers";
 	_enqueue_allowed = false;
 };

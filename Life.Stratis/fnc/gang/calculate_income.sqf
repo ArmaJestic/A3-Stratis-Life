@@ -4,7 +4,7 @@
 
 
 ARGV(0,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {0};
+if (!([_player] call A_player_fnc_human)) exitWith {0};
 
 private["_gang", "_player_uid", "_extra"];
 _player_uid = [_player] call A_gang_fnc_player_uid;
@@ -29,7 +29,7 @@ _A_gang_var_id = _gang select A_gang_var_id;
 	_cgang_id = [_gang_area, "control"] call A_object_fnc_getVariable;
 	if (undefined(_cgang_id)) exitWith {null};
 	if (typeName _cgang_id != "STRING") exitWith {null};
-	if (not(_cgang_id == _gang_id)) exitWith {null};
+	if (!(_cgang_id == _gang_id)) exitWith {null};
 	
 	_extra = _extra + _base_extra;
 }} forEach A_main_var_gangareas;

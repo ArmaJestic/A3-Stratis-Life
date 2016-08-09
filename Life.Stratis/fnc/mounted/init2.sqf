@@ -3,6 +3,7 @@
 #include "..\..\includes\macro.h"
 #include "..\..\includes\dikcodes.h"
 
+if (isServer) exitwith {};
 
 {
 	private["_action"];

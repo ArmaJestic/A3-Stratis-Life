@@ -4,7 +4,7 @@
 
 
 //player groupChat format["A_hunting_fnc_loop %1", _this];
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 
 private["_hunting_loop_i", "_sleep", "_timer"];
 _hunting_loop_i = 0;

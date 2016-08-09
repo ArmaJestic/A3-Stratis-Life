@@ -43,16 +43,14 @@ while { _i < count(_vehicle_names_list) } do {
 		_name = getText(configFile >> "CfgVehicles" >> _class >> "displayName");
 		_picture = [_class] call A_misc_fnc_generic_picture_path;	
 		_info = format["(%1)",_name];
-	}
-	else { if (["impound_lot", _vehicle_name] call A_vehicle_storage_fnc_contains) then {
+	}else{ if (["impound_lot", _vehicle_name] call A_vehicle_storage_fnc_contains) then {
 		private["_impund_data", "_class"];
 		_impound_data = ["impound_lot", _vehicle_name] call A_vehicle_storage_fnc_get;
 		_class = _impound_data select A_vehicle_storage_var_data_entry_class;
 		_name = getText(configFile >> "CfgVehicles" >> _class >> "displayName");
 		_picture = [_class] call A_misc_fnc_generic_picture_path;
 		_info = format["(%1 - impounded)", _name];
-	}
-	else {
+	}else{
 		_info = "(destroyed)";
 	};};
 	
@@ -63,7 +61,7 @@ while { _i < count(_vehicle_names_list) } do {
 };
 
 _list lbSetCurSel 0;
-waitUntil {not(ctrlShown _list)};
+waitUntil {!(ctrlShown _list)};
 
 private["_vehicle_name"];
 _vehicle_name = interact_selected_vehicle;

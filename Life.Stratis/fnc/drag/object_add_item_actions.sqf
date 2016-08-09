@@ -10,8 +10,8 @@ ARGV(1,_object);
 private["_default"];
 _default = [];
 
-if (not([_player] call A_player_fnc_exists)) exitWith {_default};
-if (not([_object] call A_object_fnc_exists)) exitWith {_default};
+if (!([_player] call A_player_fnc_exists)) exitWith {_default};
+if (!([_object] call A_object_fnc_exists)) exitWith {_default};
 
 private["_item"];
 _item = [_object, "item", ""] call A_object_fnc_getVariable;

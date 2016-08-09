@@ -21,7 +21,7 @@ while { _i < (count playerstringarray) } do {
 		_label_text =  format ["%1: %2", _player, (name _player)];
 		_index = _list lbAdd _label_text;
 		private["_wanted"];
-		if (not([_player] call A_player_fnc_blufor) && ([_player] call A_player_fnc_get_bounty) > 0) then {
+		if (!([_player] call A_player_fnc_blufor) && ([_player] call A_player_fnc_get_bounty) > 0) then {
 			_list lbSetColor [_index, [1, 0, 0, 1]];
 		};
 	};

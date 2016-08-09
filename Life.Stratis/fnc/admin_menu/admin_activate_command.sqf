@@ -10,7 +10,7 @@ ARGV(1,_command);
 ARGV(2,_text);
 ARGV(3,_target);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 
 if (undefined(_command)) exitWith {null};
 if (typeName _command != "STRING") exitWith {null};

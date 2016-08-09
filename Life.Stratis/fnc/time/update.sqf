@@ -1,4 +1,4 @@
-// A_time_functions_fnc_update
+// A_time_fnc_update
 
 #include "..\..\includes\macro.h"
 
@@ -6,7 +6,7 @@
 private ["_game_time", "_rsecs", "_gsecs"];
 if (time_loop_exit) exitWith {};
 
-_game_time_number	= call A_time_functions_fnc_game_time_number;
+_game_time_number	= call A_time_fnc_game_time_number;
 
 private ["_direction", "_i", "_skipMin", "_seconds"];
 

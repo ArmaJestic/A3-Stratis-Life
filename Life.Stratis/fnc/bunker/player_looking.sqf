@@ -23,8 +23,7 @@ private["_looking"];
 _looking = false;
 if (_gate_angle_min < _gate_angle_max) then {
 	_looking = _direction > _gate_angle_min && _direction < _gate_angle_max;
-}
-else {
+}else{
 	_looking = (_direction > _gate_angle_min && _direction < 360) || (_direction > 0 && _direction < _gate_angle_max);
 };
 

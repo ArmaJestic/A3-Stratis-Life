@@ -3,10 +3,10 @@
 #include "..\..\includes\macro.h"
 
  _this spawn {
-if (not(isServer)) exitWith {null};
+if (!(isServer)) exitWith {null};
 ARGV(0,_gang_id);
 ARGV(1,_player);
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 
 private["_gang"];
 _gang = [_gang_id] call A_gang_fnc_lookup_id;

@@ -6,7 +6,7 @@
 //player groupChat format["A_vehicle_fnc_set_loadout %1", _this];
 ARGV(0,_vehicle);
 
-if (not([_vehicle] call A_object_fnc_exists)) exitWith {};
+if (!([_vehicle] call A_object_fnc_exists)) exitWith {};
 
 private["_item", "_class"];
 _class = typeOf _vehicle;

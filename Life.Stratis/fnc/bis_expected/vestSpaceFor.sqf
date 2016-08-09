@@ -6,8 +6,8 @@
 ARGV(0,_player);
 ARGV(1,_item_id);
 
-if (not([_player] call A_player_fnc_human)) exitWith {false};
-if (not([_item_id] call A_config_fnc_class_item)) exitWith {false};
+if (!([_player] call A_player_fnc_human)) exitWith {false};
+if (!([_item_id] call A_config_fnc_class_item)) exitWith {false};
 
 private["_item_mass", "_vest_load", "_vest_max_load", "_vest_id"];
 _vest_id = [_player] call A_player_fnc_uniform;

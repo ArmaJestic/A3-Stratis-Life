@@ -8,11 +8,10 @@ ARGV(0,_player);
 ARGV(1,_key);
 ARGV(2,_shift);
 
-if (not(_key in (actionKeys "ShowMap"))) exitWith {null};
+if (!(_key in (actionKeys "ShowMap"))) exitWith {null};
 
-if (not([_player] call A_camera_fnc_get_map_open)) then {
+if (!([_player] call A_camera_fnc_get_map_open)) then {
 	[_player] call A_camera_fnc_map_open;
-}
-else {
+}else{
 	[_player] call A_camera_fnc_map_close;
 };

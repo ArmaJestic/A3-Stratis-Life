@@ -11,7 +11,7 @@ ARGV(1,_voter);
 ARGV(2,_candidate_uid);
 
 if (undefined(_election_id)) exitWith {};
-if (not([_voter] call A_player_fnc_exists)) exitWith {};
+if (!([_voter] call A_player_fnc_exists)) exitWith {};
 if (undefined(_candidate_uid)) exitWith {};
 if (typeName _election_id != "STRING") exitWith {};
 if (typeName _candidate_uid != "STRING") exitWith {};
@@ -26,7 +26,7 @@ _candidates_data = _candidates select A_voting_menu_var_election_candidates_data
 
 private["_candidate_index"];
 _candidate_index = _candidates_index find _candidate_uid;
-if (not(_candidate_index >=0)) exitWith {};
+if (!(_candidate_index >=0)) exitWith {};
 
 	
 private["_voter_uid"];

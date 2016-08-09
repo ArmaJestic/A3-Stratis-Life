@@ -6,7 +6,7 @@
 
 disableSerialization;
     _display = findDisplay 46;
-if (not(undefined(camera_keyUpHandler_id))) then {
+if (!(undefined(camera_keyUpHandler_id))) then {
 	_display displayRemoveEventHandler  ["keyUp", camera_keyUpHandler_id];
 	camera_keyUpHandler_id = null;
 };

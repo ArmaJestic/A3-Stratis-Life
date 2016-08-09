@@ -25,7 +25,7 @@ if (_art == "use") then {
 	// Normal Beer, Weizenbier, White-Wine
 	if (_item == "beer" OR _item == "smirnoff" OR _item == "redgull" OR _item == "water") then {
 		while {time < _endeZeit} do {
-			if (not(alive player)) exitWith {null};
+			if (!(alive player)) exitWith {null};
 			//player setdamage ((damage player) - 0.01);
 			if (vehicle player == player) then {
 				_v1 = velocity player select 0;
@@ -50,7 +50,7 @@ if (_art == "use") then {
 	if (_item == "Vodka" OR _item == "fanta" OR _item == "wiskey") then {
 		while {time < _endeZeit} do {
 			liafu = true;
-			if (not(alive player)) exitWith {null};
+			if (!(alive player)) exitWith {null};
 			//player setdamage ((damage player) - 0.01);
 			if (vehicle player == player) then {
 				_v1 = velocity player select 0;

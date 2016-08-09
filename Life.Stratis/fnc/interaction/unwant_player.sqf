@@ -8,14 +8,14 @@
 ARGV(0,_player);
 ARGV(1,_victim);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_victim] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_victim] call A_player_fnc_human)) exitWith {null};
 
 if (_victim == player) exitWith {
 	player groupChat format["You cannot set yourself unwanted"];
 };
 
-if (not(([_victim] call A_player_fnc_get_wanted))) exitWith {
+if (!(([_victim] call A_player_fnc_get_wanted))) exitWith {
 	player groupChat format["%1-%2 is not wanted", _victim, (name _victim)];
 };
 

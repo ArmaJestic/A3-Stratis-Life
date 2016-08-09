@@ -9,7 +9,7 @@ ARGV(2,_bail_left);
 
 if (undefined(_player)) exitWith {null};
 if (_player != player) exitWith {null};
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 
 if (undefined(_time_left)) exitWith {null};
 if (typeName _time_left != "SCALAR") exitWith {null};
@@ -51,7 +51,7 @@ while {_time_left >= 0 && _bail_left >= 0} do {
 	};
 	
 	//PLAYER DIED
-	if (not(alive _player)) exitWith {
+	if (!(alive _player)) exitWith {
 		private["_message"];
 		_message = format["%1-%2 has died while in prison",_player, _player_name];
 		format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
@@ -61,7 +61,7 @@ while {_time_left >= 0 && _bail_left >= 0} do {
 	};
 	
 	//PLAYER HAS BEEN SET FREE
-	if (not([_player] call A_player_fnc_get_arrest)) exitWith {
+	if (!([_player] call A_player_fnc_get_arrest)) exitWith {
 		/*
 		private["_message"];
 		_message = format["%1-%2 has been set free by the authorities", _player, _player_name];

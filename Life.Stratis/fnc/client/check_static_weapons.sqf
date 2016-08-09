@@ -6,6 +6,6 @@
 private["_vehicle","_isStatic"];
 _vehicle = (vehicle player);
 _isStatic = (_vehicle isKindOf "StaticWeapon");
-if (not(_isStatic)) exitWith {null};
+if (!(_isStatic)) exitWith {null};
 
 _vehicle lock false;

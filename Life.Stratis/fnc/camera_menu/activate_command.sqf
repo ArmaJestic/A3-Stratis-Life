@@ -11,7 +11,7 @@ ARGV(2,_text);
 ARGV(3,_target);
 
 
-if (not([_player] call A_object_fnc_exists)) exitWith {null};
+if (!([_player] call A_object_fnc_exists)) exitWith {null};
 
 player groupChat format["_command = %1", _command];
 if (undefined(_command)) exitWith {null};

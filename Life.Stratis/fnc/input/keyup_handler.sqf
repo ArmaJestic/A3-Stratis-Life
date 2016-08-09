@@ -20,7 +20,7 @@ if (_key in(actionKeys "LookAround")) then {
 };
 
 if ((call A_input_fnc_stunned_check) || (call A_input_fnc_restrained_check)) exitWith {
-	not(_key in (call A_input_fnc_get_stunned_allowed_keys))
+	!(_key in (call A_input_fnc_get_stunned_allowed_keys))
 };
 
 //Fix for exploit using cross-arms animation, that allows players to glitch through walls
@@ -57,8 +57,7 @@ switch _key do {
 	case DIK_E: {			
 		if (_ctrl) then {
 			_handled = [] call A_input_fnc_breakout_vehicle_handler;
-		}
-		else {
+		}else{
 			_handled = [_ctrl] call A_input_fnc_interact_handler;
 		};
 	};

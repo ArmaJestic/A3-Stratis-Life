@@ -6,7 +6,7 @@
 ARGV(0,_player);
 
 if (undefined(_player)) exitWith { false };
-if (not(alive _player)) exitWith {false};
+if (!(alive _player)) exitWith {false};
 
 private["_armed_vehicle", "_armed_player"];
 _armed_vehicle = ([_player] call A_client_fnc_check_armed_vehicle);

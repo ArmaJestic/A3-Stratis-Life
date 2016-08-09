@@ -23,8 +23,8 @@ _filter_function = missionNamespace getVariable [_filter_name, {true}];
 	private["_variable_name", "_variable_value"];
 	_variable_name = _x;
 	_variable_value = missionNamespace getVariable [_variable_name, null];
-	if (not([_variable_value] call A_player_fnc_exists)) exitWith {};
-	if (not([_variable_value] call _filter_function)) exitWith {};
+	if (!([_variable_value] call A_player_fnc_exists)) exitWith {};
+	if (!([_variable_value] call _filter_function)) exitWith {};
 	
 	private["_index"];
 	_index = _list lbAdd format["%1-%2", _variable_value, (name _variable_value)];

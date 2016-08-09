@@ -10,9 +10,9 @@ ARGV(0,_player);
 ARGV(1,_target);
 ARGV(2,_vehicle);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
-if (not([_target] call A_player_fnc_human)) exitWith {null};
-if (not([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_target] call A_player_fnc_human)) exitWith {null};
+if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
 
 if (_target != player) exitWith {null};
 

@@ -2,5 +2,4 @@
 
 #include "..\..\includes\macro.h"
 
-
-    (_this call A_isse_fnc_cfg_magazineinfo) select 3
+(_this call A_isse_fnc_cfg_magazineinfo) select 3

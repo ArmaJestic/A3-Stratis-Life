@@ -11,17 +11,17 @@ private["_vehicle"];
 _vehicle = (vehicle _player);
 
 private["_is_driver"];
-_is_driver  = (driver(_vehicle) == _player && {not(_vehicle == _player)});
+_is_driver  = (driver(_vehicle) == _player && {!(_vehicle == _player)});
 
-if (not(_is_driver) && A_towing_var_loop_data_setup) exitWith {
+if (!(_is_driver) && A_towing_var_loop_data_setup) exitWith {
 	[] call A_towing_fnc_clear_towing_data;
 };
 
-if (_is_driver && not(A_towing_var_loop_data_setup)) exitWith {
+if (_is_driver && !(A_towing_var_loop_data_setup)) exitWith {
 	[_vehicle] call A_towing_fnc_setup_towing_data;
 };
 
-if (not(A_towing_var_loop_data_setup)) exitWith {};
+if (!(A_towing_var_loop_data_setup)) exitWith {};
 
 private["_towing", "_towing_hitch_offset"];
 _towing = towing;
@@ -103,13 +103,13 @@ _interpolated_normal = [_interpolated_normal_unit, 10] call A_vector_fnc_resize;
 _interpolated_normal_offset = [(_towed modelToWorld [0,0,0]), _interpolated_normal] call A_vector_fnc_add;
 //drawLine3D [(_towed modelToWorld [0,0,0]), _interpolated_normal_offset, [1,0,0,1]];	
 
-if (_angle > _max_angle && not(_speed > 0) && _speed < -0.01) exitWith {
+if (_angle > _max_angle && !(_speed > 0) && _speed < -0.01) exitWith {
 	_towing setVelocity [0,0,0];
 	_towed setVelocity [0,0,0];
 };
 
 if (abs(_speed) < 0.5) exitWith {};
-if (not(_is_driver)) exitWith {};
+if (!(_is_driver)) exitWith {};
 
 towed_hitch_position =  (_towing modelToWorld _towed_interpolated_offset);
 towed_hitch setPos towed_hitch_position;

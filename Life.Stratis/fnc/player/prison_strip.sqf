@@ -7,7 +7,7 @@ ARGV(0,_player);
 
 if (undefined(_player)) exitWith {null};
 if (_player != player) exitWith {null};
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 
 //remove stolen cash, and illlal items
 [_player] call A_inventory_fnc_remove_illegal;

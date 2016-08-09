@@ -16,7 +16,7 @@ while { _i < (count playerstringarray) } do {
 	_local_marker_location = [0, 0];
 	_local_marker_text = _player_variable_name;
 	_local_marker = [_local_marker_name, _local_marker_location, _local_marker_text] call A_markers_fnc_local_side_create;
-	if (not(_local_marker == "")) then {
+	if (!(_local_marker == "")) then {
 		_local_marker setMarkerAlphaLocal 0;
 		_local_markers = _local_markers + [_local_marker];
 	};

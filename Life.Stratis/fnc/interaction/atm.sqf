@@ -11,7 +11,7 @@ ARGV(1,_target);
 if (undefined(_player)) exitWith {false};
 if (undefined(_target)) exitWith {false};
 
-if (not([_target] call A_object_fnc_atm)) exitWith {};
+if (!([_target] call A_object_fnc_atm)) exitWith {};
 
 if(!A_bank_var_local_usebankpossible) exitWith {
 	hint "The ATM rejected your card";

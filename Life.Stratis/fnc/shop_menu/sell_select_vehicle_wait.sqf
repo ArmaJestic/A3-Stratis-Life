@@ -44,7 +44,7 @@ while { _i < _count } do {
 };
 lbSetCurSel [_list_idc, 0];
 
-waitUntil { not(ctrlVisible _list_idc)};
+waitUntil { !(ctrlVisible _list_idc)};
 
 _vehicle = shop_sell_selected_vehicle;
 shop_sell_selected_vehicle = null;

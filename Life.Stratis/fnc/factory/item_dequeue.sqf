@@ -10,7 +10,7 @@ ARGV(1,_factory_id);
 ARGV(2,_item);
 ARGV(3,_index);
 
-if (not([_player] call A_player_fnc_human)) exitWith {null};
+if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (undefined(_factory_id)) exitWith {null};
 if (typeName _factory_id != "STRING") exitWith {null};
 if (undefined(_item)) exitWith {null};
@@ -58,7 +58,7 @@ _pend = missionNamespace getVariable _pend_name;
 _prod_name = format["%1prod", _item];
 _prod = missionNamespace getVariable _prod_name;
 
-if (not(_prod > 0 || _pend > 0)) exitWith {
+if (!(_prod > 0 || _pend > 0)) exitWith {
 	player groupChat format["%1-%2, you do not have any %3 in production, or pending", _player, (name _player), _item_name];
 };
 
@@ -68,8 +68,7 @@ if (_index == 0 && _prod > 0) then {
 	_prod = (_prod) max (0);
 	
 	//player groupChat format["%1-%2, your %3 was in production, it has been canceled", _player, (name _player), _item_name];
-}
-else { if (_pend > 0) then {
+}else{ if (_pend > 0) then {
 	_pend = _pend - 1;
 	_pend = (_pend) max (0);
 	//player groupChat format["%1-%2, you had a %3 pending production, it has been canceled", _player, (name _player), _item_name];
