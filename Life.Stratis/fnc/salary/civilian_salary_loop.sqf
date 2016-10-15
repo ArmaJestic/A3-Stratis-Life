@@ -3,18 +3,15 @@
 #include "..\..\includes\macro.h"
 
 
-if (isblu) exitWith {};
+params[["_delayBase",5,[0]],["_delay",6,[0]]];
 
-private["_i", "_salary_delay"];
-_salary_delay = 5;
-_i = _salary_delay;
-while { _i > 0 && !(isblu) } do {
-	player groupChat format[localize "STRS_moneh_countdown", _i];
-	[60] call A_player_fnc_isleep;
-	_i = _i - 1;
+if (isblu) exitwith {};
+if (_delay == 0) then {
+	call A_salary_fnc_civilian_salary_handout;
+	_delay = _delayBase + 1;
+}else{
+	if (_delay < _delayBase) then {
+		player groupChat format[localize "STRS_moneh_countdown", _delay];
+	};
 };
-if (isblu) exitWith {};
-
-[] spawn A_salary_fnc_civilian_salary_handout;
-[1] call A_player_fnc_isleep;
-[] spawn A_salary_fnc_civilian_salary_loop;
+[60,[_delayBase,_delay-1],A_salary_fnc_cop_salary_loop] call A_frame_fnc_wait;

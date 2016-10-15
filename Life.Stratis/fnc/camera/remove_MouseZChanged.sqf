@@ -7,7 +7,7 @@
 disableSerialization;
 private["_control"];
     _control = findDisplay 46;
-if (!(undefined(camera_MouseZChanged_id))) then {
+if (!(UNDEFINED(camera_MouseZChanged_id))) then {
 	_control displayRemovEeventHandler  ["MouseZChanged", camera_MouseZChanged_id];
 	camera_MouseZChanged_id = null;
 };

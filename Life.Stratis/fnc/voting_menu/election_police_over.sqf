@@ -1,7 +1,6 @@
 // A_voting_menu_fnc_election_police_over
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_election_data);
@@ -13,9 +12,9 @@ private["_player"];
 _player = player;
 	
 private["_election_id", "_election_title", "_election_role"];
-_election_id = _election_data select A_voting_menu_var_election_data_id;
-_election_title = _election_data select A_voting_menu_var_election_data_title;
-_election_role = _election_data select A_voting_menu_var_election_data_role;
+_election_id = _election_data select INDEX_DATA_ELEC_ID;
+_election_title = _election_data select INDEX_DATA_ELEC_TITLE;
+_election_role = _election_data select INDEX_DATA_ELEC_ROLE;
 
 if (_first_place_votes == 0) exitWith {
 	hint format["%1 election has ended with no votes cast. The current %2 stays.", _election_title, _election_role];
@@ -26,8 +25,8 @@ if (_tie) exitWith {
 };
 
 private["_first_place_name", "_first_place_uid"];
-_first_place_name = _first_place_data select A_voting_menu_var_election_candidates_data_entry_name;
-_first_place_uid = _first_place_data select A_voting_menu_var_election_candidates_data_entry_uid;
+_first_place_name = _first_place_data select INDEX_DATA_ELEC_CAND_DATA_ENTRY_NAME;
+_first_place_uid = _first_place_data select INDEX_DATA_ELEC_CAND_DATA_ENTRY_UID;
 
 private["_player_uid"];
 _player_uid = getPlayerUID player;

@@ -1,5 +1,5 @@
 // A_eh_fnc_fired
-// outdated
+// outdated-not used
 
 #include "..\..\includes\macro.h"
 
@@ -25,7 +25,7 @@ if (_unit distance (getmarkerpos "respawn_west") < 100) exitwith {
 		A_main_var_firestrikes = 3;
 	};
 	
-	A_main_var_A_main_var_firestrikes = A_main_var_A_main_var_firestrikes - 1;
+	A_main_var_firestrikes = A_main_var_firestrikes - 1;
 	format['hint "WARNING %1: DO NOT FIRE INSIDE THE COPBASE! %2/%3 chances left.";', name _unit, A_main_var_firestrikes, A_main_var_totalstrikes] call A_broadcast_fnc_broadcast;
 };
 	
@@ -36,7 +36,7 @@ if (((_unit distance (getmarkerpos "respawn_civilian")) < 130) ) exitwith {
 		A_main_var_firestrikes = 3;
 	};
 	
-	A_main_var_A_main_var_firestrikes = A_main_var_A_main_var_firestrikes - 1;
+	A_main_var_firestrikes = A_main_var_firestrikes - 1;
 	format['hint "WARNING %1: DO NOT FIRE INSIDE THE CIVILIAN SPAWN! %2/%3 chances left.";', name _unit, A_main_var_firestrikes, A_main_var_totalstrikes] call A_broadcast_fnc_broadcast;
 };
 
@@ -59,4 +59,4 @@ if ((_magazine == "8Rnd_B_Beneli_74Slug") && (_weapon == "M1014")) then {
 };
 
 // Tear Gas
-[_this, _bullet] execVM "Awesome\Scripts\A_other_fnc_smoke.sqf";
+[_this, _bullet] spawn A_other_fnc_smoke;

@@ -1,17 +1,12 @@
 // A_drag_fnc_put_vehicle_active
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_player);
-ARGV(1,_object);
+params["_player","_object"];
 
-private["_vehicle"];
-_vehicle = cursorTarget;
+private _vehicle = cursorTarget;
 if ((isNull _vehicle) || {!(_vehicle isKindOf "LandVehicle")}) exitWith {false};
-
 if ((isPlayer _object) && {(locked _vehicle < 2) && {([_vehicle] call A_vehicle_fnc_empty_cargo_slots) > 0}}) exitWith {true};
 
-	
 false

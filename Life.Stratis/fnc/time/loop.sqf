@@ -1,19 +1,15 @@
 // A_time_fnc_loop
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_init);
-ARGVD(1,_quiet,false);
-if (_init) then {[_quiet] call A_time_fnc_init;};
+params[["_init",false,[true]]];
+if (_init) then {call A_time_fnc_start;};
 
-private ["_i"];
-_i = 0;
-while {true} do {
-	[] call A_time_fnc_update;
+// wait 1 second to make sure the previous loop is gone
+A_time_var_loop_exit = true;
+[1,[],{
+	A_time_var_loop_exit = false;
+	[1,[],{!A_time_var_loop_exit},A_time_fnc_update] call A_frame_fnc_perFrame;
+}] call A_frame_fnc_wait;
 
-	sleep 1;
-	_i = _i + 1;
-	if (time_loop_exit) exitWith {null};
-	if (_i > 7200) exitWith { [false] spawn A_time_fnc_loop; };
-};

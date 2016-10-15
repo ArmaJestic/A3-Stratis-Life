@@ -1,30 +1,23 @@
 // A_plant_fnc_life_loop
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
- _this spawn {
-ARGV(0,_plant);
-ARGV(1,_death_time);
 
-if (typeName _plant != "OBJECT") exitWith {};
-if (undefined(_death_time)) exitWith {};
-if (typeName _death_time != "SCALAR") exitWith {};
+params[["_plant",null,[objNull]],["_death_time",null,[0]]];
+
+if (UNDEFINED(_plant)) exitWith {};
+if (UNDEFINED(_death_time)) exitWith {};
 
 if (!([_plant, "isPlant", false] call A_object_fnc_getVariable)) exitWith {};
 
-private["_item"];
-_item = [_plant, "item", ""] call A_object_fnc_getVariable;
-
+private _item = [_plant, "item", ""] call A_object_fnc_getVariable;
 [_item, 1] call A_plant_fnc_update_count;
-
 
 //give a 5 second buffer so that the plant object is removed before the actual plant particle effect disappears
 _death_time = _death_time - 5;
 
-private["_life_time", "_time"];
-_time = serverTime ;
-_life_time = _death_time - _time;
+private _time = serverTime ;
+private _life_time = _death_time - _time;
 
 waitUntil {
 	_time = round(serverTime);
@@ -43,4 +36,3 @@ waitUntil {
 
 deleteVehicle _plant;
 [_item, -1] call A_plant_fnc_update_count;
-};

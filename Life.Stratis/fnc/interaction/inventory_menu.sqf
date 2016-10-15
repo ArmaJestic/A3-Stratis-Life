@@ -1,8 +1,6 @@
 // A_interaction_fnc_inventory_menu
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -52,9 +50,9 @@ lbSetCurSel [inventory_items_list_idc, 0];
 //populate the player's list
 private["_c"];
 _c = 0;
-while { _c < (count playerstringarray) } do {
+while { _c < (count A_player_var_playerstringarray) } do {
 	private["_player_variable_name", "_player_variable"];
-	_player_variable_name = playerstringarray select _c;
+	_player_variable_name = A_player_var_playerstringarray select _c;
 	_player_variable = missionNamespace getVariable [_player_variable_name, null];
 	
 	if ([_player_variable] call A_player_fnc_human) then {

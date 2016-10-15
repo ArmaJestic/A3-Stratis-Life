@@ -1,10 +1,12 @@
 // A_player_fnc_set_array
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_player);
-ARGV(1,_variable_name);
-ARGV(2,_variable_value);
+diag_log format['A_player_fnc_set_array %1: start',_this];
+
+params["_player","_variable_name","_variable_value"];
 
 [_player, _variable_name, _variable_value, true] call A_player_fnc_set_array_checked;
+
+diag_log format['A_player_fnc_set_array %1: end',_this];

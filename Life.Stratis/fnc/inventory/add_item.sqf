@@ -1,7 +1,6 @@
 // A_inventory_fnc_add_item
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_inventory_fnc_add_item %1", _this];
@@ -20,6 +19,6 @@ _item_weight = ITEM_DATA_WEIGHT(_info);
 _total_weight = (_own_weight + (_amount * _item_weight));
 
 if (_amount == 0) exitWith {false};
-if (_total_weight > A_inventory_var_INV_CarryingCapacity && _amount > 0) exitWith {false};
+if (_total_weight > A_inventory_var_carrying_capacity && _amount > 0) exitWith {false};
 
 ([_object, _item, _amount, ([_object] call A_player_fnc_object_storage_name)] call A_inventory_fnc_storage_add_item)

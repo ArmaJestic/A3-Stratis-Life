@@ -7,8 +7,8 @@ _string = _this select 0;
 _start = _this select 1;
 _length = _this select 2;
 
-if (undefined(_string)) exitWith {""};
-if (undefined(_start)) exitWith {""};
+if (UNDEFINED(_string)) exitWith {""};
+if (UNDEFINED(_start)) exitWith {""};
 
 if (typeName _string != "STRING") exitWith {""};
 if (typeName _start != "SCALAR") exitWith {""};
@@ -18,7 +18,7 @@ private["_string_data", "_string_out_data"];
 _string_data = toArray _string;
 _string_out_data = [];
 
-if (undefined(_length)) then {
+if (UNDEFINED(_length)) then {
 	_length = count(_string_data) - _start;
 };
 

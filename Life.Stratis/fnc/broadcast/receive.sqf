@@ -1,10 +1,8 @@
 // A_broadcast_fnc_receive
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-private["_value"];
-_code = _this select 1;
-if (undefined(_code)) exitWith {null};
-if (typeName _code != "STRING") exitWith {null};
-call compile _code;
+params[["_varname",null,[""]],["_code",null,[{}]]];
+if UNDEFINED(_code) exitWith {};
+call _code;

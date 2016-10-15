@@ -1,20 +1,16 @@
 // A_stats_fnc_update_variables_list
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
-private["_object", "_variable_name"];
-_object = _this select 0;
-_variable_name = _this select 1;
 
-if (undefined(_object)) exitWith {null};
-if (typeName _object != "OBJECT") exitWith {null};
-if (undefined(_variable_name)) exitWith {null};
-if (typeName _variable_name != "STRING") exitWith {null};
+params[["_object",objNull,[objNull]], ["_variable_name",null,[""]]];
 
-private["_variables_list"];
-_variables_list = [_object] call A_stats_fnc_get_variables_list;
+if (isNull _object) exitWith {null};
+if (UNDEFINED(_variable_name)) exitWith {null};
 
-if (!(_variable_name in _variables_list)) then {
-	_variables_list = _variables_list + [_variable_name];
+private _variables_list = [_object] call A_stats_fnc_get_variables_list;
+
+_variable_name = toLower(_variable_name);
+if ((_variables_list pushBackUnique _variable_name) > -1) then {
 	[_object, _variables_list] call A_stats_fnc_set_variables_list;
 };

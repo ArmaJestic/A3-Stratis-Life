@@ -8,7 +8,7 @@ ARGV(0,_o);
 ARGV(1,_color);
 
 
-if (undefined(_o) || {isNull _o}) exitWith {};
+if (UNDEFINED(_o) || {isNull _o}) exitWith {};
 
 private["_bb"];
 _bb = boundingBoxReal _o;

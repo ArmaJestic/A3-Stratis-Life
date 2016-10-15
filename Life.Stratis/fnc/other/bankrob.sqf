@@ -3,6 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
+private["_art","_safe"];
 _this = _this select 3;
 _art  = _this select 0;
 _safe = _this select 1;
@@ -12,13 +13,13 @@ if (_art == "ausrauben") then {
 
 	if(local_cash < 50000)exitwith{player groupchat "this safe has recently been stolen from and is empty"};
 
-	if(!A_bank_var_robenable)exitwith{player groupchat "you are already robbing the bank"};
-	if(!(call A_inventory_fnc_iventory_is_armed) and !A_param_var_debug)exitWith{player groupChat localize "STRS_bank_rob_noweapon";};
-	A_bank_var_robenable = false;
+	if (!A_bank_var_robable)exitwith{player groupchat "you are already robbing the bank"};
+	if !(call A_inventory_fnc_iventory_is_armed)exitWith{player groupChat localize "STRS_bank_rob_noweapon";};
+	A_bank_var_robable = false;
 	call compile format["robpool%1 = 0;publicvariable ""robpool%1"";", _safe];
 	player groupChat format[localize "STRS_bank_rob_info", strM(robb_money)];
 
-	format['[0,1,2,["opfer", %1, %2]] execVM "A_other_fnc_bankrob.sqf";', _safe, local_cash] call A_broadcast_fnc_broadcast;
+	format['[0,1,2,["opfer", %1, %2]] spawn A_other_fnc_bankrob;', _safe, local_cash] call A_broadcast_fnc_broadcast;
 
 	player playmove "AinvPknlMstpSlayWrflDnon_medic";
 	sleep 5;
@@ -30,18 +31,18 @@ if (_art == "ausrauben") then {
 		[local_cash] spawn Bank_Rob_End_Script;
 	};
 
-	A_bank_var_A_bank_var_stolencash = A_bank_var_A_bank_var_stolencash + local_cash;
+	A_bank_var_stolencash = A_bank_var_stolencash + local_cash;
 
 	A_bank_var_local_usebankpossible = false;
-	A_bank_var_robenable = true;
-	A_bank_var_A_bank_var_rblock = A_bank_var_A_bank_var_rblock + ((local_cash/50000)*60);
-	_A_bank_var_rblock = A_bank_var_rblock;
+	A_bank_var_robable = true;
+	A_bank_var_rblock = A_bank_var_rblock + ((local_cash/50000)*60);
+	_rblock = A_bank_var_rblock;
 
 	sleep 2;
 
-	if(_A_bank_var_rblock != A_bank_var_rblock)exitWith {null};
+	if(_rblock != A_bank_var_rblock)exitWith {null};
 
-	for [{A_bank_var_A_bank_var_A_bank_var_A_bank_var_rblock}, {A_bank_var_A_bank_var_A_bank_var_A_bank_var_rblock > -1}, {A_bank_var_A_bank_var_A_bank_var_A_bank_var_rblock=A_bank_var_A_bank_var_A_bank_var_A_bank_var_rblock-1}] do {sleep 1;};
+	for [{A_bank_var_rblock}, {A_bank_var_rblock > -1}, {A_bank_var_rblock=A_bank_var_rblock-1}] do {sleep 1;};
 
 	A_bank_var_local_usebankpossible = true;
 	A_bank_var_stolencash = 0;
@@ -53,7 +54,7 @@ if (_art == "opfer") then {
 	private["_bank_account", "_insurances_inv", "_insurances_stor"];
 	_robpool = _this select 2;
 
-	titleText [localize "STRS_bank_rob_titlemsg", "plain"];
+	cutText[localize "STRS_bank_rob_titlemsg", "PLAIN"];
 
 	_safe say "Bank_alarm";
 	copbase1 say "Bank_alarm";
@@ -67,9 +68,9 @@ if (_art == "opfer") then {
 
 	private["_bank_account", "_verlust", "_verlustA", "_verlustB"];
 	_bank_account = [player] call A_bank_fnc_get_value;
-	_verlust = round(_bank_account*A_bank_var_maxbankrobpercentlost);
-	_verlustA = round(_bank_account*A_bank_var_maxbankrobpercentlosta);
-	_verlustB = round(_bank_account*A_bank_var_maxbankrobpercentlostb);
+	_verlust = round(_bank_account*BANK_MAX_ROB_PERCENT_LOST_A);
+	_verlustA = round(_bank_account*BANK_MAX_ROB_PERCENT_LOST_B);
+	_verlustB = round(_bank_account*BANK_MAX_ROB_PERCENT_LOST_C);
 
 	_bank_account = [player] call A_bank_fnc_get_value;
 	_insurances_inv = [player, 'bankinsurance'] call A_inventory_fnc_get_item_amount;

@@ -1,8 +1,6 @@
 // A_interaction_fnc_vehicle_storage
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_vehicle);
@@ -11,8 +9,8 @@ ARGV(2,_amount);
 
 if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
 
-if (undefined(_item)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 

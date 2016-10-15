@@ -9,7 +9,7 @@ private["_uuid", "_cuuid"];
 _uuid = call A_trunk_fnc_get_uuid;
 _cuuid = [_vehicle, "trunk_user_uuid"] call A_object_fnc_getVariable;
 
-if (undefined(_cuuid)) exitWith { /* player groupChat format["_cuuid is nil"]; */ false };
+if (UNDEFINED(_cuuid)) exitWith { /* player groupChat format["_cuuid is nil"]; */ false };
 if (typeName _cuuid != "STRING") exitWith { /* player groupChat format["_cuuid not STRIING"]; */ false };
 if (_cuuid == "0") exitWith { /* player groupChat format["_cuuid = %1", _cuuid]; */ false };
 

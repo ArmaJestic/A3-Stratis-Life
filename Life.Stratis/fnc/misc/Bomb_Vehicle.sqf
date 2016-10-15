@@ -6,7 +6,6 @@ if (count _this > 1) then {
 	if (!(isNull (_this select 1))) then {
 		_obj = _this select 1;
 		if (((getPosATL _obj) select 2) > 5) then {
-			liafu = true;
 			_obj setDamage 1;
 		} 
 		else {

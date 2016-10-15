@@ -1,7 +1,6 @@
 // A_inventory_fnc_get_storage_amount
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_object);
@@ -12,7 +11,7 @@ ARGV(2,_arrname);
 private["_Array"];
 _Array = [_object, _arrname, null] call A_object_fnc_getVariable;
 
-if (undefined(_Array)) exitWith {0};
+if (UNDEFINED(_Array)) exitWith {0};
 
 private["_Result", "_i"];
 _Result = 0;

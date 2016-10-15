@@ -4,16 +4,9 @@
 #include "..\..\includes\dikcodes.h"
 
 
-//player groupChat format["A_input_fnc_keyup_handler %1", _this];
-private["_handled"];
+params["_disp","_key","_shift","_ctrl","_alt"];
+private _handled = false;
 
-_disp	= _this select 0;
-_key    = _this select 1;
-_shift  = _this select 2;
-_ctrl	= _this select 3;
-_alt	= _this select 4;
-
-_handled = false;
 
 if (_key in(actionKeys "LookAround")) then {
 	A_input_var_lookingaround = false;
@@ -58,13 +51,43 @@ switch _key do {
 		if (_ctrl) then {
 			_handled = [] call A_input_fnc_breakout_vehicle_handler;
 		}else{
+			diag_log format['A_input_fnc_keyup_handler(%1): calling A_input_fnc_interact_handler'];
 			_handled = [_ctrl] call A_input_fnc_interact_handler;
+		};
+	};
+	case DIK_SPACE: {
+		if (_ctrl) then {
+			_handled = [] call A_input_fnc_lock_unlock_handler;
+		};
+	};
+	case DIK_F: {
+		if (_ctrl) then {
+			if (_inVehicle) then {
+				if (isblu) then {
+					_handled = [] call A_input_fnc_cop_siren_handler;
+				};
+			}else{
+				_handled = [] call A_input_fnc_stun_handler;
+			};
+		};
+	};
+	case DIK_G: {
+		if (_ctrl) then {
+			if (isblue && {_inVehicle} && {_isDriver}) then {
+				_handled = [] call A_input_fnc_cop_speed_gun_handler;
+			};
+		};
+	};
+	case DIK_H: {
+		if (_ctrl) then {
+			if (isblu && {_inVehicle} && {_isDriver}) then {
+				_handled = [] call A_input_fnc_cop_horn_handler;
+			};
 		};
 	};
 	case DIK_GRAVE: {
 		_handled = [] call A_input_fnc_cop_menu_handler;
 	};
-
 	case DIK_1: {
 		_handled = [] call A_input_fnc_main_dialog_handler;
 	};
@@ -85,27 +108,20 @@ switch _key do {
 	case DIK_6: {
 		_handled = [] call A_input_fnc_retributions_handler;
 	};
-	/*
 	case DIK_7: {
-		[] spawn {
-			call compile preprocessFile "buffer.sqf";
-		};
+		_handled = [] call A_input_fnc_holster_handle;
 	};
-	*/
 	case DIK_8: {
 		_handled = [] call A_input_fnc_weapon_modifications_handler;
 	};
-	case DIK_O:{
-		_handled = [] call A_input_fnc_admin_menu_handler;
+	case DIK_END: {
+		_handled = [] call A_input_fnc_mute_handler;
 	};
-};
-
-if (_inVehicle && _key == DIK_E) exitWith {
-	_inVehicle
-};
-
-if (_key in A_input_var_overlapping_keys) exitWith {
-	false;
+	case DIK_U:{
+		diag_log format['A_input_fnc_keyup_handler(%1): calling A_input_fnc_admin_menu_handler',_this];
+		_handled = [] call A_input_fnc_admin_menu_handler;
+		diag_log format['A_input_fnc_keyup_handler(%1): handled A_input_fnc_admin_menu_handler-%2',_this,_handled];
+	};
 };
 
 _handled

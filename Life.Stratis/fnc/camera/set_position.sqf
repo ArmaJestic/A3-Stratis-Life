@@ -15,9 +15,9 @@ _target = [_player, "A_camera_fnc_target"] call A_object_fnc_getVariable;
 
 private["_camera"];
 _camera = [_player, "camera"] call A_object_fnc_getVariable;
-if (undefined(_camera)) exitWith {null};
+if (UNDEFINED(_camera)) exitWith {null};
 
-if (undefined(_target)) then {
+if (UNDEFINED(_target)) then {
 	_camera setPos _position;
 	//_camera camSetPos _position;
 	//_camera camCommit 0.3;
@@ -25,5 +25,5 @@ if (undefined(_target)) then {
 	_camera attachTo [(vehicle _target), _position];
 };
 
-if (undefined(camera_rabbit)) exitWith {};
+if (UNDEFINED(camera_rabbit)) exitWith {};
 camera_rabbit attachTo [_camera, [0,0,0]];

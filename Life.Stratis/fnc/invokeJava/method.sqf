@@ -1,18 +1,20 @@
 // A_invokeJava_fnc_method
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h" 
+#include "header.h"
 
-diag_log format['A_invokeJava_fnc_method: %1', _this];
 
-if (undefined(_this)) exitWith{diag_log format['A_invokeJava_fnc_method: exit1']; ""};
-if (typeName _this != "ARRAY") exitWith {diag_log format['A_invokeJava_fnc_method: exit2']; ""};
-if (count _this == 0) exitWith {diag_log format['A_invokeJava_fnc_method: exit3']; ""};
-if (A_param_var_useDefaultSave) exitwith {_this call A_defaultSave_fnc_invoke};
+if (UNDEFINED(_this)) exitWith{""};
+if (typeName _this != "ARRAY") exitWith {""};
+if (count _this == 0) exitWith {""};
+
+// will be moved once stat/invoke are moved around
+#ifndef A_PARAM_SAVE_EXTENSION_AVAILABLE
+	if (true) exitwith {_this call A_defaultSave_fnc_invoke};
+#endif
 
 private["_i", "_count", "_arguments", "_method"];
 _method = _this select 0;
-if (typeName _method != "STRING") exitWith {diag_log format['A_invokeJava_fnc_method: exit4']; null};
+if (typeName _method != "STRING") exitWith {null};
 
 _count = count _this;
 _arguments = [];
@@ -40,11 +42,7 @@ _argument_str = "<AL>" + _argument_str + "</AL>";
 _method_str = "<M>" + _method + "</M>";
 _invoke_str = "<MI>" + _method_str + _argument_str + "</MI>";
 
-//diag_log _invoke_str;
-diag_log format['A_invokeJava_fnc_method: callExtension'];
-
 private["_result"];
 _result = "jni" callExtension _invoke_str;
 
-diag_log format['A_invokeJava_fnc_method: complete, returning result'];
 _result

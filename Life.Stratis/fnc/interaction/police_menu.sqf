@@ -1,17 +1,13 @@
 // A_interaction_fnc_police_menu
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
-ARGV(0,_player);
-ARGV(1,_target);
+params["_player","_target"];
 
-private["_buttons"];
-_buttons = [
+private _buttons = [
 	["Disarm", A_interaction_fnc_disarm_handler, [_player,_target]],
-	["Drug A_missions_fnc_search", A_interaction_fnc_search_handler, [_player,_target]],
+	["Drug Search", A_interaction_fnc_search_handler, [_player,_target]],
 	["Arrest", A_interaction_fnc_arrest_handler, [_player,_target]],
 	["Restrain/Release", A_interaction_fnc_restrain_handler, [_player,_target]],
 	["Ticket", A_interaction_fnc_ticket_handler, [_player,_target]],

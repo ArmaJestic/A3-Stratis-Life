@@ -11,7 +11,7 @@ if (!((_text == "")||(_text == " "))) then {
 		_dis = 50;
 		format ["
 		if ((player distance %1) < %3) then {
-			titleText[""%2"", ""PLAIN""];
+			cutText[""%2"", ""PLAIN""];
 		};
 		", player, _text, _dis] call A_broadcast_fnc_broadcast;
 	};

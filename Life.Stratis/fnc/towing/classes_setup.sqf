@@ -1,7 +1,6 @@
 // A_towing_fnc_classes_setup
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 towing_data = [
@@ -15,9 +14,9 @@ towed_classes = [];
 {
 	private["_entry", "_towing_enabled", "_class", "_towed_enabled"];
 	_entry = _x;
-	_class = _entry select A_towing_var_data_class;
-	_towing_enabled = _entry select A_towing_var_data_towing_enabled;
-	_towed_enabled = _entry select A_towing_var_data_towed_enabled;
+	_class = _entry select INDEX_CLASS;
+	_towing_enabled = _entry select INDEX_TOWING_ENABLED;
+	_towed_enabled = _entry select INDEX_TOWED_ENABLED;
 
 	if (_towing_enabled) then {
 		towing_classes set [count(towing_classes), _class];

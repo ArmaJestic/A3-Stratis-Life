@@ -1,13 +1,13 @@
 // A_gang_fnc_schedule_deletion
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 if (!(isServer)) exitWith {null};
 player groupChat format["A_gang_fnc_schedule_deletion %1", _this];
 
 ARGV(0,_gang_id);
-if (undefined(_gang_id)) exitWith {null};
+if (UNDEFINED(_gang_id)) exitWith {null};
 if (typeName _gang_id != "STRING") exitWith {null};
 
 private["_wait_time"];
@@ -18,11 +18,11 @@ _wait_time = A_main_var_gangdeltime;
 
 private["_gang"];
 _gang = [_gang_id] call A_gang_fnc_lookup_id;
-if (undefined(_gang)) exitWith {null};
+if (UNDEFINED(_gang)) exitWith {null};
 
 //some-one else has joined the gang while it was scheduled for deletion
 private["_gang_members"];
-_A_gang_var_members = _gang select A_gang_var_members;
+_gang_members = _gang select GANG_INDEX_MEMBERS;
 if (count(_gang_members) > 0) exitWith {null};
 
 [_gang_id] call A_gang_fnc_delete_id;

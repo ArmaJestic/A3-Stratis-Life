@@ -6,8 +6,8 @@ private["_needle", "_haystack"];
 _needle = _this select 0;
 _haystack = _this select 1;
 
-if (undefined(_needle)) exitWith {false};
-if (undefined(_haystack)) exitWith {false};
+if (UNDEFINED(_needle)) exitWith {false};
+if (UNDEFINED(_haystack)) exitWith {false};
 if (typeName _needle != "STRING") exitWith {false};
 if (typeName _haystack != "STRING") exitWith {false};
 

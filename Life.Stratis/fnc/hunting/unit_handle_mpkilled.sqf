@@ -1,6 +1,6 @@
 // A_hunting_fnc_unit_handle_mpkilled
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 //player groupChat format["A_hunting_fnc_unit_handle_mpkilled %1", _this];

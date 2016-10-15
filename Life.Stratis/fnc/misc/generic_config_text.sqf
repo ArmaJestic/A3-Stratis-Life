@@ -4,7 +4,7 @@
 
 ARGV(0,_id);
 ARGV(1,_field);
-if (undefined(_id)) exitWith {""};
+if (UNDEFINED(_id)) exitWith {""};
 if (typeName "_id" != "STRING") exitWith {""};
 if (_id == "") exitWith {""};
 

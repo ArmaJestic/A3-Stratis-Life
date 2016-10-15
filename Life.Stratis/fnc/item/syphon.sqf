@@ -17,7 +17,7 @@ if (_art == "use") then {
 	private["_vehicle"];
 	_vehicle  = [10] call A_inv_fnc_locateclosestvehicle;
 	
-	if (undefined(_vehicle)) exitWith {null};
+	if (UNDEFINED(_vehicle)) exitWith {null};
 	if(typeof _vehicle == "MMT_Civ" or typeof _vehicle == "MMT_USMC") exitWith {null};
 
 	if ((fuel _vehicle) < 0.5) exitWith {

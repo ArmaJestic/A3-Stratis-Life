@@ -1,0 +1,2 @@
+#define VAR_PV_REQ_BUF logThis_request_buffer
+#define QVAR_PV_REQ_BUF #VAR_PV_REQ_BUF

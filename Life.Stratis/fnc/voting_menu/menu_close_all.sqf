@@ -1,7 +1,6 @@
 // A_voting_menu_fnc_menu_close_all
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_timeout"];

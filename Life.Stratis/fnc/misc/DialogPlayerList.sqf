@@ -10,7 +10,7 @@ _show_cop = _this select 2;
 _show_ins = _this select 3;
 _show_opf = _this select 4;
 
-if (undefined(_control_id)) exitWith {null};
+if (UNDEFINED(_control_id)) exitWith {null};
 if (typeName _control_id != "SCALAR") exitWith {null};
 
 private["_index", "_my_index"];
@@ -19,10 +19,10 @@ _my_index = -1;
 
 private["_c"];
 _c = 0;
-while { _c <  (count playerstringarray) } do {
+while { _c <  (count A_player_var_playerstringarray) } do {
 	private["_player_variable_name", "_player_variable"];
 	
-	_player_variable_name = playerstringarray select _c;
+	_player_variable_name = A_player_var_playerstringarray select _c;
 	_player_variable = missionNamespace getVariable [_player_variable_name, null];
 	
 	if (true) then {

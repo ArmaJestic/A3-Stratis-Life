@@ -4,7 +4,7 @@
 #include "..\..\includes\dikcodes.h"
 
 
-if(!INV_shortcuts) exitWith {false};
+if(!A_inv_var_shortcuts) exitWith {false};
 if(dialog) exitWith {closeDialog 0; false };
 [] call A_main_menu_fnc_create;
 true

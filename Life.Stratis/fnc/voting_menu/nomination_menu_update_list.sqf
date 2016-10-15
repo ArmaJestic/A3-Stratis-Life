@@ -1,7 +1,6 @@
 // A_voting_menu_fnc_nomination_menu_update_list
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 //player groupChat format["A_voting_menu_fnc_nomination_menu_update_list = %1", _this];
@@ -9,11 +8,11 @@ disableSerialization;
 ARGV(0,_election_data);
 ARGV(1,_list);
 
-if (undefined(_election_data)) exitWith {};
-if (undefined(_list)) exitWith {};
+if (UNDEFINED(_election_data)) exitWith {};
+if (UNDEFINED(_list)) exitWith {};
 
 private["_election_id"];
-_election_id = _election_data select A_voting_menu_var_election_data_id;
+_election_id = _election_data select INDEX_DATA_ELEC_ID;
 
 private["_version"];
 _version = [_election_id] call A_voting_menu_fnc_get_nomination_version;

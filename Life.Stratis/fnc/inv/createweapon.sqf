@@ -1,6 +1,6 @@
 // A_inv_fnc_createweapon
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_class", "_amount", "_crate"];

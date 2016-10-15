@@ -1,15 +1,15 @@
 // A_player_fnc_save_side_gear
+// why the hell is this serverside
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-player groupChat format["A_player_fnc_save_side_gear %1", _this];
-ARGV(0,_player);
-if (!([_player] call A_player_fnc_exists)) exitWith {null};
+params["_player"];
+if (!([_player] call A_player_fnc_exists)) exitWith {};
 
-side_gear_request_buffer = [_player];
 if (isServer) then {
-	["", side_gear_request_buffer] call A_player_fnc_side_gear_request_receive;
+	["", [_player]] call A_player_fnc_side_gear_request_receive;
 }else{
-	publicVariable "side_gear_request_buffer";
+	VAR_PV_SIDE_GEAR_REQUEST = [_player];
+	publicVariableServer QVAR_PV_SIDE_GEAR_REQUEST;
 };

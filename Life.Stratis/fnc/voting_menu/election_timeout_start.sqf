@@ -1,17 +1,16 @@
 // A_voting_menu_fnc_election_timeout_start
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_election_data);
 
-if (undefined(_election_data)) exitWith {};
+if (UNDEFINED(_election_data)) exitWith {};
 
 private["_election_id", "_election_role", "_election_period"];
-_election_id = _election_data select A_voting_menu_var_election_data_id;
-_election_role = _election_data select A_voting_menu_var_election_data_role;
-_election_period = _election_data select A_voting_menu_var_election_data_election_period;
+_election_id = _election_data select INDEX_DATA_ELEC_ID;
+_election_role = _election_data select INDEX_DATA_ELEC_ROLE;
+_election_period = _election_data select INDEX_DATA_ELEC_ELEC_PERIOD;
 	
 private["_i"];
 _i = _election_period;

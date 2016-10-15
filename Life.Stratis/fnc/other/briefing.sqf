@@ -7,11 +7,11 @@ if(player diarySubjectExists "Rules") exitWith {null};
 
 
 player createDiarySubject ["rules","Rules"];
-player createDiarySubject ["blufor","Bluefor Faction"];
+player createDiarySubject ["blufor","Blufor Faction"];
 player createDiarySubject ["opfor","Opfor Faction"];
 player createDiarySubject ["indfor","Indfor Faction"];
 player createDiarySubject ["controls","SL Controls"];
-player createDiarySubject ["stun","SL A_stun_var_stunning"];
+player createDiarySubject ["stun","SL Stunning"];
 player createDiarySubject ["hunting","SL Hunting"];
 player createDiarySubject ["clothes","SL Clothing"];
 player createDiarySubject ["paint","SL Painting"];
@@ -150,7 +150,7 @@ E: action<br/>
 The basic action button.  Used to interact with shops, ATM's, and other players (while they are stunned and/or restrained).
 <br/>
 T: Access Vehicle Trunk<br/>
-when you own a car or other vehicle, you can access that car's inventory by standing next to the car and pressing T.  You will then be shown two box's.  The left box is what is in the car, and the right box is what is in your inventory.  Highlight the object you want to transfer, then select the amount and press the button on the side that has the item.  Car's hold a certain amount of weight just like your charactor so be aware of what you stash in there.  Also, if your vehicle is destroyed then you will loose whatever you place in here.  Coppers can A_missions_fnc_search for A_item_fnc_A_item_fnc_drugs or other ileagal items.  If they find them in your car it will disappear and the coppers gain money equal to the value of the A_item_fnc_A_item_fnc_drugs.
+when you own a car or other vehicle, you can access that car's inventory by standing next to the car and pressing T.  You will then be shown two box's.  The left box is what is in the car, and the right box is what is in your inventory.  Highlight the object you want to transfer, then select the amount and press the button on the side that has the item.  Car's hold a certain amount of weight just like your charactor so be aware of what you stash in there.  Also, if your vehicle is destroyed then you will loose whatever you place in here.  Coppers can A_missions_fnc_search for drugs or other illegal items.  If they find them in your car it will disappear and the coppers gain money equal to the value of the drugs.
 <br/>
 F: Remove Safety<br/>
 When unholstering a weapon, you may need to press F before it will fire. F is also a default ArmA 2 key that adjusts the firing mode of the weapon.
@@ -165,7 +165,7 @@ Unlocks or locks the vehicle closest to you if you have the keys.
 Press these buttons to shout out measages on the fly.  For civilians the default says ""Don't Shoot, I surrender!"".  For cops, it says a variety of things but mainly says, ""Put up your hands or your dead"" kinda thing.
 <br/>
 0-0: options<br/>
-this should give you the options for video A_settings_fnc_settings, shout outs, fix head bug, and even a quick-brief tutorial on SL.""
+this should give you the options for video settings, shout outs, fix head bug, and even a quick-brief tutorial on SL.""
 <br/>
 0-8 A_other_fnc_communications<br/>
 Allows same menu as radio but just in case you cannot access your radio.

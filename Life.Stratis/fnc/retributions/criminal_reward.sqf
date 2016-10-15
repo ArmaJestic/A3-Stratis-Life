@@ -1,6 +1,6 @@
 // A_retributions_fnc_criminal_reward
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_player", "_bounty"];
@@ -8,8 +8,8 @@ private["_player", "_bounty"];
 _player = _this select 0;
 _bounty = _this select 1;
 
-if (undefined(_player)) exitWith {null};
-if (undefined(_bounty)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
+if (UNDEFINED(_bounty)) exitWith {null};
 if (typeName _bounty != "SCALAR") exitWith {null};
 
 if (_player != player) exitWith {null};

@@ -1,11 +1,11 @@
 // A_storage_menu_fnc_menu_generate_selection_code
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_action);
-if (undefined(_action)) exitWith {{""}};
+if (UNDEFINED(_action)) exitWith {{""}};
 if (typeName _action != "STRING") exitWith {{""}};
 
 private["_code"];

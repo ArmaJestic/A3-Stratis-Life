@@ -7,7 +7,7 @@
 disableSerialization;
 private["_display"];
     _display = findDisplay 46;
-if (!(undefined(mouseButtonDown_id))) then {
+if (!(UNDEFINED(mouseButtonDown_id))) then {
 	_display displayRemoveEventHandler  ["MouseButtonDown", mouseButtonDown_id];
 	mouseButtonDown_id = null;
 };

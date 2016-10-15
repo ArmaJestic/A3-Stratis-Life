@@ -1,19 +1,17 @@
 // A_shop_menu_fnc_sell_item_validate_data
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_data);
-if (undefined(_data)) exitWith {null};
+params["_data"];
+if (UNDEFINED(_data)) exitWith {null};
 
-private ["_index", "_item", "_base_price", "_price", "_infos", "_amount", "_total_price", "_shop_id", "_supply", "_max_stock"];
-private ["_sales_tax", "_market_adjust", "_name", "_kind", "_label", "_control", "_type", "_tax"];
-private ["_weight_str", "_base_weight","_weight", "_price_str", "_buy_label", "_limitedStock", "_isItem", "_isIllegal"];
-private ["_amount_str", "_class", "_logic", "_quiet", "_demand_str", "_isOilBarrel"];
+private["_index", "_item", "_base_price", "_price", "_infos", "_amount", "_total_price", "_shop_id", "_supply", "_max_stock"];
+private["_sales_tax", "_market_adjust", "_name", "_kind", "_label", "_control", "_type", "_tax"];
+private["_weight_str", "_base_weight","_weight", "_price_str", "_buy_label", "_limitedStock", "_isItem", "_isIllegal"];
+private["_amount_str", "_class", "_logic", "_quiet", "_demand_str", "_isOilBarrel"];
 private["_isLinkedItem", "_isAttachment", "_isUniform", "_isVest", "_isHeadgear", "_isGoggles", "_isBISItem"];
 private["_hasLinkedItem", "_hasAttachment", "_hasUniform", "_hasVest", "_hasHeadgear", "_hasGoggles", "_hasBISItem"];
-
 
 _quiet = if (count _this > 1) then { _this select 1; } else { false };
 if (!(_quiet)) then {
@@ -26,16 +24,16 @@ if ((call A_shop_menu_fnc_is_busy)) exitWith {
 
 _sellableItems = ["Item", "Weapon", "Magazine", "Vehicle", "backpack", "BISItem", "LinkedItem", "Attachment", "Vest", "Uniform", "Headgear", "Goggles"];
 
-_shop_id  = _data select A_shop_menu_var_sell_item_shop_id;
-_item = _data select A_shop_menu_var_sell_item_key;
-_base_price = [(_data select A_shop_menu_var_sell_item_price)] call A_encoding_fnc_decode_number;
+_shop_id  = _data select INDEX_SELL_SHOP_ID;
+_item = _data select INDEX_SELL_KEY;
+_base_price = [(_data select INDEX_SELL_PRICE)] call A_encoding_fnc_decode_number;
 _infos = _item call A_inventory_fnc_get_item_array;
-_logic = objectFromNetId(_data select A_shop_menu_var_sell_item_logic_netid);
+_logic = objectFromNetId(_data select INDEX_SELL_LOGIC_NETID);
 _supply = [_item, _shop_id] call A_inventory_fnc_get_stock;
 _max_stock = [_item, _shop_id] call A_inventory_fnc_get_max_stock;
 _isOilBarrel = (_item == "OilBarrel");
 
-_type = _data select A_shop_menu_var_sell_item_type;
+_type = _data select INDEX_SELL_TYPE;
 _limitedStock = (_max_stock != -1);
 _isItem = (_type == "Item");
 _isWeapon = (_type == "Weapon");
@@ -50,7 +48,7 @@ _isHeadgear = (_type == "Headgear");
 _isGoggles = (_type == "Goggles");
 _isBISItem = (_type == "BISItem");
 
-_class = _data select A_shop_menu_var_sell_item_class;
+_class = _data select INDEX_SELL_CLASS;
 _demand = if (_limitedStock) then { _max_stock - _supply } else { -1 };
 
 _weapons = (weapons player);
@@ -58,18 +56,18 @@ _magazines = (magazines player);
 _vehicles = [player, _class, _item, 50] call A_shop_menu_fnc_get_vehicles_by_class_item;
 
 _weapon_count = if (_isWeapon) then { ({_x == _class} count _weapons ) } else { 0 };
-_weapon_count = if (undefined(_weapon_count)) then { 0 } else { _weapon_count };
+_weapon_count = if (UNDEFINED(_weapon_count)) then { 0 } else { _weapon_count };
 
 _magazine_count = if (_isMagazine) then {({_x == _class} count _magazines) } else { 0 };
-_magazine_count = if (undefined(_magazine_count)) then { 0 } else { _magazine_count };
+_magazine_count = if (UNDEFINED(_magazine_count)) then { 0 } else { _magazine_count };
 _item_count = if (_isItem) then { ([player, _item] call A_inventory_fnc_get_item_amount) } else { 0 };
-_item_count = if (undefined(_item_count)) then { 0 } else { _item_count };
+_item_count = if (UNDEFINED(_item_count)) then { 0 } else { _item_count };
 _vehicle_count = if (_isVehicle) then { count (_vehicles) } else { 0 };
-_vehicle_count = if (undefined(_vehicle_count)) then {0} else {_vehicle_count};
+_vehicle_count = if (UNDEFINED(_vehicle_count)) then {0} else {_vehicle_count};
 _vehicle_alive_count = if (_vehicle_count > 0) then {({alive _x} count _vehicles)} else { 0 }; 
-_vehicle_alive_count = if (undefined(_vehicle_alive_count)) then { 0 } else { _vehicle_alive_count };
+_vehicle_alive_count = if (UNDEFINED(_vehicle_alive_count)) then { 0 } else { _vehicle_alive_count };
 _vehicle_near_count = if (_vehicle_alive_count > 0)  then {({((alive _x) && ((_x distance player) < 50))} count _vehicles) } else { 0 }; 
-_vehicle_near_count = if (undefined(_vehicle_near_count)) then {0} else {_vehicle_near_count};
+_vehicle_near_count = if (UNDEFINED(_vehicle_near_count)) then {0} else {_vehicle_near_count};
 _hasBackpack = if (_isBackpack) then { _class == typeOf(unitBackpack player); } else { false };
 
 _all_items = [player] call A_player_fnc_get_all_items;
@@ -83,7 +81,7 @@ _headgear_count = if (_isHeadgear) then {({_x == _class} count _all_items)} else
 _vest_count = if (_isVest) then {({_x == _class} count _all_items)} else {0};
 
 _tax = [_type] call A_economy_menu_fnc_lookup_tax_value_type;
-_kind = _data select A_shop_menu_var_sell_item_kind;
+_kind = _data select INDEX_SELL_KIND;
 
 
 _base_weight = if (_isItem) then {ITEM_DATA_WEIGHT(_infos)} else { 0 };
@@ -222,13 +220,13 @@ if (_isIllegal && isblu) exitWith {
 	 ["The selected item is illegal, you are not allowed to sell it", _quiet]  call A_shop_menu_fnc_set_status_message; null
 };
 
-_data set [A_shop_menu_var_sell_item_total_return, _total_price];
-_data set [A_shop_menu_var_sell_item_sales_tax, _sales_tax];
-_data set [A_shop_menu_var_sell_item_market_adjust, _market_adjust];
-_data set [A_shop_menu_var_sell_item_max_stock, _max_stock];
-_data set [A_shop_menu_var_sell_item_demand, _demand];
-_data set [A_shop_menu_var_sell_item_supply, _supply];
-_data set [A_shop_menu_var_sell_item_legal, !(_isIllegal)];
-_data set [A_shop_menu_var_sell_item_amount, _amount];
+_data set [INDEX_SELL_TOTAL_RETURN, _total_price];
+_data set [INDEX_SELL_SALES_TAX, _sales_tax];
+_data set [INDEX_SELL_MARKET_ADJUST, _market_adjust];
+_data set [INDEX_SELL_MAX_STOCK, _max_stock];
+_data set [INDEX_SELL_DEMAND, _demand];
+_data set [INDEX_SELL_SUPPLY, _supply];
+_data set [INDEX_SELL_LEGAL, !(_isIllegal)];
+_data set [INDEX_SELL_AMOUNT, _amount];
 
 _data

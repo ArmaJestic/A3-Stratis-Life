@@ -1,13 +1,12 @@
 // A_stats_fnc_server_wipe_player_data
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
-private["_player_variable"]; 
-_player_variable = _this select 0;
+
+params["_player_variable"]; 
 _player = [_player_variable] call A_stats_fnc_get_mission_variable;
-if (undefined(_player)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {};
 
-private["_uid"];
-_uid = [_player] call A_stats_fnc_get_uid;
-if (undefined(_uid)) exitWith {null};
+private _uid = [_player] call A_stats_fnc_get_uid;
+if (UNDEFINED(_uid)) exitWith {};
 [_uid] call A_invokeJava_fnc_wipePlayerVariables;

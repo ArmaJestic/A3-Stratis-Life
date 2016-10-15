@@ -1,20 +1,16 @@
 // A_drag_fnc_object_attach
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-player grouPChat format["A_drag_fnc_object_attach %1", _this];
-ARGV(0,_player);
-ARGV(1,_object);
+params["_player","_object"];
 
 if (!([_player] call A_player_fnc_exists)) exitWith {};
 if (!([_object] call A_object_fnc_exists)) exitWith {};
 
 _object = [_object] call A_object_fnc_nonNetwork_convert;
 
-private["_last_holder"];
-_last_holder = [_object, "last_holder", objNull] call A_object_fnc_getVariable;
+private _last_holder = [_object, "last_holder", objNull] call A_object_fnc_getVariable;
 if (isNull _last_holder) then {
 	[] call A_interaction_fnc_play_pickup_animation;
 }else{
@@ -26,20 +22,16 @@ if (!(local _object)) then {
 	[[_object, _player], "A_drag_fnc_remote_attach", _object, false] call BIS_fnc_MP;
 }else{
 	player groupChat format["object is local"];
-	[_object, _player] call A_drag_fnc_remote_attach;
+	[_object, _player] spawn A_drag_fnc_remote_attach;
 };
 
 
-
-player groupChat format["Waiting for last holder"];
 waitUntil {
-	
 	_last_holder = [_object, "last_holder", objNull] call A_object_fnc_getVariable;
 	//player groupChat format["_last_holder = %1", _last_holder];
 	(_last_holder == _player)
 };
 
-player groupChat format["Last holder wait complete"];
 
 [_player, "held_target", _object, true] call A_object_fnc_setVariable;
 
@@ -53,8 +45,7 @@ waitUntil {
 	if (!([_player] call A_drag_fnc_object_active)) exitWith {true};
 	
 	//player groupChat format["owner(object) = %1, owner(player) = %2", (owner _object), (owner player)];
-	private["_last_holder"];
-	_last_holder = [_object, "last_holder", objNull] call A_object_fnc_getVariable;
+	private _last_holder = [_object, "last_holder", objNull] call A_object_fnc_getVariable;
 	//player groupChat format["_last_holder = %1", _last_holder];
 	if (!(_last_holder == _player)) exitWith {true};
 	

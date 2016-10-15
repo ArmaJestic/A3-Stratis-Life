@@ -7,7 +7,7 @@ class drawIcon3d_hud {
 	duration     = 1e+011;
 	fadeout      = 0;
 	name         = "drawIcon3d_hud";
-	onLoad       = "uiNamespace setVariable ['drawIcon3d_hud', _this select 0]";
+	onLoad       = "uiNamespace setVariable['drawIcon3d_hud', _this select 0]";
 	objects[]    = {};
 	controls[]   = {drawIcon3d_hud_text};
 

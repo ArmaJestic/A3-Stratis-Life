@@ -1,28 +1,22 @@
 // A_drag_fnc_object_add_item_actions
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_player)
-ARGV(1,_object);
+params["_player","_object"];
 
-private["_default"];
-_default = [];
+private _default = [];
 
 if (!([_player] call A_player_fnc_exists)) exitWith {_default};
 if (!([_object] call A_object_fnc_exists)) exitWith {_default};
 
-private["_item"];
-_item = [_object, "item", ""] call A_object_fnc_getVariable;
+private _item = [_object, "item", ""] call A_object_fnc_getVariable;
 if (_item == "") exitWith {_default};
 
-private["_data"];
-_data = _item call A_inventory_fnc_get_item_array;
+private _data = _item call A_inventory_fnc_get_item_array;
 if (count(_data) == 0) exitWith {_default};
 
-private["_actions"];
-_actions = [];
+private _actions = [];
 
 if (_item == "knife") then {
 	//_action_id = _player addAction [format["Use knife", _label], A_actions_fnc_action, 

@@ -7,8 +7,8 @@ ARGV(0,_object);
 ARGV(1,_variable_name);
 ARGV(2,_default);
 if (typeName _object != "OBJECT") exitWith {null};
-if (undefined(_variable_name)) exitWith {null};
-if (undefined(_default)) then {
+if (UNDEFINED(_variable_name)) exitWith {null};
+if (UNDEFINED(_default)) then {
 	_default = null;
 };
 
@@ -23,5 +23,5 @@ if (!(isNull _storage_object)) then {
 private["_result"];
 _result = _object getVariable [_variable_name, _default];
 
-if (undefined(_result)) exitWith {_default};
+if (UNDEFINED(_result)) exitWith {_default};
 _result

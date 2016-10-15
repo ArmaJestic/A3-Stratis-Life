@@ -1,7 +1,7 @@
 // A_invokeJava_fnc_updatePlayerVariable
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h" 
+#include "header.h"
+
 
 diag_log format['A_invokeJava_fnc_updatePlayerVariable: %1', _this];
 
@@ -13,9 +13,9 @@ _variable_value = _this select 2;
 	
 diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit checks'];
 
-if (undefined(_uid)) exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit1']; null};
-if (undefined(_variable_name)) exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit2']; null};
-if (undefined(_variable_value)) exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit3']; null};
+if (UNDEFINED(_uid)) exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit1']; null};
+if (UNDEFINED(_variable_name)) exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit2']; null};
+if (UNDEFINED(_variable_value)) exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit3']; null};
 
 if (typeName _uid != "STRING") exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit4']; null};
 if (typeName _variable_name != "STRING") exitWith {diag_log format['A_invokeJava_fnc_updatePlayerVariable: exit5']; null};

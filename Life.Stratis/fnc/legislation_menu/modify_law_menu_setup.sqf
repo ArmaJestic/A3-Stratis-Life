@@ -1,14 +1,14 @@
 // A_legislation_menu_fnc_modify_law_menu_setup
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 disableSerialization;
 ARGV(0,_title);
 ARGV(1,_editable);
 
-if (undefined(_editable)) then {
+if (UNDEFINED(_editable)) then {
 	_editable = true;
 };
 

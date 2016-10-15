@@ -1,7 +1,6 @@
 // A_shop_menu_fnc_weapon_inherits_from
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_weapon_class);
@@ -11,9 +10,9 @@ private["_config_class"];
 _config_class = if (count _this > 2) then { _this select 2; } else { "CfgWeapons" };
 
 
-if (undefined(_weapon_class)) exitWith { false };
-if (undefined(_base_class)) exitWith { false };
-if (undefined(_config_class)) exitWith { false };
+if (UNDEFINED(_weapon_class)) exitWith { false };
+if (UNDEFINED(_base_class)) exitWith { false };
+if (UNDEFINED(_config_class)) exitWith { false };
 
 if (typeName _weapon_class != "STRING") exitWith { false };
 if (typename _base_class != "STRING") exitWith { false };

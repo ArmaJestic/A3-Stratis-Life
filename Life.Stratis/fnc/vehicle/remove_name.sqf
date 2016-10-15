@@ -1,13 +1,13 @@
 // A_vehicle_fnc_remove_name
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_vehicle_name);
 
 if (!([_player] call A_player_fnc_human)) exitWith {false};
-if(undefined(_vehicle_name)) exitWith {false};
+if(UNDEFINED(_vehicle_name)) exitWith {false};
 if (typeName _vehicle_name != "STRING") exitWith {false};
 
 

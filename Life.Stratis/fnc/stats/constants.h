@@ -1,0 +1,8 @@
+#define VAR_SERVER_UID "__SERVER__"
+#define VAR_STATS_LIST "stats_variables_list"
+#define VAR_STATS_UID "stats_uid"
+#define INDEX_LOAD_REQUEST_UID 0
+#define INDEX_LOAD_REQUEST_RESPONSE_VARIABLE 1
+#define INDEX_SAVE_REQUEST_UID 0
+#define INDEX_SAVE_REQUEST_KEY 1
+#define INDEX_SAVE_REQUEST_VALUE 2

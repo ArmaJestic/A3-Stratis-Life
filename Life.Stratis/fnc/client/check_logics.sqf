@@ -3,11 +3,8 @@
 #include "..\..\includes\macro.h"
 
 
-private["_alive"];
-_alive = alive player;
-
-if (!(_alive)) exitWith {null};
-
+private _alive = alive player;
+if (!_alive) exitWith {null};
 {
 	private["_entry", "_cdistance", "_logic", "_warn_distance", "_teleport_distance"];
 	_entry = _x;
@@ -24,7 +21,6 @@ if (!(_alive)) exitWith {null};
 	};
 	
 	if (_distance < _warn_distance) exitWith {
-		titleText ["You are entering a restricted zone. Turn around!", "plain"]
+		cutText["You are entering a restricted zone. Turn around!","PLAIN"]
 	};
-	
 } forEach A_client_var_logics_checks;

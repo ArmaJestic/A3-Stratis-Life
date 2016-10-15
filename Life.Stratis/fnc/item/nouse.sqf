@@ -2,8 +2,7 @@
 
 #include "..\..\includes\macro.h"
 
-
-_art = _this select 0;
+private _art = _this select 0;
 if (_art == "use") then {
 	_item   = _this select 1;
 	_anzahl = _this select 2;

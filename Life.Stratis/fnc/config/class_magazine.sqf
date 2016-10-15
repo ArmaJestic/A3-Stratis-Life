@@ -4,7 +4,7 @@
 
 
 ARGV(0,_item_id);
-if (undefined(_item_id)) exitWith {false};
+if (UNDEFINED(_item_id)) exitWith {false};
 if (typeName _item_id != "STRING") exitWith {false};
 if (_item_id == "") exitWith {false};
 isClass(configFile >> "CfgMagazines" >> _item_id)

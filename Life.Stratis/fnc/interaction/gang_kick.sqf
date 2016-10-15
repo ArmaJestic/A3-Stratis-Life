@@ -1,14 +1,12 @@
 // A_interaction_fnc_gang_kick
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_player);
 ARGV(1,_member_variable);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_member_variable)) exitWith {null};
+if (UNDEFINED(_member_variable)) exitWith {null};
 if (typeName _member_variable != "STRING") exitWith {null};
 
 _member = missionNamespace getVariable [_member_variable, null];
@@ -20,12 +18,12 @@ _member_uid = [_member] call A_gang_fnc_player_uid;
 
 private["_gang"];
 _gang = [_player_uid] call A_gang_fnc_lookup_player_uid;
-if (undefined(_gang)) exitWith {
+if (UNDEFINED(_gang)) exitWith {
 	player groupChat format["%1-%2, you are no in a gang", _player, (name _player)];
 };
 
 private["_gang_id"];
-_A_gang_var_id = _gang select A_gang_var_id;
+_gang_id = _gang select GANG_INDEX_ID;
 if (!(([_gang_id] call A_gang_fnc_leader_uid) == _player_uid)) exitWith {
 	player groupChat format["%1-%2, you are not the leader of this gang", _player, (name _player)];
 };
@@ -35,7 +33,7 @@ if (_player_uid == _member_uid) exitWith {
 };
 
 private["_members"];
-_members = _gang select A_gang_var_members;
+_members = _gang select GANG_INDEX_MEMBERS;
 if (!(_member_uid in _members)) exitWith {
 	player groupChat format["%1-%2, %3-%4 is not a member of your gang", _player, (name _player), _member, (name _member)];
 };

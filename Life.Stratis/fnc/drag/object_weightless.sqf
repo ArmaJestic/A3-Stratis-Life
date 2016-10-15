@@ -1,14 +1,12 @@
 // A_drag_fnc_object_weightless
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_object);
-if (undefined(_object)) exitWith {false};
+params["_object"];
+if (UNDEFINED(_object)) exitWith {false};
 
-private["_weightless"];
-_weightless = false;
+private _weightless = false;
 {
 	if (_object isKindOf _x) exitWith {
 		_weightless = true;

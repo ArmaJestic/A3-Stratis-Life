@@ -6,7 +6,7 @@
 private ["_fuel", "_fuelstartposition", "_liter_price"];
 
 _liter_price = _this select 0;
-if (undefined(_liter_price)) exitWith {null};
+if (UNDEFINED(_liter_price)) exitWith {null};
 if (typeName _liter_price != "SCALAR") exitWith {null};
 
 _fuel = fuel (vehicle player);
@@ -46,7 +46,7 @@ while {((fuel _vehicle) < 0.99)} do {
 		_i = _i + 1;
 	};
 	
-	titleText [ format["Refueling %1%2 ...", round(fuel _vehicle * 100), "%"], "PLAIN DOWN"];
+	cutText[format["Refueling %1%2 ...", round(fuel _vehicle * 100), "%"], "PLAIN DOWN"];
 	sleep 1;
 };
 
@@ -54,10 +54,9 @@ call A_actions_fnc_remove_refuel_action;
 [_vehicle, false] call A_actions_fnc_set_refueling;
 
 if (_liters_consumed > 0) then {
-	
 	_refuel_cost = round((_liters_consumed * _liter_price));
 	_percent_refueled =  round(fuel _vehicle * 100);
-	titleText[format["Your total refueling cost was $%1, your vehicle is now %2%3 full.", _refuel_cost, _percent_refueled, "%"], "PLAIN DOWN"];
+	cutText[format["Your total refueling cost was $%1, your vehicle is now %2%3 full.", _refuel_cost, _percent_refueled, "%"], "PLAIN DOWN"];
 	[_liters_consumed] call A_shop_menu_fnc_update_fuel_consumed;
 	[player, 'money', -(_refuel_cost)] call A_inventory_fnc_add_item;
 };

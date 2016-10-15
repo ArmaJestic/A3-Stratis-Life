@@ -8,5 +8,5 @@ private["_player"];
 _player = camera_unit;
 private["_target_marker"];
 _target_marker = [_player] call A_camera_fnc_get_target_marker;
-if (undefined(_target_marker)) exitWith {};
+if (UNDEFINED(_target_marker)) exitWith {};
 deleteVehicle _target_marker;

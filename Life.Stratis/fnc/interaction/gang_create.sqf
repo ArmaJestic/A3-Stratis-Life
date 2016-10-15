@@ -1,33 +1,31 @@
 // A_interaction_fnc_gang_create
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_gang_create %1", _this];
 ARGV(0,_player);
 ARGV(1,_text);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_text)) exitWith {null};
+if (UNDEFINED(_text)) exitWith {null};
 if (typeName _text != "STRING") exitWith {null};
 
 //check that player is not in a gang
 private["_gang", "_player_uid"];
 _player_uid = [_player] call A_gang_fnc_player_uid;
 _gang = [_player_uid] call A_gang_fnc_lookup_player_uid;
-if (!(undefined(_gang))) exitWith {
+if (!(UNDEFINED(_gang))) exitWith {
 	private["_gang_name"];
-	_A_gang_var_name = _gang select A_gang_var_name;
+	_gang_name = _gang select GANG_INDEX_NAME;
 	player groupChat format["%1-%2, you are already a member of gang %3", _player, (name _player), _gang_name];
 };
 
 //check that there is no other gang with the same name
 private["_cgang"];
 _cgang = [_text] call A_gang_fnc_lookup_name;
-if (!(undefined(_cgang))) exitWith {
+if (!(UNDEFINED(_cgang))) exitWith {
 	private["_cgang_name"];
-	_cA_gang_var_name = _cgang select A_gang_var_name;
+	_cGANG_INDEX_NAME = _cgang select GANG_INDEX_NAME;
 	player groupChat format["%1-%2, there is already a gang named %3", _player, (name _player), _cgang_name];
 };
 

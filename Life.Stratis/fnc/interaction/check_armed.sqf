@@ -1,8 +1,6 @@
 // A_interaction_fnc_check_armed
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -11,7 +9,7 @@ ARGV(2,_interaction);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (!([_target] call A_player_fnc_human)) exitWith {null};
-if (undefined(_interaction)) exitWith {null};
+if (UNDEFINED(_interaction)) exitWith {null};
 if (typeName _interaction != "STRING") exitWith {null};
 
 

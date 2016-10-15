@@ -1,7 +1,6 @@
 // A_main_menu_fnc_handle_gang_areas
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_title);
@@ -26,11 +25,11 @@ lbClear (ctrlIDC _list);
 		private["_gang"];
 		_gang = [_gang_id] call A_gang_fnc_lookup_id;
 		
-		if (undefined(_gang)) then {
+		if (UNDEFINED(_gang)) then {
 			_list lbAdd format["%1 - (Abandoned)", _gang_area_name];
 		}else{
 			private["_gang_name"];
-			_A_gang_var_name = _gang select A_gang_var_name;
+			_gang_name = _gang select GANG_INDEX_NAME;
 			_list lbAdd format["%1 - (%2)", _gang_area_name, _gang_name];
 		};
 	};

@@ -1,6 +1,6 @@
 // A_retributions_fnc_add_victim
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private ["_victims"];
@@ -13,14 +13,14 @@ _victim_name = name _victim;
 _victim_uid = getPlayerUID _victim;
 
 _victim_data = [];
-_victim_data set [A_retributions_var_vs_name, toArray _victim_name];
-_victim_data set [A_retributions_var_vs_uid, _victim_uid];
-_victim_data set [A_retributions_var_vs_money, _lost_money];
-_victim_data set [A_retributions_var_vs_type, _type];
-_victim_data set [A_retributions_var_vs_euid, _euid];
+_victim_data set [INDEX_VS_NAME, toArray _victim_name];
+_victim_data set [INDEX_VS_UID, _victim_uid];
+_victim_data set [INDEX_VS_EUID, _lost_money];
+_victim_data set [INDEX_VS_TYPE, _type];
+_victim_data set [INDEX_VS_EUID, _euid];
 	
 _victims = [player, "victims"] call A_object_fnc_getVariable;
-if (undefined(_victims)) then { _victims = []; };
+if (UNDEFINED(_victims)) then { _victims = []; };
 if (typeName _victims != "ARRAY") then { _victims = []; };
 
 _victims = _victims + [_victim_data];

@@ -1,6 +1,6 @@
 // A_player_fnc_drop_item
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -8,15 +8,15 @@ ARGV(1,_item);
 ARGV(2,_amount);
 ARGV(3,_data);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_item)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
-if (_item == "A_item_fnc_handy") exitWith {null};
+if (_item == "handy") exitWith {null};
 
 private["_class", "_object"];
 _class = [_item] call A_inventory_fnc_item2class;
-if (undefined(_class)) exitWith {null};
+if (UNDEFINED(_class)) exitWith {null};
 
 
 private["_data"];
@@ -50,8 +50,11 @@ if (alive _player && _in_water) then {
 //give a name to the object
 private["_object_name"];
 _object_name = format["%1_%2_%3_%4", _class, (getPlayerUID _player), round(time), round(random(time))];
-//[[_object, _object_name], "A_player_fnc_drop_item_init_handler_persistent", true, true] spawn BIS_fnc_MP;
-[[_object, _item, _object_name], "A_player_fnc_drop_item_init_handler_persistent", true, true, _object] spawn A_jip_fnc_register;
+
+diag_log format['A_player_fnc_drop_item %1: object name-%2',_this,_object_name];
+
+[[_object, _item, _object_name], "A_player_fnc_drop_item_init_handler_persistent", _object] spawn A_jip_fnc_register;
+
 waitUntil {!(isNil _object_name)};
 
 

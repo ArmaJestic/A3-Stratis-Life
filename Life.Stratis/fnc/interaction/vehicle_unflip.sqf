@@ -1,8 +1,6 @@
 // A_interaction_fnc_vehicle_unflip
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 player groupChat format["A_interaction_fnc_vehicle_unflip %1", _this];

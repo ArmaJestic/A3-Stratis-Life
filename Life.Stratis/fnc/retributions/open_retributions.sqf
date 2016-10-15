@@ -1,6 +1,6 @@
 // A_retributions_fnc_open_retributions
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 if (dialog) exitWith { closeDialog 0; };

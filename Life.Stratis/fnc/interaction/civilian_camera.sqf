@@ -1,8 +1,6 @@
 // A_interaction_fnc_civilian_camera
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -19,7 +17,7 @@ if (true) exitWith {
 };
 
 private["_cost"];
-_cost = _watchtime * A_interaction_var_civilian_camera_cost_per_second;
+_cost = _watchtime * INTERACT_CIV_CAM_COST_PER_SEC;
 
 private["_money"];
 _money = [_player] call A_money_fnc_get_total_money;

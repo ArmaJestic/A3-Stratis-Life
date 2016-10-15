@@ -1,7 +1,6 @@
 // A_quarry_fnc_interact_sand_hit
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_stone_hit %1", _this];
@@ -17,26 +16,26 @@ _axe_sounds = [
 	"sounds\shovel3.ogg",
 	"sounds\shovel4.ogg"
 ];
-_sound = MISSION_ROOT + (_axe_sounds select (floor random (count(_axe_sounds))));
+_sound = MISSION_ROOT+(_axe_sounds select (floor random (count(_axe_sounds))));
 playSound3d [_sound, _player, true];
 
 
 //check if we are near a quarry
 private["_near_quarry"];
- _near_quarry = [_object] call A_quarry_fnc_player_near;
- if (undefined(_near_quarry)) exitWith {}; 
+_near_quarry = [_object] call A_quarry_fnc_player_near;
+if (UNDEFINED(_near_quarry)) exitWith {}; 
 
- 	A_quarry_var_A_quarry_var_interact_sand_hits = A_quarry_var_A_quarry_var_interact_sand_hits + 1;
+A_quarry_var_interact_sand_hits = A_quarry_var_interact_sand_hits + 1;
 if (A_quarry_var_interact_sand_hits < 10) exitWith {};
 A_quarry_var_interact_sand_hits = 0;
 
- //spawn the ore 
- private["_item", "_data", "_item_max"];
- _item = _near_quarry select A_quarry_var_data_item_id;
- _item_max = _near_quarry select A_quarry_var_data_item_max;
- 
- _data = ITEM_DATA(_item);
- player groupChat format["_item = %1, _data = %2", _item, _data];
- if (count(_data) == 0) exitWith {};
- 
+//spawn the ore 
+private["_item", "_data", "_item_max"];
+_item = _near_quarry select INDEX_ITEM_ID;
+_item_max = _near_quarry select INDEX_ITEM_MAX;
+
+_data = ITEM_DATA(_item);
+player groupChat format["_item = %1, _data = %2", _item, _data];
+if (count(_data) == 0) exitWith {};
+
 [_item, ceil(random _item_max), (getPos _object), 0.05] call A_quarry_fnc_sand_spawn;

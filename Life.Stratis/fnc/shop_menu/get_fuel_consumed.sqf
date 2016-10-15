@@ -1,7 +1,6 @@
 // A_shop_menu_fnc_get_fuel_consumed
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_fuel_consumed"];

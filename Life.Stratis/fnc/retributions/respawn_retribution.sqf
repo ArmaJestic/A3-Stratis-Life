@@ -1,9 +1,9 @@
 // A_retributions_fnc_respawn_retribution
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-if (undefined(A_retributions_var_player_unfair_killed) ) exitWith {null};
+if (UNDEFINED(A_retributions_var_player_unfair_killed) ) exitWith {null};
 if (typeName A_retributions_var_player_unfair_killed != "BOOL") exitWith {null};
 if (!(A_retributions_var_player_unfair_killed)) exitWith {null};
 

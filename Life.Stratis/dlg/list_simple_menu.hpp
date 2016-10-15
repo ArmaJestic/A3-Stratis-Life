@@ -8,16 +8,16 @@ class list_simple_menu {
 
 	name = "LIST_SIMPLE_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['LIST_SIMPLE_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['LIST_SIMPLE_MENU', _this select 0]";
 	
 	controls[] = {
-		A_list_simple_menu_var_header,
+		DLG_LIST_SIMPLE_INDEX_HEADER,
 		list_simple_menu_select_button,		
 		list_simple_menu_close_button,
-		A_list_simple_menu_var_list,
+		DLG_LIST_SIMPLE_INDEX_LIST,
 	};															
 
-	class A_list_simple_menu_var_header : RscMenuTitle {
+	class DLG_LIST_SIMPLE_INDEX_HEADER : RscMenuTitle {
 		idc = list_simple_menu_header_idc;																				
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;										
@@ -50,7 +50,7 @@ class list_simple_menu {
 		action = "closedialog 0;";		
 	};										
 
-	class A_list_simple_menu_var_list : RscListBox {
+	class DLG_LIST_SIMPLE_INDEX_LIST : RscListBox {
 		idc = list_simple_menu_list_idc;																												
 		x = -10; y = -10;
 		w = 0.05; h = 0.50;																																		

@@ -1,6 +1,6 @@
 // A_retributions_fnc_faction_reward
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_player", "_reward"];
@@ -8,8 +8,8 @@ private["_player", "_reward"];
 _player = _this select 0;
 _reward = _this select 1;
 
-if (undefined(_player)) exitWith {null};
-if (undefined(_reward)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
+if (UNDEFINED(_reward)) exitWith {null};
 if (typeName _reward != "SCALAR") exitWith {null};
 
 if (_player != player) exitWith {null};

@@ -6,7 +6,7 @@ class storage_menu {
 	movingEnable = true;
 	
 	name = "STORAGE_MENU";
-	onLoad="uiNamespace setVariable ['STORAGE_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['STORAGE_MENU', _this select 0]";
 	onUnload = "call A_trunk_fnc_close;";
 	
 	controlsBackground[] = {

@@ -7,7 +7,7 @@ ARGV(0,_player);
 ARGV(1,_amount);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 
 _fac_money = [_player] call A_money_fnc_get_factory_money;

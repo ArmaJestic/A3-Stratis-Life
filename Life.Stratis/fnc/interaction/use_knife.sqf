@@ -1,25 +1,21 @@
 // A_interaction_fnc_use_knife
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
- _this spawn {
-if (dialog) exitWith {};
-ARGV(0,_this);
-ARGV(0,_player);
-ARGV(1,_object);
-if (!([_player] call A_player_fnc_human)) exitWith {false};
-if (undefined(_object)) exitWith {false};
 
-if (A_interaction_var_interact_use_knife_active) exitWith {};
-A_interaction_var_interact_use_knife_active = true;
+params["_player","_object"];
+
+if (!([_player] call A_player_fnc_human)) exitWith {};
+if (UNDEFINED(_object)) exitWith {};
+
+if (A_interaction_var_use_knife_active) exitWith {};
+A_interaction_var_use_knife_active = true;
 player groupChat format["A_interaction_fnc_use_knife %1", _this];
 
 private["_exit_clean"];
 _exit_clean = {
 	sleep 0.8;
-	A_interaction_var_interact_use_knife_active = false;
+	A_interaction_var_use_knife_active = false;
 };
 
 _player playActionNow "PutDown";
@@ -65,5 +61,4 @@ if (_target isKindOf "Man" && !(_target isKindOf "Animal")) then {
 	playSound3D [format["a3\sounds_f\characters\human-sfx\Person0\P0_hit_0%1.wss", (floor(random 8) + 1)], _target];
 };
 
-call _exit_clean;
-};
+[] call _exit_clean;

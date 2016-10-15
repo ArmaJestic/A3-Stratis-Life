@@ -1,8 +1,6 @@
 // A_interaction_fnc_gang_menu
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -18,11 +16,11 @@ _i = 0;
 while {_i < count (_gangs_list) } do {
 	private["_gang"];
 	_gang = _gangs_list select _i;
-	private["_gang_id", "_gang_name", "_member_uids"];
-	_A_gang_var_id = _gang select A_gang_var_id;
-	_A_gang_var_name = _gang select A_gang_var_name;
-	_A_gang_var_open = _gang select A_gang_var_open;
-	_member_uids = _gang select A_gang_var_members;
+	private["_gang_id","_gang_name","_gang_open","_member_uids"];
+	_gang_id = _gang select GANG_INDEX_ID;
+	_gang_name = _gang select GANG_INDEX_NAME;
+	_gang_open = _gang select GANG_INDEX_OPEN;
+	_member_uids = _gang select GANG_INDEX_MEMBERS;
 	
 	private["_member_names", "_open_str"];
 	_member_names = [_member_uids] call A_gang_fnc_uids_2_names;

@@ -1,8 +1,6 @@
 // A_interaction_fnc_simple_camera
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_player);
@@ -53,6 +51,6 @@ waitUntil {
 };
 
 _camera cameraEffect ["terminate","back"];
-titleCut [" ","Black in",1];
+cutText[" ","BLACK IN",1];
 camDestroy _camera;
 };

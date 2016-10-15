@@ -1,7 +1,6 @@
 // A_inventory_fnc_set_item_amount
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_inventory_fnc_set_item_amount %1", _this];

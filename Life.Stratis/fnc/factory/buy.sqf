@@ -1,20 +1,19 @@
 // A_factory_fnc_buy
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_factory_id);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_factory_id)) exitWith {null};
+if (UNDEFINED(_factory_id)) exitWith {null};
 if (typeName _factory_id != "STRING") exitWith {null};
 
 private["_factory", "_factory_cost"];
 _factory = [_factory_id] call A_factory_fnc_lookup_id;
-if (undefined(_factory)) exitWith {null};
-_factory_cost = _factory select factory_cost;
+if (UNDEFINED(_factory)) exitWith {null};
+_factory_cost = _factory select INDEX_COST;
 
 if (_factory_id in INV_Fabrikowner) exitWith {
 	player groupChat format["%1-%2, you already own this factory", _player, (name _player)];

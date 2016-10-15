@@ -1,6 +1,6 @@
 // A_retributions_fnc_kill_type_2_str
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 _type = _this select 0;

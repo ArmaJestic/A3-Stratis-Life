@@ -1,9 +1,8 @@
 // A_inv_fnc_createmag
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-liafu = true;
 private["_class", "_amount", "_crate"];
 _class = _this select 0;
 _amount = _this select 1;

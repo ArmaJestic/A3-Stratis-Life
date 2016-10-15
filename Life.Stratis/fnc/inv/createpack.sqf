@@ -1,9 +1,8 @@
 // A_inv_fnc_createpack
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-liafu = true;
 private["_class", "_amount", "_crate"];
 _class = _this select 0;
 _amount = _this select 1;
@@ -22,7 +21,7 @@ if (_in_hands) then {
 	sleep 1;
 	private["_backpack"];
 	_backpack = unitBackpack player;
-	if (undefined(_backpack)) exitWith {null};
+	if (UNDEFINED(_backpack)) exitWith {null};
 	clearWeaponCargoGlobal _backpack;
 	clearMagazineCargoGlobal _backpack;
 };

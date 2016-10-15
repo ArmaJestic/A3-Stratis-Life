@@ -1,10 +1,10 @@
 // A_gang_fnc_delete_id
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_gang_id);
-if (undefined(_gang_id)) exitWith {null};
+if (UNDEFINED(_gang_id)) exitWith {null};
 if (typeName _gang_id != "STRING") exitWith {null};
 
 private["_gang", "_gang_index"];

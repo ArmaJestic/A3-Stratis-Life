@@ -1,7 +1,6 @@
 // A_inventory_fnc_get_item_tax_price
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private ["_type", "_preis", "_result"];

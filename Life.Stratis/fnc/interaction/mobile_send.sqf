@@ -1,8 +1,6 @@
 // A_interaction_fnc_mobile_send
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_mobile_send %1", _this];
@@ -14,7 +12,7 @@ if (!([_player] call A_player_fnc_human)) exitWith {};
 if (!([_target] call A_player_fnc_human)) exitWith {};
 if (_player != player) exitWith {};
 
-if (undefined(_text)) exitWith {};
+if (UNDEFINED(_text)) exitWith {};
 if (typeName _text != "STRING") exitWith {};
 
 if (_text == "" || {_text == A_mobile_menu_var_default_text}) exitWith {
@@ -38,7 +36,7 @@ if (_money < _cost) exitWith {
 
 [_player, 'money', -(_cost)] call A_inventory_fnc_add_item;
 
-if (!(([_target, "A_item_fnc_handy"] call A_inventory_fnc_get_item_amount) > 0)) exitWith {
+if (!(([_target, "handy"] call A_inventory_fnc_get_item_amount) > 0)) exitWith {
 	player groupChat format["%1-%2 does not have a mobile phone, your text message bounced", _target, (name _target)];
 };
 

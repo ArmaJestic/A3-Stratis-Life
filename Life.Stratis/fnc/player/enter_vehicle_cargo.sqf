@@ -1,6 +1,6 @@
 // A_player_fnc_enter_vehicle_cargo
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  
 player groupChat format["A_player_fnc_enter_vehicle_cargo %1", _this];
@@ -8,8 +8,8 @@ ARGV(0,_player);
 ARGV(1,_vehicle);
 ARGV(2,_immediate);
 if (!([_player] call A_player_fnc_exists)) exitWith {false};
-if (undefined(_vehicle)) exitWith {false};
-if (undefined(_immediate)) exitWith {false};
+if (UNDEFINED(_vehicle)) exitWith {false};
+if (UNDEFINED(_immediate)) exitWith {false};
 if (typeName _immediate != "BOOL") exitWith {false};
 
 _vehicle lock false;

@@ -1,8 +1,6 @@
 // A_interaction_fnc_play_pickup_animation
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 private["_animation"];

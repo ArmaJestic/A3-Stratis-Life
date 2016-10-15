@@ -1,6 +1,6 @@
 // A_vehicle_fnc_set_var_checked
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_vehicle);
@@ -10,11 +10,11 @@ ARGV(3,_variable_type);
 ARGV(4,_checked);
 
 
-if (undefined(_vehicle)) exitWith {null};
-if (undefined(_variable_name)) exitWith {null};
-    if (undefined(_variable_value)) exitWith {null};
-if (undefined(_variable_type)) exitWith {null};
-if (undefined(_checked)) exitWith {null};
+if (UNDEFINED(_vehicle)) exitWith {null};
+if (UNDEFINED(_variable_name)) exitWith {null};
+    if (UNDEFINED(_variable_value)) exitWith {null};
+if (UNDEFINED(_variable_type)) exitWith {null};
+if (UNDEFINED(_checked)) exitWith {null};
 
 if (typeName _variable_name != "STRING") exitWith {null};
 if (typeName _variable_type != "STRING") exitWith {null};

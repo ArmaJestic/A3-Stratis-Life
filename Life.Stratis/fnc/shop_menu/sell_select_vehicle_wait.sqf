@@ -1,14 +1,13 @@
 // A_shop_menu_fnc_sell_select_vehicle_wait
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_shop_menu_fnc_sell_select_vehicle_wait %1", _this];
 ARGV(0,_vehicles);
 
 private["_dialog"];
-if (undefined(_vehicles)) exitWith {null};
+if (UNDEFINED(_vehicles)) exitWith {null};
 if (typeName _vehicles != "ARRAY") exitWith {null};
 
 private["_class", "_name", "_picture"];
@@ -18,8 +17,8 @@ _picture = [_class] call A_misc_fnc_generic_picture_path;
 
 private["_controls", "_list", "_submit"];
 _controls = [toUpper(format["%1 LIST", _name]), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc_setup;
-_list = _controls select A_list_simple_menu_var_list;
-_submit = _controls select A_list_simple_menu_var_submit;
+_list = _controls select DLG_LIST_SIMPLE_INDEX_LIST;
+_submit = _controls select DLG_LIST_SIMPLE_INDEX_SUBMIT;
 
 _submit ctrlSetText "Sell";
 _submit ctrlCommit 0;

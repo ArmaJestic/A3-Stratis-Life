@@ -5,7 +5,7 @@
 
 
 ARGV(0,_current_target);
-if (undefined(_current_target)) exitWith {};
+if (UNDEFINED(_current_target)) exitWith {};
 if (isNull _current_target) exitWith {};
 
 private["_player"];
@@ -14,11 +14,11 @@ _player = camera_unit;
 private["_target_marker"];
 
 _target_marker = ([_player] call A_camera_fnc_get_target_marker);
-if (undefined(_target_marker)) exitWith {};
+if (UNDEFINED(_target_marker)) exitWith {};
 		
 private["_current_target_pos", "_target_marker_pos"];
 _current_target_pos = [_current_target, "offset", null] call A_object_fnc_getVariable;
-if (undefined(_current_target_pos)) then {
+if (UNDEFINED(_current_target_pos)) then {
 	_current_target_pos = _current_target modelToWorld [0,0,0];
 };
 

@@ -1,7 +1,6 @@
 // A_inventory_fnc_get_script_from_class_mag
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private ["_c", "_result"];

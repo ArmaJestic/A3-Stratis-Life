@@ -1,8 +1,6 @@
 // A_interaction_fnc_factory_storage
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -12,9 +10,9 @@ ARGV(3,_amount);
 
 if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
-if (undefined(_factory)) exitWith {null};
-if (undefined(_item)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_factory)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _factory != "STRING") exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};

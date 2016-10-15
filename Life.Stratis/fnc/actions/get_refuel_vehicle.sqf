@@ -5,5 +5,5 @@
 
 private["_vehicle"];
 _vehicle = [player, "refuel_vehicle"] call A_object_fnc_getVariable;
-if (undefined(_vehicle)) exitWith {null};
+if (UNDEFINED(_vehicle)) exitWith {null};
 _vehicle

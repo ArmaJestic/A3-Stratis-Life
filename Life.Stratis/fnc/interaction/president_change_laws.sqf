@@ -1,17 +1,15 @@
 // A_interaction_fnc_president_change_laws
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_number);
 ARGV(1,_text);
 
-if (undefined(_number)) exitWith {null};
+if (UNDEFINED(_number)) exitWith {null};
 if (typeName _number != "SCALAR") exitWith {null};
 
-if (undefined(_text)) exitWith {null};
+if (UNDEFINED(_text)) exitWith {null};
 if (typeName _text != "STRING") exitWith {null};
 
 if (_number == -1) exitWith {null};

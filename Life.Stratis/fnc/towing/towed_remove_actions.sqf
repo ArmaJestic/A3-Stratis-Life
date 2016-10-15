@@ -1,7 +1,6 @@
 // A_towing_fnc_towed_remove_actions
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 if (count A_towing_var_towed_actions == 0) exitWith {};

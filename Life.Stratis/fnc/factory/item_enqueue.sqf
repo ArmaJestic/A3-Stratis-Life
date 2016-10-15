@@ -1,7 +1,6 @@
 // A_factory_fnc_item_enqueue
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 //player groupChat format["A_factory_fnc_item_enqueue %1", _this];	
@@ -10,15 +9,15 @@ ARGV(1,_factory_id);
 ARGV(2,_item);
 ARGV(3,_amount);
 
-factory_enqueue_active = if(undefined(factory_enqueue_active)) then {false} else {factory_enqueue_active};
+factory_enqueue_active = if(UNDEFINED(factory_enqueue_active)) then {false} else {factory_enqueue_active};
 if (factory_enqueue_active) exitWith {null};
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if(undefined(_factory_id)) exitWith {null};
+if(UNDEFINED(_factory_id)) exitWith {null};
 if (typeName _factory_id != "STRING") exitWith {null};
-if (undefined(_item)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _amount != "SCAlAR") exitWith {null};
 
 if (_amount == 0) exitWith {null};
@@ -27,11 +26,11 @@ factory_enqueue_active = true;
 
 private["_factory", "_factory_storage", "_factory_queue", "_factory_name", "_factory_money", "_starttime"];
 _factory = [_factory_id] call A_factory_fnc_lookup_id;
-if (undefined(_factory)) exitWith {factory_enqueue_active = false;};
+if (UNDEFINED(_factory)) exitWith {factory_enqueue_active = false;};
 
-_factory_storage = _factory select factory_storage;
-_factory_queue = _factory select factory_queue;
-_factory_name = _factory select factory_name;
+_factory_storage = _factory select INDEX_STORAGE;
+_factory_queue = _factory select INDEX_QUEUE;
+_factory_name = _factory select INDEX_NAME;
 _factory_money = [_player, "money", _factory_storage] call A_inventory_fnc_get_storage_amount;
 
 private["_info", "_item_type", "_item_name", "_production_cost"];
@@ -75,8 +74,8 @@ while { _amount > 0 } do {
 	_queue = _queue + [_item];
 	_pend = _pend + 1;
 
-	missionNamespace setVariable [_pend_name, _pend];
-	missionNamespace setVariable [_factory_queue, _queue];
+	missionNamespace setVariable[_pend_name, _pend];
+	missionNamespace setVariable[_factory_queue, _queue];
 	
 	[_pend_name, _pend] call A_stats_fnc_client_save;
 	[_factory_queue, _queue] call A_stats_fnc_client_save;

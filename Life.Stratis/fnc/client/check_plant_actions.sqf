@@ -12,7 +12,7 @@ _in_vehicle = (_vehicle != _player);
 
 private["_plant_netid"];
 _plant_netid = [_player, 5] call A_plant_fnc_player_near;
-if (undefined(_plant_netid) || !(INV_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
+if (UNDEFINED(_plant_netid) || !(A_inv_var_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
 	[_player] call A_plant_fnc_remove_actions;
 };
 [_player, _plant_netid] call A_plant_fnc_add_actions;

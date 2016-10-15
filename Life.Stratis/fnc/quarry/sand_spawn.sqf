@@ -1,7 +1,6 @@
 // A_quarry_fnc_sand_spawn
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_quarry_fnc_sand_spawn %1", _this];
@@ -10,10 +9,10 @@ ARGV(1,_amount);
 ARGV(2,_position);
 ARGV(3,_radius);
 
-if (undefined(_item)) exitWith {};
-if (undefined(_amount)) exitWith {};
-if (undefined(_position)) exitWith {};
-if (undefined(_radius)) exitWith {};
+if (UNDEFINED(_item)) exitWith {};
+if (UNDEFINED(_amount)) exitWith {};
+if (UNDEFINED(_position)) exitWith {};
+if (UNDEFINED(_radius)) exitWith {};
 if (typeName _item != "STRING") exitWith {};
 if (typename _amount != "SCALAR") exitWith {};
 if (typename _position != "ARRAY") exitWith {};

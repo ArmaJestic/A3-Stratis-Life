@@ -1,7 +1,6 @@
 // A_voting_menu_fnc_vote_candidate
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 voting_vote_candidate_request_buffer = _this;

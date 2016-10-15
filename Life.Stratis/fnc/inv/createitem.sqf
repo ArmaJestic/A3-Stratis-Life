@@ -1,9 +1,8 @@
 // A_inv_fnc_createitem
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-liafu = true;
 private["_object", "_class", "_amount", "_storage"];
 _object = _this select 0;
 _class = _this select 1;

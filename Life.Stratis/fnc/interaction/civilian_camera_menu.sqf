@@ -1,8 +1,6 @@
 // A_interaction_fnc_civilian_camera_menu
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 _this spawn {
 if (!(createDialog "civcamdialog")) exitWith {hint "Dialog Error!";};
@@ -15,7 +13,7 @@ sliderSetSpeed [2, 1, 5];
 while {ctrlVisible 1002} do {
 	private["_seconds", "_cost"];
 	_seconds =  round(sliderPosition 2);
-	_cost = _seconds * A_interaction_var_civilian_camera_cost_per_second;
+	_cost = _seconds * INTERACT_CIV_CAM_COST_PER_SEC;
 	ctrlSetText [3, strM(_cost)]; 
 	ctrlSetText [5, str(_seconds)];
 };

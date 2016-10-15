@@ -1,13 +1,13 @@
 // A_player_fnc_rob_station
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_station);
 
-if (undefined(_player)) exitWith {null};
-if (undefined(_station)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
+if (UNDEFINED(_station)) exitWith {null};
 if (typeName _station != "SCALAR") exitWith {null};
 
 if (!([_player] call A_player_fnc_armed)) exitwith {
@@ -25,5 +25,5 @@ format ['server globalChat "Someone robbed gas station %1!";', _station] call A_
 player sidechat format ["You stole $%1 from the gas station!", _money_variable];
 
 _money_variable = 0;
-missionNamespace setVariable [_money_variable_name, _money_variable];
+missionNamespace setVariable[_money_variable_name, _money_variable];
 publicVariable _money_variable_name;

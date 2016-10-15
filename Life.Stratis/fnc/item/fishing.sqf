@@ -41,7 +41,7 @@ if (_art == "use") then {
 		(format ["%1 switchmove ""%2"";", player, "AwopPercMstpSgthWnonDnon_end"]) call A_broadcast_fnc_broadcast;
 		for [{_i=0}, {_i < 4}, {_i=_i+1}] do {
 			_amount = round (random _max);
-			titletext ["A_item_fnc_fishing...", "PLAIN DOWN", 0.1];
+			cutText["fishing...","PLAIN DOWN",0.1];
 
 			sleep 1.5;
 			player switchmove "normal";

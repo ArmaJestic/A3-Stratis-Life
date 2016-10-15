@@ -1,12 +1,9 @@
 // A_factory_fnc_globals
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
-private["_weaponfactory"];
-_weaponfactory=
-[
+private _weaponfactory=[
 	"hgun_ACPC2_F",
 	"9Rnd_45ACP_Mag",
 	"hgun_Rook40_F",
@@ -44,15 +41,9 @@ _weaponfactory=
 	"optic_Arco"
 ];
 
-private["_terrorfactory"];
-_terrorfactory=
-[
-];
+private _terrorfactory=[];
 
-
-private["_vehiclefactory"];
-_vehiclefactory=
-[
+private _vehiclefactory=[
 	"O_Quadbike_01_F",
 	"C_Offroad_01_F_red",
 	"C_Offroad_01_F_white",
@@ -96,31 +87,27 @@ _vehiclefactory=
 	"I_Truck_02_transport_F"
 ];
 
-private["_aircraft_factory"];
-_aircraft_factory =
-[
+private _aircraft_factory=[
 	"B_Heli_Light_01_F_nobenches_adddoors",
 	"I_Heli_Transport_02_F_dahoman"
 ];
 
-private["_itemfactory"];
-_itemfactory=
-[
+private _itemfactory=[
 	"hgun_ACPC2_F",
 	"16Rnd_9x21_Mag",
 	"9Rnd_45ACP_Mag",
 	"reparaturkit",
 	"kleinesreparaturkit",
 	"kanister",
-	"A_item_fnc_nitro",
-	"A_item_fnc_lockpick",
+	"nitro",
+	"lockpick",
 	"medikit",
 	"Firstaidkit",
 	"Toolkit",
-	"A_item_fnc_lighter",
-	"A_item_fnc_defuser",
+	"lighter",
+	"defuser",
 	"fernzuender",
-	"A_item_fnc_vclammo",
+	"vclammo",
 	"fishingpole",
 	"knife",
 	"shovel",
@@ -133,9 +120,7 @@ _itemfactory=
 	"supgrade5"
 ];
 
-private["_tairfactory"];
-_tairfactory =
-[
+private _tairfactory=[
 	"O_MRAP_02_F",
 	"O_MRAP_02_hmg_F",
 	"O_MRAP_02_gmg_F",
@@ -147,9 +132,7 @@ _tairfactory =
 	"O_Heli_Attack_02_black_F_noscalpel_noskyfire"
 ];
 
-private["_alcoholfactory"];
-_alcoholfactory = 
-[
+private _alcoholfactory=[
 	"beer",
 	"fanta",
 	"vodka",
@@ -159,30 +142,16 @@ _alcoholfactory =
 	"water"
 ];
 
-private["_ringfactory"];
-_ringfactory = 
-[
+private _ringfactory=[
 	"Diamondring",
 	"EDiamondring",
 	"Platinumring",
 	"EPlatinumring"
 ];
 
-private["_furnace"];
-_furnace = ["steel"];
+private _furnace=["steel"];
 
-factory_object = 0;
-factory_id = 1;
-factory_name = 2;
-factory_crate = 3;
-factory_spawn = 4;
-factory_items = 5;
-factory_cost = 6;
-factory_storage = 7;
-factory_queue = 8;
-
-all_factories =
-[
+all_factories=[
 	[Vehiclefactory, "factory1", "Vehicle Factory", dummyobj, vfacspawn, _vehiclefactory, 2500000, "Fabrikablage1", "vehiclequeue"],
 	//[ Aircraftfactory, "factory2", "Aircraft Factory", dummyobj, airfacspawn, _aircraft_factory, 5000000, "AircraftFactory1", "aircraftqueue"],
 	[ItemFabrik_1, "factory3", "General Factory", igunbox,dummyobj, _itemfactory, 250000, "Fabrikablage3", "itemqueue"],

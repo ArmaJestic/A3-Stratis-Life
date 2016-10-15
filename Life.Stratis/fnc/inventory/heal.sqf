@@ -1,7 +1,6 @@
 // A_inventory_fnc_heal
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_player"];

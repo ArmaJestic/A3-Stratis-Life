@@ -58,7 +58,7 @@ halo_soundLoop = time;
 playsound "BIS_HALO_Flapping";
 
 
-halo_action = _unit addaction ["Open Chute",A_other_fnc_noscript,'[_this select 1] call A_halo_fnc_open_parachute;',1,false,true,"","true"];
+halo_action = _unit addaction ["Open Chute",A_actions_fnc_noscript,'[_this select 1] call A_halo_fnc_open_parachute;',1,false,true,"","true"];
 
 halo_keydown = {
 	ARGV(1,_key);
@@ -92,7 +92,7 @@ halo_keydown = {
 	};
 	
 };
-halo_keydown_eh = (finddisplay 46) displayaddeventhandler ["keydown","_this call halo_keydown;"];
+halo_keydown_eh = (finddisplay 46) displayaddeventhandler ["keydown",{_this call halo_keydown;}];
 
 //--- A_other_fnc_loop
 halo_vel = 0;

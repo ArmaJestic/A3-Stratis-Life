@@ -7,7 +7,7 @@
 //player groupChat format["A_nametags_fnc_3d_tags_draw %1", _this];
 private["_player", "_side"];
 
-if( undefined(A_nametags_var_name_tags_side_units)) exitWith {null};
+if( UNDEFINED(A_nametags_var_name_tags_side_units)) exitWith {null};
 
 disableSerialization;
 _player = _this select 0;
@@ -16,7 +16,7 @@ _side = _this select 1;
 //put tags on players
 {
 	
-	if (!(INV_shortcuts)  || [_player] call A_player_fnc_civilian ||
+	if (!(A_inv_var_shortcuts)  || [_player] call A_player_fnc_civilian ||
 		!(alive _player) || visibleMap) exitWith {};
 		
 	if (true) then {
@@ -30,7 +30,7 @@ _side = _this select 1;
 		
 		private["_distance", "_has_admin_camera", "_under_base"];
 		_has_admin_camera = [_target, "has_admin_camera"] call A_player_fnc_get_bool;
-		_A_underwater_base_fnc_under_base = [_target] call A_underwater_base_fnc_under_base;
+		_under_base = [_target] call A_bases_fnc_underbase_player;
 		_distance = _target distance _player;
 		if (_distance <  5 || _has_admin_camera || _under_base) exitWith {};
 

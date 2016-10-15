@@ -1,7 +1,6 @@
 // A_economy_menu_fnc_menu_create
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 	
 ARGV(0,_this);

@@ -9,4 +9,4 @@ ARGV(0,_player);
 
 private["_camera"];
 _camera = [_player, "camera"] call A_object_fnc_getVariable;
-!(undefined(_camera))
+!(UNDEFINED(_camera))

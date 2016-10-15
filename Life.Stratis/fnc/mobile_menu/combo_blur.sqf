@@ -1,7 +1,7 @@
 // A_mobile_menu_fnc_combo_blur
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_control);

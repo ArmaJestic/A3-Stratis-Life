@@ -1,7 +1,6 @@
 // A_mounted_fnc_keyDownHandler
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["_this = %1", _this];

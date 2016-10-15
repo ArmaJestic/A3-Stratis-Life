@@ -1,8 +1,6 @@
 // A_interaction_fnc_restrain_handler
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(2,_this);

@@ -1,7 +1,6 @@
 // A_towing_fnc_towed_add_actions
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 if (count A_towing_var_towed_actions > 0) exitWith {};
@@ -10,12 +9,12 @@ ARGV(1,_towed_net_id);
 //player groupChat format["A_towing_fnc_towed_add_actions %1", _this];
 
 if (!([_player] call A_player_fnc_human)) exitWith {};
-if (undefined(_towed_net_id)) exitWith {};
+if (UNDEFINED(_towed_net_id)) exitWith {};
 if (typeName _towed_net_id != "STRING") exitWith {};
 
 private["_towed_vehicle"];
 _towed_vehicle = objectFromNetId _towed_net_id;
-if (undefined(_towed_vehicle)) exitWith {};
+if (UNDEFINED(_towed_vehicle)) exitWith {};
 
 
 private["_action_id"];

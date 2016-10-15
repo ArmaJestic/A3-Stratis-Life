@@ -1,14 +1,12 @@
 // A_flag_pole_fnc_flag_at_max_z
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_pole);
-if (undefined(_pole)) exitWith {false};
-if (typeName _pole != "ARRAY") exitWith {false};
+params[["_pole",null,[[]]]];
+if (UNDEFINED(_pole)) exitWith {false};
 
-private["_max_z", "_offset", "_z_offset"];
-_offset = _pole select A_flag_pole_var_flag_object_offset;
-_z_offset = _offset select 2;
-_max_z = _pole select A_flag_pole_var_max_z;
+private _offset = _pole select INDEX_FLAG_OFFSET;
+private _z_offset = _offset select 2;
+private _max_z = _pole select INDEX_MAX_Z;
 (_z_offset >= _max_z)

@@ -71,7 +71,7 @@ class ListMenu {
 
 	name = "LIST_MENU";
 	onUnload = "[] call A_interaction_fnc_weapon_modifications_menu_close;";
-	onLoad="uiNamespace setVariable ['LIST_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['LIST_MENU', _this select 0]";
 	
 	class mainFrame : LBgFrame {
 		idc = listMenu_mainFrame_idc;

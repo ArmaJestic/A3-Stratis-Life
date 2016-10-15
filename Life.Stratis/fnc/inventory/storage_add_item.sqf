@@ -1,7 +1,6 @@
 // A_inventory_fnc_storage_add_item
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_object);
@@ -9,17 +8,22 @@ ARGV(1,_item);
 ARGV(2,_quantity);
 ARGV(3,_arrname);
 
+diag_log format['A_inventory_fnc_storage_add_item: %1', _this];
+
 [_object, _arrname] call A_inventory_fnc_check_array;
 
 private["_arr", "_arraynum", "_number"];
 _arr = [_object, _arrname] call A_object_fnc_getVariable;
+if (UNDEFINED(_arr)) exitwith {
+	diag_log format['%1 A_inventory_fnc_storage_add_item: undefined _arr', _this];
+	false
+};
 
 _arraynum  = -1;
 _number = 0;
 
 //find the array that contains this item, and cleanup empty ones
-private["_i"];
-_i = 0;
+private _i = 0;
 while { _i < (count _arr) } do {
 	private["_info", "_citem", "_count"];
 	_info = _arr select _i;

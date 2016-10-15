@@ -1,6 +1,6 @@
 // A_inv_fnc_createattachment
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 player groupChat format["A_inv_fnc_createattachment %1", _this];

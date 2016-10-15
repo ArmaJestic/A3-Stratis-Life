@@ -1,11 +1,10 @@
 // A_shop_menu_fnc_sell_select_vehicle
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_vehicle_name);
-if (undefined(_vehicle_name)) exitWith {null};
+if (UNDEFINED(_vehicle_name)) exitWith {null};
 if (typeName _vehicle_name != "STRING") exitWith {null};
 
 private["_vehicle"];

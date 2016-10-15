@@ -1,11 +1,11 @@
 // A_player_fnc_prison_strip
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 
-if (undefined(_player)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
 if (_player != player) exitWith {null};
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 

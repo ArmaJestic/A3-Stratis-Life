@@ -8,7 +8,7 @@ class prison_menu {
 
 	name = "PRISON_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['PRISON_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['PRISON_MENU', _this select 0]";
 	
 	controls[] = {
 		prison_menu_header,

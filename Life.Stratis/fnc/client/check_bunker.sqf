@@ -3,15 +3,11 @@
 #include "..\..\includes\macro.h"
 
 
-//player groupChat format["A_client_fnc_check_bunker %1", _this];
-private["_player"];
-_player = player;
+private _player = player;
+private _bunker = [_player] call A_bases_fnc_bunker_near;
 
-private["_bunker"];
-_bunker = [_player] call A_bunker_fnc_player_near;
-
-if (undefined(_bunker) || {!(INV_shortcuts) || {!(alive _player)}}) exitWith {
-	[_player] call A_bunker_fnc_remove_actions;
+if (UNDEFINED(_bunker) || {!(A_inv_var_shortcuts) || {!(alive _player)}}) exitWith {
+	[_player] call A_bases_fnc_bunker_remove_actions;
 };
 
-[_player, _bunker] call A_bunker_fnc_add_actions;
+[_player, _bunker] call A_bases_fnc_bunker_add_actions;

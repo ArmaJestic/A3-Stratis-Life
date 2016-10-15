@@ -1,8 +1,6 @@
 // A_doors_fnc_house_player_near
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -25,8 +23,7 @@ private["_name"];
 _name = ((_intersect select 0) select 0);
 
 
-private["_data"];
-_data = [];
-_data set [A_doors_var_house_data_object, _object];
-_data set [A_doors_var_house_data_door, _name];
+private _data = [];
+_data set [INDEX_OBJECT, _object];
+_data set [INDEX_DOOR, _name];
 _data

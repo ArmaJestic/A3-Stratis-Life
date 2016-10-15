@@ -1,8 +1,6 @@
 // A_interaction_fnc_item_give
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 //player groupChat format["A_interaction_fnc_item_give %1", _this];
@@ -12,8 +10,8 @@ ARGV(2,_amount);
 ARGV(3,_target);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_item)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 if (!([_target] call A_player_fnc_human)) exitWith {null};
@@ -67,11 +65,11 @@ if (_item == "keychain") then {
 	
 	private["_vehicle_name"];
 	_vehicle_name = [_vehicles_name_list] call A_interaction_fnc_select_vehicle_wait;
-	if (undefined(_vehicles_name_list)) exitWith {null};
+	if (UNDEFINED(_vehicles_name_list)) exitWith {null};
 	
 	private["_vehicle"];
 	_vehicle = missionNamespace getVariable [_vehicle_name, null];
-	if (undefined(_vehicle)) exitWith {
+	if (UNDEFINED(_vehicle)) exitWith {
 		player groupChat format["%1-%2, you cannot give keys to a vehicle that does not exist", (_player), (name _player), _vehicle_name];
 	};
 	

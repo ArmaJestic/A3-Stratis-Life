@@ -1,20 +1,18 @@
 // A_main_menu_fnc_setup
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 disableSerialization;
 player groupChat format["A_main_menu_fnc_setup "];
-ARGV(0,_menu_title);
-ARGV(1,_buttons_data);
+
+params["_menu_title","_buttons_data"];
 
 if (!(createDialog "main_menu")) exitWith {
-	player groupChat format["ERROR: cannot create main menu dialog"];	
+	systemChat format["ERROR: cannot create main menu dialog"];	
 };
 
-private["_display"];
-_display = uiNamespace getVariable "MAIN_MENU";
+private _display = uiNamespace getVariable "MAIN_MENU";
 
 
 
@@ -66,7 +64,7 @@ _button_sx = _button_x;
 _button_sy = _button_y;
 
 
-if (undefined(A_main_menu_var_variable_data)) then {
+if (UNDEFINED(A_main_menu_var_variable_data)) then {
 	A_main_menu_var_variable_data = "Sign_Sphere10cm_F" createVehicle (getPos player); 
 };
 
@@ -78,11 +76,11 @@ while {_i < (count _buttons_data)} do {
 
 	private["_button_data", "_button_title", "_button_function"];
 	_button_data = _buttons_data select _i;
-	_button_title = _button_data select A_main_menu_var_dialog_title;
-	_button_handler = _button_data select A_main_menu_var_dialog_handler;
-	_button_variables = _button_data select A_main_menu_var_dialog_handler_variables;
+	_button_title = _button_data select DLG_MAIN_INDEX_TITLE;
+	_button_handler = _button_data select DLG_MAIN_INDEX_HANDLER;
+	_button_variables = _button_data select DLG_MAIN_INDEX_HANDLER_VARS;
 	
-	if (undefined(_button_variables)) then {
+	if (UNDEFINED(_button_variables)) then {
 		_button_variables = [];
 	};
 	

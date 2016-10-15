@@ -1,12 +1,11 @@
 // A_factory_fnc_calculate_production_cost
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 //player groupChat format["A_factory_fnc_calculate_production_cost %1", _this];
 ARGV(0,_item);
-if (undefined(_item)) exitWith {0};
+if (UNDEFINED(_item)) exitWith {0};
 if (typeName _item != "STRING") exitWith {0};
 
 private["_buy_price"];

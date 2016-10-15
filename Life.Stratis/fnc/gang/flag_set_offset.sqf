@@ -1,15 +1,15 @@
 // A_gang_fnc_flag_set_offset
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_anchor);
 ARGV(1,_amount);
 
-if (undefined(_anchor)) exitWith {null};
+if (UNDEFINED(_anchor)) exitWith {null};
 if (typeName _anchor !="OBJECT") exitWith {null};
 if (isNull _anchor) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 
 private["_banner"];

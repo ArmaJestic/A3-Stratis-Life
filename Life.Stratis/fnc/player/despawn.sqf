@@ -1,41 +1,41 @@
 // A_player_fnc_despawn
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
- _this spawn {
-//player groupChat format["A_player_fnc_despawn %1", _this];
-ARGV(0,_unit);
-ARGV(1,_delay);
 
-if (undefined(_unit)) exitWith {null};
-if (typeName _unit != "OBJECT") exitWith {null};
-if (isNull _unit) exitWith {null};
-if (undefined(_delay)) exitWith {null};
-if (typeName _delay != "SCALAR") exitWith {null};
+diag_log format['A_player_fnc_despawn %1: start', _this];
 
-_delay = ((_delay - 5) max (0));
-//diag_log format["A_player_fnc_despawn waiting %1, %2", _unit, _delay];
-[_delay] call A_player_fnc_isleep;
+params["_unit","_delay"];
 
-if ([_unit] call A_underwater_base_fnc_under_base) exitWIth {
-	_unit setPos [0,0,0];
-	deleteVehicle _unit;
-};
+if (UNDEFINED(_unit)) exitWith {diag_log format['A_player_fnc_despawn %1: end1', _this];};
+if (typeName _unit != "OBJECT") exitWith {diag_log format['A_player_fnc_despawn %1: end2', _this];};
+if (isNull _unit) exitWith {diag_log format['A_player_fnc_despawn %1: end3', _this];};
+if (UNDEFINED(_delay)) exitWith {diag_log format['A_player_fnc_despawn %1: end4', _this];};
+if (typeName _delay != "SCALAR") exitWith {diag_log format['A_player_fnc_despawn %1: end5', _this];};
 
-//diag_log format["A_player_fnc_despawn hiding %1", _unit];
-private["_i"];
-_i = 0;
-while { _i < 5 } do {
-	hideBody _unit;
-	sleep 1;
-	_i = _i + 1;
-};
 
-//diag_log format["A_player_fnc_despawn deleting %1", _unit];
-//_unit setPos [-1,-1,-1];
+//_delay = ((_delay - 5) max (0));
+//[_delay] call A_player_fnc_isleep;
+sleep _delay;
 
-if (isServer) then {
-	sleep 5;
-	deleteVehicle _unit;
-};
-};
+// useless, why delete body
+//if ([_unit] call A_bases_fnc_underbase_player) exitWIth {
+//	_unit setPosASL[0,0,0];
+//	deleteVehicle _unit;
+//};
+
+//private["_i"];
+//_i = 0;
+//while {_i < 5} do {
+//	hideBody _unit;
+//	sleep 1;
+//	_i = _i + 1;
+//};
+hideBody _unit;
+
+//if (isServer) then {
+//	sleep 5;
+//	deleteVehicle _unit;
+//};
+
+diag_log format['A_player_fnc_despawn %1: end', _this];

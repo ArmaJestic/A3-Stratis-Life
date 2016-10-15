@@ -13,7 +13,7 @@ _in_vehicle = (_vehicle != _player);
 private["_vehicle"];
 _target_vehicle = [_player, 3.5] call A_vehicle_fnc_outside_player_near;
 //player groupChat format["_target_vehicle = %1",_target_vehicle];
-if (undefined(_target_vehicle) || !(INV_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
+if (UNDEFINED(_target_vehicle) || !(A_inv_var_shortcuts) || _in_vehicle || !(alive _player)) exitWith {
 	[_player] call A_vehicle_fnc_outside_remove_actions;
 };
 

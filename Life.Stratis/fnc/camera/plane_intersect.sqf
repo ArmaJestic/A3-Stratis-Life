@@ -5,7 +5,7 @@
 
 
 ARGV(0,_current_target);
-if (undefined(_current_target)) exitWith {[]};
+if (UNDEFINED(_current_target)) exitWith {[]};
 
 private["_offset"];
 _offset = [_current_target, "offset", (_current_target modelToWorld [0,0,0])] call A_object_fnc_getVariable;

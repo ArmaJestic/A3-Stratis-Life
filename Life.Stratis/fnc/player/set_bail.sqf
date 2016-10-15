@@ -1,13 +1,13 @@
 // A_player_fnc_set_bail
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_bail);
 
-if (undefined(_player)) exitWith {null};
-    if (undefined(_bail)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
+    if (UNDEFINED(_bail)) exitWith {null};
 
 if (typeName _bail != "SCALAR") exitWith {null};
 _bail = if (_bail < 0) then {0} else {_bail};

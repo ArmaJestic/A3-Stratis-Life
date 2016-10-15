@@ -8,7 +8,7 @@ class inventory_menu {
 
 	name = "INVENTORY_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['INVENTORY_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['INVENTORY_MENU', _this select 0]";
 	
 	controls[] = {
 		header, 

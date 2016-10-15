@@ -19,8 +19,8 @@ if (_in_vehicle && (_is_gunner || _is_commander))  exitWith { true };
 
 //Check if player has a suicide vest or similar bomb
 private["_armed_items"];
-//Remote bomb, timed bomb, activated bomb (ied), speed bomb, suicide vest, A_item_fnc_lighter
-_armed_items = ["fernzuenderbombe", "zeitzuenderbombe", "aktivierungsbombe", "geschwindigkeitsbombe", "selbstmordbombe", "A_item_fnc_lighter"];
+//Remote bomb, timed bomb, activated bomb (ied), speed bomb, suicide vest, lighter
+_armed_items = ["fernzuenderbombe", "zeitzuenderbombe", "aktivierungsbombe", "geschwindigkeitsbombe", "selbstmordbombe", "lighter"];
 if([_player, _armed_items] call A_inventory_fnc_has_item) exitWith { true };
 
 //check if player has pistol

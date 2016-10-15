@@ -1,8 +1,6 @@
 // A_doors_fnc_house_remove_actions
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 if (count A_doors_var_actions == 0) exitWith {};

@@ -1,25 +1,24 @@
 // A_shop_menu_fnc_sell_vehicle
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 disableSerialization;
 ARGV(0,_data);
 
-if (undefined(_data)) exitWith {null};
+if (UNDEFINED(_data)) exitWith {null};
 if (typeName _data != "ARRAY") exitWith {null};
 private["_player"];
 _player = player;
 
 private ["_class", "_item", "_total_return", "_class", "_item_name", "_i", "_amount", "_type", "_vehicles", "_vehicle"];
 
-_item = _data select A_shop_menu_var_sell_item_key;
-_item_name = _data select A_shop_menu_var_sell_item_name;
-_class = _data select A_shop_menu_var_sell_item_class;
-_total_return = _data select A_shop_menu_var_sell_item_total_return;
-_amount = _data select A_shop_menu_var_sell_item_amount;
-_type = _data select A_shop_menu_var_sell_item_type;
+_item = _data select INDEX_SELL_KEY;
+_item_name = _data select INDEX_SELL_NAME;
+_class = _data select INDEX_SELL_CLASS;
+_total_return = _data select INDEX_SELL_TOTAL_RETURN;
+_amount = _data select INDEX_SELL_AMOUNT;
+_type = _data select INDEX_SELL_TYPE;
 
 _vehicles = [_player, _class, _item, 50] call A_shop_menu_fnc_get_vehicles_by_class_item;
 _vehicles_count = (count _vehicles);
@@ -32,7 +31,7 @@ if (_vehicles_count > 1) then {
 };
 
 [_player, _vehicle] call A_vehicle_fnc_remove;
-if (undefined(_vehicle)) exitWith { false };
+if (UNDEFINED(_vehicle)) exitWith { false };
 
 
 private["_uid"];
@@ -44,10 +43,10 @@ closeDialog 0;
 sleep 5;
 private["_uid_sold"];
 _uid_sold = [_vehicle, "uid_sold"] call A_object_fnc_getVariable;
-_uid_sold = if (undefined(_uid_sold)) then {""} else {_uid_sold};
+_uid_sold = if (UNDEFINED(_uid_sold)) then {""} else {_uid_sold};
 _uid_sold = if (typeName _uid_sold != "STRING") then {""} else {_uid_sold};
 
-if (_uid_sold != _uid || undefined(_vehicle)) exitWith {
+if (_uid_sold != _uid || UNDEFINED(_vehicle)) exitWith {
 	player groupChat format["ERROR: Someone already sold this vehicle"];
 	false
 };

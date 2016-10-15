@@ -3,8 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-private
-[
+private[
 	"_DFML", 
 	"_DFML_LIST1", "_DFML_LIST2", "_DFML_LIST3",
 	"_DFML_BUTTON_B_1", "_DFML_BUTTON_B_2", "_DFML_BUTTON_B_3",
@@ -26,38 +25,38 @@ disableSerialization;
 
 _DFML = findDisplay 3005;
 
-_DFML_LIST1 		= (_DFML displayCtrl 1500);
-_DFML_LIST2 		= (_DFML displayCtrl 1501);
-_DFML_LIST3 		= (_DFML displayCtrl 1502);
+_DFML_LIST1 = (_DFML displayCtrl 1500);
+_DFML_LIST2 = (_DFML displayCtrl 1501);
+_DFML_LIST3 = (_DFML displayCtrl 1502);
 
-_DFML_BUTTON_B_1	= (_DFML displayCtrl 1700);
-_DFML_BUTTON_B_2	= (_DFML displayCtrl 1701);
-_DFML_BUTTON_B_3	= (_DFML displayCtrl 1705);
-_DFML_BUTTON_B_4	= (_DFML displayCtrl 1707);
+_DFML_BUTTON_B_1 = (_DFML displayCtrl 1700);
+_DFML_BUTTON_B_2 = (_DFML displayCtrl 1701);
+_DFML_BUTTON_B_3 = (_DFML displayCtrl 1705);
+_DFML_BUTTON_B_4 = (_DFML displayCtrl 1707);
 
-_DFML_BUTTON_W_1	= (_DFML displayCtrl 1702);
-_DFML_BUTTON_W_2	= (_DFML displayCtrl 1703);
-_DFML_BUTTON_W_3	= (_DFML displayCtrl 1706);
-_DFML_BUTTON_W_4	= (_DFML displayCtrl 1708);
+_DFML_BUTTON_W_1 = (_DFML displayCtrl 1702);
+_DFML_BUTTON_W_2 = (_DFML displayCtrl 1703);
+_DFML_BUTTON_W_3 = (_DFML displayCtrl 1706);
+_DFML_BUTTON_W_4 = (_DFML displayCtrl 1708);
 
-_DFML_TITLE_1		= (_DFML displayCtrl 1000);
-_DFML_TITLE_2		= (_DFML displayCtrl 1001);
-_DFML_TITLE_3		= (_DFML displayCtrl 1002);
+_DFML_TITLE_1 = (_DFML displayCtrl 1000);
+_DFML_TITLE_2 = (_DFML displayCtrl 1001);
+_DFML_TITLE_3 = (_DFML displayCtrl 1002);
 
-_DFML_TITLE_1_DESC	= (_DFML displayCtrl 1003);
-_DFML_TITLE_2_DESC	= (_DFML displayCtrl 1004);
-_DFML_TITLE_3_DESC	= (_DFML displayCtrl 1005);
+_DFML_TITLE_1_DESC = (_DFML displayCtrl 1003);
+_DFML_TITLE_2_DESC = (_DFML displayCtrl 1004);
+_DFML_TITLE_3_DESC = (_DFML displayCtrl 1005);
 
-_list_name		= _this select 0;
-_array			= [];
+_list_name = _this select 0;
+_array = [];
 
-_playerList_array_DFML 	= [];
-_whiteList_array_DFML	= [];
-_blackList_array_DFML 	= [];
+_playerList_array_DFML = [];
+_whiteList_array_DFML = [];
+_blackList_array_DFML = [];
 
-_playerList_array_DFML_T 	= [];
-_whiteList_array_DFML_T		= [];
-_blackList_array_DFML_T 	= [];
+_playerList_array_DFML_T = [];
+_whiteList_array_DFML_T = [];
+_blackList_array_DFML_T = [];
 
 {
 	if ((_x select 0) == _list_name) then {
@@ -93,7 +92,7 @@ _blackList_active = "";
 
 if (_list_choice_num == 1) then {
 	_whiteList_active = "Active";
-} else {
+}else{
 	_whiteList_active = "In-Active";
 	
 	_DFML_BUTTON_W_1 ctrlEnable false;
@@ -104,7 +103,7 @@ if (_list_choice_num == 1) then {
 
 if (_list_choice_num == 2) then {
 	_blackList_active = "Active";
-} else {
+}else{
 	_blackList_active = "In-Active";
 	
 	_DFML_BUTTON_B_1 ctrlEnable false;
@@ -145,17 +144,17 @@ while {dialog} do {
 	_playerList_array_DFML_T = [];
 	{
 		if (isPlayer _x) then {
-			_uid	= (getPlayerUID _x);
+			_uid = (getPlayerUID _x);
 			_playerList_array_DFML_T set[(count _playerList_array_DFML_T), _uid];
 		};
 	} forEach allUnits;
 	
 	if ((count _playerList_array_DFML) != (count _playerList_array_DFML_T)	) then {
 		_playerList_update = true;
-	} else {
+	}else{
 		_i = 0;
 		{
-			if (	(_x) != (_playerList_array_DFML_T select _i)	) then {
+			if ((_x) != (_playerList_array_DFML_T select _i)) then {
 				_playerList_update = true;
 			};
 			_i = _i + 1;
@@ -170,9 +169,7 @@ while {dialog} do {
 		
 		{
 			if ([_x] call A_player_fnc_human) then {
-				private["_uid"];
 				_uid = (getPlayerUID _x);
-				
 				if (A_wbl_var_isadmin) then {
 					_index = _DFML_LIST3 lbAdd 
 					(
@@ -187,8 +184,7 @@ while {dialog} do {
 							(_uid in A_wbl_var_a_list_admins), (_uid in A_wbl_var_a_list_donators)
 						  ]
 					);
-				} 
-				else {
+				}else{
 					_index	= _DFML_LIST3 lbAdd 
 					(
 						format[
@@ -237,11 +233,10 @@ while {dialog} do {
 			_type_name	= [_type_num] call A_wbl_fnc_gettype_name;
 			
 			if (A_wbl_var_isadmin) then {
-					_index	= _DFML_LIST1 lbAdd (format["%1		-		%2", (_x), (_type_name)]);
-				} else {
-					_index	= _DFML_LIST1 lbAdd (format["%1", (_x), (_type_name)]);
-				};
-				
+				_index	= _DFML_LIST1 lbAdd (format["%1		-		%2", (_x), (_type_name)]);
+			}else{
+				_index	= _DFML_LIST1 lbAdd (format["%1", (_x), (_type_name)]);
+			};
 			_DFML_LIST1 lbSetData [_index, (_x)];
 		} forEach (_whiteList_array_DFML);
 			
@@ -259,9 +254,9 @@ while {dialog} do {
 	} else {
 		_i = 0;
 		{
-			if (	(_x) != (_blackList_array_DFML_T select _i)	) then {
-					_blackList_update = true;
-				};
+			if ((_x) != (_blackList_array_DFML_T select _i)) then {
+				_blackList_update = true;
+			};
 			_i = _i + 1;
 		} forEach _blackList_array_DFML;
 	};
@@ -277,10 +272,10 @@ while {dialog} do {
 			_type_name	= [_type_num] call A_wbl_fnc_gettype_name;
 			
 			if (A_wbl_var_isadmin) then {
-					_index	= _DFML_LIST2 lbAdd (format["%1		-		%2", (_x), (_type_name)]);
-				} else {
-					_index	= _DFML_LIST2 lbAdd (format["%1", (_x), (_type_name)]);
-				};
+				_index	= _DFML_LIST2 lbAdd (format["%1		-		%2", (_x), (_type_name)]);
+			} else {
+				_index	= _DFML_LIST2 lbAdd (format["%1", (_x), (_type_name)]);
+			};
 			
 			_DFML_LIST2 lbSetData [_index, (_x)];
 		} forEach (_blackList_array_DFML);

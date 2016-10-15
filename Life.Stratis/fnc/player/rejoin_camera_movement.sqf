@@ -1,6 +1,6 @@
 // A_player_fnc_rejoin_camera_movement
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 player_rejoin_camera_complete = false;
@@ -158,12 +158,11 @@ while {true} do {
 	
 	waitUntil {(camCommitted _camera) || (playerRespawnTime <= 0)};
 	if (playerRespawnTime <= 0) exitWith {};
-
 };
 
 //DESTROY THE CAMERA
 _camera cameraEffect ["terminate","back"];
-//titleCut [" ","Black in"];
+cutText[" ","BLACK IN"];
 camDestroy _camera;
 camUseNVG false;
 //titlefadeout 0;

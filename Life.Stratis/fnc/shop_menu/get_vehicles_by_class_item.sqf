@@ -1,7 +1,6 @@
 // A_shop_menu_fnc_get_vehicles_by_class_item
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_shop_menu_fnc_get_vehicles_by_class_item %1", _this];
@@ -12,11 +11,11 @@ ARGV(2,_item);
 ARGV(3,_distance);
 
 if (!([_player] call A_player_fnc_exists)) exitWith {[]};
-if (undefined(_class)) exitWith { [] };
+if (UNDEFINED(_class)) exitWith { [] };
 if (typeName _class != "STRING") exitWith { [] };
-if (undefined(_item)) exitWith {[]};
+if (UNDEFINED(_item)) exitWith {[]};
 if (typeName _item != "STRING") exitWith {[]};
-if (undefined(_distance)) exitWith { [] };
+if (UNDEFINED(_distance)) exitWith { [] };
 if (typeName _distance != "SCALAR") exitWith { [] };
 
 private["_vehicles"];
@@ -31,7 +30,7 @@ private["_vehicle", "_vehicle_name"];
 	_vehicle_name = _x;
 	_vehicle = missionNamespace getVariable [_vehicle_name, null];
 	if (true) then {
-		if (undefined(_vehicle)) exitWith {null};
+		if (UNDEFINED(_vehicle)) exitWith {null};
 		if (!(alive(_vehicle))) exitWith {null};
 		private["_cdistance"];
 		_cdistance = _player distance _vehicle;

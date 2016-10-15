@@ -1,13 +1,13 @@
 // A_mine_fnc_ore_init_handler_persistent
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_object);
 ARGV(1,_item);
-if (undefined(_object)) exitWith {};
-if (undefined(_item)) exitWith {};
+if (UNDEFINED(_object)) exitWith {};
+if (UNDEFINED(_item)) exitWith {};
 if (typeName _object != "OBJECT") exitWith {};
 if (typeName _item != "STRING") exitWith {};
 

@@ -1,12 +1,12 @@
 // A_invokeJava_fnc_unloadPlayerVariables
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h" 
+#include "header.h"
+
 
 private["_uid"];
 	
 _uid = _this select 0;
-if (undefined(_uid)) exitWith{[]};
+if (UNDEFINED(_uid)) exitWith{[]};
 if (typeName _uid != "STRING") exitWith {[]};
 
 private["_result"];

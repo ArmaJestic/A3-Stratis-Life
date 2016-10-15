@@ -1,6 +1,6 @@
 // A_player_fnc_drop_inventory
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -19,7 +19,7 @@ if ([_player] call A_player_fnc_blufor) then {
 	
 	private["_inventory"];
 	_inventory = [_player] call A_player_fnc_get_inventory;
-	if (undefined(_inventory)) exitWith {};
+	if (UNDEFINED(_inventory)) exitWith {};
 	while { _i < (count _inventory) } do {
 		private["_item", "_amount"];
 		_item   = ((_inventory select _i) select 0);

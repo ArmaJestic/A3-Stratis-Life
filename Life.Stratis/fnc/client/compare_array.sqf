@@ -5,8 +5,8 @@
 
 ARGV(0,_a);
 ARGV(1,_b);
-if (undefined(_a)) exitWith { false };
-if (undefined(_b)) exitWith { false };
+if (UNDEFINED(_a)) exitWith { false };
+if (UNDEFINED(_b)) exitWith { false };
 if (typeName _a != "ARRAY") exitWith {false};
 if (typeName _b != "ARRAY") exitWith {false};
 if (count _a != count _b) exitWith {false};

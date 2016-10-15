@@ -12,9 +12,8 @@ if (isNil "camera_unit" || {typeName camera_unit != "OBJECT" || {isNull camera_u
 _player = camera_unit;
 
 private["_camera"];
-
 _camera = [_player, "camera"] call A_object_fnc_getVariable;
-_camera = if (undefined(_camera)) then {objNull} else {_camera};
+_camera = if (UNDEFINED(_camera)) then {objNull} else {_camera};
 
 
 if (isNull _camera) then {

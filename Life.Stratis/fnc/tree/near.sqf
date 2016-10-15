@@ -1,7 +1,7 @@
 // A_tree_fnc_near
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_position);
@@ -17,7 +17,6 @@ _found_objects = [];
 	 private["_object_name", "_object"];
 	 _object = _x;
 	 _object_name = str(_object);
-	 //player grouPChat format["_object_name = %1", _object_name];
 	 private["_found"];
 	 _found = false;
 	 {

@@ -1,8 +1,6 @@
 // A_interaction_fnc_item_put_inventory
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_item_put_inventory %1", _this];
@@ -12,24 +10,24 @@ ARGV(2,_amount);
 ARGV(3,_data);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_item))exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_item))exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 
 if (_amount <= 0) exitWith {null};
 
-if (A_interaction_var_interact_item_put_active) exitWith {
+if (A_interaction_var_item_put_active) exitWith {
 	player groupChat format["WARNING: A_interaction_fnc_item_put_inventory already active"];
 };
-A_interaction_var_interact_item_put_active = true;
+A_interaction_var_item_put_active = true;
 
 private["_pickup_amount"];
 _pickup_amount = [_player, _item, _amount] call A_interaction_fnc_player_inventory_space;
 
 if (_pickup_amount <= 0) exitWith {
-	A_interaction_var_interact_item_put_active = false;
+	A_interaction_var_item_put_active = false;
 	player groupChat "Max weight reached, you cannot take any more items";
 	null
 };
@@ -48,5 +46,5 @@ if (_item == "keychain") then {
 	player groupchat format["You put %1 %2(s) in your inventory", strM(_pickup_amount), _item_name];
 };
 
-A_interaction_var_interact_item_put_active = false;
+A_interaction_var_item_put_active = false;
 (_amount - _pickup_amount)

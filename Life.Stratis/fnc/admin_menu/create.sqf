@@ -4,7 +4,7 @@
 #include "..\..\includes\constants.h"
 
 
-ARGV(0,_player);
+params["_player"];
 
 if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
@@ -24,7 +24,7 @@ if (!(createDialog "admin_menu")) exitWith {
 		_index = lbAdd[admin_menu_player_field_idc, format["%1 - (%2)", _variable_value, (name _variable_value)]];
 		lbSetData [admin_menu_player_field_idc, _index, _variable_value];
 	};
-} forEach playerstringarray;
+} forEach A_player_var_playerstringarray;
 
 lbSetCurSel [admin_menu_player_field_idc, 0];
 

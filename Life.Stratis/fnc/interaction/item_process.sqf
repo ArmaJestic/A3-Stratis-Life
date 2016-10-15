@@ -1,8 +1,6 @@
 // A_interaction_fnc_item_process
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_item_process %1", _this];
@@ -12,9 +10,9 @@ ARGV(2,_output_item);
 ARGV(3,_input_amount_required);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_input_item)) exitWith {null};
-if (undefined(_output_item)) exitWith {null};
-if (undefined(_input_amount_required)) exitWith {null};
+if (UNDEFINED(_input_item)) exitWith {null};
+if (UNDEFINED(_output_item)) exitWith {null};
+if (UNDEFINED(_input_amount_required)) exitWith {null};
 if (typeName _input_item != "STRING") exitWith {null};
 if (typeName _output_item != "STRING") exitWith {null};
 if (typeName _input_amount_required != "SCALAR") exitWith {null};

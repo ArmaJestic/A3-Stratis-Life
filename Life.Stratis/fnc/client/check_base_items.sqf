@@ -9,7 +9,7 @@ if (!(alive _player)) exitWith {};
 
 private["_assigned_items", "_item"];
 _assigned_items = assignedItems _player;
-if (undefined(_assigned_items)) exitWith {};
+if (UNDEFINED(_assigned_items)) exitWith {};
 
 _item = "ItemRadio";
 if (!(_item in _assigned_items)) then {

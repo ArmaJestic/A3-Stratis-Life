@@ -1,6 +1,6 @@
 // A_retributions_fnc_track_death
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_dp"];
@@ -8,15 +8,15 @@ _dp = _this select 0;
 
 private["_victim", "_killer", "_suidice", "_victim_criminal", "_victim_armed", "_victim_side", "_killer_side", "_teamkill", "_enemies"];
 _victim = player;
-_killer = _dp select A_retributions_var_dp_killer;
-_suicide = _dp select A_retributions_var_dp_is_suicide;
-_victim_criminal = _dp select A_retributions_var_dp_is_victim_criminal;
-_victim_armed = _dp select A_retributions_var_dp_is_victim_armed;
-_victim_side = _dp select A_retributions_var_dp_victim_side;
-_killer_side = _dp select A_retributions_var_dp_killer_side;
+_killer = _dp select INDEX_DP_KILLER;
+_suicide = _dp select INDEX_DP_SUICIDE;
+_victim_criminal = _dp select INDEX_DP_VICTIM_CRIMINAL;
+_victim_armed = _dp select INDEX_DP_VICTIM_ARMED;
+_victim_side = _dp select INDEX_DP_VICTIM_SIDE;
+_killer_side = _dp select INDEX_DP_KILLER_SIDE;
 
-_teamkill = _dp select A_retributions_var_dp_is_teamkill;
-_enemies = _dp select A_retributions_var_dp_enemies;
+_teamkill = _dp select INDEX_DP_TEAMKILL;
+_enemies = _dp select INDEX_DP_ENEMIES;
 
 [_dp] call A_retributions_fnc_update_killer_stats;
 

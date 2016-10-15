@@ -1,6 +1,7 @@
 // A_player_fnc_init_stats
+// for respawn
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -13,7 +14,7 @@ A_main_var_pickaxedur = 50;
 A_main_var_hammerdur = 100;
 alreadygotaworkplacejob = 0;
 respawnButtonPressed = false;
-A_main_var_A_main_var_demerits = if ("car" call A_inventory_fnc_has_license) then {10} else {A_main_var_A_main_var_demerits};
+A_main_var_demerits = if ("car" call A_inventory_fnc_has_license) then {10} else {A_main_var_demerits};
 [_player, "stunned", false] call A_player_fnc_set_bool;
 [_player, "restrained", false] call A_player_fnc_set_bool;
 [_player, "extradeadtime", 0] call A_player_fnc_set_scalar;

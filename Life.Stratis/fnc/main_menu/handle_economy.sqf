@@ -1,7 +1,6 @@
 // A_main_menu_fnc_handle_economy
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_title);
@@ -11,8 +10,8 @@ _list = [toUpper(_title), 0.14, 0.14, 0.6, 0.7] call A_main_menu_fnc_right_setup
 {
 	private["_tax_data", "_tax_name", "_tax_value"];
 	_tax_data = _x;
-	_tax_name = _tax_data select A_economy_menu_var_tax_name;
-	_tax_value = _tax_data select A_economy_menu_var_tax_value;
+	_tax_name = _tax_data select DLG_ECON_TAX_INDEX_NAME;
+	_tax_value = _tax_data select DLG_ECON_TAX_INDEX_VALUE;
 	
 	_list lbAdd format["%1 Tax: %2%3", _tax_name, _tax_value, "%"];
 } foreach economy_tax_data;

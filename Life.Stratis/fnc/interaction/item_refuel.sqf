@@ -1,8 +1,6 @@
 // A_interaction_fnc_item_refuel
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_player);

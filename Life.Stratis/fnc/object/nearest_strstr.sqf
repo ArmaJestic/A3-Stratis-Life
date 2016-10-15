@@ -7,9 +7,9 @@ ARGV(0,_position);
 ARGV(1,_str);
 ARGV(2,_distance);
 
-if (undefined(_position)) exitWith {null};
-if (undefined(_str)) exitWith {null};
-if (undefined(_distance)) exitWith{null};
+if (UNDEFINED(_position)) exitWith {null};
+if (UNDEFINED(_str)) exitWith {null};
+if (UNDEFINED(_distance)) exitWith{null};
 if (typeName _position != "ARRAY") exitWith {null};
 if (typeName _str != "STRING") exitWith {null};
 if (typeName _distance != "SCALAR") exitWith {null};

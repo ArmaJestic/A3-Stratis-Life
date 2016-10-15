@@ -1,4 +1,4 @@
- class speed_gun_hud {
+class speed_gun_hud {
 	idd = speed_gun_idd;
 	movingEnable = 0;
 	enableSimulation = 0;
@@ -7,7 +7,7 @@
 	duration     = 1e+011;
 	fadeout      = 0;
 	name         = "speed_gun_hud";
-	onLoad       = "uiNamespace setVariable ['speed_gun_hud', _this select 0]";
+	onLoad       = "uiNamespace setVariable['speed_gun_hud', _this select 0]";
 	objects[]    = {};
 	controls[]   = {
 		speed_gun_background,

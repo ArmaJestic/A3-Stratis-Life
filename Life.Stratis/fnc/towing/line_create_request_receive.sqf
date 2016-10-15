@@ -1,14 +1,13 @@
 // A_towing_fnc_line_create_request_receive
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_variable);
 ARGV(1,_this);
 
 ARGV(0,_object);
-if (undefined(_object)) exitWith {};
+if (UNDEFINED(_object)) exitWith {};
 if (typeName _object != "OBJECT") exitWith {};
 
 private["_towing_line"];

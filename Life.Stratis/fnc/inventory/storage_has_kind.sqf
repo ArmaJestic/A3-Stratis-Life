@@ -1,7 +1,6 @@
 // A_inventory_fnc_storage_has_kind
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_object);

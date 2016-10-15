@@ -2,20 +2,18 @@
 
 #include "..\..\includes\macro.h"
 
-_type    = ((_this select 3)select 0);
-_item    = _this select 0;
-_chance  = _this select 1;
-_maxzahl = _this select 2;
 
-if (undefined(INV_FarmSpamSchutz)) then {INV_FarmSpamSchutz = false;};
+params["_item","_chance","_maxzahl"];
+_type = ((_this select 3)select 0);
+
+if UNDEFINED(INV_FarmSpamSchutz) then {INV_FarmSpamSchutz = false;};
 if (INV_FarmSpamSchutz) exitWith {null};
 INV_FarmSpamSchutz = true;
 
-if ( (_chance > (random 100)) ) then {
-
-	if(_type == "Man")then{titletext ["Gathering...", "PLAIN DOWN", 0.1]};
-	if(_type == "Ship")then{titletext ["A_item_fnc_fishing...", "PLAIN DOWN", 0.1]};
-	if(_type == "Truck")then{titletext ["Collecting...", "PLAIN DOWN", 0.1]};
+if ((_chance > (random 100))) then {
+	if(_type == "Man")then{cutText["Gathering...","PLAIN DOWN",0.1]};
+	if(_type == "Ship")then{cutText["fishing...","PLAIN DOWN",0.1]};
+	if(_type == "Truck")then{cutText["Collecting...","PLAIN DOWN",0.1]};
 
 	_anzahl = (ceil(random(_maxzahl)));
 

@@ -1,7 +1,6 @@
 // A_lotto_menu_fnc_remove_actions
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 if (count A_lotto_menu_var_actions == 0) exitWith {};

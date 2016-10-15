@@ -1,0 +1,6 @@
+#define INDEX_POSITION 0
+#define INDEX_FLAG_OBJECT 1
+#define INDEX_MAST_OBJECT 2
+#define INDEX_MAX_Z 3
+#define INDEX_MIN_Z 4
+#define INDEX_FLAG_OFFSET 5

@@ -1,8 +1,6 @@
 // A_interaction_fnc_rob_timeout
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_target);
@@ -10,7 +8,7 @@ ARGV(1,_timeout);
 
 if (!([_target] call A_player_fnc_exists)) exitWith {};
 if (_target != player) exitWith {};
-if (undefined(_timeout)) exitWith {};
+if (UNDEFINED(_timeout)) exitWith {};
 if (typeName _timeout != "SCALAR") exitWith {};
 
 

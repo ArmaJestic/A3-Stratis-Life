@@ -1,7 +1,6 @@
 // A_shop_menu_fnc_refresh_sell_cb
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_shop_id);

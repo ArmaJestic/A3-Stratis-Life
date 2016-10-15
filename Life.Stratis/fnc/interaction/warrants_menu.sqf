@@ -1,8 +1,6 @@
 // A_interaction_fnc_warrants_menu
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 if (!(createDialog "wantedrelease")) exitWith {hint "Dialog Error!";};

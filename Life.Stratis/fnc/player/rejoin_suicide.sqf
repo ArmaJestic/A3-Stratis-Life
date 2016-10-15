@@ -1,11 +1,15 @@
 // A_player_fnc_rejoin_suicide
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
+diag_log "A_player_fnc_rejoin_suicide: start";
 
 player_rejoin_suicide_active = true;
-private["_pos"];
-_pos = getPos player;
-player setPos [(_pos select 0),(_pos select 1) ,10000];
+player setPosATL[0,0,0];
 player setDamage 1;
-//waitUntil {!(isNil "player_rejoin_camera_complete") && {player_rejoin_camera_complete}};
+
+diag_log "A_player_fnc_rejoin_suicide: waiting for player_rejoin_camera_complete";
+
+waitUntil {!(isNil "player_rejoin_camera_complete") && {player_rejoin_camera_complete}};
+
+diag_log "A_player_fnc_rejoin_suicide: ending";

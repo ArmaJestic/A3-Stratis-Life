@@ -1,29 +1,23 @@
 // A_gang_fnc_area_add_actions
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-if (count A_gang_var_area_actions > 0) exitWith {null};
-ARGV(0,_player);
-ARGV(1,_gang_area);
-if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_gang_area)) exitWith {null};
-if (typeName _gang_area != "OBJECT") exitWith {null};
+if (count A_gang_var_area_actions > 0) exitWith {};
 
+params["_player",["_gang_area",null,[objNull]]];
+if (!([_player] call A_player_fnc_human)) exitWith {};
+if (UNDEFINED(_gang_area)) exitWith {};
 
-private["_actions"];
-_actions = [_gang_area, "actions"] call A_object_fnc_getVariable;
-if (!(undefined(_actions))) then {
-	if (typeName _actions != "ARRAY") exitWith {null};
+private _actions = [_gang_area, "actions"] call A_object_fnc_getVariable;
+if (DEFINED(_actions)) then {
+	if (typeName _actions != "ARRAY") exitWith {};
 	{
-		private["_action", "_action_text", "_action_code", "_action_condition"];
-		_action = _x;
-		_action_text = _action select A_gang_var_area_action_text;
-		_action_code = _action select A_gang_var_area_action_code;
-		_action_condition = _action select A_gang_var_area_action_condition;
-		
-		private["_action_id"];
-		_action_id = _player addAction [_action_text, A_other_fnc_noscript, _action_code,1, false,true,"", _action_condition];
-		A_gang_var_area_actions = A_gang_var_area_actions + [_action_id];
+		private _action = _x;
+		private _action_text = _action select GANG_AREA_INDEX_TEXT;
+		private _action_code = _action select GANG_AREA_INDEX_CODE;
+		private _action_condition = _action select GANG_AREA_INDEX_COND;
+		private _action_id = _player addAction [_action_text, A_actions_fnc_noscript, _action_code,1, false,true,"", _action_condition];
+		A_gang_var_area_actions pushBack _action_id;
 	} forEach _actions;
 };

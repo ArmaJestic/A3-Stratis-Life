@@ -12,7 +12,7 @@
 		ARGV(2,_text);
 		[_object, "name", _text, true] call A_object_fnc_setVariable;
 		_object setVehicleVarname _text;
-		missionNamespace setVariable [_text, _object];
+		missionNamespace setVariable[_text, _object];
 	}],
 	["Clone object", {
 		ARGV(0,_player);
@@ -32,11 +32,11 @@
 		_hidden = [_object, "hidden", false] call A_object_fnc_getVariable;
 		
 		_nobject enableSimulation _simulation;
-		_nobject setVariable ["damage", _damage, true];
+		_nobject setVariable["damage", _damage, true];
 		_nobject allowDamage _damage;
-		_nobject setVariable ["attached", _attached, true];
-		_nobject setVariable ["hidden", _hidden, true];
-		_nobject setVariable ["tracked", true, true];
+		_nobject setVariable["attached", _attached, true];
+		_nobject setVariable["hidden", _hidden, true];
+		_nobject setVariable["tracked", true, true];
 		
 		private["_o", "_h"];
 		
@@ -144,7 +144,7 @@
 		_attached = _object getVariable ["attached", false];
 		player groupChat format["_attached = %1", _attached];
 		_attached = !(_attached);
-		_object setVariable ["attached", _attached, true];
+		_object setVariable["attached", _attached, true];
 		player groupChat format["_object = %1, _attached = %2",_object, (_object getVariable "offset")];
 	}],
 	["Delete Object", {

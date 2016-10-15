@@ -1,7 +1,6 @@
 // A_towing_fnc_line_item_use
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -9,8 +8,8 @@ ARGV(1,_item);
 ARGV(2,_amount);
 
 if (!([_player] call A_player_fnc_exists)) exitWith {};
-if (undefined(_item)) exitWith {};
-if (undefined(_amount)) exitWith {};
+if (UNDEFINED(_item)) exitWith {};
+if (UNDEFINED(_amount)) exitWith {};
 if (typeName _item != "STRING") exitWith {};
 if (typeName _amount != "SCALAR") exitWith {};
 
@@ -25,7 +24,7 @@ if (_amount >  1) exitWith {
 //cleanup the previous towing line 
 private["_towing_line"];
 _towing_line = _player getVariable ["towing_line", null];
-if (!(undefined(_towing_line))) then {
+if (!(UNDEFINED(_towing_line))) then {
 	[_towing_line] call A_towing_fnc_line_clear_endpoints;
 };
 

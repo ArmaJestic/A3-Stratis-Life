@@ -1,6 +1,6 @@
 // A_gear_fnc_getCW_class
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_unit);

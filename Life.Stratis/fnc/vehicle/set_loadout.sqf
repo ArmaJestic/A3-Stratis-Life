@@ -1,6 +1,6 @@
 // A_vehicle_fnc_set_loadout
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_vehicle_fnc_set_loadout %1", _this];
@@ -17,29 +17,25 @@ if (_item == "") exitWith {};
 {
 	private["_loadout_entry", "_loadout_entry_class"];
 	_loadout_entry = _x;
-	_loadout_entry_class = _loadout_entry select A_vehicle_var_loadout_entry_class;
+	_loadout_entry_class = _loadout_entry select INDEX_LOADOUT_CLASS;
 	//player groupChat format["_loadout_entry_class = %1", _loadout_entry_class];
 	
 	if (toLower(_loadout_entry_class) == toLower(typeOf _vehicle)) then {
 		private["_loadout_entry_variants"];
-		_loadout_entry_variants = _loadout_entry select A_vehicle_var_loadout_entry_variants;
+		_loadout_entry_variants = _loadout_entry select INDEX_LOADOUT_VARIANTS;
 
 		{
-			private["_variant", "_variant_id", "_variant_mods"];
-			_variant = _x;
-			_variant_id = _variant select A_vehicle_var_loadout_entry_variant_id;
+			private _variant = _x;
+			private _variant_id = _variant select INDEX_LOADOUT_VARIANT_ID;
 			if ([_variant_id, _item] call BIS_fnc_inString) then {
-				private["_variant_mods"];
-				_variant_mods = _variant select A_vehicle_var_loadout_entry_variant_mods;
+				private _variant_mods = _variant select INDEX_LOADOUT_VARIANT_MODS;
 				{
-					private["_mod", "_mod_method", "_mod_arguments", "_mod_repeat"];
-					_mod = _x;
-					_mod_method = _mod select A_vehicle_var_loadout_entry_variant_mod_method;
-					_mod_arguments = _mod select A_vehicle_var_loadout_entry_variant_mod_arguments;
-					_mod_repeat = _mod select A_vehicle_var_loadout_entry_variant_mod_repeat;
-					//player groupChat format["_mod = %1", _mod];
-					private["_i"];
-					_i = 0;
+					private _mod = _x;
+					private _mod_method = _mod select INDEX_LOADOUT_VARIANT_MOD_METHOD;
+					private _mod_arguments = _mod select INDEX_LOADOUT_VARIANT_MOD_ARGUMENTS;
+					private _mod_repeat = _mod select INDEX_LOADOUT_VARIANT_MOD_REPEAT;
+					
+					private _i = 0;
 					while {_i < _mod_repeat} do {
 						_mod_method = toLower(_mod_method);
 						switch (toLower(_mod_method)) do {

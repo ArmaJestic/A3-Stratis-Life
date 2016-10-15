@@ -7,7 +7,7 @@ _secondcounter = 0;
 _minutecounter = 0;
 _art = (_this select 3) select 0;
 
-if (undefined(workplacejob_hostage_serverarray)) then {workplacejob_hostage_serverarray = []};
+if (UNDEFINED(workplacejob_hostage_serverarray)) then {workplacejob_hostage_serverarray = []};
 
 if (_art == "serverloop") then {
 
@@ -35,7 +35,7 @@ if (_art == "serverloop") then {
 
 if (_art == "getajob_hostage") then {
 	if(workplacejob_hostage_active)exitWith{player groupChat "There are currently no more hostages.";};
-	if(workplacejob_A_missions_fnc_hostage_failed)exitWith{player groupChat "You have failed a A_missions_fnc_hostage mission recently, maybe you can do it again later.";};
+	if(workplacejob_hostage_failed)exitWith{player groupChat "You have failed a A_missions_fnc_hostage mission recently, maybe you can do it again later.";};
 
 	_array  = [[Hostagespawn1, 10], [Hostagespawn2, 10], [Hostagespawn3, 10], [Hostagespawn4, 10], [Hostagespawn5, 10]];
 	_city   = (floor(random(count _array)));
@@ -49,7 +49,6 @@ if (_art == "getajob_hostage") then {
 
 
 	//creating VIP
-	liafu = true;
 	_group = createGroup east;
 	
 	private["_hostage_unit"];
@@ -58,8 +57,7 @@ if (_art == "getajob_hostage") then {
 	private["_hostage_name"];
 	_hostage_name = "hostage1";
 	
-	//[[_hostage_unit, _hostage_name], "A_missions_fnc_hostage_init_handler_persistent", true, true] spawn BIS_fnc_MP;
-	[[_hostage_unit, _hostage_name], "A_missions_fnc_hostage_init_handler_persistent", true, true, _hostage_unit] spawn A_jip_fnc_register;
+	[[_hostage_unit, _hostage_name], "A_missions_fnc_hostage_init_handler_persistent", _hostage_unit] spawn A_jip_fnc_register;
 	waitUntil {!(isNil _hostage_name)};
 
 	format["workplacejob_hostage_serverarray = workplacejob_hostage_serverarray + [[%1, hostage1]];", player] call A_broadcast_fnc_broadcast;
@@ -76,7 +74,7 @@ if (_art == "getajob_hostage") then {
 
 	player groupChat "The A_missions_fnc_hostage is marked on the map, don't let the police get you.";
 
-	"if (isblu) then {player sideChat ""Someone is trying to take a A_missions_fnc_A_missions_fnc_A_missions_fnc_hostage. The A_missions_fnc_A_missions_fnc_A_missions_fnc_hostage has been marked on the map. Arrest the A_missions_fnc_A_missions_fnc_A_missions_fnc_hostage taker before its too late!""};" call A_broadcast_fnc_broadcast;
+	"if (isblu) then {player sideChat ""Someone is trying to take a hostage. The hostage has been marked on the map. Arrest the hostage taker before its too late!""};" call A_broadcast_fnc_broadcast;
 
 	player groupchat "The police are on to you, hurry up!";
 	[player, "Assassin", 200000] call A_player_fnc_update_warrants;
@@ -89,7 +87,7 @@ if (_art == "getajob_hostage") then {
 			[player, 300000] call A_bank_fnc_transaction;
 			player groupchat "Well done, you kept the A_missions_fnc_hostage for 15 minutes, $300000 has been transfered to your account.";
 			sleep 10;
-			"server globalchat ""A_missions_fnc_A_missions_fnc_hostage Taker WINS, he kept the A_missions_fnc_hostage for 15 minutes."";" call A_broadcast_fnc_broadcast;
+			"server globalchat ""hostage Taker WINS, he kept the hostage for 15 minutes."";" call A_broadcast_fnc_broadcast;
 			sleep 1;
 			deletevehicle hostage1;
 			deletemarker "htargetmarker";

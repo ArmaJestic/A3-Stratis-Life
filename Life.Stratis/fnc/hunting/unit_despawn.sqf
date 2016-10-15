@@ -1,16 +1,16 @@
 // A_hunting_fnc_unit_despawn
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 player groupChat format["A_hunting_fnc_unit_despawn %1", _this];
 ARGV(0,_unit);
 ARGV(1,_delay);
 
-if (undefined(_unit)) exitWith {null};
+if (UNDEFINED(_unit)) exitWith {null};
 if (typeName _unit != "OBJECT") exitWith {null};
 if (isNull _unit) exitWith {null};
-if (undefined(_delay)) exitWith {null};
+if (UNDEFINED(_delay)) exitWith {null};
 if (typeName _delay != "SCALAR") exitWith {null};
 
 _delay = ((_delay - 5) max (0));

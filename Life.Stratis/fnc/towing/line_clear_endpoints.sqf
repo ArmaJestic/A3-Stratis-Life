@@ -1,11 +1,10 @@
 // A_towing_fnc_line_clear_endpoints
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_towing_line);
-if (undefined(_towing_line)) exitWith {};
+if (UNDEFINED(_towing_line)) exitWith {};
 if (typeName _towing_line != "OBJECT") exitWith {};
 if (isNull _towing_line) exitWith {};
 

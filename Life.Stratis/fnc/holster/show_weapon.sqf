@@ -13,7 +13,7 @@ if (call A_holster_fnc_pistol_in_hands) exitWith {
 	_player groupChat format["Cannot unholster inventory pistol, you already have a pistol in your hands"];
 };
 
-if (undefined(INV_InventarPistol)) exitWith {
+if (UNDEFINED(INV_InventarPistol)) exitWith {
 	_player groupChat format["The type of pistol in your inventory is unknown, removing it"];
 	[_player, 'pistol', 0] call A_inventory_fnc_set_item_amount;
 };

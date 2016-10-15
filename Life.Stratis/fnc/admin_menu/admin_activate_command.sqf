@@ -12,12 +12,12 @@ ARGV(3,_target);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 
-if (undefined(_command)) exitWith {null};
+if (UNDEFINED(_command)) exitWith {null};
 if (typeName _command != "STRING") exitWith {null};
 
 closeDialog 0;
 
-_text = if (undefined(_text)) then {""} else {_text};
+_text = if (UNDEFINED(_text)) then {""} else {_text};
 _text = if (typeName _text != "STRING") then {""} else {_text};
 
 private["_code"];

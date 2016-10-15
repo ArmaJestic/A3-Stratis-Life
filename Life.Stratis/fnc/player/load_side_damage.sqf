@@ -1,6 +1,6 @@
 // A_player_fnc_load_side_damage
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);

@@ -1,7 +1,7 @@
 // A_player_fnc_independent
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_player);
+params["_player"];
 (([_player] call A_player_fnc_side) == resistance)

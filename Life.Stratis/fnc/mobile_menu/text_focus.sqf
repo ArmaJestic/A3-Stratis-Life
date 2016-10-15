@@ -1,7 +1,7 @@
 // A_mobile_menu_fnc_text_focus
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 player groupChat format["A_mobile_menu_fnc_text_focus %1", _this];

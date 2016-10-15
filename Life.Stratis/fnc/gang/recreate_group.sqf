@@ -1,14 +1,14 @@
 // A_gang_fnc_recreate_group
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_side);
 ARGV(1,_group);
-if (undefined(_side)) exitWith {grpNull};
+if (UNDEFINED(_side)) exitWith {grpNull};
 if (typeName _side != "SIDE") exitWith {grpNull};
 
-_group = if (undefined(_group)) then {grpNull} else {_group};
+_group = if (UNDEFINED(_group)) then {grpNull} else {_group};
 _group = if (typeName _group != "GROUP") then {grpNull} else {_group};
 
 private["_original_group"];

@@ -1,7 +1,7 @@
 // A_yes_no_menu_fnc_setup
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_title);

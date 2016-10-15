@@ -1,7 +1,6 @@
 // A_lotto_menu_fnc_menu_setup
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 disableSerialization;

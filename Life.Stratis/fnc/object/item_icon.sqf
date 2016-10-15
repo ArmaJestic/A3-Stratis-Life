@@ -5,7 +5,7 @@
  
 ARGV(0,_item);
 
-if (undefined(_item)) exitWith {};
+if (UNDEFINED(_item)) exitWith {};
 if (typeName _item != "STRING") exitWith {};
 
 private["_data"];
@@ -15,7 +15,7 @@ if (count(_data) == 0) exitWith {""};
 private["_icon"];
 _icon = ITEM_DATA_ICON(_data);
 
-if (undefined(_icon) || {_icon == ""}) exitWith{
+if (UNDEFINED(_icon) || {_icon == ""}) exitWith{
 	private["_class"];
 	_class = ITEM_DATA_CLASS(_data);
 	_icon = [_class] call A_misc_fnc_generic_icon_path;

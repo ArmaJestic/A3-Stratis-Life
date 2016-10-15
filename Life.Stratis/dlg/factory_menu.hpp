@@ -12,7 +12,7 @@ class factory_dialog {
 	
 	name = "FACTORY_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['FACTORY_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['FACTORY_MENU', _this select 0]";
 	
 	objects[] = { };
 	controls[] = {

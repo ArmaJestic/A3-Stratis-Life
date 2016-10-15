@@ -1,6 +1,6 @@
 // A_vehicle_fnc_outside_add_actions
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 if (count A_vehicle_var_outside_actions > 0) exitWith {};

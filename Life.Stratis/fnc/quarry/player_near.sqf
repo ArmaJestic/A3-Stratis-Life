@@ -1,7 +1,6 @@
 // A_quarry_fnc_player_near
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_quarry_fnc_player_near %1", _this];
@@ -14,9 +13,9 @@ _quarry = null;
 {
 	private["_cquarry", "_cdistance", "_clocation", "_cradius"];
 	_cquarry = _x;
-	_clocation = _cquarry select A_quarry_var_data_location;
-	_cmarker = _clocation select A_quarry_var_data_location_marker;
-	_cradius = _clocation select A_quarry_var_data_location_radius;
+	_clocation = _cquarry select INDEX_LOCATION;
+	_cmarker = _clocation select INDEX_LOCATION_MARKER;
+	_cradius = _clocation select INDEX_LOCATION_RADIUS;
 	
 	_cdistance = _player distance (getMarkerPos  _cmarker);
 	if (_cdistance < _cradius) exitWith {

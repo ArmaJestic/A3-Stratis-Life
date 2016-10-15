@@ -20,4 +20,4 @@ _armed_occupant = null;
 	};
 } forEach _occupants;
 
-!(undefined(_armed_occupant))
+!(UNDEFINED(_armed_occupant))

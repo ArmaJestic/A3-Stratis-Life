@@ -7,12 +7,12 @@ player grouPChat format["A_stun_fnc_blur_effect_wait %1", _this];
 ARGV(0,_unit);
 ARGV(1,_time);
 
-if (defined(A_stun_var_A_stun_var_blur_time_remaining) && {A_stun_var_A_stun_var_blur_time_remaining > 0}) exitWith {
-	A_stun_var_A_stun_var_blur_time_remaining = A_stun_var_A_stun_var_blur_time_remaining +  _time;
+if (DEFINED(A_stun_var_blur_time_remaining) && {A_stun_var_blur_time_remaining > 0}) exitWith {
+	A_stun_var_blur_time_remaining = A_stun_var_blur_time_remaining +  _time;
 };
 
-if (undefined(_unit)) exitWith {};
-if (undefined(_time)) exitWith {};
+if (UNDEFINED(_unit)) exitWith {};
+if (UNDEFINED(_time)) exitWith {};
 
 
 A_stun_var_blur_time_remaining = _time;
@@ -38,8 +38,8 @@ waitUntil {
 	"dynamicBlur" ppEffectAdjust [10];
 	"dynamicBlur" ppEffectCommit 0;
 
-	A_stun_var_A_stun_var_blur_time_remaining = A_stun_var_A_stun_var_blur_time_remaining - 1;
-	A_stun_var_A_stun_var_blur_time_remaining = A_stun_var_A_stun_var_blur_time_remaining min A_main_var_maxstuntime;
+	A_stun_var_blur_time_remaining = A_stun_var_blur_time_remaining - 1;
+	A_stun_var_blur_time_remaining = A_stun_var_blur_time_remaining min A_main_var_maxstuntime;
 	
 	
 	waitUntil {ppEffectCommitted "dynamicBlur"};

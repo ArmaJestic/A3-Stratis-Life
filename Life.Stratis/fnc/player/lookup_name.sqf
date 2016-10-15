@@ -1,11 +1,11 @@
 // A_player_fnc_lookup_name
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_name);
 
-if (undefined(_name)) exitWith {null};
+if (UNDEFINED(_name)) exitWith {null};
 if (typeName _name != "STRING") exitWith {null};
 
 private["_player"];
@@ -22,6 +22,6 @@ _player = null;
 			_player = _player_variable;
 		};
 	};
-	if (!(undefined(_player))) exitWith {null};
-} forEach playerstringarray;
+	if (!(UNDEFINED(_player))) exitWith {null};
+} forEach A_player_var_playerstringarray;
 _player

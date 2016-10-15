@@ -1,6 +1,6 @@
 // A_vehicle_fnc_save_stats
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 /*
@@ -12,7 +12,7 @@ player groupChat _str;
 //diag_log format["item_name = %1", ([_vehicle, "item_name"] call A_vehicle_fnc_get_string)];
 ARGV(0,_vehicle);
 
-if (undefined(_vehicle)) exitWith {null};
+if (UNDEFINED(_vehicle)) exitWith {null};
 if (typeName _vehicle != "OBJECT") exitWith {null};
 if (_vehicle isKindOf "Man") exitWith {null};
 

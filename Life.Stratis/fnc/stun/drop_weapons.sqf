@@ -4,7 +4,7 @@
 
 
  ARGV(0,_unit);
- if (undefined(_unit)) exitWith {};
+ if (UNDEFINED(_unit)) exitWith {};
  
  private ["_weapons"];
  _weapons = weapons _unit;

@@ -1,10 +1,10 @@
 // A_gang_fnc_lookup_player_uid
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player_uid);
-if (undefined(_player_uid)) exitWith {null};
+if (UNDEFINED(_player_uid)) exitWith {null};
 if (typeName _player_uid != "STRING") exitWith {null};
 
 private["_gangs_list"];
@@ -15,7 +15,7 @@ _gang = null;
 {
 	private["_cgang", "_cgang_members"];
 	_cgang = _x;
-	_cA_gang_var_members = _cgang select A_gang_var_members;
+	_cGANG_INDEX_MEMBERS = _cgang select GANG_INDEX_MEMBERS;
 	
 	private["_uids_list"];
 	_uids_list = _cgang_members;
@@ -25,5 +25,5 @@ _gang = null;
 	};
 } forEach _gangs_list;
 
-if (undefined(_gang)) exitWith {null};
+if (UNDEFINED(_gang)) exitWith {null};
 _gang

@@ -10,7 +10,7 @@
 private["_player", "_target", "_camera"];
 _player = _this select 0;
 _camera = [_player, "camera"] call A_object_fnc_getVariable;
-_target = if (undefined(_camera)) then {nearCursorTarget} else {call A_camera_fnc_target};
+_target = if (UNDEFINED(_camera)) then {nearCursorTarget} else {call A_camera_fnc_target};
 
 private["_font"];
 _font = "PuristaMedium";
@@ -18,11 +18,11 @@ _font_size = 0.025;
 
 //player groupChat format["_target = %1", _target];
 if (!([_player] call A_player_fnc_human)) exitWith {false};
-if (undefined(_target)) exitWith {false};
+if (UNDEFINED(_target)) exitWith {false};
 if (typeName _target != "OBJECT") exitWith {false};
 if (isNull _target) exitWith {false};
 
-if (!(INV_shortcuts)) exitWith {false};
+if (!(A_inv_var_shortcuts)) exitWith {false};
 
 if (visibleMap) exitWith {false};
 
@@ -38,7 +38,7 @@ private["_control"];
 _control = call A_nametags_fnc_tags_control;
 
 private["_distance", "_is_near", "_is_far"];;
-_distance = if (undefined(_camera)) then {_player distance _target} else {_camera distance _target};
+_distance = if (UNDEFINED(_camera)) then {_player distance _target} else {_camera distance _target};
 
 if (!(isNull _target) && {(_distance < 20)}) then {
 	_player reveal _target;
@@ -96,9 +96,9 @@ if ([_target] call A_object_fnc_shop && _distance < 3) exitWith {
 
 if ([_target] call A_object_fnc_vendor && _distance < 3) exitWith {
 	private["_vendor_name", "_vendor_data", "_text", "_head_pos"];
-	_A_inv_fnc_vendor_data = ([_target] call A_inv_fnc_vendor_data);
-	if (undefined(_vendor_data)) exitWith {true};
-	_A_inv_var_vendor_name = _vendor_data select A_inv_var_vendor_name;
+	_vendor_data = ([_target] call A_inv_fnc_vendor_data);
+	if (UNDEFINED(_vendor_data)) exitWith {true};
+	_vendor_name = _vendor_data select INV_INDEX_VENDOR_NAME;
 	
 	_head_pos = ([_target] call A_nametags_fnc_tags_position);
 	

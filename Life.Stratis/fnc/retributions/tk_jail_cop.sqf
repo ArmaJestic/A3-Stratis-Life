@@ -1,14 +1,14 @@
 // A_retributions_fnc_tk_jail_cop
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_killer", "_victim"];
 _killer = _this select 0;
 _victim = _this select 1;
 
-if (undefined(_killer)) exitWith {null};
-if (undefined(_killer)) exitWith {null};
+if (UNDEFINED(_killer)) exitWith {null};
+if (UNDEFINED(_killer)) exitWith {null};
 
 if (_killer != player) exitWith {null};
 if (!([_killer] call A_player_fnc_blufor)) exitWith {null};

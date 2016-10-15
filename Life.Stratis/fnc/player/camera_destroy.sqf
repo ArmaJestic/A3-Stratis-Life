@@ -1,6 +1,6 @@
 // A_player_fnc_camera_destroy
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -8,7 +8,7 @@ if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
 private["_camera"];
 _camera = [_player, "self_camera"] call A_object_fnc_getVariable;
-if (undefined(_camera)) exitWith {null};
+if (UNDEFINED(_camera)) exitWith {null};
 
 [_player, "self_camera", null] call A_object_fnc_setVariable;
 _camera cameraEffect ["terminate","back"];

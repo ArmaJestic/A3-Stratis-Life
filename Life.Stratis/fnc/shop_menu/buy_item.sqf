@@ -1,21 +1,20 @@
 // A_shop_menu_fnc_buy_item
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_data);
 
-if (undefined(_data)) exitWith {null};
+if (UNDEFINED(_data)) exitWith {null};
 if (typeName _data != "ARRAY") exitWith {null};
 private ["_amount", "_item", "_total_due", "_shop_id", "_item_name"];
 
-_total_due = [(_data select A_shop_menu_var_buy_item_total_due)] call A_encoding_fnc_decode_number;
-_amount = _data select A_shop_menu_var_buy_item_amount;
-_item_name = _data select A_shop_menu_var_buy_item_name;
-_item = _data select A_shop_menu_var_buy_item_key;
-_shop_id = _data select A_shop_menu_var_buy_item_shop_id;
-_kind =  _data select A_shop_menu_var_buy_item_kind;
+_total_due = [(_data select INDEX_BUY_TOTAL_DUE)] call A_encoding_fnc_decode_number;
+_amount = _data select INDEX_BUY_AMOUNT;
+_item_name = _data select INDEX_BUY_NAME;
+_item = _data select INDEX_BUY_KEY;
+_shop_id = _data select INDEX_BUY_SHOP_ID;
+_kind =  _data select INDEX_BUY_KIND;
 _isDrug = (_kind == "drug");
 
 if (_isDrug && _total_due > 0) then {

@@ -1,14 +1,12 @@
 // A_interaction_fnc_recruit_ai
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_player);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 
-interact_recruit_ai_busy = if (undefined(interact_recruit_ai_busy)) then { false } else {interact_recruit_ai_busy};
+interact_recruit_ai_busy = if (UNDEFINED(interact_recruit_ai_busy)) then { false } else {interact_recruit_ai_busy};
 
 if (interact_recruit_ai_busy) exitWith {
 	player groupChat format["Already recruiting AI"];

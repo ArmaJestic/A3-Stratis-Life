@@ -1,17 +1,14 @@
 // A_vehicle_fnc_add_name
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_player);
-ARGV(1,_vehicle_name);
+params["_player",["_vehicle_name",null,[""]]];
 
 if (!([_player] call A_player_fnc_human)) exitWith {false};
-if(undefined(_vehicle_name)) exitWith {false};
-if (typeName _vehicle_name != "STRING") exitWith {false};
+if UNDEFINED(_vehicle_name) exitWith {false};
 
-private["_vehicles_name_list"];
-_vehicles_name_list = [_player, "vehicles_name_list"] call A_player_fnc_get_array;
+private _vehicles_name_list = [_player, "vehicles_name_list"] call A_player_fnc_get_array;
 
 if (_vehicle_name in _vehicles_name_list) exitWith {false};
 

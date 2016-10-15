@@ -27,5 +27,5 @@ RadioTrigger_4 setTriggerStatements ["this", "[RadioTextMsg_4, A_main_var_radiot
 RadioTrigger_5 = createTrigger      ["EmptyDetector", [0,0,0]];
 RadioTrigger_5 setTriggerArea       [0, 0, 0, false];
 RadioTrigger_5 setTriggerActivation ["ECHO", "NOT PRESENT", true];
-RadioTrigger_5 setTriggerStatements ["this", "[""Einstellungen""] call A_SCRIPT_SETTINGS;", ""];
-5 setRadioMsg "A_settings_fnc_settings";
+RadioTrigger_5 setTriggerStatements ["this", "[""Einstellungen""] call A_settings_fnc_settings;", ""];
+5 setRadioMsg "Settings";

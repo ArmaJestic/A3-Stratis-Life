@@ -1,18 +1,10 @@
 // A_err_fnc_logd
-// call to log an error, bool "A_err_var_logd" will dictate whether to log or not
-// calls A_err_fnc_log, which always log
+// call to log an error, parameter A_PARAM_LOGD dictates whether to log or not
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-// private _err = params[["_str", null, [""], 1]];
-// EXT_ERR(_err, A_err_fnc_logd)
-
-//PARAM_EXIT(A_err_fnc_logd, [["_str", null, [""], 1]])
-//UNDEF_EXIT(A_err_fnc_logd, _str)
-
-if !(params [["_str", null, [""], 1]]) exitwith {LOGE_EP(A_err_fnc_logd)};
-
-if (A_err_var_logd) then {
-	[_str] call A_err_fnc_log;
-};
+#ifdef A_PARAM_LOGD
+	params [["_str", null, [""]]];
+	diag_log format['ALOG: %1', _str];
+#endif

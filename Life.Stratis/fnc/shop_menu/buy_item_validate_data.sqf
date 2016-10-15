@@ -1,11 +1,10 @@
 // A_shop_menu_fnc_buy_item_validate_data
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_data);
-if (undefined(_data)) exitWith {null};
+if (UNDEFINED(_data)) exitWith {null};
 
 private ["_index", "_item", "_base_price", "_price", "_infos", "_amount", "_total_price", "_shop_id", "_shop", "_shop_object", "_supply", "_max_stock"];
 private ["_sales_tax", "_market_adjust", "_name", "_kind", "_label", "_data", "_control", "_type", "_tax"];
@@ -26,26 +25,26 @@ if ((call A_shop_menu_fnc_is_busy)) exitWith {
 };
 
 
-_shop_id  = _data select A_shop_menu_var_buy_item_shop_id;
-_item = _data select A_shop_menu_var_buy_item_key;
-_base_price = [(_data select A_shop_menu_var_buy_item_price)] call A_encoding_fnc_decode_number;
+_shop_id  = _data select INDEX_BUY_SHOP_ID;
+_item = _data select INDEX_BUY_KEY;
+_base_price = [(_data select INDEX_BUY_PRICE)] call A_encoding_fnc_decode_number;
 _infos = _item call A_inventory_fnc_get_item_array;
-_needsLicense = _data select A_shop_menu_var_buy_item_needs_license;
-_license_1 = _data select A_shop_menu_var_buy_item_license_1;
-_license_2 = _data select A_shop_menu_var_buy_item_license_2;
-_logic = objectFromNetId(_data select A_shop_menu_var_buy_item_logic_netid);
+_needsLicense = _data select INDEX_BUY_NEEDS_LICENSE;
+_license_1 = _data select INDEX_BUY_LICENSE_1;
+_license_2 = _data select INDEX_BUY_LICENSE_2;
+_logic = objectFromNetId(_data select INDEX_BUY_LOGIC_NETID);
 _shop = (A_inv_var_itemshops select _shop_id);
-_shop_object = _shop select A_inv_var_itemshops_object;
+_shop_object = _shop select INV_INDEX_SHOP_OBJECT;
 
 _needsLicense = if (_shop_object in A_main_var_gangareas) then {false} else {true};
 
-_near_vehicles = if (undefined(_logic)) then { [] } else { nearestobjects [getpos _logic, ["Ship_F","car","motorcycle","truck"], 3] };
-_near_vehicles_count = if (undefined(_near_vehicles)) then { 0 } else { count _near_vehicles };
+_near_vehicles = if (UNDEFINED(_logic)) then { [] } else { nearestobjects [getpos _logic, ["Ship_F","car","motorcycle","truck"], 3] };
+_near_vehicles_count = if (UNDEFINED(_near_vehicles)) then { 0 } else { count _near_vehicles };
 _supply = [_item, _shop_id] call A_inventory_fnc_get_stock;
 _max_stock = [_item, _shop_id] call A_inventory_fnc_get_max_stock;
-_type = _data select A_shop_menu_var_buy_item_type;
+_type = _data select INDEX_BUY_TYPE;
 _tax = [_type] call A_economy_menu_fnc_lookup_tax_value_type;
-_kind = _data select A_shop_menu_var_buy_item_kind;
+_kind = _data select INDEX_BUY_KIND;
 _isItem = (_type == "Item");
 _isFort = (_type == "Fort");
 _isWeapon = (_type == "Weapon");
@@ -63,7 +62,7 @@ _isBISItem = (_type == "BISItem");
 _base_weight = if (_isItem) then { (ITEM_DATA_WEIGHT(_infos)) } else { 0 };
 _playerWeight =  call A_inventory_fnc_get_own_weight;
 _isIllegal = if(_isItem) then {(_item call A_inventory_fnc_get_item_illegal)} else { false };
-_class = _data select A_shop_menu_var_buy_item_class;
+_class = _data select INDEX_BUY_CLASS;
 
 _limitedStock = (_max_stock != -1);
 	
@@ -92,7 +91,7 @@ _vest_item = [player] call A_player_fnc_vest;
 _hasPrimaryWeapon = (_primary_weapon != "");
 _hasSecondaryWeapon = (_secondary_weapon != "");
 _hasPistol = (_pistol != "");
-_hasBackpack = if (undefined(_backpack) || isNull _backpack) then { false } else { true };
+_hasBackpack = if (UNDEFINED(_backpack) || isNull _backpack) then { false } else { true };
 _hasHeadgear = if (_headgear_item == "") then {false} else {true};
 _hasUniform = if (_uniform_item == "") then {false} else {true};
 _hasVest = if (_vest_item == "") then {false} else {true};
@@ -231,13 +230,13 @@ if (_putInHands && !(_isPistol || _isBackpack || _isLauncher || _isRifle ||
 	["The item you have selected to buy cannot be put in hands automatically", _quiet] call A_shop_menu_fnc_set_status_message; null
 };
 
-_data set [A_shop_menu_var_buy_item_total_due, [(_total_price)] call A_encoding_fnc_encode_number];
-_data set [A_shop_menu_var_buy_item_sales_tax, _sales_tax];
-_data set [A_shop_menu_var_buy_item_market_adjust, _market_adjust];
-_data set [A_shop_menu_var_buy_item_max_stock, _max_stock];
-_data set [A_shop_menu_var_buy_item_supply, _supply];
-_data set [A_shop_menu_var_buy_item_legal, !(_isIllegal)];
-_data set [A_shop_menu_var_buy_item_amount, _amount];
-_data set [A_shop_menu_var_buy_item_in_hands, _putInHands];
+_data set [INDEX_BUY_TOTAL_DUE, [(_total_price)] call A_encoding_fnc_encode_number];
+_data set [INDEX_BUY_SALES_TAX, _sales_tax];
+_data set [INDEX_BUY_MARKET_ADJUST, _market_adjust];
+_data set [INDEX_BUY_MAX_STOCK, _max_stock];
+_data set [INDEX_BUY_SUPPLY, _supply];
+_data set [INDEX_BUY_LEGAL, !(_isIllegal)];
+_data set [INDEX_BUY_AMOUNT, _amount];
+_data set [INDEX_BUY_IN_HANDS, _putInHands];
 
 _data

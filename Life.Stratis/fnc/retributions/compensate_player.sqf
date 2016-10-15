@@ -1,20 +1,20 @@
 // A_retributions_fnc_compensate_player
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 _selection = [] call A_retributions_fnc_get_retribution_selection;
-if (undefined(_selection)) exitWith { player groupChat "You have not selected a player to compensate";};
+if (UNDEFINED(_selection)) exitWith { player groupChat "You have not selected a player to compensate";};
 _type = _selection select 0;
 _p_data = _selection select 1;
 if ( !(_type == "vtk" || _type == "vdm")) exitWith { player groupChat "You can only compensate team-kill or death-match victims";};
 
 _killer_name = (name player);
-_victim_name = toString (_p_data select A_retributions_var_vs_name);
+_victim_name = toString (_p_data select INDEX_VS_NAME);
 _victim_fletter = (toArray _victim_name) select 0;
-_victim_uid = _p_data select A_retributions_var_vs_uid;
-_lost_money = _p_data select A_retributions_var_vs_money;
-_euid = _p_data select A_retributions_var_vs_euid;
+_victim_uid = _p_data select INDEX_VS_UID;
+_lost_money = _p_data select INDEX_VS_EUID;
+_euid = _p_data select INDEX_VS_EUID;
 
 private ["_message", "_damages", "_fees", "_type_str"];
 

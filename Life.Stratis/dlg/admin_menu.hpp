@@ -6,7 +6,7 @@ class admin_menu {
 	
 	name = "ADMIN_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['ADMIN_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['ADMIN_MENU', _this select 0]";
 	
 	controlsBackground[] = {
 		background

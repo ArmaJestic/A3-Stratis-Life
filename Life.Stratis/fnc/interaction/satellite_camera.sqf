@@ -1,8 +1,6 @@
 // A_interaction_fnc_satellite_camera
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 _this spawn {
 ARGV(0,_player);
@@ -65,6 +63,6 @@ waitUntil {
 };
 
 _camera cameraEffect ["terminate", "back"];
-titleCut [" ","Black in", 0];
+cutText["","BLACK IN", 0];
 camDestroy _camera;
 };

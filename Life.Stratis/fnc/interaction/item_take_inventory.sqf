@@ -1,8 +1,6 @@
 // A_interaction_fnc_item_take_inventory
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
  
@@ -12,8 +10,8 @@ ARGV(1,_item);
 ARGV(2,_amount);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_item)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 
@@ -52,12 +50,12 @@ if (_item == "keychain") then {
 			
 	private["_vehicle_name"];
 	_vehicle_name = [_vehicles_name_list] call A_interaction_fnc_select_vehicle_wait;
-	if (undefined(_vehicle_name)) exitWith {null};
+	if (UNDEFINED(_vehicle_name)) exitWith {null};
 	
 	[_player, _vehicle_name] call A_vehicle_fnc_remove_name;
 	private["_object"];
 	_object = [_player, _item, 1, [_vehicle_name]] call A_player_fnc_drop_item;
-	if (undefined(_object)) exitWith {};
+	if (UNDEFINED(_object)) exitWith {};
 	[_player, _object] spawn A_drag_fnc_take_object;
 	player groupChat format["You took the key for %1", _vehicle_name];
 }else{
@@ -66,7 +64,7 @@ if (_item == "keychain") then {
 	
 	private["_object"];
 	_object = [_player, _item, _amount] call A_player_fnc_drop_item;
-	if (undefined(_object)) exitWith {};
+	if (UNDEFINED(_object)) exitWith {};
 	[_player, _object] spawn A_drag_fnc_take_object;
 	player groupChat format["You took %1 %2(s)", strM(_amount), (MASTER_ARRAY_ITEM_NAME(_item))];
 };

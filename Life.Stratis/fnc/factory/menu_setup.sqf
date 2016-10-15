@@ -1,7 +1,6 @@
 // A_factory_fnc_menu_setup
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 disableSerialization;

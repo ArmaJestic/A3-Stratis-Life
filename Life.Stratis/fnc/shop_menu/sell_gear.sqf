@@ -1,21 +1,16 @@
 // A_shop_menu_fnc_sell_gear
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_data);
+params[["_data",null,[[]]]];
+if (UNDEFINED(_data)) exitWith {null};
 
-if (undefined(_data)) exitWith {null};
-if (typeName _data != "ARRAY") exitWith {null};
-
-private ["_class", "_total_return", "_class", "_item_name", "_i", "_amount", "_type"];
-
-_item_name = _data select A_shop_menu_var_sell_item_name;
-_class = _data select A_shop_menu_var_sell_item_class;
-_total_return = _data select A_shop_menu_var_sell_item_total_return;
-_amount = _data select A_shop_menu_var_sell_item_amount;
-_type = _data select A_shop_menu_var_sell_item_type;
+private _item_name = _data select INDEX_SELL_NAME;
+private _class = _data select INDEX_SELL_CLASS;
+private _total_return = _data select INDEX_SELL_TOTAL_RETURN;
+private _amount = _data select INDEX_SELL_AMOUNT;
+private _type = _data select INDEX_SELL_TYPE;
 
 call A_shop_menu_fnc_play_animation;
 

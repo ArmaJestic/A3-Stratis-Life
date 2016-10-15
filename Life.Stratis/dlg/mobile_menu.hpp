@@ -8,7 +8,7 @@ class mobile_menu {
 
 	name = "MOBILE_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['MOBILE_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['MOBILE_MENU', _this select 0]";
 	
 	controls[] = {
 		mobile_header,

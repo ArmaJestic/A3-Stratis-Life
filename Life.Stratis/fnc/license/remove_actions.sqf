@@ -1,7 +1,6 @@
 // A_license_fnc_remove_actions
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_license_fnc_remove_actions %1", _this];

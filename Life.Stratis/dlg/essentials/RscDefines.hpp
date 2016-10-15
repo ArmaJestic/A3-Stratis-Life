@@ -181,6 +181,8 @@ class RscButton {
 class RscMenuButton {
 	type = CT_SHORTCUT_BUTTON;
 	style = "0x02 + 0xC0";
+//	style = ST_LEFT;
+	font = FontM;
 	default = 0;
 	shadow = 0;
 	x = 0;
@@ -209,30 +211,26 @@ class RscMenuButton {
 	size = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	
-	class HitZone
-	{
+	class HitZone {
 		left = 0.0;
 		top = 0.0;
 		right = 0.0;
 		bottom = 0.0;
 	};
-	
-	class TextPos
-	{
+	class TextPos {
 		left = "0.25 * (((safezoneW / safezoneH) min 1.2) / 40)";
 		top = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) - (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)) / 2";
 		right = 0.005;
 		bottom = 0.0;
 	};
-	class Attributes
-	{
-		font = "PuristaLight";
+	class Attributes {
+	//	font = "PuristaLight";
+	//	font = FontM;
 		color = "#E5E5E5";
 		align = "left";
 		shadow = "false";
 	};
-	class ShortcutPos
-	{
+	class ShortcutPos {
 		left = "(6.25 * (((safezoneW / safezoneH) min 1.2) / 40)) - 0.0225 - 0.005";
 		top = 0.005;
 		w = 0.0225;
@@ -248,9 +246,9 @@ class RscMenuTitle {
 	type = CT_STATIC;
 	idc = -1;
 	style = ST_CENTER;
+	font = FontM;
 	colorBackground[] = {"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.69])","(profilenamespace getvariable ['GUI_BCG_RGB_G',0.75])","(profilenamespace getvariable ['GUI_BCG_RGB_B',0.5])","(profilenamespace getvariable ['GUI_BCG_RGB_A',0.8])"};
 	colorText[] = {1, 1, 1, 1};
-	font = "PuristaMedium";
 	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
 	text = "";
 	shadow = 1;
@@ -326,7 +324,7 @@ class RscListBox {
 	color[] = {1,1,1,1};
 	colorActive[] = {1,0,0,1};
 	colorDisabled[]	 = {1,0,0,0.3};
-	font = "PuristaMedium";
+	font = FontM;
 	sizeEx = 0.030;
 	rowHeight = 0.04;
 	
@@ -395,7 +393,7 @@ class RscCombo {
 	color[] = {1,1,1,1};
 	colorActive[] = {1,0,0,1};
 	colorDisabled[]	 = {1,0,0,0.3};
-	font = "PuristaMedium";
+	font = FontM;
 
 	
 	soundEnter[] = {"\A3\ui_f\data\sound\onover",0.09,1};

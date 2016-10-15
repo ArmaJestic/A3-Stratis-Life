@@ -8,7 +8,7 @@ class lotto_menu {
 
 	name = "LOTTO_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['LOTTO_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['LOTTO_MENU', _this select 0]";
 	
 	controls[] = {
 		lotto_header,

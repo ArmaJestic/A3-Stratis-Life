@@ -13,7 +13,7 @@ class voting_menu {
 
 	name = "VOTING_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['VOTING_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['VOTING_MENU', _this select 0]";
 	
 	controls[] = {
 		voting_menu_header,
@@ -131,7 +131,7 @@ class voting_nomination_menu {
 
 	name = "VOTING_NOMINATION_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['VOTING_NOMINATION_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['VOTING_NOMINATION_MENU', _this select 0]";
 	
 	controls[] = {
 		voting_nomination_menu_header,

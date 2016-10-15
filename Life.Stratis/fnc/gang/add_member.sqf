@@ -1,6 +1,6 @@
 // A_gang_fnc_add_member
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 if (!(isServer)) exitWith {null};
@@ -10,7 +10,7 @@ if (!([_player] call A_player_fnc_human)) exitWith {null};
 
 private["_gang"];
 _gang = [_gang_id] call A_gang_fnc_lookup_id;
-if (undefined(_gang)) exitWith {null};
+if (UNDEFINED(_gang)) exitWith {null};
 
 private["_player_uid"];
 [_player, (group _player)] call A_player_fnc_set_saved_group;
@@ -20,14 +20,14 @@ private["_side"];
 _side = [_player] call A_player_fnc_side;
 
 private["_members", "_group"];
-_group = _gang select A_gang_var_group;
+_group = _gang select GANG_INDEX_GROUP;
 //recreate the group if it does not exist
 _group = [_side, _group] call A_gang_fnc_recreate_group;
-_gang set [A_gang_var_group, _group];
+_gang set [GANG_INDEX_GROUP, _group];
 
-_members = _gang select A_gang_var_members;
+_members = _gang select GANG_INDEX_MEMBERS;
 _members = _members + [_player_uid];
-_gang set [A_gang_var_members, _members];
+_gang set [GANG_INDEX_MEMBERS, _members];
 [_gang] call A_gang_fnc_update_list;
 
 sleep 1;

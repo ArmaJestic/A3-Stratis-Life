@@ -1,11 +1,11 @@
 // A_vehicle_fnc_init_stats
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_vehicle_fnc_init_stats %1", _this];
 ARGV(0,_vehicle);
-if (undefined(_vehicle)) exitWith {null};
+if (UNDEFINED(_vehicle)) exitWith {null};
 if (typeName _vehicle != "OBJECT") exitWith {null};
 
 private["_driver", "_velocity", "_position_atl", "_vector_direction", "_vector_up", "_fuel", "_damage", "_engine_state", "_weapons", "_magazines"];
@@ -23,8 +23,8 @@ _magazines= [_vehicle, "magazines"] call A_vehicle_fnc_get_array;
 
 private["_gear"];
 _gear = [];
-_gear set [A_vehicle_var_gear_weapons_cargo, _weapons];
-_gear set [A_vehicle_var_gear_magazines_cargo, _magazines];
+_gear set [INDEX_GEAR_CARGO_WEAPONS, _weapons];
+_gear set [INDEX_GEAR_CARGO_MAGAZINES, _magazines];
 
 [_vehicle,_gear] call A_vehicle_fnc_set_gear;
 

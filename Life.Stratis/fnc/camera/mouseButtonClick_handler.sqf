@@ -22,7 +22,7 @@ if (!(_button == 0)) exitWith {null};
 
 private["_target"];
 _target = [_player, "A_camera_fnc_target"] call A_object_fnc_getVariable;
-if (!(undefined(_target))) exitWith {
+if (!(UNDEFINED(_target))) exitWith {
 	player groupChat format["Cannot teleport while camera is attached to a target"];
 	false
 };

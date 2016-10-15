@@ -1,7 +1,6 @@
 // A_shop_menu_fnc_toggle_put_gear_cb
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_control", "_element", "_state", "_shop_id", "_current_state"];

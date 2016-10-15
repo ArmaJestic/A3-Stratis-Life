@@ -1,11 +1,10 @@
 // A_drag_fnc_object_label
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_object);
-if (undefined(_object)) exitWith {""};
+params["_object"];
+if (UNDEFINED(_object)) exitWith {""};
 
 if (!(isNull _object) && {isPlayer _object}) exitWith {name _object};
 (_object getVariable ["label", "item"])

@@ -35,13 +35,13 @@ if (_art == "use") then {
 				player setVelocity [_v1+_v1add, _v2+_v2add, _v3];
 			};
 			if (time > _fadeInTime) then {
-				titleCut ["","WHITE OUT",0];
+				cutText["","WHITE OUT",0];
 				_fadeOutTime = time + 1;
 				_fadeInTime  = time + 5;
 				_faded = false;
 			};
 			if ((time > _fadeOutTime) and (!_faded)) then {
-				titleCut ["","WHITE IN",0];
+				cutText["","WHITE IN",0];
 				_faded = true;
 			};
 			sleep 1;
@@ -49,7 +49,6 @@ if (_art == "use") then {
 	};
 	if (_item == "Vodka" OR _item == "fanta" OR _item == "wiskey") then {
 		while {time < _endeZeit} do {
-			liafu = true;
 			if (!(alive player)) exitWith {null};
 			//player setdamage ((damage player) - 0.01);
 			if (vehicle player == player) then {
@@ -60,19 +59,19 @@ if (_art == "use") then {
 				player setVelocity [_v1+_v1add, _v2+_v2add, _v3];
 			};
 			if (time > _fadeInTime) then {
-				titleCut ["","WHITE OUT",0];
+				cutText["","WHITE OUT",0];
 				_fadeOutTime = time + 1;
 				_fadeInTime  = time + 10;
 				_faded       = false;
 			};
 			if ((time > _fadeOutTime) and (!_faded)) then {
-				titleCut ["","WHITE IN",0];
+				cutText["","WHITE IN",0];
 				_faded = true;
 			};
 			sleep 1;
 		};
 	};
-	titleCut ["","WHITE IN",0];
+	cutText["","WHITE IN",0];
 	sleep 10;
 	player groupChat localize "STRS_inv_item_druguse_ende";
 	INV_alkoholusesperre = 0;

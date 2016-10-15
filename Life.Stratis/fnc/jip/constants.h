@@ -1,0 +1,2 @@
+#define VAR_PV_JIP_SET A_jip_var_pv_set
+#define QVAR_PV_JIP_SET #VAR_PV_JIP_SET

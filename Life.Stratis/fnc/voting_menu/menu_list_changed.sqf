@@ -1,7 +1,6 @@
 // A_voting_menu_fnc_menu_list_changed
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_voting_menu_fnc_menu_list_changed %1", _this];

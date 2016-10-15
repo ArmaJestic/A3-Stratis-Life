@@ -3,18 +3,13 @@
 #include "..\..\includes\macro.h"
 
 
-if (isblu) exitWith {null};
 if ([player] call A_player_fnc_get_dead) exitWith {
 	player groupChat format[localize "STRS_moneh_paycheckdead"];
 };
 
-private["_player"];
-_player = player;
-
-private["_income", "_activecount"];
-_income = A_main_var_add_civmoney;
-
-_activecount = 0;
+private _player = player;
+private _income = A_main_var_add_civmoney;
+private _activecount = 0;
 
 private["_i"];
 for [{_i=0}, {_i < (count BuildingsOwnerArray)}, {_i=_i+1}] do {
@@ -24,20 +19,18 @@ for [{_i=0}, {_i < (count BuildingsOwnerArray)}, {_i=_i+1}] do {
 };
 
 if (A_main_var_timeinworkplace > 0) then {
-	private["_workplacepaycheck"];
-	_workplacepaycheck = (round(A_main_var_add_workplace/180*A_main_var_timeinworkplace));
+	private _workplacepaycheck = (round(A_main_var_add_workplace/180*A_main_var_timeinworkplace));
 	_income = _income + _workplacepaycheck;
 };
 
-private["_gang_income"];
-_gang_income = [_player] call A_gang_fnc_calculate_income;
+private _gang_income = [_player] call A_gang_fnc_calculate_income;
 if (_gang_income > 0) then {
 	player groupChat format["%1-%2, because you are in a gang with that controls gang areas, you get extra $%3 income", _player, (name _player), strM(_gang_income)];
 	_income = _income + _gang_income;
 };
 
 A_main_var_timeinworkplace = 0;
-_income = if (undefined(_income)) then { A_main_var_add_civmoney } else {_income};
+_income = if (UNDEFINED(_income)) then { A_main_var_add_civmoney } else {_income};
 _income = if (typeName _income != "SCALAR") then { A_main_var_add_civmoney } else { _income };
 
 _income = round _income;
@@ -53,8 +46,10 @@ if ([_player] call A_player_fnc_president) then {
 	[player, (A_main_var_mayortaxes + A_main_var_mayorextrapay)] call A_bank_fnc_transaction;
 	player groupchat format["As president you get an extra paycheck of $%1. You also got $%2 taxes.", strM(A_main_var_mayorextrapay), strM(A_main_var_mayortaxes)];
 	A_main_var_mayortaxes = 0;
-}else{if (_taxes > 0) then {
-	(format["if ([player] call A_player_fnc_president) then {A_main_var_mayortaxes = A_main_var_mayortaxes + %1;};", _taxes]) call A_broadcast_fnc_broadcast;
-};};
+}else{
+	if (_taxes > 0) then {
+		(format["if ([player] call A_player_fnc_president) then {A_main_var_mayortaxes = A_main_var_mayortaxes + %1;};", _taxes]) call A_broadcast_fnc_broadcast;
+	};
+};
 
 call A_shop_menu_fnc_reset_paid_taxes;

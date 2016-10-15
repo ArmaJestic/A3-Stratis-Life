@@ -1,14 +1,6 @@
 // A_gang_fnc_loop
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-private ["_gangs_loop_i"];
-_gangs_loop_i = 0; 
-
-while {_gangs_loop_i < 5000} do {
-	[] call A_gang_fnc_loop_iteration;
-	_gangs_loop_i = _gangs_loop_i + 1;
-};
-
-[] spawn A_gang_fnc_loop;
+[A_gang_fnc_loop_iteration,10] call A_frame_fnc_perFrame;

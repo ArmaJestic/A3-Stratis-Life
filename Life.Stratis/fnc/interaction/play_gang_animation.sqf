@@ -1,8 +1,6 @@
 // A_interaction_fnc_play_gang_animation
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);

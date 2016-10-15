@@ -1,10 +1,10 @@
 // A_vehicle_fnc_unload_stats
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_vehicle);
-if (undefined(_vehicle)) exitWith {null};
+if (UNDEFINED(_vehicle)) exitWith {null};
 if (typeName _vehicle != "OBJECT") exitWith {null};
 
 private["_stats_uid"];

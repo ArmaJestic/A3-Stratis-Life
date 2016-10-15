@@ -4,7 +4,7 @@
 #include "..\..\includes\dikcodes.h"
 
 
-if (!INV_shortcuts) exitWith {false};
+if (!A_inv_var_shortcuts) exitWith {false};
 if (!(isblu)) exitWith {false};
 private["_vehicle"];
 _vehicle = (vehicle player);

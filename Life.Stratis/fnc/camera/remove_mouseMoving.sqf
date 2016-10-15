@@ -6,7 +6,7 @@
 
 disableSerialization;
     _display = findDisplay 46;
-if (!(undefined(camera_mouseMoving_id))) then {
+if (!(UNDEFINED(camera_mouseMoving_id))) then {
 	_display displayRemoveEventHandler  ["mouseMoving", camera_mouseMoving_id];
 	camera_mouseMoving_id = null;
 };

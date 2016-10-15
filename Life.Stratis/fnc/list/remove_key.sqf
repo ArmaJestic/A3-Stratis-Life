@@ -1,26 +1,19 @@
 // A_list_fnc_remove_key
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_list_id);
-ARGV(1,_key);
+params[["_list_id",null,[""]],["_key",null,[""]]];
 
-if (undefined(_list_id)) exitWith {null};
-if (typeName _list_id != "STRING") exitWith {null};
-if (undefined(_key)) exitWith {null};
-if (typeName _key != "STRING") exitWith {null};
+if (UNDEFINED(_list_id)) exitWith {null};
+if (UNDEFINED(_key)) exitWith {null};
 
-private["_data"];
-_data = [_list_id] call A_list_fnc_data;
-if (undefined(_data)) exitWith {null};
+private _data = [_list_id] call A_list_fnc_data;
+if (UNDEFINED(_data)) exitWith {null};
 
-private["_keys", "_values"];
-_keys = _data select A_list_var_keys;
-_values = _data select A_list_var_values;
-
-private["_index"];
-_index = _keys find _key;
+private _keys = _data select INDEX_KEYS;
+private _values = _data select INDEX_VALUES;
+private _index = _keys find _key;
 if (_index == -1) exitWith {null};
 
 _values set [_index, _key];
@@ -28,7 +21,7 @@ _values set [_index, _key];
 _keys = _keys - [_key];
 _values = _values - [_key];
 
-_data set [A_list_var_keys, _keys];
-_data set [A_list_var_values, _values];
+_data set [INDEX_KEYS, _keys];
+_data set [INDEX_VALUES, _values];
 
 [_list_id,  _data, false] call A_server_fnc_set_array_checked;

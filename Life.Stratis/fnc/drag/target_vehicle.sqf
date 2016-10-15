@@ -1,10 +1,8 @@
 // A_drag_fnc_target_vehicle
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-private["_vehicle"];
-_vehicle = nearCursorTarget;
+private _vehicle = nearCursorTarget;
 if ((isNull _vehicle) || {!(_vehicle isKindOf "LandVehicle")}) exitWith {null};
 _vehicle

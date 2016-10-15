@@ -1,29 +1,22 @@
 // A_flag_pole_fnc_move_flag
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_pole);
-ARGV(1,_amount);
-if (undefined(_pole)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
-if (typeName _pole != "ARRAY") exitWith {null};
-if (typeName _amount != "SCALAR") exitWith {null};
-
-private["_max_z", "_min_z", "_mast", "_flag"];
-
-_mast = _pole select A_flag_pole_var_mast_object;
-_flag = _pole select A_flag_pole_var_flag_object;
-_max_z = _pole select A_flag_pole_var_max_z;
-_min_z = _pole select A_flag_pole_var_min_z;
-
-private["_offset", "_z_offset"];
-_offset = _pole select A_flag_pole_var_flag_object_offset;
-_z_offset = _offset select 2;
+params[["_pole",null,[[]]],["_amount",null,[0]]];
+if (UNDEFINED(_pole)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 
 
-private["_new_z"];
-_new_z = _z_offset + _amount;
+private _mast = _pole select INDEX_MAST_OBJECT;
+private _flag = _pole select INDEX_FLAG_OBJECT;
+private _max_z = _pole select INDEX_MAX_Z;
+private _min_z = _pole select INDEX_MIN_Z;
+
+private _offset = _pole select INDEX_FLAG_OFFSET;
+private _z_offset = _offset select 2;
+
+private _new_z = _z_offset + _amount;
 
 if (_new_z < _min_z) then {
 	_new_z = _min_z;

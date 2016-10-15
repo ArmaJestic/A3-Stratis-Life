@@ -1,6 +1,6 @@
 // A_inv_fnc_createfort_init_handler
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_object);

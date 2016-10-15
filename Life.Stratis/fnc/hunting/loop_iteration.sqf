@@ -1,11 +1,11 @@
 // A_hunting_fnc_loop_iteration
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_timer);
+params["_startTime"];
+private _timer = round(diag_tickTime - _startTime);
 {
-	private["_hunting_area"];
-	_hunting_area = _x;
+	private _hunting_area = _x;
 	[_hunting_area, _timer] call A_hunting_fnc_loop_iteration_area;
-} forEach hunting_areas;
+} forEach A_hunting_var_areas;

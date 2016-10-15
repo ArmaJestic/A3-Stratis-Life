@@ -6,7 +6,7 @@
 if (!(visibleMap)) exitWith {null};
 //player groupChat format["marking %1", _this];
 ARGV(0,_local_marker);
-if (undefined(_local_marker)) exitWith {null};
+if (UNDEFINED(_local_marker)) exitWith {null};
 
 private["_player_variable_name", "_player_variable"];
 _player_variable_name = _local_marker;
@@ -23,9 +23,9 @@ if (!([player, "sidemarkers"] call A_player_fnc_get_bool) ||
 
 private["_has_admin_camera", "_under"];
 _has_admin_camera = [_player_variable, "has_admin_camera"] call A_object_fnc_getVariable;
-_has_admin_camera = if (undefined(_has_admin_camera)) then { false } else {_has_admin_camera};
+_has_admin_camera = if (UNDEFINED(_has_admin_camera)) then { false } else {_has_admin_camera};
 _has_admin_camera = if (typeName _has_admin_camera != "BOOL") then {false} else {_has_admin_camera};
-_under = [_player_variable] call A_underwater_base_fnc_under_base;
+_under = [_player_variable] call A_bases_fnc_underbase_player;
 
 if (_has_admin_camera || _under) exitWith {
 	_local_marker setMarkerAlphaLocal 0;

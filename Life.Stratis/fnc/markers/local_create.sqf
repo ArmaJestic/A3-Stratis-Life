@@ -11,13 +11,13 @@ ARGV(4,_color);
 ARGV(5,_size);
 ARGV(6,_text);
 
-if (undefined(_name)) exitWith {""};
-if (undefined(_location)) exitWith {""};
-if (undefined(_shape)) exitWith {""};
-if (undefined(_type)) exitWith {""};
-if (undefined(_type)) exitWith {""};
-if (undefined(_color)) exitWith {""};
-if (undefined(_text)) exitWith {""};
+if (UNDEFINED(_name)) exitWith {""};
+if (UNDEFINED(_location)) exitWith {""};
+if (UNDEFINED(_shape)) exitWith {""};
+if (UNDEFINED(_type)) exitWith {""};
+if (UNDEFINED(_type)) exitWith {""};
+if (UNDEFINED(_color)) exitWith {""};
+if (UNDEFINED(_text)) exitWith {""};
 
 if (typeName _name != "STRING") exitWIth {""};
 if (typeName _location != "ARRAY") exitWith {""};

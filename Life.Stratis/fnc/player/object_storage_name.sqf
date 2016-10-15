@@ -1,10 +1,10 @@
 // A_player_fnc_object_storage_name
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_object);
-if (undefined(_object)) exitWith {""};
+if (UNDEFINED(_object)) exitWith {""};
 if (typeName _object != "OBJECT") exitWith {""};
 
 if (_object isKindOf "Man") exitWith {

@@ -1,11 +1,10 @@
 // A_shop_menu_fnc_get_player_by_uid
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_uid);
-if (undefined(_uid)) exitWith {null};
+if (UNDEFINED(_uid)) exitWith {null};
 if (typeName _uid != "STRING") exitWith {null};
 
 private["_player"];
@@ -18,6 +17,6 @@ _player = null;
 	if (_cuid == _uid) exitWith {
 		_player = _cplayer;
 	};
-} foreach playerstringarray;
+} foreach A_player_var_playerstringarray;
 
 _player

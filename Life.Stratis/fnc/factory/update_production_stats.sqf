@@ -1,10 +1,9 @@
 // A_factory_fnc_update_production_stats
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
-if (undefined(A_factory_var_selected)) exitWith {null};
+if (UNDEFINED(A_factory_var_selected)) exitWith {null};
 private["_factory"];
 _factory = A_factory_var_selected;
 
@@ -12,7 +11,7 @@ private["_item", "_index"];
 _index = (lbCurSel factory_dequeue_list_idc);
 _item = (lbData [factory_dequeue_list_idc, _index]);
 
-if (undefined(_item)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (_item == "") exitWith {null};
 
@@ -31,7 +30,7 @@ if (_index < 0) then {
 	_eta = missionNamespace getVariable _eta_name;
 }else{
 	private["_queue_name", "_workers_name", "_workers"];
-	_queue_name = _factory select factory_queue;
+	_queue_name = _factory select INDEX_QUEUE;
 	_workers_name = format["%1workers", _queue_name];
 	_workers = missionNamespace getVariable _workers_name;
 	private["_production_time"];

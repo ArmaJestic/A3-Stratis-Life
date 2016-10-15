@@ -6,10 +6,10 @@
 ARGV(0,_object);
 ARGV(1,_name);
 
-if (undefined(_object)) exitWith {};
-if (undefined(_name)) exitWith {};
+if (UNDEFINED(_object)) exitWith {};
+if (UNDEFINED(_name)) exitWith {};
 if (isNull _object) exitWith {};
 if (typeName _name != "STRING") exitWith {};
 
-missionNamespace setVariable [_name, _object];
+missionNamespace setVariable[_name, _object];
 _object setVehicleVarName _name;

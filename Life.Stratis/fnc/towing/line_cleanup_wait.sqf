@@ -1,11 +1,10 @@
 // A_towing_fnc_line_cleanup_wait
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_towing_line);
-if (undefined(_towing_line)) exitWith {};
+if (UNDEFINED(_towing_line)) exitWith {};
 if (typeName _towing_line != "OBJECT") exitWith {};
 if (isNull _towing_line) exitWith {};
 
@@ -16,7 +15,7 @@ waitUntil {
 	_towed = _towing_line getVariable ["towed", null];
 	_towing = _towing_line getVariable ["towing", null];
 	
-	if (undefined(_towed) && {undefined(_towing)}) exitWith {true};
+	if (UNDEFINED(_towed) && {UNDEFINED(_towing)}) exitWith {true};
 	if (isNull _towed && {isNull _towing}) exitWith {true};
 	if (!(alive _towed) && {!(alive _towing)}) exitWith {true};
 	if ((_towed distance _towing) > 10) then {

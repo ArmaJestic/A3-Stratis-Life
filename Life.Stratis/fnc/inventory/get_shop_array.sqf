@@ -1,7 +1,6 @@
 // A_inventory_fnc_get_shop_array
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private ["_c", "_Fshoparray"];

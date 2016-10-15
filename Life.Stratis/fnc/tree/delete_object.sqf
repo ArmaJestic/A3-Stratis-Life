@@ -1,11 +1,11 @@
 // A_tree_fnc_delete_object
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_tree);
-if (undefined(_tree)) exitWith {};
+if (UNDEFINED(_tree)) exitWith {};
 
 private["_variable_name"];
 _variable_name = netId _tree;

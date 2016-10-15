@@ -20,4 +20,4 @@ if (_found > -1) then {
 	_str
 }else{
 	_str
-}
+};

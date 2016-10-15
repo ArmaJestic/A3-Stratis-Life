@@ -1,10 +1,9 @@
 // A_player_fnc_exists
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_player);
-if (undefined(_player)) exitWith {false};
-if (typeName _player != "OBJECT") exitWith {false};
-if (isNull _player) exitWith {false};
+params[["_player",objNull,[objNull,0]]];
+if ((typeName _player) == "SCALAR") exitwith {false};
+if (isNull _player) exitwith {false};
 true

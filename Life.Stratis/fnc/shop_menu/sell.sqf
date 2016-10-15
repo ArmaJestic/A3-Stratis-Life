@@ -1,25 +1,23 @@
 // A_shop_menu_fnc_sell
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
- [] spawn {
+
 if (A_shop_menu_var_sell_active) exitWith {
 	player groupChat format["ERROR: A_shop_menu_fnc_sell already active"];
 };
 A_shop_menu_var_sell_active = true;
 
-private["_data"];
-_data = call A_shop_menu_fnc_update_sell_item;
-if (undefined(_data)) exitWith {
+
+private _data = call A_shop_menu_fnc_update_sell_item;
+if (UNDEFINED(_data)) exitWith {
 	A_shop_menu_var_sell_active = false;
 };
 
 ctrlEnable [sell_button_idc, false];
 
-private ["_type", "_sold"];
-_type = _data select A_shop_menu_var_sell_item_type;
-_sold = true;
+private _type = _data select INDEX_SELL_TYPE;
+private _sold = true;
 switch _type do {
 	case "Item": {
 		[_data] call A_shop_menu_fnc_sell_item;
@@ -65,4 +63,3 @@ if (_sold) then {
 call A_shop_menu_fnc_update_sell_item;
 
 A_shop_menu_var_sell_active = false;
-};

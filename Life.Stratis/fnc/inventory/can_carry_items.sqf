@@ -1,7 +1,6 @@
 // A_inventory_fnc_can_carry_items
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_item);
@@ -16,6 +15,6 @@ private["_items_weight", "_own_weight", "_remain_weight"];
 
 _items_weight = (ITEM_DATA_WEIGHT(_data)*_count);
 _own_weight = (call A_inventory_fnc_get_own_weight);
-_remain_weight = (A_inventory_var_INV_CarryingCapacity - _own_weight);
+_remain_weight = (A_inventory_var_carrying_capacity - _own_weight);
 
 (_remain_weight <  _items_weight)

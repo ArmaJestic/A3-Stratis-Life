@@ -1,7 +1,6 @@
 // A_main_menu_fnc_handle_statistics
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_title);
@@ -12,9 +11,9 @@ lbClear (ctrlIDC _list);
 _list lbAdd format ["Date: %3.%2.%1", (date select 0), (date select 1), (date select 2)];
 _list lbAdd format ["Runtime: %1 minutes", (round(time/60))];
 _list lbAdd format ["%1: %2/%3", "Weight", (call A_inventory_fnc_get_own_weight), A_inventory_var_INV_CarryingCapacity];
-_list lbAdd format ["%1: %2",    "Cops killed", ([player, "copskilled"] call A_player_fnc_get_scalar)];
-_list lbAdd format ["%1: %2",    "Civilians killed", ([player, "civskilled"] call A_player_fnc_get_scalar)];
-_list lbAdd format ["%1: %2",    "Arrests Made", ([player, "arrestsmade"] call A_player_fnc_get_scalar)];
-_list lbAdd format ["%1: %2",    "Suicides", ([player, "A_main_var_selfkilled"] call A_player_fnc_get_scalar)];
-_list lbAdd format ["%1: %2",    "Deaths", ([player, "deadtime"] call A_player_fnc_get_scalar)];
-_list lbAdd format ["%1: %2 seconds", "Respawn time", round(_dead_wait_time)];
+_list lbAdd format ["%1: %2", "Cops killed", ([player, "copskilled"] call A_player_fnc_get_scalar)];
+_list lbAdd format ["%1: %2", "Civilians killed", ([player, "civskilled"] call A_player_fnc_get_scalar)];
+_list lbAdd format ["%1: %2","Arrests Made", ([player, "arrestsmade"] call A_player_fnc_get_scalar)];
+_list lbAdd format ["%1: %2", "Suicides", ([player, "A_main_var_selfkilled"] call A_player_fnc_get_scalar)];
+_list lbAdd format ["%1: %2", "Deaths", ([player, "deadtime"] call A_player_fnc_get_scalar)];
+_list lbAdd format ["%1: %2 seconds", "Respawn time", round([player] call A_player_fnc_dead_wait_time)];

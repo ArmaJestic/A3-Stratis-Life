@@ -9,7 +9,7 @@ class animations_menu_dialog {
 
 	name = "ANIMATIONS_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['ANIMATIONS_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['ANIMATIONS_MENU', _this select 0]";
 	
 	controls[] = {
 		animations_menu_header,

@@ -19,6 +19,6 @@ if (_art == "use") then {
 	if (player != vehicle player) exitWith {player groupChat "You must be outside the vehicle to A_item_fnc_repair it";};
 	if (player != vehicle player) exitWith {player groupChat "You must be outside the vehicle to A_item_fnc_repair it";};
 	if (_weight > 1) exitWith {player groupChat localize "STRS_inv_items_repair_wrongvcl";};
-	["use", "kleinesreparaturkit", 1] execVM "A_item_fnc_largerepair.sqf";
+	["use", "kleinesreparaturkit", 1] spawn A_item_fnc_largerepair;
 
 };

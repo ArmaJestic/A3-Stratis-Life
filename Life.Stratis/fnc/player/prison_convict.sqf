@@ -1,12 +1,12 @@
 // A_player_fnc_prison_convict
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 player groupChat format["A_player_fnc_prison_convict %1", _this];
 ARGV(0,_player);
 
-if (undefined(_player)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
 if (_player != player) exitWith {null};
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 

@@ -24,8 +24,8 @@ private["_M_effect"];
 M_Round	= "";
 _M_effect = "";
 
-player groupchat "running";
-_h = [] execVM "Awesome\Effects\mortar_effects.sqf";
+player groupchat "A_eh_fnc_fired_mortar";
+//_h = [] spawn "Awesome\Effects\mortar_effects.sqf";
 
 if (_unit isKindOf "M252") then {
 	switch _magazine do {

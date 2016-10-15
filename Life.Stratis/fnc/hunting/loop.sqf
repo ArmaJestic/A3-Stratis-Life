@@ -1,19 +1,7 @@
 // A_hunting_fnc_loop
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-//player groupChat format["A_hunting_fnc_loop %1", _this];
-if (!(isServer)) exitWith {null};
-
-private["_hunting_loop_i", "_sleep", "_timer"];
-_hunting_loop_i = 0;
-_sleep = 1;
-
-while {_hunting_loop_i < 5000 } do {
-	[_hunting_loop_i] call A_hunting_fnc_loop_iteration;
-	_hunting_loop_i = _hunting_loop_i + 1; 
-	sleep _sleep;
-};
-
-[] spawn A_hunting_fnc_loop;
+// diag_tickTime for the start time, for the timer/spawn setup
+[A_hunting_fnc_loop_iteration,30,[diag_tickTime]] call A_frame_fnc_perFrame;

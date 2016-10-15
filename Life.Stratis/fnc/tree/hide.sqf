@@ -1,10 +1,9 @@
 // A_tree_fnc_hide
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
-player groupChat format["A_tree_fnc_hide %1", _this];
 ARGV(0,_tree);
 ARGV(1,_target);
 

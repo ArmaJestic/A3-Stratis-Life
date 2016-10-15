@@ -8,9 +8,9 @@ _obj = _this select 0;
 _pitch = _this select 1;
 _bank = _this select 2;
 
-if (undefined(_bank)) exitWith {null};
-if (undefined(_pitch)) exitWith {null};
-if (undefined(_obj)) exitWith {null};
+if (UNDEFINED(_bank)) exitWith {null};
+if (UNDEFINED(_pitch)) exitWith {null};
+if (UNDEFINED(_obj)) exitWith {null};
 
 _yaw = 360-(getdir _obj);
 
@@ -23,7 +23,7 @@ _rotate =
 	private ["_v","_d","_x","_y"];
 	_v = +(_this select 0); //we don't want to modify the originally passed vector
 	_d = _this select 1;
-	if (undefined(_d)) then {
+	if (UNDEFINED(_d)) then {
 		_d = 0;
 	};
 	

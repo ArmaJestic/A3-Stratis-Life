@@ -1,8 +1,6 @@
 // A_interaction_fnc_gang_join
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_gang_join %1", _this];
@@ -10,7 +8,7 @@ ARGV(0,_player);
 ARGV(1,_gang_id);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_gang_id)) exitWith {null};
+if (UNDEFINED(_gang_id)) exitWith {null};
 if (typeName _gang_id != "STRING") exitWith {null};
 
 if (_gang_id == "") exitWith {
@@ -19,7 +17,7 @@ if (_gang_id == "") exitWith {
 
 private["_gang"];
 _gang = [_gang_id] call A_gang_fnc_lookup_id;
-if (undefined(_gang)) exitWith {
+if (UNDEFINED(_gang)) exitWith {
 	player groupChat format["%1-%2, the selected gang does not exist",  _player, (name _player)];
 };
 
@@ -29,17 +27,17 @@ _player_uid = [_player] call A_gang_fnc_player_uid;
 _cgang = [_player_uid] call A_gang_fnc_lookup_player_uid;
 //player groupChat format["_cgang = %1", _cgang];
 
-if (!(undefined(_cgang))) exitWith {
+if (!(UNDEFINED(_cgang))) exitWith {
 	private["_cgang_name"];
-	_cA_gang_var_name = _cgang select A_gang_var_name;
+	_cGANG_INDEX_NAME = _cgang select GANG_INDEX_NAME;
 	player groupChat format["%1-%2, you are already in gang %3", _player, (name _player), _cgang_name];
 };
 
 private["_gang_name"];
-_A_gang_var_name = _gang select A_gang_var_name;
+_gang_name = _gang select GANG_INDEX_NAME;
 	
 private["_recruiting"];
-_recruiting = _gang select A_gang_var_open;
+_recruiting = _gang select GANG_INDEX_OPEN;
 
 if (!(_recruiting)) exitWith {
 	player groupChat format["%1-%2, gang %3 is not recruiting at the moment", _player, (name _player), _gang_name];

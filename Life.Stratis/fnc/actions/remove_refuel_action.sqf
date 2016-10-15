@@ -7,7 +7,7 @@
 	
 
 	_vehicle = call A_actions_fnc_get_refuel_vehicle;
-	if (undefined(_vehicle)) exitWith {null};
+	if (UNDEFINED(_vehicle)) exitWith {null};
 	_refuel_action = call A_actions_fnc_get_refuel_action;
 	if (_refuel_action < 0) exitWith {null};
 	

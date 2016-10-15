@@ -1,17 +1,13 @@
 // A_loading_fnc_start
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-if (isServer) exitwith {
-	LOGED(A_loading_fnc_start, call on server)
-};
+if (isServer) exitwith {};
+if (A_loading_var_active) exitwith {};
 
-LOGED(A_loading_fnc_start)
+params[["_title","",[""]],["_progress",0,[0]]];
 
 A_loading_var_active = true;
-startLoadingScreen["" , "customLoadingScreen"];
-
-if (!isServer) then {
-	uiSleep 1;
-};
+startLoadingScreen[_title, "customLoadingScreen"];
+[_progress] call A_loading_fnc_update_progress;

@@ -1,62 +1,7 @@
 // A_convoy_fnc_loop
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-
-#define CONVOY_MSG_SPAWN 1
-#define CONVOY_MSG_DRIVER_DEAD 2
-#define CONVOY_MSG_DAMAGED 3
-#define CONVOY_MSG_COMPLETE 4
+#include "header.h"
 
 
 format["A_convoy_fnc_loop %1", _this] call A_convoy_fnc_debug;
-
-sleep (A_main_var_convoyrespawntime * 3);
-private["_message"];
-_message = "There are rumors that a government convoy is leaving in a few minutes.";
-format["hint toString(%1);", toArray(_message)] call A_broadcast_fnc_broadcast;
-sleep (A_main_var_convoyrespawntime * 3);
-
-//Gets position to spawn
-private["_spawn", "_location"];
-_spawn = call A_convoy_fnc_get_spawn;
-_location = getPosATL _spawn;
-
-private["_convoy_truck", "_convoy_marker", "_convoy_group"];
-_convoy_truck = [_location] call A_convoy_fnc_create_truck;
-_convoy_marker = [_location] call A_convoy_fnc_create_marker;
-_convoy_group = [_convoy_truck, _location] call A_convoy_fnc_create_units;
-
-format['[CONVOY_MSG_SPAWN] call A_convoy_fnc_side_msg;'] call A_broadcast_fnc_broadcast;
-
-//init convoy globals
-convoy_complete = false;
-convoy_cash = true;
-convoy_complete_side = sideUnknown;
-convoy_running_time = 0;
-convoy_units_exited = false;
-
-publicVariable "convoy_cash";
-
-//start the convoy A_other_fnc_loop, and wait for it to complete
-[_convoy_truck, _convoy_group, _convoy_marker, copbase1] spawn A_convoy_fnc_mission_loop;	
-waitUntil {convoy_complete};
-
-//announce who won the convoy
-private["_side_str"];
-_side_str = [convoy_complete_side] call A_convoy_fnc_side2string;
-_message = format["%1 side won the goverment convoy mission. Next truck leaves in %2 minutes", _side_str, A_main_var_convoyrespawntime];
-format['server globalChat toString(%1);', toArray(_message)] call A_broadcast_fnc_broadcast;
-
-sleep 10;
-
-//cleanup the convoy items
-{deleteVehicle _x;} foreach units _convoy_group;
-deleteVehicle _convoy_truck; 
-deleteGroup _convoy_group;
-deleteMarker _convoy_marker;
-
-//waits for respawn
-sleep (A_main_var_convoyrespawntime * 54);
-
-[] spawn A_convoy_fnc_loop;
+[RESPAWN_TIME*3,[],A_convoy_fnc_loop2] call A_frame_fnc_wait;

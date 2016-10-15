@@ -1,6 +1,6 @@
 // A_retributions_fnc_punished_logic
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private ["_damages", "_fees", "_message", "_type_str"];

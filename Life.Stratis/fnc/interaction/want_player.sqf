@@ -1,8 +1,6 @@
 // A_interaction_fnc_want_player
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -11,7 +9,7 @@ ARGV(2,_reason);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (!([_victim] call A_player_fnc_human)) exitWith {null};
-if (undefined(_reason)) exitWith {null};
+if (UNDEFINED(_reason)) exitWith {null};
 if (typeName _reason != "STRING") exitWith {null};
 
 if (_victim == player) exitWith {

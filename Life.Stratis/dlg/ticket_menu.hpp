@@ -8,7 +8,7 @@ class ticket_menu {
 
 	name = "TICKET_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['TICKET_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['TICKET_MENU', _this select 0]";
 	
 	controls[] = {
 		ticket_menu_header,

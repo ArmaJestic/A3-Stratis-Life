@@ -4,7 +4,7 @@
 
 
 _vcl  = vehicle player;
-if (undefined(HORN_Playing)) then	{ HORN_Playing = false;	};
+if (UNDEFINED(HORN_Playing)) then	{ HORN_Playing = false;	};
 _class = typeOf (vehicle (player));
 _isbike = (configName(inheritsFrom(inheritsFrom (configFile >> "CfgVehicles" >> _class))) == "Bicycle");
 _isdriver = (player == (driver _vcl));

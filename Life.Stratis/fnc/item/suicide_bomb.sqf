@@ -23,7 +23,7 @@ if (_art == "use") then {
 	_anzahl = _this select 2;
 	"hint localize ""STRS_inv_item_selbstmordbombe_globalmsg"";" call A_broadcast_fnc_broadcast;
 	for [{_i=5}, {_i >= 0}, {_i=_i-1}] do {
-		titletext [format ["Bombcountdown: -->*%1*<--", _i],"plain"];
+		cutText[format["Bombcountdown: -->*%1*<--", _i],"plain"];
 		sleep 1;
 	};
 

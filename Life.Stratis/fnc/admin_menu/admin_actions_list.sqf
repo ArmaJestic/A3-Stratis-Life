@@ -36,7 +36,6 @@
 		
 		format['
 			[] spawn {
-				liafu = true;
 				if (player != %1) exitWith {null};
 				[player] call A_player_fnc_reset_gear;
 			};
@@ -51,7 +50,6 @@
 		
 		format['
 			[] spawn {
-				liafu = true;
 				if (player != %1) exitWith {null};
 				(player) setDamage 1; 
 			};
@@ -67,7 +65,6 @@
 		
 		format['
 			[] spawn {
-				liafu = true;
 				if (player != %1) exitWith {null};
 				(vehicle player) setDamage 1; 
 			};
@@ -94,7 +91,7 @@
 	["Delete Target (Man)", {
 		private["_target"];
 		_target = cursorTarget;
-		if (!(undefined(_target))) then {
+		if (!(UNDEFINED(_target))) then {
 			if (typeName _target == "OBJECT") then {
 				if (_target isKindOf "Man" && !([_target] call A_object_fnc_shop)) then {
 					[_target] call A_bis_expected_fnc_unitDelete;
@@ -105,7 +102,7 @@
 	["Teleport", {
 		ARGV(0,_player);
 		ARGV(1,_target);
-		if (!(undefined(_target))) then {
+		if (!(UNDEFINED(_target))) then {
 			[_target] call A_interaction_fnc_teleport_player;
 		}else{
 			[_player] call A_interaction_fnc_teleport_player;

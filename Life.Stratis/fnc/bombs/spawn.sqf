@@ -15,7 +15,7 @@ if ((typeName _this) == "OBJECT") then {
 				_men1 = (crew _this); 
 				{
 					_has_admin_camera = [_x, "has_admin_camera"] call A_object_fnc_getVariable;
-					if ( !(undefined(_has_admin_camera)) && _has_admin_camera) then {
+					if ( !(UNDEFINED(_has_admin_camera)) && _has_admin_camera) then {
 					} else {
 						_x setDamage 1;
 					};                
@@ -26,7 +26,7 @@ if ((typeName _this) == "OBJECT") then {
 
 			{
 				_has_admin_camera = [_x, "has_admin_camera"] call A_object_fnc_getVariable;
-				if ( !(undefined(_has_admin_camera)) && _has_admin_camera) then {
+				if ( !(UNDEFINED(_has_admin_camera)) && _has_admin_camera) then {
 				} else {
 					_x setDamage 1;
 				};
@@ -35,7 +35,7 @@ if ((typeName _this) == "OBJECT") then {
 					_men3 = crew _x;
 					{
 						_has_admin_camera = [_x, "has_admin_camera"] call A_object_fnc_getVariable;
-						if ( !(undefined(_has_admin_camera)) && _has_admin_camera) then {
+						if ( !(UNDEFINED(_has_admin_camera)) && _has_admin_camera) then {
 
 						} else {
 							_x setDamage 1;

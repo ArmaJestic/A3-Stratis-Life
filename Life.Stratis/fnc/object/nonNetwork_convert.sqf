@@ -5,7 +5,7 @@
 
 player groupChat format["A_object_fnc_nonNetwork_convert %1", _this];
 ARGV(0,_object);
-if (undefined(_object)) exitWith {objNull};
+if (UNDEFINED(_object)) exitWith {objNull};
 
 
 player groupChat format["TYPE: %1", typeName _object];

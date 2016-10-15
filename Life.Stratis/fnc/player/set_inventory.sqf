@@ -1,12 +1,12 @@
 // A_player_fnc_set_inventory
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_inventory);
 
-if (undefined(_inventory)) exitWith {null};
+if (UNDEFINED(_inventory)) exitWith {null};
 if (typeName _inventory != "ARRAY") exitWith {null};
 
 private["_inventory_name"];

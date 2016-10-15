@@ -1,7 +1,6 @@
 // A_shop_menu_fnc_reset_buy_labels
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ctrlSetText [buy_supply_field_idc, "0"];

@@ -6,8 +6,8 @@
 ARGV(0,_container);
 ARGV(1,_item_id);
 
-if (undefined(_container)) exitWith {false};
-if (undefined(_item_id)) exitWith {false};
+if (UNDEFINED(_container)) exitWith {false};
+if (UNDEFINED(_item_id)) exitWith {false};
 if (typeName _item_id != "STRING") exitWith {false};
 
 private["_item_cargo", "_i"];

@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (undefined(new_actions) || typeName new_actions != "ARRAY") exitWith {null};
+if (UNDEFINED(new_actions) || typeName new_actions != "ARRAY") exitWith {null};
 
 {
 	_action_number = _x select 0;

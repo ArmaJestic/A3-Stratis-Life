@@ -1,13 +1,13 @@
 // A_player_fnc_set_reason
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_reason);
 
-if (undefined(_player)) exitWith {null};
-if (undefined(_reason)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
+if (UNDEFINED(_reason)) exitWith {null};
 
 if (typeName _reason != "ARRAY") exitWith {null};
 

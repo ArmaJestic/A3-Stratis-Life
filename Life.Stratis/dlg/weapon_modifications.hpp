@@ -55,7 +55,7 @@ class WeaponModifications {
 
 	name = "WEAPON_MODS";
 	onUnload = "[] call A_interaction_fnc_weapon_modifications_menu_close;";
-	onLoad="uiNamespace setVariable ['WEAPON_MODS', _this select 0]";
+	onLoad="uiNamespace setVariable['WEAPON_MODS', _this select 0]";
 
 	class mainFrame : WBgFrame {
 		idc = weaponModifications_mainFrame_idc;

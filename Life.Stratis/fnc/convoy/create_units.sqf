@@ -1,46 +1,27 @@
 // A_convoy_fnc_create_units
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-
-#define CONVOY_MSG_SPAWN 1
-#define CONVOY_MSG_DRIVER_DEAD 2
-#define CONVOY_MSG_DAMAGED 3
-#define CONVOY_MSG_COMPLETE 4
+#include "header.h"
 
 
-ARGV(0,_truck);
-ARGV(1,_location);
+params["_truck","_location"];
 
-private["_convoy_group"];
-_convoy_group = createGroup west;
-
+private _convoy_group = createGroup west;
 {
-	private["_data", "_name", "_class", "_weapons", "_magazines", "_commander"];
-	_data = _x;
-	_name = _data select A_convoy_var_unit_name;
-	_class = _data select A_convoy_var_unit_class;
-	_weapons = _data select A_convoy_var_unit_weapons;
-	_magazines = _data select A_convoy_var_unit_magazines;
-	_commander = _data select A_convoy_var_unit_commander;
-
-	private["_unit"];
-	_unit = _convoy_group createUnit [_class, _location, [], 0, "FORM"];
+	private _data = _x;
+	private _name = _data select INDEX_NAME;
+	private _class = _data select INDEX_CLASS;
+	private _weapons = _data select INDEX_WEAPONS;
+	private _magazines = _data select INDEX_MAGAZINES;
+	private _commander = _data select INDEX_COMMANDER;
 	
-	/*
-	_unit setVehicleInit format[
-	'
-		liafu = true;
-		%1 = this; 
-		this setSpeedMode "full"; 
-		this allowFleeing 0;
-		this setVehicleVarName "%1";
-	', _name];
-	processInitCommands;
-	*/
+	private _unit = _convoy_group createUnit [_class, _location, [], 0, "FORM"];
+	
+	_unit setSpeedMode "full"; 
+	_unit allowFleeing 0;
+	missionNamespace setVariable[_name,_unit,true];
 	removeAllWeapons _unit;
 	
-	_unit addMPEventHandler ["MPKilled", { _this call A_player_fnc_handle_mpkilled }];
+	_unit addMPEventHandler ["MPKilled", A_player_fnc_handle_mpkilled];
 	
 	_unit setSkill ["general", 0.86];
 	_unit setSkill ["endurance", 1];
@@ -64,5 +45,4 @@ _convoy_group = createGroup west;
 _convoy_group setBehaviour "AWARE";
 _convoy_group setCombatMode "RED";
 
-sleep 2;
 _convoy_group

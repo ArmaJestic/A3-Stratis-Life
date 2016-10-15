@@ -1,6 +1,6 @@
 // A_player_fnc_determine_weapon_type
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_player_fnc_determine_weapon_type %1", _this];
@@ -9,12 +9,12 @@ ARGV(1,_weapon_id);
 
 
 if (!([_player] call A_player_fnc_exists)) exitWith {-1};
-if (undefined(_weapon_id)) exitWith {-1};
+if (UNDEFINED(_weapon_id)) exitWith {-1};
 if (typeName _weapon_id != "STRING") exitWith {-1};
 
 
 private["_player_weapons"];
-_A_player_fnc_weapons = [_player] call A_player_fnc_weapons;
+_player_weapons = [_player] call A_player_fnc_weapons;
 
 //determine the type of weapon
 

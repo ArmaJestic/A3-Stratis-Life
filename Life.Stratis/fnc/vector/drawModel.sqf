@@ -1,6 +1,6 @@
 // A_vector_fnc_drawModel
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 ARGV(0,_object);
 ARGV(1,_vector1)

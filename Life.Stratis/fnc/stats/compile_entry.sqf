@@ -1,27 +1,16 @@
 // A_stats_fnc_compile_entry
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
-//player groupChat format["A_stats_fnc_compile_entry %1", _this];
-private["_entry", "_object"];
 
-_entry = _this select 0;
-_object = _this select 1;
+params[["_entry",null,[[]],2],["_object",null,[objNull]]];
 
-if (undefined(_entry)) exitWith {null};
-if (typeName _entry != "ARRAY") exitWith {null};
-if (count _entry != 2) exitWith {null};
+if (UNDEFINED(_entry)) exitWith {};
+if (UNDEFINED(_object)) exitWith {};
 
-if (undefined(_object)) exitWith {null};
-if (typeName _object != "OBJECT") exitWith {null};
-
-private["_name", "_value"];
-
-_name = _entry select 0;
-_value = _entry select 1;
+_entry params["_name","_value"];
 _value = (call compile _value) select 0;
-
-if (undefined(_value)) then {
+if (UNDEFINED(_value)) then {
 	_value = null;
 };
 

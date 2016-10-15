@@ -7,7 +7,7 @@
 disableSerialization;
 private["_control"];
     _control = call A_camera_fnc_map_control;
-if (!(undefined(camera_mouseButtonClick_id))) then {
+if (!(UNDEFINED(camera_mouseButtonClick_id))) then {
 	_control ctrlRemovEeventHandler  ["MouseButtonClick", camera_mouseButtonClick_id];
 	camera_mouseButtonClick_id = null;
 };

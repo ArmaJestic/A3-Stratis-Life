@@ -1,11 +1,10 @@
 // A_factory_fnc_update_status_fields
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_messages);
-if (undefined(_messages)) exitWith {null};
+if (UNDEFINED(_messages)) exitWith {null};
 if (typeName _messages != "ARRAY") exitWith {null};
 if (count(_messages) != 2) exitWith {null};
 

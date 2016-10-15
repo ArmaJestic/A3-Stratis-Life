@@ -1,18 +1,17 @@
 // A_shop_menu_fnc_buy
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_data"];
 _data = call A_shop_menu_fnc_update_buy_item;
-if (undefined(_data)) exitWith {null};
+if (UNDEFINED(_data)) exitWith {null};
 
 ctrlEnable [buy_button_idc, false];
 
 [_data] call A_shop_menu_fnc_buy_transaction;
 private ["_type"];
-_type = _data select A_shop_menu_var_buy_item_type;
+_type = _data select INDEX_BUY_TYPE;
 switch _type do {
 	case "Item": {
 		[_data] call A_shop_menu_fnc_buy_item;

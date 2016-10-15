@@ -1,17 +1,16 @@
 // A_voting_menu_fnc_nomination_menu_setup
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 disableSerialization;
 ARGV(0,_election_data);
 
-if (undefined(_election_data)) exitWith {};
+if (UNDEFINED(_election_data)) exitWith {};
 
 private["_election_id", "_election_title"];
-_election_id = _election_data select A_voting_menu_var_election_data_id;
-_election_title = _election_data select A_voting_menu_var_election_data_title;
+_election_id = _election_data select INDEX_DATA_ELEC_ID;
+_election_title = _election_data select INDEX_DATA_ELEC_TITLE;
 
 private["_player"];
 _player = player;
@@ -88,7 +87,7 @@ _voting_nomination_menu_submit_button ctrlCommit 0;
 
 private["_variable_name"];
 _variable_name = format["%1_election_data", _election_id];
-missionNamespace setVariable [_variable_name, _election_data];
+missionNamespace setVariable[_variable_name, _election_data];
 buttonSetAction [voting_nomination_menu_submit_button_idc,  '[(missionNamespace getVariable ' + str(_variable_name) + '),' + str(_player) + ',(voting_nomination_menu_option_field_selected)] call A_voting_menu_fnc_nominate_player;'];
 
 //close button
@@ -176,7 +175,7 @@ _voting_nomination_menu_option_field ctrlAddEventHandler ["KillFocus", "(_this) 
 
 private["_result"];
 _result = [];
-_result set [A_voting_menu_var_nomination_menu_data_list_nominees, _voting_nomination_menu_list];
-_result set [A_voting_menu_var_nomination_menu_data_list_players, _voting_nomination_menu_option_field];
+_result set [INDEX_DATA_DATA_LIST_NOMINEES, _voting_nomination_menu_list];
+_result set [INDEX_DATA_DATA_LIST_PLAYERS, _voting_nomination_menu_option_field];
 
 _result

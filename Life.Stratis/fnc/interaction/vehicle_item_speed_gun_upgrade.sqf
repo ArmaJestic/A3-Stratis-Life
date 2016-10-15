@@ -1,8 +1,6 @@
 // A_interaction_fnc_vehicle_item_speed_gun_upgrade
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 player groupChat format["A_interaction_fnc_vehicle_item_speed_gun_upgrade %1", _this];
@@ -11,9 +9,9 @@ ARGV(1,_item);
 ARGV(2,_amount);
 
 if (!([_player] call A_player_fnc_human)) exitWith {};
-if (undefined(_item)) exitWith {};
+if (UNDEFINED(_item)) exitWith {};
 if (typeName _item != "STRING") exitWith {};
-if (undefined(_amount)) exitWith {};
+if (UNDEFINED(_amount)) exitWith {};
 if (_amount <= 0) exitWith {};
 
 private["_vehicle"];

@@ -1,6 +1,6 @@
 // A_retributions_fnc_victim
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_killer", "_victim"];
@@ -9,8 +9,8 @@ private["_killer", "_victim"];
 _killer = _this select 0;
 _victim = _this select 1;
 
-if (undefined(_killer)) exitWith {null};
-if (undefined(_victim)) exitWith {null};
+if (UNDEFINED(_killer)) exitWith {null};
+if (UNDEFINED(_victim)) exitWith {null};
 if (_victim != player) exitWith {null};
 
 if([_victim] call A_player_fnc_get_dead) exitWith {null};
@@ -37,7 +37,7 @@ if (!([_killer] call A_player_fnc_exists)) then {
 		_message = format["%1 was killed by the Insurgents!", _victim_name];
 	};
 	
-	if (!(undefined(_message))) then {
+	if (!(UNDEFINED(_message))) then {
 		format['server globalChat (toString %1);', (toArray _message)] call A_broadcast_fnc_broadcast;
 	};
 } 

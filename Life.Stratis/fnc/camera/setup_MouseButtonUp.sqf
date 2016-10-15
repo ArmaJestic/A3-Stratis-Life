@@ -9,7 +9,7 @@ _data = _this;
 disableSerialization;
 private["_display"];
     _display = findDisplay 46;
-if ( undefined(camera_MouseButtonUp_id) ) then {
+if ( UNDEFINED(camera_MouseButtonUp_id) ) then {
 	camera_MouseButtonUp_id = _display displayAddEventHandler  ["MouseButtonUp", format["[_this, %1] call A_camera_fnc_MouseButtonUp_handler", _data]];
 	//player groupChat format["camera_MouseButtonUp_id = %1",camera_MouseButtonUp_id];
 };

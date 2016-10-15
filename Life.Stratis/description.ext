@@ -1,19 +1,19 @@
 // todo: verify all usefullness
 
-onLoadMission 			= "On Load Mission";
-onLoadIntro   			= "On Load Intro";
-onLoadMissionTime 		= 1;
-onLoadIntroTime 		= 1;
-loadScreen 				= "img\loading.paa";
-onLoadName    			= "On Load Name";
-author        			= "Author";
+onLoadMission = "On Load Mission";
+onLoadIntro = "On Load Intro";
+onLoadMissionTime = 1;
+onLoadIntroTime = 1;
+loadScreen = "img\loading.paa";
+onLoadName = "On Load Name";
+author = "Author";
 
 // Picture in mission select
-overviewPicture		= "img\loading.paa";
+overviewPicture = "img\loading.paa";
 // Text in mission select
-overviewText			= "select text";
+overviewText = "select text";
 // Text in mission select when locked
-overviewTextLocked 	= "Locked select text";
+overviewTextLocked = "Locked select text";
 
 showCompass				= 1;
 showGPS					= 1;
@@ -27,8 +27,8 @@ saving					= 0;
 // Advanced Flight Model
 forceRotorLibSimulation = 0;
 
-disableRandomization[] 	= {"All", "AllVehicles"};
-debriefing				= 1;
+disableRandomization[] = {"All", "AllVehicles"};
+debriefing = 1;
 /*
 	0 = Global
 	1 = Side
@@ -38,28 +38,28 @@ debriefing				= 1;
 	5 = Direct
 	6 = System
 */
-disableChannels[]		= {};
-disabledAI				= 1;
-aiKills					= 0;
-joinUnassigned 			= 0;
+disableChannels[] = {};
+disabledAI = 1;
+aiKills = 0;
+joinUnassigned = 0;
 
 /*
 	0 = Default behavior, available only in editor
 	1 = Available in SP and for hosts / logged in admins
 	2 = Available for everyone
 */
-enableDebugConsole 		= 2;
-allowFunctionsLog		= 1;
+enableDebugConsole = 2;
+allowFunctionsLog = 1;
+
+onPauseScript[] = {A_dlg_fnc_pause};
+
 
 // Respawn
-respawn       			= 3;
-respawnDelay  			= 30;
-respawnDialog 			= 0;
-respawnOnStart 			= 1;
-//	1	Respawn on start. Run respawn script on start.
-//	0	Dont respawn on start. Run respawn script on start.
-//	-1	Dont respawn on start. Don't run respawn script on start.
-respawnTemplates[] 		= {"Instant"};
+respawn = 3;
+respawnButton = 1;
+respawnDelay = 30;
+respawnDialog = 0;
+respawnOnStart = -1;
 
 // Revive
 // The time it takes to revive an incapacitated unit (default: 6 seconds). Having a Medikit will halve this time. Must have "Revive" Respawn template enabled.
@@ -83,13 +83,9 @@ corpseManagerMode		= 0;
 	( > ) corpseRemovalMinTime applies (see below).
 */
 corpseLimit 			= 100;
-/*
-	Remove all bodies that have been dead longer than corpseRemovalMinTime when corpseLimit is breached.
-*/
+// Remove all bodies that have been dead longer than corpseRemovalMinTime when corpseLimit is breached.
 corpseRemovalMinTime 	= 300;
-/*
-	Maximum time a corpse can remain on the ground if total number of corpses is equal or under corpseLimit.
-*/
+// Maximum time a corpse can remain on the ground if total number of corpses is equal or under corpseLimit.
 corpseRemovalMaxTime 	= 1200;
 
 /*
@@ -99,26 +95,12 @@ corpseRemovalMaxTime 	= 1200;
 	3 = All_But_Respawned - All vehicles are managed by the manager with exception of respawned (opposite to mode 2)
 */
 wreckManagerMode 		= 0;
-/*
-	Vehicle wreck limit before which ( <= ) wreckRemovalMaxTime applies and after which ( > ) wreckRemovalMinTime applies (see below).
-*/
+// Vehicle wreck limit before which ( <= ) wreckRemovalMaxTime applies and after which ( > ) wreckRemovalMinTime applies (see below).
 wreckLimit 				= 1;
-/*
-	Remove all wrecks that have existed longer than wreckRemovalMinTime when wreckLimit is breached.
-*/
+// Remove all wrecks that have existed longer than wreckRemovalMinTime when wreckLimit is breached.
 wreckRemovalMinTime		= 600;
-/*
-	Maximum time a wreck can remain on the ground if total number of wrecks is equal or under wreckLimit.
-*/
+// Maximum time a wreck can remain on the ground if total number of wrecks is equal or under wreckLimit.
 wreckRemovalMaxTime		= 1800;
-
-
-
-/*
-onPauseScript = "myOnPauseScript.sqf";
-onPauseScript[] = {myOnPauseFunction1,myOnPauseFunction2};//(Arma 3)
-// In its own namespace, need to use missionNamespace with set/get variable, ect
-*/
 
 // Define PMC Custom GPS Skin
 onMinimapScript[] = {"BIS_fnc_customGPS_Spawn"};
@@ -130,39 +112,36 @@ class Header {
 };
 
 // CfgCameraEffects
-class cfgSounds {
+class CfgSounds {
 	sounds[] = {};
 	#include "sounds\sounds.h"
 };
 class CfgFunctions {
 	#include "fnc\functions.h"
 };
+// cfgRemoteExec
+// CfgRemoteExecCommands
+
 // todo: remote fnc cfg
 // cfgRadio
 // cfgMusic
 // cfgIdentities
-// 
-// CfgRemoteExecCommands
 // CfgUnitInsignia
 // cfgDebriefing
 // cfgDebriefingSections
 // rscTitles
 // CfgVehicleTemplates
-// cfgRemoteExec
-
-
 
 
 #include "dlg\essentials\RscDefines.hpp"
 #include "dlg\essentials\DialogColorConstants.hpp"
 #include "dlg\essentials\DialogColorScheme.hpp"
 #include "dlg\essentials\DialogControlClasses.hpp"
-//#include "dlg\essentials\Arma3.hpp"
-#include "dlg\RscTitles.hpp"
+// what this for
 #include "dlg\Custom_Dialogs.hpp"
 
-#include "includes\dikcodes.h"
-
+#include "dlg\RscTitles.hpp"
+#include "dlg\main_menus.hpp"
 #include "dlg\retributions.hpp"
 #include "dlg\loading.hpp"
 #include "dlg\gfx.hpp"

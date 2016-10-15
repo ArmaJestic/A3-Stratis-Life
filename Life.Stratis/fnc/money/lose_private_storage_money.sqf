@@ -6,7 +6,7 @@
 ARGV(0,_player);
 ARGV(1,_lost_amount);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_lost_amount)) exitWith {null};
+if (UNDEFINED(_lost_amount)) exitWith {null};
 if (typeName _lost_amount != "SCALAR") exitWith {null};
 
 [_player, "money", -(_lost_amount), "private_storage"] call A_inventory_fnc_storage_add_item;

@@ -200,7 +200,6 @@ _desc_field ctrlSetBackgroundColor [0, 0, 0, 0.45];
 
 _info_field ctrlSetFontHeight _button_font_height - 0.003;
 _info_field ctrlSetPosition [_lx, _ly, _lw, _lh];
-player groupChat format["_lh = %1", _lh];
 _info_field ctrlSetBackgroundColor [0, 0, 0, 0.45];
 
 _info_label ctrlSetText "Item name:";

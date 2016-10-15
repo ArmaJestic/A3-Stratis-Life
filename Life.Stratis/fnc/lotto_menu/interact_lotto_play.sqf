@@ -1,25 +1,24 @@
 // A_lotto_menu_fnc_interact_lotto_play
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_player);
 ARGV(1,_ticket_id);
 
 if (!([_player] call A_player_fnc_human)) exitWith {};
-if (undefined(_ticket_id)) exitWith {};
+if (UNDEFINED(_ticket_id)) exitWith {};
 if (typeName _ticket_id != "STRING") exitWith {};
 
 private["_ticket_data"];
 _ticket_data = [_ticket_id] call A_lotto_menu_fnc_ticket_lookup_id;
 
-if (undefined(_ticket_data)) exitWith {};
+if (UNDEFINED(_ticket_data)) exitWith {};
 
 private["_price", "_chance", "_payout"];
-_price = _ticket_data select A_lotto_menu_var_ticket_price;
-_payout = _ticket_data select A_lotto_menu_var_ticket_payout;
-_chance = _ticket_data select A_lotto_menu_var_ticket_chance;
+_price = _ticket_data select DLLG_LOTTO_TICKET_INDEX_PRICE;
+_payout = _ticket_data select DLLG_LOTTO_TICKET_INDEX_PAYOUT;
+_chance = _ticket_data select DLLG_LOTTO_TICKET_INDEX_CHANCE;
 
 private["_draw", "_money"];
 _draw = floor(random 100);

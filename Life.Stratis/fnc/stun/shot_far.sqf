@@ -15,11 +15,11 @@ ARGV(7,_distance);
 
 [[_unit, _shooter], "A_stun_fnc_announce", true, false] call BIS_fnc_MP;
 
-_armor = [_unit, "A_item_fnc_stun_armor"] call A_object_fnc_getVariable;
+_armor = [_unit, "stun_armor"] call A_object_fnc_getVariable;
 
-if (undefined(_armor)) then {
-	[_unit, "A_item_fnc_stun_armor", "none", true] call A_object_fnc_setVariable;
-	_armor = [_unit, "A_item_fnc_stun_armor"] call A_object_fnc_getVariable;
+if (UNDEFINED(_armor)) then {
+	[_unit, "stun_armor", "none", true] call A_object_fnc_setVariable;
+	_armor = [_unit, "stun_armor"] call A_object_fnc_getVariable;
 };
 
 //stun armor only protects at long range

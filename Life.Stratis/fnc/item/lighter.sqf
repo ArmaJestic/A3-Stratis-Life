@@ -19,15 +19,11 @@ if (_mode == "use") then {
 	_vehicle = vehicle player;
 	
 	//Distance checks for spawn areas
-	
-	if ( ((player distance (getmarkerpos "respawn_west")) < 100) ) exitwith { player groupChat "You are not allowed to use a A_item_fnc_lighter inside the cop base"; };
-	if ( ((player distance (getmarkerpos "respawn_civilian")) < 130) ) exitwith { player groupChat "You are not allowed to use a A_item_fnc_lighter inside the civilian spawn"; };
-	if ( ((player distance (getmarkerpos "respawn_east")) < 100) ) exitwith { player groupChat "You are not allowed to use a A_item_fnc_lighter inside the opfor spawn"; };
-	if ( ((player distance (getmarkerpos "respawn_guerrila")) < 100) ) exitwith { player groupChat "You are not allowed to use a A_item_fnc_lighter inside the insurgent spawn"; };
-	
+	if ([player] call A_player_fnc_in_safe_zone) exitwith {
+		player groupChat "You cannot use the lighter in spawn areas";
+	};
 	
 	vehicle player setDamage 0.95;
-	liafu = true;
 	player groupchat localize "STRS_inv_items_ignite_ignite";
 	[player, _item, -1] call A_inventory_fnc_add_item;
 	

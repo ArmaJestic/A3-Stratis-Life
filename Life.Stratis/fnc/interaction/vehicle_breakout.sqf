@@ -1,8 +1,6 @@
 // A_interaction_fnc_vehicle_breakout
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -12,7 +10,7 @@ if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
 
 if (_vehicle == _player) exitWith {null};
 
-breakingout = if (undefined(breakingout)) then {false} else {breakingout};
+breakingout = if (UNDEFINED(breakingout)) then {false} else {breakingout};
 
 if (breakingout) exitWith {
 	player groupChat "You are already trying to get out";

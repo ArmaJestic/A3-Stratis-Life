@@ -1,7 +1,6 @@
 // A_weapon_fnc_modifications_dialog_setup
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 //player groupChat format["A_weapon_fnc_modifications_dialog_setup %1", _this];
@@ -14,10 +13,10 @@ _weapon_id = [_player] call A_player_fnc_get_first_weapon;
 
 private["_weapon_name"];
 _weapon_name = [_weapon_id] call A_weapon_fnc_display_name;
-_weapon_name = if (undefined(_weapon_name)) then {""} else {_weapon_name};
+_weapon_name = if (UNDEFINED(_weapon_name)) then {""} else {_weapon_name};
 
 private["_weapon_picture_path"];
-_A_weapon_fnc_picture_path = [_weapon_id] call A_weapon_fnc_picture_path;
+_weapon_picture_path = [_weapon_id] call A_weapon_fnc_picture_path;
 
 private["_dialog_title"];
 _dialog_title = if (_weapon_name == "") then {"Weapon Mofifications"} else {format["%1 Modifications", _weapon_name]};
@@ -128,9 +127,9 @@ _weapon_items = [_player, _weapon_id] call A_player_fnc_weapon_attachments;
 [_weaponSide_control, _side_rail_attachments, _weapon_items, _all_items] call _comboAddAttachments;
 [_weaponTop_control, _top_rail_attachments, _weapon_items, _all_items] call _comboAddAttachments;
 
-_weaponTop_control ctrlAddEventHandler ["LBSelChanged", "(_this + [A_weapon_var_slot_top_rail]) call A_weapon_fnc_slot_label_changed"];
-_weaponSide_control ctrlAddEventHandler ["LBSelChanged", "(_this + [A_weapon_var_slot_side_rail]) call A_weapon_fnc_slot_label_changed"];
-_weaponMuzzle_control ctrlAddEventHandler ["LBSelChanged", "(_this + [A_weapon_var_slot_muzzle]) call A_weapon_fnc_slot_label_changed"];
+_weaponTop_control ctrlAddEventHandler ["LBSelChanged", "(_this + [INDEX_SLOT_TOP_RAIL]) call A_weapon_fnc_slot_label_changed"];
+_weaponSide_control ctrlAddEventHandler ["LBSelChanged", "(_this + [INDEX_SLOT_SIDE_RAIL]) call A_weapon_fnc_slot_label_changed"];
+_weaponMuzzle_control ctrlAddEventHandler ["LBSelChanged", "(_this + [INDEX_SLOT_MUZZLE]) call A_weapon_fnc_slot_label_changed"];
 
 _mainFrame_control ctrlCommit 0;
 _mainBackground_control ctrlCommit 0;

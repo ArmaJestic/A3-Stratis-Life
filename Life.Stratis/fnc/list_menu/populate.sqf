@@ -7,8 +7,8 @@
 ARGV(0,_control);
 ARGV(1,_uids);
 
-if (undefined(_control)) exitWith {null};
-if (undefined(_uids)) exitWith {null};
+if (UNDEFINED(_control)) exitWith {null};
+if (UNDEFINED(_uids)) exitWith {null};
 if (typeName _uids != "ARRAY") exitWith {null};
 
  lbClear _control;

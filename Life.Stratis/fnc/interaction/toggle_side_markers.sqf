@@ -1,14 +1,12 @@
 // A_interaction_fnc_toggle_side_markers
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_title);
 ARGV(1,_player);
 
-if (undefined(_player)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
 if (_player != player) exitWith {null};
 
 private["_sidemarkers"];

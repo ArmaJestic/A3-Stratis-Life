@@ -1,9 +1,9 @@
 // A_retributions_fnc_retributions_main
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-handling_retribution = if (undefined(handling_retribution)) then {false} else {handling_retribution};
+handling_retribution = if (UNDEFINED(handling_retribution)) then {false} else {handling_retribution};
 
 _action = _this select 0;
 switch _action do {

@@ -2,6 +2,7 @@
 
 #include "..\..\includes\macro.h"
 #include "..\..\includes\constants.h"
+#include "..\list\constants.h"
 
 
 disableSerialization;
@@ -10,18 +11,18 @@ ARGV(0,_player);
 ARGV(1,_list_id);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_list_id)) exitWith {null};
+if (UNDEFINED(_list_id)) exitWith {null};
 if (typeName _list_id != "STRING") exitWith {null};
 if (_list_id == "") exitWith {null};
 
 private["_data"];
 _data = [_list_id] call A_list_fnc_data;
-if (undefined(_data)) exitWith {
+if (UNDEFINED(_data)) exitWith {
 	player groupChat format["ERROR: The list identified by ""%1"" does not exist", _list_id];
 };
 
 private["_list_name"];
-_A_list_var_name = _data select A_list_var_name;
+_list_name = _data select INDEX_NAME;
 
 private["_dialog_title"];
 _dialog_title = if (_list_name == "") then {format["List ""%1""", _list_id]} else {format["%1", _list_name]};
@@ -112,5 +113,5 @@ _removeButton_control ctrlCommit 0;
 _closeButton_control ctrlCommit 0;
 
 private["_uids"];
-_uids = _data select A_list_var_keys;
+_uids = _data select INDEX_KEYS;
 [_itemList_control, _uids] call A_list_menu_fnc_populate;

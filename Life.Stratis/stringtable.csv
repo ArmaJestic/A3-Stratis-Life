@@ -3,14 +3,6 @@ STRM_briefing_name,Stratis Life
 STRM_mission_description,Life RPG created by the Arma 2 Community
 STRS_hints_vehicle_information,VEHICLE INFORMATION:\n\nName: %4\nType: %1\ndirection: %2°\nHeight ASL: %3m\nDriver: %5\nFree Cargo: %6\nlength: %7m
 STRS_functions_crimelog_msg12,Speeding
-STRS_anfang_laden,Loading.....\nPlease Wait
-STRS_anfang_02,"Welcome to Takistan Life: Revolution, an RPG mission. \n\n Feel free to copy or edit our mission file. \n\n This is an international server, everyone is welcome."
-STRS_anfang_03,"Civil war has broken out in Takistan! \n\n Opfor, Blufor, and Indfor can kill each other on sight."
-STRS_anfang_04,"Do not kill unarmed civilians! \n\n Ne les tuez pas des civils desarmes! \n\n No mate a civiles desarmados!"
-STRS_anfang_05_civ,"Do not teamkill! \n\n Ne tuez pas votre propre equipe! \n\n No mate a su propio equipo!"
-STRS_anfang_05_cop,"Racial slurs are prohibited here. \n\n Foul language and heated arguments are OK. \n\n Racist harassment of other players is NOT."
-STRS_anfang_cop_loadout,Loading your variable information....
-STRS_anfang_06,"Game guide, rules, Teamspeak Info, and changelog on the map tabs.\n\nPlease be helpful to new players and don't grief.\n\nThis is a roleplaying server."
 STRS_check_civ_in_terrorbase,You entered the Terror-Camp.
 STRS_southChernarus_area,You do not have jurisdiction in this area. Turn around!
 STRS_prohibited_area,Turn around

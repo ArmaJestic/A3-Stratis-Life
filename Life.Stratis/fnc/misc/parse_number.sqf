@@ -4,10 +4,10 @@
 
 private ["_number"];
 _number = _this select 0;
-if (undefined(_number)) exitWith {0};
+if (UNDEFINED(_number)) exitWith {0};
 if (typeName _number == "SCALAR") exitWith {_number};
 if (typeName _number != "STRING") exitWith {0};
 _number = parseNumber(_number);
-if (undefined(_number)) exitWith {0};
+if (UNDEFINED(_number)) exitWith {0};
 if (typeName _number != "SCALAR") exitWith {0};
 _number

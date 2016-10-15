@@ -1,10 +1,8 @@
 // A_interaction_fnc_hint
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_message);
-if (undefined(_message)) exitWith {};
+if (UNDEFINED(_message)) exitWith {};
 hint _message;

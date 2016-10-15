@@ -1,20 +1,20 @@
 // A_retributions_fnc_forgive_player
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 _selection = [] call A_retributions_fnc_get_retribution_selection;
-if (undefined(_selection)) exitWith { player groupChat "You have not selected a player to punish";};
+if (UNDEFINED(_selection)) exitWith { player groupChat "You have not selected a player to punish";};
 _type = _selection select 0;
 _p_data = _selection select 1;
 if ( !(_type == "ktk" || _type == "kdm")) exitWith { player groupChat "You can only forgive team-killer or death-matchers";};
 
 _victim_name = (name player);
-_killer_name = toString (_p_data select A_retributions_var_ks_name);
+_killer_name = toString (_p_data select INDEX_KS_NAME);
 _killer_fletter = (toArray _killer_name) select 0;
-_killer_uid = _p_data select A_retributions_var_ks_uid;
-_killer_money = _p_data select A_retributions_var_ks_money;
-_euid = _p_data select A_retributions_var_ks_euid;
+_killer_uid = _p_data select INDEX_KS_UID;
+_killer_money = _p_data select INDEX_KS_MONEY;
+_euid = _p_data select INDEX_KS_EUID;
 
 private ["_message"];
 _type_str = [_type] call A_retributions_fnc_kill_type_2_str;

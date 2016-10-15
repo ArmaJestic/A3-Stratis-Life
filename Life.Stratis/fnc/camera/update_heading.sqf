@@ -19,7 +19,7 @@ _dir = if (_dir < 0) then { 360 - abs(_dir) } else { _dir};
 
 private["_angle"];
 _angle = _heading select 1;
-_angle = if (undefined(_angle)) then {0} else {_angle};
+_angle = if (UNDEFINED(_angle)) then {0} else {_angle};
 _angle =  _angle - _yc;
 _angle = if (_angle > 360) then { _angle - 360 } else { _angle };
 _angle = if (_angle < 0) then { 360 - abs(_angle) } else { _angle};

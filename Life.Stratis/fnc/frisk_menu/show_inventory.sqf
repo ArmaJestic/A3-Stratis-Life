@@ -1,7 +1,7 @@
 // A_frisk_menu_fnc_show_inventory
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_title);
@@ -10,7 +10,7 @@ ARGV(2,_this);
 
 ARGV(0,_target);
 
-if (undefined(_target)) exitWith {};
+if (UNDEFINED(_target)) exitWith {};
 
 private["_title", "_list"];
 _title = format["%1's Inventory", (name _player)];

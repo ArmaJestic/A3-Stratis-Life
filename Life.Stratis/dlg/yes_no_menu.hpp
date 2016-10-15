@@ -8,7 +8,7 @@ class yes_no_menu {
 
 	name = "YES_NO_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['YES_NO_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['YES_NO_MENU', _this select 0]";
 	
 	controls[] = {
 		yes_no_menu_header,
@@ -39,7 +39,7 @@ class yes_no_menu {
 		idc = yes_no_menu_yes_button_idc;			
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;																								
-		text = "Yes";											
+		text = "Yes";						
 	};
 
 	class yes_no_menu_no_button : RscMenuButton {
@@ -47,7 +47,7 @@ class yes_no_menu {
 		x = -10; y = -10;
 		w = 0.05; h = 0.05;							
 		text = "No";																										
-		action = "closedialog 0;";		
+		action = "closedialog 0;";
 	};										
 
 	class yes_no_menu_label : RscText {

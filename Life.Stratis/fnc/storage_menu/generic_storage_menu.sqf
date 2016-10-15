@@ -1,7 +1,7 @@
 // A_storage_menu_fnc_generic_storage_menu
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
  _this spawn {
 ARGV(0,_left_title);
@@ -16,17 +16,17 @@ ARGV(7,_right_selection_code);
 ARGV(8,_right_list_code);
 ARGV(9,_right_label_code);
 
-if (undefined(_left_title)) exitWith {null};
-if (undefined(_left_button_code)) exitWith {null};
-if (undefined(_left_selection_code)) exitWith {null};
-if (undefined(_left_list_code)) exitWith {null};
-if (undefined(_left_label_code)) exitWith {null};
+if (UNDEFINED(_left_title)) exitWith {null};
+if (UNDEFINED(_left_button_code)) exitWith {null};
+if (UNDEFINED(_left_selection_code)) exitWith {null};
+if (UNDEFINED(_left_list_code)) exitWith {null};
+if (UNDEFINED(_left_label_code)) exitWith {null};
 
-if (undefined(_right_title)) exitWith {null};
-if (undefined(_right_button_code)) exitWith {null};
-if (undefined(_right_selection_code)) exitWith {null};
-if (undefined(_right_list_code)) exitWith {null};
-if (undefined(_right_label_code)) exitWith {null};
+if (UNDEFINED(_right_title)) exitWith {null};
+if (UNDEFINED(_right_button_code)) exitWith {null};
+if (UNDEFINED(_right_selection_code)) exitWith {null};
+if (UNDEFINED(_right_list_code)) exitWith {null};
+if (UNDEFINED(_right_label_code)) exitWith {null};
 
 if (typeName _left_title != "STRING") exitWith {null};
 if (typeName _left_button_code != "CODE") exitWith {null};

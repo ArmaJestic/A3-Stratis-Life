@@ -1,17 +1,16 @@
 // A_shop_menu_fnc_open_dialog
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 
 disableSerialization;
 ARGV(0,_shop_id);
-if (undefined(_shop_id)) exitWith {null};
+if (UNDEFINED(_shop_id)) exitWith {null};
 if (typeName _shop_id != "SCALAR") exitWith {null};
 
 if (!([_shop_id] call A_shop_menu_fnc_is_open)) exitWith {
-	player groupChat format["This shop is not open yet. All shops are now %1%2 open", A_shop_menu_var_setup_progress, "%"];
+	player groupChat "This shop is not open";
 };
 
 if (!(createDialog "shops_menu")) exitWith {

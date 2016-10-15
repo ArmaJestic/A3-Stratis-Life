@@ -5,7 +5,7 @@
 
 ARGV(0,_player);
 
-if (undefined(_player)) exitWith { false };
+if (UNDEFINED(_player)) exitWith { false };
 if (!(alive _player)) exitWith {false};
 
 private["_armed_vehicle", "_armed_player"];

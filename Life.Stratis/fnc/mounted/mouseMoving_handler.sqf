@@ -1,7 +1,6 @@
 // A_mounted_fnc_mouseMoving_handler
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(1,_data);
@@ -29,7 +28,7 @@ _pitch_min = _data select 5;
 _pitch_max = _data select 6;
 	
 _heading = [_player, "heading"] call A_object_fnc_getVariable;
-if (undefined(_heading)) then {
+if (UNDEFINED(_heading)) then {
 	_heading = [(getDir _player),0,0];
 	[_player, "heading", _heading] call A_object_fnc_setVariable;
 };
@@ -73,7 +72,7 @@ if (_mouse_delta <= 0) then {
 
 private["_pitch"];
 _pitch = _heading select 1;
-if (undefined(_pitch)) then {
+if (UNDEFINED(_pitch)) then {
 	_pitch = 45;
 };
 

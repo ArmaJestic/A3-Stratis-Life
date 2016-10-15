@@ -1,8 +1,6 @@
 // A_interaction_fnc_recruit_ai_receive
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 if (!(isServer)) exitWith {null};
@@ -23,8 +21,7 @@ private["_unit_name"];
 _unit_name = format["%1_Troop_%2_%3", str(_player), (count (units (group _player))), round(time)];
 
 
-//[[_unit,_unit_name], "A_interaction_fnc_ai_init_handler_persistent", true,  true] spawn BIS_fnc_MP;
-[[_unit,_unit_name], "A_interaction_fnc_ai_init_handler_persistent", true, true, _unit] spawn A_jip_fnc_register;
+[[_unit,_unit_name], "A_interaction_fnc_ai_init_handler_persistent", _unit] spawn A_jip_fnc_register;
 waitUntil {!(isNil _unit_name)};
 
 _unit = missionNamespace getVariable [_unit_name, null];

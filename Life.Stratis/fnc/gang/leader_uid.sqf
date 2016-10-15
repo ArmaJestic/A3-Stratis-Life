@@ -1,18 +1,18 @@
 // A_gang_fnc_leader_uid
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_gang_id);
-if (undefined(_gang_id)) exitWith {""};
+if (UNDEFINED(_gang_id)) exitWith {""};
 if (typeName _gang_id != "STRING") exitWith {""};
 
 private["_gang"];
 _gang = [_gang_id] call A_gang_fnc_lookup_id;
-if (undefined(_gang)) exitWith {""};
+if (UNDEFINED(_gang)) exitWith {""};
 
 private["_gang_members"];
-_A_gang_var_members = _gang select A_gang_var_members;
+_gang_members = _gang select GANG_INDEX_MEMBERS;
 if (count (_gang_members) == 0) exitWith {""};
 
 private["_leader_uid"];

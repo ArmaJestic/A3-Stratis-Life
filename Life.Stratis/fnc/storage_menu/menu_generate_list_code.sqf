@@ -1,14 +1,14 @@
 // A_storage_menu_fnc_menu_generate_list_code
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_object);
 ARGV(1,_storage);
 
-if (undefined(_object)) exitWith {{}};
-if (undefined(_storage)) exitWith {{}};
+if (UNDEFINED(_object)) exitWith {{}};
+if (UNDEFINED(_storage)) exitWith {{}};
 if (typeName _object != "OBJECT") exitWith {{}};
 if (typeName _storage != "STRING") exitWith {{}};
 

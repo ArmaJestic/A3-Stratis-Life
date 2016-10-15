@@ -1,8 +1,6 @@
 // A_interaction_fnc_item_give_receive
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
  _this spawn {
 //player groupChat format["A_interaction_fnc_item_give_receive %1", _this];
@@ -14,8 +12,8 @@ ARGV(3,_amount);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (!([_target] call A_player_fnc_human)) exitWith {null};
 if (_target != player) exitWith {null};
-if (undefined(_item)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 if (_amount < 0) exitWith {null};

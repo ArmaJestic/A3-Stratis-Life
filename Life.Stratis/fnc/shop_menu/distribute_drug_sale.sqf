@@ -1,22 +1,21 @@
 // A_shop_menu_fnc_distribute_drug_sale
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_shop_id);
 ARGV(1,_total_due);
 
-if (undefined(_total_due)) exitWith {null};
+if (UNDEFINED(_total_due)) exitWith {null};
 if (typeName _total_due != "SCALAR") exitWith {null};
 
 
-private["_gang", "_gang_name", "_gang_members", "_income"];
+private["_gang","_gang_name","_gang_members","_income"];
 _gang = [_shop_id] call A_shop_menu_fnc_get_gang_by_shop_id;
 
-if (undefined(_gang)) exitWith {null};
-_A_gang_var_name = _gang select A_gang_var_name;
-_A_gang_var_members = _gang select A_gang_var_members;
+if (UNDEFINED(_gang)) exitWith {null};
+_gang_name = _gang select GANG_INDEX_NAME;
+_gang_members = _gang select GANG_INDEX_MEMBERS;
 _gang_members_count = (count _gang_members);
 if (_gang_members_count == 0) exitWith {null};
 

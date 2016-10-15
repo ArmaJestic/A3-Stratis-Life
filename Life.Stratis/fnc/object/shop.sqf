@@ -3,10 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-private["_object"];
-_object = _this select 0;
-if (undefined(_object)) exitWith {false};
-if (typeName _object != "OBJECT") exitWith {false};
+params[["_object",objNull,[objNull]]];
 if (isNull _object) exitWith {false};
 
-(_object in A_farming_var_shopusearray)
+(_object in A_inv_var_shopusearray)

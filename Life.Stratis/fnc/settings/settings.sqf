@@ -7,19 +7,19 @@ _art = _this select 0;
 _zusatzString = "";
 if ((count _this)>1) then {_zusatzString = _this select 1;};
 
-// A_settings_fnc_settings
+// Settings
 if (_art == "Einstellungen") then {
 	if (!(createDialog "MainMenu")) exitWith {hint "Dialog Error!";};
 };
 
-// A_settings_fnc_graphic A_settings_fnc_settings
+// Graphic Settings
 if (_art == "GrafikEinstellungen") then {
 	// calls "A_settings_fnc_settings.sqf"
 	// then "settings_graphic.sqf"
-	["closedialog 0; [""Einstellungen""] call A_SCRIPT_SETTINGS;"] execVM "3442919.sqf";
+	["closedialog 0; [""Einstellungen""] call A_settings_fnc_settings;"] spawn A_settings_fnc_graphic;
 };
 
-// Text A_settings_fnc_settings
+// Text Settings
 if (_art == "TextEinstellungen") then {
 	if (_zusatzString == "oeffnen") then {
 		if (!(createDialog "SettingsDialog")) exitWith {hint "Dialog Error!";};
@@ -58,7 +58,7 @@ if (_art == "About") then {
 
 /*
 if (_art == "ItemList") then {
-	_handler = ["closedialog 0; [""Einstellungen""] call A_SCRIPT_SETTINGS;", "Back"] execVM "A_dlg_fnc_itemlistdialog.sqf";
+	_handler = ["closedialog 0; [""Einstellungen""] call A_settings_fnc_settings;", "Back"] spawn A_dlg_fnc_itemlistdialog;
 	waitUntil {scriptDone _handler};
 };
 */

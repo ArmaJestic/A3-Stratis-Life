@@ -1,27 +1,26 @@
 // A_shop_menu_fnc_buy_gear_item
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_data);
 ARGV(1,_function);
 
-if (undefined(_data)) exitWith {null};
+if (UNDEFINED(_data)) exitWith {null};
 if (typeName _data != "ARRAY") exitWith {null};
 
-if (undefined(_function)) exitWith {null};
+if (UNDEFINED(_function)) exitWith {null};
 if (typeName _function != "CODE") exitWith {null};
 
 private ["_type", "_amount", "_item", "_total_due", "_item_name", "_class", "_crate", "_in_hands"];
 
-_amount = _data select A_shop_menu_var_buy_item_amount;
-_item_name = _data select A_shop_menu_var_buy_item_name;
-_class = _data select A_shop_menu_var_buy_item_class;
-_crate = objectFromNetId(_data select A_shop_menu_var_buy_item_crate_netid);
-_total_due = [(_data select A_shop_menu_var_buy_item_total_due)] call A_encoding_fnc_decode_number;;
-_type = _data select A_shop_menu_var_buy_item_type;
-_in_hands = _data select A_shop_menu_var_buy_item_in_hands;
+_amount = _data select INDEX_BUY_AMOUNT;
+_item_name = _data select INDEX_BUY_NAME;
+_class = _data select INDEX_BUY_CLASS;
+_crate = objectFromNetId(_data select INDEX_BUY_CRATE_NETID);
+_total_due = [(_data select INDEX_BUY_TOTAL_DUE)] call A_encoding_fnc_decode_number;;
+_type = _data select INDEX_BUY_TYPE;
+_in_hands = _data select INDEX_BUY_IN_HANDS;
 
 if (_in_hands) then {
 	call A_shop_menu_fnc_play_animation;

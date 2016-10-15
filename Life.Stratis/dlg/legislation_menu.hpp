@@ -8,7 +8,7 @@ class legislation_menu {
 
 	name = "LEGISLATION_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['LEGISLATION_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['LEGISLATION_MENU', _this select 0]";
 	
 	controls[] = {
 		legislation_menu_header,
@@ -65,7 +65,7 @@ class legislation_modify_law_menu {
 
 	name = "LEGISLATION_MODIFY_LAW_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['LEGISLATION_MODIFY_LAW_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['LEGISLATION_MODIFY_LAW_MENU', _this select 0]";
 	
 	controls[] = {
 		legislation_modify_law_menu_header,

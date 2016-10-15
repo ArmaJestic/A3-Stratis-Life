@@ -1,7 +1,6 @@
 // A_main_menu_fnc_handle_players
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_title);
@@ -11,9 +10,9 @@ lbClear (ctrlIDC _list);
 
 private ["_i"];
 _i = 0;
-while { _i < (count playerstringarray) } do {
+while { _i < (count A_player_var_playerstringarray) } do {
 	private["_player", "_player_variable_name"];
-	_player_variable_name = playerstringarray select _i;
+	_player_variable_name = A_player_var_playerstringarray select _i;
 	_player = missionNamespace getVariable [_player_variable_name, null];
 	
 	if ([_player] call A_player_fnc_human) then {

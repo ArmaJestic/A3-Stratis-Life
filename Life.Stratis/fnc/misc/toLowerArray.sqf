@@ -4,7 +4,7 @@
 
 private["_array"];
 _array = _this select 0;
-if (undefined(_array)) exitWith {[]};
+if (UNDEFINED(_array)) exitWith {[]};
 if (typeName _array != "ARRAY") exitWith {[]};
 
 private["_i"];

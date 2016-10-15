@@ -11,7 +11,7 @@ A_stun_var_stunning = true;
 
 format['%1 switchmove "AwopPercMstpSgthWnonDnon_end";',_unit] call A_broadcast_fnc_broadcast;
 sleep 0.3;
-if (undefined(_man) || 
+if (UNDEFINED(_man) || 
 	{typeName _man != "OBJECT" || 
 	{!(alive _man) || 
 	{((_man distance _unit) > 3) || 

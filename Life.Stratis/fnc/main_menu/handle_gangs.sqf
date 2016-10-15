@@ -1,7 +1,6 @@
 // A_main_menu_fnc_handle_gangs
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_title);
@@ -16,10 +15,10 @@ _gangs_list = call A_gang_fnc_get_list;
 	private["_gang"];
 	_gang = _x;
 	private["_gang_name"];
-	_A_gang_var_name = _gang select A_gang_var_name;
+	_gang_name = _gang select GANG_INDEX_NAME;
 	
 	private["_member_uids", "_member_names"];
-	_member_uids = _gang select A_gang_var_members;
+	_member_uids = _gang select GANG_INDEX_MEMBERS;
 	_member_names = [_member_uids] call A_gang_fnc_uids_2_names;
 	
 	if (count(_member_names) == 0) exitWith {null};

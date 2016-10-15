@@ -1,17 +1,16 @@
 // A_factory_fnc_update_enqueue_list
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
  
-if (undefined(A_factory_var_selected)) exitWith {null};
+if (UNDEFINED(A_factory_var_selected)) exitWith {null};
 private["_factory"];
 _factory = A_factory_var_selected;
 
 private["_queue_name", "_queue", "_items", "_workers_name", "_workers"];
-_queue_name = _factory select factory_queue;
+_queue_name = _factory select INDEX_QUEUE;
 _queue = missionNamespace getVariable _queue_name;
-_items = _factory select factory_items;
+_items = _factory select INDEX_ITEMS;
 _workers_name = format["%1workers", _queue_name];
 _workers = missionNamespace getVariable _workers_name;
 

@@ -1,17 +1,19 @@
 // A_bank_menu_fnc_dialog
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
- _this spawn {
+_this spawn {
 disableSerialization;
 ARGV(0,_player);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (_player != player) exitWith {null};
 
-if (A_bank_menu_var_recently_robbed_bank)  exitWith {
-	player groupChat format ["You robbed the bank a few minutes ago. You can not use it for %1 minutes after you robbed it.", strM(recently_robbed_bank_amount)];
-};
+//A_bank_menu_var_recently_robbed_bank = false;
+// not used?
+//if (A_bank_menu_var_recently_robbed_bank)  exitWith {
+//	player groupChat format ["You robbed the bank a few minutes ago. You can not use it for %1 minutes after you robbed it.", strM(recently_robbed_bank_amount)];
+//};
 
 if (!(createDialog "bank_menu")) exitWith {
 	player groupChat format["ERROR: Could not create bank menu dialog"];
@@ -38,7 +40,7 @@ _my_index = 0;
 	if (_variable_value == _player) then {
 		_my_index = _index;
 	};
-}} forEach playerstringarray;
+}} forEach A_player_var_playerstringarray;
 
 if (_my_index >= 0) then {
 	_list lbSetCurSel _my_index;

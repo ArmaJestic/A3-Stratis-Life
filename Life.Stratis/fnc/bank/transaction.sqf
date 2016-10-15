@@ -1,13 +1,13 @@
 // A_bank_fnc_transaction
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_value);
 
 if (!([_player] call A_player_fnc_human)) exitWith {0};
-if (undefined(_value)) exitWith {0};
+if (UNDEFINED(_value)) exitWith {0};
 if (typeName _value != "SCALAR") exitWith {0};
 
 

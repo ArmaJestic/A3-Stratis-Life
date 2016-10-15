@@ -5,15 +5,15 @@
 
 
 ARGV(0,_target);
-if (undefined(_target)) exitWith {false};
+if (UNDEFINED(_target)) exitWith {false};
 
 (
 	!(_target isKindOf "Man") && {
-		_target isKindOf "Car" ||
-		_target isKindOf "Tank" ||
-		_target isKindOf "Motorcycle" ||
-		_target isKindOf "Air" ||
-		_target isKindOf "Ship_F" ||
-		_target isKindOf "LocalBasicWeaponsBox"
+		(_target isKindOf "Car") ||
+		{_target isKindOf "Tank"} ||
+		{_target isKindOf "Motorcycle"} ||
+		{_target isKindOf "Air"} ||
+		{_target isKindOf "Ship_F"} ||
+		{_target isKindOf "LocalBasicWeaponsBox"}
 	}
 )

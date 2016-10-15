@@ -1,15 +1,14 @@
 // A_factory_fnc_calculate_production_time
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 //player groupChat format["A_factory_fnc_calculate_production_time %1", _this];
 ARGV(0,_item);
 ARGV(1,_workers);
 
-if (undefined(_item)) exitWith {0};
-if (undefined(_workers)) exitWith {0};
+if (UNDEFINED(_item)) exitWith {0};
+if (UNDEFINED(_workers)) exitWith {0};
 if (typeName _item != "STRING") exitWith {0};
 if (typeName _workers != "SCALAR") exitWith {0};
 

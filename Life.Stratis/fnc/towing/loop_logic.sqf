@@ -1,7 +1,6 @@
 // A_towing_fnc_loop_logic
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_player"];
@@ -41,7 +40,7 @@ private["_anchor", "_towed_target_offset"];
 _anchor = _towing_hitch_offset;
 _towed_target_offset = [(_anchor select 0), ((_anchor select 1) - _distance), (_anchor select 2)];
 
-if (undefined(towed_hitch_position)) then {
+if (UNDEFINED(towed_hitch_position)) then {
 	towed_hitch_position = _towed modelToWorld _towed_target_offset;
 };
 

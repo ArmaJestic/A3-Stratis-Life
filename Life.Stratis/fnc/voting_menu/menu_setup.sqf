@@ -1,50 +1,44 @@
 // A_voting_menu_fnc_menu_setup
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 disableSerialization;
-ARGV(0,_election_data);
 
-if (undefined(_election_data)) exitWith {};
+params[["_election_data",null]];
+if (UNDEFINED(_election_data)) exitWith {};
 
-private["_election_id", "_election_title"];
-_election_id = _election_data select A_voting_menu_var_election_data_id;
-_election_title = _election_data select A_voting_menu_var_election_data_title;
+private _election_id = _election_data select INDEX_DATA_ELEC_ID;
+private _election_title = _election_data select INDEX_DATA_ELEC_TITLE;
+private _player = player;
 
-private["_player"];
-_player = player;
-
-if (!(createDialog "voting_menu")) exitWith {
+if !(createDialog "voting_menu") exitWith {
 	player groupChat format["ERROR: Could not create voting menu dialog"];
 };
 
-private["_display"];
-_display = (uiNamespace getVariable 'VOTING_MENU');
+private _display = (uiNamespace getVariable 'VOTING_MENU');
 
-_voting_menu_header = _display displayCtrl voting_menu_header_idc;
-_voting_menu_background = _display displayCtrl voting_menu_background_idc;
-_voting_menu_submit_button = _display displayCtrl voting_menu_submit_button_idc;
-_voting_menu_close_button = _display displayCtrl voting_menu_close_button_idc;
-_voting_menu_list = _display displayCtrl voting_menu_list_idc;
+private _voting_menu_header = _display displayCtrl voting_menu_header_idc;
+private _voting_menu_background = _display displayCtrl voting_menu_background_idc;
+private _voting_menu_submit_button = _display displayCtrl voting_menu_submit_button_idc;
+private _voting_menu_close_button = _display displayCtrl voting_menu_close_button_idc;
+private _voting_menu_list = _display displayCtrl voting_menu_list_idc;
 
-_voting_menu_current_label = _display displayCtrl voting_menu_current_label_idc;
-_voting_menu_current_field = _display displayCtrl voting_menu_current_field_idc;
+private _voting_menu_current_label = _display displayCtrl voting_menu_current_label_idc;
+private _voting_menu_current_field = _display displayCtrl voting_menu_current_field_idc;
 
-_voting_menu_timeout_label = _display displayCtrl voting_menu_timeout_label_idc;
-_voting_menu_timeout_field = _display displayCtrl voting_menu_timeout_field_idc;
+private _voting_menu_timeout_label = _display displayCtrl voting_menu_timeout_label_idc;
+private _voting_menu_timeout_field = _display displayCtrl voting_menu_timeout_field_idc;
 
-_voting_auto_pop_label = _display displayCtrl voting_auto_pop_label_idc;
-_voting_auto_pop_checkbox = _display displayCtrl voting_auto_pop_checkbox_idc;
-_voting_menu_list_background1 = _display displayCtrl voting_menu_list_background1_idc;
-_voting_menu_list_background2 = _display displayCtrl voting_menu_list_background2_idc;
+private _voting_auto_pop_label = _display displayCtrl voting_auto_pop_label_idc;
+private _voting_auto_pop_checkbox = _display displayCtrl voting_auto_pop_checkbox_idc;
+private _voting_menu_list_background1 = _display displayCtrl voting_menu_list_background1_idc;
+private _voting_menu_list_background2 = _display displayCtrl voting_menu_list_background2_idc;
 
 _voting_menu_list ctrlAddEventHandler ["LBSelChanged", '(_this + [' + str(_election_id) + ', ' + str(_player) + ']) call A_voting_menu_fnc_menu_list_changed'];
 
-private["_variable_name"];
-_variable_name = format["%1_election_data", _election_id];
-missionNamespace setVariable [_variable_name, _election_data];
+private _variable_name = format["%1_election_data", _election_id];
+missionNamespace setVariable[_variable_name, _election_data];
 
 private["_x", "_y", "_w", "_h", "_ysep", "_sep", "_header_title"];
 _x = 0.14;
@@ -145,7 +139,7 @@ _vclw = _vlw / 2 - _sep;
 _vclh = 0.04;
 
 private["_election_role"];
-_election_role = _election_data select A_voting_menu_var_election_data_role;
+_election_role = _election_data select INDEX_DATA_ELEC_ROLE;
 _voting_menu_current_label ctrlSetText format["Current %1:", toLower(_election_role)];
 _voting_menu_current_label ctrlSetPosition [_vclx, _vcly, _vclw, _vclh];
 _voting_menu_current_label ctrlSetFontHeight _button_font_height - 0.003;

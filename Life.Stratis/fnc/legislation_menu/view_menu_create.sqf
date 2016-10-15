@@ -1,7 +1,7 @@
 // A_legislation_menu_fnc_view_menu_create
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_title);

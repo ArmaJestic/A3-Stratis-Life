@@ -1,18 +1,17 @@
 // A_voting_menu_fnc_nomination_timeout_start
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 _this spawn {
 //player groupChat format["A_voting_menu_fnc_nomination_timeout_start %1", _this];
 ARGV(0,_election_data);
 
-if (undefined(_election_data)) exitWith {};
+if (UNDEFINED(_election_data)) exitWith {};
 
 private["_election_id", "_election_role", "_nomination_period"];
-_election_id = _election_data select A_voting_menu_var_election_data_id;
-_election_role = _election_data select A_voting_menu_var_election_data_role;
-_nomination_period = _election_data select A_voting_menu_var_election_data_nomination_period;
+_election_id = _election_data select INDEX_DATA_ELEC_ID;
+_election_role = _election_data select INDEX_DATA_ELEC_ROLE;
+_nomination_period = _election_data select INDEX_DATA_ELEC_NOMI_PERIOD;
 
 private["_value"];
 _value = [_election_id] call A_voting_menu_fnc_nomination_timeout_value;
@@ -36,14 +35,14 @@ private["_nominations"];
 _nominations = [_election_id] call A_voting_menu_fnc_get_nominations;
 
 private["_nominations_index", "_nominations_data"];
-_nominations_index =  _nominations select A_voting_menu_var_election_nominations_index;
-_nominations_data = _nominations select A_voting_menu_var_election_nominations_data;
+_nominations_index =  _nominations select INDEX_ELEC_NOMI_INDEX;
+_nominations_data = _nominations select INDEX_ELEC_NOMI_DATA;
 
 //auto nominate the incumbent
 private["_incumbent_candidate_data"];
 _incumbent_candidate_data = [_election_id] call A_voting_menu_fnc_get_incumbent_candidate;
 
-if (!(undefined(_incumbent_candidate_data))) then {
+if (!(UNDEFINED(_incumbent_candidate_data))) then {
 	[_election_id, _incumbent_candidate_data] call A_voting_menu_fnc_add_candidate;
 };
 
@@ -51,16 +50,16 @@ if (!(undefined(_incumbent_candidate_data))) then {
 {
 	private["_nomination_cdata", "_nomination_entry_uid", "_nomination_entry_name"];
 	_nomination_cdata = _nominations_data select _forEachIndex;
-	_nomination_entry_uid = _nomination_cdata select A_voting_menu_var_election_nominations_data_entry_uid;
-	_nomination_entry_name = _nomination_cdata select A_voting_menu_var_election_nominations_data_entry_name;
+	_nomination_entry_uid = _nomination_cdata select INDEX_DATA_ELEC_NOMI_DATA_ENTRY_UID;
+	_nomination_entry_name = _nomination_cdata select INDEX_DATA_ELEC_NOMI_DATA_ENTRY_NAME;
 	
 	private["_candidate_data"];
 
 	
 	_candidate_data = [];
-	_candidate_data set [A_voting_menu_var_election_candidates_data_entry_uid, _nomination_entry_uid];
-	_candidate_data set [A_voting_menu_var_election_candidates_data_entry_name, _nomination_entry_name];
-	_candidate_data set [A_voting_menu_var_election_candidates_data_entry_vote_data, []];
+	_candidate_data set [INDEX_DATA_ELEC_CAND_DATA_ENTRY_UID, _nomination_entry_uid];
+	_candidate_data set [INDEX_DATA_ELEC_CAND_DATA_ENTRY_NAME, _nomination_entry_name];
+	_candidate_data set [INDEX_DATA_ELEC_CAND_DATA_ENTRY_VOTE_DATA, []];
 	
 	
 	[_election_id, _candidate_data] call A_voting_menu_fnc_add_candidate;

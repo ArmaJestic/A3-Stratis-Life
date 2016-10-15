@@ -1,11 +1,11 @@
 // A_retributions_fnc_remove_vehicle_licenses
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_player"];
 _player = _this select 0;
-if (undefined(_player)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
 
 if (_player != player) exitWith {null};
 

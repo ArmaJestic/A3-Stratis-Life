@@ -30,7 +30,7 @@ private["_object_name"];
 _object_name = format["%1_%2_%3_%4", _class, (getPlayerUID _player), round(time), round(random(time))];
 
 if (_persistent) then {
-	[[_object, _object_name], "A_object_fnc_name_init_handler", true, true, _object] call A_jip_fnc_register;
+	[[_object, _object_name], "A_object_fnc_name_init_handler", _object] call A_jip_fnc_register;
 	waitUntil {!(isNil _object_name)};
 }else{
 	[_object, _object_name] call A_object_fnc_name_init_handler;

@@ -1,20 +1,20 @@
 // A_player_fnc_prison_loop
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
  _this spawn {
 ARGV(0,_player);
 ARGV(1,_time_left);
 ARGV(2,_bail_left);
 
-if (undefined(_player)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
 if (_player != player) exitWith {null};
 if (!([_player] call A_player_fnc_human)) exitWith {null};
 
-if (undefined(_time_left)) exitWith {null};
+if (UNDEFINED(_time_left)) exitWith {null};
 if (typeName _time_left != "SCALAR") exitWith {null};
 
-if (undefined(_bail_left)) exitWith {null};
+if (UNDEFINED(_bail_left)) exitWith {null};
 if (typeName _bail_left != "SCALAR") exitWith {null};
 
 

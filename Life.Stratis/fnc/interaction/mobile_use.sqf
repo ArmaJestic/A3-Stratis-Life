@@ -1,8 +1,6 @@
 // A_interaction_fnc_mobile_use
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 [] call A_mobile_menu_fnc_setup;
@@ -22,4 +20,4 @@
 			lbSetCurSel [mobile_players_field_idc, _index];
 		};
 	};
-} forEach playerstringarray;
+} forEach A_player_var_playerstringarray;

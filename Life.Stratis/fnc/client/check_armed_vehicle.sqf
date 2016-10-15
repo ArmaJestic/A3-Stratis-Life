@@ -13,7 +13,7 @@ if (!(_in_vehicle)) then {
 	_vehicle = [_player] call A_mounted_fnc_player_get_vehicle;
 };
 
-if (undefined(_vehicle)) exitWith {false};
+if (UNDEFINED(_vehicle)) exitWith {false};
 
 //check if the vehicle has a weapon
 private["_weapon"];

@@ -1,7 +1,6 @@
 // A_factory_fnc_item_create
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
  
 //player groupChat format["A_factory_fnc_item_create %1", _this];
@@ -11,22 +10,22 @@ ARGV(2,_item);
 ARGV(3,_amount);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if(undefined(_factory_id)) exitWith {null};
+if(UNDEFINED(_factory_id)) exitWith {null};
 if (typeName _factory_id != "STRING") exitWith {null};
-if (undefined(_item)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _amount != "SCAlAR") exitWith {null};
 
 if (_amount <= 0) exitWith {null};
 
 private["_factory", "_factory_storage", "_factory_spawn", "_factory_crate"];
 _factory = [_factory_id] call A_factory_fnc_lookup_id;
-if (undefined(_factory)) exitWith {null};
+if (UNDEFINED(_factory)) exitWith {null};
 
-_factory_storage = _factory select factory_storage;
-_factory_spawn = _factory select factory_spawn;
-_factory_crate = _factory select factory_crate;
+_factory_storage = _factory select INDEX_STORAGE;
+_factory_spawn = _factory select INDEX_SPAWN;
+_factory_crate = _factory select INDEX_CRATE;
 
 private["_info", "_item_type", "_item_name"];
 _info = (_item call A_inventory_fnc_get_item_array);
@@ -52,7 +51,7 @@ player groupChat format["%1-%2, you have created %3 %4", _player, (name _player)
 _avail = missionNamespace getVariable _avail_name;
 while { _amount > 0 && _avail > 0} do {
 	_avail = _avail - 1;
-	missionNamespace setVariable [_avail_name, _avail];
+	missionNamespace setVariable[_avail_name, _avail];
 	[_avail_name, _avail] spawn A_stats_fnc_client_save;
 	
 	switch _item_type do {

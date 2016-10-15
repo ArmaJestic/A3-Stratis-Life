@@ -9,7 +9,7 @@ class bank_menu {
 	
 	name = "BANK_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['BANK_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['BANK_MENU', _this select 0]";
 	
 	objects[] = {};
 	controls[] = {

@@ -1,13 +1,13 @@
 // A_player_fnc_players_object_near
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_object);
 ARGV(1,_distance);
 
-if (undefined(_object)) exitWith {[]};
-if (undefined(_distance)) exitWith {[]};
+if (UNDEFINED(_object)) exitWith {[]};
+if (UNDEFINED(_distance)) exitWith {[]};
 if (typeName _object != "OBJECT") exitWith {[]};
 if (typeName _distance != "SCALAR") exitWith {[]};
 
@@ -22,6 +22,6 @@ _near_players = [];
 			_near_players = _near_players + [_player_variable];
 		};
 	};
-} forEach playerstringarray;
+} forEach A_player_var_playerstringarray;
 
 _near_players

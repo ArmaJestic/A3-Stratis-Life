@@ -1,23 +1,29 @@
 // A_player_fnc_rejoin_camera_choice
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-player groupChat format["A_player_fnc_rejoin_camera_choice %1", _this];
+diag_log format["A_player_fnc_rejoin_camera_choice start: %1", _this];
+
 ARGV(0,_timeout);
 ARGV(1,_countdown);
 ARGV(2,_transition);
 
-if (undefined(_transition)) then {
+if (UNDEFINED(_transition)) then {
 	_transition = 0;
 };
 
-player groupChat format["Waiting ..."];
+diag_log format["A_player_fnc_rejoin_camera_choice: Waiting ..."];
+
 waitUntil {(time > (_timeout - _countdown))};
-player groupChat format["Waiting ... complete."];
+
+diag_log format["A_player_fnc_rejoin_camera_choice: Waiting ... complete."];
+
 setPlayerRespawnTime _countdown;
-[player, _transition] call BIS_fnc_respawnMenuPosition;
+// [player, _transition] call BIS_fnc_respawnMenuPosition;
 waitUntil {(alive player)};
-player groupChat format["Spawn ... complete."];
+
+diag_log format["A_player_fnc_rejoin_camera_choice: Spawn ... complete."];
+
 [player] call A_player_fnc_teleport_respawn_position;
 setPlayerRespawnTime 30;

@@ -1,7 +1,6 @@
 // A_mounted_fnc_slot_wait
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 _this spawn {
@@ -29,18 +28,17 @@ _this spawn {
 		private["_class", "_slot_entry"];
 		_class = typeOf _vehicle;
 		_slot_entry = [_class, _slot_id] call A_mounted_fnc_lookup_class_slot;
-		if (!(undefined(_slot_entry))) then {
+		if (!(UNDEFINED(_slot_entry))) then {
 			private["_exit"];
-			_exit = (_slot_entry select A_mounted_var_slot_exit) select A_mounted_var_slot_exit_data;
+			_exit = (_slot_entry select INDEX_SLOT_EXIT) select INDEX_EXIT_DATA;
 			[_player, _vehicle, _exit] call A_mounted_fnc_attach;
 		};
 		
 		[_player] spawn { ARGV(0,_player); detach _player;};
 		
-		titleText ["", "BLACK OUT", 0.1];
-		titleText ["", "BLACK IN", 2];
-	} 
-	else {
+		cutText["","BLACK OUT",0.1];
+		cutText["","BLACK IN",2];
+	}else{
 		detach _player;
 		hideBody _player;
 	};

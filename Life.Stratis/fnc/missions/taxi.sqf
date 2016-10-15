@@ -5,12 +5,12 @@
 
 _art = ((_this select 3) select 0);
 
-if (undefined(INV_LocalTaxiKunde)) then {INV_LocalTaxiKunde = player};
-if (undefined(workplacejob_taxi_sperre)) then {workplacejob_taxi_sperre = false};
-if (undefined(workplacejob_taxi_kundebeginn)) then {workplacejob_taxi_kundebeginn = false};
-if (undefined(workplacejob_taxi_kundeactive)) then {workplacejob_taxi_kundeactive = false};
-if (undefined(workplacejob_taxi_active)) then {workplacejob_taxi_active = false};
-if (undefined(workplacejob_taxi_serverarray)) then {workplacejob_taxi_serverarray = []};
+if (UNDEFINED(INV_LocalTaxiKunde)) then {INV_LocalTaxiKunde = player};
+if (UNDEFINED(workplacejob_taxi_sperre)) then {workplacejob_taxi_sperre = false};
+if (UNDEFINED(workplacejob_taxi_kundebeginn)) then {workplacejob_taxi_kundebeginn = false};
+if (UNDEFINED(workplacejob_taxi_kundeactive)) then {workplacejob_taxi_kundeactive = false};
+if (UNDEFINED(workplacejob_taxi_active)) then {workplacejob_taxi_active = false};
+if (UNDEFINED(workplacejob_taxi_serverarray)) then {workplacejob_taxi_serverarray = []};
 
 if (_art == "serverloop") then {
 	while {true} do {
@@ -59,10 +59,10 @@ if (_art == "getajob_taxi") then {
 		};
 
 		_taxizeit = time;
-		_civ 	  = A_main_var_A_main_var_civclassarray select round random(count A_main_var_A_main_var_civclassarray - 1);
+		_civ 	  = A_main_var_civclassarray select round random(count A_main_var_civclassarray - 1);
 		_O0O0 = player;
 
-		call compile format ["'%1' createUnit [[(_start select 0),(_start select 1),0], group civ_logicunit, ""%2taxikunde = this; this setVehicleVarName """"%2taxikunde""""; this disableAI """"MOVE""""; this disableAI """"TARGET"""";""]; [%2taxikunde] join grpNull; liafu = true; processInitCommands;", _civ, player];
+		call compile format ["'%1' createUnit [[(_start select 0),(_start select 1),0], group civ_logicunit, ""%2taxikunde = this; this setVehicleVarName """"%2taxikunde""""; this disableAI """"MOVE""""; this disableAI """"TARGET"""";""]; [%2taxikunde] join grpNull; processInitCommands;", _civ, player];
 
 		format["workplacejob_taxi_serverarray + [%1, %1taxikunde];", player] call A_broadcast_fnc_broadcast;
 

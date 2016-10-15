@@ -2,8 +2,7 @@
 
 #include "..\..\includes\macro.h"
 
-
-_art = ((_this select 3) select 0);
+private _art = ((_this select 3) select 0);
 
 if (_art == "getajob_search") then {
 	if (alreadygotaworkplacejob == 2) exitWith {
@@ -29,7 +28,6 @@ if (_art == "getajob_search") then {
 	_objectradius   = _objposarray select 1;
 	_objectradius2  = _objposarray select 2;
 	_searchobject = _searchobj createVehicleLocal [((_objectposition select 0)+(random(_objectradius)-random(_objectradius))), ((_objectposition select 1)+(random(_objectradius2)-random(_objectradius2))), _objectposition select 2];
-	liafu = true;
 	player groupChat _searchmsg;
 	_action            = 0;
 	_action2	   = 0;
@@ -42,7 +40,7 @@ if (_art == "getajob_search") then {
 	while {true} do {
 
 		if ((player distance workplace_getjobflag_1 <= 5) and (alreadygotaworkplacejob == 2) and (_action == 0)) then {
-			workplace_A_missions_fnc_searchaction_cancel = player addAction [localize "STRS_workplacemission_addaction_A_missions_fnc_searchjob_cancel", "A_missions_fnc_search.sqf", ["canceljob_A_missions_fnc_search", _A_missions_fnc_searchobject]];
+			workplace_searchaction_cancel = player addAction [localize "STRS_workplacemission_addaction_searchjob_cancel", A_missions_fnc_search, ["canceljob_search", _searchobject]];
 			_action = 1;
 		};
 
@@ -51,20 +49,20 @@ if (_art == "getajob_search") then {
 			_action = 0;
 		};
 
-		if (vehicle player != player and _action2 == 1) then {
+		if (((vehicle player) != player) && {_action2 == 1}) then {
 			player removeaction searchinfoaction;
 			veh = vehicle player;
-			A_missions_fnc_A_missions_fnc_searchinfoaction = veh addAction ["Toggle A_missions_fnc_A_missions_fnc_search mission info", "A_missions_fnc_A_missions_fnc_search.sqf", ["info"]];
+			searchinfoaction = veh addAction ["Toggle search mission info", A_missions_fnc_search, ["info"]];
 			_action2 = 0;
 		};
 
-		if (vehicle player == player and _action2 == 0) then {
+		if (((vehicle player) == player) && {_action2 == 0}) then {
 			veh removeaction searchinfoaction;
-			A_missions_fnc_A_missions_fnc_searchinfoaction = player addAction ["Toggle A_missions_fnc_A_missions_fnc_search mission info", "A_missions_fnc_A_missions_fnc_search.sqf", ["info"]];
+			searchinfoaction = player addAction ["Toggle search mission info", A_missions_fnc_search, ["info"]];
 			_action2 = 1;
 		};
 
-		if ((player distance _searchobject < 15) and (_distancenachricht == 0)) then {
+		if ((player distance _searchobject < 15) && {_distancenachricht == 0}) then {
 			player groupChat localize "STRS_workplacemission_searchjob_targetreached";
 			_distancenachricht = 1;
 		};

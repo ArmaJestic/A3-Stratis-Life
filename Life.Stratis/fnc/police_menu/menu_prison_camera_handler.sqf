@@ -1,7 +1,7 @@
 // A_police_menu_fnc_menu_prison_camera_handler
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 player groupChat format["A_police_menu_fnc_menu_prison_camera_handler %1", _this];

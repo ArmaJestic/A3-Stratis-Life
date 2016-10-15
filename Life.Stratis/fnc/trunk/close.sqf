@@ -5,7 +5,7 @@
 
 
 _vehicle = [player, "vehicle_trunk_used"] call A_object_fnc_getVariable;
-if (undefined(_vehicle)) exitWith {null};
+if (UNDEFINED(_vehicle)) exitWith {null};
 
 //player groupchat format["Closing trunk for %1", _vehicle];
 _vehicle = [player, "vehicle_trunk_used"] call A_object_fnc_getVariable;

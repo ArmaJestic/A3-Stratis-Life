@@ -1,7 +1,6 @@
 // A_weapon_fnc_player_swap_weapon_items
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -10,11 +9,11 @@ ARGV(2,_attached_item_id);
 ARGV(3,_inventory_item_id);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_weapon_id)) exitWith {null};
+if (UNDEFINED(_weapon_id)) exitWith {null};
 if (typeName _weapon_id != "STRING") exitWith {null};
-if (undefined(_attached_item_id)) exitWith {null};
+if (UNDEFINED(_attached_item_id)) exitWith {null};
 if (typeName _attached_item_id != "STRING") exitWith {null};
-if (undefined(_inventory_item_id)) exitWith {null};
+if (UNDEFINED(_inventory_item_id)) exitWith {null};
 if (typeName _inventory_item_id != "STRING") exitWith {null};
 
 private["_floorDropNotification"];

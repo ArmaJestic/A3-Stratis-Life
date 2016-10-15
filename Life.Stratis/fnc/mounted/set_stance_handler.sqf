@@ -1,7 +1,6 @@
 // A_mounted_fnc_set_stance_handler
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);

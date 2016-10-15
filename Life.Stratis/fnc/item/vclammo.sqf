@@ -19,7 +19,7 @@ if (player == _vcl) exitWith {player groupChat localize "STRS_inv_item_vclammo_n
 _role		= assignedVehicleRole player;
 _path		= _role select 1;
 
-if (undefined(_path)) exitwith {player groupchat "You cannot reArm in this seat!"};
+if (UNDEFINED(_path)) exitwith {player groupchat "You cannot reArm in this seat!"};
 
 _weapons	= (vehicle player) weaponsTurret _path;
 if ((count _weapons) <= 0) exitwith {player groupchat "This seat has no weapons!"};

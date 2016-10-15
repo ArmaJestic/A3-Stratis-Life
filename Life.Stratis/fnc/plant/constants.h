@@ -1,0 +1,8 @@
+#define INDEX_ID 0
+#define INDEX_NAME 1
+#define INDEX_MODEL 2
+#define INDEX_LIFE 3
+#define INDEX_SCALE 4
+#define INDEX_YIELD_ITEM 5
+#define INDEX_FIELD_MARKERS 6
+#define INDEX_MAX 7

@@ -1,6 +1,6 @@
 // A_player_fnc_load_side_vehicle
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_player_fnc_load_side_vehicle %1", _this];
@@ -23,7 +23,7 @@ if (_vehicle_class == "") exitWith {false};
 
 private["_vehicle"];
 _vehicle = [_vehicle_name, _vehicle_class] call A_vehicle_fnc_recreate;
-if (undefined(_vehicle)) exitWith {false};
+if (UNDEFINED(_vehicle)) exitWith {false};
 
 private["_active_driver_uid", "_saved_driver_uid", "_player_uid", "_distance"];
 _player_uid = [_player] call A_stats_fnc_get_uid;

@@ -1,8 +1,6 @@
 // A_interaction_fnc_keychain_drop
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_keychain_drop %1", _this];

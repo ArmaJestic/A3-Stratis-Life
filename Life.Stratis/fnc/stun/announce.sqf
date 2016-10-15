@@ -3,7 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-if (defined(stun_announcing) && {stun_announcing}) exitWith {};
+if (DEFINED(stun_announcing) && {stun_announcing}) exitWith {};
 
 stun_announcing = true;
 ARGV(0,_unit);

@@ -1,8 +1,6 @@
 // A_interaction_fnc_player_inventory_space
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_player_inventory_space %1", _this];
@@ -11,8 +9,8 @@ ARGV(1,_item);
 ARGV(2,_amount);
 
 if (!([_player] call A_player_fnc_human)) exitWith {0};
-if (undefined(_item)) exitWith {0};
-if (undefined(_amount)) exitWith {0};
+if (UNDEFINED(_item)) exitWith {0};
+if (UNDEFINED(_amount)) exitWith {0};
 if (typeName _item != "STRING") exitWith {0};
 if (typeName _amount != "SCALAR") exitWith {0};
 

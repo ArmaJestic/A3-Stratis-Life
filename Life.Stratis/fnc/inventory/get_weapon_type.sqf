@@ -1,7 +1,6 @@
 // A_inventory_fnc_get_weapon_type
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private ["_Fresult"];

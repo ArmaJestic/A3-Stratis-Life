@@ -1,14 +1,13 @@
 // A_factory_fnc_validate_enqueue_item
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 //player groupChat format["A_factory_fnc_validate_enqueue_item"];
 ctrlEnable[factory_enqueue_button_idc, false];
 ctrlEnable[factory_create_button_idc, false];
 
-if (undefined(A_factory_var_selected)) exitWith {[]};
+if (UNDEFINED(A_factory_var_selected)) exitWith {[]};
 private["_factory"];
 _factory = A_factory_var_selected;
 
@@ -41,7 +40,7 @@ if (_amount == 0) exitWith {
 };
 
 private["_factory_queue", "_workers_name", "_workers"];
-_factory_queue = _factory select factory_queue;
+_factory_queue = _factory select INDEX_QUEUE;
 _workers_name = format["%1workers", _factory_queue];
 _workers = missionNamespace getVariable _workers_name;
 	
@@ -51,7 +50,7 @@ _avail_name = format["%1avail", _item];
 _avail = missionNamespace getVariable _avail_name;
 
 private["_factory_storage", "_factory_money", "_production_cost"];
-_factory_storage = _factory select factory_storage;
+_factory_storage = _factory select INDEX_STORAGE;
 _factory_money = [_player, "money", _factory_storage] call A_inventory_fnc_get_storage_amount;
 _production_cost = ([_item] call A_factory_fnc_calculate_production_cost) * _amount;
 

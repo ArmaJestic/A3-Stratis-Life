@@ -1,14 +1,13 @@
 // A_inventory_fnc_get_shop_item_number
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_item);
 ARGV(1,_shopinv);
 
-if (undefined(_item)) exitWith {null};
-if (undefined(_shopinv)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_shopinv)) exitWith {null};
 
 private ["_shopitemnum"];
 _shopitemnum = [];

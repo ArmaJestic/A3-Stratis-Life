@@ -1,19 +1,17 @@
 // A_shop_menu_fnc_sell_update_stocks
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_data);
-if (undefined(_data)) exitWith {null};
-if (typeName _data != "ARRAY") exitWith {null};
+params[["_data",null,[[]]]];
+if (UNDEFINED(_data)) exitWith {null};
 
-_item = _data select A_shop_menu_var_sell_item_key;
-_max_stock = _data select A_shop_menu_var_sell_item_max_stock;
-_amount = _data select A_shop_menu_var_sell_item_amount;
-_supply = _data select A_shop_menu_var_sell_item_supply;
-_shop_id = _data select A_shop_menu_var_sell_item_shop_id;
-_isOilBarrel = (_item == "OilBarrel");
+private _item = _data select INDEX_SELL_KEY;
+private _max_stock = _data select INDEX_SELL_MAX_STOCK;
+private _amount = _data select INDEX_SELL_AMOUNT;
+private _supply = _data select INDEX_SELL_SUPPLY;
+private _shop_id = _data select INDEX_SELL_SHOP_ID;
+private _isOilBarrel = (_item == "OilBarrel");
 
 if (_isOilBarrel) exitWith {
 	[-(_amount * A_main_var_fuel_per_barrel)] call A_shop_menu_fnc_update_fuel_consumed;

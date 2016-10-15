@@ -1,7 +1,6 @@
 // A_voting_menu_fnc_nominate_player
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_voting_menu_fnc_nominate_player %1", _this];
@@ -10,14 +9,14 @@ ARGV(1,_voter);
 ARGV(2,_nominee);
 
 
-if (undefined(_election_data)) exitWith {};	
+if (UNDEFINED(_election_data)) exitWith {};	
 if (!([_voter] call A_player_fnc_exists)) exitWith {};
 if (!([_nominee] call A_player_fnc_exists)) exitWith {};
 
 private["_election_id", "_election_title", "_election_role"];
-_election_id = _election_data select A_voting_menu_var_election_data_id;
-_election_title = _election_data select A_voting_menu_var_election_data_title;
-_election_role = _election_data select A_voting_menu_var_election_data_role;
+_election_id = _election_data select INDEX_DATA_ELEC_ID;
+_election_title = _election_data select INDEX_DATA_ELEC_TITLE;
+_election_role = _election_data select INDEX_DATA_ELEC_ROLE;
 
 private["_election_timeout"];
 _election_timeout = [_election_id] call A_voting_menu_fnc_election_timeout_value;
@@ -36,10 +35,10 @@ if ([_election_id, _nominee] call A_voting_menu_fnc_player_nominated) exitWith {
 
 private["_nominations"];
 _nominations = [_election_id] call A_voting_menu_fnc_get_nominations;
-if (undefined(_nominations)) exitWith {};
+if (UNDEFINED(_nominations)) exitWith {};
 
 private["_nominations_index"];
-_nominations_index = _nominations select A_voting_menu_var_election_nominations_index;
+_nominations_index = _nominations select INDEX_ELEC_NOMI_INDEX;
 
 if (count(_nominations_index) == 0) then {
 	[[_election_data], "A_voting_menu_fnc_nomination_timeout_start", false] call BIS_fnc_MP;

@@ -1,41 +1,21 @@
 // A_player_fnc_handle_damage
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-//player groupChat format["A_player_fnc_handle_damage %1", _this];
-ARGV(0,_unit);
-ARGV(1,_select);
-ARGV(2,_damage);
-ARGV(3,_source);
-ARGV(4,_projectile);
+params["_unit","_select","_damage","_source","_projectile","_hitPartIndex"];
 
+if ([player] call A_player_fnc_in_safe_zone) exitwith {0};
 
-private["_distance"];
+private["_distance","_exit","_nvcls","_reduce","_source_cop","_weapon"];
 _distance = 0;
-
-/*
-if( ((_unit distance getmarkerpos "respawn_west" < 100))  || 
-	((_unit distance getmarkerpos "respawn_east" < 100)) || 
-	((_unit distance getmarkerpos "respawn_guerrila" < 100)) || 
-	(_unit distance getmarkerpos "respawn_civilian" < 100)
-	) exitWith {null};
-*/
-
-private["_exit"];
 _exit = false;
-
-private["_nvcls"];
 _nvcls = nearestObjects [getpos _unit, ["LandVehicle"], 5];
-
-private["_reduce"];
 _reduce = false;
-
-private["_source_cop", "_weapon"];
 _source_cop = ([_source] call A_player_fnc_blufor);
 _weapon = currentWeapon _source;
 
-if (toLower(_weapon) == toLower("hgun_P07_snds_F") && _source_cop) then {
+if ((_weapon == "hgun_P07_snds_F") && {_source_cop}) then {
 	_reduce = true;
 	_distance = _source distance _unit;
 	_veh = vehicle _unit;
@@ -48,6 +28,8 @@ if (_reduce) then {
 };
 	
 if (!(alive _unit)) then {
+	// killed handles this... may not be needed
+	// but can be used to track who has damaged others
 	[_shooter, _unit] spawn A_retributions_fnc_victim;
 };
 

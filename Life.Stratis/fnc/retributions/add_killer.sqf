@@ -1,6 +1,6 @@
 // A_retributions_fnc_add_killer
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private ["_killers"];
@@ -13,16 +13,16 @@ _victim_uid = getPlayerUID player;
 _euid = format["%1_%2_%3", _victim_uid, time, _type];
 
 _killer_data = [];
-_killer_data set [A_retributions_var_ks_name, toArray _killer_name];
-_killer_data set [A_retributions_var_ks_uid, _killer_uid];
-_killer_data set [A_retributions_var_ks_money, _lost_money];
-_killer_data set [A_retributions_var_ks_type, _type];
-_killer_data set [A_retributions_var_ks_euid, _euid ];
+_killer_data set [INDEX_KS_TYPE, toArray _killer_name];
+_killer_data set [INDEX_KS_NAME, _killer_uid];
+_killer_data set [INDEX_KS_MONEY, _lost_money];
+_killer_data set [INDEX_KS_TYPE, _type];
+_killer_data set [INDEX_KS_EUID, _euid ];
 
 _killer_fletter =  (toArray _killer_name) select 0;
 _killers = [player, "killers"] call A_object_fnc_getVariable;
 
-if (undefined(_killers)) then { _killers = []; };
+if (UNDEFINED(_killers)) then { _killers = []; };
 if (typeName _killers != "ARRAY") then { _killers = []; };
 
 _killers = _killers + [_killer_data];

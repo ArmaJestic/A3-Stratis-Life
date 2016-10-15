@@ -4,7 +4,7 @@
 
 
 ARGV(0,_unit);
-if (undefined(_unit)) exitWith {false};
+if (UNDEFINED(_unit)) exitWith {false};
 private["_stance"];
 _stance = toLower(stance _unit);
 private["_prone_stances"];

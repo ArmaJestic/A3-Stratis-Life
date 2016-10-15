@@ -3,19 +3,12 @@
 #include "..\..\includes\macro.h"
 
 
-_bullet			= _this select 1;
-_this			= _this select 0;
+diag_log format['A_other_fnc_smoke %1: start', _this];
 
-_unit 			= _this select 0;
-_weapon			= _this select 1;
-_muzzle			= _this select 2;
-_mode			= _this select 3;
-_ammo			= _this select 4;
-_magazine		= _this select 5;
-_projectile		= _this select 6;
+params["_unit","_weapon","_muzzle","_mode","_ammo","_magazine","_projectile"];
 
 
-if ((typeName _bullet) != "OBJECT") exitWith {null};
+if ((typeName _projectile) != "OBJECT") exitWith {diag_log format['A_other_fnc_smoke %1: exit1', _this];};
 
 _Tear_gas = {
 	_pos = _this select 0;
@@ -51,15 +44,17 @@ _Tear_gas = {
 
 _BPos = [];
 
-while {!isNull _bullet and ((velocity _bullet)select 0 > 0.1)} do {
-	_BPos = getPosATL _bullet;
+while {!isNull _projectile and ((velocity _projectile)select 0 > 0.1)} do {
+	_BPos = getPosATL _projectile;
 };
 
 switch (_ammo) do {
 	case "SmokeShell": {
-		[_bullet] spawn _Tear_gas;
+		[_projectile] spawn _Tear_gas;
 	};   
 	case "G_40mm_Smoke": {
-		[_bullet] spawn _Tear_gas;
+		[_projectile] spawn _Tear_gas;
 	};   
 };
+
+diag_log format['A_other_fnc_smoke %1: end', _this];

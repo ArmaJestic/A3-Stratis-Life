@@ -1,29 +1,19 @@
 // A_stats_fnc_init_entry
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
-private["_object", "_variable", "_value"];
 
-_object = _this select 0;
-_variable = _this select 1;
-_value = _this select 2;
+params[["_object",objNull,[objNull]],["_variable",null,[""]],"_value"];
 
-if (undefined(_object)) exitWith {null};
-if (typeName _object != "OBJECT") exitWith {null};
-if (undefined(_variable)) exitWith {null};
-if (typeName _variable != "STRING") exitWith {null};
-
+if (isNull _object) exitWith {};
+if (UNDEFINED(_variable)) exitWith {};
 
 //check if it already has a value
 if ((_object == player) || (_object == server)) then {
-	private["_current_value"];
-	_current_value = missionNameSpace getVariable _variable;
-	if (!(undefined(_current_value))) exitWith {null};
-	missionNamespace setVariable [_variable, _value];
-	[_object, _variable, _value, true] call A_object_fnc_setVariable;
-}else{
-	[_object, _variable, _value, true] call A_object_fnc_setVariable;
+	private _current_value = missionNameSpace getVariable _variable;
+	if (DEFINED(_current_value)) exitWith {};
+	missionNamespace setVariable[_variable, _value];
 };
+[_object,_variable,_value,true] call A_object_fnc_setVariable;
 
-//diag_log format["%1, %2 = %3", _object, _variable, _value];
-[_object, _variable] call A_stats_fnc_update_variables_list;
+[_object,_variable] call A_stats_fnc_update_variables_list;

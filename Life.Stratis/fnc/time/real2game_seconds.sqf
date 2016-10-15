@@ -1,25 +1,24 @@
 // A_time_fnc_real2game_seconds
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-private ["_gsecs", "_base_seconds", "_seconds_since_sunrise", "_seconds_since_sunset" ];
-ARGV(0,_rsecs);
+params["_rsecs"];
 
-_game_days = floor(_rsecs / time_full_day);
-_gsecs = _game_days  * SECSDAY;
+private _game_days = floor(_rsecs / VAR_TIME_FULL_DAY);
+private _gsecs = _game_days  * SECSDAY;
 
-private["_cycle_seconds", "_sunrise_secs"];
-_sunrise_secs = _rsecs  % time_full_day;
+private _cycle_seconds = 0;
+private _sunrise_secs = _rsecs  % VAR_TIME_FULL_DAY;
 
-if (_sunrise_secs <= time_sunrise_to_sunset) then {
-	_cycle_seconds = ((_sunrise_secs * (SECSDAY / 2))  / time_sunrise_to_sunset);
+if (_sunrise_secs <= VAR_TIME_RISE_TO_SET) then {
+	_cycle_seconds = ((_sunrise_secs * (SECSDAY / 2))  / VAR_TIME_RISE_TO_SET);
 }else{
-	_sunset_secs = _sunrise_secs - time_sunrise_to_sunset;
-	_sunrise_secs = time_sunrise_to_sunset;
-	_cycle_seconds = ((_sunrise_secs * (SECSDAY / 2))  / time_sunrise_to_sunset);
-	_cycle_seconds = _cycle_seconds + ((_sunset_secs * (SECSDAY / 2))  / time_sunset_to_sunrise);
+	_sunset_secs = _sunrise_secs - VAR_TIME_RISE_TO_SET;
+	_sunrise_secs = VAR_TIME_RISE_TO_SET;
+	_cycle_seconds = ((_sunrise_secs * (SECSDAY / 2))  / VAR_TIME_RISE_TO_SET);
+	_cycle_seconds = _cycle_seconds + ((_sunset_secs * (SECSDAY / 2))  / VAR_TIME_SET_TO_RISE);
 };
 
 _cycle_seconds = floor(_cycle_seconds);
-(_gsecs + _cycle_seconds + time_offset)
+(_gsecs + _cycle_seconds + VAR_TIME_OFFSET)

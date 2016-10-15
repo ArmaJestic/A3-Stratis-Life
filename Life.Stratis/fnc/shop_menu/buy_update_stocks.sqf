@@ -1,18 +1,17 @@
 // A_shop_menu_fnc_buy_update_stocks
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_data);
-if (undefined(_data)) exitWith {null};
+if (UNDEFINED(_data)) exitWith {null};
 if (typeName _data != "ARRAY") exitWith {null};
 
-_item = _data select A_shop_menu_var_buy_item_key;
-_max_stock = _data select A_shop_menu_var_buy_item_max_stock;
-_amount = _data select A_shop_menu_var_buy_item_amount;
-_supply = _data select A_shop_menu_var_buy_item_supply;
-_shop_id = _data select A_shop_menu_var_buy_item_shop_id;
+_item = _data select INDEX_BUY_KEY;
+_max_stock = _data select INDEX_BUY_MAX_STOCK;
+_amount = _data select INDEX_BUY_AMOUNT;
+_supply = _data select INDEX_BUY_SUPPLY;
+_shop_id = _data select INDEX_BUY_SHOP_ID;
 _isOilBarrel = (_item == "OilBarrel");
 
 if (_isOilBarrel) exitWith {

@@ -1,8 +1,6 @@
 // A_interaction_fnc_deposit_other
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -13,7 +11,7 @@ if (!([_player] call A_player_fnc_human)) exitWith {null};
 if (!([_target] call A_player_fnc_human)) exitWith {null};
 if (_player != player) exitWith {null};
 
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
 if (_amount <= 0) exitWith {null};
 

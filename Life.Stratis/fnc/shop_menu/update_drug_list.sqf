@@ -1,33 +1,28 @@
 // A_shop_menu_fnc_update_drug_list
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-ARGV(0,_shop_id);
-private["_shop_cache"];
-_shop_cache = [_shop_id] call A_shop_menu_fnc_lookup;
-if (undefined(_shop_cache)) exitWith {null};
+params["_shop_id","_data"];
 
-private["_data"];
-ARGV(1,_data);
-if (undefined(_data)) exitWith {null};
+if (UNDEFINED(_data)) exitWith {null};
+private _shop_cache = [_shop_id] call A_shop_menu_fnc_lookup;
+if (UNDEFINED(_shop_cache)) exitWith {null};
 
-private["_list", "_uid", "_profit"];
-_list = [_shop_id] call A_shop_menu_fnc_get_drug_list;
+
+private _list = [_shop_id] call A_shop_menu_fnc_get_drug_list;
 
 //if player uid is already in the list, just update it
-_uid = _data select A_shop_menu_var_drug_list_player_uid;
-_profit = _data select A_shop_menu_var_drug_list_profit;
-private["_inList"];
-_inList = false;
+private _uid = _data select INDEX_DRUG_PLAYER_UID;
+private _profit = _data select INDEX_DRUG_PROFIT;
+
+private _inList = false;
 {
-	private["_cdata", "_cuid", "_cprofit"];
-	_cdata = _x;
-	_cuid = _cdata select A_shop_menu_var_drug_list_player_uid;
-	_cprofit = _cdata select A_shop_menu_var_drug_list_profit;
+	private _cdata = _x;
+	private _cuid = _cdata select INDEX_DRUG_PLAYER_UID;
+	private _cprofit = _cdata select INDEX_DRUG_PROFIT;
 	if (_cuid == _uid) exitWith {
-		_cdata set [A_shop_menu_var_drug_list_profit, (_cprofit + _profit)];
+		_cdata set [INDEX_DRUG_PROFIT, (_cprofit + _profit)];
 		_inList = true;
 	};
 } foreach _list;

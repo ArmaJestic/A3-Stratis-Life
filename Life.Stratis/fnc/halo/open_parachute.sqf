@@ -101,13 +101,13 @@ if (_unit == player) then {
 			] call bis_fnc_setpitchbank;
 	};
 
-	halo_para_mousemoving_eh = (finddisplay 46) displayaddeventhandler ["mousemoving","_this call halo_para_loop;"];
-	halo_para_mouseholding_eh = (finddisplay 46) displayaddeventhandler ["mouseholding","_this call halo_para_loop;"];
+	halo_para_mousemoving_eh = (finddisplay 46) displayaddeventhandler ["mousemoving",{_this call halo_para_loop;}];
+	halo_para_mouseholding_eh = (finddisplay 46) displayaddeventhandler ["mouseholding",{_this call halo_para_loop;}];
 
 	sleep 4;
 
 	ppeffectdestroy halo_DynamicBlur;
-	halo_para_keydown_eh = (finddisplay 46) displayaddeventhandler ["keydown","_this call halo_para_keydown;"];
+	halo_para_keydown_eh = (finddisplay 46) displayaddeventhandler ["keydown",{_this call halo_para_keydown;}];
 
 	//--- End
 	//waituntil {vehicle player == player};

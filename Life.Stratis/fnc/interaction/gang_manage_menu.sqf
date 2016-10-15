@@ -1,8 +1,6 @@
 // A_interaction_fnc_gang_manage_menu
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_gang_manage_menu %1", _this];
@@ -10,16 +8,16 @@ ARGV(0,_player);
 ARGV(1,_gang_id);
 
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_gang_id)) exitWith {null};
+if (UNDEFINED(_gang_id)) exitWith {null};
 if (typeName _gang_id != "STRING") exitWith {null};
 
 private["_gang"];
 _gang = [_gang_id] call A_gang_fnc_lookup_id;
-if (undefined(_gang)) exitWith {null};
+if (UNDEFINED(_gang)) exitWith {null};
 
-private["_gang_name", "_gang_open", "_player_uid"];
-_A_gang_var_name = _gang select A_gang_var_name;
-_A_gang_var_open = _gang select A_gang_var_open;
+private["_gang_name","_gang_open","_player_uid"];
+_gang_name = _gang select GANG_INDEX_NAME;
+_gang_open = _gang select GANG_INDEX_OPEN;
 _player_uid = [_player] call A_gang_fnc_player_uid;
 
 if (!(([_gang_id] call A_gang_fnc_leader_uid) == _player_uid)) exitWith {
@@ -36,7 +34,7 @@ selected_gang_id = _gang_id;
 call A_interaction_fnc_gang_update_open_cbox;
 
 private["_member_uids", "_members"];
-_member_uids = _gang select A_gang_var_members;
+_member_uids = _gang select GANG_INDEX_MEMBERS;
 _members = [_member_uids] call A_gang_fnc_uids_2_players;
 
 {

@@ -1,8 +1,6 @@
 // A_interaction_fnc_mobile_receive
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -16,5 +14,5 @@ if (_player != player) exitWith {null};
 private["_header"];
 _header = format["%1-%2 sent you a text message.", _sender, (name _sender)];
 
-titleText [_header + "\n" + _text, "PLAIN"];
+cutText[_header + "\n" + _text, "PLAIN"];
 player groupChat (_header + " " + _text);

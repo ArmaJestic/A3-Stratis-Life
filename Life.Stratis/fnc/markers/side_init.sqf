@@ -7,9 +7,9 @@
 private["_i", "_local_markers"];
 _local_markers = [];
 _i = 0;
-while { _i < (count playerstringarray) } do {
+while { _i < (count A_player_var_playerstringarray) } do {
 	private["_player_variable_name", "_player_variable"];
-	_player_variable_name = playerstringarray select _i;
+	_player_variable_name = A_player_var_playerstringarray select _i;
 
 	private["_local_marker", "_local_marker_text", "_local_marker_name", "_local_marker_location"];
 	_local_marker_name = _player_variable_name;

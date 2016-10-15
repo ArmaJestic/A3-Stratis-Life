@@ -1,7 +1,6 @@
 // A_inventory_fnc_get_max_stock
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_item);
@@ -15,6 +14,6 @@ _shopinv = _shoparr select 4;
 _itemnum = [_item, _shopinv] call A_inventory_fnc_get_shop_item_number;
 
 if (!(typeName _shopnum == "SCALAR" && typename _itemnum == "SCALAR")) exitWith {-1};
-if(typename (INV_ItemMaxStocks select _shopnum) != "ARRAY") exitWith {-1};
+if(typename (A_inv_var_ItemMaxStocks select _shopnum) != "ARRAY") exitWith {-1};
 
-((INV_ItemMaxStocks select _shopnum) select _itemnum)
+((A_inv_var_ItemMaxStocks select _shopnum) select _itemnum)

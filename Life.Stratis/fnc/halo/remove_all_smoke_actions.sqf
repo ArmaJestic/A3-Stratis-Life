@@ -5,7 +5,7 @@
 
 ARGV(0,_unit);
 _actions = [_unit, "halo_smoke_actions"] call A_object_fnc_getVariable;
-if (undefined(_actions)) exitWith {null};
+if (UNDEFINED(_actions)) exitWith {null};
 if (typeName _actions != "ARRAY") exitWith {null};
 
 {

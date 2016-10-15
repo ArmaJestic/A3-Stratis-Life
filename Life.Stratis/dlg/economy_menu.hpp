@@ -8,7 +8,7 @@ class economy_tax_menu {
 
 	name = "ECONOMY_TAX_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['ECONOMY_TAX_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['ECONOMY_TAX_MENU', _this select 0]";
 	
 	controls[] = {
 		economy_tax_menu_header,

@@ -1,11 +1,11 @@
 // A_gang_fnc_area_remove_actions
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-if (count A_gang_var_area_actions == 0) exitWith {null};
-ARGV(0,_player);
-if (!([_player] call A_player_fnc_human)) exitWith {null};
+if (count A_gang_var_area_actions == 0) exitWith {};
+params["_player"];
+if (!([_player] call A_player_fnc_human)) exitWith {};
 
 {
 	private["_action_id"];

@@ -4,6 +4,8 @@
 #include "..\..\includes\macro.h"
 
 
+diag_log format["A_camera_fnc_map_open: %1", _this];
+
 ARGV(0,_player);
 
 [_player, true] call A_camera_fnc_set_map_open;

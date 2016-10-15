@@ -1,6 +1,6 @@
 // A_retributions_fnc_compute_death_parameters
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_killer", "_near_driver", "_killer_name", "_victim_name", "_roadkill", "_is_driver_near", "_suicide"];
@@ -11,7 +11,7 @@ _killer_name = (name _killer);
 _victim_name = (name player);
 
 _roadkill = false;
-_is_driver_near = !(undefined(_near_driver));
+_is_driver_near = !(UNDEFINED(_near_driver));
 _suicide = (_killer_name == _victim_name);
 
 	
@@ -36,22 +36,22 @@ _victim_uid = getPlayerUID player;
 
 private["_result"];
 _result = [];
-_result set [A_retributions_var_dp_killer, _killer];
-_result set [A_retributions_var_dp_victim, player];
-_result set [A_retributions_var_dp_victim_side, _victim_side];
-_result set [A_retributions_var_dp_killer_side, _killer_side];
-_result set [A_retributions_var_dp_is_victim_armed,  _victim_armed];
-_result set [A_retributions_var_dp_victim_bounty, _victim_bounty];
-_result set [A_retributions_var_dp_is_victim_criminal, _victim_criminal];
-_result set [A_retributions_var_dp_is_teamkill, _teamkill];
-_result set [A_retributions_var_dp_justified, _justified];
-_result set [A_retributions_var_dp_is_suicide, _suicide];
-_result set [A_retributions_var_dp_victim_name, _victim_name];
-_result set [A_retributions_var_dp_killer_name, _killer_name];
-_result set [A_retributions_var_dp_is_roadkill, _roadkill];
-_result set [A_retributions_var_dp_enemies, _enemies];
-_result set [A_retributions_var_dp_killer_uid, _killer_uid];
-_result set [A_retributions_var_dp_victim_uid, _victim_uid];
+_result set [INDEX_DP_KILLER, _killer];
+_result set [INDEX_DP_VICTIM, player];
+_result set [INDEX_DP_VICTIM_SIDE, _victim_side];
+_result set [INDEX_DP_KILLER_SIDE, _killer_side];
+_result set [INDEX_DP_VICTIM_ARMED,  _victim_armed];
+_result set [INDEX_DP_VICTIM_BOUNTY, _victim_bounty];
+_result set [INDEX_DP_VICTIM_CRIMINAL, _victim_criminal];
+_result set [INDEX_DP_TEAMKILL, _teamkill];
+_result set [INDEX_DP_JUSTIFIED, _justified];
+_result set [INDEX_DP_SUICIDE, _suicide];
+_result set [INDEX_DP_VICTIM_NAME, _victim_name];
+_result set [INDEX_DP_KILLER_NAME, _killer_name];
+_result set [INDEX_DP_ROADKILL, _roadkill];
+_result set [INDEX_DP_ENEMIES, _enemies];
+_result set [INDEX_DP_KILLER_UID, _killer_uid];
+_result set [INDEX_DP_VICTIM_UID, _victim_uid];
 
 //player groupChat format["RES: %1", _result];
 

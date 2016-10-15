@@ -17,13 +17,13 @@ if (isNull(_left_click_target)) exitWith {false};
 if (A_camera_var_control_held) exitWith {	
 	private["_offset"];
 	_offset = [_left_click_target, "offset"] call A_object_fnc_getVariable;
-	if (undefined(_offset)) then {
+	if (UNDEFINED(_offset)) then {
 		_offset = _left_click_target modelToWorld [0,0,0];
 	};
 	
 	private["_heading"];
 	_heading = [_left_click_target, "heading"] call A_object_fnc_getVariable;
-	if (undefined(_heading)) then {
+	if (UNDEFINED(_heading)) then {
 		_heading = [(getDir _left_click_target),0,0];
 	};
 	
@@ -42,14 +42,14 @@ if (A_camera_var_control_held) exitWith {
 if (A_camera_var_lwin_held) exitWith {
 	private["_offset"];
 	_offset = [_left_click_target, "offset"] call A_object_fnc_getVariable;
-	if (undefined(_offset)) then {
+	if (UNDEFINED(_offset)) then {
 		_offset = _left_click_target modelToWorld [0,0,0];
 	};
 	
 	
 	private["_heading"];
 	_heading = [_left_click_target, "heading"] call A_object_fnc_getVariable;
-	if (undefined(_heading)) then {
+	if (UNDEFINED(_heading)) then {
 		_heading = [(getDir _left_click_target),0,0];
 	};
 	
@@ -69,13 +69,13 @@ if (A_camera_var_lwin_held) exitWith {
 if (A_camera_var_alt_held) exitWith {
 	private["_offset"];
 	_offset = [_left_click_target, "offset"] call A_object_fnc_getVariable;
-	if (undefined(_offset)) then {
+	if (UNDEFINED(_offset)) then {
 		_offset = _left_click_target modelToWorld [0,0,0];
 	};
 	
 	private["_heading"];
 	_heading = [_left_click_target, "heading"] call A_object_fnc_getVariable;
-	if (undefined(_heading)) then {
+	if (UNDEFINED(_heading)) then {
 		_heading = [(getDir _left_click_target),0,0];
 	};
 	
@@ -96,7 +96,7 @@ if (A_camera_var_alt_held) exitWith {
 if (A_camera_var_shift_held) exitWith {
 	private["_offset"];
 	_offset = [_left_click_target, "offset"] call A_object_fnc_getVariable;
-	if (undefined(_offset)) then {
+	if (UNDEFINED(_offset)) then {
 		_offset = _left_click_target modelToWorld [0,0,0];
 	};
 
@@ -108,7 +108,7 @@ if (A_camera_var_shift_held) exitWith {
 	
 	private["_heading"];
 	_heading = [_left_click_target, "heading"] call A_object_fnc_getVariable;
-	if (undefined(_heading)) then {
+	if (UNDEFINED(_heading)) then {
 		_heading = [(getDir _left_click_target),0,0];
 	};
 	
@@ -124,7 +124,7 @@ if (A_camera_var_shift_held) exitWith {
 if (_zc != 0) exitWith {
 	private["_offset"];
 	_offset = [_left_click_target, "offset"] call A_object_fnc_getVariable;
-	if (undefined(_offset)) then {
+	if (UNDEFINED(_offset)) then {
 		_offset = _left_click_target modelToWorld [0,0,0];
 		player groupChat format["Getting it!"];
 	};
@@ -137,7 +137,7 @@ if (_zc != 0) exitWith {
 	
 	private["_heading"];
 	_heading = [_left_click_target, "heading"] call A_object_fnc_getVariable;
-	if (undefined(_heading)) then {
+	if (UNDEFINED(_heading)) then {
 		_heading = [(getDir _left_click_target),0,0];
 	};
 	
@@ -157,7 +157,7 @@ if (A_camera_var_space_held) exitWIth {
 
 	private["_heading"];
 	_heading = [_left_click_target, "heading"] call A_object_fnc_getVariable;
-	if (undefined(_heading)) then {
+	if (UNDEFINED(_heading)) then {
 		_heading = [(getDir _left_click_target),0,0];
 	};
 	

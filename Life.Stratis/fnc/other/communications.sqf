@@ -18,7 +18,7 @@ BIS_MENU_GroupCommunication = [
 	//--- Name, context sensitive
 	["A_other_fnc_communications Menu",false],
 	//--- Item name, shortcut, -5 (do not change), expression, show, enable
-	["A_settings_fnc_settings", [], "", -5, [["expression", "[""Einstellungen""] call A_SCRIPT_SETTINGS;"]], "1", "1"],
+	["Settings", [], "", -5, [["expression", "[""Einstellungen""] call A_settings_fnc_settings;"]], "1", "1"],
 	["",[],"",-1,[],"0","0"],
 	["Say text #1", [2], "", -5, [["expression", "[RadioTextMsg_1, A_main_var_radiotextart_1] call A_misc_fnc_SayDirectSpeach;"]], "1", "1"],
 	["Say text #2", [3], "", -5, [["expression", "[RadioTextMsg_2, A_main_var_radiotextart_2] call A_misc_fnc_SayDirectSpeach;"]], "1", "1"],

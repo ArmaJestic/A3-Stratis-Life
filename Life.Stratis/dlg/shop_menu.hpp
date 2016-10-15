@@ -8,7 +8,7 @@ class shops_menu {
 		
 	name = "SHOPS_MENU";
 	onUnload = "call A_trunk_fnc_close;";
-	onLoad="uiNamespace setVariable ['SHOPS_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['SHOPS_MENU', _this select 0]";
 	
 	controls[] = {  
 					sell_show_all_items_label, sell_show_all_items_cbox,

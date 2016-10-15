@@ -1,6 +1,6 @@
 // A_player_fnc_count_vehicle
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -9,9 +9,9 @@ ARGV(2,_locked);
 ARGV(3,_mobile);
 
 if (!([_player] call A_player_fnc_human)) exitWith {0};
-if (undefined(_distance)) exitWith {0};
-if (undefined(_locked)) exitWith {0};
-if (undefined(_mobile)) exitWith {0};
+if (UNDEFINED(_distance)) exitWith {0};
+if (UNDEFINED(_locked)) exitWith {0};
+if (UNDEFINED(_mobile)) exitWith {0};
 if (typeName _distance != "SCALAR") exitWith {0};
 if (typeName _locked != "BOOL") exitWith {0};
 if (typeName _mobile != "BOOL") exitWith {0};

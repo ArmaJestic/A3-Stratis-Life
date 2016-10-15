@@ -8,7 +8,7 @@ ARGV(0,_object);
 ARGV(1,_amount);
 
 if (typeName _object != "OBJECT") exitWith {};
-if (undefined(_amount)) exitWith {};
+if (UNDEFINED(_amount)) exitWith {};
 
 private["_label_template"];
 _label_template = [_object, "label_template", ""] call A_object_fnc_getVariable;

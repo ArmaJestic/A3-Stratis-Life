@@ -1,6 +1,6 @@
 // A_inv_fnc_createfort
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 _this spawn {
@@ -9,14 +9,12 @@ _this spawn {
 	_class = _this select 1;
 	_kind = _this select 2;	
 	if (!(alive player)) exitWith {null};
-	liafu = true;
 	_vehicle = createVehicle [_class, (getPosATL _logic), [], 0, "NONE"];
 	
 	switch _kind do {
 		case "Static" do {
 			_vehicle_name = format["%1_%2_%3", _kind, player, round(time)];
-			//[[_vehicle, _vehicle_name], "A_inv_fnc_createfort_init_handler_persistent", true, true] spawn BIS_fnc_MP;
-			[[_vehicle, _vehicle_name], "A_inv_fnc_createfort_init_handler_persistent", true, true, _vehicle] spawn A_jip_fnc_register;
+			[[_vehicle, _vehicle_name], "A_inv_fnc_createfort_init_handler_persistent", _vehicle] spawn A_jip_fnc_register;
 			waitUntil {!(isNil _vehicle_name)};
 			[[_vehicle], "A_inv_fnc_createfort_init_handler", true, false] spawn BIS_fnc_MP;
 		};

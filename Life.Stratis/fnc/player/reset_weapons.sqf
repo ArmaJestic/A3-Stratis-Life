@@ -1,18 +1,14 @@
 // A_player_fnc_reset_weapons
+// removes weapon/magazines from unit
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 if (!([_player] call A_player_fnc_exists)) exitWith {null};
 
+// remove weapons
 removeAllWeapons _player;
-{player removeMagazine _x} forEach (magazines _player);
 
-//remove the weapons from the player's backpack as well
-private["_backpack"];
-_backpack = unitBackpack _player;
-if (!(undefined(_backpack))) then {
-	clearMagazineCargoGlobal _backpack;
-	clearWeaponCargoGlobal _backpack;
-};
+// remove magazines
+{player removeMagazine _x} forEach (magazines _player);

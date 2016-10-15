@@ -1,0 +1,9 @@
+#define INDEX_OBJECT 0
+#define INDEX_ID 1
+#define INDEX_NAME 2
+#define INDEX_CRATE 3
+#define INDEX_SPAWN 4
+#define INDEX_ITEMS 5
+#define INDEX_COST 6
+#define INDEX_STORAGE 7
+#define INDEX_QUEUE 8

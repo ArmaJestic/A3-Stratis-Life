@@ -1,11 +1,13 @@
 // A_misc_fnc_format_integer
 
+#include "..\..\includes\macro.h"
+
 private["_value", "_nan", "_separator"];
 _nan = "NotANumber"; 
 _value = _this select 0;
 _separator = _this select 1;
 
-if (undefined(_value)) exitWith {_nan};
+if (UNDEFINED(_value)) exitWith {_nan};
 if (typeName _value != "SCALAR") exitWith {_nan};
 
 if (_value == 0) exitWith {"0"};

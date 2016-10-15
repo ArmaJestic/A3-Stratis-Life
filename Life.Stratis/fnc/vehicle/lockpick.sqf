@@ -1,6 +1,6 @@
 // A_vehicle_fnc_lockpick
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_item"];
@@ -8,7 +8,7 @@ ARGV(0,_item);
 _incarpark = false;
 _vehicle  = [10] call A_inv_fnc_locateclosestvehicle;
 		
-if (undefined(_vehicle)) exitWith {
+if (UNDEFINED(_vehicle)) exitWith {
 	player groupChat "No vehicle close enough";
 };
 		

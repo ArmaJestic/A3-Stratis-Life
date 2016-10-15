@@ -9,9 +9,9 @@ ARGV(1,_item);
 ARGV(2,_amount);
 ARGV(3,_data);
 
-if (undefined(_object)) exitWith {null};
-if (undefined(_item)) exitWith {null};
-if (undefined(_amount)) exitWith {null};
+if (UNDEFINED(_object)) exitWith {null};
+if (UNDEFINED(_item)) exitWith {null};
+if (UNDEFINED(_amount)) exitWith {null};
 if (typeName _object != "OBJECT") exitWith {null};
 if (typeName _item != "STRING") exitWith {null};
 if (typeName _amount != "SCALAR") exitWith {null};
@@ -30,6 +30,6 @@ _icon = [_item, _class, _type] call A_object_fnc_icon;
 [_object, "type", _type, true] call A_object_fnc_setVariable;
 [_object, _amount] call A_object_fnc_item_update_amount;
 
-if (!(undefined(_data))) then {
+if (!(UNDEFINED(_data))) then {
 	[_object, "data", _data, true] call A_object_fnc_setVariable;
 };

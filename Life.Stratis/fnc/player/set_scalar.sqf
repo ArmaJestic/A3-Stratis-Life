@@ -1,15 +1,15 @@
 // A_player_fnc_set_scalar
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_variable_name);
 ARGV(2,_variable_value);
 
-if (undefined(_player)) exitWith {null};
-if (undefined(_variable_name)) exitWith {null};
-    if (undefined(_variable_value)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
+if (UNDEFINED(_variable_name)) exitWith {null};
+    if (UNDEFINED(_variable_value)) exitWith {null};
 
 if (typeName _variable_name != "STRING") exitWith {null};
 if (typeName _variable_value != "SCALAR") exitWith {null};

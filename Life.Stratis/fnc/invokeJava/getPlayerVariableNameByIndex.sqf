@@ -1,15 +1,14 @@
 // A_invokeJava_fnc_getPlayerVariableNameByIndex
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h" 
+#include "header.h"
 
 private["_uid", "_index"];
 	
 _uid = _this select 0;
 _index = _this select 1;
 	
-if (undefined(_uid)) exitWith{-1};
-if (undefined(_index)) exitWith {-1};
+if (UNDEFINED(_uid)) exitWith{-1};
+if (UNDEFINED(_index)) exitWith {-1};
 if (typeName _uid != "STRING") exitWith {-1};
 if (typeName _index != "SCALAR") exitWith {-1};
 

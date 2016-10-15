@@ -3,9 +3,7 @@
 #include "..\..\includes\macro.h"
 
 
-//player groupChat format["A_client_fnc_check_gear %1", _this];
-private["_player"];
-_player = player;
+private _player = player;
 if (!(alive _player)) exitWith {null};
 
 private["_gear"];

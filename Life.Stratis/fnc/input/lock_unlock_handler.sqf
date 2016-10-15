@@ -5,7 +5,7 @@
 
 
 player groupChat format["A_input_fnc_lock_unlock_handler %1", _this];
-if(!(INV_shortcuts)) exitWith { false };
+if(!(A_inv_var_shortcuts)) exitWith { false };
 private["_vehicles"];
 _vehicles = nearestObjects [player, ["LandVehicle", "Air", "ship"], 10];
 if (!((count _vehicles ) > 0)) exitWith {false};

@@ -4,9 +4,9 @@
 #include "..\..\includes\dikcodes.h"
 
 
-if(!INV_shortcuts) exitWith {false};
+if(!A_inv_var_shortcuts) exitWith {false};
 private["_isDriver"];
 _isDriver = (driver(vehicle player) == player);
 if (!(_isDriver)) exitWith { false };
-[0,0,0,["activate"]] execVM "A_other_fnc_siren.sqf";
+[0,0,0,["activate"]] spawn A_other_fnc_siren;
 true

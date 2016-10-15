@@ -1,15 +1,13 @@
 // A_interaction_fnc_pay_bail
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_bail);
 
-if (undefined(_player)) exitWith {null};	
-if (undefined(_bail)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};	
+if (UNDEFINED(_bail)) exitWith {null};
 
 _bail = [_bail] call A_misc_fnc_parse_number;
 if (_bail <= 0) exitWith {null};

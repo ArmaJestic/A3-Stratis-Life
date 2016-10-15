@@ -31,5 +31,5 @@ switch _item do {
 	};
 };
 
-format[ "[%1, ""%2"", %3, ""%4"", ""%5"", %6] call A_bombs_fnc_add;", player, _id, _vcl, _item, "planted", _settings] call A_broadcast_fnc_broadcast;
+format["[%1, ""%2"", %3, ""%4"", ""%5"", %6] call A_bombs_fnc_add;", player, _id, _vcl, _item, "planted", _settings] call A_broadcast_fnc_broadcast;
 [player, _item, (-1)] call A_inventory_fnc_add_item;

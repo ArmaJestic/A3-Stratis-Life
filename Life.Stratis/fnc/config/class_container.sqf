@@ -5,7 +5,7 @@
 
 //player groupChat format["A_config_fnc_class_container %1", _this];
 ARGV(0,_container_id);
-if (undefined(_container_id)) exitWith {false};
+if (UNDEFINED(_container_id)) exitWith {false};
 if (typeName _container_id != "STRING") exitWith {false};
 
 private["_parent"];

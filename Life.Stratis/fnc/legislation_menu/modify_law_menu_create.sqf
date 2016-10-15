@@ -1,14 +1,14 @@
 // A_legislation_menu_fnc_modify_law_menu_create
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_player);
 ARGV(1,_law_index);
 
 if (!([_player] call A_player_fnc_exists)) exitWith {};
-if (undefined(_law_index)) exitWith {};
+if (UNDEFINED(_law_index)) exitWith {};
 if (typeName _law_index != "SCALAR") exitWith {};
 if (_law_index >= (count legislation_laws)) exitWith {};
 

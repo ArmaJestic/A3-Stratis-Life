@@ -1,13 +1,11 @@
-// A_invokeJava_fnc_getPlayerVariableCount
+// A_invokeJava_fnc_getPlayerVariablesCount
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h" 
+#include "header.h"
 
-private["_uid"];
+
+private _uid = _this select 0;
+if (UNDEFINED(_uid)) exitWith{diag_log format['A_invokeJava_fnc_getPlayerVariablesCount %1: exit1', _this]; -1};
 	
-_uid = _this select 0;
-if (undefined(_uid)) exitWith{-1};
-	
-private["_result"];
-_result = ["getPlayerVariablesCount", _uid] call A_invokeJava_fnc_method;
+private _result = ["getPlayerVariablesCount", _uid] call A_invokeJava_fnc_method;
+
 ([_result] call A_invokeJava_fnc_parseResult)

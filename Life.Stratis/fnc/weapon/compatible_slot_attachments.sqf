@@ -1,16 +1,15 @@
 // A_weapon_fnc_compatible_slot_attachments
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
+#include "header.h"
 
 
 ARGV(0,_weapon_id);
 ARGV(1,_slot);
-if (undefined(_weapon_id)) exitWith {[]};
+if (UNDEFINED(_weapon_id)) exitWith {[]};
 if (typeName "_weapon_id" != "STRING") exitWith {[]};
 if (_weapon_id == "") exitWith {null};
 
-if (undefined(_slot)) exitWith {[]};
+if (UNDEFINED(_slot)) exitWith {[]};
 if (typeName _slot != "STRING") exitWith {[]};
 if (!(_slot in ["CowsSlot", "MuzzleSlot", "PointerSlot"])) exitWith {[]};
 

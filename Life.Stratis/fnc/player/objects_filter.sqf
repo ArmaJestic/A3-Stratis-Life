@@ -1,6 +1,6 @@
 // A_player_fnc_objects_filter
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_target);
@@ -8,7 +8,7 @@ ARGV(1,_objects);
 ARGV(2,_filter_function);
 
 if (typeName _objects != "ARRAY") exitWith {[]};
-if (undefined(_filter_function)) exitWith {[]};
+if (UNDEFINED(_filter_function)) exitWith {[]};
 if (typeName _filter_function != "CODE") exitWith {[]};
 
 private["_result"];

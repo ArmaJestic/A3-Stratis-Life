@@ -1,9 +1,14 @@
 #define QUOTE(X) #X
-#define strM(x) ([x, ","] call format_integer)
-#define strN(x) ([x, ""] call format_integer)
 
-#define defined(x) (!(isNil #x) && {!(x call null__)})
-#define undefined(x) (isNil #x || {x call null__})
+#define DOUBLES(X,Y) ##X##_##Y
+#define TRIPLES(X,Y,Z) ##X##_##Y##_##Z
+
+#define strM(x) ([x, ","] call A_misc_fnc_format_integer)
+#define strN(x) ([x, ""] call A_misc_fnc_format_integer)
+
+#define UNDEFINED(X) ((isNil #X) || {X isEqualTo null})
+#define DEFINED(X) !UNDEFINED(X)
+
 #define ARGVD(o,v,d) private[#v]; if (isNil "_this" || {(typeName _this != "ARRAY") || {(o >= (count _this)) || {v = _this select o; isNil #v}}}) then {v = d};
 #define ARGV(o,v) ARGVD(o,v,null)
 
@@ -32,28 +37,12 @@
 
 #define NORMALIZE_ANGLE(a) ((360 + a % 360)) % 360
 
+// to be removed
 // For logging
 // Always log
-#define LOGE(F, S) QUOTE(F: S) call A_err_fnc_log;
+#define LOGE(F,S) format["%1: %2", QUOTE(F), S] call A_err_fnc_log;
+#define LOGES(F) LOGE(F,"")
+#define LOGE_EP(F) LOGE(F,"error, params")
 // Log if logging enabled
-#define LOGED(F,S) QUOTE(F: S) call A_err_fnc_logd;
-#define LOGE_EP(F) LOGE(A_other_fnc_noscript, QUOTE(error, params))
-// Used for detecting/exiting/logging from a params error
-#define EXT_ERR(E, F) if (!E) exitwith {LOGE(F, QUOTE(error, params))};
-#define PARAMA_EXIT(F, P, A) EXT_ERR(A params P, F)
-#define PARAM_EXIT(F, P) PARAMA_EXIT(F, P, _this)
-// for exiting if value is null
-// with log
-#define UNDEF_EXIT(F, X) if (undefined(X)) exitwith {LOGE(F, error: undefined received (QUOTE(X))};
-// with logd
-#define UNDEF_EXITD(F, X) if (undefined(X)) exitwith {LOGED(F, error: undefined received (QUOTE(X))};
-// todo: make a variant that calls a function to check all params for undefined
-
-// running init1/init2
-#define RIC(X) [] call X;
-//#define RI1(X) R(##A_##X##_fnc_init1)
-//#define RI2(X) R(##A_##X##_fnc_init2)
-#define RCC(X,Y) A_##X##_fnc_init##Y
-#define RI1(X) RIC(RCC(X,1))
-#define RI2(X) RIC(RCC(X,2))
-#define RIB(X) RI1(X) RI2(X)
+#define LOGED(F,S) format["%1: %2", QUOTE(F), S] call A_err_fnc_logd;
+#define LOGEDS(F) LOGED(F,"")

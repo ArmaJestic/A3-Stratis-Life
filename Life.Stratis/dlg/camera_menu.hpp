@@ -6,7 +6,7 @@ class camera_menu {
 	
 	name = "CAMERA_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['CAMERA_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['CAMERA_MENU', _this select 0]";
 	
 	controlsBackground[] = {
 		camera_menu_background

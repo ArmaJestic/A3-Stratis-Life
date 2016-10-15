@@ -10,7 +10,7 @@ if (!([_player] call A_player_fnc_exists)) exitWith {};
 
 private["_camera"];
 _camera = [_player, "camera"] call A_object_fnc_getVariable;
-if (undefined(_camera)) exitWith {};
+if (UNDEFINED(_camera)) exitWith {};
 
 [_player, "camera", null] call A_object_fnc_setVariable;
 [_player] call A_camera_fnc_map_close;

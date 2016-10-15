@@ -1,6 +1,6 @@
 // A_vehicle_fnc_tuning_handler
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 if (!(A_input_var_w_key_down || A_input_var_s_key_down)) exitWith {};
@@ -21,7 +21,7 @@ if (_altitude > 0.2) exitWith {};
 
 private["_tuning", "_nitro"];
 _tuning = _vehicle getVariable ["tuning", 0];
-_A_item_fnc_nitro = _vehicle getVariable ["A_item_fnc_nitro", 0];
+_nitro = _vehicle getVariable ["nitro", 0];
 
 
 

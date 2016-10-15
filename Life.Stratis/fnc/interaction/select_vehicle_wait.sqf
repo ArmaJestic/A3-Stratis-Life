@@ -1,8 +1,6 @@
 // A_interaction_fnc_select_vehicle_wait
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_select_vehicle_wait %1", _this];
@@ -11,13 +9,13 @@ ARGV(0,_vehicle_names_list);
 
 private["_dialog"];
 
-if (undefined(_vehicle_names_list)) exitWith {null};
+if (UNDEFINED(_vehicle_names_list)) exitWith {null};
 if (typeName _vehicle_names_list != "ARRAY") exitWith {null};
 
 private["_controls", "_list", "_submit"];
 _controls = [toUpper("Owned Vehicles"), 0.14, 0.14, 0.55, 0.45] call A_list_simple_menu_fnc_setup;
-_list = _controls select A_list_simple_menu_var_list;
-_submit = _controls select A_list_simple_menu_var_submit;
+_list = _controls select DLG_LIST_SIMPLE_INDEX_LIST;
+_submit = _controls select DLG_LIST_SIMPLE_INDEX_SUBMIT;
 
 _submit ctrlSetText "Select";
 
@@ -46,7 +44,7 @@ while { _i < count(_vehicle_names_list) } do {
 	}else{ if (["impound_lot", _vehicle_name] call A_vehicle_storage_fnc_contains) then {
 		private["_impund_data", "_class"];
 		_impound_data = ["impound_lot", _vehicle_name] call A_vehicle_storage_fnc_get;
-		_class = _impound_data select A_vehicle_storage_var_data_entry_class;
+		_class = _impound_data select VEH_STR_INDEX_DATA_CLASS;
 		_name = getText(configFile >> "CfgVehicles" >> _class >> "displayName");
 		_picture = [_class] call A_misc_fnc_generic_picture_path;
 		_info = format["(%1 - impounded)", _name];

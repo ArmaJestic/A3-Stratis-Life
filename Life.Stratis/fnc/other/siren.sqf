@@ -12,7 +12,7 @@ _shortDur     = 0.72;
 _longDur      = 4.87;
 
 if (_art == "activate") then {
-	if (undefined( SIREN_SirenePlaying)) then {
+	if (UNDEFINED( SIREN_SirenePlaying)) then {
 		SIREN_SirenePlaying = false;
 	};
 
@@ -23,18 +23,18 @@ if (_art == "activate") then {
 
 	private["_siren_on"];
 	_siren_on = missionNamespace getVariable (format["%1_Sirene_on", _vcl]);
-	if (undefined(_siren_on) || {!(_siren_on)}) then {
+	if (UNDEFINED(_siren_on) || {!(_siren_on)}) then {
 		_turnOn = true;
 	}else{
 		_turnOn = false;
 	};
 
 	if (_turnOn) then {
-		format ["[0,0,0,[""client"", %1]] execVM ""A_other_fnc_siren.sqf"";", player] call A_broadcast_fnc_broadcast;
-		titletext["A_other_fnc_siren on", "PLAIN DOWN"];
+		format ["[0,0,0,[""client"", %1]] spawn A_other_fnc_siren;", player] call A_broadcast_fnc_broadcast;
+		cutText["siren on","PLAIN DOWN"];
 	}else{
 		call compile format["%1_Sirene_on = false; publicVariable ""%1_Sirene_on"";", _vcl];
-		titletext["A_other_fnc_siren off", "PLAIN DOWN"];
+		cutText["siren off","PLAIN DOWN"];
 	};
 
 	sleep 1;
@@ -48,7 +48,6 @@ if (_art == "client") then {
 	_starttime   = time;
 
 	call compile format["%1_Sirene_on = true;", _vcl];
-	liafu = true;
 	_light1 = "#lightpoint" createVehicleLocal (getpos _vcl);
 	_light1 setLightBrightness _lichtstaerke;
 	_light1 setLightAmbient   [0, 0, 0.3];
@@ -59,7 +58,7 @@ if (_art == "client") then {
 	_light2 setLightAmbient   [0.3, 0, 0];
 	_light2 setLightColor     [0.5, 0, 0];
 
-	_lichtscript = [0,1,2,["licht", _vcl, [_light1, _light2]]] execVM "A_other_fnc_siren.sqf";
+	_lichtscript = [0,1,2,["licht", _vcl, [_light1, _light2]]] spawn A_other_fnc_siren;
 
 	while {( ((time < _starttime+_playtime) or (_driver == driver _vcl)) and (alive _vcl) and (call compile format["%1_Sirene_on", _vcl]))} do {
 		if (player distance _vcl < 500) then {

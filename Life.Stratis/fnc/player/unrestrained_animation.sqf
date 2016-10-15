@@ -1,6 +1,6 @@
 // A_player_fnc_unrestrained_animation
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 player groupChat format["A_player_fnc_unrestrained_animation %1", _this];

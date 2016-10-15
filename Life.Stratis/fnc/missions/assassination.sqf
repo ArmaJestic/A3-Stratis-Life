@@ -8,7 +8,7 @@ _secondcounter = 0;
 _minutecounter = 0;
 _art = (_this select 3) select 0;
 
-if (undefined(workplacejob_assassin_serverarray)) then {
+if (UNDEFINED(workplacejob_assassin_serverarray)) then {
 	workplacejob_assassin_serverarray = []
 };
 
@@ -78,7 +78,7 @@ if (_art == "getajob_assassin") then {
 	VIPtarget addmagazine "30Rnd_9x21_Mag";
 	VIPtarget addmagazine "30Rnd_9x21_Mag";
 
-	processInitCommands;
+	//processInitCommands;
 
 	// make viptargets car
 	assveh = createVehicle ["c_offroad", _pos, [] , 3, "NONE"];
@@ -93,7 +93,7 @@ if (_art == "getajob_assassin") then {
 	*/
 	
 	publicvariable "assveh";
-	processInitCommands;
+	//processInitCommands;
 	
 	// put vip inside the car
 	if (!(VIPtarget in assveh) and (alive VIPtarget)) then{
@@ -135,7 +135,7 @@ if (_art == "getajob_assassin") then {
 			};
 		*/
 		
-		"if(alive player and isciv and player distance assveh <= 150)then{titleText [""The Government is operating in this area! Turn back or you will be shot!"", ""plain down""]};" call A_broadcast_fnc_broadcast;
+		"if(alive player and isciv and player distance assveh <= 150)then{cutText[""The Government is operating in this area! Turn back or you will be shot!"",""plain down""]};" call A_broadcast_fnc_broadcast;
 		"targetmarker" setmarkerpos getpos VIPtarget;
 		if (_secondcounter >= 15) then {
 			_group setBehaviour "AWARE";

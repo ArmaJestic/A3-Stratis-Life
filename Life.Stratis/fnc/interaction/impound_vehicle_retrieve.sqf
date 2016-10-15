@@ -1,8 +1,6 @@
 // A_interaction_fnc_impound_vehicle_retrieve
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_interaction_fnc_impound_vehicle_retrieve %1", _this];
@@ -10,8 +8,8 @@ ARGV(0,_player);
 ARGV(1,_logic);
 ARGV(2,_vehicle_name);
 if (!([_player] call A_player_fnc_human)) exitWith {null};
-if (undefined(_logic)) exitWith {null};
-if (undefined(_vehicle_name)) exitWith {null};
+if (UNDEFINED(_logic)) exitWith {null};
+if (UNDEFINED(_vehicle_name)) exitWith {null};
 if (typeName _vehicle_name != "STRING") exitWith {null};
 
 //check that the impound spawn is clear
@@ -44,12 +42,12 @@ if (!([_storage, _vehicle_name] call A_vehicle_storage_fnc_contains)) exitWith {
 
 private["_vehicle_entry"];
 _vehicle_entry = [_storage, _vehicle_name] call A_vehicle_storage_fnc_get;
-if (undefined(_vehicle_entry)) exitWith {
+if (UNDEFINED(_vehicle_entry)) exitWith {
 	player groupChat format["ERROR: THe vehicle '%1' could not be retrived form the impound lot", _vehicle_name];
 };
 
 private["_vehicle_class"];
-_vehicle_class = _vehicle_entry select A_vehicle_storage_var_data_entry_class;
+_vehicle_class = _vehicle_entry select VEH_STR_INDEX_DATA_CLASS;
 
 private["_vehicle"];
 _vehicle = [_vehicle_name, _vehicle_class] call A_vehicle_fnc_recreate;

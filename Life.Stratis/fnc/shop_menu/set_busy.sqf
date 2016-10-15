@@ -1,12 +1,11 @@
 // A_shop_menu_fnc_set_busy
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 _this spawn {
 	ARGV(0,_timeout);
-	_timeout = if(undefined(_timeout)) then { 0 } else {_timeout};
+	_timeout = if(UNDEFINED(_timeout)) then { 0 } else {_timeout};
 	_timeout = if (typeName _timeout != "SCALAR") then { 0 } else { _timeout };
 	if (A_shop_menu_var_busy) exitWith {null};
 	A_shop_menu_var_busy = true;

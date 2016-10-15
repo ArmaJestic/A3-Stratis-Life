@@ -1,23 +1,23 @@
 // A_storage_menu_fnc_menu_factory_storage
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 //player groupChat format["A_storage_menu_fnc_menu_factory_storage %1", _this];
 ARGV(0,_player);
 ARGV(1,_factory_storage_name);
 if (!([_player] call A_player_fnc_exists)) exitWith {null};
-if (undefined(_factory_storage_name)) exitWith {null};
+if (UNDEFINED(_factory_storage_name)) exitWith {null};
 if (typeName _factory_storage_name != "STRING") exitWith {null};
 
 private["_factory"];
 _factory = [_factory_storage_name] call A_factory_fnc_lookup_storage;
 
-if(undefined(_factory)) exitWith{null};
+if(UNDEFINED(_factory)) exitWith{null};
 
 private["_factory_name"];
-_factory_name = _factory select factory_name;
+_factory_name = _factory select INDEX_NAME;
 
 private["_left_title", "_right_title"];
 _left_title =  format["%1 Storage", _factory_name];

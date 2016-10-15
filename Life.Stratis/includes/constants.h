@@ -1,6 +1,19 @@
+// constants used from other function sets
+#include "..\fnc\bank\constants.h"
+#include "..\fnc\economy_menu\constants.h"
+#include "..\fnc\gang\constants.h"
+#include "..\fnc\interaction\constants.h"
+#include "..\fnc\inv\constants.h"
+#include "..\fnc\license\constants.h"
+#include "..\fnc\list_simple_menu\constants.h"
+#include "..\fnc\lotto_menu\constants.h"
+#include "..\fnc\mine\constants.h"
+#include "..\fnc\prison_menu\constants.h"
+#include "..\fnc\quicksort\constants.h"
+#include "..\fnc\vehicle_storage\constants.h"
+
+// todo: move to their own constants files, then have an include here
 // Constants for various function sets
-
-
 #define factory_dialog_idd 801
 #define factory_left_background_idc 802
 #define factory_left_header_idc 803

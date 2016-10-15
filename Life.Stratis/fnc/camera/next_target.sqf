@@ -9,7 +9,7 @@ ARGV(1,_target);
 
 private["_units"];
 _units = playableUnits;
-_target = if (undefined(_target)) then {_units select 0} else {_target};
+_target = if (UNDEFINED(_target)) then {_units select 0} else {_target};
 
 private["_index"];
 _index = _units find _target;

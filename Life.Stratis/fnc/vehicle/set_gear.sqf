@@ -1,22 +1,21 @@
 // A_vehicle_fnc_set_gear
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-//player groupChat format["A_vehicle_fnc_set_gear %1", _this];
 ARGV(0,_vehicle);
 ARGV(1,_gear);
 if (!([_vehicle] call A_vehicle_fnc_exists)) exitWith {null};
-if (undefined(_gear)) exitWith {null};
+if (UNDEFINED(_gear)) exitWith {null};
 if (typeName _gear != "ARRAY") exitWith {null};
 
 private["_weapons_cargo", "_magazines_cargo"];	
 
-_weapons_cargo = _gear select A_vehicle_var_gear_weapons_cargo;
-_magazines_cargo = _gear select A_vehicle_var_gear_magazines_cargo;
+_weapons_cargo = _gear select INDEX_GEAR_CARGO_WEAPONS;
+_magazines_cargo = _gear select INDEX_GEAR_CARGO_MAGAZINES;
 
-if (undefined(_weapons_cargo)) exitWith {null};
-if (undefined(_magazines_cargo)) exitWith {null};
+if (UNDEFINED(_weapons_cargo)) exitWith {null};
+if (UNDEFINED(_magazines_cargo)) exitWith {null};
 
 if (typeName _weapons_cargo != "ARRAY") exitWith {null};
 if (typename _magazines_cargo != "ARRAY") exitWith {null};

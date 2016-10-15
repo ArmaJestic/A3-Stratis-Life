@@ -1,27 +1,18 @@
 // A_broadcast_fnc_setup
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-private["_player_number", "_player_count"];
+params[["_player_number",null,[0]],["_player_count",null,[0]]];
 
-_player_number = _this select 0;
-_player_count = _this select 1;
+if (UNDEFINED(_player_number)) exitWith {null};
+if (UNDEFINED(_player_count)) exitWith {null};
 
-if (undefined(_player_number)) exitWith {null};
-if (undefined(_player_count)) exitWith {null};
-if (typeName _player_number != "SCALAR") exitWith {null};
-if (typeName _player_count != "SCALAR") exitWith {null};
-
-
-player_broadcast_buffer = [_player_number] call A_broadcast_fnc_make_key;
-
-private["_i"];
-_i = 0;
-while { _i < _player_count } do {
-	private["_variable_name"];
-	_variable_name = [_i] call A_broadcast_fnc_make_key;
-	missionNamespace setVariable [_variable_name, ""];
-	_variable_name addPublicVariableEventHandler { _this call A_broadcast_fnc_receive;};
-	_i = _i + 1;
+for "_i" from 0 to _player_count do {
+	private _variable_name = [_i] call A_broadcast_fnc_make_key;
+	if (_i == _player_number) then {
+		player_broadcast_buffer = _variable_name;
+	};
+	missionNamespace setVariable[_variable_name, ""];
+	_variable_name addPublicVariableEventHandler A_broadcast_fnc_receive;
 };

@@ -1,6 +1,6 @@
 // A_player_fnc_near_side
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
@@ -9,9 +9,9 @@ ARGV(2,_distance);
 
 if (!([_player] call A_player_fnc_human)) exitWith {0};
 
-if (undefined(_side)) exitWith {0};
+if (UNDEFINED(_side)) exitWith {0};
 if (typeName _side != "SIDE") exitWith {0};
-if (undefined(_distance)) exitWith {0};
+if (UNDEFINED(_distance)) exitWith {0};
 if (typeName _distance != "SCALAR") exitWith {0};
 
 

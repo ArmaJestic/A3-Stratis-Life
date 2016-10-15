@@ -9,7 +9,7 @@ ARGV(1,_heading);
 
 private["_camera"];
 _camera = [_player, "camera"] call A_object_fnc_getVariable;
-if (undefined(_camera)) exitWith {null};
+if (UNDEFINED(_camera)) exitWith {null};
 
 //player groupChat format["_heading_before = %1", _heading];	
 [_player, _heading] call A_camera_fnc_save_heading;
@@ -20,5 +20,5 @@ private["_vectors"];
 _vectors = [_heading] call A_camera_fnc_heading2vectors;
 _camera setVectorDirAndUp _vectors;
 
-if (undefined(camera_rabbit)) exitWith {};
+if (UNDEFINED(camera_rabbit)) exitWith {};
 camera_rabbit attachTo [_camera, [0,0,0]];

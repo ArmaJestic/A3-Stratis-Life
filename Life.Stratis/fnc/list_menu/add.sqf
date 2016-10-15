@@ -7,7 +7,7 @@
 //player groupChat format["A_list_menu_fnc_add %1", _this];
 ARGV(0,_list_id);
 
-if (undefined(_list_id)) exitWith {null};
+if (UNDEFINED(_list_id)) exitWith {null};
 if (typeName _list_id != "STRING") exitWith {null};
 
 

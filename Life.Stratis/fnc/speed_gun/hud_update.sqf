@@ -1,12 +1,12 @@
 // A_speed_gun_fnc_hud_update
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 disableSerialization;
 ARGV(0,_value);
-if (undefined(_value)) exitWith {};
+if (UNDEFINED(_value)) exitWith {};
 if (typeName _value != "SCALAR") exitWith {};
 
 _value = round(_value);

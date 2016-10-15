@@ -1,6 +1,6 @@
 // A_vehicle_fnc_reset_gear
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_vehicle_fnc_reset_gear %1", _this];

@@ -10,8 +10,8 @@ ARGV(1,_distance);
 private["_default"];
 _default = [];
 
-if (undefined(_position)) exitWith {_default};
-if (undefined(_distance)) exitWith {_default};
+if (UNDEFINED(_position)) exitWith {_default};
+if (UNDEFINED(_distance)) exitWith {_default};
 if (typeName _position != "ARRAY") exitWith {_default};
 if (typeName _distance != "SCALAR") exitWith {_default};
 

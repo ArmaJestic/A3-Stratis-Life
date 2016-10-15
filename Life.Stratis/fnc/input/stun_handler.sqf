@@ -4,6 +4,6 @@
 #include "..\..\includes\dikcodes.h"
 
 
-if(!INV_shortcuts) exitWith {false};
+if(!A_inv_var_shortcuts) exitWith {false};
 [player] call A_stun_fnc_close_range;
 true

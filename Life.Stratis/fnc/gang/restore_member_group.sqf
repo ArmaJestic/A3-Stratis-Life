@@ -1,13 +1,13 @@
 // A_gang_fnc_restore_member_group
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_member_uid);
 
 private["_member"];
 _member = [_member_uid] call A_player_fnc_lookup_gang_uid;
-if (undefined(_member)) exitWith {null};
+if (UNDEFINED(_member)) exitWith {null};
 
 private["_side"];
 _side = [_member] call A_player_fnc_side;

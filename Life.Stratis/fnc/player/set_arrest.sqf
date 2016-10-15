@@ -1,13 +1,13 @@
 // A_player_fnc_set_arrest
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player);
 ARGV(1,_arrest);
 
-if (undefined(_player)) exitWith {null};
-if (undefined(_arrest)) exitWith {null};
+if (UNDEFINED(_player)) exitWith {null};
+if (UNDEFINED(_arrest)) exitWith {null};
 
 if (typeName _arrest != "BOOL") exitWith {null};
 

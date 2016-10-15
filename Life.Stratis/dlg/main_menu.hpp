@@ -41,7 +41,7 @@ class main_menu {
 
 	name = "MAIN_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['MAIN_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['MAIN_MENU', _this select 0]";
 
 	class main_menu_header : RscMenuTitle {
 		idc = main_menu_header_idc;
@@ -91,7 +91,7 @@ class main_menu_right {
 
 	name = "MAIN_MENU_RIGHT";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['MAIN_MENU_RIGHT', _this select 0]";
+	onLoad="uiNamespace setVariable['MAIN_MENU_RIGHT', _this select 0]";
 
 	class main_menu_right_header : RscMenuTitle {
 		idc = main_menu_right_header_idc;

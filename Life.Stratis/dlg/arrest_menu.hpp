@@ -8,7 +8,7 @@ class arrest_menu {
 
 	name = "ARREST_MENU";
 	onUnload = "";
-	onLoad="uiNamespace setVariable ['ARREST_MENU', _this select 0]";
+	onLoad="uiNamespace setVariable['ARREST_MENU', _this select 0]";
 	
 	controls[] = {
 		arrest_menu_header,

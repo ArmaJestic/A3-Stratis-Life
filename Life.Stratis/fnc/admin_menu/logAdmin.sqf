@@ -4,12 +4,10 @@
 #include "..\..\includes\constants.h"
 
 
-ARGV(0,_text);
-if (undefined(_text)) exitWith {null};
-if (typeName _text != "STRING") exitWith {null};
+params[["_text",null,[""]]];
+if (UNDEFINED(_text)) exitWith {null};
 
-private["_player"];
-_player = player;
+private _player = player;
 
-_text = (format["ADMIN (%1, %2): ", (name _player), (getPlayerUID _player)] + _text + toString [13,10]);
-[_text] call A_invokeJava_fnc_logThis;
+_text = (format["ADMIN (%1, %2): ", (name _player), (getPlayerUID _player)] + _text + toString[13,10]);
+_text call A_log_fnc_log;

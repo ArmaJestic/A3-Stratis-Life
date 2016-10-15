@@ -1,11 +1,11 @@
 // A_inv_fnc_locateclosestvehicle
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 private["_i", "_list", "_vehicle", "_distance"];
 _distance = _this select 0;
-if (undefined(_distance)) exitWith {null};
+if (UNDEFINED(_distance)) exitWith {null};
 if (typeName _distance != "SCALAR") exitWith {null};
 
 _list = nearestObjects [player, ["LandVehicle", "Air"], _distance];

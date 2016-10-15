@@ -1,10 +1,10 @@
 // A_player_fnc_lookup_gang_uid
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_player_gang_uid);
-if (undefined(_player_gang_uid)) exitWith {null};
+if (UNDEFINED(_player_gang_uid)) exitWith {null};
 if (typeName _player_gang_uid != "STRING") exitWith {null};
 
 private["_player"];

@@ -1,16 +1,12 @@
 // A_quarry_fnc_interact_use_shovel
 
-#include "..\..\includes\constants.h"
-#include "..\..\includes\macro.h"
+#include "header.h"
 
- _this spawn {
-if (dialog) exitWith {};
-ARGV(0,_this);
-ARGV(0,_player);
-ARGV(1,_object);
+
+params["_player","_object"];
 
 if (!([_player] call A_player_fnc_human)) exitWith {};
-if (undefined(_object)) exitWith {};
+if (UNDEFINED(_object)) exitWith {};
 
 if (A_quarry_var_interact_use_shovel_active) exitWith {};
 A_quarry_var_interact_use_shovel_active = true;
@@ -25,5 +21,4 @@ _exit_clean = {
 _player playActionNow "PutDown";
 [_player, _object] call A_quarry_fnc_interact_sand_hit;
 
-call _exit_clean;
-};
+[] call _exit_clean;

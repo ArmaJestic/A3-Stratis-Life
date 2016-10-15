@@ -1,7 +1,7 @@
 // A_legislation_menu_fnc_modify_law
 
-#include "..\..\includes\constants.h"
 #include "..\..\includes\macro.h"
+#include "..\..\includes\constants.h"
 
 
 ARGV(0,_player);

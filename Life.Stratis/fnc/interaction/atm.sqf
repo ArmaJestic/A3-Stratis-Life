@@ -1,17 +1,12 @@
 // A_interaction_fnc_atm
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
-ARGV(0,_player);
-ARGV(1,_target);
+params[["_player",objNull,[objNull]],["_target",objNull,[objNull]]];
+if ((isNull _player)||{isNull _target}) exitwith {false};
 
-if (undefined(_player)) exitWith {false};
-if (undefined(_target)) exitWith {false};
-
-if (!([_target] call A_object_fnc_atm)) exitWith {};
+if !([_target] call A_object_fnc_atm) exitWith {false};
 
 if(!A_bank_var_local_usebankpossible) exitWith {
 	hint "The ATM rejected your card";

@@ -1,32 +1,18 @@
 // A_vehicle_fnc_create
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-//player groupChat format["A_vehicle_fnc_create %1", _this];
-ARGV(0,_class);
-ARGV(1,_position);
-ARGV(2,_exact);
+params[["_class",null,[""]],["_position",null,[[]]],["_exact",null,[false]]];
+if UNDEFINED(_class) exitWith {null};
+if UNDEFINED(_position) exitWith {null};
+if UNDEFINED(_exact) exitWith {null};
 
-if (undefined(_class)) exitWith {null};
-if (undefined(_position)) exitWith {null};
-if (undefined(_exact)) exitWith {null};
-
-if (typeName _class != "STRING") exitWith {null};
-if (typeName _position != "ARRAY") exitWith {null};
-if (typeName _exact != "BOOL") exitWith {null};
-
-
-private["_vehicle"];
-_vehicle = createVehicle [_class, _position, [], 0, "NONE"];
+private _vehicle = createVehicle[_class, _position, [], 0, "NONE"];
 
 if (_exact) then {
 	_vehicle setPosATL _position;
-	[_vehicle] spawn {
-		ARGV(0,_vehicle);
-		sleep 1;
-		_vehicle setDamage 0;
-	};
+	[1,[_vehicle],{(_this select 0) setDamage 0;}] call A_frame_fnc_wait;
 };
 
 

@@ -1,8 +1,6 @@
 // A_interaction_fnc_weapon_modifications_menu_close
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\constants.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 private["_player"];

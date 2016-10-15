@@ -1,6 +1,6 @@
 // A_player_fnc_get_all_items
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 //player groupChat format["A_player_fnc_get_all_items %1", _this];

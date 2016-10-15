@@ -1,10 +1,10 @@
 // A_vehicle_fnc_exists
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 ARGV(0,_vehicle);
-if (undefined(_vehicle)) exitWith {false};
+if (UNDEFINED(_vehicle)) exitWith {false};
 if (typeName _vehicle != "OBJECT") exitWith {false};
 if (isNull _vehicle) exitWith {false};
 true

@@ -9,5 +9,5 @@ ARGV(0,_player);
 
 private["_velocity"];
 _velocity = [_player, "camera_max_velocity"] call A_object_fnc_getVariable;
-_velocity = if (undefined(_velocity)) then {0} else {_velocity};
+_velocity = if (UNDEFINED(_velocity)) then {0} else {_velocity};
 _velocity

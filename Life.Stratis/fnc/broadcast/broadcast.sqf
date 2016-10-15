@@ -1,13 +1,12 @@
 // A_broadcast_fnc_broadcast
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
-private["_code"];
-_code = _this;
-if (undefined(_code)) exitWith {null};
-if (typeName _code != "STRING") exitWith {null};
+params[["_code",null,["",{}]]];
+if UNDEFINED(_code) exitWith {};
+_code = [_code, (compile _code)] select ((typename _code)=="STRING");
+if (_code isEqualTo {}) exitWith {};
 
-missionNamespace setVariable [player_broadcast_buffer, _code];
-publicVariable player_broadcast_buffer;
-call compile _code;
+missionNamespace setVariable[player_broadcast_buffer,_code,true];
+call _code;

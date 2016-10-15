@@ -9,7 +9,7 @@ if (_art == "use") then {
 	_item   = _this select 1;
 	_anzahl = _this select 2;
 	_DefuseBombArray = ["TimeBomb", "Mine", "MineE", "BAF_ied_v1", "BAF_ied_v2", "BAF_ied_v3", "BAF_ied_v4"];
-	if (undefined(INV_BombDefuserInUse)) then {
+	if (UNDEFINED(INV_BombDefuserInUse)) then {
 		INV_BombDefuserInUse = false;
 	};
 

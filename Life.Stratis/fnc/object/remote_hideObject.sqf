@@ -5,6 +5,6 @@
 
 ARGV(0,_object);
 ARGV(1,_state);
-if (undefined(_object)) exitWith {};
-if (undefined(_state)) exitWith {};
+if (UNDEFINED(_object)) exitWith {};
+if (UNDEFINED(_state)) exitWith {};
 _object hideObject _state;

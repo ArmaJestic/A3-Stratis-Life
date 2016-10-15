@@ -209,7 +209,7 @@ class remotebomb_remote {
         x = 0.39; y = 0.50;
         w = 0.10; h = 0.04;
         text = "Execute";
-        action = "[""config"", ""activate"", ""fernzuenderbombe"", (ctrlText 1)] spawn A_SCRIPT_BOMBS;";
+        action = "[""config"", ""activate"", ""fernzuenderbombe"", (ctrlText 1)] spawn A_bombs_fnc_bombs;";
     };
     
     class cancel : RscButton {

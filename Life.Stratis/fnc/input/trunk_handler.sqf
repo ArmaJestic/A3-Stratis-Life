@@ -4,7 +4,7 @@
 #include "..\..\includes\dikcodes.h"
 
 
-if(!INV_shortcuts) exitWith { false };
+if(!A_inv_var_shortcuts) exitWith { false };
 if(dialog) exitWith {closeDialog 0; false };
 
 private["_vcls", "_vcl"];
@@ -20,7 +20,7 @@ if (_inside_vehicle) exitWith {
 
 private["_vehicle"];
 _vehicle = cursorTarget;
-if (undefined(_vehicle)) exitWith {false};
+if (UNDEFINED(_vehicle)) exitWith {false};
 if (typeName _vehicle != "OBJECT") exitWith {false};
 if (!(_vehicle isKindOf "LandVehicle" || _vehicle isKindOf "Air" || _vehicle iskindOf "Ship" || _vehicle isKindOf "TKOrdnanceBox_EP1")) exitWith {false};
 

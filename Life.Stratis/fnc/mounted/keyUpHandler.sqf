@@ -1,7 +1,6 @@
 // A_mounted_fnc_keyUpHandler
 
-#include "..\..\includes\macro.h"
-#include "..\..\includes\dikcodes.h"
+#include "header.h"
 
 
 //player groupChat format["A_mounted_fnc_keyUpHandler %1", _this];

@@ -11,5 +11,5 @@ _pos = [_player] call A_camera_fnc_get_position;
 
 private["_target"];
 _target = [_player, "A_camera_fnc_target"] call A_object_fnc_getVariable;
-_pos = if (undefined(_target)) then { _pos } else { _target modelToWorld _pos };
+_pos = if (UNDEFINED(_target)) then { _pos } else { _target modelToWorld _pos };
 _pos
