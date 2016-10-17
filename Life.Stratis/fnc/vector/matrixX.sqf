@@ -2,8 +2,8 @@
 #include "..\..\includes\macro.h"
 #include "..\..\includes\constants.h"
 
-ARGV(0,_m);
-ARGV(1,_v);
+
+params["_m","_v"];
 
 ([
    (((_v select 0) * ((_m select 0) select 0)) + ((_v select 1) * ((_m select 0) select 1)) + ((_v select 2) * ((_m select 0) select 2))),

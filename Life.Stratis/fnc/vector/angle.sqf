@@ -2,15 +2,14 @@
 #include "..\..\includes\macro.h"
 #include "..\..\includes\constants.h"
 
-ARGV(0,_v1);
-ARGV(1,_v2);
 
-_v1m = [_v1] call A_vector_fnc_magnitude;
-_v2m = [_v2] call A_vector_fnc_magnitude;
-_vdp = [_v1, _v2] call A_vector_fnc_dotp;
+params["_v1","_v2"];
 
-private["_m"];
-_m = (_v1m * _v2m);
+private _v1m = [_v1] call A_vector_fnc_magnitude;
+private _v2m = [_v2] call A_vector_fnc_magnitude;
+private _vdp = [_v1, _v2] call A_vector_fnc_dotp;
+
+private _m = (_v1m * _v2m);
 if (_m == 0) exitWith {0};
 
 (acos(_vdp / _m))

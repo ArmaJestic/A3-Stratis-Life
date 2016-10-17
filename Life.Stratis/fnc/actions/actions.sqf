@@ -8,11 +8,10 @@
 #include "..\..\includes\macro.h"
 
 
-if(A_actions_var_a_running) exitWith {null};
+if(A_actions_var_a_running) exitWith {};
 A_actions_var_a_running = true;
 
-private["_role"];
-_role = player;
+private _role = player;
 
 // temp disabled
 //====================================== BANK ROB =====================================================
@@ -53,17 +52,17 @@ action25 = _role addaction ["Set slave free",A_actions_fnc_noscript,'_slave = (n
 
 //================================== ELECTIONS =========================================================
 action43 = _role addAction ["Nominate police chief", A_actions_fnc_action, [[], "A_voting_menu_fnc_nomination_menu_police"],1,false,true,"","player distance cp2atm < 7"];
-action44 = _role addAction ["Nominate president", A_actions_fnc_action,[[], "A_voting_menu_fnc_nomination_menu_president"],1,false,true,"","player distance rathaus <= 3"];
+action44 = _role addAction ["Nominate president", A_actions_fnc_action,[[], "A_voting_menu_fnc_nomination_menu_president"],1,false,true,"","player distance townhall <= 3"];
 
 //================================== PRESIDENT actions =================================================
-action4345 = _role addAction ["Legislation", A_actions_fnc_action,[[player], "A_legislation_menu_fnc_menu_create"],1,false,true,"","(player distance rathaus <= 3 && {([player] call A_player_fnc_president)})"];
-action4346 = _role addAction ["Economy", A_actions_fnc_action,[[player], "A_economy_menu_fnc_menu_create"],1,false,true,"","(player distance rathaus <= 3 && {([player] call A_player_fnc_president)})"];
+action4345 = _role addAction ["Legislation", A_actions_fnc_action,[[player], "A_legislation_menu_fnc_menu_create"],1,false,true,"","(player distance townhall <= 3 && {([player] call A_player_fnc_president)})"];
+action4346 = _role addAction ["Economy", A_actions_fnc_action,[[player], "A_economy_menu_fnc_menu_create"],1,false,true,"","(player distance townhall <= 3 && {([player] call A_player_fnc_president)})"];
 
 //===================================== BUY INSURANCE ===================================================
 action47 = _role addaction [format["Buy bank insurance ($%1)", ("bankinsurance" call A_inventory_fnc_get_item_buy_cost)],A_actions_fnc_noscript,'[player] call A_interaction_fnc_buy_insurance;', 1 , false,true,"","(!A_interaction_var_buy_item_active && (player distance mainbank <= 2.5 or player distance cp2atm <= 2.5 or player distance storage <= 2.5))"];
 
 //======================================= CRIMELOG ====================================================
-//action48 = _role addaction ["Crime Log",A_dlg_fnc_maindialogs,["A_main_var_coplog"],1,false,true,"","player distance rathaus <= 3"];
+//action48 = _role addaction ["Crime Log",A_dlg_fnc_maindialogs,["A_main_var_coplog"],1,false,true,"","player distance townhall <= 3"];
 
 //======================================== SLAVES =====================================================
 //action49 = _role addaction [format["Buy Slave ($%1)", A_main_var_slave_cost],"slaves.sqf", ["slave"],1,false,true,"","!A_main_var_currecciv and player distance slaveflag <= 10 and isciv"];

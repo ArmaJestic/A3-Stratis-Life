@@ -17,6 +17,6 @@ params [["_target", null], ["_caller", null], ["_id", null, [0]], ["_data", null
 _data params["_function_arguments","_function_name"];
 private _function = missionNamespace getVariable [_function_name,null];
 
-if (UNDEFINED(_function)) exitWith {};
+if UNDEFINED(_function) exitWith {};
 
 [_function_arguments, _target, _caller, _id] spawn _function;

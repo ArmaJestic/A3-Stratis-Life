@@ -2,8 +2,8 @@
 
 #include "..\..\includes\macro.h"
 
-private["_damage"];
-_damage = damage player;
+
+private _damage = damage player;
 [player, 10, 0] call A_misc_fnc_setPitchBank;
 sleep 0.01;
 [player, -5, 0] call A_misc_fnc_setPitchBank;

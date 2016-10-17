@@ -3,18 +3,14 @@
 #include "header.h"
 
 
-ARGV(0,_item);
-ARGV(1,_stock);
-ARGV(2,_shopnum);
+params["_item","_stock",["_shopnum",null,[0]]];
+if UNDEFINED(_shopnum) exitWith {null};
 
-private["_shoparr", "_shopinv", "_itemnum"];
-_shoparr  = A_inv_var_itemshops select _shopnum;
-_shopinv  = (_shoparr select 4);
-_itemnum  = [_item, _shopinv] call A_inventory_fnc_get_shop_item_number;
+private _shoparr  = A_inv_var_itemshops select _shopnum;
+private _shopinv  = (_shoparr select 4);
+private _itemnum  = [_item, _shopinv] call A_inventory_fnc_get_shop_item_number;
 
-if (UNDEFINED(_shopnum)) exitWith {null};
-if (typeName _shopnum != "SCALAR") exitWith {null};
-if (UNDEFINED(_itemnum)) exitWith {null};
+if UNDEFINED(_itemnum) exitWith {null};
 if (typeName _itemnum != "SCALAR") exitWith {null};
 
-(A_inv_var_ItemStocks select _shopnum) SET [_itemnum, _stock];
+(A_inv_var_ItemStocks select _shopnum) SET[_itemnum, _stock];

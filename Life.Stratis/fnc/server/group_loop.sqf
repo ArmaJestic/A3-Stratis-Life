@@ -15,6 +15,5 @@
 {
 	private _group = _x;
 	private _units = units _group;
-	private _count = count _units;
-	if (_count <= 0) then {[_group] call A_server_fnc_delete_group;};	
+	if ((count _units) <= 0) then {[_group] call A_server_fnc_delete_group;};	
 } forEach allGroups;

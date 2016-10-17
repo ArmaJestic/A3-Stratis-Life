@@ -2,6 +2,7 @@
 #include "admin_menu\functions.h"
 #include "animations_menu\functions.h"
 #include "armoredsuv\functions.h"
+#include "arr\functions.h"
 #include "arrest_menu\functions.h"
 #include "bank\functions.h"
 #include "bank_menu\functions.h"

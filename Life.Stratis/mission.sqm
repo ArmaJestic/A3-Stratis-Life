@@ -792,7 +792,7 @@ class Mission
 					vehicle="C_man_1";
 					leader=1;
 					skill=0.60000002;
-					text="rathaus";
+					text="townhall";
 					init="this allowdamage false;this setpos [getpos this select 0, getpos this select 1, (getpos this select 2) + 0.1];this disableAI ""move""; this disableAI ""anim"";";
 				};
 			};
@@ -4278,7 +4278,7 @@ class Mission
 		};
 		class Item21
 		{
-			position[]={3766.0161,13.133308,7936.7993};
+			position[]={0,0,0};
 			id=218;
 			side="EMPTY";
 			vehicle="Land_HelipadEmpty_F";

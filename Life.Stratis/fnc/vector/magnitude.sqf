@@ -2,5 +2,6 @@
 #include "..\..\includes\macro.h"
 #include "..\..\includes\constants.h"
 
-ARGV(0,_v1);
+
+params["_v1"];
 (sqrt((_v1 select 0)^2  + (_v1 select 1)^2 + (_v1 select 2)^2))

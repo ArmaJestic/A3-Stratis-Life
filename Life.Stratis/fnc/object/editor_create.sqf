@@ -6,7 +6,7 @@
 params["_class","_offset","_heading","_damage","_simulation","_attached","_name","_hidden","_id","_zref","_ref"];
 
 private _roffset = _ref modelToWorld _offset;
-private _object = createVehicle [_class, _roffset, [], 0, "CAN_COLLIDE"];
+private _object = createVehicle[_class,_roffset,[],0,"CAN_COLLIDE"];
 _object enableSimulation false;
 _object allowDamage _damage;
 
@@ -22,16 +22,18 @@ _object setVariable["offset", (_object modelToWorld [0,0,0]), true];
 _object setVariable["heading", _heading, true];
 
 if (_damage) then {
-	_object setVariable["damage", _damage, true];
+	// not sure what for
+	_object setVariable["damage",_damage,true];
 };
 
 if (_attached) then {
+	// useless, attachedTo command
 	_object setVariable["attached", _attached, true];
 };
 
 if (_hidden) then {
-	[[_object, true], "A_object_fnc_remote_hideObject", _object] call A_jip_fnc_register;
-	_object setVariable["hidden", _hidden, true];
+	[[_object, true],"A_object_fnc_remote_hideObject",_object,true] call A_jip_fnc_register;
+	_object setVariable["hidden",_hidden,true];
 };
 
 if (_name != "") then {
@@ -39,7 +41,7 @@ if (_name != "") then {
 	missionNamespace setVariable[_name, _object, true];
 	_object setVariable["name", _name, true];
 	
-	[[_object,_name],"setVehicleVarName",_object] call A_jip_fnc_register;
+	[[_object,_name],"setVehicleVarName",_object,true] call A_jip_fnc_register;
 };
 
 _object

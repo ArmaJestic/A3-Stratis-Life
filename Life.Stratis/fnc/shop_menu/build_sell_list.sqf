@@ -4,13 +4,12 @@
 
 
 params[["_shop_id",null,[0]]];
-if (UNDEFINED(_shop_id)) exitWith {null};
+if UNDEFINED(_shop_id) exitWith {null};
 
-private _shop =  (A_inv_var_itemshops select _shop_id);
+private _shop = (A_inv_var_itemshops select _shop_id);
 private _logic = (_shop select INV_INDEX_SHOP_LOGIC);
-private _logic = if (UNDEFINED(_logic) ) then { "" } else { _logic };
-private _item_sell_list  = (_shop select INV_INDEX_SHOP_SELLLIST);
-
+private _logic = [_logic,""] select UNDEFINED(_logic);
+private _item_sell_list = (_shop select INV_INDEX_SHOP_SELLLIST);
 private _shop_sell_list = [];
 
 {

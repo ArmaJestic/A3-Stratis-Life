@@ -118,9 +118,7 @@ switch _key do {
 		_handled = [] call A_input_fnc_mute_handler;
 	};
 	case DIK_U:{
-		diag_log format['A_input_fnc_keyup_handler(%1): calling A_input_fnc_admin_menu_handler',_this];
 		_handled = [] call A_input_fnc_admin_menu_handler;
-		diag_log format['A_input_fnc_keyup_handler(%1): handled A_input_fnc_admin_menu_handler-%2',_this,_handled];
 	};
 };
 

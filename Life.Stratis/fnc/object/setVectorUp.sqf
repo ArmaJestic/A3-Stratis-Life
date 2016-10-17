@@ -3,12 +3,8 @@
 #include "..\..\includes\macro.h"
 
 
-ARGV(0,_object);
-ARGV(1,_vector);
+params["_object",["_vector",null,[[]]]];
 if (!([_object] call A_object_fnc_exists)) exitWith {};
-if (UNDEFINED(_vector)) exitWith {};
-if (typeName _vector != "ARRAY") exitWith {};
+if UNDEFINED(_vector) exitWith {};
 
-_object allowDamage false;
 _object setVectorUp _vector;
-_object allowDamage true;

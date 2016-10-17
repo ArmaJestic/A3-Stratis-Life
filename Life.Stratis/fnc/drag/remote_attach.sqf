@@ -13,7 +13,7 @@ private _selection = "LeftHandMiddle1";
 private _point = [_class, _selection] call  A_drag_fnc_attach_lookup_class_selection;
 private _weapon = currentWeapon _player;
 
-if (_weapon == "" && !(UNDEFINED(_point))) exitWith {
+if (_weapon == "" && DEFINED(_point)) exitWith {
 	private _heading = _point select INDEX_POINT_HEADING;
 	private _offset = _point select INDEX_POINT_OFFSET;
 	sleep 1;
@@ -31,5 +31,5 @@ _up = [_up] call A_vector_fnc_normalize;
 
 sleep 1;
 _object attachTo [_player, _offset];
-_dir set [2, 0];
-_object setVectorDirAndUp [_dir , (vectorUp _player)];
+_dir set[2, 0];
+_object setVectorDirAndUp [_dir,(vectorUp _player)];

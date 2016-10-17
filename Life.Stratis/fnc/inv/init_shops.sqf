@@ -1155,9 +1155,7 @@ carpark2 setTriggerActivation ["VEHICLE","PRESENT",true];
 carpark3 setTriggerActivation ["VEHICLE","PRESENT",true];
 carpark4 setTriggerActivation ["VEHICLE","PRESENT",true];
 
-diag_log format['init_shops, looping A_inv_var_vendors_array'];
 {
-	diag_log format['loop(%1)-%2',_forEachIndex,_x];
 	private _vendor_data = _x;		
 	private _vendor = _vendor_data select INV_INDEX_VENDOR_OBJECT;
 	
@@ -1173,15 +1171,6 @@ if (isServer) then {
 		private _object = _newArray select INV_INDEX_SHOP_OBJECT;
 		private _crate = _newArray select INV_INDEX_SHOP_CRATE;
 		private _buyList = _newArray select INV_INDEX_SHOP_BUYLIST;
-		
-		
-		// setup for the shops
-		if UNDEFINED(_object) then {
-			diag_log format["inv_init2: %1, _object undefined", _newArray];
-		};
-		if UNDEFINED(_crate) then {
-			diag_log format["inv_init2: %1, _object _crate", _newArray];
-		};
 		
 		if (_object isKindOf "Man") then {
 			//shop is an AI

@@ -1,6 +1,6 @@
 // A_dlg_fnc_itemlistdialog
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 if (!(createDialog "INV_ItemListDialog")) exitWith {

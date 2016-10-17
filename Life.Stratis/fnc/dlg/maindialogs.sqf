@@ -1,6 +1,6 @@
 // A_dlg_fnc_maindialogs
 
-#include "..\..\includes\macro.h"
+#include "header.h"
 
 
 disableSerialization;

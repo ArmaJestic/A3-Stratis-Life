@@ -11,15 +11,10 @@
 
 params[["_code",null,[{}]],["_delay",null,[0]],["_args",null,[]]];
 
-if UNDEFINED(_code) exitwith {
-	diag_log format["A_frame_fnc_perFrame: _code null, exit - %1", _this];
-};
-
+if UNDEFINED(_code) exitwith {};
 
 private _undef_a = UNDEFINED(args);
 private _undef_d = UNDEFINED(_delay) || {_delay <= 0};
-
-diag_log format['A_frame_fnc_perFrame: adding, undefa-%1(2), undefd-%3(%4)',_undef_a,_args,_undef_d,_delay];
 
 if (_undef_a && {_undef_d}) exitwith {
 	A_frame_var_arr_perFrame pushBack [_code]
